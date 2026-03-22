@@ -622,28 +622,21 @@
             if (card.classList.contains('is-flipped')) { card.classList.remove('is-flipped'); setTimeout(() => { advanceToNextCard(); }, 300); } else { advanceToNextCard(); }
         }
 
-        function advanceToNextCard() { if (currentIndex < currentList.length - 1) { currentIndex++; } else { alert('סיימת את הרשימה הנוכחית!'); applyFilters(); return; } updateCard(); }
-        function highlightWordInSentence(sentence, word) { let regex = new RegExp(`\\b(${word})\\b`, 'gi'); return sentence.replace(regex, '<strong>$1</strong>'); }
-        function generateAIContent(word) { return { assoc: `נסה לחשוב על חרוז או מילה שדומה ל-"${word}"... (לחץ ערוך ✏️ להוספה)`, sentence: `It is highly recommended to learn the word ${word} for the exam.|מומלץ מאוד ללמוד את המילה ${word} למבחן.` }; }
-
-        function updateCard() {
-            if (currentList.length === 0) { document.getElementById('wordFront').innerText = "אין מילים"; document.getElementById('wordTranslationDrive').style.display = 'none'; document.querySelector('.hint-container').style.display = 'none'; return; }
-            document.querySelector('.hint-container').style.display = 'flex';
-            let w = currentList[currentIndex]; let wordStatus = (userProgress[w.en] && userProgress[w.en].status) ? userProgress[w.en].status : 'unseen'; let displayHe = editedTranslations[w.en] || w.he;
-            document.getElementById('wordFront').innerText = isReverse ? displayHe : w.en; document.getElementById('wordFront').dir = isReverse ? "rtl" : "ltr"; document.getElementById('wordBack').innerText = isReverse ? w.en : displayHe;
-            let statusIcon = ""; if (wordStatus === 'known') statusIcon = '<svg stroke="#34c759"><path d="M20 6L9 17l-5-5"/></svg>'; else if (wordStatus === 'learning') statusIcon = '<svg stroke="#ff3b30"><path d="M18 6L6 18M6 6l12 12"/></svg>'; else statusIcon = '<svg stroke="#94a3b8"><circle cx="12" cy="12" r="10"></circle></svg>';
-            document.getElementById('statusFront').innerHTML = statusIcon; document.getElementById('badgeLevel').innerText = w.level;
-            
-            let srcUnit = w.source; if(w.unit) srcUnit += ' • ' + w.unit;
-            let badgeUnit = document.getElementById('badgeUnit');
-            if(badgeUnit) { badgeUnit.innerText = srcUnit; badgeUnit.style.display = 'block'; }
-            
-            document.getElementById('cardCounter').innerText = (currentIndex + 1) + " / " + currentList.length;
-            document.getElementById('assocText').style.display = 'none'; document.getElementById('sentenceText').style.display = 'none';
-            
-            if(!isDrivingMode) {
-                document.getElementById('wordTranslationDrive').style.display = 'none';
-            }
+        function advanceToNextCard() { 
+    if (currentIndex < currentList.length - 1) { 
+        currentIndex++; 
+    } else { 
+        alert('סיימת את הרשימה הנוכחית!'); 
+        applyFilters(); 
+        return; 
+    } 
+    // אם אנחנו במצב נסיעה, נקרא לפונקציה של הנסיעה. אם לא, רק נעדכן את הכרטיס ויזואלית.
+    if (typeof isDrivingMode !== 'undefined' && isDrivingMode) { 
+        playNextDrivingWord(); 
+    } else { 
+        updateCard(); 
+    } 
+}
             
             let card = document.getElementById('flashcard'); if (card.classList.contains('is-flipped')) card.classList.remove('is-flipped');
         }
@@ -676,67 +669,96 @@
         }
 
         // ---------- מצב נסיעה חדש, יציב ואייפון-פרנדלי ----------
-        let isDrivingMode = false;
-        
-        function toggleDrivingMode() {
-            isDrivingMode = !isDrivingMode;
-            let btn = document.getElementById('driveModeBtn');
-            let transDiv = document.getElementById('wordTranslationDrive');
-            
-            if(isDrivingMode) {
-                window.speechSynthesis.speak(new SpeechSynthesisUtterance(""));
-                btn.classList.add('drive-mode-active');
-                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> עצור';
-                transDiv.style.display = 'block';
-                if(currentList.length === 0) {
-                    alert("אין מילים ברשימה!"); toggleDrivingMode(); return;
-                }
-                switchMode('flash');
-                document.getElementById('editLinksContainer').style.display = 'none';
-                
-                playNextDrivingWord();
-            } else {
-                btn.classList.remove('drive-mode-active');
-                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> נסיעה';
-                transDiv.style.display = 'none';
-                document.getElementById('editLinksContainer').style.display = 'flex';
-                window.speechSynthesis.cancel();
-            }
+       // ---------- מצב נסיעה יציב עם שעון עצר (Timer) ----------
+let isDrivingMode = false;
+let drivingTimeout; 
+let waitingTime = 6000; // כאן אתה קובע את השניות (6000 = 6 שניות)
+
+function toggleDrivingMode() {
+    isDrivingMode = !isDrivingMode;
+    let btn = document.getElementById('driveModeBtn');
+    let transDiv = document.getElementById('wordTranslationDrive');
+    
+    if(isDrivingMode) {
+        window.speechSynthesis.cancel();
+        clearTimeout(drivingTimeout);
+        btn.classList.add('drive-mode-active');
+        btn.innerHTML = 'עצור נסיעה';
+        transDiv.style.display = 'block';
+        if(currentList.length === 0) {
+            alert("אין מילים ברשימה!"); toggleDrivingMode(); return;
         }
+        switchMode('flash');
+        playNextDrivingWord();
+    } else {
+        btn.classList.remove('drive-mode-active');
+        btn.innerHTML = 'מצב נסיעה';
+        transDiv.style.display = 'none';
+        window.speechSynthesis.cancel();
+        clearTimeout(drivingTimeout);
+    }
+}
 
-        function playNextDrivingWord() {
-            if(!isDrivingMode) return;
-            if(currentIndex >= currentList.length) currentIndex = 0; 
-            
-            updateCard();
-            
-            let w = currentList[currentIndex];
-            let displayHe = editedTranslations[w.en] || w.he;
+function playNextDrivingWord() {
+    if(!isDrivingMode) return;
+    
+    updateCard(); // מעדכן את המילה שרואים על המסך
+    window.speechSynthesis.cancel();
+    clearTimeout(drivingTimeout); // מאפס שעונים קודמים
+    
+    let w = currentList[currentIndex];
+    let displayHe = editedTranslations[w.en] || w.he;
 
-            let voices = window.speechSynthesis.getVoices();
-            let heVoice = voices.find(v => v.lang === 'he-IL' || v.lang === 'he');
-            let enVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en-GB' || v.lang === 'en');
+    let voices = window.speechSynthesis.getVoices();
+    let heVoice = voices.find(v => v.lang.includes('he'));
+    let enVoice = voices.find(v => v.lang.includes('en'));
 
-            let transDiv = document.getElementById('wordTranslationDrive');
-            
-            // פקודה 1: אנגלית
-            let enUtterance = new SpeechSynthesisUtterance(w.en);
-            if(enVoice) enUtterance.voice = enVoice;
-            enUtterance.lang = 'en-US';
-            enUtterance.rate = 0.85;
+    let mode = document.getElementById('driveInteraction') ? document.getElementById('driveInteraction').value : 'speak';
+    let transDiv = document.getElementById('wordTranslationDrive');
+    transDiv.style.display = 'none';
 
-            // פקודה 2: שקט (נותן זמן להציג את התרגום בלי שהאייפון יחתוך)
-            let pause1 = new SpeechSynthesisUtterance(", ,");
-            pause1.lang = 'en-US';
-            pause1.volume = 0.01;
-            pause1.rate = 0.5;
-            pause1.onstart = function() {
-                if(isDrivingMode) {
-                    transDiv.innerText = displayHe;
-                    transDiv.style.display = 'block';
-                }
-            };
+    // הגדרת הקראת האנגלית
+    let enUtterance = new SpeechSynthesisUtterance(w.en);
+    if(enVoice) enUtterance.voice = enVoice;
+    enUtterance.lang = 'en-US';
+    enUtterance.rate = 0.8;
 
+    // הגדרת הקראת העברית
+    let heUtterance = new SpeechSynthesisUtterance(displayHe);
+    if(heVoice) heUtterance.voice = heVoice;
+    heUtterance.lang = 'he-IL';
+    heUtterance.rate = 0.8;
+
+    // כשמסיימים להגיד אנגלית - מתחילים לחכות לך
+    enUtterance.onend = function() {
+        if(!isDrivingMode) return;
+        transDiv.innerText = displayHe;
+        transDiv.style.display = 'block';
+
+        if (mode === 'listen') {
+            drivingTimeout = setTimeout(() => { 
+                if(isDrivingMode) window.speechSynthesis.speak(heUtterance); 
+            }, 1500);
+        } else {
+            // כאן הקסם: הוא מחכה 6 שניות לפני שהוא מקריא את התשובה
+            drivingTimeout = setTimeout(() => { 
+                if(isDrivingMode) window.speechSynthesis.speak(heUtterance); 
+            }, waitingTime);
+        }
+    };
+
+    // כשמסיימים להגיד עברית - עוברים למילה הבאה
+    heUtterance.onend = function() {
+        if(!isDrivingMode) return;
+        drivingTimeout = setTimeout(() => { 
+            if(isDrivingMode) advanceToNextCard(); 
+        }, 1500);
+    };
+
+    window.speechSynthesis.speak(enUtterance);
+}
+
+       
             // פקודה 3: עברית
             let heUtterance = new SpeechSynthesisUtterance(displayHe);
             if(heVoice) heUtterance.voice = heVoice;
@@ -1540,8 +1562,7 @@
         });
 
         // קסם! אנחנו "חוטפים" לאפליקציה את יכולת הדיבור כדי להשתיק אותה כשהיא מנסה להקריא בעברית ואתה על מצב "אני עונה"
-        const originalSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
-        window.speechSynthesis.speak = function(utterance) {
+        
             let modeElement = document.getElementById('driveInteraction');
             let isDrive = (typeof isDrivingMode !== 'undefined') ? isDrivingMode : false; 
             // אם מצב נסיעה דולק, בחרת לענות בעצמך, והיא מנסה להקריא עברית - נחסום אותה!
