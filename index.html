@@ -1488,7 +1488,151 @@
             }).catch(err => console.log('SW failed', err));
           });
         }
- 
+ // --- מערכת זיהוי קול למצב נסיעה (Speech to Text) ---
+        let recognition;
+        let isListening = false;
+        let wasDriveMode = false;
+
+        // עיצוב לתפריט הנסיעה החדש ולמיקרופון
+        document.head.insertAdjacentHTML('beforeend', `<style>
+            .mic-listening { color: red !important; animation: micPulse 1s infinite; }
+            @keyframes micPulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+            .drive-control-box { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 10px; margin-top: 15px; text-align: center; }
+        </style>`);
+
+        window.addEventListener('load', () => {
+            let flashcardSection = document.getElementById('flashcard');
+            if (flashcardSection) {
+                // הוספת תפריט הנסיעה מתחת לכרטיסייה (מוסתר כברירת מחדל)
+                flashcardSection.insertAdjacentHTML('afterend', `
+                <div id="micArea" class="drive-control-box" style="display: none;">
+                    <div style="font-size: 14px; color: #64748b; margin-bottom: 8px; font-weight: bold;">הגדרות מצב נסיעה:</div>
+                    <select id="driveInteraction" onchange="toggleInteractionMode()" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 16px; margin-bottom: 10px; background: white; font-family: inherit;">
+                        <option value="speak">אני עונה בעצמי (מיקרופון פתוח 🎤)</option>
+                        <option value="listen">האפליקציה מקריאה לי הכל 🔊</option>
+                    </select>
+                    
+                    <div id="micControls">
+                        <button id="micBtn" onclick="toggleListening()" style="font-size: 40px; background: none; border: none; cursor: pointer; filter: grayscale(100%); transition: 0.3s;">🎤</button>
+                        <div id="micFeedback" style="font-size: 16px; color: #64748b; min-height: 25px; margin-top: 5px; font-weight: bold;"></div>
+                    </div>
+                </div>`);
+            }
+
+            // האקר חכם שמדליק/מכבה את התפריט לפי מתג מצב הנסיעה הראשי
+            setInterval(() => {
+                let micArea = document.getElementById('micArea');
+                let currentDriveState = (typeof isDriveMode !== 'undefined') ? isDriveMode : false; 
+                
+                if(micArea) {
+                    if(currentDriveState && !wasDriveMode) {
+                        micArea.style.display = 'block';
+                        let mode = document.getElementById('driveInteraction').value;
+                        if(mode === 'speak' && !isListening) toggleListening();
+                        wasDriveMode = true;
+                    } else if (!currentDriveState && wasDriveMode) {
+                        micArea.style.display = 'none';
+                        if(isListening) { isListening = false; if(recognition) recognition.stop(); }
+                        wasDriveMode = false;
+                    }
+                }
+            }, 500);
+        });
+
+        // קסם! אנחנו "חוטפים" לאפליקציה את יכולת הדיבור כדי להשתיק אותה כשהיא מנסה להקריא בעברית ואתה על מצב "אני עונה"
+        const originalSpeak = window.speechSynthesis.speak.bind(window.speechSynthesis);
+        window.speechSynthesis.speak = function(utterance) {
+            let modeElement = document.getElementById('driveInteraction');
+            let isDrive = (typeof isDriveMode !== 'undefined') ? isDriveMode : false; 
+            // אם מצב נסיעה דולק, בחרת לענות בעצמך, והיא מנסה להקריא עברית - נחסום אותה!
+            if (isDrive && modeElement && modeElement.value === 'speak' && utterance.lang === 'he-IL') {
+                return; 
+            }
+            originalSpeak(utterance); // אחרת, תדברי חופשי
+        };
+
+        function toggleInteractionMode() {
+            let mode = document.getElementById('driveInteraction').value;
+            let currentDriveState = (typeof isDriveMode !== 'undefined') ? isDriveMode : false; 
+            
+            if (mode === 'listen') {
+                // מסתיר את המיקרופון ומכבה אותו
+                document.getElementById('micControls').style.display = 'none';
+                if(isListening) { isListening = false; if(recognition) recognition.stop(); }
+            } else {
+                // מראה את המיקרופון ומדליק אותו
+                document.getElementById('micControls').style.display = 'block';
+                if(currentDriveState && !isListening) toggleListening();
+            }
+        }
+
+        function initSpeech() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) return;
+            recognition = new SpeechRecognition();
+            recognition.lang = 'he-IL';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = function() {
+                isListening = true;
+                let btn = document.getElementById('micBtn'); if(btn) { btn.classList.add('mic-listening'); btn.style.filter = "none"; }
+                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = "מקשיב לתשובה שלך...";
+            };
+
+            recognition.onresult = function(event) {
+                const spokenText = event.results[0][0].transcript.trim().toLowerCase();
+                checkSpokenAnswer(spokenText);
+            };
+
+            recognition.onerror = function(event) {
+                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = "לא שמעתי ברור...";
+                isListening = false;
+                let btn = document.getElementById('micBtn'); if(btn) { btn.classList.remove('mic-listening'); btn.style.filter = "grayscale(100%)"; }
+            };
+
+            recognition.onend = function() {
+                let isDrive = (typeof isDriveMode !== 'undefined') ? isDriveMode : false; 
+                let mode = document.getElementById('driveInteraction') ? document.getElementById('driveInteraction').value : 'speak';
+                
+                // ממשיך להקשיב בלופ רק אם אנחנו במצב נסיעה ואתה בחרת לענות
+                if (isListening && isDrive && mode === 'speak') {
+                    try { recognition.start(); } catch(e) {} 
+                } else {
+                    let btn = document.getElementById('micBtn'); if(btn) { btn.classList.remove('mic-listening'); btn.style.filter = "grayscale(100%)"; }
+                    let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = "";
+                }
+            };
+        }
+
+        function toggleListening() {
+            if (!recognition) initSpeech();
+            if (!recognition) return;
+            if (isListening) { isListening = false; if (recognition) recognition.stop(); } 
+            else { try { recognition.start(); } catch(e) {} }
+        }
+
+        function checkSpokenAnswer(spokenText) {
+            if(currentList.length === 0) return;
+            let word = currentList[currentIndex];
+            let correctHe = (editedTranslations[word.en] || word.he).toLowerCase();
+            
+            if (spokenText.includes("דלג") || spokenText.includes("לא יודע") || spokenText.includes("עבור")) {
+                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `אמרת: "לא יודע". מדלג...`;
+                markWord('learning'); return;
+            }
+
+            let correctWords = correctHe.split(/[,|\/]/).map(w => w.trim());
+            let isCorrect = correctWords.some(cw => spokenText.includes(cw) || cw.includes(spokenText));
+
+            if (isCorrect) {
+                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `אלוף! אמרת: "${spokenText}"`;
+                markWord('known');
+            } else {
+                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `שמעתי: "${spokenText}" (נסה שוב או תגיד "דלג")`;
+            }
+        }
+        // ---------------------------------------------------------
 	</script>
 </body>
 </html>
