@@ -1727,33 +1727,49 @@
             else { try { recognition.start(); } catch(e) {} }
         }
 
-        function checkSpokenAnswer(spokenText) {
+  function checkSpokenAnswer(spokenText) {
             if(currentList.length === 0) return;
             let word = currentList[currentIndex];
             let correctHe = (editedTranslations[word.en] || word.he).toLowerCase();
             
-            // אם המשתמש אמר "דלג" או "לא יודע"
-            if (spokenText.includes("דלג") || spokenText.includes("לא יודע") || spokenText.includes("עבור")) {
+            // מנקה סימני פיסוק מהזיהוי של הטלפון שיכולים להפריע
+            let cleanSpoken = spokenText.replace(/[.,?!]/g, "").trim();
+            
+            if (cleanSpoken.includes("דלג") || cleanSpoken.includes("לא יודע") || cleanSpoken.includes("עבור")) {
                 let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `אמרת: "לא יודע". מדלג...`;
-                clearTimeout(drivingTimeout); // מבטל את השעון
-                window.speechSynthesis.cancel(); // עוצר את ההקראה
+                clearTimeout(drivingTimeout); // הורג את שעון ה-3 שניות
+                window.speechSynthesis.cancel(); // משתיק כל הקראה שמתוכננת
                 if (isListening && recognition) { try { recognition.stop(); } catch(e){} isListening = false; }
-                markWord('learning'); // מסמן כ"לא יודע" ועובר הלאה
+                
+                // פידבק קולי
+                let msg = new SpeechSynthesisUtterance("מדלג");
+                msg.lang = 'he-IL';
+                window.speechSynthesis.speak(msg);
+                
+                // ממתין שנייה כדי שתשמע את המילה, ואז עובר
+                setTimeout(() => { markWord('learning'); }, 1000);
                 return;
             }
 
-            // בודק אם התשובה נכונה
             let correctWords = correctHe.split(/[,|\/]/).map(w => w.trim());
-            let isCorrect = correctWords.some(cw => spokenText.includes(cw) || cw.includes(spokenText));
+            let isCorrect = correctWords.some(cw => cleanSpoken === cw || cleanSpoken.includes(cw) || cw.includes(cleanSpoken));
 
             if (isCorrect) {
-                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `אלוף! אמרת: "${spokenText}"`;
-                clearTimeout(drivingTimeout); // מבטל את השעון
-                window.speechSynthesis.cancel(); // עוצר את ההקראה
+                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `אלוף! ענית נכון.`;
+                clearTimeout(drivingTimeout); // הורג את שעון ה-3 שניות!
+                window.speechSynthesis.cancel(); // משתיק לחלוטין את הקראת העברית שתוכננה!
                 if (isListening && recognition) { try { recognition.stop(); } catch(e){} isListening = false; }
-                markWord('known'); // מסמן כ"יודע" ועובר הלאה
+                
+                // פידבק קולי להצלחה
+                let msg = new SpeechSynthesisUtterance("מעולה");
+                msg.lang = 'he-IL';
+                msg.rate = 1.2;
+                window.speechSynthesis.speak(msg);
+                
+                // ממתין שנייה כדי שתשמע "מעולה", ואז עובר הלאה
+                setTimeout(() => { markWord('known'); }, 1000);
             } else {
-                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `שמעתי: "${spokenText}" (נסה שוב או תגיד "דלג")`;
+                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `שמעתי: "${cleanSpoken}" (נסה שוב או תגיד "דלג")`;
             }
         }
 	</script>
