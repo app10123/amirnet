@@ -709,6 +709,7 @@
             if(currentIndex >= currentList.length) currentIndex = 0; 
             
             updateCard();
+            window.speechSynthesis.cancel();
             
             let w = currentList[currentIndex];
             let displayHe = editedTranslations[w.en] || w.he;
@@ -718,51 +719,48 @@
             let enVoice = voices.find(v => v.lang === 'en-US' || v.lang === 'en-GB' || v.lang === 'en');
 
             let transDiv = document.getElementById('wordTranslationDrive');
-            
-            // פקודה 1: אנגלית
+            transDiv.style.display = 'none';
+
             let enUtterance = new SpeechSynthesisUtterance(w.en);
             if(enVoice) enUtterance.voice = enVoice;
             enUtterance.lang = 'en-US';
             enUtterance.rate = 0.85;
 
-            // פקודה 2: שקט (נותן זמן להציג את התרגום בלי שהאייפון יחתוך)
-            let pause1 = new SpeechSynthesisUtterance(", ,");
-            pause1.lang = 'en-US';
-            pause1.volume = 0.01;
-            pause1.rate = 0.5;
-            pause1.onstart = function() {
-                if(isDrivingMode) {
-                    transDiv.innerText = displayHe;
-                    transDiv.style.display = 'block';
-                }
-            };
-
-            // פקודה 3: עברית
             let heUtterance = new SpeechSynthesisUtterance(displayHe);
             if(heVoice) heUtterance.voice = heVoice;
             heUtterance.lang = 'he-IL';
             heUtterance.rate = 0.85;
-            
-            // פקודה 4: שקט אחרון ומעבר
-            let pause2 = new SpeechSynthesisUtterance(", , , ,");
-            pause2.lang = 'en-US';
-            pause2.volume = 0.01;
-            pause2.rate = 0.3;
-            pause2.onend = function() {
-                if(isDrivingMode) {
-                    transDiv.style.display = 'none';
-                    currentIndex++;
-                    playNextDrivingWord();
-                }
+
+            // כאן השינוי: במקום הקראת פסיקים, משתמשים בשעון עצר
+            enUtterance.onend = function() {
+                if(!isDrivingMode) return;
+                
+                transDiv.innerText = displayHe;
+                transDiv.style.display = 'block';
+
+                let mode = document.getElementById('driveInteraction') ? document.getElementById('driveInteraction').value : 'speak';
+                
+                // זמן ההמתנה (כרגע מוגדר ל-3000 שזה 3 שניות)
+                let waitTime = (mode === 'listen') ? 1500 : 3000; 
+
+                setTimeout(() => {
+                    if(isDrivingMode) window.speechSynthesis.speak(heUtterance);
+                }, waitTime);
             };
 
-            // דוחף הכל לתור ההקראה של המכשיר בבת אחת
-            window.speechSynthesis.speak(enUtterance);
-            window.speechSynthesis.speak(pause1);
-            window.speechSynthesis.speak(heUtterance);
-            window.speechSynthesis.speak(pause2);
-        }
+            heUtterance.onend = function() {
+                if(!isDrivingMode) return;
+                transDiv.style.display = 'none';
+                setTimeout(() => {
+                    if(isDrivingMode) {
+                        currentIndex++;
+                        playNextDrivingWord();
+                    }
+                }, 1500);
+            };
 
+            window.speechSynthesis.speak(enUtterance);
+        }
         window.speechSynthesis.onvoiceschanged = function() {
             window.speechSynthesis.getVoices();
         };
