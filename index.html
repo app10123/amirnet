@@ -126,11 +126,22 @@
         .hint-edit svg { width: 14px; height: 14px; stroke: #64748b;}
         .hint-edit:hover, .hint-edit:hover svg { color: var(--btn-primary); stroke: var(--btn-primary); opacity: 1;}
 
-        .action-btns { display: flex; gap: 15px; width: 100%; justify-content: space-between; align-items: center; direction: ltr; }
-        .btn-know, .btn-dontknow { flex: 1; height: 60px; font-size: 19px; font-family: 'Rubik', sans-serif; border-radius: 30px; border: none; color: white; cursor: pointer; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15);}
+        .action-btns { display: flex; gap: 15px; width: 100%; justify-content: space-between; align-items: center; direction: ltr; }.btn-know, .btn-dontknow { flex: 1; height: 60px; font-size: 19px; font-family: 'Rubik', sans-serif; border-radius: 30px; border: none; color: white; cursor: pointer; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15);}
         .btn-know { background-color: #34c759; } .btn-know svg { stroke: white; } .btn-know:active { transform: scale(0.95); background-color: #2db34f;}
         .btn-dontknow { background-color: #ff3b30; } .btn-dontknow svg { stroke: white; } .btn-dontknow:active { transform: scale(0.95); background-color: #e6352b;}
         
+        .btn-stack { background-color: #5856d6; color: white; flex: 1.2; height: 60px; font-size: 18px; font-family: 'Rubik', sans-serif; border-radius: 30px; border: none; cursor: pointer; font-weight: 800; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .btn-stack:active { transform: scale(0.95); background-color: #4644b0; }.btn-stack span.stack-count { font-size: 13px; font-weight: 600; opacity: 0.9; }
+
+        .stack-mode-btn { width: 100%; padding: 15px 20px; margin-bottom: 20px; border-radius: 16px; border: 2px solid #5856d6; background: rgba(88, 86, 214, 0.1); color: #5856d6; font-size: 18px; font-weight: 800; font-family: 'Rubik', sans-serif; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow); box-sizing: border-box; }
+        .stack-mode-btn.active { background: #5856d6; color: white; animation: pulseStack 2s infinite; }
+        .stack-mode-btn svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 2.5; fill: none; flex-shrink: 0; }
+        .stack-badge { background: #5856d6; color: white; padding: 4px 12px; border-radius: 12px; font-size: 15px; margin-right: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;}
+        .stack-mode-btn.active .stack-badge { background: white; color: #5856d6; }
+        @keyframes pulseStack { 0% { box-shadow: 0 0 0 0 rgba(88, 86, 214, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(88, 86, 214, 0); } 100% { box-shadow: 0 0 0 0 rgba(88, 86, 214, 0); } }
+        body.dark-mode .stack-mode-btn { background: rgba(88, 86, 214, 0.2); color: #a5a5ff; border-color: #a5a5ff; }
+        body.dark-mode .stack-mode-btn.active { background: #5856d6; color: white; border-color: #5856d6; }
+
         .side-btn { width: 60px; height: 60px; border-radius: 30px; background: var(--panel-bg); border: 2px solid var(--border-color); display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: var(--shadow); flex-shrink: 0; transition: 0.2s;}
         .side-btn svg { stroke: #64748b; width: 24px; height: 24px; } body.dark-mode .side-btn svg { stroke: #94a3b8; }
         .side-btn:active { transform: scale(0.9); }
@@ -247,8 +258,7 @@
             <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
             <div class="stats-text"><span id="statsKnown" class="stat-known">יודע: 0</span><span id="statsLearning" class="stat-learning">ללמידה: 0</span><span id="statsUnseen" class="stat-unseen">טרם מוין: 0</span></div>
         </div>
-
-        <div class="controls-panel">
+<div class="controls-panel">
             <div class="search-container">
                 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <input type="text" id="searchInput" class="search-bar" placeholder="חפש מילה באנגלית או בעברית..." oninput="applyFilters()">
@@ -265,7 +275,12 @@
                 <button class="action-btn-top" id="driveModeBtn" onclick="toggleDrivingMode()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> נסיעה</button>
             </div>
         </div>
-
+<button id="stackModeToggleBtn" class="stack-mode-btn" onclick="toggleStackMode()">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line></svg>
+            <span id="stackBtnText">מחסנית חרישה</span> 
+            <span class="stack-badge"><span id="stackToggleCount">0</span>/10</span>
+        </button>
+		
         <div class="tabs">
             <div class="tab-btn active" id="tab-flash" onclick="switchMode('flash')"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg> כרטיסיות</div>
             <div class="tab-btn" id="tab-quiz" onclick="switchMode('quiz')"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> מבחן</div>
@@ -299,9 +314,10 @@
                     </div>
                 </div>
             </div>
-            <div class="action-btns" style="direction: ltr;">
+			<div class="action-btns" style="direction: ltr;">
                 <button class="side-btn" onclick="prevCard()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
                 <button class="btn-know" onclick="markWord('known')">יודע <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></button>
+                <button class="btn-stack" onclick="toggleStackWord()">לחרישה <span class="stack-count" id="stackCountDisplay">0/10</span></button>
                 <button class="btn-dontknow" onclick="markWord('learning')">לא יודע <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
                 <button class="side-btn" onclick="speakWord()"><svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
             </div>
@@ -562,7 +578,7 @@
                 if(statusVal === 'Learning') matchStatus = (wordStatus === 'learning'); 
                 if(statusVal === 'Unseen') matchStatus = (wordStatus === 'unseen'); 
                 if(statusVal === 'Hard') matchStatus = (wordFails >= 2); 
-                
+                if(statusVal === 'Stack') matchStatus = (wordData.inStack === true);
                 // הפעלת האלגוריתם: אם לא חיפשנו ספציפית מילים שאנחנו יודעים, נסתיר מילים שהמוח עדיין זוכר
                 if (statusVal === 'All' && wordStatus === 'known' && nextReview > now) {
                     matchStatus = false; 
@@ -592,6 +608,7 @@
             if(!userProgress[wordEn]) userProgress[wordEn] = { status: 'unseen', fails: 0, reviewLevel: 0, nextReview: 0 };
             
             userProgress[wordEn].status = newStatus;
+			if(newStatus === 'known') userProgress[wordEn].inStack = false;
             let now = Date.now();
             let dayInMs = 24 * 60 * 60 * 1000;
 
@@ -1498,15 +1515,156 @@
                 } catch(err) { alert("שגיאה בקובץ הגיבוי. ודא שזה הקובץ הנכון."); console.error(err); } 
             }; reader.readAsText(file); 
         }
-
-        initApp();
-		if ('serviceWorker' in navigator) {
+initApp();
+        
+        if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
             navigator.serviceWorker.register('./sw.js').then(reg => {
               console.log('SW registered!', reg);
             }).catch(err => console.log('SW failed', err));
           });
         }
+
+        // ==========================================
+        // --- מערכת מחסנית חרישה (Study Stack) ---
+        // ==========================================// ==========================================
+        // --- מערכת מחסנית חרישה (Study Stack) ---
+        // ==========================================
+        let isStackMode = false;
+
+        function updateStackCount() {
+            let count = 0;
+            for(let key in userProgress) { if(userProgress[key].inStack) count++; }
+            let disp1 = document.getElementById('stackCountDisplay');
+            if(disp1) disp1.innerText = `${count}/10`;
+            let disp2 = document.getElementById('stackToggleCount');
+            if(disp2) disp2.innerText = count;
+            return count;
+        }
+
+        function toggleStackMode() {
+            isStackMode = !isStackMode;
+            let btn = document.getElementById('stackModeToggleBtn');
+            let btnText = document.getElementById('stackBtnText');
+            
+            if(isStackMode) {
+                let currentCount = updateStackCount();
+                if(currentCount === 0) {
+                    alert("המחסנית ריקה!\nהוסף מילים לחרישה קודם בעזרת הכפתור הסגול למטה.");
+                    isStackMode = false;
+                    return;
+                }
+                btn.classList.add('active');
+                if(btnText) btnText.innerText = 'יציאה ממצב חרישה';
+                document.getElementById('statusFilter').value = 'All';
+            } else {
+                btn.classList.remove('active');
+                if(btnText) btnText.innerText = 'מחסנית חרישה';
+            }
+            applyFilters();
+        }
+
+        function toggleStackWord() {
+            if(currentList.length === 0) return; 
+            let wordEn = currentList[currentIndex].en;
+            if(!userProgress[wordEn]) userProgress[wordEn] = { status: 'unseen', fails: 0, reviewLevel: 0, nextReview: 0 };
+            
+            let currentCount = updateStackCount();
+            
+            if(!userProgress[wordEn].inStack) {
+                if(currentCount >= 10) {
+                    alert("🛑 המחסנית מלאה (10/10)!\nכנס למצב חרישה למעלה, תלמד את המילים, וסמן אותן כ'יודע' כדי לפנות מקום.");
+                    return; 
+                }
+                userProgress[wordEn].inStack = true;
+                userProgress[wordEn].status = 'learning'; 
+            } else {
+                userProgress[wordEn].inStack = false; 
+            }
+            
+            saveProgress(); 
+            updateStackCount();
+            
+            if(isStackMode && !userProgress[wordEn].inStack) {
+                applyFilters();
+                if(currentList.length === 0) {
+                    alert("סיימת את המחסנית! כל הכבוד 🎉 יוצא ממצב חרישה.");
+                    toggleStackMode();
+                }
+            } else {
+                advanceToNextCard();
+            }
+        }
+
+        // דריסת הפילטר המקורי שיתמוך במחסנית
+        function applyFilters() {
+            let sourceVal = document.getElementById('sourceFilter').value; let unitVal = document.getElementById('unitFilter').value; let levelVal = document.getElementById('levelFilter').value; let statusVal = document.getElementById('statusFilter').value; let searchVal = document.getElementById('searchInput').value.toLowerCase();
+            let now = Date.now();
+
+            currentList = allWords.filter(w => {
+                let displayHe = editedTranslations[w.en] || w.he;
+                let wordData = userProgress[w.en] || { status: 'unseen', fails: 0, nextReview: 0, inStack: false };
+                let matchSearch = w.en.toLowerCase().includes(searchVal) || displayHe.includes(searchVal);
+
+                if (isStackMode) { return wordData.inStack === true && matchSearch; }
+
+                let matchSource = (sourceVal === 'All' || w.source === sourceVal); let matchUnit = (unitVal === 'All' || w.unit === unitVal); let matchLevel = (levelVal === 'All' || w.level === levelVal);
+                let wordStatus = wordData.status; let wordFails = wordData.fails || 0; let nextReview = wordData.nextReview || 0;
+
+                let matchStatus = true; 
+                if(statusVal === 'Known') matchStatus = (wordStatus === 'known'); 
+                if(statusVal === 'Learning') matchStatus = (wordStatus === 'learning'); 
+                if(statusVal === 'Unseen') matchStatus = (wordStatus === 'unseen'); 
+                if(statusVal === 'Hard') matchStatus = (wordFails >= 2); 
+                
+                if (statusVal === 'All' && wordStatus === 'known' && nextReview > now) { matchStatus = false; }
+
+                return matchSource && matchUnit && matchLevel && matchStatus && matchSearch;
+            });
+
+            // פתרון הכפילויות: במצב חרישה מציגים רק כרטיסיה אחת לכל מילה
+            if (isStackMode) {
+                let uniqueList = [];
+                let seenWords = new Set();
+                currentList.forEach(w => {
+                    let wordLower = w.en.toLowerCase();
+                    if (!seenWords.has(wordLower)) {
+                        seenWords.add(wordLower);
+                        uniqueList.push(w);
+                    }
+                });
+                currentList = uniqueList;
+            }
+
+            currentIndex = 0; updateStatsUI(); if(currentMode === 'flash') updateCard(); else if(currentMode === 'quiz') startQuiz(); else if(currentMode === 'list') renderList();
+        }
+
+        let originalUpdateStats = updateStatsUI;
+        updateStatsUI = function() {
+            originalUpdateStats();
+            updateStackCount();
+        };
+
+        let originalMarkWord = markWord;
+        markWord = function(newStatus) {
+            if(currentList.length === 0) return; 
+            let wordEn = currentList[currentIndex].en;
+            
+            if(newStatus === 'known' && userProgress[wordEn]) {
+                userProgress[wordEn].inStack = false;
+            }
+            
+            originalMarkWord(newStatus);
+            
+            if(isStackMode && newStatus === 'known') {
+                applyFilters();
+                if(currentList.length === 0) {
+                    alert("סיימת את המחסנית! כל הכבוד 🎉 יוצא ממצב חרישה.");
+                    toggleStackMode();
+                }
+            }
+        };
+        // ==========================================
  // --- מערכת זיהוי קול למצב נסיעה (Speech to Text) ---
         let recognition;
         let isListening = false;
