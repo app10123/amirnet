@@ -2275,17 +2275,12 @@ function playNextDrivingWord() {
             } 
             document.getElementById(`sc-exp-${qIndex}`).style.display = 'block'; 
         }
-
-        function nextSentence() {
-            currentSentenceIndex++;
-            renderSentenceQuestions();
-        }
-		function nextSentence() {
+function nextSentence() {
             currentSentenceIndex++;
             renderSentenceQuestions();
         }
 
-        // --- פקודת ההפעלה של האפליקציה שחסרה לנו ---
+        // --- פקודת ההפעלה של האפליקציה ---
         initApp();
         
         if ('serviceWorker' in navigator) {
@@ -2297,9 +2292,6 @@ function playNextDrivingWord() {
         }
         // ------------------------------------------
 
-    </script>
-</body>
-</html>
     </script>
 </body>
 </html>
