@@ -2062,77 +2062,179 @@ function playNextDrivingWord() {
             localStorage.setItem('textProgress', JSON.stringify(textProgress));
         }
 
+      const builtinTexts = [
+            {
+                id: "builtin_1", title: "The Sleep-Memory Connection", desc: "רמה: אמירנט | ביולוגיה ופסיכולוגיה",
+                content: "Sleep is not merely a passive state of rest, but an active period of neural <span class='hard-word'>reorganization</span>. During deep sleep stages, the brain <span class='hard-word'>consolidates</span> memories, transferring information from short-term to long-term storage. Research has shown that students who sleep well before an exam perform significantly better than those who study all night. Chronic sleep <span class='hard-word'>deprivation</span> has been consistently linked to severe cognitive <span class='hard-word'>impairment</span>, reduced attention span, and an increased risk of chronic physiological diseases.",
+                translations: { "reorganization": "ארגון מחדש", "consolidates": "מגבש, מאחד", "deprivation": "חסך, מניעה", "impairment": "פגיעה, ליקוי" },
+                questions: [
+                    { q: "1. According to the text, what happens to memories during deep sleep?", options: ["They are permanently erased.", "They are transferred to long-term storage.", "They become less vivid.", "They are confused with dreams."], correct: 1, explanation: "שיטת איתור פרטים (Specific Details): חפש את מילות המפתח מהשאלה (memories, deep sleep) בטקסט. במשפט השני כתוב מפורשות: 'During deep sleep... transferring information from short-term to long-term storage'." },
+                    { q: "2. The word 'deprivation' is closest in meaning to:", options: ["abundance", "treatment", "lack", "improvement"], correct: 2, explanation: "שיטת הבנת מילה מהקשר: המילה deprivation מקושרת ל-'severe cognitive impairment' (פגיעה קוגניטיבית חמורה). זה חייב להיות משהו שלילי. lack (חוסר) מתאימה לחסך בשינה." },
+                    { q: "3. What can be inferred about students who study all night before an exam?", options: ["They perform better than others.", "They experience immediate physiological diseases.", "They do not consolidate their memories effectively.", "They reorganize their neural networks actively."], correct: 2, explanation: "שיטת הסקה (Inference): הטקסט מצהיר שתלמידים שישנים מצליחים יותר כי הם מגבשים זיכרונות (consolidates). מכאן נובע שתלמיד שלא ישן (לומד כל הלילה) יתקשה לגבש זיכרונות." },
+                    { q: "4. Which of the following is NOT mentioned as a result of chronic sleep deprivation?", options: ["Severe cognitive impairment", "Reduced attention span", "Increased risk of chronic diseases", "Permanent memory loss"], correct: 3, explanation: "שיטת אלימינציה לשאלות NOT/EXCEPT: סרוק את הטקסט אחרי המשפט המדבר על חסך שינה. מוזכרים שם פגיעה קוגניטיבית, צמצום טווח הקשב ומחלות כרוניות. אובדן זיכרון קבוע כלל אינו מוזכר בטקסט." },
+                    { q: "5. What is the author's primary purpose in this text?", options: ["To argue that studying all night is beneficial.", "To explain the biological process of dreaming.", "To highlight the active role of sleep in memory and health.", "To criticize students who do not sleep before exams."], correct: 2, explanation: "שאלת מטרת הכותב (Author's Purpose): קרא את המשפט הראשון (משפט המפתח). הוא קובע ששינה היא תהליך אקטיבי ולא פסיבי. שאר הטקסט מפרט את היתרונות (זיכרון, בריאות), ולכן התשובה היא C." }
+                ]
+            }
+        ];
+
+        let allTexts = [];
+
+        function renderReadingTexts() { 
+            allTexts = builtinTexts.concat(customTexts);
+            let html = ""; 
+            allTexts.forEach(t => { 
+                let checkmark = (textProgress[t.id] && textProgress[t.id].completed) ? '<span style="color:#34c759; margin-left:8px;">✅</span>' : '';
+                html += `<div class="text-card" onclick="openReadingText('${t.id}')">
+                    <div>
+                        <h4 class="text-title">${checkmark}${t.title}</h4>
+                        <p class="text-desc">${t.desc}</p>
+                    </div>
+                    <svg viewBox="0 0 24 24" style="stroke:var(--btn-primary); width:24px; height:24px; fill:none; stroke-width:2;"><path d="M9 18l6-6-6-6"/></svg>
+                </div>`; 
+            }); 
+            document.getElementById('texts-list').innerHTML = html; 
+        }
+        
+        function openReadingText(id) { 
+            currentTextId = id;
+            let t = allTexts.find(x => x.id === id); 
+            document.getElementById('texts-list').style.display = 'none'; 
+            document.getElementById('active-reading').style.display = 'flex'; 
+            document.getElementById('rc-title').innerText = t.title; 
+            
+            let tempDiv = document.createElement('div'); tempDiv.innerHTML = t.content; 
+            
+            tempDiv.querySelectorAll('.hard-word').forEach(span => { 
+                let cleanWord = span.innerText.replace(/[^a-zA-Z]/g, '').toLowerCase(); 
+                let trans = (t.translations && t.translations[cleanWord]) || (t.translations && t.translations[span.innerText]) || "פירוש חסר"; 
+                span.innerHTML += `<span class="tooltip">${trans}</span>`; 
+            }); 
+            
+            document.getElementById('rc-content').innerHTML = tempDiv.innerHTML; 
+            
+            document.querySelectorAll('#rc-content .hard-word').forEach(span => {
+                span.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    let tt = this.querySelector('.tooltip');
+                    let wasShown = tt.classList.contains('show-tooltip');
+                    document.querySelectorAll('.tooltip').forEach(t => t.classList.remove('show-tooltip'));
+                    if(!wasShown) tt.classList.add('show-tooltip');
+                });
+            });
+            
+            let qHtml = ""; 
+            t.questions.forEach((q, qIndex) => { 
+                qHtml += `<div class="question-box">
+                    <div class="q-text">${q.q}</div>
+                    <div class="q-options" id="q-opts-${qIndex}">`; 
+                q.options.forEach((opt, optIndex) => { 
+                    qHtml += `<button class="q-opt-btn" onclick="answerRC(${qIndex}, ${optIndex}, ${q.correct}, '${q.explanation.replace(/'/g, "\\'")}')">${opt}</button>`; 
+                }); 
+                qHtml += `</div>
+                    <div class="q-explanation" id="q-exp-${qIndex}">
+                        <h4><svg viewBox="0 0 24 24" style="width:20px; height:20px; stroke:currentColor; fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> אסטרטגיית אמירנט:</h4>
+                        <p>${q.explanation}</p>
+                    </div>
+                </div>`; 
+            }); 
+            document.getElementById('rc-questions').innerHTML = qHtml; 
+        }
+        
+        document.addEventListener('click', () => { document.querySelectorAll('.tooltip').forEach(tt => tt.classList.remove('show-tooltip')); });
+        
+        function closeReadingText() { document.getElementById('active-reading').style.display = 'none'; document.getElementById('texts-list').style.display = 'flex'; renderReadingTexts(); }
+        
+        function answerRC(qIndex, selectedOpt, correctOpt, explanation) { 
+            let btns = document.getElementById(`q-opts-${qIndex}`).querySelectorAll('.q-opt-btn'); 
+            btns.forEach(b => b.disabled = true); 
+            if(selectedOpt === correctOpt) {
+                btns[selectedOpt].classList.add('correct'); 
+            } else { 
+                btns[selectedOpt].classList.add('wrong'); 
+                btns[correctOpt].classList.add('correct'); 
+            } 
+            document.getElementById(`q-exp-${qIndex}`).style.display = 'block'; 
+            
+            if(!textProgress[currentTextId]) textProgress[currentTextId] = { answered: {} };
+            textProgress[currentTextId].answered[qIndex] = true;
+            let t = allTexts.find(x => x.id === currentTextId);
+            if(Object.keys(textProgress[currentTextId].answered).length === t.questions.length) {
+                textProgress[currentTextId].completed = true;
+            }
+            localStorage.setItem('textProgress', JSON.stringify(textProgress));
+        }
+
         const sentenceQuestions = [
             { q: "1. The new manager's ___ approach to problem-solving significantly improved the team's efficiency.", options: ["innovative", "obsolete", "detrimental", "superficial"], correct: 0, explanation: "התשובה היא innovative (חדשני). הגישה של המנהל שיפרה את היעילות, לכן נדרשת מילה חיובית. obsolete = מיושן, detrimental = מזיק, superficial = שטחי." },
-            { q: "2. Despite the heavy rain, the football match proceeded as ___.", options: ["postponed", "scheduled", "canceled", "abandoned"], correct: 1, explanation: "התשובה היא scheduled (מתוכנן). המילה Despite מצביעה על ניגוד - למרות הגשם המשחק המשיך כמתוכנן." },
-            { q: "3. In order to ___ the spread of the virus, the government imposed a strict lockdown.", options: ["encourage", "proliferate", "mitigate", "exaggerate"], correct: 2, explanation: "התשובה היא mitigate (למתן / להפחית). הממשלה הטילה סגר כדי לעצור את התפשטות הוירוס." },
-            { q: "4. The artist's early works are quite ordinary, but his later masterpieces are truly ___.", options: ["mundane", "mediocre", "splendid", "inadequate"], correct: 2, explanation: "התשובה היא splendid (נהדר / מופלא). ניגוד למילה ordinary." },
-            { q: "5. Many ancient civilizations relied on agriculture, making water a highly ___ resource.", options: ["abundant", "superfluous", "irrelevant", "vital"], correct: 3, explanation: "התשובה היא vital (חיוני). תרבויות שהסתמכו על חקלאות היו חייבות מים." },
-            { q: "6. The suspect refused to answer the detective's questions, choosing to remain ___ throughout the interrogation.", options: ["silent", "eloquent", "vocal", "transparent"], correct: 0, explanation: "התשובה היא silent (שותק). סירב לענות, אז נשאר שותק." },
-            { q: "7. The company decided to ___ its operations overseas due to the high costs of local manufacturing.", options: ["abolish", "endorse", "relocate", "forbid"], correct: 2, explanation: "התשובה היא relocate (למקם מחדש). העבירו פעילות בגלל עלויות." },
-            { q: "8. Although the initial evidence seemed promising, further investigation proved it to be completely ___.", options: ["accurate", "erroneous", "definitive", "substantial"], correct: 1, explanation: "התשובה היא erroneous (שגוי). ניגוד לראיות מבטיחות." },
-            { q: "9. The sudden ___ in temperature ruined the crops that were just beginning to grow.", options: ["elevation", "sequence", "transition", "drop"], correct: 3, explanation: "התשובה היא drop (צניחה / ירידה). צניחת הטמפרטורות הרסה יבולים." },
-            { q: "10. Children often ___ the behavior of their parents without even realizing it.", options: ["despise", "condemn", "imitate", "conceal"], correct: 2, explanation: "התשובה היא imitate (לחקות). ילדים מחקים את הוריהם." },
-            { q: "11. Since the evidence was purely ___, the judge dismissed the case immediately.", options: ["conclusive", "circumstantial", "concrete", "empirical"], correct: 1, explanation: "התשובה היא circumstantial (נסיבתי). בגלל ראיות נסיבתיות התיק בוטל." },
-            { q: "12. Despite his immense wealth, the billionaire lived a surprisingly ___ lifestyle.", options: ["lavish", "arrogant", "prosperous", "frugal"], correct: 3, explanation: "התשובה היא frugal (חסכני). ניגוד לעושר אדיר." },
-            { q: "13. The detective noticed a glaring ___ in the suspect's testimony, which led to his arrest.", options: ["alignment", "consensus", "discrepancy", "justification"], correct: 2, explanation: "התשובה היא discrepancy (סתירה / אי-התאמה). סתירה בעדות." },
-            { q: "14. In an attempt to ___ the angry customer, the store manager offered a full refund.", options: ["appease", "aggravate", "provoke", "deceive"], correct: 0, explanation: "התשובה היא appease (לפייס). המנהל הציע החזר כדי לפייס את הלקוח." },
-            { q: "15. The new regulations are intended to ___ the amount of pollution emitted by local factories.", options: ["expand", "prolong", "curtail", "initiate"], correct: 2, explanation: "התשובה היא curtail (להפחית / לקצץ). התקנות נועדו להפחית זיהום." },
-            { q: "16. The professor's lecture was so ___ that many students found it difficult to stay awake.", options: ["captivating", "monotonous", "profound", "exhilarating"], correct: 1, explanation: "התשובה היא monotonous (מונוטוני). הרצאה משעממת, קשה להישאר ערים." },
-            { q: "17. The factory was forced to ___ operations due to a massive power outage.", options: ["accelerate", "commence", "expand", "suspend"], correct: 3, explanation: "התשובה היא suspend (להשעות). הפסיקו פעילות בגלל הפסקת חשמל." },
-            { q: "18. A good manager should always ___ tasks to their team members efficiently.", options: ["withhold", "delegate", "reject", "conceal"], correct: 1, explanation: "התשובה היא delegate (להאציל). מנהל צריך להאציל משימות." },
-            { q: "19. The witnesses provided ___ accounts of the accident, making it hard for the police to understand what happened.", options: ["identical", "equivalent", "contradictory", "coherent"], correct: 2, explanation: "התשובה היא contradictory (סותרים). עדויות סותרות הקשו על המשטרה." },
-            { q: "20. Due to the severe drought, the region's water supply has significantly ___.", options: ["surged", "multiplied", "expanded", "dwindled"], correct: 3, explanation: "התשובה היא dwindled (התמעט). אספקת המים התמעטה בגלל הבצורת." },
-            { q: "21. It is a common ___ that bats are blind; in fact, they can see quite well.", options: ["certainty", "misconception", "revelation", "phenomenon"], correct: 1, explanation: "התשובה היא misconception (תפיסה שגויה). דעה מוטעית שעטלפים עיוורים." },
-            { q: "22. The diplomat's ___ speech managed to inspire everyone in the room.", options: ["hostile", "ignorant", "eloquent", "mundane"], correct: 2, explanation: "התשובה היא eloquent (רהוט). נאום רהוט עורר השראה." },
-            { q: "23. The company was heavily fined for its ___ violation of safety regulations.", options: ["subtle", "flagrant", "cautious", "trivial"], correct: 1, explanation: "התשובה היא flagrant (בוטה). נקנסו על הפרה בוטה של התקנות." },
-            { q: "24. She showed great ___ in dealing with the difficult and rude customers.", options: ["arrogance", "hostility", "patience", "ignorance"], correct: 2, explanation: "התשובה היא patience (סבלנות). היא הפגינה סבלנות רבה." },
-            { q: "25. The ancient manuscript was so fragile that it had to be handled with extreme ___.", options: ["neglect", "force", "care", "haste"], correct: 2, explanation: "התשובה היא care (זהירות). מסמך שביר מצריך טיפול בזהירות." },
-            { q: "26. The ancient ruins were ___ by archaeologists after years of excavation.", options: ["concealed", "dismissed", "uncovered", "fabricated"], correct: 2, explanation: "התשובה היא uncovered (נחשפו). הארכיאולוגים חשפו את ההריסות." },
-            { q: "27. To ___ the problem of traffic congestion, the city is building a new subway line.", options: ["stimulate", "prolong", "aggravate", "alleviate"], correct: 3, explanation: "התשובה היא alleviate (להקל). בונים רכבת כדי להקל על עומסי התנועה." },
-            { q: "28. Animals that live in the desert have adapted to survive in a ___ environment.", options: ["lucrative", "harsh", "fertile", "mild"], correct: 1, explanation: "התשובה היא harsh (קשה / אכזרי). סביבה קשה במדבר." },
-            { q: "29. The politician's speech was so ___ that the audience didn't know what he actually meant.", options: ["articulate", "explicit", "ambiguous", "profound"], correct: 2, explanation: "התשובה היא ambiguous (דו-משמעי / עמום). נאום עמום שאי אפשר להבין." },
-            { q: "30. Scientists are trying to ___ the exact cause of the rare disease.", options: ["determine", "confuse", "distort", "obscure"], correct: 0, explanation: "התשובה היא determine (לקבוע). המדענים מנסים לקבוע את הסיבה." },
-            { q: "31. Due to the economic crisis, many businesses were forced to ___ their employees.", options: ["recruit", "promote", "commend", "dismiss"], correct: 3, explanation: "התשובה היא dismiss (לפטר). עסקים נאלצו לפטר עובדים." },
-            { q: "32. The museum's new exhibition will ___ paintings from the 19th century.", options: ["feature", "conceal", "prohibit", "omit"], correct: 0, explanation: "התשובה היא feature (להציג). התערוכה תציג ציורים." },
-            { q: "33. It is ___ to wear a helmet when riding a motorcycle to prevent head injuries.", options: ["optional", "superfluous", "compulsory", "trivial"], correct: 2, explanation: "התשובה היא compulsory (חובה). חובה לחבוש קסדה." },
-            { q: "34. The medicine is designed to ___ the pain within twenty minutes.", options: ["intensify", "sustain", "relieve", "provoke"], correct: 2, explanation: "התשובה היא relieve (להקל). התרופה נועדה להקל על הכאב." },
-            { q: "35. Her ___ to detail makes her an excellent editor for the publishing company.", options: ["indifference", "attention", "negligence", "resistance"], correct: 1, explanation: "התשובה היא attention (תשומת לב). תשומת לב לפרטים עושה אותה לעורכת מצוינת." },
-            { q: "36. The rebels tried to ___ the government by organizing a massive strike.", options: ["reinforce", "endorse", "uphold", "overthrow"], correct: 3, explanation: "התשובה היא overthrow (להפיל). המורדים ניסו להפיל את הממשלה." },
-            { q: "37. He made a ___ decision to change his career path after ten years in banking.", options: ["accidental", "deliberate", "hasty", "random"], correct: 1, explanation: "התשובה היא deliberate (שקול / מכוון). החלטה מחושבת ושקולה." },
-            { q: "38. The bridge collapsed because its foundation was not strong enough to ___ the weight of the trucks.", options: ["sustain", "alleviate", "demolish", "betray"], correct: 0, explanation: "התשובה היא sustain (לשאת / להחזיק). הגשר לא יכל לשאת את המשקל." },
-            { q: "39. Despite numerous warnings, the hiker ventured into the ___ territory alone.", options: ["secure", "domestic", "hazardous", "tame"], correct: 2, explanation: "התשובה היא hazardous (מסוכן). המטייל נכנס לשטח מסוכן." },
-            { q: "40. The sudden ___ of the disease took the local health authorities by surprise.", options: ["decline", "remedy", "outbreak", "suppression"], correct: 2, explanation: "התשובה היא outbreak (התפרצות). התפרצות המחלה הפתיעה את הרשויות." },
-            { q: "41. If you want to lose weight, you must ___ your intake of sugar and fats.", options: ["expand", "reduce", "maximize", "retain"], correct: 1, explanation: "התשובה היא reduce (להפחית). כדי לרדת במשקל צריך להפחית סוכר." },
-            { q: "42. The witness was asked to ___ the suspect from a lineup of five men.", options: ["disguise", "emulate", "liberate", "identify"], correct: 3, explanation: "התשובה היא identify (לזהות). העד התבקש לזהות את החשוד." },
-            { q: "43. Water is ___ for the survival of all known forms of life on Earth.", options: ["obsolete", "essential", "detrimental", "negligible"], correct: 1, explanation: "התשובה היא essential (חיוני). מים הם חיוניים לחיים." },
-            { q: "44. After a long period of drought, the recent rain was highly ___ for the crops.", options: ["beneficial", "destructive", "irrelevant", "scarce"], correct: 0, explanation: "התשובה היא beneficial (מועיל). אחרי בצורת, הגשם הועיל מאוד." },
-            { q: "45. The author's ___ style of writing makes his novels very easy and enjoyable to read.", options: ["awkward", "tedious", "fluent", "rigid"], correct: 2, explanation: "התשובה היא fluent (רהוט). סגנון הכתיבה הרהוט מקל על הקריאה." },
-            { q: "46. Because the document was highly confidential, its contents were not ___ to the public.", options: ["concealed", "retained", "suppressed", "disclosed"], correct: 3, explanation: "התשובה היא disclosed (נחשפו). המסמך סודי ולכן תוכנו לא נחשף." },
-            { q: "47. Some animals ___ during the winter to conserve energy when food is scarce.", options: ["hibernate", "migrate", "evolve", "flourish"], correct: 0, explanation: "התשובה היא hibernate (תרדמת חורף). חיות נכנסות לתרדמת כדי לחסוך אנרגיה." },
-            { q: "48. The two companies decided to ___ in order to dominate the global market.", options: ["divide", "compete", "merge", "collapse"], correct: 2, explanation: "התשובה היא merge (למזג). החברות התמזגו כדי לשלוט בשוק." },
-            { q: "49. Eating a balanced diet and exercising regularly can help ___ many chronic diseases.", options: ["induce", "prevent", "spread", "contract"], correct: 1, explanation: "התשובה היא prevent (למנוע). תזונה וספורט מונעים מחלות." },
-            { q: "50. The detective found a ___ piece of evidence that completely changed the direction of the investigation.", options: ["trivial", "crucial", "redundant", "vague"], correct: 1, explanation: "התשובה היא crucial (מכריע / קריטי). ראיה מכרעת שינתה את הכיוון." },
-            { q: "51. The factory has implemented new measures to ___ the amount of waste it produces.", options: ["generate", "minimize", "exaggerate", "distribute"], correct: 1, explanation: "התשובה היא minimize (למזער). המפעל מנסה למזער פסולת." },
-            { q: "52. In some cultures, it is considered ___ to point directly at someone.", options: ["courteous", "mandatory", "heroic", "impolite"], correct: 3, explanation: "התשובה היא impolite (לא מנומס). בחלק מהתרבויות לא מנומס להצביע." },
-            { q: "53. The committee will ___ next week to discuss the proposed changes to the law.", options: ["disperse", "convene", "resign", "surrender"], correct: 1, explanation: "התשובה היא convene (להתכנס). הוועדה תתכנס בשבוע הבא." },
-            { q: "54. Unfortunately, the peace negotiations proved ___ and the war continued.", options: ["productive", "lucrative", "futile", "permanent"], correct: 2, explanation: "התשובה היא futile (עקר / חסר תועלת). המשא ומתן היה חסר תועלת." },
-            { q: "55. She has a strong ___ to avoid eating anything that contains gluten.", options: ["tendency", "reluctance", "indifference", "empathy"], correct: 0, explanation: "התשובה היא tendency (נטייה). יש לה נטייה להימנע מגלוטן." },
-            { q: "56. The invention of the internet has completely ___ the way people communicate.", options: ["preserved", "hindered", "transformed", "isolated"], correct: 2, explanation: "התשובה היא transformed (שינה). האינטרנט שינה את צורת התקשורת." },
-            { q: "57. Heavy smoking is known to severely ___ lung function over time.", options: ["enhance", "stimulate", "impair", "restore"], correct: 2, explanation: "התשובה היא impair (לפגום / להחליש). עישון פוגם בריאות." },
-            { q: "58. In order to finish the project on time, we need to ___ our efforts.", options: ["abandon", "accelerate", "delay", "halt"], correct: 1, explanation: "התשובה היא accelerate (להאיץ). כדי לסיים צריך להאיץ את המאמצים." },
-            { q: "59. The athlete's ___ performance earned him a gold medal at the Olympics.", options: ["outstanding", "mediocre", "sluggish", "pathetic"], correct: 0, explanation: "התשובה היא outstanding (יוצא מן הכלל). ביצועים מצוינים הביאו לו זהב." },
-            { q: "60. Reading books is a great way to ___ your vocabulary and general knowledge.", options: ["deplete", "restrict", "enrich", "forfeit"], correct: 2, explanation: "התשובה היא enrich (להעשיר). קריאה מעשירה את אוצר המילים." },
-            { q: "61. The instructions were so ___ that everyone managed to assemble the furniture without any help.", options: ["ambiguous", "confusing", "explicit", "complicated"], correct: 2, explanation: "התשובה היא explicit (מפורשות / ברורות). ההוראות היו ברורות." },
-            { q: "62. The volcano is currently ___, but scientists warn it could erupt at any moment.", options: ["active", "extinct", "dormant", "volatile"], correct: 2, explanation: "התשובה היא dormant (רדום). הר הגעש רדום אבל עלול להתפרץ." },
-            { q: "63. Many birds ___ south for the winter to find warmer climates and food.", options: ["hibernate", "migrate", "adapt", "perish"], correct: 1, explanation: "התשובה היא migrate (לנדוד). ציפורים נודדות דרומה." },
-            { q: "64. The manager tried to ___ the conflict between the two employees before it escalated.", options: ["provoke", "resolve", "ignore", "intensify"], correct: 1, explanation: "התשובה היא resolve (לפתור). המנהל ניסה לפתור את הקונפליקט." },
-            { q: "65. The jury found the defendant ___ due to a lack of concrete evidence.", options: ["guilty", "responsible", "innocent", "liable"], correct: 2, explanation: "התשובה היא innocent (חף מפשע). זיכו אותו בגלל חוסר ראיות." },
-            { q: "66. He was so ___ in his book that he didn't hear the doorbell ring.", options: ["distracted", "detached", "absorbed", "annoyed"], correct: 2, explanation: "התשובה היא absorbed (שקוע). היה כל כך שקוע בספר שלא שמע את הפעמון." },
-            { q: "67. The government plans to ___ a new tax on luxury goods next year.", options: ["abolish", "evade", "repeal", "impose"], correct: 3, explanation: "התשובה היא impose (להטיל). הממשלה מטילה מס." },
-            { q: "68. Her sudden resignation caused a lot of ___ among her colleagues.", options: ["certainty", "speculation", "indifference", "consensus"], correct: 1, explanation: "התשובה היא speculation (השערות / ספקולציות). התפטרות גרמה להשערות." },
-            { q: "69. The old castle is a popular tourist ___ that draws thousands of visitors annually.", options: ["obstacle", "illusion", "attraction", "deterrent"], correct: 2, explanation: "התשובה היא attraction (אטרקציה). הטירה היא אטרקציה תיירותית." },
-            { q: "70. Regular maintenance is required to ensure the ___ of the machinery.", options: ["failure", "breakdown", "durability", "obsolescence"], correct: 2, explanation: "התשובה היא durability (עמידות). תחזוקה מבטיחה עמידות." }
+            { q: "2. Despite the heavy rain, the football match proceeded as ___.", options: ["postponed", "scheduled", "canceled", "abandoned"], correct: 1, explanation: "התשובה היא scheduled (מתוכנן). המילה Despite מצביעה על ניגוד - למרות הגשם, המשחק המשיך כמתוכנן. postponed = נדחה, abandoned = ננטש." },
+            { q: "3. In order to ___ the spread of the virus, the government imposed a strict lockdown.", options: ["encourage", "proliferate", "mitigate", "exaggerate"], correct: 2, explanation: "התשובה היא mitigate (למתן / להפחית). הממשלה הטילה סגר כדי לעצור את התפשטות הוירוס. proliferate = להתרבות, exaggerate = להגזים." },
+            { q: "4. The artist's early works are quite ordinary, but his later masterpieces are truly ___.", options: ["mundane", "mediocre", "splendid", "inadequate"], correct: 2, explanation: "התשובה היא splendid (נהדר / מופלא). מילת הקישור but מראה ניגוד למילה ordinary (רגיל/שגרתי), ולכן צריך מילה חיובית מאוד. mundane = יומיומי, mediocre = בינוני." },
+            { q: "5. Many ancient civilizations relied on agriculture, making water a highly ___ resource.", options: ["abundant", "superfluous", "irrelevant", "vital"], correct: 3, explanation: "התשובה היא vital (חיוני). תרבויות שהסתמכו על חקלאות היו חייבות מים. superfluous = מיותר, irrelevant = לא רלוונטי." },
+            { q: "6. The suspect refused to answer the detective's questions, choosing to remain ___ throughout the interrogation.", options: ["silent", "eloquent", "vocal", "transparent"], correct: 0, explanation: "התשובה היא silent (שותק). החשוד סירב לענות, ולכן בחר להישאר בשתיקה. eloquent = רהוט, vocal = קולני." },
+            { q: "7. The company decided to ___ its operations overseas due to the high costs of local manufacturing.", options: ["abolish", "endorse", "relocate", "forbid"], correct: 2, explanation: "התשובה היא relocate (למקם מחדש / להעביר). החברה העבירה פעילות לחו\"ל בגלל העלויות. abolish = לבטל, endorse = לאשר." },
+            { q: "8. Although the initial evidence seemed promising, further investigation proved it to be completely ___.", options: ["accurate", "erroneous", "definitive", "substantial"], correct: 1, explanation: "התשובה היא erroneous (שגוי). Although מצביע על ניגוד: הראיות נראו מבטיחות, אך התבררו כשגויות. accurate = מדויק." },
+            { q: "9. The sudden ___ in temperature ruined the crops that were just beginning to grow.", options: ["elevation", "sequence", "transition", "drop"], correct: 3, explanation: "התשובה היא drop (צניחה / ירידה). הירידה הפתאומית בטמפרטורה הרסה את היבולים. elevation = עלייה/הגבהה." },
+            { q: "10. Children often ___ the behavior of their parents without even realizing it.", options: ["despise", "condemn", "imitate", "conceal"], correct: 2, explanation: "התשובה היא imitate (לחקות). ילדים לעיתים קרובות מחקים את התנהגות הוריהם. despise = לתעב, condemn = לגנות." },
+            { q: "11. Since the evidence was purely ___, the judge dismissed the case immediately.", options: ["conclusive", "circumstantial", "concrete", "empirical"], correct: 1, explanation: "התשובה היא circumstantial (נסיבתי). הראיות היו נסיבתיות בלבד ולכן התיק בוטל. conclusive = החלטי/חותך, empirical = אמפירי/ניסויי." },
+            { q: "12. Despite his immense wealth, the billionaire lived a surprisingly ___ lifestyle.", options: ["lavish", "arrogant", "prosperous", "frugal"], correct: 3, explanation: "התשובה היא frugal (חסכני). המילה Despite דורשת ניגוד לעושר האדיר - כלומר חיים חסכניים. lavish = פזרני, פואר." },
+            { q: "13. The detective noticed a glaring ___ in the suspect's testimony, which led to his arrest.", options: ["alignment", "consensus", "discrepancy", "justification"], correct: 2, explanation: "התשובה היא discrepancy (סתירה / אי-התאמה). הבלש הבחין בסתירה בולטת שהובילה למעצר. consensus = הסכמה/קונצנזוס." },
+            { q: "14. In an attempt to ___ the angry customer, the store manager offered a full refund.", options: ["appease", "aggravate", "provoke", "deceive"], correct: 0, explanation: "התשובה היא appease (לפייס / להרגיע). המנהל הציע החזר כספי כדי לפייס את הלקוח. aggravate = להחמיר, provoke = להתגרות." },
+            { q: "15. The new regulations are intended to ___ the amount of pollution emitted by local factories.", options: ["expand", "prolong", "curtail", "initiate"], correct: 2, explanation: "התשובה היא curtail (להפחית / לקצץ). התקנות נועדו להפחית את הזיהום. prolong = להאריך, initiate = ליזום." },
+            { q: "16. The professor's lecture was so ___ that many students found it difficult to stay awake.", options: ["captivating", "monotonous", "profound", "exhilarating"], correct: 1, explanation: "התשובה היא monotonous (מונוטוני / משעמם). הסטודנטים התקשו להישאר ערים. captivating = מרתק, exhilarating = מלהיב." },
+            { q: "17. The factory was forced to ___ operations due to a massive power outage.", options: ["accelerate", "commence", "expand", "suspend"], correct: 3, explanation: "התשובה היא suspend (להשעות / להפסיק זמנית). המפעל נאלץ לעצור בגלל הפסקת החשמל. commence = להתחיל." },
+            { q: "18. A good manager should always ___ tasks to their team members efficiently.", options: ["withhold", "delegate", "reject", "conceal"], correct: 1, explanation: "התשובה היא delegate (להאציל סמכויות). מנהל טוב צריך להאציל משימות לצוות שלו ביעילות. withhold = לעכב/למנוע." },
+            { q: "19. The witnesses provided ___ accounts of the accident, making it hard for the police to understand what happened.", options: ["identical", "equivalent", "contradictory", "coherent"], correct: 2, explanation: "התשובה היא contradictory (סותרים). העדויות הסותרות הקשו על המשטרה להבין מה קרה. coherent = עקבי/הגיוני." },
+            { q: "20. Due to the severe drought, the region's water supply has significantly ___.", options: ["surged", "multiplied", "expanded", "dwindled"], correct: 3, explanation: "התשובה היא dwindled (התמעט / הידלדל). בגלל הבצורת, אספקת המים התמעטה משמעותית. surged = פרץ/עלה בחדות." },
+            { q: "21. It is a common ___ that bats are blind; in fact, they can see quite well.", options: ["certainty", "misconception", "revelation", "phenomenon"], correct: 1, explanation: "התשובה היא misconception (דעה מוטעית / תפיסה שגויה). זוהי דעה מוטעית נפוצה שעטלפים הם עיוורים. revelation = התגלות." },
+            { q: "22. The diplomat's ___ speech managed to inspire everyone in the room.", options: ["hostile", "ignorant", "eloquent", "mundane"], correct: 2, explanation: "התשובה היא eloquent (רהוט). הנאום הרהוט של הדיפלומט הצליח לעורר השראה בכולם. mundane = שגרתי/משעמם." },
+            { q: "23. The company was heavily fined for its ___ violation of safety regulations.", options: ["subtle", "flagrant", "cautious", "trivial"], correct: 1, explanation: "התשובה היא flagrant (בוטה / זועק). החברה נקנסה על הפרה בוטה של תקנות הבטיחות. trivial = שולי/זניח, subtle = מעודן." },
+            { q: "24. She showed great ___ in dealing with the difficult and rude customers.", options: ["arrogance", "hostility", "patience", "ignorance"], correct: 2, explanation: "התשובה היא patience (סבלנות). היא הפגינה סבלנות רבה בהתמודדות עם הלקוחות הקשים. arrogance = יהירות, hostility = עוינות." },
+            { q: "25. The ancient manuscript was so fragile that it had to be handled with extreme ___.", options: ["neglect", "force", "care", "haste"], correct: 2, explanation: "התשובה היא care (זהירות / אכפתיות). כתב היד היה שביר והיה צריך לטפל בו בזהירות. haste = חיפזון, neglect = הזנחה." },
+            { q: "26. The ancient ruins were ___ by archaeologists after years of excavation.", options: ["concealed", "dismissed", "uncovered", "fabricated"], correct: 2, explanation: "התשובה היא uncovered (נחשפו / התגלו). הארכיאולוגים חשפו את ההריסות העתיקות. concealed = הוסתרו, fabricated = זויפו/הומצאו." },
+            { q: "27. To ___ the problem of traffic congestion, the city is building a new subway line.", options: ["stimulate", "prolong", "aggravate", "alleviate"], correct: 3, explanation: "התשובה היא alleviate (להקל / לשכך). העירייה בונה רכבת תחתית כדי להקל על עומסי התנועה. aggravate = להחמיר, prolong = להאריך." },
+            { q: "28. Animals that live in the desert have adapted to survive in a ___ environment.", options: ["lucrative", "harsh", "fertile", "mild"], correct: 1, explanation: "התשובה היא harsh (קשה / אכזרי). חיות המדבר הסתגלו לסביבה קשה. lucrative = רווחי, fertile = פורה, mild = מתון/עדין." },
+            { q: "29. The politician's speech was so ___ that the audience didn't know what he actually meant.", options: ["articulate", "explicit", "ambiguous", "profound"], correct: 2, explanation: "התשובה היא ambiguous (דו-משמעי / עמום). הקהל לא הבין למה הוא התכוון כי הנאום היה עמום. articulate = רהוט, explicit = מפורש." },
+            { q: "30. Scientists are trying to ___ the exact cause of the rare disease.", options: ["determine", "confuse", "distort", "obscure"], correct: 0, explanation: "התשובה היא determine (לקבוע / להחליט). מדענים מנסים לקבוע מה הגורם למחלה. distort = לעוות, obscure = להסתיר/לטשטש." },
+            { q: "31. Due to the economic crisis, many businesses were forced to ___ their employees.", options: ["recruit", "promote", "commend", "dismiss"], correct: 3, explanation: "התשובה היא dismiss (לפטר / לשחרר). בגלל המשבר הכלכלי, עסקים נאלצו לפטר עובדים. recruit = לגייס, commend = לשבח." },
+            { q: "32. The museum's new exhibition will ___ paintings from the 19th century.", options: ["feature", "conceal", "prohibit", "omit"], correct: 0, explanation: "התשובה היא feature (להציג / לכלול). התערוכה תציג ציורים מהמאה ה-19. conceal = להסתיר, omit = להשמיט." },
+            { q: "33. It is ___ to wear a helmet when riding a motorcycle to prevent head injuries.", options: ["optional", "superfluous", "compulsory", "trivial"], correct: 2, explanation: "התשובה היא compulsory (חובה). חובה לחבוש קסדה כדי למנוע פציעות ראש. optional = בגדר רשות, superfluous = מיותר." },
+            { q: "34. The medicine is designed to ___ the pain within twenty minutes.", options: ["intensify", "sustain", "relieve", "provoke"], correct: 2, explanation: "התשובה היא relieve (להקל). התרופה נועדה להקל על הכאב תוך עשרים דקות. intensify = להעצים, provoke = לעורר/להתגרות." },
+            { q: "35. Her ___ to detail makes her an excellent editor for the publishing company.", options: ["indifference", "attention", "negligence", "resistance"], correct: 1, explanation: "התשובה היא attention (תשומת לב). תשומת הלב שלה לפרטים הופכת אותה לעורכת מצוינת. indifference = אדישות, negligence = רשלנות." },
+            { q: "36. The rebels tried to ___ the government by organizing a massive strike.", options: ["reinforce", "endorse", "uphold", "overthrow"], correct: 3, explanation: "התשובה היא overthrow (להפיל / להפוך). המורדים ניסו להפיל את הממשלה בעזרת שביתה. reinforce = לחזק, uphold = לתמוך/לקיים." },
+            { q: "37. He made a ___ decision to change his career path after ten years in banking.", options: ["accidental", "deliberate", "hasty", "random"], correct: 1, explanation: "התשובה היא deliberate (מכוון / שקול). הוא עשה החלטה מחושבת ומכוונת לשנות קריירה. hasty = פזיז, accidental = מקרי." },
+            { q: "38. The bridge collapsed because its foundation was not strong enough to ___ the weight of the trucks.", options: ["sustain", "alleviate", "demolish", "betray"], correct: 0, explanation: "התשובה היא sustain (לשאת / להחזיק מעמד). הגשר קרס כי היסודות לא יכלו לשאת את המשקל. demolish = להרוס, alleviate = להקל." },
+            { q: "39. Despite numerous warnings, the hiker ventured into the ___ territory alone.", options: ["secure", "domestic", "hazardous", "tame"], correct: 2, explanation: "התשובה היא hazardous (מסוכן). למרות האזהרות, המטייל נכנס לשטח מסוכן. secure = בטוח, domestic = ביתי/מקומי, tame = מאולף." },
+            { q: "40. The sudden ___ of the disease took the local health authorities by surprise.", options: ["decline", "remedy", "outbreak", "suppression"], correct: 2, explanation: "התשובה היא outbreak (התפרצות). ההתפרצות הפתאומית של המחלה הפתיעה את הרשויות. decline = ירידה, suppression = דיכוי." },
+            { q: "41. If you want to lose weight, you must ___ your intake of sugar and fats.", options: ["expand", "reduce", "maximize", "retain"], correct: 1, explanation: "התשובה היא reduce (להפחית). כדי לרדת במשקל, עליך להפחית צריכת סוכר. expand = להרחיב, retain = לשמור/להחזיק." },
+            { q: "42. The witness was asked to ___ the suspect from a lineup of five men.", options: ["disguise", "emulate", "liberate", "identify"], correct: 3, explanation: "התשובה היא identify (לזהות). העד התבקש לזהות את החשוד מתוך מסדר הזיהוי. disguise = להסוות, emulate = לחקות." },
+            { q: "43. Water is ___ for the survival of all known forms of life on Earth.", options: ["obsolete", "essential", "detrimental", "negligible"], correct: 1, explanation: "התשובה היא essential (חיוני). מים הם חיוניים להישרדות כל צורות החיים. obsolete = מיושן, negligible = זניח." },
+            { q: "44. After a long period of drought, the recent rain was highly ___ for the crops.", options: ["beneficial", "destructive", "irrelevant", "scarce"], correct: 0, explanation: "התשובה היא beneficial (מועיל / מטיב). אחרי בצורת, הגשם היה מועיל מאוד ליבולים. destructive = הרסני, scarce = נדיר/מועט." },
+            { q: "45. The author's ___ style of writing makes his novels very easy and enjoyable to read.", options: ["awkward", "tedious", "fluent", "rigid"], correct: 2, explanation: "התשובה היא fluent (רהוט / שוטף). סגנון הכתיבה השוטף הופך את ספריו לקלים לקריאה. tedious = מעייף/מייגע, rigid = נוקשה." },
+            { q: "46. Because the document was highly confidential, its contents were not ___ to the public.", options: ["concealed", "retained", "suppressed", "disclosed"], correct: 3, explanation: "התשובה היא disclosed (נחשפו / התגלו). כיוון שהמסמך היה סודי, תוכנו לא נחשף לציבור. concealed = הוסתרו, suppressed = דוכאו." },
+            { q: "47. Some animals ___ during the winter to conserve energy when food is scarce.", options: ["hibernate", "migrate", "evolve", "flourish"], correct: 0, explanation: "התשובה היא hibernate (לשנת חורף). חיות מסוימות נכנסות לשנת חורף כדי לחסוך באנרגיה. migrate = להגר/לנדוד, flourish = לשגשג." },
+            { q: "48. The two companies decided to ___ in order to dominate the global market.", options: ["divide", "compete", "merge", "collapse"], correct: 2, explanation: "התשובה היא merge (למזג / להתאחד). החברות החליטו להתמזג כדי לשלוט בשוק. divide = לחלק, compete = להתחרות." },
+            { q: "49. Eating a balanced diet and exercising regularly can help ___ many chronic diseases.", options: ["induce", "prevent", "spread", "contract"], correct: 1, explanation: "התשובה היא prevent (למנוע). תזונה ופעילות גופנית יכולות למנוע מחלות כרוניות. induce = לגרום/לייצר, contract = ללקות במחלה." },
+            { q: "50. The detective found a ___ piece of evidence that completely changed the direction of the investigation.", options: ["trivial", "crucial", "redundant", "vague"], correct: 1, explanation: "התשובה היא crucial (מכריע / קריטי). הבלש מצא ראיה קריטית ששינתה את החקירה. trivial = שולי, redundant = מיותר/עודף, vague = מעורפל." },
+            { q: "51. The factory has implemented new measures to ___ the amount of waste it produces.", options: ["generate", "minimize", "exaggerate", "distribute"], correct: 1, explanation: "התשובה היא minimize (למזער). המפעל יישם אמצעים חדשים למזער את הפסולת. generate = לייצר, distribute = לחלק/להפיץ." },
+            { q: "52. In some cultures, it is considered ___ to point directly at someone.", options: ["courteous", "mandatory", "heroic", "impolite"], correct: 3, explanation: "התשובה היא impolite (לא מנומס). בתרבויות מסוימות זה נחשב לא מנומס להצביע על מישהו. courteous = אדיב, mandatory = חובה." },
+            { q: "53. The committee will ___ next week to discuss the proposed changes to the law.", options: ["disperse", "convene", "resign", "surrender"], correct: 1, explanation: "התשובה היא convene (להתכנס). הוועדה תתכנס בשבוע הבא כדי לדון בשינויים. disperse = להתפזר, resign = להתפטר." },
+            { q: "54. Unfortunately, the peace negotiations proved ___ and the war continued.", options: ["productive", "lucrative", "futile", "permanent"], correct: 2, explanation: "התשובה היא futile (חסר תועלת / עקר). המשא ומתן היה חסר תועלת והמלחמה נמשכה. lucrative = רווחי, productive = פורה/יצרני." },
+            { q: "55. She has a strong ___ to avoid eating anything that contains gluten.", options: ["tendency", "reluctance", "indifference", "empathy"], correct: 0, explanation: "התשובה היא tendency (נטייה). יש לה נטייה חזקה להימנע מגלוטן. reluctance = חוסר רצון, indifference = אדישות." },
+            { q: "56. The invention of the internet has completely ___ the way people communicate.", options: ["preserved", "hindered", "transformed", "isolated"], correct: 2, explanation: "התשובה היא transformed (שינה צורה / הפך). האינטרנט שינה לחלוטין את הדרך בה אנו מתקשרים. hindered = עיכב/מנע, preserved = שימר." },
+            { q: "57. Heavy smoking is known to severely ___ lung function over time.", options: ["enhance", "stimulate", "impair", "restore"], correct: 2, explanation: "התשובה היא impair (לפגום / להחליש). עישון כבד פוגם בתפקודי הריאות. enhance = לשפר/להעצים, restore = לשקם." },
+            { q: "58. In order to finish the project on time, we need to ___ our efforts.", options: ["abandon", "accelerate", "delay", "halt"], correct: 1, explanation: "התשובה היא accelerate (להאיץ). כדי לסיים בזמן עלינו להאיץ את המאמצים שלנו. halt = לעצור, abandon = לנטוש." },
+            { q: "59. The athlete's ___ performance earned him a gold medal at the Olympics.", options: ["outstanding", "mediocre", "sluggish", "pathetic"], correct: 0, explanation: "התשובה היא outstanding (יוצא מן הכלל). הביצועים המצוינים שלו זיכו אותו במדליית זהב. sluggish = איטי/עצל, mediocre = בינוני." },
+            { q: "60. Reading books is a great way to ___ your vocabulary and general knowledge.", options: ["deplete", "restrict", "enrich", "forfeit"], correct: 2, explanation: "התשובה היא enrich (להעשיר). קריאה היא דרך מעולה להעשיר את אוצר המילים. deplete = לרוקן, forfeit = לוותר/להפסיד." },
+            { q: "61. The instructions were so ___ that everyone managed to assemble the furniture without any help.", options: ["ambiguous", "confusing", "explicit", "complicated"], correct: 2, explanation: "התשובה היא explicit (מפורש / ברור). ההוראות היו כל כך ברורות שכולם הצליחו להרכיב את הרהיט. ambiguous = דו-משמעי." },
+            { q: "62. The volcano is currently ___, but scientists warn it could erupt at any moment.", options: ["active", "extinct", "dormant", "volatile"], correct: 2, explanation: "התשובה היא dormant (רדום). הר הגעש כרגע רדום, אך עלול להתפרץ. extinct = נכחד/כבוי, volatile = נדיף/הפכפך." },
+            { q: "63. Many birds ___ south for the winter to find warmer climates and food.", options: ["hibernate", "migrate", "adapt", "perish"], correct: 1, explanation: "התשובה היא migrate (להגר / לנדוד). ציפורים רבות נודדות דרומה בחורף. perish = להיהרג/למות, hibernate = שנת חורף." },
+            { q: "64. The manager tried to ___ the conflict between the two employees before it escalated.", options: ["provoke", "resolve", "ignore", "intensify"], correct: 1, explanation: "התשובה היא resolve (לפתור / ליישב). המנהל ניסה לפתור את הסכסוך לפני שיחמיר. provoke = להתגרות, intensify = להעצים." },
+            { q: "65. The jury found the defendant ___ due to a lack of concrete evidence.", options: ["guilty", "responsible", "innocent", "liable"], correct: 2, explanation: "התשובה היא innocent (חף מפשע). חבר המושבעים מצא את הנאשם זכאי בגלל חוסר ראיות. guilty = אשם, liable = אחראי (משפטית)." },
+            { q: "66. He was so ___ in his book that he didn't hear the doorbell ring.", options: ["distracted", "detached", "absorbed", "annoyed"], correct: 2, explanation: "התשובה היא absorbed (שאוב / שקוע). הוא היה כל כך שקוע בספר שלא שמע את הפעמון. detached = מנותק, distracted = מוסח דעת." },
+            { q: "67. The government plans to ___ a new tax on luxury goods next year.", options: ["abolish", "evade", "repeal", "impose"], correct: 3, explanation: "התשובה היא impose (לכפות / להטיל). הממשלה מתכננת להטיל מס חדש על מוצרי יוקרה. abolish = לבטל, evade = להתחמק." },
+            { q: "68. Her sudden resignation caused a lot of ___ among her colleagues.", options: ["certainty", "speculation", "indifference", "consensus"], correct: 1, explanation: "התשובה היא speculation (השערה / ספקולציה). ההתפטרות שלה גרמה להרבה השערות. consensus = הסכמה רחבה, certainty = ודאות." },
+            { q: "69. The old castle is a popular tourist ___ that draws thousands of visitors annually.", options: ["obstacle", "illusion", "attraction", "deterrent"], correct: 2, explanation: "התשובה היא attraction (אטרקציה / מוקד משיכה). הטירה היא אטרקציה תיירותית פופולרית. deterrent = גורם מרתיע, obstacle = מכשול." },
+            { q: "70. Regular maintenance is required to ensure the ___ of the machinery.", options: ["failure", "breakdown", "durability", "obsolescence"], correct: 2, explanation: "התשובה היא durability (עמידות). תחזוקה שוטפת נדרשת כדי להבטיח את עמידות המכונות. obsolescence = התיישנות, breakdown = קריסה." }
         ];
         
         let currentSentenceIndex = 0;
@@ -2178,6 +2280,6 @@ function playNextDrivingWord() {
             currentSentenceIndex++;
             renderSentenceQuestions();
         }
-	</script>
+    </script>
 </body>
 </html>
