@@ -54,7 +54,15 @@
         .progress-bar-fill { height: 100%; background-color: #34c759; width: 0%; transition: width 0.5s ease-in-out; }
         .stats-text { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: #64748b;}
         .stat-known { color: #34c759; } .stat-learning { color: #ff3b30; } .stat-unseen { color: #94a3b8; }
-
+.chart-container { display: flex; align-items: flex-end; justify-content: space-between; height: 90px; margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border-color); gap: 4px; }
+        .chart-bar-wrapper { display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 5px; }
+        .chart-bar { width: 100%; max-width: 22px; background: var(--btn-primary); border-radius: 6px 6px 0 0; min-height: 4px; transition: height 0.5s ease; opacity: 0.6; }
+        .chart-bar.today { opacity: 1; background: #34c759; }
+        body.dark-mode .chart-bar { opacity: 0.8; }
+        body.dark-mode .chart-bar.today { background: #34c759; box-shadow: 0 0 10px rgba(52, 199, 89, 0.4); }
+        .chart-label { font-size: 11px; color: #64748b; font-weight: 600; }
+        body.dark-mode .chart-label { color: #94a3b8; }
+        .chart-val { font-size: 11px; color: var(--text-color); font-weight: 800; margin-bottom: -2px;}
         .app-screen { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; }
 
         .controls-panel { width: 100%; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
@@ -282,6 +290,7 @@
             <div class="streak" id="streakDisplay"><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2"><path d="M17.657 14.832c0 2.871-2.42 5.168-5.657 5.168-3.237 0-5.657-2.297-5.657-5.168 0-2.41 1.76-4.524 4.026-5.048-.68 1.48-.124 2.83.63 3.655.087-.96.657-2.203 1.95-3.327 1.848-1.606 2.37-3.953 2.062-6.112 3.037 2.274 4.613 5.485 4.613 8.214a1.002 1.002 0 0 1-.005.105c-.015-.436-.184-1.078-.616-1.895 1.09 1.155 1.654 2.716 1.654 4.408z"/></svg> רצף: 0</div>
             <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
             <div class="stats-text"><span id="statsKnown" class="stat-known">יודע: 0</span><span id="statsLearning" class="stat-learning">ללמידה: 0</span><span id="statsUnseen" class="stat-unseen">טרם מוין: 0</span></div>
+			<div class="chart-container" id="weeklyChart"></div>
         </div>
 <div class="controls-panel">
             <div class="search-container">
@@ -588,6 +597,33 @@
             relevantWords.forEach(w => { let st = (userProgress[w.en] && userProgress[w.en].status) ? userProgress[w.en].status : 'unseen'; if(st === 'known') knownCount++; if(st === 'learning') learningCount++; });
             let unseenCount = relevantWords.length - knownCount - learningCount; let percentage = relevantWords.length > 0 ? (knownCount / relevantWords.length) * 100 : 0;
             document.getElementById('statsKnown').innerText = `יודע: ${knownCount}`; document.getElementById('statsLearning').innerText = `ללמידה: ${learningCount}`; document.getElementById('statsUnseen').innerText = `טרם מוין: ${unseenCount}`; document.getElementById('progressFill').style.width = percentage + '%'; document.getElementById('streakDisplay').innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2"><path d="M17.657 14.832c0 2.871-2.42 5.168-5.657 5.168-3.237 0-5.657-2.297-5.657-5.168 0-2.41 1.76-4.524 4.026-5.048-.68 1.48-.124 2.83.63 3.655.087-.96.657-2.203 1.95-3.327 1.848-1.606 2.37-3.953 2.062-6.112 3.037 2.274 4.613 5.485 4.613 8.214a1.002 1.002 0 0 1-.005.105c-.015-.436-.184-1.078-.616-1.895 1.09 1.155 1.654 2.716 1.654 4.408z"/></svg> רצף: ${streak}`;
+			renderChart();
+        }
+		function renderChart() {
+            let chartDiv = document.getElementById('weeklyChart');
+            if(!chartDiv) return;
+            let dailyStats = JSON.parse(localStorage.getItem('dailyStats')) || {};
+            let html = ''; let maxVal = 1; let today = new Date(); let days = [];
+            
+            for(let i=6; i>=0; i--) {
+                let d = new Date(today); d.setDate(today.getDate() - i);
+                let dateStr = d.toISOString().split('T')[0];
+                let dayName = d.toLocaleDateString('he-IL', {weekday: 'short'});
+                let val = dailyStats[dateStr] || 0;
+                if(val > maxVal) maxVal = val;
+                days.push({dateStr, dayName, val, isToday: i===0});
+            }
+            
+            days.forEach(d => {
+                let heightPct = Math.max((d.val / maxVal) * 100, 5); 
+                let barClass = d.isToday ? 'chart-bar today' : 'chart-bar';
+                html += `<div class="chart-bar-wrapper">
+                            <span class="chart-val">${d.val > 0 ? d.val : ''}</span>
+                            <div class="${barClass}" style="height: ${heightPct}%;"></div>
+                            <span class="chart-label">${d.dayName}</span>
+                         </div>`;
+            });
+            chartDiv.innerHTML = html;
         }
 
         function applyFilters() {
@@ -636,7 +672,13 @@
        function markWord(newStatus) {
             if(currentList.length === 0) return; let wordEn = currentList[currentIndex].en;
             if(!userProgress[wordEn]) userProgress[wordEn] = { status: 'unseen', fails: 0, reviewLevel: 0, nextReview: 0 };
-            
+            let todayStr = new Date().toISOString().split('T')[0];
+            if(newStatus === 'known' && userProgress[wordEn].status !== 'known') {
+                let dailyStats = JSON.parse(localStorage.getItem('dailyStats')) || {};
+                dailyStats[todayStr] = (dailyStats[todayStr] || 0) + 1;
+                localStorage.setItem('dailyStats', JSON.stringify(dailyStats));
+            }
+			
             userProgress[wordEn].status = newStatus;
 			if(newStatus === 'known') userProgress[wordEn].inStack = false;
             let now = Date.now();
