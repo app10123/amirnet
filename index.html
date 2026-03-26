@@ -91,6 +91,8 @@
 
         #flashcard-section { width: 100%; display: flex; flex-direction: column; align-items: center; }
         .card-container { width: 100%; height: 380px; perspective: 1000px; margin-bottom: 25px; }
+		.card-container.dragging { transition: none !important; cursor: grabbing; }
+        .card-container.animating { transition: transform 0.25s ease-out, opacity 0.25s ease-out !important; }
         .card { width: 100%; height: 100%; position: relative; transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1); transform-style: preserve-3d; cursor: pointer; }
         .card.is-flipped { transform: rotateY(180deg); }
         .card-face { width: 100%; height: 100%; position: absolute; top: 0; left: 0; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border-radius: 28px; box-shadow: var(--shadow); padding: 30px 20px; box-sizing: border-box; text-align: center; border: 2px solid var(--border-color); }
@@ -325,7 +327,7 @@
             <div class="tab-btn" id="tab-list" onclick="switchMode('list')"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line></svg> רשימה</div>
         </div>
 		<div id="flashcard-section">
-            <div class="card-container" onclick="flipCard()">
+		<div class="card-container" id="swipeCardContainer">
                 <div class="card" id="flashcard">
                     <div class="card-face card-front">
                         <div class="badges"><div class="badge" id="badgeLevel" style="background:#5856d6;">Level</div><div class="badge" id="badgeUnit" style="background:#8e8e93;">Unit</div></div>
@@ -468,6 +470,7 @@
 
       async function initApp() {
             if(isDarkMode) document.body.classList.add('dark-mode');
+			initSwipe();
             // --- מנגנון שאיבת המילים מהשרת של גיטהאב ---
             if (!localStorage.getItem('isFirstLoadComplete_V2')) {
                 try {
@@ -731,6 +734,12 @@ function updateStatsUI() {
         function generateAIContent(word) { return { assoc: `נסה לחשוב על חרוז או מילה שדומה ל-"${word}"... (לחץ ערוך ✏️ להוספה)`, sentence: `It is highly recommended to learn the word ${word} for the exam.|מומלץ מאוד ללמוד את המילה ${word} למבחן.` }; }
 
         function updateCard() {
+		let swipeCard = document.getElementById('swipeCardContainer');
+            if(swipeCard) {
+                swipeCard.classList.remove('animating');
+                swipeCard.style.transform = 'translateX(0px) rotate(0deg)';
+                swipeCard.style.opacity = '1';
+            }
             if (currentList.length === 0) { document.getElementById('wordFront').innerText = "אין מילים"; document.getElementById('wordTranslationDrive').style.display = 'none'; document.querySelector('.hint-container').style.display = 'none'; return; }
             document.querySelector('.hint-container').style.display = 'flex';
             let w = currentList[currentIndex]; let wordStatus = (userProgress[w.en] && userProgress[w.en].status) ? userProgress[w.en].status : 'unseen'; let displayHe = editedTranslations[w.en] || w.he;
@@ -753,6 +762,91 @@ function updateStatsUI() {
         }
 
         function flipCard() { if (currentList.length > 0 && !isDrivingMode) document.getElementById('flashcard').classList.toggle('is-flipped'); }
+		// --- מערכת החלקות (הפוך לעברית: שמאלה=יודע, ימינה=לא יודע) ---
+        let touchStartX = 0;
+        let isDraggingCard = false;
+
+        function initSwipe() {
+            let swipeCard = document.getElementById('swipeCardContainer');
+            if(!swipeCard) return;
+
+            // תמיכה במסכי מגע (טלפון)
+            swipeCard.addEventListener('touchstart', e => {
+                if(isDrivingMode || currentList.length === 0 || e.target.closest('.hint-container')) return;
+                touchStartX = e.changedTouches[0].screenX;
+                isDraggingCard = true;
+                swipeCard.classList.add('dragging');
+                swipeCard.classList.remove('animating');
+            }, {passive: true});
+
+            swipeCard.addEventListener('touchmove', e => {
+                if (!isDraggingCard) return;
+                let currentX = e.changedTouches[0].screenX;
+                let diffX = currentX - touchStartX;
+                let rotate = diffX * 0.05; 
+                swipeCard.style.transform = `translateX(${diffX}px) rotate(${rotate}deg)`;
+            }, {passive: true});
+
+            swipeCard.addEventListener('touchend', e => {
+                if(!isDraggingCard) return;
+                isDraggingCard = false;
+                let touchEndX = e.changedTouches[0].screenX;
+                let diffX = touchEndX - touchStartX;
+
+                swipeCard.classList.remove('dragging');
+                swipeCard.classList.add('animating');
+
+                if (diffX < -90) { // שמאלה - יודע!
+                    swipeCard.style.transform = `translateX(-150%) rotate(-20deg)`;
+                    swipeCard.style.opacity = '0';
+                    setTimeout(() => { markWord('known'); }, 250);
+                } else if (diffX > 90) { // ימינה - לא יודע!
+                    swipeCard.style.transform = `translateX(150%) rotate(20deg)`;
+                    swipeCard.style.opacity = '0';
+                    setTimeout(() => { markWord('learning'); }, 250);
+                } else { // משיכה קצרה - חזרה למרכז
+                    swipeCard.style.transform = `translateX(0px) rotate(0deg)`;
+                    swipeCard.style.opacity = '1';
+                    if (Math.abs(diffX) < 10) flipCard(); // קליק קצר = היפוך כרטיסיה
+                }
+            });
+            
+            // תמיכה בעכבר (למחשב)
+            swipeCard.addEventListener('mousedown', e => {
+                if(isDrivingMode || currentList.length === 0 || e.target.closest('.hint-container')) return;
+                touchStartX = e.clientX;
+                isDraggingCard = true;
+                swipeCard.classList.add('dragging');
+                swipeCard.classList.remove('animating');
+            });
+            window.addEventListener('mousemove', e => {
+                if (!isDraggingCard) return;
+                let diffX = e.clientX - touchStartX;
+                let rotate = diffX * 0.05; 
+                swipeCard.style.transform = `translateX(${diffX}px) rotate(${rotate}deg)`;
+            });
+            window.addEventListener('mouseup', e => {
+                if(!isDraggingCard) return;
+                isDraggingCard = false;
+                let diffX = e.clientX - touchStartX;
+                swipeCard.classList.remove('dragging');
+                swipeCard.classList.add('animating');
+                
+                if (diffX < -90) { // שמאלה - יודע
+                    swipeCard.style.transform = `translateX(-150%) rotate(-20deg)`;
+                    swipeCard.style.opacity = '0';
+                    setTimeout(() => { markWord('known'); }, 250);
+                } else if (diffX > 90) { // ימינה - לא יודע
+                    swipeCard.style.transform = `translateX(150%) rotate(20deg)`;
+                    swipeCard.style.opacity = '0';
+                    setTimeout(() => { markWord('learning'); }, 250);
+                } else {
+                    swipeCard.style.transform = `translateX(0px) rotate(0deg)`;
+                    swipeCard.style.opacity = '1';
+                    if (Math.abs(diffX) < 10) flipCard();
+                }
+            });
+        }
         function editTranslation(event) { event.stopPropagation(); if(currentList.length === 0) return; let w = currentList[currentIndex]; let currentDisplay = editedTranslations[w.en] || w.he; let newHe = prompt(`ערוך פירוש עבור: ${w.en}`, currentDisplay); if(newHe !== null && newHe.trim() !== "") { editedTranslations[w.en] = newHe.trim(); saveProgress(); updateCard(); } }
         function toggleAssoc(event) { if(event) event.stopPropagation(); let textElem = document.getElementById('assocText'); if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } let w = currentList[currentIndex]; textElem.innerText = customAssocs[w.en] || generateAIContent(w.en).assoc; textElem.style.display = 'block'; document.getElementById('sentenceText').style.display = 'none'; }
         function openAssocModal() { let w = currentList[currentIndex].en; document.getElementById('assocWordTitle').innerText = w; document.getElementById('assocInput').value = customAssocs[w] || ""; document.getElementById('assocModal').style.display = 'flex'; }
