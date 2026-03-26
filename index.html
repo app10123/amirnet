@@ -760,9 +760,13 @@ function updateStatsUI() {
             
             let card = document.getElementById('flashcard'); if (card.classList.contains('is-flipped')) card.classList.remove('is-flipped');
         }
-		function flipCard() { if (currentList.length > 0 && !isDrivingMode) document.getElementById('flashcard').classList.toggle('is-flipped'); }
+		function flipCard() { 
+            if (currentList.length > 0 && !isDrivingMode) {
+                document.getElementById('flashcard').classList.toggle('is-flipped'); 
+            }
+        }
         
-        // --- מערכת החלקות מותאמת לאייפון (שמאלה=יודע, ימינה=לא יודע) ---
+        // --- מערכת החלקות מותאמת לאייפון ולכפתורי עריכה ---
         let touchStartX = 0;
         let isDraggingCard = false;
         let isSwiping = false; 
@@ -771,25 +775,23 @@ function updateStatsUI() {
             let swipeCard = document.getElementById('swipeCardContainer');
             if(!swipeCard) return;
 
-            // מאזין קליק מובנה - מבטיח שהלחיצה תעבוד באייפון תמיד!
+            // פונקציה לבדיקה אם לחצנו על כפתור או אזור עריכה
+            const isInteractive = (el) => {
+                return el.closest('.hint-container') || el.closest('.edit-icon') || el.closest('.hint-edit') || el.closest('.badges');
+            };
+
+            // מאזין קליק לאייפון - מבחין בין לחיצה להחלקה
             swipeCard.addEventListener('click', e => {
-                let targetEl = e.target.nodeType === 3 ? e.target.parentNode : e.target;
-                if(isDrivingMode || currentList.length === 0 || (targetEl.closest && targetEl.closest('.hint-container'))) return;
-                
-                // אם לא בוצעה החלקה, סימן שזו נגיעה קצרה (קליק) -> אז תהפוך את הכרטיסייה
-                if (!isSwiping) {
-                    flipCard();
-                }
+                if(isDrivingMode || currentList.length === 0 || isInteractive(e.target)) return;
+                if (!isSwiping) flipCard();
             });
 
             // --- תמיכה במסכי מגע (טלפון) ---
             swipeCard.addEventListener('touchstart', e => {
-                let targetEl = e.target.nodeType === 3 ? e.target.parentNode : e.target;
-                if(isDrivingMode || currentList.length === 0 || (targetEl.closest && targetEl.closest('.hint-container'))) return;
-                
+                if(isDrivingMode || currentList.length === 0 || isInteractive(e.target)) return;
                 touchStartX = e.changedTouches[0].clientX;
                 isDraggingCard = true;
-                isSwiping = false; // איפוס המצב
+                isSwiping = false; 
                 swipeCard.classList.add('dragging');
                 swipeCard.classList.remove('animating');
             }, {passive: true});
@@ -798,12 +800,7 @@ function updateStatsUI() {
                 if (!isDraggingCard) return;
                 let currentX = e.changedTouches[0].clientX;
                 let diffX = currentX - touchStartX;
-                
-                // מספיק תזוזה קטנה (15 פיקסלים) כדי להבין שזו החלקה ולא קליק
-                if (Math.abs(diffX) > 15) {
-                    isSwiping = true; 
-                }
-                
+                if (Math.abs(diffX) > 15) isSwiping = true; 
                 let rotate = diffX * 0.05; 
                 swipeCard.style.transform = `translateX(${diffX}px) rotate(${rotate}deg)`;
             }, {passive: true});
@@ -812,7 +809,6 @@ function updateStatsUI() {
                 if(!isDraggingCard) return;
                 isDraggingCard = false;
                 let diffX = e.changedTouches[0].clientX - touchStartX;
-
                 swipeCard.classList.remove('dragging');
                 swipeCard.classList.add('animating');
 
@@ -821,14 +817,13 @@ function updateStatsUI() {
                         swipeCard.style.transform = `translateX(-150%) rotate(-20deg)`;
                         swipeCard.style.opacity = '0';
                         setTimeout(() => { markWord('known'); }, 250);
-                    } else if (diffX > 70) { // ימינה - לא יודע
+                    } else if (diffX > 70) { // ימינה - ללמידה
                         swipeCard.style.transform = `translateX(150%) rotate(20deg)`;
                         swipeCard.style.opacity = '0';
                         setTimeout(() => { markWord('learning'); }, 250);
-                    } else { // משך קצת והתחרט - חזרה למרכז
+                    } else { 
                         swipeCard.style.transform = `translateX(0px) rotate(0deg)`;
                         swipeCard.style.opacity = '1';
-                        // מחזירים למצב שאפשר להקליק אחרי חצי שנייה
                         setTimeout(() => { isSwiping = false; }, 50);
                     }
                 } else {
@@ -837,10 +832,9 @@ function updateStatsUI() {
                 }
             });
             
-            // --- תמיכה בעכבר (למחשב) ---
+            // --- תמיכה בעכבר (מחשב) ---
             swipeCard.addEventListener('mousedown', e => {
-                let targetEl = e.target.nodeType === 3 ? e.target.parentNode : e.target;
-                if(isDrivingMode || currentList.length === 0 || (targetEl.closest && targetEl.closest('.hint-container'))) return;
+                if(isDrivingMode || currentList.length === 0 || isInteractive(e.target)) return;
                 touchStartX = e.clientX;
                 isDraggingCard = true;
                 isSwiping = false;
@@ -851,16 +845,14 @@ function updateStatsUI() {
                 if (!isDraggingCard) return;
                 let diffX = e.clientX - touchStartX;
                 if (Math.abs(diffX) > 15) isSwiping = true; 
-                let rotate = diffX * 0.05; 
-                swipeCard.style.transform = `translateX(${diffX}px) rotate(${rotate}deg)`;
+                swipeCard.style.transform = `translateX(${diffX}px) rotate(${diffX * 0.05}deg)`;
             });
-			window.addEventListener('mouseup', e => {
+            window.addEventListener('mouseup', e => {
                 if(!isDraggingCard) return;
                 isDraggingCard = false;
                 let diffX = e.clientX - touchStartX;
                 swipeCard.classList.remove('dragging');
                 swipeCard.classList.add('animating');
-                
                 if (isSwiping) {
                     if (diffX < -70) { markWord('known'); } 
                     else if (diffX > 70) { markWord('learning'); }
@@ -876,10 +868,90 @@ function updateStatsUI() {
             });
         }
 
-        // --- הפונקציה שמחזירה את הרמקול לחיים ---
+        function editTranslation(event) { 
+            if(event) event.stopPropagation(); 
+            if(currentList.length === 0) return; 
+            let w = currentList[currentIndex]; 
+            let currentDisplay = editedTranslations[w.en] || w.he; 
+            let newHe = prompt(`ערוך פירוש עבור: ${w.en}`, currentDisplay); 
+            if(newHe !== null && newHe.trim() !== "") { 
+                editedTranslations[w.en] = newHe.trim(); 
+                saveProgress(); 
+                updateCard(); 
+            } 
+        }
+
+        function toggleAssoc(event) { 
+            if(event) event.stopPropagation(); 
+            let textElem = document.getElementById('assocText'); 
+            if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
+            let w = currentList[currentIndex]; 
+            textElem.innerText = customAssocs[w.en] || generateAIContent(w.en).assoc; 
+            textElem.style.display = 'block'; 
+            document.getElementById('sentenceText').style.display = 'none'; 
+        }
+
+        function openAssocModal() { 
+            let w = currentList[currentIndex].en; 
+            document.getElementById('assocWordTitle').innerText = w; 
+            document.getElementById('assocInput').value = customAssocs[w] || ""; 
+            document.getElementById('assocModal').style.display = 'flex'; 
+        }
+
+        function closeAssocModal() { document.getElementById('assocModal').style.display = 'none'; }
+
+        function saveCustomAssoc() { 
+            let w = currentList[currentIndex].en; 
+            let newAssoc = document.getElementById('assocInput').value.trim(); 
+            customAssocs[w] = newAssoc; 
+            saveProgress(); 
+            closeAssocModal(); 
+            document.getElementById('assocText').innerText = newAssoc; 
+            document.getElementById('assocText').style.display = 'block'; 
+            document.getElementById('sentenceText').style.display = 'none'; 
+        }
+
+        function toggleSentence(event) { 
+            if(event) event.stopPropagation(); 
+            let textElem = document.getElementById('sentenceText'); 
+            if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
+            let w = currentList[currentIndex]; 
+            let parts = (customSentences[w.en] || generateAIContent(w.en).sentence).split('|'); 
+            let htmlContent = highlightWordInSentence(parts[0], w.en); 
+            if(parts.length > 1 && parts[1].trim() !== "") htmlContent += `<span class="sentence-he">${parts[1]}</span>`; 
+            textElem.innerHTML = htmlContent; 
+            textElem.style.display = 'block'; 
+            document.getElementById('assocText').style.display = 'none'; 
+        }
+
+        function openSentenceModal() { 
+            let w = currentList[currentIndex].en; 
+            let parts = (customSentences[w] || "").split('|'); 
+            document.getElementById('sentenceWordTitle').innerText = w; 
+            document.getElementById('sentenceInput').value = parts[0] || ""; 
+            document.getElementById('sentenceHeInput').value = parts[1] || ""; 
+            document.getElementById('sentenceModal').style.display = 'flex'; 
+        }
+
+        function closeSentenceModal() { document.getElementById('sentenceModal').style.display = 'none'; }
+
+        function saveCustomSentence() { 
+            let w = currentList[currentIndex].en; 
+            let enPart = document.getElementById('sentenceInput').value.trim(); 
+            let hePart = document.getElementById('sentenceHeInput').value.trim(); 
+            if(enPart !== "") { 
+                customSentences[w] = hePart !== "" ? `${enPart}|${hePart}` : enPart; 
+                saveProgress(); 
+                closeSentenceModal(); 
+                toggleSentence(); 
+            } else { 
+                alert("חובה להכניס משפט באנגלית!"); 
+            } 
+        }
+
         function speakWord() { 
             if (currentList.length === 0) return; 
-            window.speechSynthesis.cancel(); // ניקוי חובה לאייפון
+            window.speechSynthesis.cancel();
             let msg = new SpeechSynthesisUtterance(currentList[currentIndex].en); 
             msg.lang = 'en-US'; 
             msg.rate = 0.8;
