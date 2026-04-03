@@ -880,74 +880,17 @@ function updateStatsUI() {
                 updateCard(); 
             } 
         }
-// שים כאן את המפתח שהעתקת מגוגל (AIzaSyB6uQ-1nXQF2i3qkd0nssVNfrfPJC4VQoo)
-async function toggleAssoc(event) { 
+
+        function toggleAssoc(event) { 
             if(event) event.stopPropagation(); 
             let textElem = document.getElementById('assocText'); 
-            
-            if (textElem.style.display === 'block') { 
-                textElem.style.display = 'none'; 
-                return; 
-            } 
-            
+            if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
             let w = currentList[currentIndex]; 
-            let displayHe = editedTranslations[w.en] || w.he;
-
-            if (customAssocs[w.en]) {
-                textElem.innerText = customAssocs[w.en]; 
-                textElem.style.display = 'block'; 
-                document.getElementById('sentenceText').style.display = 'none'; 
-                return;
-            }
-
-            textElem.innerHTML = "ה-AI חושב על אסוציאציה... 🤖💭<br><small>זה ייקח שניה</small>"; 
+            textElem.innerText = customAssocs[w.en] || generateAIContent(w.en).assoc; 
             textElem.style.display = 'block'; 
             document.getElementById('sentenceText').style.display = 'none'; 
-
-            try {
-                let aiResponse = await fetchAIAssociation(w.en, displayHe);
-                textElem.innerHTML = aiResponse + `<br><small style="color:#94a3b8; margin-top:8px; display:block;">(נוצר ע"י AI - לחץ ערוך כדי לשמור ולשנות)</small>`; 
-                document.getElementById('assocInput').value = aiResponse; 
-            } catch(e) {
-                // עכשיו הקוד יציג לנו את השגיאה האמיתית!
-                textElem.innerHTML = "<b>שגיאה מגוגל:</b><br><small style='color:red;'>" + e.message + "</small><br>בדוק את מפתח ה-API שלך.";
-            }
         }
 
-async function fetchAIAssociation(wordEn, wordHe) {
-            // הנה המפתח החדש מהפרויקט החדש (שים אותו כאן במקום הטקסט בעברית)
-            const GEMINI_API_KEY = "AIzaSyDMhVF9yg5BcyzDZ9VcvWslFCq105pKQF8";
-            
-            // השילוב הרשמי והיציב ביותר: v1 עם gemini-1.5-flash
-            const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
-            
-            const prompt = `אני לומד למבחן באנגלית. תן לי אסוציאציה אחת קצרה, קליטה וטובה בעברית שתעזור לי לזכור שהמילה האנגלית "${wordEn}" פירושה "${wordHe}". 
-            האסוציאציה יכולה להיות משפט קצר, ביטוי, או אפילו מילה אחת בעברית שנשמעת דומה למילה האנגלית ומזכירה את הפירוש. 
-            אל תוסיף הקדמות או הסברים – החזר אך ורק את האסוציאציה עצמה.`;
-
-            const response = await fetch(url, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }],
-                    safetySettings: [
-                        { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-                        { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
-                        { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
-                        { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
-                    ]
-                })
-            });
-
-            if(!response.ok) {
-                const errData = await response.json();
-                // אם גם זה נכשל, נראה בדיוק למה
-                throw new Error(errData.error ? errData.error.message : "API Error");
-            }
-            
-            const data = await response.json();
-            return data.candidates[0].content.parts[0].text.trim();
-        }
         function openAssocModal() { 
             let w = currentList[currentIndex].en; 
             document.getElementById('assocWordTitle').innerText = w; 
