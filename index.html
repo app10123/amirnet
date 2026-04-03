@@ -915,16 +915,15 @@ async function toggleAssoc(event) {
         }
 
 async function fetchAIAssociation(wordEn, wordHe) {
-            // הנה המפתח החדש שיצרת (תחליף את המילים למטה במפתח החדש)
-            const GEMINI_API_KEY = "AIzaSyBNMZDJIDGCiwMGIlSh-e7xt-0J-LmfW-s";
+            // הנה המפתח החדש מהפרויקט החדש (שים אותו כאן במקום הטקסט בעברית)
+            const GEMINI_API_KEY = "AIzaSyDMhVF9yg5BcyzDZ9VcvWslFCq105pKQF8";
             
-            // השילוב שעובד הכי טוב ב-2026: v1beta עם gemini-1.5-flash
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+            // השילוב הרשמי והיציב ביותר: v1 עם gemini-1.5-flash
+            const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
             
             const prompt = `אני לומד למבחן באנגלית. תן לי אסוציאציה אחת קצרה, קליטה וטובה בעברית שתעזור לי לזכור שהמילה האנגלית "${wordEn}" פירושה "${wordHe}". 
             האסוציאציה יכולה להיות משפט קצר, ביטוי, או אפילו מילה אחת בעברית שנשמעת דומה למילה האנגלית ומזכירה את הפירוש. 
-            השתמש בצליל של המילה האנגלית (איך שהיא נשמעת) או בהיגיון פשוט כדי ליצור את הקישור. 
-            אל תוסיף הקדמות, מרכאות או הסברים – החזר אך ורק את האסוציאציה עצמה.`;
+            אל תוסיף הקדמות או הסברים – החזר אך ורק את האסוציאציה עצמה.`;
 
             const response = await fetch(url, {
                 method: "POST",
@@ -942,15 +941,11 @@ async function fetchAIAssociation(wordEn, wordHe) {
 
             if(!response.ok) {
                 const errData = await response.json();
-                throw new Error(errData.error ? errData.error.message : "שגיאת API");
+                // אם גם זה נכשל, נראה בדיוק למה
+                throw new Error(errData.error ? errData.error.message : "API Error");
             }
             
             const data = await response.json();
-            
-            if (!data.candidates || !data.candidates[0].content) {
-                return "ה-AI קצת ביישן לחשוב על אסוציאציה למילה הזו 😅 נסה מילה אחרת או לחץ ערוך.";
-            }
-            
             return data.candidates[0].content.parts[0].text.trim();
         }
         function openAssocModal() { 
