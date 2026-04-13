@@ -127,61 +127,19 @@
         body.dark-mode .hint-btn.sentence { color: #60a5fa; border-color: rgba(96, 165, 250, 0.3); }
         body.dark-mode .hint-btn.sentence svg { stroke: #60a5fa; }
         
-.hint-text { 
-            margin-top: 12px; 
-            padding: 16px; 
-            background: linear-gradient(135deg, #fffcf0 0%, #fff8e1 100%); 
-            border: 2px solid #ffeeba; 
-            border-radius: 18px; 
-            color: #856404; 
-            font-size: 16px; 
-            font-weight: 600; 
-            width: 95%; 
-            display: none; 
-            line-height: 1.5; 
-            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.1);
-            position: relative;
-            box-sizing: border-box;
-        }
-        
-.hint-text::before {
-            content: "AI";
-            position: absolute;
-            top: -14px;
-            right: -10px;
-            font-size: 12px;
-            font-weight: 800;
-            font-family: 'Rubik', sans-serif;
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-            color: white;
-            border-radius: 12px;
-            padding: 4px 10px;
-            box-shadow: 0 4px 10px rgba(168, 85, 247, 0.4);
-            letter-spacing: 1px;
-            z-index: 2;
-        }
-        
+        .hint-text { margin-top: 10px; padding: 14px; background: #fff8e1; border: 2px solid #ffeeba; border-radius: 14px; color: #856404; font-size: 16px; font-weight: 600; width: 95%; display: none; line-height: 1.4; box-shadow: var(--shadow);}
         body.dark-mode .hint-text { background: #332701; border-color: #664d03; color: #ffda6a; }
-        
-        .sentence-text { 
-            background: linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%); 
-            border-color: #bae6fd; 
-            color: #0369a1; 
-            direction: ltr; 
-            text-align: left;
-        }
-        
+        .sentence-text { background: #f0f7ff; border-color: #cce4ff; color: #0056b3; direction: ltr; text-align: left; font-weight: 500;}
         body.dark-mode .sentence-text { background: #0c2a4d; border-color: #1e4b82; color: #93c5fd; }
-        
         .sentence-he { display: block; direction: rtl; text-align: right; color: #64748b; font-size: 14px; margin-top: 8px; border-top: 1px dashed #cbd5e1; padding-top: 8px; font-weight: 500;}
-        
         body.dark-mode .sentence-he { border-color: #334155; color: #94a3b8;}
+
         .edit-links { display: flex; gap: 15px; margin-top: 12px; justify-content: center; width: 100%;}
         .hint-edit { font-size: 13px; color: #64748b; text-decoration: none; font-weight: 600; cursor: pointer; background: none; border: none; opacity: 0.8; transition: 0.2s; font-family: 'Rubik', sans-serif; display: flex; align-items: center; gap: 4px;}
         .hint-edit svg { width: 14px; height: 14px; stroke: #64748b;}
         .hint-edit:hover, .hint-edit:hover svg { color: var(--btn-primary); stroke: var(--btn-primary); opacity: 1;}.action-btns { display: flex; gap: 6px; width: 100%; justify-content: space-between; align-items: center; direction: ltr; }
         .btn-know, .btn-dontknow { flex: 1; height: 55px; font-size: 15px; font-family: 'Rubik', sans-serif; border-radius: 28px; border: none; color: white; cursor: pointer; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 5px; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15); padding: 0; min-width: 0; }
-        .btn-know { background-color: #34c759; } .btn-know svg { stroke: white; width:ש 18px; height: 18px; flex-shrink: 0; } .btn-know:active { transform: scale(0.95); background-color: #2db34f;}
+        .btn-know { background-color: #34c759; } .btn-know svg { stroke: white; width: 18px; height: 18px; flex-shrink: 0; } .btn-know:active { transform: scale(0.95); background-color: #2db34f;}
         .btn-dontknow { background-color: #ff3b30; } .btn-dontknow svg { stroke: white; width: 18px; height: 18px; flex-shrink: 0; } .btn-dontknow:active { transform: scale(0.95); background-color: #e6352b;}
         .btn-stack { background-color: rgba(88, 86, 214, 0.1); color: #5856d6; width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: 'Rubik', sans-serif; border-radius: 22px; border: 2px solid rgba(88, 86, 214, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
         .btn-stack:active { transform: scale(0.95); background-color: rgba(88, 86, 214, 0.2); border-color: #5856d6; }
@@ -457,207 +415,12 @@
             <button class="action-btn-top" style="background:#94a3b8;" onclick="closeAddModal()">ביטול</button>
         </div>
     </div>
-<div id="assocModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">תומך זיכרון</h3><p id="assocWordTitle" style="text-align:center; font-weight:800; font-size:22px; direction:ltr; margin:5px 0; color:var(--btn-primary);"></p><textarea id="assocInput" rows="3" placeholder="מה יעזור לך לזכור?"></textarea><button class="action-btn-top" onclick="saveCustomAssoc()">שמור</button><button class="action-btn-top" style="background:#5856d6;" onclick="generateAssocInModal()">🤖 הצע לי אסוציאציה אחרת</button><button class="action-btn-top" style="background:#94a3b8;" onclick="closeAssocModal()">ביטול</button></div></div>
-<div id="sentenceModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">משפט לדוגמה</h3><p id="sentenceWordTitle" style="text-align:center; font-weight:800; font-size:22px; direction:ltr; margin:5px 0; color:var(--btn-primary);"></p><textarea id="sentenceInput" rows="3" placeholder="משפט באנגלית..." dir="ltr"></textarea><input type="text" id="sentenceHeInput" placeholder="תרגום (אופציונלי)"><button class="action-btn-top" onclick="saveCustomSentence()">שמור</button><button class="action-btn-top" style="background:#5856d6;" onclick="generateSentenceInModal()">🤖 הצע לי משפט אחר</button><button class="action-btn-top" style="background:#94a3b8;" onclick="closeSentenceModal()">ביטול</button></div></div>
+    <div id="assocModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">תומך זיכרון</h3><p id="assocWordTitle" style="text-align:center; font-weight:800; font-size:22px; direction:ltr; margin:5px 0; color:var(--btn-primary);"></p><textarea id="assocInput" rows="3" placeholder="מה יעזור לך לזכור?"></textarea><button class="action-btn-top" onclick="saveCustomAssoc()">שמור</button><button class="action-btn-top" style="background:#94a3b8;" onclick="closeAssocModal()">ביטול</button></div></div>
+    <div id="sentenceModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">משפט לדוגמה</h3><p id="sentenceWordTitle" style="text-align:center; font-weight:800; font-size:22px; direction:ltr; margin:5px 0; color:var(--btn-primary);"></p><textarea id="sentenceInput" rows="3" placeholder="משפט באנגלית..." dir="ltr"></textarea><input type="text" id="sentenceHeInput" placeholder="תרגום (אופציונלי)"><button class="action-btn-top" onclick="saveCustomSentence()">שמור</button><button class="action-btn-top" style="background:#94a3b8;" onclick="closeSentenceModal()">ביטול</button></div></div>
     <div id="printOptionsModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">הדפסה</h3><button class="action-btn-top" onclick="executePrint('list')"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line></svg> רשימה מסודרת</button><button class="action-btn-top" onclick="executePrint('cards')" style="background:#34c759;"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg> כרטיסיות</button><button class="action-btn-top" style="background:#94a3b8;" onclick="document.getElementById('printOptionsModal').style.display='none'">ביטול</button></div></div>
     <div id="printArea"></div>
-	
+
     <script>
-	// --- הפונקציות החדשות שהוספנו ---
-// --- פונקציות AI (משפטים ואסוציאציות) ---
-async function fetchAIAssociation(wordEn, wordHe) {
-    const GEMINI_API_KEY = "AIzaSyByW70jbvSGWStiBWqEiZSOxZcK34fHE2w";
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
-    
-    const promptText = `אתה מורה אלוף לפסיכומטרי. תן לי משפט אסוציאציה אחד, קצר, מצחיק וקליט בעברית שיעזור לתלמיד לזכור שהמילה באנגלית "${wordEn}" פירושה "${wordHe}". אל תכתוב הקדמות, אל תכתוב מרכאות, פשוט תחזיר את משפט האסוציאציה עצמו.`;
-
-    try {
-        const response = await fetch(url, { 
-            method: "POST", 
-            headers: { "Content-Type": "application/json" }, 
-            body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }] }) 
-        });
-        
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error("AI Error:", errorData);
-            throw new Error(errorData.error?.message || "שגיאת שרת");
-        }
-        
-        const data = await response.json();
-        return data.candidates[0].content.parts[0].text.trim();
-    } catch (e) { throw new Error("שגיאת תקשורת עם ה-AI: " + e.message); }
-}
-
-async function fetchAISentence(wordEn, wordHe) {
-    const GEMINI_API_KEY = "AIzaSyByW70jbvSGWStiBWqEiZSOxZcK34fHE2w"; 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
-    
-    const promptText = `אתה מורה לאנגלית. חבר משפט אחד באנגלית שמדגים שימוש במילה "${wordEn}" (שפירושה בעברית: ${wordHe}). לאחר מכן, ספק את התרגום המדויק של המשפט הזה לעברית. חובה להחזיר את התשובה בדיוק בפורמט הבא, עם קו מפריד (|) ביניהם, בלי שום טקסט נוסף: English sentence|תרגום לעברית`;
-
-    try {
-        const response = await fetch(url, { 
-            method: "POST", 
-            headers: { "Content-Type": "application/json" }, 
-            body: JSON.stringify({ contents: [{ parts: [{ text: promptText }] }], generationConfig: { temperature: 0.3 } }) 
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error("AI Error:", errorData);
-            throw new Error(errorData.error?.message || "שגיאת שרת");
-        }
-
-        const data = await response.json();
-        return data.candidates[0].content.parts[0].text.trim();
-    } catch (e) { throw new Error("לא הצלחתי לייצר משפט, נסה שוב."); }
-}
-async function toggleAssoc(event) { 
-    if(event) event.stopPropagation(); 
-    let textElem = document.getElementById('assocText'); 
-    if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
-    let w = currentList[currentIndex]; let displayHe = editedTranslations[w.en] || w.he;
-    if (customAssocs[w.en]) { textElem.innerText = customAssocs[w.en]; textElem.style.display = 'block'; document.getElementById('sentenceText').style.display = 'none'; return; }
-textElem.innerHTML = `<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:10px;">
-    <svg style="width:32px; height:32px; stroke:url(#ai-grad); animation: pulse 1.5s infinite ease-in-out;" viewBox="0 0 24 24" fill="none" stroke-width="2"><defs><linearGradient id="ai-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1" /><stop offset="100%" stop-color="#a855f7" /></linearGradient></defs><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M15 21c-2.76 0-5-1.34-5-3"></path><path d="M12 3c-2.76 0-5 1.34-5 3"></path><path d="M21 12c0-1.66-4-3-9-3s-9 1.34-9 3"></path><circle cx="12" cy="12" r="3"></circle></svg>
-    <div style="font-size:15px; font-weight:700; color:#856404;">מייצר אסוציאציה חכמה...</div>
-</div>`;
-    textElem.style.display = 'block'; document.getElementById('sentenceText').style.display = 'none'; 
-    try {
-        let aiResponse = await fetchAIAssociation(w.en, displayHe);
-        textElem.innerHTML = aiResponse + `<br><small style="color:#94a3b8; margin-top:8px; display:block;">(נוצר ע"י AI - לחץ ערוך כדי לשמור ולשנות)</small>`; 
-        document.getElementById('assocInput').value = aiResponse; 
-    } catch(e) { textElem.innerHTML = "<b>שגיאה מגוגל:</b><br><small style='color:red;'>" + e.message + "</small>"; }
-}
-
-async function toggleSentence(event) { 
-    if(event) event.stopPropagation(); 
-    let textElem = document.getElementById('sentenceText'); 
-    if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
-    let w = currentList[currentIndex]; let displayHe = editedTranslations[w.en] || w.he;
-    if (customSentences[w.en]) {
-        let parts = customSentences[w.en].split('|'); let htmlContent = highlightWordInSentence(parts[0], w.en); 
-        if(parts.length > 1 && parts[1].trim() !== "") htmlContent += `<span class="sentence-he">${parts[1]}</span>`; 
-        textElem.innerHTML = htmlContent; textElem.style.display = 'block'; document.getElementById('assocText').style.display = 'none'; return;
-    }
-textElem.innerHTML = `<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:10px;">
-    <svg style="width:32px; height:32px; stroke:url(#ai-grad); animation: pulse 1.5s infinite ease-in-out;" viewBox="0 0 24 24" fill="none" stroke-width="2"><defs><linearGradient id="ai-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1" /><stop offset="100%" stop-color="#a855f7" /></linearGradient></defs><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M15 21c-2.76 0-5-1.34-5-3"></path><path d="M12 3c-2.76 0-5 1.34-5 3"></path><path d="M21 12c0-1.66-4-3-9-3s-9 1.34-9 3"></path><circle cx="12" cy="12" r="3"></circle></svg>
-    <div style="font-size:15px; font-weight:700; color:#0369a1;">מנסח משפט באנגלית...</div>
-</div>`;
-    textElem.style.display = 'block'; document.getElementById('assocText').style.display = 'none'; 
-    try {
-        let aiResponse = await fetchAISentence(w.en, displayHe);
-        let parts = aiResponse.split('|');
-        let htmlContent = highlightWordInSentence(parts[0], w.en); 
-        if(parts.length > 1 && parts[1].trim() !== "") htmlContent += `<span class="sentence-he">${parts[1]}</span>`; 
-        htmlContent += `<br><small style="color:#94a3b8; margin-top:8px; display:block;">(נוצר ע"י AI - לחץ ערוך כדי לשמור ולשנות)</small>`;
-        textElem.innerHTML = htmlContent; 
-        document.getElementById('sentenceInput').value = parts[0] || ""; document.getElementById('sentenceHeInput').value = parts[1] || "";
-    } catch(e) { textElem.innerHTML = "<b>שגיאה:</b><br><small style='color:red;'>" + e.message + "</small>"; }
-}
-// --- סוף פונקציות AI ---
-// (זו הפונקציה שכבר הייתה לך שם)
-function openAssocModal() { 
-    let w = currentList[currentIndex].en; 
-    document.getElementById('assocWordTitle').innerText = w; 
-    
-    let currentText = customAssocs[w] || "";
-    let assocTextElem = document.getElementById('assocText');
-    if (currentText === "" && assocTextElem.style.display === 'block') {
-        currentText = assocTextElem.innerHTML.split('<br>')[0].trim();
-    }
-    
-    document.getElementById('assocInput').value = currentText; 
-    document.getElementById('assocModal').style.display = 'flex'; 
-}
-
-async function generateSentenceInModal() {
-    let w = currentList[currentIndex]; 
-    let displayHe = editedTranslations[w.en] || w.he;
-    let inputEn = document.getElementById('sentenceInput');
-    let inputHe = document.getElementById('sentenceHeInput');
-    
-    let originalEn = inputEn.value;
-    let originalHe = inputHe.value;
-    
-inputEn.value = "Generating new sentence...";
-    inputHe.value = "מייצר תרגום...";
-    
-    try {
-        let aiResponse = await fetchAISentence(w.en, displayHe);
-        let parts = aiResponse.split('|');
-        inputEn.value = parts[0] || "";
-        inputHe.value = parts[1] || "";
-    } catch(e) {
-        inputEn.value = originalEn;
-        inputHe.value = originalHe;
-        alert("שגיאה ביצירת משפט חדש: " + e.message);
-    }
-}
-
-function openSentenceModal() { 
-    let w = currentList[currentIndex].en; 
-    document.getElementById('sentenceWordTitle').innerText = w; 
-    
-    // קודם כל בודק אם יש משפט שמור למשתמש
-    let savedSentence = customSentences[w] || "";
-    let enPart = "";
-    let hePart = "";
-    
-    if (savedSentence !== "") {
-        let parts = savedSentence.split('|');
-        enPart = parts[0] || "";
-        hePart = parts[1] || "";
-    } else {
-        // אם אין משפט שמור, בודק אם מוצגת כרגע הצעת AI על המסך
-        let sentenceTextElem = document.getElementById('sentenceText');
-        if (sentenceTextElem.style.display === 'block' && sentenceTextElem.innerHTML.includes('<br>')) {
-            // מחלץ את הטקסט הנקי מתוך ה-HTML (ללא העיצובים והכיתוב של גוגל)
-            let rawHtml = sentenceTextElem.innerHTML;
-            let tempDiv = document.createElement('div');
-            tempDiv.innerHTML = rawHtml.split('<br>')[0]; // לוקח רק את החלק העליון לפני ההערה
-            enPart = tempDiv.innerText.trim();
-            
-            // מחפש את התרגום העברי
-            let heSpan = tempDiv.querySelector('.sentence-he');
-            if (heSpan) {
-                hePart = heSpan.innerText.trim();
-                enPart = enPart.replace(hePart, '').trim(); // מנקה את העברית מהחלק האנגלי
-            }
-        }
-    }
-    
-    document.getElementById('sentenceInput').value = enPart; 
-    document.getElementById('sentenceHeInput').value = hePart; 
-    document.getElementById('sentenceModal').style.display = 'flex'; 
-}
-function closeAssocModal() { document.getElementById('assocModal').style.display = 'none'; }
-
-function saveCustomAssoc() { 
-    let w = currentList[currentIndex].en; 
-    let newAssoc = document.getElementById('assocInput').value.trim(); 
-    customAssocs[w] = newAssoc; 
-    saveProgress(); 
-    closeAssocModal(); 
-    document.getElementById('assocText').innerText = newAssoc; 
-    document.getElementById('assocText').style.display = 'block'; 
-    document.getElementById('sentenceText').style.display = 'none'; 
-}
-	function closeSentenceModal() { document.getElementById('sentenceModal').style.display = 'none'; }
-
-function saveCustomSentence() { 
-    let w = currentList[currentIndex].en; 
-    let enPart = document.getElementById('sentenceInput').value.trim(); 
-    let hePart = document.getElementById('sentenceHeInput').value.trim(); 
-    if(enPart !== "") { 
-        customSentences[w] = hePart !== "" ? `${enPart}|${hePart}` : enPart; 
-        saveProgress(); 
-        closeSentenceModal(); 
-        toggleSentence(); 
-    } else { 
-        alert("חובה להכניס משפט באנגלית!"); 
-    } 
-}
         function fireConfetti() { const colors = ['#34c759', '#007aff', '#ff3b30', '#ffcc00', '#5856d6']; for(let i=0; i<40; i++) { let conf = document.createElement('div'); conf.className = 'confetti-particle'; conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; conf.style.left = Math.random() * 100 + 'vw'; conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; document.body.appendChild(conf); setTimeout(() => conf.remove(), 3500); } }
         function toggleTopMenu() { document.getElementById('topMenu').classList.toggle('show'); }
         document.addEventListener('click', function(e) { if(!e.target.closest('.top-nav-container')) { let menu = document.getElementById('topMenu'); if(menu && menu.classList.contains('show')) menu.classList.remove('show'); } });
@@ -1117,7 +880,85 @@ function updateStatsUI() {
                 updateCard(); 
             } 
         }
-     // ---------- מצב נסיעה חדש, יציב ואייפון-פרנדלי ----------
+
+        function toggleAssoc(event) { 
+            if(event) event.stopPropagation(); 
+            let textElem = document.getElementById('assocText'); 
+            if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
+            let w = currentList[currentIndex]; 
+            textElem.innerText = customAssocs[w.en] || generateAIContent(w.en).assoc; 
+            textElem.style.display = 'block'; 
+            document.getElementById('sentenceText').style.display = 'none'; 
+        }
+
+        function openAssocModal() { 
+            let w = currentList[currentIndex].en; 
+            document.getElementById('assocWordTitle').innerText = w; 
+            document.getElementById('assocInput').value = customAssocs[w] || ""; 
+            document.getElementById('assocModal').style.display = 'flex'; 
+        }
+
+        function closeAssocModal() { document.getElementById('assocModal').style.display = 'none'; }
+
+        function saveCustomAssoc() { 
+            let w = currentList[currentIndex].en; 
+            let newAssoc = document.getElementById('assocInput').value.trim(); 
+            customAssocs[w] = newAssoc; 
+            saveProgress(); 
+            closeAssocModal(); 
+            document.getElementById('assocText').innerText = newAssoc; 
+            document.getElementById('assocText').style.display = 'block'; 
+            document.getElementById('sentenceText').style.display = 'none'; 
+        }
+
+        function toggleSentence(event) { 
+            if(event) event.stopPropagation(); 
+            let textElem = document.getElementById('sentenceText'); 
+            if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
+            let w = currentList[currentIndex]; 
+            let parts = (customSentences[w.en] || generateAIContent(w.en).sentence).split('|'); 
+            let htmlContent = highlightWordInSentence(parts[0], w.en); 
+            if(parts.length > 1 && parts[1].trim() !== "") htmlContent += `<span class="sentence-he">${parts[1]}</span>`; 
+            textElem.innerHTML = htmlContent; 
+            textElem.style.display = 'block'; 
+            document.getElementById('assocText').style.display = 'none'; 
+        }
+
+        function openSentenceModal() { 
+            let w = currentList[currentIndex].en; 
+            let parts = (customSentences[w] || "").split('|'); 
+            document.getElementById('sentenceWordTitle').innerText = w; 
+            document.getElementById('sentenceInput').value = parts[0] || ""; 
+            document.getElementById('sentenceHeInput').value = parts[1] || ""; 
+            document.getElementById('sentenceModal').style.display = 'flex'; 
+        }
+
+        function closeSentenceModal() { document.getElementById('sentenceModal').style.display = 'none'; }
+
+        function saveCustomSentence() { 
+            let w = currentList[currentIndex].en; 
+            let enPart = document.getElementById('sentenceInput').value.trim(); 
+            let hePart = document.getElementById('sentenceHeInput').value.trim(); 
+            if(enPart !== "") { 
+                customSentences[w] = hePart !== "" ? `${enPart}|${hePart}` : enPart; 
+                saveProgress(); 
+                closeSentenceModal(); 
+                toggleSentence(); 
+            } else { 
+                alert("חובה להכניס משפט באנגלית!"); 
+            } 
+        }
+
+        function speakWord() { 
+            if (currentList.length === 0) return; 
+            window.speechSynthesis.cancel();
+            let msg = new SpeechSynthesisUtterance(currentList[currentIndex].en); 
+            msg.lang = 'en-US'; 
+            msg.rate = 0.8;
+            window.speechSynthesis.speak(msg); 
+        }
+
+        // ---------- מצב נסיעה חדש, יציב ואייפון-פרנדלי ----------
         let isDrivingMode = false;
         
         function toggleDrivingMode() {
