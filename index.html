@@ -497,7 +497,7 @@ function openAssocModal() {
 // --- סוף הפונקציות החדשות ---
 // --- פונקציות AI (משפטים ואסוציאציות) ---
 async function fetchAIAssociation(wordEn, wordHe) {
-    const GEMINI_API_KEY = "AIzaSyCNIxO5ftk3tYcGiuyp0RnLlhSC6XqRRnY";
+    const GEMINI_API_KEY = "AIzaSyBggQxGFlLd73BDkvEqOypshTEpdsch8zs";
     const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
     const promptText = `אתה מורה אלוף לפסיכומטרי. תן לי משפט אסוציאציה אחד, קצר, מצחיק וקליט בעברית שיעזור לתלמיד לזכור שהמילה באנגלית "${wordEn}" פירושה "${wordHe}". אל תכתוב הקדמות, אל תכתוב מרכאות, פשוט תחזיר את משפט האסוציאציה עצמו.`;
 
@@ -510,7 +510,7 @@ async function fetchAIAssociation(wordEn, wordHe) {
 }
 
 async function fetchAISentence(wordEn, wordHe) {
-    const GEMINI_API_KEY = "AIzaSyCNIxO5ftk3tYcGiuyp0RnLlhSC6XqRRnY"; 
+    const GEMINI_API_KEY = "AIzaSyBggQxGFlLd73BDkvEqOypshTEpdsch8zs"; 
     const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
     const promptText = `אתה מורה לאנגלית. חבר משפט אחד באנגלית שמדגים שימוש במילה "${wordEn}" (שפירושה בעברית: ${wordHe}). לאחר מכן, ספק את התרגום המדויק של המשפט הזה לעברית. חובה להחזיר את התשובה בדיוק בפורמט הבא, עם קו מפריד (|) ביניהם, בלי שום טקסט נוסף: English sentence|תרגום לעברית`;
 
