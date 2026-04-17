@@ -467,11 +467,20 @@
         let currentList = []; let currentIndex = 0; let isDarkMode = localStorage.getItem('darkMode') === 'true'; let isReverse = false; let streak = parseInt(localStorage.getItem('vocabStreak')) || 0; let currentMode = 'flash';
         let isAdminMode = false;
         let currentTextId = null;
-
+let aiPreloadedData = {};
       async function initApp() {
             if(isDarkMode) document.body.classList.add('dark-mode');
 			initSwipe();
             // --- מנגנון שאיבת המילים מהשרת של גיטהאב ---
+			// טעינת הנתונים שהכנו מראש מ-AI
+            try {
+                const aiRes = await fetch('./ai_completed_data.json');
+                if (aiRes.ok) {
+                    aiPreloadedData = await aiRes.json();
+                }
+            } catch (err) {
+                console.log("שגיאה בטעינת קובץ ה-AI", err);
+            }
             if (!localStorage.getItem('isFirstLoadComplete_V2')) {
                 try {
                     const response = await fetch('./vocab_backup.json');
@@ -731,8 +740,16 @@ function updateStatsUI() {
 
         function advanceToNextCard() { if (currentIndex < currentList.length - 1) { currentIndex++; } else { alert('סיימת את הרשימה הנוכחית!'); applyFilters(); return; } updateCard(); }
         function highlightWordInSentence(sentence, word) { let regex = new RegExp(`\\b(${word})\\b`, 'gi'); return sentence.replace(regex, '<strong>$1</strong>'); }
-        function generateAIContent(word) { return { assoc: `נסה לחשוב על חרוז או מילה שדומה ל-"${word}"... (לחץ ערוך ✏️ להוספה)`, sentence: `It is highly recommended to learn the word ${word} for the exam.|מומלץ מאוד ללמוד את המילה ${word} למבחן.` }; }
-
+function generateAIContent(word) {
+            if (aiPreloadedData[word]) {
+                return aiPreloadedData[word];
+            }
+            // במקרה הנדיר שמילה לא נמצאה בקובץ ה-AI
+            return { 
+                assoc: `לא נמצאה אסוציאציה למילה זו. (לחץ ערוך ✏️ להוספה)`, 
+                sentence: `No example sentence found.|לא נמצא משפט לדוגמה.` 
+            }; 
+        }
         function updateCard() {
 		let swipeCard = document.getElementById('swipeCardContainer');
             if(swipeCard) {
