@@ -264,6 +264,30 @@
         .confetti-particle { position: fixed; top: -10px; width: 8px; height: 16px; opacity: 0.9; z-index: 9999; animation: fall linear forwards; border-radius: 3px;}
         @keyframes fall { to { transform: translateY(105vh) rotate(720deg); } }
 
+        /* טיימר השלמת משפטים */
+        .sc-timer-wrap { display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:14px; direction:rtl; }
+        .sc-timer-circle-box { position:relative; width:72px; height:72px; flex-shrink:0; }
+        .sc-timer-svg { transform:rotate(-90deg); }
+        .sc-timer-track { fill:none; stroke:var(--border-color); stroke-width:5; }
+        .sc-timer-arc { fill:none; stroke:#34c759; stroke-width:5; stroke-linecap:round; transition:stroke-dashoffset 0.9s linear, stroke 0.3s; }
+        .sc-timer-arc.warn { stroke:#ff9800; }
+        .sc-timer-arc.danger { stroke:#ff3b30; }
+        .sc-timer-count { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:800; color:var(--text-color); }
+        .sc-timer-count.warn { color:#ff9800; }
+        .sc-timer-count.danger { color:#ff3b30; }
+        .sc-timer-expired-msg { font-size:15px; font-weight:800; color:#ff3b30; direction:rtl; }
+        .sc-timer-controls { display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
+        .sc-timer-pause-btn { padding:8px 16px; border-radius:10px; border:2px solid var(--border-color); background:var(--panel-bg); color:var(--text-color); font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; transition:0.2s; box-shadow:var(--shadow); }
+        .sc-timer-pause-btn:active { transform:scale(0.95); }
+        .sc-timer-toggle-row { display:flex; align-items:center; justify-content:space-between; margin-top:12px; padding-top:12px; border-top:1px dashed var(--border-color); direction:rtl; }
+        .sc-timer-toggle-label { font-size:14px; font-weight:700; color:var(--text-color); display:flex; align-items:center; gap:8px; }
+        .sc-toggle-switch { position:relative; width:46px; height:26px; flex-shrink:0; }
+        .sc-toggle-switch input { opacity:0; width:0; height:0; }
+        .sc-toggle-slider { position:absolute; inset:0; background:#cbd5e1; border-radius:13px; cursor:pointer; transition:0.3s; }
+        .sc-toggle-slider:before { content:''; position:absolute; height:20px; width:20px; left:3px; bottom:3px; background:white; border-radius:50%; transition:0.3s; box-shadow:0 1px 3px rgba(0,0,0,0.2); }
+        .sc-toggle-switch input:checked + .sc-toggle-slider { background:var(--btn-primary); }
+        .sc-toggle-switch input:checked + .sc-toggle-slider:before { transform:translateX(20px); }
+
         /* גריד השלמת משפטים */
         .sc-progress-box { background: var(--panel-bg); border: 2px solid var(--border-color); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 16px; box-shadow: var(--shadow); }
         .sc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: 100%; margin-bottom: 16px; }
@@ -1877,6 +1901,13 @@ function generateAIContent(word) {
                     </div>
                 </div>
                 <div class="sc-grid">${gridHtml}</div>
+                <div class="sc-timer-toggle-row">
+                    <label class="sc-toggle-switch">
+                        <input type="checkbox" id="sc-timer-toggle" ${scTimerEnabled ? 'checked' : ''} onchange="toggleSCTimerEnabled()">
+                        <span class="sc-toggle-slider"></span>
+                    </label>
+                    <span style="font-size:14px; color:#64748b;">טיימר 60 שניות</span>
+                </div>
                 <button class="sc-reset-btn" onclick="resetSentenceProgress()">איפוס התקדמות</button>
             `;
         }
@@ -1886,9 +1917,11 @@ function generateAIContent(word) {
             document.getElementById('sc-list-view').style.display = 'none';
             document.getElementById('sc-question-view').style.display = 'block';
             renderSentenceQuestion();
+            startSCTimer();
         }
 
         function showSCList() {
+            stopSCTimer();
             document.getElementById('sc-list-view').style.display = 'block';
             document.getElementById('sc-question-view').style.display = 'none';
             renderSCList();
@@ -1927,6 +1960,7 @@ function generateAIContent(word) {
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
+                ${scTimerHTML()}
                 <div class="sentence-q-card">
                     <div class="sentence-text-q" style="margin-top:0;">${q.q}</div>
                     <div class="q-options" id="sc-opts-${i}">${optionsHtml}</div>
@@ -1939,6 +1973,7 @@ function generateAIContent(word) {
         }
 
         function answerSC(qIndex, selectedOpt, correctOpt) {
+            stopSCTimer();
             let isCorrect = selectedOpt === correctOpt;
             sentenceProgress[qIndex] = { answered: true, correct: isCorrect, selectedOpt: selectedOpt };
             localStorage.setItem('sentenceProgress', JSON.stringify(sentenceProgress));
@@ -1973,6 +2008,131 @@ function generateAIContent(word) {
 
         // נשמר לתאימות לאחור עם קריאות קיימות
         function renderSentenceQuestions() { renderSCList(); }
+
+        // ===== טיימר השלמת משפטים =====
+        const SC_TIMER_TOTAL = 60;
+        const SC_ARC_R = 26;
+        const SC_ARC_C = 2 * Math.PI * SC_ARC_R; // היקף המעגל
+
+        let scTimerEnabled  = localStorage.getItem('scTimerEnabled') === 'true';
+        let scTimeLeft      = SC_TIMER_TOTAL;
+        let scTimerInterval = null;
+        let scTimerPaused   = false;
+        let scTimerExpired  = false;
+
+        function playTimerAlarm() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                [0, 0.32, 0.64].forEach(delay => {
+                    const osc  = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.type = 'sine';
+                    osc.frequency.value = 880;
+                    gain.gain.setValueAtTime(0.55, ctx.currentTime + delay);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + delay + 0.28);
+                    osc.start(ctx.currentTime + delay);
+                    osc.stop(ctx.currentTime + delay + 0.3);
+                });
+            } catch(e) {}
+        }
+
+        function updateSCTimerUI() {
+            let arc   = document.getElementById('sc-arc');
+            let count = document.getElementById('sc-count');
+            let msg   = document.getElementById('sc-expired-msg');
+            if (!arc || !count) return;
+
+            let pct = scTimeLeft / SC_TIMER_TOTAL;
+            arc.style.strokeDashoffset = SC_ARC_C * (1 - pct);
+
+            let cls = scTimeLeft <= 10 ? 'danger' : scTimeLeft <= 20 ? 'warn' : '';
+            arc.className   = 'sc-timer-arc' + (cls ? ' ' + cls : '');
+            count.className = 'sc-timer-count'+ (cls ? ' ' + cls : '');
+            count.textContent = scTimeLeft;
+
+            if (msg) msg.style.display = scTimerExpired ? 'block' : 'none';
+        }
+
+        function startSCTimer() {
+            stopSCTimer();
+            if (!scTimerEnabled) return;
+            scTimeLeft    = SC_TIMER_TOTAL;
+            scTimerPaused = false;
+            scTimerExpired= false;
+            updateSCTimerUI();
+            updateSCPauseBtn();
+            scTimerInterval = setInterval(() => {
+                if (scTimerPaused) return;
+                scTimeLeft--;
+                updateSCTimerUI();
+                if (scTimeLeft <= 0) {
+                    stopSCTimer();
+                    scTimerExpired = true;
+                    updateSCTimerUI();
+                    playTimerAlarm();
+                }
+            }, 1000);
+        }
+
+        function stopSCTimer() {
+            clearInterval(scTimerInterval);
+            scTimerInterval = null;
+        }
+
+        function toggleSCTimerPause() {
+            scTimerPaused = !scTimerPaused;
+            updateSCPauseBtn();
+        }
+
+        function updateSCPauseBtn() {
+            let btn = document.getElementById('sc-pause-btn');
+            if (!btn) return;
+            if (scTimerExpired) {
+                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><circle cx="12" cy="12" r="10"></circle><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> פג הזמן';
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+                return;
+            }
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            btn.innerHTML = scTimerPaused
+                ? '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> המשך'
+                : '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> השהה';
+        }
+
+        function toggleSCTimerEnabled() {
+            scTimerEnabled = document.getElementById('sc-timer-toggle').checked;
+            localStorage.setItem('scTimerEnabled', scTimerEnabled);
+            // אם כבוי תוך כדי שאלה — עצור
+            if (!scTimerEnabled) stopSCTimer();
+            // אם הופעל תוך כדי שאלה — התחל
+            else if (document.getElementById('sc-question-view').style.display !== 'none') startSCTimer();
+        }
+
+        function scTimerHTML() {
+            if (!scTimerEnabled) return '';
+            let dashOffset = SC_ARC_C; // מתחיל מלא
+            return `
+            <div class="sc-timer-wrap">
+                <div class="sc-timer-circle-box">
+                    <svg class="sc-timer-svg" width="72" height="72" viewBox="0 0 72 72">
+                        <circle class="sc-timer-track" cx="36" cy="36" r="${SC_ARC_R}"/>
+                        <circle id="sc-arc" class="sc-timer-arc" cx="36" cy="36" r="${SC_ARC_R}"
+                            stroke-dasharray="${SC_ARC_C}"
+                            stroke-dashoffset="0"/>
+                    </svg>
+                    <div id="sc-count" class="sc-timer-count">${SC_TIMER_TOTAL}</div>
+                </div>
+                <div class="sc-timer-controls">
+                    <button id="sc-pause-btn" class="sc-timer-pause-btn" onclick="toggleSCTimerPause(); updateSCPauseBtn();">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> השהה
+                    </button>
+                    <div id="sc-expired-msg" class="sc-timer-expired-msg" style="display:none;">⏰ פג הזמן!</div>
+                </div>
+            </div>`;
+        }
 
         let currentQuizCorrect = null;
         function startQuiz() { if(currentList.length < 4) { document.getElementById('quizQuestion').innerText = "צריך לפחות 4 מילים בסינון"; document.getElementById('quizOptions').innerHTML = ''; return; } document.getElementById('quizCounter').innerText = `שאלה: ${currentIndex + 1} / ${currentList.length}`; let wordObj = currentList[currentIndex]; currentQuizCorrect = wordObj; let displayHe = editedTranslations[wordObj.en] || wordObj.he; document.getElementById('quizQuestion').innerText = isReverse ? displayHe : wordObj.en; document.getElementById('quizQuestion').dir = isReverse ? "rtl" : "ltr"; let options = [wordObj]; while(options.length < 4) { let randomWord = allWords[Math.floor(Math.random() * allWords.length)]; if(!options.includes(randomWord)) options.push(randomWord); } options.sort(() => Math.random() - 0.5); let optionsHtml = ''; options.forEach((opt, idx) => { let optDisplayHe = editedTranslations[opt.en] || opt.he; let displayTxt = isReverse ? opt.en : optDisplayHe; let dirTxt = isReverse ? "ltr" : "rtl"; optionsHtml += `<button class="quiz-btn" dir="${dirTxt}" onclick="checkAnswer(${idx}, '${opt.en.replace(/'/g, "\\'")}')" id="btnQuiz${idx}">${displayTxt}</button>`; }); document.getElementById('quizOptions').innerHTML = optionsHtml; }
