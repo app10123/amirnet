@@ -266,6 +266,24 @@
         .confetti-particle { position: fixed; top: -10px; width: 8px; height: 16px; opacity: 0.9; z-index: 9999; animation: fall linear forwards; border-radius: 3px;}
         @keyframes fall { to { transform: translateY(105vh) rotate(720deg); } }
 
+        /* הסבר AI */
+        .ai-explanation-wrap { margin-top:16px; margin-bottom:8px; }
+        .ai-loading-box { display:flex; align-items:center; gap:10px; padding:14px 16px; background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(139,92,246,.08)); border:1.5px solid rgba(139,92,246,.25); border-radius:14px; direction:rtl; font-size:14px; color:#7c3aed; font-weight:700; }
+        @keyframes spin { to { transform:rotate(360deg); } }
+        .ai-spinner { width:20px; height:20px; border:3px solid rgba(139,92,246,.2); border-top-color:#7c3aed; border-radius:50%; animation:spin .8s linear infinite; flex-shrink:0; }
+        @keyframes aiSlideIn { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+        .ai-explanation-box { animation:aiSlideIn .35s ease-out; background:linear-gradient(135deg,rgba(99,102,241,.06),rgba(139,92,246,.06)); border:1.5px solid rgba(139,92,246,.22); border-radius:14px; padding:16px 18px; font-size:14px; line-height:1.7; color:var(--text-color); direction:rtl; text-align:right; }
+        .ai-explanation-box h4 { margin:0 0 6px; font-size:14px; color:#7c3aed; display:flex; align-items:center; gap:6px; }
+        .ai-explanation-box .ai-section { margin-bottom:12px; }
+        .ai-explanation-box .ai-section:last-child { margin-bottom:0; }
+        .ai-error-box { padding:12px 14px; background:rgba(255,59,48,.07); border:1.5px solid rgba(255,59,48,.3); border-radius:12px; font-size:13px; color:#ff3b30; direction:rtl; }
+        .ai-key-prompt { padding:14px 16px; background:var(--panel-bg); border:1.5px solid var(--border-color); border-radius:14px; direction:rtl; }
+        .ai-key-prompt p { margin:0 0 10px; font-size:13px; color:var(--text-color); font-weight:600; }
+        .ai-key-row { display:flex; gap:8px; }
+        .ai-key-input { flex:1; padding:9px 12px; border-radius:10px; border:2px solid var(--border-color); background:var(--bg-color); color:var(--text-color); font-family:'Rubik',sans-serif; font-size:13px; direction:ltr; }
+        .ai-key-save { padding:9px 14px; background:var(--btn-primary); color:#fff; border:none; border-radius:10px; font-family:'Rubik',sans-serif; font-weight:700; font-size:13px; cursor:pointer; white-space:nowrap; }
+        .ai-forget-key { font-size:11px; color:#94a3b8; cursor:pointer; text-decoration:underline; margin-top:8px; display:inline-block; }
+
         /* טיימר השלמת משפטים */
         .sc-timer-wrap { display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:14px; direction:rtl; }
         .sc-timer-circle-box { position:relative; width:72px; height:72px; flex-shrink:0; }
@@ -1988,6 +2006,7 @@ function generateAIContent(word) {
                     <div class="q-explanation" id="sc-exp-${i}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> הסבר לתשובה:</h4>
                         <p>${q.explanation}</p>
+                        <div id="sc-ai-${i}" class="ai-explanation-wrap" style="${isAnswered && aiExplanationCache['sc-ai-'+i] ? '' : 'display:none'}">${isAnswered && aiExplanationCache['sc-ai-'+i] ? aiExplanationCache['sc-ai-'+i] : ''}</div>
                         <button class="action-btn-top" style="margin-top:20px;width:100%;height:50px;font-size:17px;" onclick="nextSentence()">${nextLabel}</button>
                     </div>
                 </div>`;
@@ -2009,6 +2028,9 @@ function generateAIContent(word) {
                 btns[correctOpt].classList.add('correct');
             }
             document.getElementById(`sc-exp-${qIndex}`).style.display = 'block';
+
+            let q = sentenceQuestions[qIndex];
+            fetchAIExplanation(`sc-ai-${qIndex}`, 'completion', q.q, q.options, correctOpt, selectedOpt);
         }
 
         function nextSentence() {
@@ -2194,6 +2216,7 @@ function generateAIContent(word) {
                     <div class="q-explanation" id="rs-exp-${i}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> תשובה נכונה:</h4>
                         <p style="direction:ltr; text-align:left;">${q.options[q.correct]}</p>
+                        <div id="rs-ai-${i}" class="ai-explanation-wrap" style="${isAnswered && aiExplanationCache['rs-ai-'+i] ? '' : 'display:none'}">${isAnswered && aiExplanationCache['rs-ai-'+i] ? aiExplanationCache['rs-ai-'+i] : ''}</div>
                         <button class="action-btn-top" style="margin-top:20px;width:100%;height:50px;font-size:17px;" onclick="nextRestatement()">${nextLabel}</button>
                     </div>
                 </div>`;
@@ -2215,6 +2238,9 @@ function generateAIContent(word) {
                 btns[correctOpt].classList.add('correct');
             }
             document.getElementById(`rs-exp-${qIndex}`).style.display = 'block';
+
+            let q = restatementQuestions[qIndex];
+            fetchAIExplanation(`rs-ai-${qIndex}`, 'restatement', q.q, q.options, correctOpt, selectedOpt);
         }
 
         function nextRestatement() {
@@ -2364,6 +2390,127 @@ function generateAIContent(word) {
                     <div id="sc-expired-msg" class="sc-timer-expired-msg" style="display:none;">⏰ פג הזמן!</div>
                 </div>
             </div>`;
+        }
+
+        // ===== הסבר AI =====
+        let anthropicApiKey = localStorage.getItem('anthropicApiKey') || '';
+        const aiExplanationCache = {};
+        let pendingAICallback = null;
+
+        function aiMarkdown(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/^## (.+)$/gm, '<div class="ai-section"><strong style="color:#7c3aed;font-size:14px;">$1</strong></div>')
+                .replace(/^### (.+)$/gm, '<strong>$1</strong>')
+                .replace(/^[-•] (.+)$/gm, '<div style="margin:3px 0 3px 8px;">• $1</div>')
+                .replace(/\n\n+/g, '<br>')
+                .replace(/\n/g, '<br>');
+        }
+
+        function showApiKeyPrompt(containerId, retryCallback) {
+            pendingAICallback = retryCallback;
+            let el = document.getElementById(containerId);
+            if (!el) return;
+            el.innerHTML = `
+                <div class="ai-key-prompt">
+                    <p>🔑 הזן Anthropic API Key לקבלת הסברים מ-AI:</p>
+                    <div class="ai-key-row">
+                        <input class="ai-key-input" id="ai-key-field" type="password" placeholder="sk-ant-...">
+                        <button class="ai-key-save" onclick="saveApiKey('${containerId}')">שמור</button>
+                    </div>
+                </div>`;
+            el.style.display = 'block';
+        }
+
+        function saveApiKey(containerId) {
+            let val = (document.getElementById('ai-key-field') || {}).value?.trim();
+            if (!val) return;
+            anthropicApiKey = val;
+            localStorage.setItem('anthropicApiKey', val);
+            if (pendingAICallback) { pendingAICallback(); pendingAICallback = null; }
+        }
+
+        function clearApiKey() {
+            anthropicApiKey = '';
+            localStorage.removeItem('anthropicApiKey');
+        }
+
+        async function fetchAIExplanation(containerId, questionType, sentence, options, correctIndex, studentIndex) {
+            let el = document.getElementById(containerId);
+            if (!el) return;
+
+            if (!anthropicApiKey) {
+                showApiKeyPrompt(containerId, () => fetchAIExplanation(containerId, questionType, sentence, options, correctIndex, studentIndex));
+                return;
+            }
+
+            const cacheKey = containerId;
+            if (aiExplanationCache[cacheKey]) {
+                el.innerHTML = aiExplanationCache[cacheKey];
+                el.style.display = 'block';
+                return;
+            }
+
+            el.innerHTML = `<div class="ai-loading-box"><div class="ai-spinner"></div><span>מייצר הסבר מ-AI...</span></div>`;
+            el.style.display = 'block';
+
+            const optsList = options.map((o, i) => `${i + 1}. ${o}`).join('\n');
+            const correctNum = correctIndex + 1;
+            const studentNum = studentIndex + 1;
+            const typeLabel = questionType === 'restatement' ? 'restatement' : 'sentence completion';
+            const typeInstruction = questionType === 'restatement'
+                ? 'Why the correct answer best restates the original sentence'
+                : 'Why the correct answer best completes the sentence';
+
+            const prompt = `You are an expert AMIRAM exam tutor. The student answered a ${typeLabel} question.
+Original sentence: ${sentence}
+Options:
+${optsList}
+Correct answer: ${correctNum}
+Student chose: ${studentNum}
+
+Explain in Hebrew:
+1. ${typeInstruction}
+2. Why each wrong answer is incorrect (be specific about each one)
+3. A practical technique for solving this type of question in the future
+
+Keep it concise and educational. Use clear section headers for each part.`;
+
+            try {
+                const res = await fetch('https://api.anthropic.com/v1/messages', {
+                    method: 'POST',
+                    headers: {
+                        'x-api-key': anthropicApiKey,
+                        'anthropic-version': '2023-06-01',
+                        'content-type': 'application/json',
+                        'anthropic-dangerous-direct-browser-access': 'true'
+                    },
+                    body: JSON.stringify({
+                        model: 'claude-haiku-4-5-20251001',
+                        max_tokens: 1024,
+                        messages: [{ role: 'user', content: prompt }]
+                    })
+                });
+
+                if (!res.ok) {
+                    const errData = await res.json().catch(() => ({}));
+                    throw new Error(errData.error?.message || `שגיאה ${res.status}`);
+                }
+
+                const data = await res.json();
+                const text = data.content[0].text;
+                const html = `<div class="ai-explanation-box">
+                    <h4>🤖 הסבר AI</h4>
+                    ${aiMarkdown(text)}
+                    <span class="ai-forget-key" onclick="clearApiKey()">שנה API Key</span>
+                </div>`;
+                aiExplanationCache[cacheKey] = html;
+                el.innerHTML = html;
+
+            } catch(e) {
+                const isAuth = e.message.includes('401') || e.message.includes('403') || e.message.includes('authentication');
+                el.innerHTML = `<div class="ai-error-box">⚠️ ${e.message}${isAuth ? '<br><span class="ai-forget-key" onclick="clearApiKey(); this.closest(\'.ai-error-box\').parentElement.innerHTML=\'\';">נקה API Key</span>' : ''}</div>`;
+            }
         }
 
         let currentQuizCorrect = null;
