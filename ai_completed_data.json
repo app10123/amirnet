@@ -1,0 +1,2702 @@
+{
+  "ability": {
+    "assoc": "אבי לי, תביא לי יכולת!",
+    "sentence": "She has an amazing ability to solve complex mathematical problems.|יש לה יכולת מדהימה לפתור בעיות מתמטיות מורכבות."
+  },
+  "able": {
+    "assoc": "אבא'לה, אני יכול!",
+    "sentence": "She was able to solve the difficult math problem.|היא הייתה מסוגלת לפתור את בעיית המתמטיקה הקשה."
+  },
+  "affect": {
+    "assoc": "האפקט (Affect) שלו להשפיע ולרגש אותי נכשל, כי הוא סתם מעמיד פנים.",
+    "sentence": "The bad weather will affect our travel plans.|מזג האוויר הגרוע ישפיע על תוכניות הנסיעה שלנו."
+  },
+  "apology": {
+    "assoc": "אבא פולני ג'ינג'י בחיים לא ייתן התנצלות.",
+    "sentence": "He offered a sincere apology for his mistake.|הוא הציע התנצלות כנה על הטעות שלו."
+  },
+  "argue": {
+    "assoc": "אל תתווכח איתי שזה ארגז (Argue), אני טוען שזה קרטון!",
+    "sentence": "Many scientists argue that climate change is the greatest challenge of our time.|מדענים רבים טוענים ששינוי האקלים הוא האתגר הגדול ביותר של זמננו."
+  },
+  "argument": {
+    "assoc": "ארגנתי מנטה לטיעון המנצח בוויכוח.",
+    "sentence": "The lawyer presented a strong argument to support his case.|עורך הדין הציג טיעון חזק כדי לתמוך בתיק שלו."
+  },
+  "ask": {
+    "assoc": "האסקימוסי ביקש קרמבו.",
+    "sentence": "I need to ask the teacher a question.|אני צריך לשאול את המורה שאלה."
+  },
+  "assistance": {
+    "assoc": "כשאתה נותן 'אסיסט' (assist) בכדורסל, אתה בעצם נותן לחבר סיוע ועזרה לקלוע.",
+    "sentence": "The teacher provided assistance to the students who were struggling.|המורה סיפקה סיוע לתלמידים שהתקשו."
+  },
+  "assume": {
+    "assoc": "כשאתה מניח הנחות אתה עושה ASS (חמור) מ-U (ממך) ומ-ME (ממני).",
+    "sentence": "Never assume you know the whole story before hearing all the facts.|לעולם אל תניח שאתה מכיר את הסיפור המלא לפני שתשמע את כל העובדות."
+  },
+  "assumption": {
+    "assoc": "החמור (Ass) מניח הנחה שיש לו אופציה (ption).",
+    "sentence": "His decision was based on the false assumption that the meeting had been canceled.|ההחלטה שלו התבססה על ההנחה השגויה שהפגישה בוטלה."
+  },
+  "average": {
+    "assoc": "אבי-רג' הוא בסך הכל גבר ממוצע.",
+    "sentence": "The average score on the final exam was eighty percent.|הציון הממוצע בבחינה הסופית היה שמונים אחוזים."
+  },
+  "compare": {
+    "assoc": "בוא 'קום' (com) ונהיה 'פייר' (pair - זוג) כדי שנוכל להשוות בינינו מי יותר גבוה.",
+    "sentence": "It is difficult to compare the two cars because they are so different.|קשה להשוות בין שתי המכוניות כי הן כל כך שונות."
+  },
+  "consider": {
+    "assoc": "לפני שקונים 'קונסולה' (Console) חדשה, צריך 'להחשיב' את המחיר ולהביא אותו בחשבון.",
+    "sentence": "You should consider all the options before making a choice.|כדאי לך לשקול את כל האפשרויות לפני שתבצע בחירה."
+  },
+  "considerable": {
+    "assoc": "כשמשהו הוא 'אייבל' (able - מסוגל) להיחשב, סימן שהוא גדול וניכר.",
+    "sentence": "A considerable amount of money was spent on the renovation.|סכום ניכר של כסף הושקע בשיפוץ."
+  },
+  "consideration": {
+    "assoc": "הסיומת 'שן' (tion) הופכת את זה לפעולה - הפעולה של התחשבות ושיקול דעת.",
+    "sentence": "The company showed consideration for the employees' needs.|החברה הראתה התחשבות בצרכי העובדים."
+  },
+  "control": {
+    "assoc": "צריך לעשות 'קונטרול' (Control) על ה'טרול' (Troll) כדי לשלוט בו.",
+    "sentence": "The parents struggled to keep control of the noisy children.|ההורים התאמצו לשמור על שליטה בילדים הרועשים."
+  },
+  "discuss": {
+    "assoc": "בוא נדון בזה בזמן שאנחנו זורקים 'דיסקוס' (discus) אחד לשני.",
+    "sentence": "We will discuss the results of the test tomorrow.|אנחנו נדון בתוצאות המבחן מחר."
+  },
+  "discussion": {
+    "assoc": "היה 'דיון' כל כך סוער שהיינו צריכים 'דיסק' (disc) שלם להקליט אותו.",
+    "sentence": "The group had a long discussion about the environment.|לקבוצה היה דיון ארוך על איכות הסביבה."
+  },
+  "disguise": {
+    "assoc": "ה'דיס' (dis - שלילה) של ה'גאיז' (guys - בחורים). הם התחפשו כדי שלא יזהו שהם הבחורים הרגילים.",
+    "sentence": "The spy wore a fake beard as a disguise.|המרגל עטה זקן מזויף כמסווה."
+  },
+  "effect": {
+    "assoc": "זה ה'פאקט' (Fact - עובדה) שיש לזה השפעה.",
+    "sentence": "The loud noise had a negative effect on my sleep.|הרעש החזק השפיע לרעה על השינה שלי."
+  },
+  "effective": {
+    "assoc": "האפקט (Effect) הכי טיב (ive) הוא כשהדבר יעיל.",
+    "sentence": "This is an effective tool for cleaning.|זהו כלי יעיל לניקוי."
+  },
+  "fair": {
+    "assoc": "ביריד (Fair) כולם צריכים להתנהג בצורה הוגנת כדי שיהיה יפה.",
+    "sentence": "It is only fair to share the prize.|זה רק הוגן לחלוק בפרס."
+  },
+  "fairly": {
+    "assoc": "פייר-לי (Fairly) - זה די (למדי) הוגן לי.",
+    "sentence": "The test was fairly easy.|המבחן היה קל למדי."
+  },
+  "friendly": {
+    "assoc": "מי שמתנהג כמו חבר (Friend) הוא לי (ly) חברותי.",
+    "sentence": "Our neighbor is very friendly.|השכן שלנו מאוד חברותי."
+  },
+  "heal": {
+    "assoc": "כשכואב ה-Heel (עקב), צריך Heal (לרפא) אותו.",
+    "sentence": "The doctor helped heal the wound.|הרופא עזר לרפא את הפצע."
+  },
+  "health": {
+    "assoc": "אם אין לך בריאות, החיים הם גיהנום (Hell).",
+    "sentence": "Good health is better than wealth.|בריאות טובה עדיפה על עושר."
+  },
+  "healthy": {
+    "assoc": "מי שבריא (Healthy) אוכל תה (Tea) בסוף היום.",
+    "sentence": "It is important to eat healthy food.|זה חשוב לאכול אוכל בריא."
+  },
+  "ignorance": {
+    "assoc": "כשמתעלמים (Ignore) מהכל, מגיעים לבורות.",
+    "sentence": "Ignorance of the law is no excuse.|בורות לגבי החוק אינה תירוץ."
+  },
+  "ignorant": {
+    "assoc": "נמלה (Ant) שמתעלמת (Ignore) מהסכנה היא בורה.",
+    "sentence": "He is ignorant about the new rules.|הוא בור בנוגע לכללים החדשים."
+  },
+  "ignore": {
+    "assoc": "פשוט תעשה לו 'איגנור' (Ignore) בווטסאפ ותתעלם.",
+    "sentence": "Just ignore the loud noise outside.|פשוט תתעלם מהרעש החזק בחוץ."
+  },
+  "inconsiderate": {
+    "assoc": "אין-consider-זה: אין לו טיפה של התחשבות, הוא פשוט לא עוצר לחשוב על אחרים.",
+    "sentence": "It was inconsiderate of him to play loud music late at night.|זה היה לא מתחשב מצידו להשמיע מוזיקה רועשת בשעה מאוחרת בלילה."
+  },
+  "instead": {
+    "assoc": "In-stead: במקום הסטייק (steak) שרציתי, קיבלתי תפוח אדמה במקום.",
+    "sentence": "I will have water instead of soda.|אשתה מים במקום משקה מוגז."
+  },
+  "insulation": {
+    "assoc": "אין-סול-אש: אין סוליה לנעל? תשים בידוד (insulation) שלא תקפא מהרצפה.",
+    "sentence": "Good insulation helps keep the house warm in winter.|בידוד טוב עוזר לשמור על הבית חם בחורף."
+  },
+  "insult": {
+    "assoc": "In-salt: לשים למישהו מלח (Salt) בקפה זו דרך להעליב אותו.",
+    "sentence": "Please do not insult my cooking skills.|אנא אל תעליב את כישורי הבישול שלי."
+  },
+  "jealousy": {
+    "assoc": "ג'לו-סי: כשרואים מישהו אוכל ג'לי (Jello) טעים, עולה בנו קנאה.",
+    "sentence": "Her success filled her rivals with jealousy.|ההצלחה שלה מילאה את יריביה בקנאה."
+  },
+  "method": {
+    "assoc": "מטודה: כמו המילה 'מתודה' בעברית - הדרך או השיטה שבה פועלים.",
+    "sentence": "We need a new method to solve this problem.|אנחנו זקוקים לשיטה חדשה כדי לפתור את הבעיה הזו."
+  },
+  "principal": {
+    "assoc": "פרינס-סי-פל: הנסיך (Prince) הוא האיש הראשי והעיקרי בממלכה.",
+    "sentence": "The principal reason for my visit is to see you.|הסיבה העיקרית לביקור שלי היא לראות אותך."
+  },
+  "principle": {
+    "assoc": "פרינס-סי-פול: גם לנסיך (Prince) יש עקרונות שהוא לא מוכן להפר.",
+    "sentence": "It is a matter of principle for him.|זהו עניין של עיקרון עבורו."
+  },
+  "protect": {
+    "assoc": "פרו-טקט: מי שיש לו המון טקט (Tact) יודע איך להגן על רגשות של אחרים.",
+    "sentence": "Sunglasses protect your eyes from the sun.|משקפי שמש מגינים על העיניים שלך מהשמש."
+  },
+  "protection": {
+    "assoc": "פרוטקציה: כשמישהו נותן לך הגנה מיוחדת כי הוא מכיר אותך.",
+    "sentence": "The helmet provides protection for your head.|הקסדה מספקת הגנה לראש שלך."
+  },
+  "protective": {
+    "assoc": "מי שיש לו פרוטקציה (Protective) מרגיש מאוד מוגן והגנתי.",
+    "sentence": "She is very protective of her younger brother. | היא מאוד מגוננת על אחיה הקטן."
+  },
+  "regal": {
+    "assoc": "המלך שם רגל (Regal) על השולחן בצורה מלכותית.",
+    "sentence": "The queen had a regal appearance at the ceremony. | למלכה היה מראה מלכותי בטקס."
+  },
+  "silence": {
+    "assoc": "כששמים את הטלפון על סיילנט (Silence) יש שקט מוחלט.",
+    "sentence": "The teacher asked for silence in the classroom. | המורה ביקש שקט בכיתה."
+  },
+  "silencing": {
+    "assoc": "הוא משתמש בסיילנסר (Silencer) כדי להיות משתיק קול.",
+    "sentence": "The government is accused of silencing its critics. | הממשלה מואשמת בהשתקת מבקריה."
+  },
+  "silent": {
+    "assoc": "סרט אילם (Silent film) הוא תמיד דומם וחרישי.",
+    "sentence": "The library was completely silent. | הספרייה הייתה דוממת לחלוטין."
+  },
+  "simple": {
+    "assoc": "סימפל - זה פשוט פשוט, לא צריך להיות טיפש כדי להבין.",
+    "sentence": "The instructions were simple and easy to follow. | ההוראות היו פשוטות וקלות למעקב."
+  },
+  "simplicity": {
+    "assoc": "סימפל-סיטי (Simplicity) - עיר שחיה בפשטות מוחלטת.",
+    "sentence": "The beauty of the design lies in its simplicity. | היופי של העיצוב טמון בפשטות שלו."
+  },
+  "simplify": {
+    "assoc": "סימפל-פאי (Simplify) - בואו נפשט את המתכון של הפאי.",
+    "sentence": "Please simplify the explanation so I can understand. | בבקשה פשט את ההסבר כדי שאוכל להבין."
+  },
+  "sink": {
+    "assoc": "הסינק (Sink - כיור) שלכם שוקע לתוך הרצפה!",
+    "sentence": "The heavy rock began to sink to the bottom of the lake. | האבן הכבדה החלה לשקוע לקרקעית האגם."
+  },
+  "tiny": {
+    "assoc": "טייני - זה נשמע כמו 'טיפה', וטיפה היא דבר זעיר.",
+    "sentence": "A tiny insect crawled across the leaf. | חרק זעיר זחל על פני העלה."
+  },
+  "tire": {
+    "assoc": "כשמחליפים צמיג (tire) במכונית, זה ממש מעייף ומתיש.",
+    "sentence": "The long hike will tire out the children.|הטיול הארוך יתיש את הילדים."
+  },
+  "tirelessly": {
+    "assoc": "הוא עובד כאילו אין לו צמיג (tire-less) שצריך לעצור להחלפה - פשוט נמרץ!",
+    "sentence": "She worked tirelessly to finish the project on time.|היא עבדה באופן נמרץ כדי לסיים את הפרויקט בזמן."
+  },
+  "tool": {
+    "assoc": "מי שמשתמש ב'טוּל' (tool) הוא בטח 'תותח' בתיקונים.",
+    "sentence": "A hammer is a useful tool for fixing things.|פטיש הוא כלי עבודה שימושי לתיקון דברים."
+  },
+  "tropical": {
+    "assoc": "במזג אוויר טרופי הכי כיף לשתות 'טרופית' קרה.",
+    "sentence": "They visited a beautiful tropical island last summer.|הם ביקרו באי טרופי יפהפה בקיץ האחרון."
+  },
+  "truth": {
+    "assoc": "תראו ת' (Truth) - תראו את האמת יוצאת לאור.",
+    "sentence": "It is always better to tell the truth.|תמיד עדיף להגיד את האמת."
+  },
+  "unfair": {
+    "assoc": "זה 'לא פייר' (unfair) שמישהו אחר קיבל את כל העוגה.",
+    "sentence": "It was unfair that only some students got a prize.|זה היה בלתי הוגן שרק חלק מהתלמידים קיבלו פרס."
+  },
+  "unhealthy": {
+    "assoc": "מי שלא 'הלתי' (healthy) אוכל חלה (un-he-lthy) עם שוקולד כל היום וזה לא בריא.",
+    "sentence": "Eating too much sugar is unhealthy.|אכילת יותר מדי סוכר היא לא בריאה."
+  },
+  "vague": {
+    "assoc": "הזיכרון שלי מהמגזין 'ווג' (Vogue) הוא כבר מעורפל לגמרי.",
+    "sentence": "His answer was very vague and confusing.|תשובתו הייתה מאוד מעורפלת ומבלבלת."
+  },
+  "war": {
+    "assoc": "בזמן מלחמה כולם צועקים 'וואו' (war) מכל אזעקה.",
+    "sentence": "The country has been at war for many years.|המדינה נמצאת במלחמה כבר שנים רבות."
+  },
+  "warm": {
+    "assoc": "כשיש מזג אוויר 'וורם' (warm), התולעת (worm) יוצאת להתחמם.",
+    "sentence": "Please wear a warm coat today.|בבקשה תלבש מעיל חמים היום."
+  },
+  "warmly": {
+    "assoc": "וורם (חם) + לי. המרק היה חם לי בבטן וקיבלו אותי בחמימות.",
+    "sentence": "She greeted us warmly at the door.|היא בירכה אותנו בחמימות בדלת."
+  },
+  "wealth": {
+    "assoc": "וול (באר) של ת' (תכשיטים). מי שיש לו באר תכשיטים הוא בעל עושר רב.",
+    "sentence": "Health is more important than wealth.|בריאות חשובה יותר מעושר."
+  },
+  "wealthy": {
+    "assoc": "וול (טוב) + תי (תה). רק לאיש עשיר יש תה ממש איכותי וטוב.",
+    "sentence": "He lives in a wealthy neighborhood.|הוא גר בשכונה עשירה."
+  },
+  "wear": {
+    "assoc": "וואר (כמו war - מלחמה). ללבוש מדים למלחמה זה מעייף ושוחק.",
+    "sentence": "What should I wear to the party?|מה כדאי לי ללבוש למסיבה?"
+  },
+  "wide": {
+    "assoc": "וואי (W) + יד. כשפורשים את הידיים לצדדים המרחק הוא רחב.",
+    "sentence": "The river is very wide at this point.|הנהר רחב מאוד בנקודה זו."
+  },
+  "widely": {
+    "assoc": "וואי (W) + דלי. הדלי כל כך רחב שהוא מכיל מים במידה מרובה.",
+    "sentence": "His books are widely read around the world.|הספרים שלו נקראים במידה מרובה ברחבי העולם."
+  },
+  "worn": {
+    "assoc": "ווארן (כמו warn - להזהיר). הזהירו אותי שהבגד כבר בלוי ושחוק.",
+    "sentence": "His old shoes were worn and dirty.|הנעליים הישנות שלו היו בלויות ומלוכלכות."
+  },
+  "young": {
+    "assoc": "יאנג (כמו יין ויאנג). הילד הצעיר תמיד מלא באנרגיה חיובית.",
+    "sentence": "The young girl is very talented.|הילדה הצעירה מוכשרת מאוד."
+  },
+  "adjust": {
+    "assoc": "אד (פרסומת - ad) + ג'אסט (רק - just). ראיתי פרסומת ופשוט החלטתי להתאים את עצמי לטרנד.",
+    "sentence": "It took him time to adjust to the new city.|לקח לו זמן להסתגל לעיר החדשה."
+  },
+  "amusement": {
+    "assoc": "א-מיוז (מוזה). המוזה והיצירתיות מגיעות מתוך שעשוע ובידור.",
+    "sentence": "The children looked at the clown with amusement.|הילדים הביטו בליצן בשעשוע."
+  },
+  "amusing": {
+    "assoc": "הסרט במוזיאון (Museum) היה פשוט א-מיוזינג - ממש משעשע!",
+    "sentence": "The comedian told an amusing story that made everyone laugh.|הקומיקאי סיפר סיפור משעשע שגרם לכולם לצחוק."
+  },
+  "attempt": {
+    "assoc": "אני מנסה לא להתפתות (Temptation) לעוגה, אבל זה רק ניסיון (Attempt).",
+    "sentence": "He made an attempt to climb the mountain despite the weather.|הוא עשה ניסיון לטפס על ההר למרות מזג האוויר."
+  },
+  "bashful": {
+    "assoc": "הוא כל כך ביישן שהוא מרגיש 'ביש' (מזל ביש) כשהוא צריך לדבר.",
+    "sentence": "The bashful child hid behind his mother when guests arrived.|הילד הביישן התחבא מאחורי אמו כשהגיעו אורחים."
+  },
+  "boost": {
+    "assoc": "כשאני שותה משקה אנרגיה אני מקבל בוסט (Boost) של תמריץ.",
+    "sentence": "A good cup of coffee can boost your energy in the morning.|כוס קפה טובה יכולה להמריץ את האנרגיה שלך בבוקר."
+  },
+  "confide": {
+    "assoc": "אני בוטח (Confident) בך ולכן אני קונפייד (Confide) בך ומספר לך סוד.",
+    "sentence": "She decided to confide her secrets to her best friend.|היא החליטה לספר את סודותיה לחברתה הטובה ביותר."
+  },
+  "crop": {
+    "assoc": "האיכר עושה קרופ (Crop) לתמונה של היבול המוצלח שלו.",
+    "sentence": "The farmers hope for a good wheat crop this year.|החקלאים מקווים ליבול חיטה טוב השנה."
+  },
+  "denial": {
+    "assoc": "דניאל נמצא בדניאל (Denial) - הוא בהכחשה שהוא אכל את כל השוקולד.",
+    "sentence": "He is in denial about his health problems.|הוא נמצא בהכחשה לגבי הבעיות הבריאותיות שלו."
+  },
+  "deny": {
+    "assoc": "אמרתי לו 'די-נו' (Deny), תפסיק להכחיש את מה שעשית!",
+    "sentence": "The witness decided to deny all the accusations.|העד החליט להכחיש את כל ההאשמות."
+  },
+  "disrupt": {
+    "assoc": "הדיסק נשרט (Dis-rupt) וזה שיבש את כל המוזיקה במסיבה.",
+    "sentence": "Loud noises can disrupt a student's concentration.|רעשים חזקים יכולים לשבש את הריכוז של סטודנט."
+  },
+  "entertainment": {
+    "assoc": "כשנכנסים (Enter) ללונה פארק מקבלים יופי של בידור.",
+    "sentence": "The city offers many forms of entertainment, such as theaters and cinemas.|העיר מציעה צורות רבות של בידור, כמו תיאטראות ובתי קולנוע."
+  },
+  "erupt": {
+    "assoc": "כשכל הג'יפה 'יוצאת' (E-rupt) החוצה מהר הגעש ברעש גדול.",
+    "sentence": "The volcano began to erupt without warning.|הר הגעש החל להתפרץ ללא אזהרה."
+  },
+  "eruption": {
+    "assoc": "התפרצות (Eruption) של חצ'קון מעצבן בדיוק לפני הדייט.",
+    "sentence": "The volcanic eruption lasted for several days.|התפרצות הר הגעש נמשכה מספר ימים."
+  },
+  "excuse": {
+    "assoc": "האקס (Ex) שלי תמיד השתמש בסיבה (Cause) כתירוץ למה הוא איחר.",
+    "sentence": "He gave a poor excuse for being late.|הוא נתן תירוץ עלוב לכך שאיחר."
+  },
+  "execute": {
+    "assoc": "לבצע (Execute) את המשימה מהר, אחרת יהפכו אותך ל-Ex (לשעבר).",
+    "sentence": "The soldiers had to execute the general's orders.|החיילים היו צריכים לבצע את פקודות הגנרל."
+  },
+  "falsely": {
+    "assoc": "הוא שיקר (False) 'לי' (ly) ישר בפנים בצורה לא כנה.",
+    "sentence": "He was falsely accused of the crime.|הוא הואשם בפשע בצורה שקרית."
+  },
+  "falsify": {
+    "assoc": "להפוך משהו ל-False (שקר) זה פשוט לזייף אותו.",
+    "sentence": "It is illegal to falsify official documents.|זה לא חוקי לזייף מסמכים רשמיים."
+  },
+  "generation": {
+    "assoc": "הדור (Generation) של היום יודע רק לייצר (Generate) בלגן בטיקטוק.",
+    "sentence": "This technology will serve the next generation.|הטכנולוגיה הזו תשרת את הדור הבא."
+  },
+  "gloom": {
+    "assoc": "בתוך החשיכה והעגמומיות (Gloom) מרגישים כמו גולם בחושך.",
+    "sentence": "The room was filled with gloom after the bad news.|החדר התמלא בעגמומיות לאחר החדשות הרעות."
+  },
+  "habitat": {
+    "assoc": "לכל חיה יש הרגל (Habit) להיות בבית (at home) באזור המחיה שלה.",
+    "sentence": "The forest is the natural habitat of many animals.|היער הוא אזור המחיה הטבעי של חיות רבות."
+  },
+  "honesty": {
+    "assoc": "מי שיש לו יושר (Honesty) הוא מתוק וטהור כמו דבש (Honey).",
+    "sentence": "Honesty is the most important quality in a friend.|יושר הוא התכונה החשובה ביותר אצל חבר."
+  },
+  "imitate": {
+    "assoc": "אימי (אמא שלי) תמיד אומרת לי: 'אל תנסה לחקות (imitate) אותי!'",
+    "sentence": "The monkey tried to imitate the trainer's movements. | הקוף ניסה לחקות את תנועות המאמן."
+  },
+  "imitation": {
+    "assoc": "זה נשמע כמו 'אמיטיישן' - חיקוי של מוצר אמיתי.",
+    "sentence": "This is a cheap imitation of a designer watch. | זהו חיקוי זול של שעון מעצבים."
+  },
+  "incidence": {
+    "assoc": "בתוך (In) הריקוד (dance) הזה יש שכיחות גבוהה של טעויות.",
+    "sentence": "There is a high incidence of flu during the winter. | ישנה שכיחות גבוהה של שפעת במהלך החורף."
+  },
+  "inform": {
+    "assoc": "להכניס מישהו לפורמה (Form) זה ליידע אותו מה קורה.",
+    "sentence": "Please inform us of any changes to your schedule. | אנא יידע אותנו על כל שינוי בלוח הזמנים שלך."
+  },
+  "information": {
+    "assoc": "כל איש (In) פה (For) מביא איתו מידע (mation).",
+    "sentence": "We need more information before making a decision. | אנחנו זקוקים למידע נוסף לפני שנקבל החלטה."
+  },
+  "inhabit": {
+    "assoc": "כשחיים בתוך (In) מקום, זה הופך להרגל (Habit) ליישב אותו.",
+    "sentence": "Many different species inhabit the tropical rainforest. | מינים רבים ושונים מאכלסים את יער הגשם הטרופי."
+  },
+  "inhabitants": {
+    "assoc": "האנשים שגרים (Inhabit) במקום הם התושבים.",
+    "sentence": "The local inhabitants were very welcoming to the tourists. | התושבים המקומיים היו מאוד מסבירי פנים לתיירים."
+  },
+  "inhibit": {
+    "assoc": "תעצור (In) את הביט (hibit) - תרסן את המוזיקה!",
+    "sentence": "Fear can inhibit people from trying new things. | פחד יכול לבלום אנשים מלנסות דברים חדשים."
+  },
+  "inhibition": {
+    "assoc": "אינהיביציה זה כשאתה מרגיש עכבה ולא מצליח להשתחרר.",
+    "sentence": "Alcohol often lowers a person's social inhibition. | אלכוהול לעיתים קרובות מפחית את העכבות החברתיות של האדם."
+  },
+  "injure": {
+    "assoc": "אין (In) ג'ורג' (jure) היום בעבודה כי הוא נפצע.",
+    "sentence": "You might injure yourself if you are not careful. | אתה עלול לפצוע את עצמך אם לא תהיה זהיר."
+  },
+  "injury": {
+    "assoc": "אין-ג'רי (In-jury): כשג'רי העכבר פצוע, הוא אומר 'אין ג'רי היום, אני פצוע'.",
+    "sentence": "The soccer player suffered a serious knee injury during the game. | שחקן הכדורגל סבל מפציעת ברך חמורה במהלך המשחק."
+  },
+  "intent": {
+    "assoc": "In tent: כשאתה בתוך אוהל, אתה ממוקד רק בשינה או בלברוח מהיתושים.",
+    "sentence": "He was so intent on his work that he didn't hear me enter. | הוא היה כל כך ממוקד בעבודתו שהוא לא שמע אותי נכנס."
+  },
+  "intention": {
+    "assoc": "In-tension: כשיש כוונה טובה, אין מתח (Tension) באוויר.",
+    "sentence": "It was not my intention to offend you. | לא הייתה לי כוונה להעליב אותך."
+  },
+  "interrupt": {
+    "assoc": "Enter-rupt: כשמישהו נכנס (Enter) לחדר וקוטע (Interrupt) את הדיון.",
+    "sentence": "Please do not interrupt me while I am speaking. | אנא אל תפריע לי בזמן שאני מדבר."
+  },
+  "intrigue": {
+    "assoc": "In-trigue: נשמע כמו 'בטריקים' - הקוסם משתמש בטריקים כדי לסקרן את הקהל.",
+    "sentence": "The mystery novel's plot continues to intrigue readers. | עלילת רומן המסתורין ממשיכה לסקרן את הקוראים."
+  },
+  "issue": {
+    "assoc": "אי-שו (E-shoe): אם היו מוכרים נעל אלקטרונית, זה היה נושא שיחה פופולרי מאוד.",
+    "sentence": "Global warming is a major issue in today's world. | התחממות גלובלית היא סוגיה מרכזית בעולם של היום."
+  },
+  "largely": {
+    "assoc": "Large (גדול): משהו שקורה 'בגדול', כלומר הוא קורה בעיקר ככה.",
+    "sentence": "The success of the project was largely due to her hard work. | הצלחת הפרויקט נבעה בעיקר מעבודתה הקשה."
+  },
+  "launch": {
+    "assoc": "Lunch (צהריים): כשמשיקים מוצר חדש, תמיד עושים ארוחת צהריים חגיגית.",
+    "sentence": "NASA is planning to launch a new satellite next month. | נאס\"א מתכננת לשגר לוויין חדש בחודש הבא."
+  },
+  "manual": {
+    "assoc": "Man-ual: הגבר (Man) הממוצע מסרב לקרוא את ספר ההוראות.",
+    "sentence": "I always read the instruction manual before using a new appliance. | אני תמיד קורא את ספר ההוראות לפני השימוש במכשיר חדש."
+  },
+  "manufacture": {
+    "assoc": "Menu-facture: דמיינו מפעל שמייצר תפריטים (Menus) עבור כל המסעדות בעולם.",
+    "sentence": "This company started to manufacture electric cars recently. | החברה הזו התחילה לייצר מכוניות חשמליות לאחרונה."
+  },
+  "medieval": {
+    "assoc": "מזל שאין היום 'מיד' (כבר עכשיו) 'אי-בל' (רוע) כמו שהיה בימי הביניים.",
+    "sentence": "Medieval knights wore heavy armor into battle.|אבירים מימי הביניים לבשו שריון כבד בקרב."
+  },
+  "mental": {
+    "assoc": "אדם 'מנטלי' לפעמים צריך 'מנטה' כדי להרגיע את המצב הנפשי.",
+    "sentence": "Yoga can improve your mental health.|יוגה יכולה לשפר את הבריאות הנפשית שלך."
+  },
+  "necessary": {
+    "assoc": "זה 'נס' שזה 'סרי' (הכרחי) לשתות מים בקיץ כדי לא להתייבש.",
+    "sentence": "It is necessary to wear a seatbelt while driving.|זה הכרחי לחגור חגורת בטיחות בזמן הנהיגה."
+  },
+  "necessity": {
+    "assoc": "בעיר (city) גדולה, קפה של בוקר הוא 'נס' (נחיצות) אמיתי.",
+    "sentence": "Water is a necessity for all living things.|מים הם צורך עבור כל היצורים החיים."
+  },
+  "numerous": {
+    "assoc": "בשיעור מתמטיקה יש 'נומר' (מספר) 'אוס' (אוסף) רב של תרגילים.",
+    "sentence": "There are numerous stars in the sky.|יש מספר רב של כוכבים בשמיים."
+  },
+  "opponent": {
+    "assoc": "ה'אופו'ננט שלי הוא ה'פוני' (סוס קטן) הכי חקש בתחרות.",
+    "sentence": "She defeated her opponent in the final match.|היא ניצחה את היריב שלה במשחק הגמר."
+  },
+  "origin": {
+    "assoc": "כמו 'אוריגמי', המקור של אומנות קיפולי הנייר הוא מיפן.",
+    "sentence": "Scientists are studying the origin of the universe.|מדענים חוקרים את מקור היקום."
+  },
+  "original": {
+    "assoc": "כולם רוצים את הג'ינס ה'אוריג'ינל' המקורי ולא זיוף מהשוק.",
+    "sentence": "This is the original version of the book.|זוהי הגרסה המקורית של הספר."
+  },
+  "originality": {
+    "assoc": "כשמוסיפים 'ליטי' (תה קטן) לרעיון המקורי, מקבלים מקוריות.",
+    "sentence": "The artist was praised for her originality.|האמנית זכתה לשבחים על המקוריות שלה."
+  },
+  "originate": {
+    "assoc": "המקור (origin) יצא ל'דייט' (ate) כדי להתהוות למשהו חדש.",
+    "sentence": "Many customs originate from ancient traditions.|מנהגים רבים נובעים ממסורות עתיקות."
+  },
+  "overcome": {
+    "assoc": "כשיש over (יותר מדי) דברים ש-come (באים) עליך, אתה חייב להתגבר עליהם.",
+    "sentence": "She had to overcome many obstacles to win.|היא הייתה צריכה להתגבר על מכשולים רבים כדי לנצח."
+  },
+  "peculiar": {
+    "assoc": "הפיל (Pe) חושב שהוא קולי (culi) ומוזיקלי (ar) - זה ממש מוזר ומיוחד.",
+    "sentence": "He has a peculiar habit of talking to his plants.|יש לו הרגל מוזר לדבר עם הצמחים שלו."
+  },
+  "peculiarly": {
+    "assoc": "כמו peculiar, רק עם הסיומת ly שהופכת את זה ל'באופן מוזר'.",
+    "sentence": "The room was peculiarly quiet today.|החדר היה שקט באופן מוזר היום."
+  },
+  "phenomena": {
+    "assoc": "פנו-מנה: פנו אלינו המון אנשים כדי לראות את כל התופעות האלו.",
+    "sentence": "Scientists study natural phenomena like lightning.|מדענים חוקרים תופעות טבע כמו ברק."
+  },
+  "phenomenon": {
+    "assoc": "מסתיים ב-non, שזה נשמע כמו 'אחד' - תופעה אחת בודדת.",
+    "sentence": "This weather phenomenon is very rare.|תופעת המזג אוויר הזו נדירה מאוד."
+  },
+  "plot": {
+    "assoc": "פלוטו הכלב בנה עלילה שלמה כדי לזמום איך לגנוב את העצם.",
+    "sentence": "The movie has a very complex plot.|לסרט יש עלילה מורכבת מאוד."
+  },
+  "poverty": {
+    "assoc": "בעוני (poverty) כל מה שיש לאכול זה פאו (לחם) ולשתות תה (tea).",
+    "sentence": "Many people live in extreme poverty.|אנשים רבים חיים בעוני קיצוני."
+  },
+  "presently": {
+    "assoc": "ה-present (מתנה) תגיע 'לי' (ly) בקרוב מאוד!",
+    "sentence": "The doctor will see you presently.|הרופא יראה אותך בקרוב."
+  },
+  "probable": {
+    "assoc": "פרו (מקצוען) אייבל (יכול) - זה סביר מאוד שהוא יצליח.",
+    "sentence": "It is probable that the team will win.|זה סביר שהקבוצה תנצח."
+  },
+  "probably": {
+    "assoc": "דומה ל-probable, זה קרוב לוודאי שזה יקרה.",
+    "sentence": "I will probably go to the party.|אני קרוב לוודאי אלך למסיבה."
+  },
+  "prohibit": {
+    "assoc": "פרו (מקצוען) הביט (הסתכל) - המקצוען הסתכל ואמר שאסור לעשות את זה!",
+    "sentence": "The law prohibits smoking in public places.|החוק אוסר על עישון במקומות ציבוריים."
+  },
+  "prohibition": {
+    "assoc": "שון (Sean) הביט וגילה שיש איסור רשמי על המסיבה.",
+    "sentence": "The prohibition of alcohol lasted for many years.|איסור האלכוהול נמשך שנים רבות."
+  },
+  "propose": {
+    "assoc": "המקצוען (Pro) עושה פוזה (Pose) כדי להציע נישואין.",
+    "sentence": "I want to propose a new idea for the project.|אני רוצה להציע רעיון חדש לפרויקט."
+  },
+  "purpose": {
+    "assoc": "פר-פוזה (Pur-pose): המטרה של הפר היא לעשות פוזה למצלמה.",
+    "sentence": "The purpose of this meeting is to find a solution.|המטרה של הפגישה הזו היא למצוא פתרון."
+  },
+  "pursue": {
+    "assoc": "פר-סו (Pur-sue): לרדוף אחרי הפר כדי לתבוע (Sue) אותו.",
+    "sentence": "She decided to pursue a career in medicine.|היא החליטה לרדוף אחרי קריירה ברפואה."
+  },
+  "quarrel": {
+    "assoc": "נשמע כמו קורל - קורל תמיד רבה ומתווכחת עם כולם.",
+    "sentence": "They had a long quarrel about who should wash the dishes.|היה להם ויכוח ארוך על מי צריך לשטוף כלים."
+  },
+  "raid": {
+    "assoc": "כמו התרסיס רייד (Raid) שעושה פשיטה על הג'וקים במטבח.",
+    "sentence": "The police conducted a raid on the illegal casino.|המשטרה ביצעה פשיטה על הקזינו הבלתי חוקי."
+  },
+  "recall": {
+    "assoc": "להתקשר שוב (Re-call) למישהו כדי להיזכר מה הוא אמר.",
+    "sentence": "I cannot recall where I left my keys.|אני לא מצליח להיזכר איפה השארתי את המפתחות שלי."
+  },
+  "region": {
+    "assoc": "רג'ינה היא המלכה של האזור הזה.",
+    "sentence": "This region is known for its beautiful mountains.|האזור הזה ידוע בהרים היפים שלו."
+  },
+  "regional": {
+    "assoc": "אל (Al) גר באזור (Region) מסוים, אז זה עניין אזורי.",
+    "sentence": "The regional competition will take place next week.|התחרות האזורית תתקיים בשבוע הבא."
+  },
+  "represent": {
+    "assoc": "הנציג עושה Re-present (מציג מחדש) את הטיעונים כדי לייצג אותנו.",
+    "sentence": "A lawyer will represent you in court. | עורך דין ייצג אותך בבית המשפט."
+  },
+  "reside": {
+    "assoc": "אני גר ב-Side (צד) הזה של העיר, פה אני מתגורר.",
+    "sentence": "Many species of birds reside in this forest. | מינים רבים של ציפורים מתגוררים ביער זה."
+  },
+  "residence": {
+    "assoc": "כש-Reside (מתגורר) הופך לשם עצם, הוא נהיה Residence - מקום המגורים.",
+    "sentence": "The official residence of the president is very large. | מעון המגורים הרשמי של הנשיא גדול מאוד."
+  },
+  "seek": {
+    "assoc": "במשחק Hide and Seek (מחבואים), התפקיד שלך הוא לחפש.",
+    "sentence": "You should seek professional advice. | כדאי לך לחפש ייעוץ מקצועי."
+  },
+  "serum": {
+    "assoc": "סרום לפנים הוא סוג של נסיוב שנספג בעור.",
+    "sentence": "The doctor injected the serum into the patient. | הרופא הזריק את הנסיוב למטופל."
+  },
+  "shrink": {
+    "assoc": "שרינק (פסיכולוג) עוזר לכווץ את הבעיות שלך עד שהן נעלמות.",
+    "sentence": "The sweater will shrink if you wash it in hot water. | הסוודר יתכווץ אם תכבס אותו במים חמים."
+  },
+  "slip": {
+    "assoc": "נעלתי סליפרס (Slippers) והחלקתי על הרצפה הרטובה.",
+    "sentence": "Be careful not to slip on the wet floor. | היזהר לא להחליק על הרצפה הרטובה."
+  },
+  "sufficient": {
+    "assoc": "זה 'סופי' (Suf), יש לי כמות מספיקה ולא צריך יותר.",
+    "sentence": "The food we bought is sufficient for a week. | האוכל שקנינו מספיק לשבוע."
+  },
+  "surgery": {
+    "assoc": "סר-ג'רי (Sir Jerry) הוא המנתח הכי טוב בבית החולים.",
+    "sentence": "He is recovering from a heart surgery. | הוא מתאושש מניתוח לב."
+  },
+  "suspect": {
+    "assoc": "הסוס הזה נראה חשוד (Suspect), אולי הוא בכלל חמור בתחפושת?",
+    "sentence": "The police arrested a suspect in the robbery. | המשטרה עצרה חשוד בשוד."
+  },
+  "suspicion": {
+    "assoc": "סוס עם פישון (פיפי) בגינה? זה נראה לי מאוד חשוד.",
+    "sentence": "Her suspicion was confirmed when she found the hidden key.|החשד שלה אומת כשהיא מצאה את המפתח הנסתר."
+  },
+  "technological": {
+    "assoc": "דומה למילה טכנולוגי בעברית עם סיומת 'אל'.",
+    "sentence": "We are experiencing rapid technological growth.|אנחנו חווים צמיחה טכנולוגית מהירה."
+  },
+  "technology": {
+    "assoc": "מילה כמעט זהה לעברית - טכנולוגיה.",
+    "sentence": "New technology has changed how we communicate.|טכנולוגיה חדשה שינתה את הדרך בה אנו מתקשרים."
+  },
+  "transfer": {
+    "assoc": "הפר (שור) נכנס לטראנס והעביר את כל החפצים לבית החדש.",
+    "sentence": "Please transfer the funds to my bank account.|אנא העבר את הכספים לחשבון הבנק שלי."
+  },
+  "triumph": {
+    "assoc": "תרי-אם (Try-Am): האמא ניסתה חזק עד שהשיגה ניצחון.",
+    "sentence": "The team's triumph was celebrated by the entire city.|הניצחון של הקבוצה נחגג על ידי העיר כולה."
+  },
+  "unnecessary": {
+    "assoc": "זה לא (un) נססרי (הכרחי), אז זה מיותר.",
+    "sentence": "It is unnecessary to bring your own umbrella today.|זה מיותר להביא מטריה משלך היום."
+  },
+  "valid": {
+    "assoc": "ואל (Val) הילד (id) תמיד בודק שהכרטיס שלו בתוקף.",
+    "sentence": "Your passport is valid for another five years.|הדרכון שלך בתוקף לחמש שנים נוספות."
+  },
+  "victory": {
+    "assoc": "ויקטור תמיד יוצא עם ידו על העליונה ומשיג ניצחון.",
+    "sentence": "The army celebrated their victory after the long war.|הצבא חגג את ניצחונו לאחר המלחמה הארוכה."
+  },
+  "welfare": {
+    "assoc": "מרגישים טוב (Well) כשהשכר (Fare) גבוה ויש רווחה כלכלית.",
+    "sentence": "The government is responsible for the citizens' welfare.|הממשלה אחראית לרווחת האזרחים."
+  },
+  "wickedly": {
+    "assoc": "המכשפה מהמחזמר 'וויקד' (Wicked) תמיד צוחקת ברשעות.",
+    "sentence": "The villain smiled wickedly at the hero.|הנבל חייך ברשעות אל הגיבור."
+  },
+  "wilderness": {
+    "assoc": "בתוך ה-Wild (פרא) מחפשים Ness (נס) כדי לשרוד בשממה.",
+    "sentence": "The explorers were lost in the vast wilderness.|החוקרים הלכו לאיבוד בשממה העצומה."
+  },
+  "wrestle": {
+    "assoc": "קשה להתאבק כשאתה רוצה לעשות Rest (מנוחה).",
+    "sentence": "The brothers used to wrestle on the living room floor.|האחים נהגו להתאבק על רצפת הסלון."
+  },
+  "accommodation": {
+    "assoc": "אם ה-Modem (מודם) עובד, האירוח והמגורים במלון מושלמים.",
+    "sentence": "We need to find cheap accommodation for our trip.|אנחנו צריכים למצוא מגורים זולים לטיול שלנו."
+  },
+  "affirm": {
+    "assoc": "כשנותנים Affirm (אישור), המצב הופך ל-Firm (יציב/חזק).",
+    "sentence": "The witness was asked to affirm the truth of her statement.|העדה נתבקשה לאשר את אמיתות הצהרתה."
+  },
+  "alter": {
+    "assoc": "כשעולים ל-Altar (מזבח) הסטטוס המשפחתי עומד לשנות כיוון.",
+    "sentence": "You can alter the dress if it is too long.|את יכולה לשנות את השמלה אם היא ארוכה מדי."
+  },
+  "alteration": {
+    "assoc": "Alter (לשנות) + Nation (אומה) - שינוי של אומה שלמה.",
+    "sentence": "The tailor made a small alteration to the suit.|החייט עשה שינוי קטן בחליפה."
+  },
+  "appropriate": {
+    "assoc": "זה נשמע כמו Apple-Prop (תפוח כאביזר) - זה אביזר הולם להצגה של שלגיה.",
+    "sentence": "Jeans are not appropriate attire for a wedding.|ג'ינס אינו לבוש הולם לחתונה."
+  },
+  "blaze": {
+    "assoc": "זה נשמע כמו 'בלי זה' - אי אפשר לעשות על האש בלי זה (להבה).",
+    "sentence": "The campfire began to blaze in the dark.|המדורה החלה להתלקח בחושך."
+  },
+  "calmly": {
+    "assoc": "זה נשמע כמו 'קם לי' - בבוקר קם לי לאט וברוגע.",
+    "sentence": "She calmly explained the situation to the police.|היא הסבירה ברוגע את המצב למשטרה."
+  },
+  "chant": {
+    "assoc": "זה נשמע כמו 'שנת' - שרים מזמור כדי להבטיח שנת ישרים.",
+    "sentence": "The monks began to chant their morning prayers.|הנזירים החלו לשיר את תפילות הבוקר שלהם."
+  },
+  "coerce": {
+    "assoc": "זה נשמע כמו 'כורסה'. אמא חייבת לאלץ (coerce) אותך לקום מהכורסה כדי לסדר את החדר.",
+    "sentence": "The boss tried to coerce the employee into working overtime.|הבוס ניסה לאלץ את העובד לעבוד שעות נוספות."
+  },
+  "concur": {
+    "assoc": "נשמע כמו 'con-car'. כולם מסכימים (concur) שחייבים לנסוע יחד במכונית אחת.",
+    "sentence": "After a long discussion, the board finally concurred with the proposal.|לאחר דיון ארוך, הדירקטוריון הסכים לבסוף להצעה."
+  },
+  "construct": {
+    "assoc": "מזכיר קונסטרוקציה. הפועלים בונים (construct) את הקונסטרוקציה של הבניין.",
+    "sentence": "The company plans to construct a new office building downtown.|החברה מתכננת לבנות בניין משרדים חדש במרכז העיר."
+  },
+  "construction": {
+    "assoc": "השם של construct. כשרואים אתר בנייה, רואים את המבנה (construction).",
+    "sentence": "The bridge is still under construction.|הגשר עדיין נמצא בתהליך בנייה."
+  },
+  "convene": {
+    "assoc": "נשמע כמו 'Con-Van'. כולם נכנסים לתוך 'ואן' (Van) כדי להתכנס (convene).",
+    "sentence": "The committee will convene tomorrow to discuss the new budget.|הוועדה תתכנס מחר כדי לדון בתקציב החדש."
+  },
+  "convention": {
+    "assoc": "מזכיר את כנס 'קומיק-קון' (Comic-Con) - זה הכנס (convention) הכי מפורסם.",
+    "sentence": "The annual medical convention is held in Las Vegas.|הכנס הרפואי השנתי נערך בלאס וגאס."
+  },
+  "conventional": {
+    "assoc": "רפואה קונבנציונלית היא הרפואה המקובלת (conventional).",
+    "sentence": "Most people prefer conventional medicine over alternative treatments.|רוב האנשים מעדיפים רפואה קונבנציונלית על פני טיפולים אלטרנטיביים."
+  },
+  "cultivate": {
+    "assoc": "נשמע כמו 'קולטי' (collect). חקלאי 'אוסף' את מה שהוא עיבד (cultivate) באדמה.",
+    "sentence": "Farmers cultivate the land to grow crops.|חקלאים מעבדים את האדמה כדי לגדל יבולים."
+  },
+  "cultivation": {
+    "assoc": "מזכיר Culture (תרבות). כדי ליצור תרבות טובה צריך טיפוח (cultivation) ועיבוד.",
+    "sentence": "The cultivation of talent requires practice and patience.|טיפוח של כישרון דורש תרגול וסבלנות."
+  },
+  "defeat": {
+    "assoc": "נשמע כמו 'The feet'. השתמשתי ברגליים שלי כדי להביס (defeat) את היריב בכדורגל.",
+    "sentence": "The army managed to defeat the enemy in a decisive battle.|הצבא הצליח להביס את האויב בקרב מכריע."
+  },
+  "dissent": {
+    "assoc": "די! סנט (Cent) אחד אני לא נותן, אני מתנגד להצעה הזו!",
+    "sentence": "The judges expressed their dissent from the majority opinion.|השופטים הביעו את התנגדותם לדעת הרוב."
+  },
+  "dissenter": {
+    "assoc": "הוא עושה dissent, הוא ה'די-סנטר' - הבדלן שתמיד פורש מהקבוצה.",
+    "sentence": "The political dissenter was exiled from the country.|הבדלן הפוליטי הוגלה מהמדינה."
+  },
+  "enact": {
+    "assoc": "In Act - בתוך המערכה (Act) של ההצגה, השחקן מגלם דמות ובכנסת מחוקקים חוק.",
+    "sentence": "The government plans to enact new environmental laws.|הממשלה מתכננת לחוקק חוקים סביבתיים חדשים."
+  },
+  "excel": {
+    "assoc": "מי ששולט בתוכנת Excel מצליח להצטיין במשרד.",
+    "sentence": "She worked hard to excel in her studies.|היא עבדה קשה כדי להצטיין בלימודיה."
+  },
+  "excellent": {
+    "assoc": "זה כמו אקסל, רק שזה כבר מצוין!",
+    "sentence": "This restaurant serves excellent food.|המסעדה הזו מגישה אוכל מצוין."
+  },
+  "fluctuate": {
+    "assoc": "זה נשמע כמו 'פלאק-טואט' - המילה רועדת בפה, בדיוק כמו שמחיר המניה מתנדנד.",
+    "sentence": "The stock prices fluctuate daily depending on the market.|מחירי המניות מתנדנדים מדי יום בהתאם לשוק."
+  },
+  "headgear": {
+    "assoc": "Head (ראש) ועוד Gear (ציוד) - זה פשוט הציוד ששמים ככיסוי ראש.",
+    "sentence": "Helmets and hats are common types of headgear.|קסדות וכובעים הם סוגים נפוצים של כיסוי ראש."
+  },
+  "implausible": {
+    "assoc": "אם יש יותר מדי 'אבל' (But) בסיפור, זה נהיה Implausible - בלתי סביר בעליל.",
+    "sentence": "His excuse for being late was completely implausible.|התירוץ שלו לאיחור היה בלתי סביר לחלוטין."
+  },
+  "legacy": {
+    "assoc": "לי-גסי (גיסי) השאיר לי ירושה ומורשת מפוארת של ספרים.",
+    "sentence": "The king left a legacy of peace and prosperity.|המלך השאיר מורשת של שלום ושגשוג."
+  },
+  "moth": {
+    "assoc": "מביא 'מוות' לבגדים - העש הזה הורס לי את כל הארון.",
+    "sentence": "A moth was fluttering around the light bulb.|עש התעופף סביב הנורה."
+  },
+  "oversee": {
+    "assoc": "כשאתה Over (מעל) ו-See (רואה), אתה בעצם מפקח על כולם מלמעלה.",
+    "sentence": "The manager will oversee the entire construction project.|המנהל יפקח על פרויקט הבנייה כולו."
+  },
+  "plausible": {
+    "assoc": "זה נשמע 'פלוס-אייבל', כאילו אפשר (able) להוסיף לזה פלוס כי זה נשמע הגיוני.",
+    "sentence": "Her excuse for being late was actually quite plausible.|התירוץ שלה לאיחור היה דווקא די מתקבל על הדעת."
+  },
+  "rebel": {
+    "assoc": "הוא מורד כל כך חזק שהוא עושה רע-בל (רע ובלגן).",
+    "sentence": "The young soldier decided to rebel against the unfair orders.|החייל הצעיר החליט למרוד בפקודות הלא הוגנות."
+  },
+  "rebellious": {
+    "assoc": "נשמע כמו 'ריב-לי-אוס', מישהו שתמיד מחפש לריב ולמרוד.",
+    "sentence": "The rebellious teenager refused to follow the school rules.|המתבגר המרדן סירב להישמע לחוקי בית הספר."
+  },
+  "sequel": {
+    "assoc": "סיקוול נשמע כמו 'שי-קול', הקול של הסרט הבא (המשך) כבר נשמע באופק.",
+    "sentence": "I enjoyed the movie, but the sequel was even better.|נהניתי מהסרט, אבל סרט ההמשך היה אפילו טוב יותר."
+  },
+  "sequence": {
+    "assoc": "נשמע כמו 'סי-קוונס', המלכות (Queens) עומדות ברצף אחת אחרי השנייה.",
+    "sentence": "The police are trying to determine the sequence of events.|המשטרה מנסה לקבוע את רצף האירועים."
+  },
+  "subsequent": {
+    "assoc": "סאב-סיקוונט: כמו 'סאב' (מתחת/אחרי) ברצף, כלומר השלב העוקב.",
+    "sentence": "The first chapter was boring, but subsequent chapters were exciting.|הפרק הראשון היה משעמם, אך הפרקים העוקבים היו מרגשים."
+  },
+  "undermine": {
+    "assoc": "אנדר-מיין: לשים מוקש (mine) מתחת (under) למישהו כדי לחתור תחתיו.",
+    "sentence": "Constant criticism can undermine a person's confidence.|ביקורת מתמדת יכולה לערער את הביטחון של האדם."
+  },
+  "absolutely": {
+    "assoc": "כמו וודקה אבסולוט - היא נקייה וטהורה לחלוטין.",
+    "sentence": "You are absolutely right about the location of the restaurant.|אתה צודק לחלוטין לגבי המיקום של המסעדה."
+  },
+  "access": {
+    "assoc": "אקסס - נשמע כמו 'אקס' (X), לסמן X על המפה כדי לדעת איפה הכניסה.",
+    "sentence": "You need a password to access the computer system.|אתה צריך סיסמה כדי לקבל גישה למערכת המחשב."
+  },
+  "accident": {
+    "assoc": "כשעושים אקס (Ex) על הדייט, זו הייתה אקס-ידנט (תאונה).",
+    "sentence": "It was a terrible car accident. | זו הייתה תאונת דרכים נוראה."
+  },
+  "among": {
+    "assoc": "בקרב המפלצות יש א-מונג-סטר (Among-ster).",
+    "sentence": "There is a traitor among us. | יש בוגד בקרבנו."
+  },
+  "artificial": {
+    "assoc": "ארטיק-פישל: ארטיק בטעם דג (Fish) הוא משהו מלאכותי לגמרי.",
+    "sentence": "This flower is artificial, it doesn't need water. | הפרח הזה מלאכותי, הוא לא צריך מים."
+  },
+  "artificially": {
+    "assoc": "הסיומת ly הופכת את המלאכותי ל'באופן מלאכותי'.",
+    "sentence": "The room was artificially cooled. | החדר קורר באופן מלאכותי."
+  },
+  "attract": {
+    "assoc": "אטרקציה נועדה כדי למשוך אנשים.",
+    "sentence": "Magnets attract iron. | מגנטים מושכים ברזל."
+  },
+  "attraction": {
+    "assoc": "בכל אטרקציה יש כוח משיכה חזק לקהל.",
+    "sentence": "The Eiffel Tower is a popular tourist attraction. | מגדל אייפל הוא אטרקציה תיירותית פופולרית."
+  },
+  "attractive": {
+    "assoc": "מי שפעיל (Active) בספורט נראה בדרך כלל אטרקטיבי (Attractive) ומושך.",
+    "sentence": "She wore a very attractive dress. | היא לבשה שמלה מאוד מושכת."
+  },
+  "balance": {
+    "assoc": "צריך לבדוק את הבאלאנס בבנק כדי להישאר מאוזן.",
+    "sentence": "You need to keep a balance between work and life. | אתה צריך לשמור על איזון בין עבודה לחיים."
+  },
+  "base": {
+    "assoc": "הבייס (Base) של הפיצה הוא הבסיס להכל.",
+    "sentence": "The army base is far from here. | בסיס הצבא רחוק מכאן."
+  },
+  "character": {
+    "assoc": "לכל קריקטורה יש קראקטר (דמות) עם אישיות מוזרה.",
+    "sentence": "Harry Potter is my favorite character. | הארי פוטר הוא הדמות האהובה עליי."
+  },
+  "characteristic": {
+    "assoc": "לכל 'קרקטר' (דמות) יש 'סיטי' (עיר) של מאפיינים ייחודיים.",
+    "sentence": "Kindness is a positive characteristic.|טוב לב הוא מאפיין חיובי."
+  },
+  "characterize": {
+    "assoc": "כשיוצרים 'קרקטר' (דמות), צריך 'אייז' (ize) - לאפיין אותה היטב.",
+    "sentence": "Hard work and honesty characterize his style.|עבודה קשה ויושר מאפיינים את הסגנון שלו."
+  },
+  "compete": {
+    "assoc": "בוא 'קום' (Come) ו-'פייט' (fight) - בוא להתחרות בי!",
+    "sentence": "Many athletes compete for the gold medal.|ספורטאים רבים מתחרים על מדליית הזהב."
+  },
+  "competition": {
+    "assoc": "ב-'קומפטישן' תמיד יש 'פטיש' - כולם רוצים לדפוק הופעה בתחרות.",
+    "sentence": "She won first place in the art competition.|היא זכתה במקום הראשון בתחרות האמנות."
+  },
+  "concern": {
+    "assoc": "כשמישהו עושה 'קון' (con) על 'סרן' (sern) בצבא, זה מעורר דאגה גדולה.",
+    "sentence": "The parents expressed concern for their child's safety.|ההורים הביעו דאגה לביטחונו של ילדם."
+  },
+  "cure": {
+    "assoc": "הרופא אמר: 'קיו' (Cue) - הגיע התור שלך לקבל רפואה.",
+    "sentence": "Doctors are searching for a cure for the disease.|רופאים מחפשים תרופה למחלה."
+  },
+  "curse": {
+    "assoc": "מי שחטף 'קללה' פשוט 'קורס' (curse) תחת הנטל שלה.",
+    "sentence": "The witch put a curse on the prince.|המכשפה הטילה קללה על הנסיך."
+  },
+  "dim": {
+    "assoc": "במסעדה סינית אוכלים 'דים' סאם באור עמום ורומנטי.",
+    "sentence": "The lights in the room were very dim.|האורות בחדר היו עמומים מאוד."
+  },
+  "escape": {
+    "assoc": "במקלדת לוחצים על מקש ה-'Esc' כדי לברוח מהר מהחלון.",
+    "sentence": "The prisoner tried to escape from jail.|האסיר ניסה לברוח מהכלא."
+  },
+  "excess": {
+    "assoc": "ה-'אקס' (Ex) שלי היה 'אקסטרה' (Extra) - תמיד היה בו עודף של דרמה.",
+    "sentence": "Excess sugar is bad for your health.|עודף סוכר מזיק לבריאותך."
+  },
+  "container": {
+    "assoc": "קונטיינר (container) נשמע כמו כנר, תארו לכם כנר שמנגן בתוך מיכל ענק.",
+    "sentence": "The container was filled with fresh milk.|המיכל היה מלא בחלב טרי."
+  },
+  "cross": {
+    "assoc": "כדי לחצות (cross) את הכביש בבטחה, כדאי לנעול נעלי קרוקס.",
+    "sentence": "Be careful when you cross the street.|היה זהיר כשאתה חוצה את הכביש."
+  },
+  "decide": {
+    "assoc": "די-סייד (decide) - אני צריך להחליט באיזה סייד (Side/צד) אני נמצא.",
+    "sentence": "I need to decide which shoes to buy.|אני צריך להחליט אילו נעליים לקנות."
+  },
+  "decision": {
+    "assoc": "ההחלטה (decision) של הדי-ג'יי (D-cision) לגבי המוזיקה הייתה מצוינת.",
+    "sentence": "Making a tough decision takes time.|קבלת החלטה קשה לוקחת זמן."
+  },
+  "decisive": {
+    "assoc": "אדם דציסיבי (decisive) הוא אדם שכבר סיים (Sive) להחליט והוא מאוד נחוש.",
+    "sentence": "The manager took decisive action to solve the problem.|המנהל נקט בפעולה החלטית כדי לפתור את הבעיה."
+  },
+  "defied": {
+    "assoc": "החוק עבר פייד (Fade) ונעלם כי הוא פשוט הופר (defied).",
+    "sentence": "The captain's orders were defied by the crew.|פקודות הקפטן הופרו על ידי הצוות."
+  },
+  "defy": {
+    "assoc": "אל תהיה פראי (Defy) ותתריס נגד כולם.",
+    "sentence": "It is dangerous to defy the laws of gravity.|זה מסוכן להתריס נגד חוקי המשיכה."
+  },
+  "devote": {
+    "assoc": "אני מקדיש (devote) את הקול (Vote) שלי רק למטרה הזו.",
+    "sentence": "She wants to devote her life to helping animals.|היא רוצה להקדיש את חייה לעזרה לבעלי חיים."
+  },
+  "devoted": {
+    "assoc": "הוא כל כך מסור (devoted) שהוא פשוט דבוק למטרה.",
+    "sentence": "He is a devoted father to his three children.|הוא אבא מסור לשלושת ילדיו."
+  },
+  "donor": {
+    "assoc": "התורם (donor) הנדיב הביא קופסה מלאה בדונאטס.",
+    "sentence": "The blood donor saved several lives.|תורם הדם הציל כמה נפשות."
+  },
+  "endeavor": {
+    "assoc": "גם אם המאמץ (endeavor) נכשל, אל תדאג, אין-דבר!",
+    "sentence": "Success requires a lot of hard work and endeavor.|הצלחה דורשת הרבה עבודה קשה ומאמץ."
+  },
+  "esteem": {
+    "assoc": "אני רוחש הערכה (esteem) גבוהה מאוד לטים (Team) שלי.",
+    "sentence": "Self-esteem is important for mental health.|הערכה עצמית חשובה לבריאות הנפשית."
+  },
+  "estimate": {
+    "assoc": "אני מנסה להעריך (estimate) כמה זמן ייקח לחבר (Mate) שלי להגיע.",
+    "sentence": "Can you estimate how much the repairs will cost?|האם אתה יכול להעריך כמה יעלו התיקונים?"
+  },
+  "estimated": {
+    "assoc": "זמן המשלוח המוערך (estimated) הגיע ליעד בעזרת מד-זמן (Ted).",
+    "sentence": "The estimated delivery time is three days.|זמן המשלוח המוערך הוא שלושה ימים."
+  },
+  "exaggerate": {
+    "assoc": "הוא אכל (Ate) איקס (X) ביצים, אל תגזים (exaggerate)!",
+    "sentence": "Don't exaggerate, it wasn't that big!|אל תגזים, זה לא היה כזה גדול!"
+  },
+  "message": {
+    "assoc": "מי שלח לי SMS? אולי המעסה (Massage) רוצה להעביר לי Message?",
+    "sentence": "I received a text message from my boss.|קיבלתי הודעת טקסט מהבוס שלי."
+  },
+  "military": {
+    "assoc": "המיליטרי הזה נשמע כמו מיליון טרי (Million Terry) - צבא של מיליון חיילים בשם טרי.",
+    "sentence": "He decided to join the military after high school.|הוא החליט להתגייס לצבא אחרי התיכון."
+  },
+  "minor": {
+    "assoc": "הילד הקטן (Minor) רוצה לקנות מנורה אבל הוא עוד קטין.",
+    "sentence": "The car accident caused only minor damage.|תאונת הדרכים גרמה לנזק קטן בלבד."
+  },
+  "minority": {
+    "assoc": "מינור (Minor) זה קטן, אז Minority זה המיעוט הקטן.",
+    "sentence": "Only a minority of students failed the test.|רק מיעוט מהסטודנטים נכשלו במבחן."
+  },
+  "misconception": {
+    "assoc": "מיס (Miss - טעות) + קונספציה (תפיסה) = תפיסה מוטעית.",
+    "sentence": "It is a common misconception that all cats hate water.|זוהי דעה מוטעית נפוצה שכל החתולים שונאים מים."
+  },
+  "mission": {
+    "assoc": "משין אימפוסיבל - הסרט על המשימה הבלתי אפשרית.",
+    "sentence": "Our mission is to reach the top of the mountain.|המשימה שלנו היא להגיע לפסגת ההר."
+  },
+  "mode": {
+    "assoc": "אני ב'מוד' (Mode) של לישון עכשיו, זה המצב שלי כרגע.",
+    "sentence": "Switch your phone to silent mode during the movie.|העבר את הטלפון שלך למצב שקט במהלך הסרט."
+  },
+  "model": {
+    "assoc": "המודל (Model) הלך על המסלול והציג דגם חדש של שמלה.",
+    "sentence": "She works as a fashion model in Paris.|היא עובדת כדוגמנית אופנה בפריז."
+  },
+  "monumental": {
+    "assoc": "זה בניין כל כך מונומנטלי שצריך מנוף (Monu) אדיר כדי לבנות אותו.",
+    "sentence": "Building the pyramids was a monumental task.|בניית הפירמידות הייתה משימה אדירה."
+  },
+  "negotiate": {
+    "assoc": "נגו (Nego) - נהגתי (Drove) רחוק כדי לעשות משא ומתן על המחיר.",
+    "sentence": "The lawyers need to negotiate a new deal.|עורכי הדין צריכים לשאת ולתת על עסקה חדשה."
+  },
+  "nominated": {
+    "assoc": "נומי (Nomi) היא המועמדת המובילה לזכות בפרס.",
+    "sentence": "He was nominated for an Academy Award.|הוא היה מועמד לפרס האוסקר."
+  },
+  "nuclear": {
+    "assoc": "נוקלאר נשמע כמו 'נו, קלר (Clear)!' - הכל נהיה שקוף וברור בפיצוץ גרעיני.",
+    "sentence": "The country is developing its nuclear power program.|המדינה מפתחת את תוכנית האנרגיה הגרעינית שלה."
+  },
+  "observer": {
+    "assoc": "אובזרבר - הוא עושה אובזרבציה (תצפית) אז הוא משקיף.",
+    "sentence": "The international observer watched the elections.|המשקיף הבינלאומי צפה בבחירות."
+  },
+  "obsolete": {
+    "assoc": "אבסולוט (Absolute) - זה אבסולוטלי מיושן, כבר לא משתמשים בזה!",
+    "sentence": "Typewriters have become obsolete because of computers.|מכונות כתיבה הפכו למיושנות בגלל מחשבים."
+  },
+  "occupy": {
+    "assoc": "אוקיופאי נשמע כמו 'אוקיי, פאי!' - תפסתי את כל הפאי לעצמי.",
+    "sentence": "The enemy forces tried to occupy the city.|כוחות האויב ניסו לכבוש את העיר."
+  },
+  "log": {
+    "assoc": "לפני שאני זורק 'לוג' (בול עץ) למדורה, אני עושה 'לוג' (תיעוד ביומן) של המשימה.",
+    "sentence": "The sailor recorded the storm in the ship's log.|המלח תיעד את הסערה ביומן האונייה."
+  },
+  "loneliness": {
+    "assoc": "לא נהניתי (Lo-Neheni-ness) מהבדידות הזו.",
+    "sentence": "He felt a sense of deep loneliness after moving to a new city.|הוא הרגיש תחושת בדידות עמוקה לאחר שעבר לעיר חדשה."
+  },
+  "lumber": {
+    "assoc": "למבר נשמע כמו 'לא בוער', למרות שזה גזע עץ שבוער מצוין.",
+    "sentence": "The construction workers needed a large pile of lumber.|פועלי הבניין נזקקו לערימה גדולה של גזעי עץ."
+  },
+  "maximize": {
+    "assoc": "להפוך הכל ל'מקס' (מקסימום) כדי למקסם רווחים.",
+    "sentence": "You should maximize your study time before the exam.|כדאי לך למקסם את זמן הלימוד שלך לפני המבחן."
+  },
+  "mechanize": {
+    "assoc": "להפוך משהו ליותר 'מכני' (mechanize) בעזרת מכונות.",
+    "sentence": "The factory decided to mechanize the assembly line.|המפעל החליט למכן את פס הייצור."
+  },
+  "media": {
+    "assoc": "המדיה תמיד 'מדי' (מדיי) מתערבת לנו בחיים עם כל התקשורת הזו.",
+    "sentence": "Social media has changed the way we communicate.|המדיה החברתית שינתה את הדרך בה אנו מתקשרים."
+  },
+  "Mediterranean": {
+    "assoc": "מדי-טרני: הים מדד את המכנסיים (טרנינג) שלי כשנכנסתי למים.",
+    "sentence": "Israel is located on the coast of the Mediterranean Sea.|ישראל שוכנת לחופי הים התיכון."
+  },
+  "memorial": {
+    "assoc": "ממורי (זיכרון) + אל (למעלה): מצבה שמזכירה לנו את מי שעלה למעלה.",
+    "sentence": "They built a memorial to honor the fallen soldiers.|הם בנו מצבה כדי לחלוק כבוד לחיילים שנפלו."
+  },
+  "memory": {
+    "assoc": "ממורי: כמו כרטיס הזיכרון (Memory card) בטלפון.",
+    "sentence": "She has a very good memory for names.|יש לה זיכרון טוב מאוד לשמות."
+  },
+  "mentor": {
+    "assoc": "המנטור שלי לוקח מנטוס כדי להיות רענן כשהוא מדריך אותי.",
+    "sentence": "My mentor gave me great advice about my career.|המדריך הרוחני שלי נתן לי עצה מצוינת לגבי הקריירה שלי."
+  },
+  "mercy": {
+    "assoc": "מר-סי: אל תהיה 'מר', תגיד 'סי' (כן) ותראה קצת רחמים.",
+    "sentence": "The prisoner begged the king for mercy.|האסיר התחנן בפני המלך לרחמים."
+  },
+  "midair": {
+    "assoc": "מיד (באמצע) ו-אייר (אוויר): פשוטו כמשמעו, באמצע האוויר.",
+    "sentence": "The two planes collided in midair.|שני המטוסים התנגשו באוויר."
+  },
+  "minimize": {
+    "assoc": "להפוך משהו ל'מיני' (קטן) כדי למזער נזקים.",
+    "sentence": "You can minimize the window by clicking the button.|אתה יכול למזער את החלון על ידי לחיצה על הכפתור."
+  },
+  "mirror": {
+    "assoc": "המראה אומרת לי: 'מי-אור' (מי הכי יפה ומאירה כאן?).",
+    "sentence": "She looked at herself in the mirror before leaving.|היא הסתכלה על עצמה במראה לפני שיצאה."
+  },
+  "misbehave": {
+    "assoc": "עשיתי 'מיס' (טעות) ב-'ביהייב' (התנהגות), אז התנהגתי לא יפה.",
+    "sentence": "If the children misbehave, they will not get dessert.|אם הילדים יתנהגו בצורה לא הולמת, הם לא יקבלו קינוח."
+  },
+  "above": {
+    "assoc": "אבא (Abba) יושב למעלה על הכתפיים שלי.",
+    "sentence": "The bird flew above the trees.|הציפור עפה מעל העצים."
+  },
+  "according to": {
+    "assoc": "לפי ה'דינג דונג' (Accord-ing) של הפעמון, האוכל מוכן.",
+    "sentence": "According to the map, we are lost.|לפי המפה, אנחנו אבודים."
+  },
+  "accordance": {
+    "assoc": "האקורד (Accord) של הפסנתר חייב להיות בתיאום עם השיר.",
+    "sentence": "We acted in accordance with the rules.|פעלנו בהתאמה לכללים."
+  },
+  "accordingly": {
+    "assoc": "הוא אמר 'לי' (ly) וקיבל סוכריה בהתאם.",
+    "sentence": "It was raining, and she dressed accordingly.|ירד גשם, והיא התלבשה בהתאם."
+  },
+  "although": {
+    "assoc": "אול-דו (All though): כולם עושים את זה למרות שזה אסור.",
+    "sentence": "Although it was cold, we went for a swim.|למרות שהיה קר, הלכנו לשחות."
+  },
+  "always": {
+    "assoc": "הדרכים (Ways) תמיד פתוחות לכולם (All).",
+    "sentence": "I will always remember you.|אני תמיד אזכור אותך."
+  },
+  "approve": {
+    "assoc": "אם אתה מקצוען (Pro), כולם יאשרו את העבודה שלך.",
+    "sentence": "My boss needs to approve the project.|הבוס שלי צריך לאשר את הפרויקט."
+  },
+  "because": {
+    "assoc": "בי-קוז (Be cause): כי זה להיות הסיבה לכל דבר.",
+    "sentence": "I am happy because the sun is shining.|אני שמח כי השמש זורחת."
+  },
+  "believe": {
+    "assoc": "בי-ליב (Be live): כדי באמת לחיות, צריך להאמין.",
+    "sentence": "I believe that you can do it.|אני מאמין שאתה יכול לעשות את זה."
+  },
+  "belief": {
+    "assoc": "בי-ליף (Be leaf): האמונה שלי חזקה כמו עלה (leaf) ברוח.",
+    "sentence": "It is my belief that honesty is important.|זו האמונה שלי שיושר הוא חשוב."
+  },
+  "unbelievable": {
+    "assoc": "אני לא מאמין (Believe) שזה קרה לי ביש (Un-be) מזל כזה!",
+    "sentence": "It is unbelievable that we won the lottery.|זה לא ייאמן שזכינו בלוטו."
+  },
+  "cause": {
+    "assoc": "קוז (Cause) - קיצור של Because, כי זה מה שגורם לדברים לקרות.",
+    "sentence": "Smoking can cause serious health problems.|עישון יכול לגרום לבעיות בריאותיות חמורות."
+  },
+  "certain": {
+    "assoc": "אני סרטין (Certain) - בטוח במאה אחוז שזה הסרט (Certain) הכי טוב שראיתי.",
+    "sentence": "I am certain that I locked the door.|אני בטוח שנעלתי את הדלת."
+  },
+  "certainty": {
+    "assoc": "סרטין-טי (Certainty) - יש לי ודאות מוחלטת בכוס התה (Tea) שלי.",
+    "sentence": "There is no certainty that it will rain tomorrow.|אין ודאות שירד גשם מחר."
+  },
+  "complete": {
+    "assoc": "קומ-פליט (Complete) - בואו קומו ופליטו את כל המידע כדי להשלים את המשימה.",
+    "sentence": "You need to complete the form before leaving.|עליך להשלים את הטופס לפני שתעזוב."
+  },
+  "completely": {
+    "assoc": "קומפליט-לי (Completely) - הכל הושלם לי לחלוטין ואין מה להוסיף.",
+    "sentence": "I completely forgot about our meeting.|שכחתי לחלוטין מהפגישה שלנו."
+  },
+  "complicate": {
+    "assoc": "קומפלי-קייט (Complicate) - בוא נסבך את קייט מהקייטנה כדי שתתבלבל.",
+    "sentence": "Don't complicate things by adding unnecessary details.|אל תסבך דברים על ידי הוספת פרטים מיותרים."
+  },
+  "complication": {
+    "assoc": "קומפלי-קיישן (Complication) - הסיבוך הזה הוא ממש לא אוקיישן (Occasion - אירוע) לחגוג.",
+    "sentence": "The surgery was successful with no complication.|הניתוח עבר בהצלחה ללא סיבוך."
+  },
+  "complicated": {
+    "assoc": "קומפלי-קייטד (Complicated) - קייט יצאה לדייט (Dated) עם מישהו ממש מסובך.",
+    "sentence": "This puzzle is very complicated to solve.|הפאזל הזה מאוד מסובך לפתרון."
+  },
+  "contrary": {
+    "assoc": "קון-טררי (Contrary) - קון (הנוכל) תמיד אומר דברים הפוכים ובניגוד למה שחשבת.",
+    "sentence": "Contrary to popular belief, cats like water.|בניגוד לאמונה הרווחת, חתולים אוהבים מים."
+  },
+  "contribute": {
+    "assoc": "קון-תריב-פחות - בוא נריב פחות ונתחיל לתרום לקהילה.",
+    "sentence": "Every member should contribute to the group project.|כל חבר צריך לתרום לפרויקט הקבוצתי."
+  },
+  "correct": {
+    "assoc": "זה 'קורקט' - בדיוק כמו שזה צריך להיות, נכון ומדויק.",
+    "sentence": "Please check if your answer is correct.|אנא בדוק אם התשובה שלך נכונה."
+  },
+  "cruel": {
+    "assoc": "קרואל דה-וויל היא אכזרית כי היא רוצה 'לקרוע' לכלבים את העור.",
+    "sentence": "It is cruel to tease animals.|זה אכזרי להציק לבעלי חיים."
+  },
+  "damage": {
+    "assoc": "דמג' נשמע כמו 'דם' - נזק רציני שגורם לדם לזרום.",
+    "sentence": "The heavy rain caused damage to the roof.|הגשם הכבד גרם נזק לגג."
+  },
+  "danger": {
+    "assoc": "דיינג'ר - נשמע כמו 'דן-גר' - דן גר בשכונה שיש בה סכנה.",
+    "sentence": "The sign warns of the danger of falling rocks.|השלט מזהיר מפני סכנה של נפילת סלעים."
+  },
+  "endanger": {
+    "assoc": "En + Danger - להכניס (en) מישהו לתוך מצב של סכנה.",
+    "sentence": "Do not endanger your life for a photo.|אל תסכן את חייך בשביל תמונה."
+  },
+  "dangerous": {
+    "assoc": "דיינג'ר-אוס - סיומת של תואר, משהו שיש בו הרבה סכנה.",
+    "sentence": "It is dangerous to drive without a seatbelt.|זה מסוכן לנהוג ללא חגורת בטיחות."
+  },
+  "decrease": {
+    "assoc": "די-קריז - כשמפחיתים לי את השכר אני נכנס לקריז.",
+    "sentence": "We need to decrease the amount of waste we produce.|אנחנו צריכים להפחית את כמות הפסולת שאנחנו מייצרים."
+  },
+  "deem": {
+    "assoc": "דים נשמע כמו 'דמיון' - מה שאני מדמיין/סובר שנכון.",
+    "sentence": "The area was deemed safe for visitors.|האזור נחשב (נסבר כ-) בטוח למבקרים."
+  },
+  "despite": {
+    "assoc": "די-ספייט - למרות שזה 'די' 'ספייט' (דווקא), אני עדיין אעשה את זה.",
+    "sentence": "They enjoyed the hike despite the cold weather.|הם נהנו מהטיול למרות מזג האוויר הקר."
+  },
+  "different": {
+    "assoc": "הילד הזה 'די-פרעח', הוא כל כך שונה מהשאר.",
+    "sentence": "They have different opinions on the movie.|יש להם דעות שונות על הסרט."
+  },
+  "indifferent": {
+    "assoc": "לא אכפת לו אם זה במקום הזה או 'In different' (במקום שונה), הוא פשוט אדיש.",
+    "sentence": "He was indifferent to the results of the game.|הוא היה אדיש לתוצאות המשחק."
+  },
+  "differ": {
+    "assoc": "זה נשמע כמו different רק קצר יותר, כי הפועל 'להיות שונה' הוא קצר ולעניין.",
+    "sentence": "Our tastes in music differ greatly.|הטעמים שלנו במוזיקה שונים מאוד."
+  },
+  "difference": {
+    "assoc": "הסוף נשמע כמו 'רנס' (ריקוד), יש הבדל גדול בין סוגי הריקודים.",
+    "sentence": "There is a big difference between the two cars.|יש הבדל גדול בין שתי המכוניות."
+  },
+  "difficult": {
+    "assoc": "די! פיקולו! קשה מאוד ללמוד לנגן בחליל פיקולו.",
+    "sentence": "The math exam was very difficult.|המבחן במתמטיקה היה קשה מאוד."
+  },
+  "disappoint": {
+    "assoc": "אל תבטל לי את התור (Appointment), זה ממש יאכזב אותי.",
+    "sentence": "I didn't want to disappoint my parents.|לא רציתי לאכזב את ההורים שלי."
+  },
+  "disaster": {
+    "assoc": "הדיסק של אסטר (אסתר) נשבר, זה פשוט אסון!",
+    "sentence": "The flood was a natural disaster.|השיטפון היה אסון טבע."
+  },
+  "disastrous": {
+    "assoc": "כשקורה disaster (אסון), התוצאה היא תמיד הרסנית.",
+    "sentence": "The consequences of the war were disastrous.|השלכות המלחמה היו הרסניות."
+  },
+  "entire": {
+    "assoc": "אין צייר (In-Tire) שיכול לצייר את כל העולם השלם הזה.",
+    "sentence": "I spent the entire day cleaning the house.|ביליתי את כל היום השלם בניקיון הבית."
+  },
+  "improve": {
+    "assoc": "אם תשתה משקה 'פרו' (Pro) בים, היכולות שלך ישתפרו.",
+    "sentence": "I want to improve my English skills.|אני רוצה לשפר את כישורי האנגלית שלי."
+  },
+  "improvise": {
+    "assoc": "אם יש פרו (Im-pro) בעיה והכל תקוע, פשוט נאלתר פתרון.",
+    "sentence": "I forgot my speech, so I had to improvise. | שכחתי את הנאום שלי, אז נאלצתי לאלתר."
+  },
+  "just": {
+    "assoc": "ג'סט (Just) - הוא עשה לי ג'סטה כי הוא איש צודק.",
+    "sentence": "He is a just leader who listens to everyone. | הוא מנהיג צודק שמקשיב לכולם."
+  },
+  "justify": {
+    "assoc": "ג'סטין (Justin) ביבר מנסה להצדיק את העיכוב שלו להופעה.",
+    "sentence": "How can you justify your decision? | איך אתה יכול להצדיק את ההחלטה שלך?"
+  },
+  "justified": {
+    "assoc": "ג'סטין-פייד (Justin-fied) - הוא קיבל פייד (תשלום) מוצדק.",
+    "sentence": "The price increase was justified by the higher costs. | עליית המחיר הייתה מוצדקת בשל העלויות הגבוהות יותר."
+  },
+  "justification": {
+    "assoc": "ג'סטין-קיי-שן (Justification) - המעריצים מביאים הצדקה לכל קישון (קשקוש) שהוא עושה.",
+    "sentence": "Is there any justification for this behavior? | האם יש הצדקה כלשהי להתנהגות הזו?"
+  },
+  "main": {
+    "assoc": "מיין (Main) - בואו נמיין רק את הדברים העיקריים והחשובים.",
+    "sentence": "The main reason I called was to say hello. | הסיבה העיקרית שהתקשרתי הייתה להגיד שלום."
+  },
+  "mainly": {
+    "assoc": "מיין-לי (Mainly) - תמיין לי בעיקר את התפוחים האדומים.",
+    "sentence": "The group consists mainly of students. | הקבוצה מורכבת בעיקר מסטודנטים."
+  },
+  "negative": {
+    "assoc": "נגטיב (Negative) - התמונה הישנה נראית הפוכה ושלילית.",
+    "sentence": "Try not to have such a negative attitude. | נסה לא להיות בעל גישה שלילית כזו."
+  },
+  "positive": {
+    "assoc": "פוזיטיב (Positive) - פו הדוב הוא דוב חיובי ונעים.",
+    "sentence": "I am positive that we will win the game. | אני בטוח שננצח במשחק."
+  },
+  "never": {
+    "assoc": "נבר (Never) - נברתי בכל הבית ואף פעם לא מצאתי את המפתחות.",
+    "sentence": "I will never let you down. | אני לעולם לא אאכזב אותך."
+  },
+  "object": {
+    "assoc": "כשמישהו זורק עליך אובייקט (חפץ), אתה ישר מתנגד (Object).",
+    "sentence": "I object to your unfair decision.|אני מתנגד להחלטה הלא הוגנת שלך."
+  },
+  "objection": {
+    "assoc": "בסרטי עורכי דין תמיד צועקים Objection! כשיש התנגדות.",
+    "sentence": "Does anyone have an objection to this plan?|האם למישהו יש התנגדות לתוכנית הזו?"
+  },
+  "objective": {
+    "assoc": "המטרה (Objective) שלי היא להישאר אובייקטיבי.",
+    "sentence": "Our primary objective is to improve quality.|המטרה העיקרית שלנו היא לשפר את האיכות."
+  },
+  "offensive": {
+    "assoc": "שחקן בהתקפה (Offense) יכול להיות מאוד פוגעני ומעליב.",
+    "sentence": "His comments were very offensive to the audience.|הערותיו היו מאוד מעליבות עבור הקהל."
+  },
+  "inoffensive": {
+    "assoc": "הוספנו in להתחלה כדי שזה יהיה 'אין-פגיעה' - לא פוגעני.",
+    "sentence": "It was an inoffensive joke that everyone enjoyed.|זו הייתה בדיחה שאינה פוגענית שכולם נהנו ממנה."
+  },
+  "offend": {
+    "assoc": "כשאני ב-Off (כבוי), אני לא יכול להעליב אף אחד.",
+    "sentence": "I didn't mean to offend you with my question.|לא התכוונתי להעליב אותך בשאלתי."
+  },
+  "offer": {
+    "assoc": "עופר תמיד מציע לי הצעות מפתות.",
+    "sentence": "They made me a job offer I couldn't refuse.|הם נתנו לי הצעת עבודה שלא יכולתי לסרב לה."
+  },
+  "official": {
+    "assoc": "הפקיד במשרד (Office) חייב להיות רשמי מאוד.",
+    "sentence": "The government made an official announcement.|הממשלה פרסמה הודעה רשמית."
+  },
+  "unofficial": {
+    "assoc": "זה 'un-רשמי', כלומר ממש לא רשמי.",
+    "sentence": "This is an unofficial report on the situation.|זהו דיווח בלתי רשמי על המצב."
+  },
+  "often": {
+    "assoc": "כמה Off-Ten (עשר) פעמים זה קורה? לעיתים קרובות!",
+    "sentence": "We often go for a walk in the park.|אנחנו לעיתים קרובות יוצאים לטיול בפארק."
+  },
+  "opposite": {
+    "assoc": "אופו (Opo) יושב בסיט (sit) במושב שממולך.",
+    "sentence": "Her house is on the opposite side of the street. | הבית שלה נמצא בצד הממול של הרחוב."
+  },
+  "opposing": {
+    "assoc": "האופוזיציה שרה שיר (sing) כשהיא מתנגדת לממשלה.",
+    "sentence": "The opposing team played very well today. | הקבוצה המתנגדת שיחקה טוב מאוד היום."
+  },
+  "opposition": {
+    "assoc": "זה ה-Position (מיקום) של מי שתמיד מתנגד.",
+    "sentence": "There is strong opposition to the new law. | יש התנגדות חזקה לחוק החדש."
+  },
+  "previously": {
+    "assoc": "ה-Pre (לפני) מראה לנו (view) מה היה קודם לכן.",
+    "sentence": "She had previously worked as a teacher. | היא עבדה קודם לכן כמורה."
+  },
+  "primarily": {
+    "assoc": "כמו 'פריים טיים' בטלוויזיה, זה הזמן שבו כולם צופים בעיקר.",
+    "sentence": "The course is intended primarily for beginners. | הקורס מיועד בעיקר למתחילים."
+  },
+  "primary": {
+    "assoc": "בבית ספר פרימרי (יסודי) לומדים את הדברים הראשוניים.",
+    "sentence": "Our primary goal is to improve safety. | המטרה העיקרית שלנו היא לשפר את הבטיחות."
+  },
+  "reduce": {
+    "assoc": "כשעושים 'דיוס' (juice) מפירות, מפחיתים את הנפח שלהם.",
+    "sentence": "We need to reduce the amount of salt in our food. | אנחנו צריכים להפחית את כמות המלח באוכל שלנו."
+  },
+  "result": {
+    "assoc": "רז (Raz) קיבל מלח (salt) על הפצע כתוצאה מהנפילה.",
+    "sentence": "The final result of the match was a draw. | התוצאה הסופית של המשחק הייתה תיקו."
+  },
+  "similar": {
+    "assoc": "כל התינוקות דומים כשהם אוכלים 'סימילאק'.",
+    "sentence": "My sister and I have similar interests. | לאחותי ולי יש תחומי עניין דומים."
+  },
+  "stable": {
+    "assoc": "הסוס עומד יציב (stable) בתוך האורווה (stable).",
+    "sentence": "The patient's condition is now stable. | מצבו של המטופל יציב כעת."
+  },
+  "stabilize": {
+    "assoc": "כשמישהו עומד ליפול, הוא צועק \"ס-תא-בי-לי-זה\" (תביא לי את זה) כדי לייצב את עצמו.",
+    "sentence": "The doctor worked to stabilize the patient's condition.|הרופא פעל כדי לייצב את מצבו של המטופל."
+  },
+  "weather": {
+    "assoc": "במזג אוויר סוער שואלים \"וואדר\" (weather) - איפה העדר?",
+    "sentence": "The weather today is perfect for a picnic.|מזג האוויר היום מושלם לפיקניק."
+  },
+  "when": {
+    "assoc": "מתי הוואן (Van) יגיע לקחת אותנו?",
+    "sentence": "When will the movie start?|מתי הסרט יתחיל?"
+  },
+  "usual": {
+    "assoc": "יוז'י (כינוי למישהו) הוא טיפוס רגיל ושגרתי לגמרי.",
+    "sentence": "This is my usual route to work.|זה המסלול הרגיל שלי לעבודה."
+  },
+  "usually": {
+    "assoc": "יוז'י תמיד לידי (ly) בדרך כלל.",
+    "sentence": "I usually drink coffee in the morning.|בדרך כלל אני שותה קפה בבוקר."
+  },
+  "unusual": {
+    "assoc": "ה-un עוצר את יוז'י, הוא כבר לא רגיל - הוא בלתי רגיל.",
+    "sentence": "It is unusual to see snow in the desert.|זה בלתי רגיל לראות שלג במדבר."
+  },
+  "priority": {
+    "assoc": "מי שיש לו פריוריטי הוא לא פראייר, הוא בעדיפות ראשונה.",
+    "sentence": "Safety is our top priority.|בטיחות היא העדיפות העליונה שלנו."
+  },
+  "notably": {
+    "assoc": "משהו כל כך בולט שחייבים לרשום עליו Note (פתק).",
+    "sentence": "Several countries, notably France and Germany, disagreed.|מספר מדינות, במיוחד צרפת וגרמניה, לא הסכימו."
+  },
+  "devastate": {
+    "assoc": "אם תשפוך דיו (Deva) על הסטייט (State), אתה תהרוס את המדינה.",
+    "sentence": "The hurricane could devastate the small island.|ההוריקן עלול להרוס את האי הקטן."
+  },
+  "abrupt": {
+    "assoc": "הוא הפסיק את הדיבור ב-א-בראפט (בבת אחת) פתאומית.",
+    "sentence": "The driver made an abrupt turn to avoid the cat.|הנהג פנה פנייה פתאומית כדי להימנע מהחתול."
+  },
+  "abuse": {
+    "assoc": "כשמישהו עושה 'א-בוז' (A-buze) למישהו אחר, הוא בעצם מתעלל בו או משתמש לרעה בכוח שלו.",
+    "sentence": "He was arrested for child abuse.|הוא נעצר בגין התעללות בילדים."
+  },
+  "accomplice": {
+    "assoc": "אח, קום פליז (A-com-ple-ce) תעזור לי לשדוד את הבנק הזה - אמר הפושע לשותף לעבירה שלו.",
+    "sentence": "The police are looking for his accomplice.|המשטרה מחפשת את השותף שלו לעבירה."
+  },
+  "accumulate": {
+    "assoc": "א-קומי (A-cumi) בבוקר ותתחילי לצבור (Accumulate) את כל הצעצועים מהרצפה.",
+    "sentence": "Dust began to accumulate on the old books.|אבק החל להצטבר על הספרים הישנים."
+  },
+  "admit": {
+    "assoc": "אד (Ad) הודה שהוא אכל את כל המיט (Meat/Mit) - הבשר של ארוחת הצהריים.",
+    "sentence": "He refused to admit his mistake.|הוא סירב להודות בטעותו."
+  },
+  "admittance": {
+    "assoc": "כדי לקבל אישור כניסה (Admittance) למסיבה, היית חייב להודות (Admit) שאתה יודע לרקוד (Dance).",
+    "sentence": "The sign said 'no admittance'.|השלט אמר 'אין כניסה'."
+  },
+  "advance": {
+    "assoc": "הפרסומת (Ad) למכונית (Van) הראתה איך היא מתקדמת (Advance) מהר על הכביש.",
+    "sentence": "Technology continues to advance rapidly.|הטכנולוגיה ממשיכה להתקדם במהירות."
+  },
+  "advantage": {
+    "assoc": "עד (Ad) גיל (Age) מסוים, יש יתרון גדול בלקבל דמי כיס מההורים.",
+    "sentence": "Being tall is a big advantage in basketball.|להיות גבוה זה יתרון גדול בכדורסל."
+  },
+  "disadvantage": {
+    "assoc": "זה ההפך מ-Advantage; כשמישהו עושה לך 'דיס' (Dis), זה יוצר לך חיסרון חברתי.",
+    "sentence": "One disadvantage of living in a city is the noise.|חיסרון אחד של מגורים בעיר הוא הרעש."
+  },
+  "against": {
+    "assoc": "אני נגד (Against) גנגסטרים ונגד כל מי שבא נגדי!",
+    "sentence": "They played against the best team.|הם שיחקו נגד הקבוצה הטובה ביותר."
+  },
+  "annoy": {
+    "assoc": "הילד הקטן אמר 'א-נו' (A-noy) שוב ושוב עד שהוא ממש התחיל להציק לי.",
+    "sentence": "Please stop making that noise, it's starting to annoy me.|בבקשה תפסיק לעשות את הרעש הזה, זה מתחיל להציק לי."
+  },
+  "apply for": {
+    "assoc": "אפליי (כמו Apple) - אני מגיש בקשה לקנות אייפון חדש.",
+    "sentence": "He decided to apply for a scholarship.|הוא החליט להגיש בקשה למלגה."
+  },
+  "application": {
+    "assoc": "כל אפליקציה בטלפון היא בעצם יישום של רעיון טכנולוגי.",
+    "sentence": "I submitted my application for the job.|הגשתי את הבקשה שלי לעבודה."
+  },
+  "barrier": {
+    "assoc": "ברייר - נשמע כמו 'בורייר' (מחסום) שעוצר את הרכב.",
+    "sentence": "Language can be a barrier to communication.|שפה יכולה להיות מחסום לתקשורת."
+  },
+  "before": {
+    "assoc": "בי-פור - לפני שאני מזמין פור (4) פיצות, אני בודק את המחיר.",
+    "sentence": "Wash your hands before eating.|שטוף את הידיים לפני האכילה."
+  },
+  "benefit": {
+    "assoc": "בן-פיט - הבן שלי בכושר (fit) וזו תועלת גדולה לבריאות שלו.",
+    "sentence": "Exercise has many health benefits.|לפעילות גופנית יש תועלות בריאותיות רבות."
+  },
+  "benefactor": {
+    "assoc": "בנה-פקטור - הוא בנה פקטור רציני כי הוא תורם עשיר.",
+    "sentence": "The museum was built by a wealthy benefactor.|המוזיאון נבנה על ידי תורם עשיר."
+  },
+  "candid": {
+    "assoc": "כאן-דוד - דוד תמיד כנה וגלוי לב כשהוא כאן.",
+    "sentence": "She gave a candid interview about her life.|היא נתנה ראיון כנה על חייה."
+  },
+  "candidate": {
+    "assoc": "קנדי-דייט - המועמד שלי לדייט תמיד מביא סוכריות (candy).",
+    "sentence": "He is the leading candidate for the job.|הוא המועמד המוביל לתפקיד."
+  },
+  "capital": {
+    "assoc": "קפיטל - בקפיטליזם הכי חשוב זה לצבור הון.",
+    "sentence": "Jerusalem is the capital of Israel.|ירושלים היא עיר הבירה של ישראל."
+  },
+  "capitalize": {
+    "assoc": "קפיטל-אייז - העיניים (eyes) שלו רואות רק איך להפיק תועלת מהון.",
+    "sentence": "You should capitalize on this opportunity.|כדאי לך להפיק תועלת מההזדמנות הזו."
+  },
+  "claim": {
+    "assoc": "כשמישהו טוען בעלות על 'כלי' (Clay) הוא בעצם משמיע Claim.",
+    "sentence": "He claimed that he found the lost treasure. | הוא טען שהוא מצא את האוצר האבוד."
+  },
+  "acclaim": {
+    "assoc": "זה כמו Claim אבל עם 'אההה!' בהתחלה - כולם מריעים וצועקים 'אה!' ומשבחים.",
+    "sentence": "The movie received international acclaim. | הסרט זכה לשבחים בינלאומיים."
+  },
+  "compliment": {
+    "assoc": "כדי להחמיא למישהו צריך 'קום-פלי' - קום ותביא לו משהו פלילי מרוב שהוא נראה טוב.",
+    "sentence": "She gave him a nice compliment on his shirt. | היא נתנה לו מחמאה יפה על החולצה שלו."
+  },
+  "conscious": {
+    "assoc": "כשיש לך 'קונץ' (Con) בראש ואתה 'שש' (Scious) - אתה מודע להכל.",
+    "sentence": "He was fully conscious during the surgery. | הוא היה בהכרה מלאה במהלך הניתוח."
+  },
+  "consciousness": {
+    "assoc": "זה ה-conscious עם תוספת 'נס' (ness) - זה נס שיש לנו הכרה ומודעות.",
+    "sentence": "Meditation can lead to a higher state of consciousness. | מדיטציה יכולה להוביל למצב גבוה יותר של מודעות."
+  },
+  "consistent": {
+    "assoc": "נשמע כמו 'קצת סיסטמטי' - מי שעובד עם סיסטמה הוא תמיד עקבי.",
+    "sentence": "You need to be consistent with your training. | אתה צריך להיות עקבי עם האימונים שלך."
+  },
+  "consistent with": {
+    "assoc": "כשמשהו עקבי 'עם' משהו אחר, הוא פשוט עולה איתו בקנה אחד.",
+    "sentence": "The findings are consistent with previous research. | הממצאים עולים בקנה אחד עם מחקרים קודמים."
+  },
+  "controversial": {
+    "assoc": "קונטרה (נגד) + ורסיה (גרסה) - יש גרסה נגדית לכל דבר וזה שנוי במחלוקת.",
+    "sentence": "The referee's decision was very controversial. | החלטת השופט הייתה מאוד שנויה במחלוקת."
+  },
+  "controversy": {
+    "assoc": "זה ה'שנוי במחלוקת' שהפך למחלוקת עצמה - ה'קונטרה' נמשכת.",
+    "sentence": "The new book sparked a lot of controversy. | הספר החדש עורר מחלוקת רבה."
+  },
+  "crisis": {
+    "assoc": "בזמן משבר כולם במצב של 'קריי-סיס' (Cry-sis) - בוכים לאחותם מרוב ייאוש.",
+    "sentence": "The company is in the middle of a financial crisis. | החברה נמצאת בעיצומו של משבר פיננסי."
+  },
+  "deceive": {
+    "assoc": "די-סיב: הוא מנסה 'לסבן' אותך כדי לרמות ולהונות.",
+    "sentence": "He tried to deceive the public with fake news.|הוא ניסה לרמות את הציבור עם חדשות כוזבות."
+  },
+  "decline": {
+    "assoc": "די-קליין: קליין מסרב להצעה והמצב שלו מתחיל להידרדר.",
+    "sentence": "The company's profits began to decline.|רווחי החברה החלו להידרדר."
+  },
+  "incline": {
+    "assoc": "אין-קליין: כשאין את קליין בסביבה, אני נוטה להשתחרר.",
+    "sentence": "I am inclined to believe his story.|אני נוטה להאמין לסיפור שלו."
+  },
+  "recline": {
+    "assoc": "רי-קליין: הוא נשען לאחור בכיסא כדי לנקות (clean) את הראש שוב (re).",
+    "sentence": "He chose to recline in the comfortable chair.|הוא בחר להישען לאחור בכיסא הנוח."
+  },
+  "deteriorate": {
+    "assoc": "די-טריור-אייט: הוא אכל (ate) משהו מקולקל והמצב הבריאותי שלו הידרדר.",
+    "sentence": "The patient's condition began to deteriorate.|מצבו של המטופל החל להידרדר."
+  },
+  "discrimination": {
+    "assoc": "דיס-קרימינציה: זה פשע (criminal) לעשות אפליה בין אנשים.",
+    "sentence": "Discrimination based on gender is illegal.|אפליה על בסיס מגדר היא אינה חוקית."
+  },
+  "encourage": {
+    "assoc": "אין-קוראז': לתת למישהו קוראז' (אומץ) כדי לעודד אותו.",
+    "sentence": "My parents encourage me to study hard.|הוריי מעודדים אותי ללמוד קשה."
+  },
+  "discourage": {
+    "assoc": "דיס-קוראז': לקחת למישהו את הקוראז' (אומץ) ולרפות את ידיו.",
+    "sentence": "Don't let failure discourage you.|אל תיתן לכישלון לרפות את ידיך."
+  },
+  "explicit": {
+    "assoc": "אקס-פליט: האקס פלט בטעות הסבר מפורש וברור על מה שקרה.",
+    "sentence": "The instructions were very explicit.|ההוראות היו מאוד מפורשות."
+  },
+  "explicitly": {
+    "assoc": "אקס-פליט-לי: האקס פלט לי את האמת באופן מפורש.",
+    "sentence": "I explicitly told you not to enter.|אמרתי לך מפורשות לא להיכנס."
+  },
+  "explosive": {
+    "assoc": "האקס (Ex) שלי הוא פלוס (Plus) סיב של פצצה - שילוב נפיץ ביותר!",
+    "sentence": "The bomb squad handled the explosive material carefully.|יחידת החבלה טיפלה בחומר הנפץ בזהירות."
+  },
+  "fault": {
+    "assoc": "מי שפולט (Fault) שטויות, זו בדרך כלל אשמתו או שיש לו פגם רציני.",
+    "sentence": "It is not my fault that the car broke down.|זו לא אשמתי שהמכונית התקלקלה."
+  },
+  "faultlessly": {
+    "assoc": "פולט-לס-לי: הוא פולט (Fault) פחות (Less) טעויות, אז הוא פועל ללא רבב.",
+    "sentence": "She performed the difficult piano piece faultlessly.|היא ביצעה את קטע הפסנתר הקשה ללא רבב."
+  },
+  "former": {
+    "assoc": "פורמר - כמו 'פורמט' ישן של פעם, זה מה שהיה קודם.",
+    "sentence": "The former president attended the opening ceremony.|הנשיא לשעבר נכח בטקס הפתיחה."
+  },
+  "formerly": {
+    "assoc": "פורמר-לי - לי (Lee) זה קרה מזמן, כלומר קודם לכן.",
+    "sentence": "This building was formerly a cinema.|הבניין הזה היה בעבר בית קולנוע."
+  },
+  "furthermore": {
+    "assoc": "פורדר-מור (Further-more) - נשמע כמו 'עוד יותר רחוק', כי זה בא להוסיף 'יתר על כן'.",
+    "sentence": "The rent is cheap; furthermore, the house is close to work.|שכר הדירה זול; יתר על כן, הבית קרוב לעבודה."
+  },
+  "horror": {
+    "assoc": "הורור - הצליל שעושים כשרואים משהו מגעיל ומפחיד מתוך אימה.",
+    "sentence": "The survivors spoke of the horror of the war.|הניצולים דיברו על זוועות המלחמה."
+  },
+  "horrify": {
+    "assoc": "הורי-פיי - לגרום למישהו לעשות 'הורור', כלומר לזעזע אותו.",
+    "sentence": "The images of the pollution will horrify the public.|תמונות הזיהום יזעזעו את הציבור."
+  },
+  "imply": {
+    "assoc": "אם-פליי (Im-ply) - אם אני משחק (Play) אותה כאילו לא אמרתי כלום, אני רק רומז.",
+    "sentence": "His silence seemed to imply that he agreed with us.|שתיקתו נראתה כרומזת על כך שהוא מסכים איתנו."
+  },
+  "implication": {
+    "assoc": "אימפלי-קיישן - הקשר (קיישן) שנוצר כתוצאה מהרמז או ההשלכה של המעשה.",
+    "sentence": "We must consider the implication of this new law.|עלינו לשקול את ההשלכה של החוק החדש הזה."
+  },
+  "implicit": {
+    "assoc": "כשהוא אומר 'Im-Please-Sit' זה מרומז ועקיף שהוא רוצה שתשב.",
+    "sentence": "His nod was an implicit agreement.|הנהון שלו היה הסכמה מרומזת."
+  },
+  "in vain": {
+    "assoc": "חיפשתי את ה-Vain (וריד) לשווא, אני לא מוצא כלום.",
+    "sentence": "We tried to fix the car in vain.|ניסינו לתקן את המכונית לשווא."
+  },
+  "include": {
+    "assoc": "כדי לכלול את כולם, פשוט תכניס (In) אותם ל-Cloud (ענן).",
+    "sentence": "Does the price include breakfast?|האם המחיר כולל ארוחת בוקר?"
+  },
+  "exclude": {
+    "assoc": "ה-Ex שלי קיבלה סגירה (Clude) בחוץ, הרחיקו אותה מהמסיבה.",
+    "sentence": "The team decided to exclude him from the game.|הקבוצה החליטה להרחיק אותו מהמשחק."
+  },
+  "excluded": {
+    "assoc": "הוא מרגיש מנודה ומבודד כי הוא Ex בחוץ.",
+    "sentence": "She felt excluded from the group discussion.|היא הרגישה מבודדת מהדיון הקבוצתי."
+  },
+  "exclusion": {
+    "assoc": "ה-Ex-קלוז'ן (סגירה בחוץ) היא פעולה של הרחקה.",
+    "sentence": "The exclusion of the player caused a lot of drama.|הרחקת השחקן גרמה לדרמה רבה."
+  },
+  "exclusively": {
+    "assoc": "זה כל כך בלעדי שזה מיועד רק ל-Ex שלי.",
+    "sentence": "This club is exclusively for members.|המועדון הזה מיועד בלעדית לחברים."
+  },
+  "indication": {
+    "assoc": "כשמישהו הופך לאדום כמו אינדיאני (Indi), זה סימן שהוא כועס.",
+    "sentence": "There is no indication of rain today.|אין שום סימן לגשם היום."
+  },
+  "infer": {
+    "assoc": "ראיתי אותו בתוך פרווה (Fur), אז הסקתי שהוא דוב.",
+    "sentence": "What can you infer from the witness's story?|מה ניתן להסיק מהסיפור של העד?"
+  },
+  "inherent": {
+    "assoc": "הצורך לשלם שכירות (Rent) טבוע עמוק בתוך (In) החיים שלה (Her).",
+    "sentence": "Risk is inherent in any new business.|סיכון הוא טבוע (חלק בלתי נפרד) בכל עסק חדש."
+  },
+  "initiate": {
+    "assoc": "אני (Ini) עושה את הצעד הראשון ויוזם.",
+    "sentence": "She decided to initiate the project on her own.|היא החליטה ליזום את הפרויקט בעצמה."
+  },
+  "lack": {
+    "assoc": "כשחסר (Lack) לך אוכל, אתה הולך 'ללקק' את הצלחת.",
+    "sentence": "The team failed because of a lack of communication.|הצוות נכשל בגלל חוסר בתקשורת."
+  },
+  "latter": {
+    "assoc": "מזכיר את המילה Late (מאוחר) - זה שמופיע מאוחר יותר ברשימה, כלומר השני.",
+    "sentence": "I have two shirts; the former is blue and the latter is red.|יש לי שתי חולצות; הראשונה כחולה והשנייה אדומה."
+  },
+  "maintain that": {
+    "assoc": "כדי לתחזק (Maintain) דעה חזקה, צריך לגרוס אותה שוב ושוב.",
+    "sentence": "Many scientists maintain that global warming is a serious threat.|מדענים רבים גורסים כי התחממות גלובלית היא איום רציני."
+  },
+  "major": {
+    "assoc": "במוזיקה סולם מז'ור הוא הסולם המרכזי והחיובי.",
+    "sentence": "Traffic is a major problem in big cities.|תנועה היא בעיה מרכזית בערים גדולות."
+  },
+  "majority": {
+    "assoc": "מייג'ור (קצין) תמיד מנהיג את הרוב.",
+    "sentence": "The majority of students passed the test.|רוב הסטודנטים עברו את המבחן."
+  },
+  "merely": {
+    "assoc": "מזכיר את המילה 'מילא' - זה רק מילא, לא משהו רציני.",
+    "sentence": "It was merely a joke, I didn't mean to hurt you.|זה היה רק בדיחה, לא התכוונתי לפגוע בך."
+  },
+  "mystery": {
+    "assoc": "התעלומה הכי גדולה היא איך 'מיסטר' (Mister) הפך למיסטרי.",
+    "sentence": "The cause of the fire remains a mystery.|סיבת השריפה נותרה תעלומה."
+  },
+  "native": {
+    "assoc": "נייטיב מזכיר מישהו ש'נטוע' באדמה שלו באופן טבעי.",
+    "sentence": "Kangaroos are native to Australia.|קנגורו הם מקומיים לאוסטרליה."
+  },
+  "nonetheless": {
+    "assoc": "נון-דה-לס: למרות הכל, שום דבר (None) לא פחות (Less) חשוב מזה.",
+    "sentence": "The hike was difficult, but it was enjoyable nonetheless.|הטיול היה קשה, אך הוא היה מהנה אף על פי כן."
+  },
+  "obvious": {
+    "assoc": "זה אוב (Ob) נראה כמו אב - זה ברור מאליו שאבא תמיד צודק.",
+    "sentence": "It is obvious that she is happy. | זה ברור מאליו שהיא שמחה."
+  },
+  "obviously": {
+    "assoc": "כשמוסיפים Ly ל-Obvious, זה הופך ל'ברור לי' באופן וודאי.",
+    "sentence": "Obviously, we need more time. | ללא ספק, אנחנו צריכים עוד זמן."
+  },
+  "pamper": {
+    "assoc": "מזכיר את חיתולי 'פמפרס' (Pampers) שמפנקים את התינוק.",
+    "sentence": "I like to pamper my dog with treats. | אני אוהב לפנק את הכלב שלי בחטיפים."
+  },
+  "paradoxically": {
+    "assoc": "פרה (Para) ודוכס (Dox) - זה פרדוקסלי לראות פרה מתנהגת כמו דוכסית.",
+    "sentence": "Paradoxically, the ice cream was hot. | באופן סותר, הגלידה הייתה חמה."
+  },
+  "path": {
+    "assoc": "מזכיר 'פת' (לחם) - כמו הנתיב של פירורי הלחם של עמי ותמי.",
+    "sentence": "Follow the path to the forest. | עקוב אחר הנתיב ליער."
+  },
+  "permanent": {
+    "assoc": "פרה (Para) מנה (Man) - הפרה מקבלת מנה של אוכל באופן קבוע.",
+    "sentence": "This is a permanent marker. | זהו טוש קבוע."
+  },
+  "permanently": {
+    "assoc": "דומה ל-Permanent, פשוט מוסיפים 'באופן' כדי שיהיה קבוע באופן סופי.",
+    "sentence": "They are permanently closed. | הם סגורים באופן קבוע."
+  },
+  "precede": {
+    "assoc": "פרי (Pre = לפני) וסיד - שמים סיד על הקיר לפני (מקדימים) שצובעים אותו.",
+    "sentence": "A cold breeze may precede a storm. | רוח קרה עשויה להקדים סערה."
+  },
+  "preceding": {
+    "assoc": "הסיומת ing הופכת את הפעולה לתואר - הדבר שבא קודם.",
+    "sentence": "See the preceding chapter for details. | ראה את הפרק הקודם לפרטים."
+  },
+  "prior": {
+    "assoc": "מזכיר 'פרי-אור' - האור של הבוקר מגיע לפני (קודם) לכל השאר.",
+    "sentence": "I have a prior engagement. | יש לי התחייבות קודמת."
+  },
+  "refer": {
+    "assoc": "כשמישהו 'ריפר' (refer) לי בטעות במקום להפנות אותי לרופא הנכון.",
+    "sentence": "Please refer to the manual for instructions.|אנא עיין במדריך להוראות."
+  },
+  "reference": {
+    "assoc": "רפרנס זה כשחבר נותן עליך המלצה או הפניה טובה למעסיק.",
+    "sentence": "I used my former boss as a reference.|השתמשתי בבוס הקודם שלי כממליץ."
+  },
+  "severe": {
+    "assoc": "סבא (severe) נהיה חמור וקשוח מאוד כשהוא רעב.",
+    "sentence": "The patient is in severe pain.|המטופל סובל מכאב חמור."
+  },
+  "severely": {
+    "assoc": "כמו severe רק עם סיומת 'לי' - המצב נהיה חמור לי.",
+    "sentence": "The building was severely damaged by the fire.|הבניין ניזוק קשות מהשריפה."
+  },
+  "significance": {
+    "assoc": "אם יש לזה סימן (sign) ענק, כנראה שיש לזה חשיבות.",
+    "sentence": "The discovery has great historical significance.|לתגלית יש חשיבות היסטורית גדולה."
+  },
+  "significant": {
+    "assoc": "סיגלית (significant) היא דמות מאוד משמעותית וחשובה בחיים שלי.",
+    "sentence": "There was a significant change in the weather.|חל שינוי משמעותי במזג האוויר."
+  },
+  "sole": {
+    "assoc": "כשזמר שר סולו, הוא שר יחיד על הבמה.",
+    "sentence": "He was the sole survivor of the crash.|הוא היה הניצול היחיד מההתרסקות."
+  },
+  "solely": {
+    "assoc": "אני שר סולו (solely) ורק לעצמי במקלחת.",
+    "sentence": "I am solely responsible for this project.|אני האחראי הבלעדי לפרויקט הזה."
+  },
+  "terrify": {
+    "assoc": "טרור (terror) נועד להפחיד את כולם.",
+    "sentence": "Thunder and lightning terrify my dog.|רעמים וברקים מפחידים את הכלב שלי."
+  },
+  "terrifying": {
+    "assoc": "זה טרי (terrifying) ומפחיד כמו דג שעוד זז בצלחת.",
+    "sentence": "It was a terrifying experience for everyone.|זו הייתה חוויה מבעיתה עבור כולם."
+  },
+  "throughout": {
+    "assoc": "שמעתי ש'זרו-אאוט' (threw out) את כל הלכלוך בכל הבית, מקצה לקצה.",
+    "sentence": "It rained throughout the entire day.|ירד גשם לאורך כל היום."
+  },
+  "variable": {
+    "assoc": "הוו-ריאציה של הביל (Bill) - החשבון תמיד משתנה.",
+    "sentence": "The price of fruit is variable depending on the season.|מחיר הפירות משתנה בהתאם לעונה."
+  },
+  "variety": {
+    "assoc": "בתוך חנות 'וראייטי' יש מגוון רחב של מוצרים.",
+    "sentence": "The shop offers a wide variety of snacks.|החנות מציעה מגוון רחב של חטיפים."
+  },
+  "various": {
+    "assoc": "זה כמו וראייטי, רק שזה מתאר דברים מגוונים.",
+    "sentence": "We discussed various topics during the meeting.|דנו בנושאים מגוונים במהלך הפגישה."
+  },
+  "vital": {
+    "assoc": "ויטמין (Vitamin) הוא ויטאל (Vital) - חיוני מאוד לבריאות.",
+    "sentence": "Water is vital for human survival.|מים חיוניים להישרדות בני האדם."
+  },
+  "whereas": {
+    "assoc": "איפה (Where) האז ואיפה העכשיו? בעוד שפעם היה שונה.",
+    "sentence": "She loves tea, whereas he prefers coffee.|היא אוהבת תה, בעוד שהוא מעדיף קפה."
+  },
+  "wool": {
+    "assoc": "הכבשה עושה 'וווו' (Wool) ונותנת לנו צמר.",
+    "sentence": "This sweater is made of 100% wool.|הסוודר הזה עשוי מ-100% צמר."
+  },
+  "extensive": {
+    "assoc": "כשעושים 'אקסטנשן' (Extension) לבית, הוא הופך לנרחב ומקיף.",
+    "sentence": "The fire caused extensive damage to the building.|השריפה גרמה לנזק נרחב לבניין."
+  },
+  "abolish": {
+    "assoc": "אבא ליש (Abolish) - אבא רוצה לישון אז הוא מבטל את כל התוכניות.",
+    "sentence": "The government decided to abolish the old law.|הממשלה החליטה לבטל את החוק הישן."
+  },
+  "accurate": {
+    "assoc": "הוא ירה (Accu-rate) חץ ופגע בול, בצורה מדויקת.",
+    "sentence": "His description of the event was very accurate.|התיאור שלו לאירוע היה מדויק מאוד."
+  },
+  "equalize": {
+    "assoc": "כשמשחקים כדורגל ומישהו מבקיע, הוא עושה Equal (שווה) ומשווה את התוצאה.",
+    "sentence": "The team managed to equalize the score in the last minute. | הקבוצה הצליחה להשוות את התוצאה בדקה האחרונה."
+  },
+  "equate": {
+    "assoc": "אי-קוויט - אל תשווה (Equate) בין אכילת קוויאר יוקרתי לאכילת סנדוויץ' פשוט.",
+    "sentence": "You cannot equate money with happiness. | אי אפשר להשוות כסף לאושר."
+  },
+  "equator": {
+    "assoc": "במרכז כדור הארץ יש קו שמשווה בין הצפון לדרום, כאילו מתחו שם קו בטור (Tor).",
+    "sentence": "Kenya is located on the equator. | קניה ממוקמת על קו המשווה."
+  },
+  "extreme": {
+    "assoc": "ספורט אקסטרים הוא תמיד הכי קיצוני ומסוכן שיש.",
+    "sentence": "The weather reached extreme temperatures today. | מזג האוויר הגיע לטמפרטורות קיצוניות היום."
+  },
+  "extremist": {
+    "assoc": "הסיומת ist הופכת את הקיצוני (Extreme) לאדם קיצוני, כמו Artist (אמן).",
+    "sentence": "He is known to be a political extremist. | הוא ידוע כאדם קיצוני מבחינה פוליטית."
+  },
+  "firm": {
+    "assoc": "המזרן שלי פירם (Firm) - הוא כל כך חזק ומוצק שאפשר להקים עליו חברה (Firm).",
+    "sentence": "She works for a law firm in the city center. | היא עובדת בחברת עורכי דין במרכז העיר."
+  },
+  "firmly": {
+    "assoc": "כשמישהו מחזיק משהו פירמלי, הוא מחזיק אותו חזק ובתקיפות.",
+    "sentence": "He shook my hand firmly. | הוא לחץ את ידי בתקיפות."
+  },
+  "flame": {
+    "assoc": "פליי-אם (Flame) - אם תשחק (Play) עם אש, תצא להבה גדולה.",
+    "sentence": "The candle's flame flickered in the wind. | להבת הנר רעדה ברוח."
+  },
+  "force": {
+    "assoc": "במלחמת הכוכבים משתמשים ב'פורס' (Force) - הכוח להכריח דברים לקרות.",
+    "sentence": "You cannot force someone to love you. | אי אפשר להכריח מישהו לאהוב אותך."
+  },
+  "forceful": {
+    "assoc": "מישהו שהוא פורס-פול (Forceful) הוא מלא (Full) בכוח ושכנוע.",
+    "sentence": "Her forceful argument changed everyone's mind. | הטיעון המשכנע והחזק שלה שינה את דעתם של כולם."
+  },
+  "accurately": {
+    "assoc": "אקורט-לי: זה לוקח לי זמן קצר (א-קורט) לכוון במדויק למטרה.",
+    "sentence": "She accurately predicted the test results. | היא חזתה במדויק את תוצאות המבחן."
+  },
+  "annual": {
+    "assoc": "ענו-אל: בדו\"ח השנתי אנחנו עונים לאל על מה שעשינו כל השנה.",
+    "sentence": "The company holds an annual meeting in January. | החברה מקיימת פגישה שנתית בינואר."
+  },
+  "calculate": {
+    "assoc": "כל-קול-עט: הוא מחשב את הסכום לפי הצליל של כל עט שכותב.",
+    "sentence": "Can you calculate the total cost? | האם אתה יכול לחשב את העלות הכוללת?"
+  },
+  "commune": {
+    "assoc": "כמו-ני (Knee): בקומונה יושבים ברך אל ברך כדי לשוחח בפרטיות.",
+    "sentence": "He went to the forest to commune with nature. | הוא הלך ליער כדי להתייחד (לשוחח בפרטיות) עם הטבע."
+  },
+  "communal": {
+    "assoc": "כמו-נעל: בחיים שיתופיים, לכולם יש בדיוק את אותה נעל.",
+    "sentence": "They shared a communal kitchen in the apartment. | הם חלקו מטבח שיתופי בדירה."
+  },
+  "communication": {
+    "assoc": "קומו-ניק: קומו מהר! ניק מנסה ליצור איתנו תקשורת!",
+    "sentence": "Good communication is key to a healthy relationship. | תקשורת טובה היא המפתח למערכת יחסים בריאה."
+  },
+  "complex": {
+    "assoc": "קום-פלקס: זה ממש מורכב לקום מהמיטה כשמחכה לך קורנפלקס טעים.",
+    "sentence": "The math problem was very complex. | בעיית המתמטיקה הייתה מורכבת מאוד."
+  },
+  "critic": {
+    "assoc": "קרי-תיק: המבקר תמיד צועק 'קרי' (קרה משהו) ומכניס את הביקורת לתיק.",
+    "sentence": "The film critic gave the movie a bad review. | מבקר הקולנוע נתן לסרט ביקורת רעה."
+  },
+  "criticize": {
+    "assoc": "קרי-תיק-אייז (Eyes): המבקר מסתכל לי בעיניים ומעביר עליי ביקורת.",
+    "sentence": "Don't criticize her before you know the facts. | אל תעביר עליה ביקורת לפני שאתה יודע את העובדות."
+  },
+  "critical": {
+    "assoc": "קרי-תיק-אל: זה מצב גורלי, אז קראנו (קרי) לתיק של האל לעזרה.",
+    "sentence": "The patient is in critical condition. | המטופל נמצא במצב קריטי (גורלי)."
+  },
+  "delete": {
+    "assoc": "כשמוחקים משהו זה 'די-ליט' (די, מאוחר מדי), הוא כבר נמחק.",
+    "sentence": "Please delete the unwanted files from your computer.|אנא מחק את הקבצים הלא רצויים מהמחשב שלך."
+  },
+  "deplete": {
+    "assoc": "די-פליט (די עם התרסיס 'פליט') - כי המיכל התרוקן לגמרי.",
+    "sentence": "Constant mining will deplete the natural resources.|כרייה מתמדת תכלה את משאבי הטבע."
+  },
+  "discipline": {
+    "assoc": "דיס-ציפלין (די, ציפי, לין!) - אמא דורשת משמעת שציפי תלך לישון (לין).",
+    "sentence": "High school students need self-discipline to study for exams.|תלמידי תיכון זקוקים למשמעת עצמית כדי ללמוד למבחנים."
+  },
+  "disciple": {
+    "assoc": "די-סייפל (די, תגיד פל/נפל) - התלמיד (חסיד) יגיד כל מה שהרב שלו אומר.",
+    "sentence": "The philosopher had many loyal disciples who followed his teachings.|לפילוסוף היו חסידים נאמנים רבים שהלכו בעקבות תורתו."
+  },
+  "elude": {
+    "assoc": "א-לוד - הפושע הצליח לברוח כל הדרך עד לוד.",
+    "sentence": "The criminal managed to elude the police for several months.|הפושע הצליח להתחמק מהמשטרה במשך כמה חודשים."
+  },
+  "elusive": {
+    "assoc": "א-לו-זיב (הלו, זיו!) - זיו הוא בחור חמקמק שמעולם לא עונה לטלפון.",
+    "sentence": "Success can be very elusive if you don't work hard.|הצלחה יכולה להיות חמקמקה מאוד אם לא עובדים קשה."
+  },
+  "expulsion": {
+    "assoc": "אקס-פולס (האקס קיבל פולס/דחיפה) - גירשו וסילקו אותו מהבית.",
+    "sentence": "His bad behavior led to his expulsion from the academy.|התנהגותו הרעה הובילה לסילוקו מהאקדמיה."
+  },
+  "extend": {
+    "assoc": "אקס-טנד (אקס-מתח) - צריך למתוח את החבל כדי להאריך אותו.",
+    "sentence": "The deadline was extended by two weeks to allow more time.|המועד האחרון הוארך בשבועיים כדי לאפשר זמן נוסף."
+  },
+  "extension": {
+    "assoc": "אקס-טנשן (תוספת מתח) - כמו שלוחה בטלפון או תוספת שיער (הארכה).",
+    "sentence": "I need an extension on my library book because I haven't finished it.|אני צריך הארכה עבור הספר מהספרייה כי לא סיימתי אותו."
+  },
+  "fluent": {
+    "assoc": "פלו-אנט (נזילה של דודה) - המילים נוזלות לדודה מהפה בשטף.",
+    "sentence": "She is fluent in four different languages.|היא שולטת בשטף בארבע שפות שונות."
+  },
+  "affluent": {
+    "assoc": "מי ש-affluent (עשיר) יכול לקנות מוצרי 'אפל' (Apple) בשטף (fluent).",
+    "sentence": "He lives in an affluent neighborhood where everyone drives luxury cars.|הוא גר בשכונה עשירה שבה כולם נוהגים במכוניות יוקרה."
+  },
+  "affluence": {
+    "assoc": "עושר (affluence) זה כשיש לך השפעה (influence) בגלל כל השפע שלך.",
+    "sentence": "The family's affluence was visible in their huge mansion.|עושר המשפחה נראה לעין באחוזה הענקית שלהם."
+  },
+  "hail": {
+    "assoc": "כשמתחיל לרדת 'ברד' (hail), כולם 'קוראים' (hail) למונית שתבוא להציל אותם.",
+    "sentence": "The crowd began to hail the winner of the race.|הקהל החל להריע (לקרוא בשבח) למנצח המרוץ."
+  },
+  "hypocrisy": {
+    "assoc": "צביעות זה כש'היפו' (היפופוטם) אומר שהוא 'קריטי' (crit) לגבי המשקל שלו בזמן שהוא אוכל עוגה.",
+    "sentence": "He was accused of hypocrisy for saying one thing and doing another.|הוא הואשם בצביעות כי אמר דבר אחד ועשה דבר אחר."
+  },
+  "hypocrite": {
+    "assoc": "הצבוע הוא אדם שהפוך ממה שהוא מראה, כמו 'היפו' שמתחפש לרזה.",
+    "sentence": "Don't be a hypocrite; practice what you preach.|אל תהיה צבוע; תקיים את מה שאתה מטיף לו."
+  },
+  "judge": {
+    "assoc": "השופט (judge) אוהב לשחק עם 'גאדג'טים' (gadgets) בבית המשפט.",
+    "sentence": "The judge listened carefully to both sides of the story.|השופט הקשיב בתשומת לב לשני הצדדים של הסיפור."
+  },
+  "judgment": {
+    "assoc": "שיפוט זה כשהשופט (judge) משתמש במנטליות (ment) שלו כדי להחליט.",
+    "sentence": "In my judgment, we should wait before making a decision.|לפי השיפוט שלי (לדעתי), כדאי שנחכה לפני שנקבל החלטה."
+  },
+  "prejudice": {
+    "assoc": "דעה קדומה זה כששופטים מראש: 'Pre' (לפני) ו-'judice' (לשפוט).",
+    "sentence": "We must work hard to overcome prejudice in our society.|עלינו לעבוד קשה כדי להתגבר על דעות קדומות בחברה שלנו."
+  },
+  "loathe": {
+    "assoc": "אני כל כך מתעב אותו שאני מקווה שהוא ילך 'לאו' (low - נמוך) וייעלם.",
+    "sentence": "I loathe the smell of cigarette smoke.|אני מתעב את הריח של עשן סיגריות."
+  },
+  "melt": {
+    "assoc": "הגלידה 'נמסה' כי היא 'מתה' (melt) מחום בשמש.",
+    "sentence": "The butter will melt if you leave it on the counter.|החמאה תימס אם תשאיר אותה על השיש."
+  },
+  "monitor": {
+    "assoc": "המוניטור (צג) בבנק משגיח על ה'מוני' (Money) של כולם.",
+    "sentence": "The teacher will monitor the students during the exam. | המורה ישגיח על התלמידים במהלך המבחן."
+  },
+  "occasion": {
+    "assoc": "כשקורה אירוע מיוחד, כולם אומרים 'אוקיי' (Ok) ל'ז'ן' (זמן).",
+    "sentence": "A wedding is a very special occasion. | חתונה היא אירוע מיוחד מאוד."
+  },
+  "occasional": {
+    "assoc": "אוקיי-ז'ונל - זה קורה באופן מקרי, כמו שמוצאים כתבה מעניינת ב'ז'ורנל' (עיתון).",
+    "sentence": "We have occasional meetings to discuss the project. | יש לנו פגישות מקריות כדי לדון בפרויקט."
+  },
+  "occasionally": {
+    "assoc": "מדי פעם אני אומר 'אוקיי' (Ok) לג'לי (Jelly) שלי.",
+    "sentence": "I occasionally go to the cinema on weekends. | מדי פעם אני הולך לקולנוע בסופי שבוע."
+  },
+  "payment": {
+    "assoc": "צריך לעשות 'פיי' (Pay) ל'מנט' (האיש) עבור התשלום.",
+    "sentence": "You must make the payment by the end of the month. | עליך לבצע את התשלום עד סוף החודש."
+  },
+  "perplexing": {
+    "assoc": "זה כל כך מבלבל שזה גורם למוח שלי לעשות 'פלקס' (Flex) מרוב מאמץ.",
+    "sentence": "The mystery of the lost key is quite perplexing. | התעלומה של המפתח האבוד די מבלבלת."
+  },
+  "pharmaceuticals": {
+    "assoc": "בסופר-פארם מוכרים תרופות וזה ממש קל (Cal) למצוא אותן.",
+    "sentence": "This company manufactures high-quality pharmaceuticals. | החברה הזו מייצרת תרופות באיכות גבוהה."
+  },
+  "prestigious": {
+    "assoc": "במקום יוקרתי כולם לובשים ג'ינס (Gious) שקיבלו עליו 'פרס' (Pre).",
+    "sentence": "She won a scholarship to a prestigious university. | היא זכתה במלגה לאוניברסיטה יוקרתית."
+  },
+  "quake": {
+    "assoc": "כשיש רעידת אדמה, הקוואקר (Quaker) בצלחת מתחיל להרעיד.",
+    "sentence": "The loud explosion made the windows quake. | הפיצוץ העז הרעיד את החלונות."
+  },
+  "quit": {
+    "assoc": "קוויט נשמע כמו 'די!' - כשאני מפסיק או מתפטר אני אומר די.",
+    "sentence": "He decided to quit his job and travel the world. | הוא החליט להתפטר מעבודתו ולטייל בעולם."
+  },
+  "recipient": {
+    "assoc": "ה-Recipe (מתכון) הגיע סוף סוף ל-Recipient (נמען).",
+    "sentence": "The recipient of the award gave a short speech.|מקבל הפרס נשא נאום קצר."
+  },
+  "rejoice": {
+    "assoc": "לעשות Re-Joy: להחזיר את השמחה ולעלוז.",
+    "sentence": "The fans will rejoice if their team wins the championship.|האוהדים ישמחו אם הקבוצה שלהם תזכה באליפות."
+  },
+  "scarce": {
+    "assoc": "זה מפחיד (Scary) כמה שהאוכל כאן נדיר (Scarce).",
+    "sentence": "Water is scarce in the middle of the desert.|מים הם נדירים באמצע המדבר."
+  },
+  "stride": {
+    "assoc": "במקום Ride (רכיבה), הוא דופק Stride (צעידה/פסיעה) ארוכה.",
+    "sentence": "She crossed the room with a confident stride.|היא חצתה את החדר בצעידה בטוחה."
+  },
+  "superfluous": {
+    "assoc": "סופר-פלוס: כל מה שהוא פלוס על הסופר הוא פשוט מיותר.",
+    "sentence": "The teacher told me to remove superfluous details from my essay.|המורה אמר לי להסיר פרטים מיותרים מהמאמר שלי."
+  },
+  "witty": {
+    "assoc": "וויטי נשמע כמו ויטמין - הבדיחות השנונות שלו הן הוויטמין של החבר'ה.",
+    "sentence": "He is famous for his witty remarks during interviews.|הוא מפורסם בזכות הערותיו השנונות במהלך ראיונות."
+  },
+  "equal": {
+    "assoc": "אקוואל: כמו שיווי משקל, כולם שווים.",
+    "sentence": "The two sides are of equal length.|שני הצדדים הם באורך שווה."
+  },
+  "admire": {
+    "assoc": "אדמירל: כולם מעריצים את האדמירל המרשים.",
+    "sentence": "I really admire your courage to speak up.|אני באמת מעריץ את האומץ שלך להתבטא."
+  },
+  "admiration": {
+    "assoc": "אדמירציה: טקס הערצה המוני לאדמירל.",
+    "sentence": "He looked at the masterpiece with great admiration.|הוא הביט ביצירת המופת בהערצה רבה."
+  },
+  "admirable": {
+    "assoc": "אדמירל-אייבל: הוא מסוגל (Able) להיות אדמירל כי הוא נערץ.",
+    "sentence": "Your dedication to helping others is truly admirable.|המסירות שלך לעזרת אחרים היא באמת נערצת."
+  },
+  "ancient": {
+    "assoc": "אין שנט - אין שנת ייצור מרוב שהוא עתיק.",
+    "sentence": "They discovered an ancient temple in the desert.|הם גילו מקדש עתיק במדבר."
+  },
+  "best": {
+    "assoc": "הוא הכי טוב, אי אפשר לבקש בס(ט) יותר מזה.",
+    "sentence": "She is the best student in our class.|היא התלמידה הכי טובה בכיתה שלנו."
+  },
+  "blouse": {
+    "assoc": "בלאוז (Blouse) - אם תשפכי בלוז (דובדבנים) על החולצה היא תתלכלך.",
+    "sentence": "She wore a white silk blouse to the interview.|היא לבשה חולצת משי לבנה לראיון."
+  },
+  "currency": {
+    "assoc": "קאר-אנ-סי (Car-and-see) - בוא תראה (See) את המכונית (Car) שקניתי במטבע חוץ.",
+    "sentence": "What is the official currency of Japan?|מהו המטבע הרשמי של יפן?"
+  },
+  "current": {
+    "assoc": "קאר-רנט - המכונית (Car) השכורה (Rent) נסחפה בזרם הנוכחי.",
+    "sentence": "The swimmer struggled against the strong current.|השחיין נאבק בזרם החזק."
+  },
+  "currently": {
+    "assoc": "קאר-נט-לי - המכונית (Car) נתנה (Net) לי שירות כרגע.",
+    "sentence": "The manager is currently in a meeting.|המנהל נמצא כרגע בישיבה."
+  },
+  "edition": {
+    "assoc": "אדישן - אדי (Eddie) קיבל מהדורה חדשה של הספר.",
+    "sentence": "This is the limited edition of the video game.|זו המהדורה המוגבלת של משחק הווידאו."
+  },
+  "edit": {
+    "assoc": "אדיט - לעשות אדיט לתמונה זה פשוט לערוך אותה.",
+    "sentence": "I need to edit my essay before submitting it.|אני צריך לערוך את החיבור שלי לפני ההגשה."
+  },
+  "either... or...": {
+    "assoc": "איי-דר - או שתלך ל'איי' או שתלך ל'דר' (דירה).",
+    "sentence": "You can either stay here or go home.|אתה יכול או להישאר כאן או ללכת הביתה."
+  },
+  "enormous": {
+    "assoc": "אין-אור-מוס - אין אור כי העכבר (Mouse) הוא עצום ומסתיר את השמש.",
+    "sentence": "The project required an enormous amount of work.|הפרויקט דרש כמות עצומה של עבודה."
+  },
+  "enforce": {
+    "assoc": "כשאני מחזיק כוח (Force) ביד, אני יכול לאכוף כל חוק בבית.",
+    "sentence": "The police will enforce the new speed limit. | המשטרה תאכוף את הגבלת המהירות החדשה."
+  },
+  "enforcement": {
+    "assoc": "המלט (Cement) של החוק הוא האכיפה - זה מה שמדביק את הכל.",
+    "sentence": "Law enforcement is crucial for a safe society. | אכיפת חוק היא חיונית לחברה בטוחה."
+  },
+  "frequent": {
+    "assoc": "פרדי (Fred) הוא קוונט (Quant) שמבקר אותי באופן תדיר.",
+    "sentence": "He is a frequent visitor to the local library. | הוא מבקר תדיר בספרייה המקומית."
+  },
+  "frequency": {
+    "assoc": "במסיבת חופש (Free) הקווינסי (Quency) רוקד בתדירות גבוהה.",
+    "sentence": "The radio station changed its broadcasting frequency. | תחנת הרדיו שינתה את תדר השידור שלה."
+  },
+  "frequently": {
+    "assoc": "מי שזריז (Quickly) עושה דברים לעיתים קרובות.",
+    "sentence": "It rains frequently in London during the winter. | יורד גשם לעיתים קרובות בלונדון במהלך החורף."
+  },
+  "game": {
+    "assoc": "הגיימר הזה כל כך תחרותי שהוא חושב שכל החיים הם משחק.",
+    "sentence": "The final game of the tournament starts at 8 PM. | המשחק האחרון של הטורניר מתחיל בשעה שמונה בערב."
+  },
+  "immediate": {
+    "assoc": "אם המדיה (Media) פה, סימן שצריך תגובה מיידית.",
+    "sentence": "We need an immediate response to the email. | אנחנו צריכים תגובה מיידית לאימייל."
+  },
+  "immediately": {
+    "assoc": "אני מיד בא לאכול (Eat), רק עוד דקה!",
+    "sentence": "Please call your mother immediately. | בבקשה התקשר לאמא שלך מיד."
+  },
+  "important": {
+    "assoc": "חשוב שיהיה נמל (Port) כדי להביא דברים חשובים מחו\"ל.",
+    "sentence": "It is important to drink plenty of water. | זה חשוב לשתות הרבה מים."
+  },
+  "importance": {
+    "assoc": "יש חשיבות גדולה לנס (Ness) שקרה בנמל (Port).",
+    "sentence": "The teacher emphasized the importance of hard work. | המורה הדגיש את חשיבותה של עבודה קשה."
+  },
+  "know": {
+    "assoc": "נו (No)... אני יודע את זה כבר!",
+    "sentence": "I know the answer to this question. | אני יודע את התשובה לשאלה הזאת."
+  },
+  "unknown": {
+    "assoc": "Un-Know: ההפך מלדעת, זה משהו נעלם ולא ידוע.",
+    "sentence": "The identity of the artist remains unknown. | זהות האמן נותרה לא ידועה."
+  },
+  "knowledge": {
+    "assoc": "Know-Ledge (מדף): כל הידע שלי מסודר על מדף במוח.",
+    "sentence": "She has a vast knowledge of history. | יש לה ידע נרחב בהיסטוריה."
+  },
+  "known": {
+    "assoc": "זה ידוע שזה Know עם N בסוף.",
+    "sentence": "He is known for his great sense of humor. | הוא ידוע בחוש ההומור הנהדר שלו."
+  },
+  "large": {
+    "assoc": "הוא לארג' איתנו, הזמין פיצה גדולה במיוחד.",
+    "sentence": "The elephant is a very large animal. | הפיל הוא חיה גדולה מאוד."
+  },
+  "late": {
+    "assoc": "מי שאיחר הגיע ליט (Late), מאוחר מדי.",
+    "sentence": "I am sorry for being late to the meeting. | אני מצטער על האיחור לפגישה."
+  },
+  "lately": {
+    "assoc": "לאחרונה (Lately) אני מרגיש Late כל הזמן.",
+    "sentence": "I haven't seen him lately. | לא ראיתי אותו לאחרונה."
+  },
+  "lead to": {
+    "assoc": "הלידר (Leader) מוביל את הקבוצה למטרה.",
+    "sentence": "Hard work will lead to success. | עבודה קשה תוביל להצלחה."
+  },
+  "mislead": {
+    "assoc": "מיס (Miss) הובילה (Lead) אותי בטעות למקום הלא נכון.",
+    "sentence": "The signs were designed to mislead the enemy. | השלטים עוצבו כדי להטעות את האויב."
+  },
+  "likewise": {
+    "assoc": "Like-Wise: כמו (Like) חכם (Wise), גם אני חושב באופן דומה.",
+    "sentence": "Nice to meet you. - Likewise. | נעים להכיר אותך. - באופן דומה (גם לי)."
+  },
+  "near": {
+    "assoc": "כשאני ניר (near) לעיר, אני מאוד קרוב אליה.",
+    "sentence": "The park is near my house. | הפארק נמצא קרוב לבית שלי."
+  },
+  "nearby": {
+    "assoc": "ניר נמצא ביי (by) - הוא ממש פה בקרבת מקום.",
+    "sentence": "We found a great restaurant nearby. | מצאנו מסעדה נהדרת בקרבת מקום."
+  },
+  "nearly": {
+    "assoc": "ניר-לי (Near-ly) - כמעט היה לי את הנייר הזה.",
+    "sentence": "I nearly missed the train. | כמעט פספסתי את הרכבת."
+  },
+  "not only... (but also)": {
+    "assoc": "נוט (Not) זה לא, אונלי (Only) זה רק - לא רק!",
+    "sentence": "Not only is she smart, but also very kind. | לא רק שהיא חכמה, אלא גם מאוד אדיבה."
+  },
+  "owing to": {
+    "assoc": "אוי (Owe) לי, אני חייב להם הסבר בגלל הטעות שלי.",
+    "sentence": "The game was cancelled owing to rain. | המשחק בוטל בשל הגשם."
+  },
+  "perfect": {
+    "assoc": "הפר-פקט (Per-fect) הוא עובדה (Fact) מושלמת.",
+    "sentence": "This is a perfect day for a picnic. | זה יום מושלם לפיקניק."
+  },
+  "possible": {
+    "assoc": "פה-סביב-לי (Po-ssible), הכל אפשרי סביבי.",
+    "sentence": "Is it possible to change my flight? | האם אפשרי לשנות את הטיסה שלי?"
+  },
+  "possibility": {
+    "assoc": "הסיומת 'ליטי' הופכת את ה'אפשרי' למילה ארוכה של אפשרות.",
+    "sentence": "There is a possibility of snow tomorrow. | קיימת אפשרות לשלג מחר."
+  },
+  "possibly": {
+    "assoc": "פוסיבל-לי (Possibly) - ייתכן שזה בשבילי?",
+    "sentence": "Could you possibly help me? | האם ייתכן שתוכל לעזור לי?"
+  },
+  "rapid": {
+    "assoc": "ראפיד (Rapid) נשמע כמו זמר 'ראפ' ששר בקצב מהיר מאוד.",
+    "sentence": "The city experienced rapid growth. | העיר חוותה צמיחה מהירה."
+  },
+  "rapidly": {
+    "assoc": "רפי דלי (Rapi-dly) רץ במהירות כדי שהמים לא יישפכו מהדלי.",
+    "sentence": "The technology in this field is developing rapidly. | הטכנולוגיה בתחום זה מתפתחת במהירות."
+  },
+  "rare": {
+    "assoc": "סטייק רייר (Rare) הוא נדיר כי רוב האנשים שורפים את הבשר.",
+    "sentence": "It is very rare to see a shooting star in the city. | זה נדיר מאוד לראות כוכב נופל בעיר."
+  },
+  "rarely": {
+    "assoc": "רייר-לי (Rarely) - לי זה קורה לעיתים רחוקות שיוצא לי משהו נדיר.",
+    "sentence": "I rarely watch television during the week. | אני צופה בטלוויזיה לעיתים רחוקות במהלך השבוע."
+  },
+  "reason": {
+    "assoc": "רי-זון (Reason) - הסיבה (Reason) שהחליפו אזור (Zone) היא חוסר היגיון.",
+    "sentence": "Is there a specific reason why you are late? | האם יש סיבה ספציפית לכך שאיחרת?"
+  },
+  "reasonable": {
+    "assoc": "ריזון-אייבל (Reason-able) - כשיש היגיון (Reason) אז זה אפשרי (Able) והגיוני.",
+    "sentence": "The price for the new apartment was reasonable. | המחיר עבור הדירה החדשה היה הגיוני."
+  },
+  "unreasonable": {
+    "assoc": "כשמוסיפים Un למשהו הגיוני, הוא הופך ללא הגיוני בעליל.",
+    "sentence": "It is unreasonable to expect perfection from a child. | זה לא הגיוני לצפות לשלמות מילד."
+  },
+  "recent": {
+    "assoc": "רי-סנט (Re-cent) - קיבלתי סנט (מטבע) חדש לאחרונה.",
+    "sentence": "A recent study shows that sleep is vital for memory. | מחקר שנערך לאחרונה מראה ששינה חיונית לזיכרון."
+  },
+  "recently": {
+    "assoc": "ריסנט-לי (Recently) - לאחרונה זה קרה לי שוב.",
+    "sentence": "Have you spoken to your parents recently? | האם דיברת עם ההורים שלך לאחרונה?"
+  },
+  "refuse": {
+    "assoc": "רי-פיוז (Refuse) - קפץ לו הפיוז (Fuse) אז הוא מסרב לעבוד.",
+    "sentence": "I had to refuse the invitation due to work. | נאלצתי לסרב להזמנה בגלל העבודה."
+  },
+  "regular": {
+    "assoc": "רולר (Regular) - הגלגל מסתובב בצורה רגילה וסדירה.",
+    "sentence": "Regular exercise is important for your health. | פעילות גופנית סדירה חשובה לבריאות שלך."
+  },
+  "regulate": {
+    "assoc": "רגולציה - הממשלה עושה 'סדר' ומווסתת את השוק כדי שלא יהיה בלגן.",
+    "sentence": "The government must regulate the price of electricity.|הממשלה חייבת לווסת את מחיר החשמל."
+  },
+  "irregular": {
+    "assoc": "זה הופך את regular (רגיל) ל'לא רגיל' - כמו פעימות לב לא סדירות.",
+    "sentence": "He has an irregular heartbeat.|יש לו פעימות לב לא סדירות."
+  },
+  "single": {
+    "assoc": "כמו 'סינגל' ברדיו - שיר אחד ויחיד שיוצא לבד.",
+    "sentence": "I don't have a single dollar in my pocket.|אין לי דולר אחד בודד בכיס."
+  },
+  "surprise": {
+    "assoc": "סופר-רייז (Super-rise) - כשקופצים פתאום וקמים מהכיסא כדי להפתיע מישהו.",
+    "sentence": "I want to surprise my sister with a gift.|אני רוצה להפתיע את אחותי עם מתנה."
+  },
+  "terrible": {
+    "assoc": "זה נשמע כמו טרור (Terror) - משהו נורא ואיום.",
+    "sentence": "The weather today is absolutely terrible.|מזג האוויר היום פשוט נורא."
+  },
+  "then": {
+    "assoc": "דן (Dan) אכל, ואז (then) הוא הלך לישון.",
+    "sentence": "First finish your work, and then you can go.|קודם תסיים את העבודה שלך, ואז תוכל ללכת."
+  },
+  "total": {
+    "assoc": "טוטאל לוס - כשהכל נהרס לגמרי וזה הסכום הסופי של הנזק.",
+    "sentence": "The total cost of the dinner was fifty dollars.|הסכום הכולל של הארוחה היה חמישים דולר."
+  },
+  "totally": {
+    "assoc": "טוטאלי - כשאני מסכים איתך במאה אחוז, אני 'טוטאלי' איתך.",
+    "sentence": "I totally forgot that it was your birthday.|שכחתי לגמרי שזה היה יום ההולדת שלך."
+  },
+  "under": {
+    "assoc": "אנדר-דוג - הכלב הקטן שתמיד נמצא למטה, מתחת לכולם.",
+    "sentence": "The keys are under the book on the table.|המפתחות נמצאים מתחת לספר שעל השולחן."
+  },
+  "yet": {
+    "assoc": "ייאט (Yacht) - עדיין אין לי יאכטה, אבל יום אחד תהיה לי.",
+    "sentence": "He has not arrived at the office yet.|הוא עדיין לא הגיע למשרד."
+  },
+  "zero": {
+    "assoc": "קולה זירו (Zero) היא קולה עם אפס סוכר.",
+    "sentence": "There is zero chance of rain today. | יש סיכוי של אפס לגשם היום."
+  },
+  "abide": {
+    "assoc": "אבא (Aba) תמיד נאמן לחוקים ומציית להם.",
+    "sentence": "You must abide by the rules of the house. | עליך לציית לחוקי הבית."
+  },
+  "account for": {
+    "assoc": "רואה חשבון (Accountant) צריך להסביר לאן נעלם הכסף.",
+    "sentence": "How do you account for the missing money? | איך אתה מסביר את הכסף החסר?"
+  },
+  "aid": {
+    "assoc": "עזרה ראשונה קוראים באנגלית First Aid.",
+    "sentence": "The charity provides aid to the poor. | ארגון הצדקה מספק עזרה לעניים."
+  },
+  "anticipate": {
+    "assoc": "אני בציפייה גדולה (Anticipate) שהאנטי-וירוס יסיים לעבוד.",
+    "sentence": "We anticipate a large crowd at the concert. | אנחנו מצפים לקהל גדול בהופעה."
+  },
+  "avoid": {
+    "assoc": "א-בוי (Oh boy)! אני חייב להימנע מהטעות הזאת.",
+    "sentence": "You should avoid driving in this heavy rain. | כדאי לך להימנע מנהיגה בגשם הכבד הזה."
+  },
+  "unavoidable": {
+    "assoc": "שילוב של Un (לא) ו-Avoid (להימנע), כלומר משהו שלא ניתן להימנע ממנו.",
+    "sentence": "Changes in life are sometimes unavoidable. | שינויים בחיים הם לפעמים בלתי נמנעים."
+  },
+  "beat": {
+    "assoc": "הביט (Beat) של המוזיקה היה כל כך חזק שהוא הביס את השקט.",
+    "sentence": "Our team managed to beat the world champions. | הקבוצה שלנו הצליחה להביס את אלופי העולם."
+  },
+  "brief": {
+    "assoc": "תחתונים (Briefs) הם קצרים, בדיוק כמו תדריך קצר ומתומצת.",
+    "sentence": "The meeting was very brief and to the point. | הפגישה הייתה קצרה מאוד ולעניין."
+  },
+  "cancel": {
+    "assoc": "הקנצלר (Chancellor) החליט לבטל את כל המיסים.",
+    "sentence": "They had to cancel the flight due to the storm. | הם נאלצו לבטל את הטיסה בגלל הסופה."
+  },
+  "change": {
+    "assoc": "כשאתה הולך לצ'יינג' (Change), אתה רוצה לשנות את הכסף שלך ולקבל עודף מדויק.",
+    "sentence": "I need some change for the parking meter.|אני צריך קצת עודף עבור המדחן."
+  },
+  "commerce": {
+    "assoc": "בוא (Come) נרים כוס (Mers - נשמע כמו מרס) לכבוד המסחר העולמי.",
+    "sentence": "The city has always been a center of commerce.|העיר תמיד הייתה מרכז של מסחר."
+  },
+  "commercial": {
+    "assoc": "במסחרי (Commercial) יש המון פרסומות מעצבנות באמצע הסרט.",
+    "sentence": "The commercial for the new car was very creative.|הפרסומת למכונית החדשה הייתה מאוד יצירתית."
+  },
+  "consists of": {
+    "assoc": "הקונסיסט (Consist) מזכיר קונסיסטנציה (מרקם) - ממה המרקם הזה מורכב?",
+    "sentence": "The cake consists of flour, eggs, and sugar.|העוגה מורכבת מקמח, ביצים וסוכר."
+  },
+  "decent": {
+    "assoc": "הדי-סנט (Decent) - הוא כל כך הגון שהוא לא יבזבז אפילו סנט (Cent) אחד לא שלו.",
+    "sentence": "He is a decent man who always helps his neighbors.|הוא אדם הגון שתמיד עוזר לשכניו."
+  },
+  "delegate": {
+    "assoc": "הבוס שלי אמר לי: 'די (De), תלגום (Legate) מהקפה ותתחיל להאציל סמכויות'.",
+    "sentence": "The manager decided to delegate the tasks to his team.|המנהל החליט להאציל את המטלות לצוות שלו."
+  },
+  "delegation": {
+    "assoc": "דלג (Deleg) - המשלחת 'דילגה' מעל כל המכשולים בדרך לכנס.",
+    "sentence": "The Israeli delegation arrived at the conference in Paris.|המשלחת הישראלית הגיעה לוועידה בפריז."
+  },
+  "descendant": {
+    "assoc": "הוא דה-סנדנט (Descendant) - הילד ש'ירד' (Descend) מההורים שלו, כלומר הצאצא שלהם.",
+    "sentence": "He is a direct descendant of the royal family.|הוא צאצא ישיר של משפחת המלוכה."
+  },
+  "determine": {
+    "assoc": "בטרמינל (Terminal) זה המקום שבו קובעים ומחליטים לאן טסים.",
+    "sentence": "Your hard work will determine your success.|העבודה הקשה שלך תקבע את ההצלחה שלך."
+  },
+  "determined": {
+    "assoc": "הוא כל כך נחוש שהוא לא יצא מהטרמינל עד שימצא טיסה.",
+    "sentence": "She is determined to win the marathon this year.|היא נחושה לנצח במרתון השנה."
+  },
+  "determination": {
+    "assoc": "די-תרמין-איי-שן: החלטתי בנחישות שדי, אני הולך לסיים את כל הטרמינל (Terminal) בריצה.",
+    "sentence": "Her determination to win the race was inspiring.|הנחישות שלה לנצח במרוץ הייתה מעוררת השראה."
+  },
+  "diagram": {
+    "assoc": "דיא-גרם: הדיאגרמה מראה בדיוק כמה גרמים של סוכר יש בעוגה הזו.",
+    "sentence": "Please draw a diagram of the human heart.|אנא צייר דיאגרמה של לב האדם."
+  },
+  "digest": {
+    "assoc": "דיי-ג'סט: דיי! רק (just) תן לי רגע לעכל את כל האוכל הזה.",
+    "sentence": "It takes hours for the stomach to digest food.|לוקח לקיבה שעות לעכל מזון."
+  },
+  "efficient": {
+    "assoc": "א-פיש-אנט: דג (fish) ונמלה (ant) שעובדים יחד בצורה יעילה במיוחד.",
+    "sentence": "She is a very efficient worker who finishes tasks early.|היא עובדת יעילה מאוד שמסיימת משימות מוקדם."
+  },
+  "efficiency": {
+    "assoc": "א-פיש-אנס-י: היעילות של הדג והנמלה קיבלה ציון סי (C) מהבוס.",
+    "sentence": "The new system improved the efficiency of the factory.|המערכת החדשה שיפרה את היעילות של המפעל."
+  },
+  "enchant": {
+    "assoc": "אין-צ'אנט: בתוך השיר (chant) יש קסם שיכול להקסים כל אחד.",
+    "sentence": "The wizard used a spell to enchant the forest.|הקוסם השתמש בלחש כדי לכשף את היער."
+  },
+  "enter": {
+    "assoc": "אנטר: לוחצים על מקש ה-Enter במקלדת כדי להיכנס למערכת.",
+    "sentence": "You must enter your password to log in.|עליך להזין (להכניס) את הסיסמה שלך כדי להתחבר."
+  },
+  "entrance": {
+    "assoc": "אין-טראנס: מי שנכנס בכניסה הזאת ישר נכנס לטראנס של מוזיקה.",
+    "sentence": "The entrance to the building is around the corner.|הכניסה לבניין נמצאת מעבר לפינה."
+  },
+  "extinct": {
+    "assoc": "אקס-טינקט: האקס שלי חושב שסוג מסוים של חיה נכחד בגלל סוכריית טיק-טק.",
+    "sentence": "Dinosaurs became extinct millions of years ago.|הדינוזאורים נכחדו לפני מיליוני שנים."
+  },
+  "extinction": {
+    "assoc": "אקס-טינק-שן: הכחדה המונית של שן אצל האקס שלי.",
+    "sentence": "Many species are facing the threat of extinction.|מינים רבים עומדים בפני סכנת הכחדה."
+  },
+  "fool": {
+    "assoc": "הוא נפל (fell) לבור כמו פול (fool) טיפש.",
+    "sentence": "Don't be a fool and jump into the cold water.|אל תהיה טיפש ותקפוץ למים הקרים."
+  },
+  "forbid": {
+    "assoc": "בשביל (for) להציע הצעה (bid) צריך אישור, אחרת זה לאסור.",
+    "sentence": "I forbid you from eating candy before dinner.|אני אוסר עליך לאכול סוכריות לפני ארוחת הערב."
+  },
+  "forbidden": {
+    "assoc": "פור-בידן: ביידן אמר שזה אסור.",
+    "sentence": "Smoking is forbidden inside the building.|העישון אסור בתוך הבניין."
+  },
+  "futile": {
+    "assoc": "ניסיתי לירות טיל (tile) וזה היה פיו (fu...) - חסר תועלת.",
+    "sentence": "It is futile to argue with someone who won't listen.|זה חסר תועלת להתווכח עם מישהו שלא מוכן להקשיב."
+  },
+  "generous": {
+    "assoc": "ג'נרוס נשמע כמו ג'נר (קנדל ג'נר) שמחלקת כסף בנדיבות.",
+    "sentence": "She was generous enough to share her lunch with me.|היא הייתה נדיבה מספיק כדי לחלוק את ארוחת הצהריים שלה איתי."
+  },
+  "glory": {
+    "assoc": "מי שיש לו תהילה הוא זוהר (glow).",
+    "sentence": "The athlete returned home in a blaze of glory.|הספורטאי חזר הביתה בלהבה של תהילה."
+  },
+  "guide": {
+    "assoc": "גיא ה-גייד הוא המדריך של הטיול.",
+    "sentence": "The tour guide showed us the historical sites.|מדריך הטיולים הראה לנו את האתרים ההיסטוריים."
+  },
+  "guidance": {
+    "assoc": "צריך הדרכה (guidance) כדי לדעת איך לרקוד (dance).",
+    "sentence": "I need some guidance on how to fix my computer.|אני זקוק להדרכה כלשהי לגבי איך לתקן את המחשב שלי."
+  },
+  "hard": {
+    "assoc": "הארד דיסק הוא קשיח וקשה.",
+    "sentence": "The exam was very hard to pass.|המבחן היה קשה מאוד למעבר."
+  },
+  "harden": {
+    "assoc": "להוסיף en ל-hard הופך את זה לפעולה: להקשות.",
+    "sentence": "The clay will harden as it dries in the sun.|החימר יתקשה ככל שיתייבש בשמש."
+  },
+  "hardly": {
+    "assoc": "זה כל כך HARD (קשה) שבקושי הצלחתי.",
+    "sentence": "I could hardly see the road through the heavy rain.|בקושי יכולתי לראות את הכביש דרך הגשם הכבד."
+  },
+  "harm": {
+    "assoc": "לעשות HARM זה כמו לעשות חרם - זה פשוט להזיק.",
+    "sentence": "He didn't mean to cause any harm.|הוא לא התכוון לגרום לשום פגיעה."
+  },
+  "harmful": {
+    "assoc": "כשיש משהו שהוא FULL (מלא) ב-HARM (נזק), הוא מזיק.",
+    "sentence": "Too much sun can be harmful to your skin.|יותר מדי שמש עלולה להיות מזיקה לעור שלך."
+  },
+  "harmless": {
+    "assoc": "משהו שהוא LESS (בלי) HARM (נזק), הוא בלתי מזיק.",
+    "sentence": "Don't be afraid of that dog, it is completely harmless.|אל תפחד מהכלב הזה, הוא בלתי מזיק לחלוטין."
+  },
+  "impact": {
+    "assoc": "כשמשהו עושה 'אימפקט', יש לו השפעה חזקה כמו מכה.",
+    "sentence": "The teacher's words had a positive impact on the student.|לדברי המורה הייתה השפעה חיובית על התלמיד."
+  },
+  "in agreement with": {
+    "assoc": "כשאתה בתוך (IN) ה-AGREEMENT (הסכם), אתה בהסכמה עם הצד השני.",
+    "sentence": "The results are in agreement with our expectations.|התוצאות הן בהסכמה עם הציפיות שלנו."
+  },
+  "induce": {
+    "assoc": "הדוכס (DUCE) גורם (INDUCE) לכולם להשתחוות.",
+    "sentence": "The medicine was used to induce sleep.|התרופה שימשה כדי לגרום (להשרות) שינה."
+  },
+  "inevitable": {
+    "assoc": "כשאין (IN) דרך להימנע, זה IN-EVIT-ABLE.",
+    "sentence": "Success is inevitable if you work hard enough.|הצלחה היא בלתי נמנעת אם תעבוד קשה מספיק."
+  },
+  "insist": {
+    "assoc": "ה-SISTER (אחות) שלי תמיד מתעקשת (INSIST) על שלה.",
+    "sentence": "I insist on paying for the meal.|אני מתעקש לשלם על הארוחה."
+  },
+  "insistence": {
+    "assoc": "ה-SISTER שלי ידועה ב-INSISTENCE (התעקשות) שלה.",
+    "sentence": "The project was finished only because of his insistence.|הפרויקט הסתיים רק בגלל ההתעקשות שלו."
+  },
+  "interrogate": {
+    "assoc": "כשמישהו עובר בשער (Gate) של המשטרה, מתחילים לחקור אותו.",
+    "sentence": "The detective will interrogate the suspect. | הבלש יחקור את החשוד."
+  },
+  "interrogation": {
+    "assoc": "בחקירה הארוכה הרגשתי כאילו אני תקוע בשער (Gate) לנצח.",
+    "sentence": "The interrogation lasted for several hours. | החקירה נמשכה מספר שעות."
+  },
+  "legend": {
+    "assoc": "לי (Le) יש ג'יני (gend) שיוצא מתוך אגדה.",
+    "sentence": "The story of King Arthur is a famous legend. | הסיפור על המלך ארתור הוא אגדה מפורסמת."
+  },
+  "manage": {
+    "assoc": "הגבר (Man) בגיל (Age) הזה כבר יודע איך להסתדר ולנהל את עצמו.",
+    "sentence": "I hope you can manage this project alone. | אני מקווה שתוכל לנהל את הפרויקט הזה לבד."
+  },
+  "manager": {
+    "assoc": "המנהל הוא הגבר (Man) שהתבגר (Age) וקיבל תפקיד.",
+    "sentence": "The manager is responsible for the staff. | המנהל אחראי על הצוות."
+  },
+  "master": {
+    "assoc": "כמו 'מאסטר שף' - מישהו שהוא מומחה בתחומו.",
+    "sentence": "It takes years to master a new language. | לוקח שנים להתמחות בשפה חדשה."
+  },
+  "masterpiece": {
+    "assoc": "חתיכה (Piece) של מאסטר (Master) היא תמיד יצירת מופת.",
+    "sentence": "The Mona Lisa is a famous masterpiece. | המונה ליזה היא יצירת מופת מפורסמת."
+  },
+  "matter": {
+    "assoc": "מה (Ma) הטררם (tter)? זה בסך הכל עניין של חומר.",
+    "sentence": "No matter what happens, I will be there. | לא משנה מה יקרה, אני אהיה שם."
+  },
+  "misery": {
+    "assoc": "מי (Mi) אמר סליחה (Sorry)? מי שגרם למישהו אחר סבל.",
+    "sentence": "The war caused a lot of misery for the people. | המלחמה גרמה לסבל רב לאנשים."
+  },
+  "notion": {
+    "assoc": "נו (No)... תן (tion) לי איזה מושג או רעיון מה לעשות.",
+    "sentence": "I had a vague notion that something was wrong. | היה לי מושג מעורפל שמשהו לא בסדר."
+  },
+  "obey": {
+    "assoc": "הכלב אומר 'אוי' כשהוא צריך להגיד 'ביי' לחופש שלו ולציית לבעלים.",
+    "sentence": "You must obey the traffic laws for your safety.|אתה חייב לציית לחוקי התנועה למען בטיחותך."
+  },
+  "obedience": {
+    "assoc": "מי שמפגין ציות (Obedience) מקבל בסוף לרקוד דאנס (Dance) מרוב נחת.",
+    "sentence": "The dog showed great obedience to its trainer.|הכלב הפגין ציות רב למאמן שלו."
+  },
+  "occur": {
+    "assoc": "כשמשהו מתרחש בחוץ, מרגישים ש'או-קר' (Oh-cur) שם.",
+    "sentence": "When did the accident occur?|מתי התרחשה התאונה?"
+  },
+  "occurrence": {
+    "assoc": "התרחשות גדולה היא כמו גל באוקיינוס (Ocean).",
+    "sentence": "Snow in the desert is a rare occurrence.|שלג במדבר הוא התרחשות נדירה."
+  },
+  "particular": {
+    "assoc": "לכלב מסוים ומיוחד יש 'פרטי-קולר' (Particular) משלו.",
+    "sentence": "Is there a particular book you are looking for?|האם יש ספר מסוים שאתה מחפש?"
+  },
+  "particularly": {
+    "assoc": "זה particular ובסוף יש 'לי' - זה במיוחד בשבילי.",
+    "sentence": "I am particularly interested in history.|אני מתעניין במיוחד בהיסטוריה."
+  },
+  "persist": {
+    "assoc": "הוא מתמיד במערכת (System) עד שהוא נהיה 'פר-סיסט'.",
+    "sentence": "If you persist, you will eventually succeed.|אם תתמיד, בסופו של דבר תצליח."
+  },
+  "persistent": {
+    "assoc": "הוא עקשן ומתמיד כמו פרזיט (Parasite) שלא עוזב.",
+    "sentence": "She is a persistent worker who never gives up.|היא עובדת מתמידה שמעולם לא מוותרת."
+  },
+  "pollute": {
+    "assoc": "אל תזהם את הבריכה (Pool) עם לכלוך (Loot).",
+    "sentence": "Factories should not pollute the rivers.|מפעלים לא צריכים לזהם את הנהרות."
+  },
+  "pollution": {
+    "assoc": "שמתם יותר מדי קרם הגנה (Lotion) בבריכה (Pool)? יצרתם זיהום.",
+    "sentence": "Air pollution is a major problem in big cities.|זיהום אוויר הוא בעיה גדולה בערים גדולות."
+  },
+  "precise": {
+    "assoc": "נשמע כמו Pre-size: הוא בודק את המידה מראש כדי להיות ממש מדויק.",
+    "sentence": "She gave me precise directions to the house.|היא נתנה לי הוראות מדויקות לבית."
+  },
+  "precision": {
+    "assoc": "הסיומת ion הופכת את זה לשם עצם - הדיוק עצמו, כמו ניתוח כירורגי.",
+    "sentence": "The surgeon worked with great precision.|המנתח עבד בדיוק רב."
+  },
+  "proceed": {
+    "assoc": "פרו (מקצוען) ממשיך לזרוע סיד (Seed) כדי שהגינה תפרח.",
+    "sentence": "Please proceed with your presentation.|אנא המשך במצגת שלך."
+  },
+  "proficient": {
+    "assoc": "פרו-פיש (Pro-Fish): הוא דייג מקצוען ומיומן ברמה של פרו.",
+    "sentence": "He is proficient in several programming languages.|הוא מיומן בכמה שפות תכנות."
+  },
+  "protest": {
+    "assoc": "פרו-טסט: הסטודנטים מפגינים בעד (Pro) שיהיו יותר טסטים בשנה.",
+    "sentence": "The students gathered to protest the new law.|הסטודנטים התאספו כדי למחות נגד החוק החדש."
+  },
+  "provoke": {
+    "assoc": "נשמע כמו Pro-Voice: להשתמש בקול של מקצוען כדי להתגרות ולעורר תגובה.",
+    "sentence": "Do not provoke the dog, it might bite.|אל תתגרה בכלב, הוא עלול לנשוך."
+  },
+  "qualifications": {
+    "assoc": "כדי לקבל איכות (Quality) בחופשה (Vacation), צריך כישורים מתאימים.",
+    "sentence": "She has all the qualifications for the job.|יש לה את כל הכישורים לתפקיד."
+  },
+  "quality": {
+    "assoc": "כולם מכירים קוואליטי - זה גם איכות וגם תכונה של מישהו.",
+    "sentence": "Honesty is a rare quality these days.|כנות היא תכונה נדירה בימינו."
+  },
+  "rage": {
+    "assoc": "רייג' נשמע כמו 'רע' - כשמישהו זועם, הוא מרגיש רע מאוד.",
+    "sentence": "He flew into a rage when he saw the mess.|הוא התפרץ בזעם כשראה את הבלאגן."
+  },
+  "enrage": {
+    "assoc": "להכניס (En) מישהו לתוך מצב של זעם (Rage) - פשוט להרגיז אותו.",
+    "sentence": "His constant lies enrage his parents.|השקרים הבלתי פוסקים שלו מרגיזים את הוריו."
+  },
+  "receive": {
+    "assoc": "רי-סיב (Re-Sieve) - קיבלתי מסננת (Sieve) חדשה במתנה!",
+    "sentence": "I was happy to receive your letter.|שמחתי לקבל את המכתב שלך."
+  },
+  "receptive": {
+    "assoc": "הוא רסיפ-טיב, הוא טיפוס שמקבל (receive) רעיונות בצורה טובה (טיב).",
+    "sentence": "The audience was very receptive to the new ideas.|הקהל היה פתוח מאוד לרעיונות החדשים."
+  },
+  "reciprocal": {
+    "assoc": "רסי-פרו-קל: זה קל (kal) לעשות משהו הדדי אם שנינו מקצוענים (pro).",
+    "sentence": "They have a reciprocal agreement to help each other.|יש להם הסכם הדדי לעזור אחד לשני."
+  },
+  "recover": {
+    "assoc": "רציתי רק-חבר (re-cover) שיעזור לי להחלים ולהתאושש מהפרידה.",
+    "sentence": "It took him a long time to recover from the flu.|לקח לו זמן רב להתאושש מהשפעת."
+  },
+  "relieve": {
+    "assoc": "רי-ליב (Re-live): אחרי שהכאב נרגע, אני יכול לחיות (live) שוב.",
+    "sentence": "This medicine will help relieve the pain.|התרופה הזו תעזור להקל על הכאב."
+  },
+  "relief": {
+    "assoc": "רי-ליף: איזה כיף שיש עלה (leaf) שנותן צל והקלה בחום!",
+    "sentence": "It was a relief to hear that everyone was safe.|זו הייתה הקלה לשמוע שכולם בטוחים."
+  },
+  "revolutionize": {
+    "assoc": "רי-וול-יו-שנייז: להרים את הווליום (volume) עד שנוצר מהפך בחדר.",
+    "sentence": "The new technology will revolutionize the industry.|הטכנולוגיה החדשה תחולל מהפך בתעשייה."
+  },
+  "revolution": {
+    "assoc": "רי-וול-יו-שן: ווליום (volume) חזק מדי מוביל למהפכה של השכנים.",
+    "sentence": "The industrial revolution changed the world.|המהפכה התעשייתית שינתה את העולם."
+  },
+  "shortage": {
+    "assoc": "שורט-אייג' (Short-age): כשיש מחסור, הכסף נהיה קצר (short) לכל הגילאים.",
+    "sentence": "There is a severe water shortage in the region.|יש מחסור חמור במים באזור."
+  },
+  "shortcoming": {
+    "assoc": "שורט-קאמינג (Short-coming): הוא הגיע (coming) קצר (short) מדי בביצועים, וזו המגרעת שלו.",
+    "sentence": "Lack of patience is his main shortcoming.|חוסר סבלנות הוא המגרעת העיקרית שלו."
+  },
+  "sober": {
+    "assoc": "סובר (sober) - הוא סובר (חושב) בבהירות כי הוא פיקח וצלול ולא שיכור.",
+    "sentence": "He remained sober during the party to drive everyone home.|הוא נשאר פיקח במהלך המסיבה כדי להסיע את כולם הביתה."
+  },
+  "special": {
+    "assoc": "ספיישל (Special) - כמו מנה 'ספיישל' במסעדה שהיא תמיד מיוחדת.",
+    "sentence": "This is a special gift for your birthday.|זו מתנה מיוחדת ליום ההולדת שלך."
+  },
+  "specialize": {
+    "assoc": "ספיישל-אייז (Special-eyes) - העיניים שלו מיוחדות כי הוא התמחה בראייה.",
+    "sentence": "The doctor decided to specialize in heart surgery.|הרופא החליט להתמחות בניתוחי לב."
+  },
+  "stone": {
+    "assoc": "סטון (Stone) - שרון זרקה אבן על הסטון (stain - כתם) כדי לנסות להוריד אותו.",
+    "sentence": "The ancient path was paved with smooth stone.|השביל העתיק היה מרוצף באבן חלקה."
+  },
+  "milestone": {
+    "assoc": "מייל-סטון (Mile-stone) - אבן שמסמנת שעברת עוד מייל בדרך להצלחה.",
+    "sentence": "Graduating from college is a major milestone in life.|סיום הלימודים במכללה הוא אבן דרך מרכזית בחיים."
+  },
+  "stubborn": {
+    "assoc": "סטאב-אורן (Stub-born) - אורן נולד (born) עם אופי של סטאב (דקירה), הוא עקשן ולא זז.",
+    "sentence": "The stubborn mule refused to move an inch.|הפרד העקשן סירב לזוז אפילו סנטימטר."
+  },
+  "subtle": {
+    "assoc": "סאטל (Subtle) - כשמישהו ב'סאטלה', הרמזים שלו מעודנים ומתוחכמים ולא ישירים.",
+    "sentence": "There was a subtle change in her tone of voice.|היה שינוי מעודן בטון הדיבור שלה."
+  },
+  "tend": {
+    "assoc": "טנד (Tend) - כמו 'טרנד', כולם נוטים ללכת אחרי הזרם.",
+    "sentence": "I tend to get sleepy after a large meal.|אני נוטה להפוך לישנוני אחרי ארוחה גדולה."
+  },
+  "tendency": {
+    "assoc": "טנד-אנס-י (Tendency) - הנהג בטנדר נוטה לעשות סי (C) בסיבובים.",
+    "sentence": "He has a tendency to exaggerate his achievements.|יש לו נטייה להגזים בהישגיו."
+  },
+  "torment": {
+    "assoc": "תור-מנט (Torment) - לחכות בתור בחנות 'מנטה' כשיש לחץ זה פשוט עינוי וסבל.",
+    "sentence": "The memory of the accident continued to torment him.|הזיכרון של התאונה המשיך לייסר אותו."
+  },
+  "transparent": {
+    "assoc": "טראנס-פר-הורה: ההורה ששומע טראנס הוא כל כך שקוף שרואים מה הוא אכל.",
+    "sentence": "The glass is perfectly transparent. | הזכוכית שקופה לחלוטין."
+  },
+  "transparency": {
+    "assoc": "טראנס-פר-נס: נס של שקיפות במסיבת טראנס.",
+    "sentence": "The government needs more transparency. | הממשלה זקוקה ליותר שקיפות."
+  },
+  "treason": {
+    "assoc": "טרי-זון: הוא בגד במדינה כדי למצוא אזור (zone) טרי (tree) למחבוא.",
+    "sentence": "He was executed for high treason. | הוא הוצא להורג בגין בגידה חמורה."
+  },
+  "withstand": {
+    "assoc": "With Stand: לעמוד (stand) עם (with) הלחץ ולא להישבר.",
+    "sentence": "The bridge can withstand strong winds. | הגשר יכול לעמוד ברוחות חזקות."
+  },
+  "accept": {
+    "assoc": "אק-ספט: אק! קיבלתי (accept) מכה בספטמבר.",
+    "sentence": "I accept your invitation to the party. | אני מקבל את הזמנתך למסיבה."
+  },
+  "analyze": {
+    "assoc": "אנה-לייז: אנה מספרת שקרים (lies) בזמן שהיא מנתחת את הנתונים.",
+    "sentence": "We need to analyze the results. | אנחנו צריכים לנתח את התוצאות."
+  },
+  "attack": {
+    "assoc": "את-תק: את עושה 'תק' כשאת תוקפת את השקית.",
+    "sentence": "The dog will attack if it feels threatened. | הכלב יתקוף אם הוא ירגיש מאוים."
+  },
+  "authority": {
+    "assoc": "אוטו-ריטי: לרשות ולסמכות יש אוטו יקר.",
+    "sentence": "The police have the authority to arrest suspects. | למשטרה יש את הסמכות לעצור חשודים."
+  },
+  "back": {
+    "assoc": "בא-ק: הוא בא ונתן לי 'ק' (מכה קטנה) בגב.",
+    "sentence": "He hurt his back while lifting weights. | הוא פצע את הגב שלו בזמן הרמת משקולות."
+  },
+  "brave": {
+    "assoc": "ברא-בה: הוא ברא בה אופי של לוחמת אמיצה.",
+    "sentence": "It was a brave decision to quit his job. | זו הייתה החלטה אמיצה להתפטר מעבודתו."
+  }
+}
