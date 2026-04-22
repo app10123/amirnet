@@ -1934,6 +1934,7 @@ function generateAIContent(word) {
 
         function showSCQuestion(index) {
             currentSentenceIndex = index;
+            scTimerTotal = 60;
             document.getElementById('sc-list-view').style.display = 'none';
             document.getElementById('sc-question-view').style.display = 'block';
             renderSentenceQuestion();
@@ -2126,7 +2127,7 @@ function generateAIContent(word) {
                     </div>
                 </div>
                 <div class="sc-timer-toggle-row">
-                    <span style="font-size:14px; font-weight:700; color:var(--text-color);">⏱ טיימר 60 שניות</span>
+                    <span style="font-size:14px; font-weight:700; color:var(--text-color);">⏱ טיימר 2 דקות</span>
                     <label class="sc-toggle-switch">
                         <input type="checkbox" id="rs-timer-toggle" ${scTimerEnabled ? 'checked' : ''} onchange="toggleRSTimerEnabled()">
                         <span class="sc-toggle-slider"></span>
@@ -2139,6 +2140,7 @@ function generateAIContent(word) {
 
         function showRSQuestion(index) {
             currentRestatementIndex = index;
+            scTimerTotal = 120;
             document.getElementById('rs-list-view').style.display = 'none';
             document.getElementById('rs-question-view').style.display = 'block';
             renderRestatementQuestion();
@@ -2244,6 +2246,7 @@ function generateAIContent(word) {
         const SC_ARC_C = 2 * Math.PI * SC_ARC_R; // היקף המעגל
 
         let scTimerEnabled  = localStorage.getItem('scTimerEnabled') !== 'false';
+        let scTimerTotal    = SC_TIMER_TOTAL;
         let scTimeLeft      = SC_TIMER_TOTAL;
         let scTimerInterval = null;
         let scTimerPaused   = false;
@@ -2273,7 +2276,7 @@ function generateAIContent(word) {
             let msg   = document.getElementById('sc-expired-msg');
             if (!arc || !count) return;
 
-            let pct = scTimeLeft / SC_TIMER_TOTAL;
+            let pct = scTimeLeft / scTimerTotal;
             arc.style.strokeDashoffset = SC_ARC_C * (1 - pct);
 
             let cls = scTimeLeft <= 10 ? 'danger' : scTimeLeft <= 20 ? 'warn' : '';
@@ -2287,7 +2290,7 @@ function generateAIContent(word) {
         function startSCTimer() {
             stopSCTimer();
             if (!scTimerEnabled) return;
-            scTimeLeft    = SC_TIMER_TOTAL;
+            scTimeLeft    = scTimerTotal;
             scTimerPaused = false;
             scTimerExpired= false;
             updateSCTimerUI();
@@ -2352,7 +2355,7 @@ function generateAIContent(word) {
                             stroke-dasharray="${SC_ARC_C}"
                             stroke-dashoffset="0"/>
                     </svg>
-                    <div id="sc-count" class="sc-timer-count">${SC_TIMER_TOTAL}</div>
+                    <div id="sc-count" class="sc-timer-count">${scTimerTotal}</div>
                 </div>
                 <div class="sc-timer-controls">
                     <button id="sc-pause-btn" class="sc-timer-pause-btn" onclick="toggleSCTimerPause(); updateSCPauseBtn();">
