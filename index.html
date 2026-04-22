@@ -279,7 +279,7 @@
         .sc-timer-controls { display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
         .sc-timer-pause-btn { padding:8px 16px; border-radius:10px; border:2px solid var(--border-color); background:var(--panel-bg); color:var(--text-color); font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; transition:0.2s; box-shadow:var(--shadow); }
         .sc-timer-pause-btn:active { transform:scale(0.95); }
-        .sc-timer-toggle-row { display:flex; align-items:center; justify-content:space-between; margin-top:12px; padding-top:12px; border-top:1px dashed var(--border-color); direction:rtl; }
+        .sc-timer-toggle-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; padding:10px 14px; background:var(--panel-bg); border:2px solid var(--border-color); border-radius:12px; direction:rtl; }
         .sc-timer-toggle-label { font-size:14px; font-weight:700; color:var(--text-color); display:flex; align-items:center; gap:8px; }
         .sc-toggle-switch { position:relative; width:46px; height:26px; flex-shrink:0; }
         .sc-toggle-switch input { opacity:0; width:0; height:0; }
@@ -1900,14 +1900,14 @@ function generateAIContent(word) {
                         <span class="stat-unseen">○ טרם: ${unseenCount}</span>
                     </div>
                 </div>
-                <div class="sc-grid">${gridHtml}</div>
                 <div class="sc-timer-toggle-row">
+                    <span style="font-size:14px; font-weight:700; color:var(--text-color);">⏱ טיימר 60 שניות</span>
                     <label class="sc-toggle-switch">
                         <input type="checkbox" id="sc-timer-toggle" ${scTimerEnabled ? 'checked' : ''} onchange="toggleSCTimerEnabled()">
                         <span class="sc-toggle-slider"></span>
                     </label>
-                    <span style="font-size:14px; color:#64748b;">טיימר 60 שניות</span>
                 </div>
+                <div class="sc-grid">${gridHtml}</div>
                 <button class="sc-reset-btn" onclick="resetSentenceProgress()">איפוס התקדמות</button>
             `;
         }
@@ -2014,7 +2014,7 @@ function generateAIContent(word) {
         const SC_ARC_R = 26;
         const SC_ARC_C = 2 * Math.PI * SC_ARC_R; // היקף המעגל
 
-        let scTimerEnabled  = localStorage.getItem('scTimerEnabled') === 'true';
+        let scTimerEnabled  = localStorage.getItem('scTimerEnabled') !== 'false';
         let scTimeLeft      = SC_TIMER_TOTAL;
         let scTimerInterval = null;
         let scTimerPaused   = false;
