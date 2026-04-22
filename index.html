@@ -246,6 +246,8 @@
 
         /* השלמת משפטים */
         #sentences-screen { display: none; width: 100%; max-width: 600px; flex-direction: column; gap: 20px; padding-bottom: 20px;}
+        /* ניסוח מחדש */
+        #restatements-screen { display: none; width: 100%; max-width: 600px; flex-direction: column; gap: 20px; padding-bottom: 20px; }
         .sentence-q-card { background: var(--panel-bg); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); border: 2px solid var(--border-color); margin-bottom: 15px; direction: ltr; text-align: left; position: relative;}
         .sentence-text-q { font-size: 19px; font-weight: 700; color: var(--text-color); margin-bottom: 20px; line-height: 1.5; margin-top: 30px;}
 
@@ -445,9 +447,24 @@
         </div>
     </div>
 
+    <div id="restatements-screen" class="app-screen">
+        <h2 class="screen-title"><svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg> ניסוח מחדש</h2>
+        <p style="color:#64748b; font-weight:600; text-align:center; margin-top:-10px; margin-bottom:25px;">בחר את הניסוח שמשמר הכי טוב את משמעות המשפט המקורי</p>
+        <!-- פאנל A: רשימת שאלות -->
+        <div id="rs-list-view" style="width:100%;"></div>
+        <!-- פאנל B: שאלה בודדת -->
+        <div id="rs-question-view" style="display:none; width:100%;">
+            <button class="back-to-texts" onclick="showRSList()">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg> חזור לרשימת השאלות
+            </button>
+            <div id="rs-container" style="width:100%; margin-top:10px;"></div>
+        </div>
+    </div>
+
     <div class="bottom-nav">
         <button class="nav-item active" id="nav-vocab" onclick="switchAppScreen('vocab')"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> אוצר מילים</button>
         <button class="nav-item" id="nav-sentences" onclick="switchAppScreen('sentences')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg> משפטים</button>
+        <button class="nav-item" id="nav-restatements" onclick="switchAppScreen('restatements')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg> ניסוח</button>
         <button class="nav-item" id="nav-reading" onclick="switchAppScreen('reading')"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> טקסטים</button>
     </div>
 
@@ -871,7 +888,7 @@ let aiPreloadedData = {};
             // ------------------------------------
 
             document.getElementById('streakDisplay').innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2"><path d="M17.657 14.832c0 2.871-2.42 5.168-5.657 5.168-3.237 0-5.657-2.297-5.657-5.168 0-2.41 1.76-4.524 4.026-5.048-.68 1.48-.124 2.83.63 3.655.087-.96.657-2.203 1.95-3.327 1.848-1.606 2.37-3.953 2.062-6.112 3.037 2.274 4.613 5.485 4.613 8.214a1.002 1.002 0 0 1-.005.105c-.015-.436-.184-1.078-.616-1.895 1.09 1.155 1.654 2.716 1.654 4.408z"/></svg> רצף: ${streak}`;
-            populateFilters(); applyFilters(); renderReadingTexts(); renderSentenceQuestions();
+            populateFilters(); applyFilters(); renderReadingTexts(); renderSentenceQuestions(); renderRSList();
         }
         
         function resetAllData() {
@@ -919,10 +936,13 @@ let aiPreloadedData = {};
             document.getElementById('vocab-screen').style.display = screen === 'vocab' ? 'flex' : 'none';
             document.getElementById('reading-screen').style.display = screen === 'reading' ? 'flex' : 'none';
             document.getElementById('sentences-screen').style.display = screen === 'sentences' ? 'flex' : 'none';
-            
+            document.getElementById('restatements-screen').style.display = screen === 'restatements' ? 'flex' : 'none';
+            if (screen !== 'sentences' && screen !== 'restatements') stopSCTimer();
+
             document.getElementById('nav-vocab').classList.toggle('active', screen === 'vocab');
             document.getElementById('nav-reading').classList.toggle('active', screen === 'reading');
             document.getElementById('nav-sentences').classList.toggle('active', screen === 'sentences');
+            document.getElementById('nav-restatements').classList.toggle('active', screen === 'restatements');
         }
 
         document.addEventListener('keydown', (e) => {
@@ -2008,6 +2028,215 @@ function generateAIContent(word) {
 
         // נשמר לתאימות לאחור עם קריאות קיימות
         function renderSentenceQuestions() { renderSCList(); }
+
+        // ===== ניסוח מחדש (Restatements) =====
+        const restatementQuestions = [
+            {
+                q: "Emotional motives may have a more important role than logical reasoning in the process of decision making.",
+                options: [
+                    "There are more emotional motives than logical reasons in the process of making a decision.",
+                    "Decisions based on emotional motives are usually not as good as those based on logical reasoning.",
+                    "Logical reasoning can improve a great deal when based on emotional motives.",
+                    "When making a decision, emotional motives may have a more significant role than logical reasons."
+                ],
+                correct: 3
+            },
+            {
+                q: "Russia is the largest exporter of diamonds in the world.",
+                options: [
+                    "Russia is the largest country in the world that exports diamonds.",
+                    "No other country exports as many diamonds as Russia.",
+                    "More large diamonds are exported from Russia than from any other country.",
+                    "Diamonds and pearls exported from Russia are the largest in the world."
+                ],
+                correct: 1
+            },
+            {
+                q: "African-American civil rights activist Rosa Parks bravely challenged discriminatory laws, which defined strict segregation between races on public facilities in the United States, leading to a revolution in the legal status of African-Americans.",
+                options: [
+                    "The discriminatory laws were Rosa Parks' primary concern in the protest against racial segregation in the United States.",
+                    "Rosa Parks heroically defied discriminatory laws, thus initiating a revolution in the legal status of African-Americans in the United States.",
+                    "Due to discriminatory laws, few people opposed racism in the United States, beside Rosa Parks.",
+                    "Rosa Parks was able to change the legal status of African-Americans in the United States by demonstrating the racism behind the discriminatory laws."
+                ],
+                correct: 1
+            },
+            {
+                q: "Industrial waste emitted from large factories constitute a major source of pollution in nearby rivers.",
+                options: [
+                    "Much of the pollution in rivers near large factories comes from the industrial waste that the factories emit.",
+                    "Large factories emit most of their industrial waste by polluting nearby rivers.",
+                    "Large factories were the first source found to be emitting pollution into rivers in nearby areas.",
+                    "Industrial waste is a negligible source of pollution in rivers that reside near large factories."
+                ],
+                correct: 0
+            },
+            {
+                q: "Persian conqueror Cyrus the Great spared those who yielded to him.",
+                options: [
+                    "Cyrus the Great had mercy on the enemies defeated by Persia.",
+                    "Cyrus the Great did not kill those who surrendered to him.",
+                    "Cyrus the Great betrayed many of the people who trusted him.",
+                    "Cyrus the Great adored those who yielded him their allegiance."
+                ],
+                correct: 1
+            },
+            {
+                q: "Forgiveness is an attribute of the strong.",
+                options: [
+                    "Releasing feelings of resentment requires a lot of strength.",
+                    "A strong person is likely to be forgiven.",
+                    "Forgiving the strong is a powerful attribute.",
+                    "It is tough to forgive strong people."
+                ],
+                correct: 0
+            }
+        ];
+
+        let restatementProgress = JSON.parse(localStorage.getItem('restatementProgress')) || {};
+        let currentRestatementIndex = 0;
+
+        function renderRSList() {
+            let listView = document.getElementById('rs-list-view');
+            if (!listView) return;
+            let total = restatementQuestions.length;
+            let correctCount = Object.values(restatementProgress).filter(p => p.correct).length;
+            let wrongCount   = Object.values(restatementProgress).filter(p => p.answered && !p.correct).length;
+            let unseenCount  = total - correctCount - wrongCount;
+            let pct = Math.round((correctCount / total) * 100);
+
+            let gridHtml = restatementQuestions.map((q, i) => {
+                let prog = restatementProgress[i];
+                let cls  = 'sc-cell';
+                let label = i + 1;
+                if (prog && prog.answered) {
+                    cls  += prog.correct ? ' sc-correct' : ' sc-wrong';
+                    label = prog.correct ? '✓' : '✗';
+                }
+                return `<button class="${cls}" onclick="showRSQuestion(${i})">${label}</button>`;
+            }).join('');
+
+            listView.innerHTML = `
+                <div class="sc-progress-box">
+                    <div class="progress-bar-bg" style="margin-bottom:10px;"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+                    <div class="stats-text">
+                        <span class="stat-known">✓ נכון: ${correctCount}</span>
+                        <span class="stat-learning">✗ שגוי: ${wrongCount}</span>
+                        <span class="stat-unseen">○ טרם: ${unseenCount}</span>
+                    </div>
+                </div>
+                <div class="sc-timer-toggle-row">
+                    <span style="font-size:14px; font-weight:700; color:var(--text-color);">⏱ טיימר 60 שניות</span>
+                    <label class="sc-toggle-switch">
+                        <input type="checkbox" id="rs-timer-toggle" ${scTimerEnabled ? 'checked' : ''} onchange="toggleRSTimerEnabled()">
+                        <span class="sc-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="sc-grid">${gridHtml}</div>
+                <button class="sc-reset-btn" onclick="resetRestatementProgress()">איפוס התקדמות</button>
+            `;
+        }
+
+        function showRSQuestion(index) {
+            currentRestatementIndex = index;
+            document.getElementById('rs-list-view').style.display = 'none';
+            document.getElementById('rs-question-view').style.display = 'block';
+            renderRestatementQuestion();
+            startSCTimer();
+        }
+
+        function showRSList() {
+            stopSCTimer();
+            document.getElementById('rs-list-view').style.display = 'block';
+            document.getElementById('rs-question-view').style.display = 'none';
+            renderRSList();
+        }
+
+        function renderRestatementQuestion() {
+            let container = document.getElementById('rs-container');
+            let i = currentRestatementIndex;
+            let q = restatementQuestions[i];
+            let total = restatementQuestions.length;
+            let prog = restatementProgress[i];
+            let isAnswered = prog && prog.answered;
+
+            let optionsHtml = q.options.map((opt, optIndex) => {
+                let cls = 'q-opt-btn';
+                let disabled = '';
+                if (isAnswered) {
+                    disabled = 'disabled';
+                    if (optIndex === q.correct) cls += ' correct';
+                    else if (prog.selectedOpt === optIndex) cls += ' wrong';
+                }
+                let click = isAnswered ? '' : `onclick="answerRS(${i}, ${optIndex}, ${q.correct})"`;
+                return `<button class="${cls}" ${disabled} ${click}>${opt}</button>`;
+            }).join('');
+
+            let expStyle = isAnswered ? 'display:block' : 'display:none';
+            let nextLabel = i < total - 1 ? 'השאלה הבאה ›' : '← סיום — חזור לרשימה';
+
+            container.innerHTML = `
+                <div class="sc-nav-row">
+                    <button class="sc-nav-btn" onclick="showRSQuestion(${i - 1})" ${i === 0 ? 'disabled' : ''}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <span style="font-weight:800; color:#64748b; font-size:15px; direction:rtl;">שאלה ${i + 1} / ${total}</span>
+                    <button class="sc-nav-btn" onclick="showRSQuestion(${i + 1})" ${i === total - 1 ? 'disabled' : ''}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                ${scTimerHTML()}
+                <div class="sentence-q-card">
+                    <div class="sentence-text-q" style="margin-top:0; direction:ltr; text-align:left;">${q.q}</div>
+                    <div class="q-options" id="rs-opts-${i}">${optionsHtml}</div>
+                    <div class="q-explanation" id="rs-exp-${i}" style="${expStyle}">
+                        <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> תשובה נכונה:</h4>
+                        <p style="direction:ltr; text-align:left;">${q.options[q.correct]}</p>
+                        <button class="action-btn-top" style="margin-top:20px;width:100%;height:50px;font-size:17px;" onclick="nextRestatement()">${nextLabel}</button>
+                    </div>
+                </div>`;
+        }
+
+        function answerRS(qIndex, selectedOpt, correctOpt) {
+            stopSCTimer();
+            let isCorrect = selectedOpt === correctOpt;
+            restatementProgress[qIndex] = { answered: true, correct: isCorrect, selectedOpt: selectedOpt };
+            localStorage.setItem('restatementProgress', JSON.stringify(restatementProgress));
+
+            let btns = document.getElementById(`rs-opts-${qIndex}`).querySelectorAll('.q-opt-btn');
+            btns.forEach(b => b.disabled = true);
+            if (isCorrect) {
+                btns[selectedOpt].classList.add('correct');
+                fireConfetti();
+            } else {
+                btns[selectedOpt].classList.add('wrong');
+                btns[correctOpt].classList.add('correct');
+            }
+            document.getElementById(`rs-exp-${qIndex}`).style.display = 'block';
+        }
+
+        function nextRestatement() {
+            if (currentRestatementIndex < restatementQuestions.length - 1) {
+                showRSQuestion(currentRestatementIndex + 1);
+            } else {
+                showRSList();
+            }
+        }
+
+        function resetRestatementProgress() {
+            if (confirm('לאפס את כל ההתקדמות בניסוח מחדש?')) {
+                restatementProgress = {};
+                localStorage.removeItem('restatementProgress');
+                renderRSList();
+            }
+        }
+
+        function toggleRSTimerEnabled() {
+            scTimerEnabled = document.getElementById('rs-timer-toggle').checked;
+            localStorage.setItem('scTimerEnabled', scTimerEnabled);
+            if (!scTimerEnabled) stopSCTimer();
+            else if (document.getElementById('rs-question-view').style.display !== 'none') startSCTimer();
+        }
 
         // ===== טיימר השלמת משפטים =====
         const SC_TIMER_TOTAL = 60;
