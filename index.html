@@ -2006,7 +2006,7 @@ function generateAIContent(word) {
                     <div class="q-explanation" id="sc-exp-${i}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> הסבר לתשובה:</h4>
                         <p>${q.explanation}</p>
-                        <div id="sc-ai-${i}" class="ai-explanation-wrap" style="${isAnswered && aiExplanationCache['sc-ai-'+i] ? '' : 'display:none'}">${isAnswered && aiExplanationCache['sc-ai-'+i] ? aiExplanationCache['sc-ai-'+i] : ''}</div>
+                        <div id="sc-ai-${i}" class="ai-explanation-wrap" style="${isAnswered && localStorage.getItem('aiExplanation_completion_'+i) ? '' : 'display:none'}">${isAnswered ? (localStorage.getItem('aiExplanation_completion_'+i) || '') : ''}</div>
                         <button class="action-btn-top" style="margin-top:20px;width:100%;height:50px;font-size:17px;" onclick="nextSentence()">${nextLabel}</button>
                     </div>
                 </div>`;
@@ -2216,7 +2216,7 @@ function generateAIContent(word) {
                     <div class="q-explanation" id="rs-exp-${i}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> תשובה נכונה:</h4>
                         <p style="direction:ltr; text-align:left;">${q.options[q.correct]}</p>
-                        <div id="rs-ai-${i}" class="ai-explanation-wrap" style="${isAnswered && aiExplanationCache['rs-ai-'+i] ? '' : 'display:none'}">${isAnswered && aiExplanationCache['rs-ai-'+i] ? aiExplanationCache['rs-ai-'+i] : ''}</div>
+                        <div id="rs-ai-${i}" class="ai-explanation-wrap" style="${isAnswered && localStorage.getItem('aiExplanation_restatement_'+i) ? '' : 'display:none'}">${isAnswered ? (localStorage.getItem('aiExplanation_restatement_'+i) || '') : ''}</div>
                         <button class="action-btn-top" style="margin-top:20px;width:100%;height:50px;font-size:17px;" onclick="nextRestatement()">${nextLabel}</button>
                     </div>
                 </div>`;
@@ -2394,7 +2394,6 @@ function generateAIContent(word) {
 
         // ===== הסבר AI =====
         let anthropicApiKey = localStorage.getItem('anthropicApiKey') || '';
-        const aiExplanationCache = {};
         let pendingAICallback = null;
 
         function aiMarkdown(text) {
@@ -2444,9 +2443,11 @@ function generateAIContent(word) {
                 return;
             }
 
-            const cacheKey = containerId;
-            if (aiExplanationCache[cacheKey]) {
-                el.innerHTML = aiExplanationCache[cacheKey];
+            const idx = containerId.split('-').pop();
+            const lsKey = `aiExplanation_${questionType}_${idx}`;
+            const cached = localStorage.getItem(lsKey);
+            if (cached) {
+                el.innerHTML = cached;
                 el.style.display = 'block';
                 return;
             }
@@ -2504,7 +2505,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
                     ${aiMarkdown(text)}
                     <span class="ai-forget-key" onclick="clearApiKey()">שנה API Key</span>
                 </div>`;
-                aiExplanationCache[cacheKey] = html;
+                localStorage.setItem(lsKey, html);
                 el.innerHTML = html;
 
             } catch(e) {
