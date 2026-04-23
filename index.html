@@ -3195,26 +3195,77 @@ Keep it concise and educational. Use clear section headers for each part.`;
             return count;
         }
 
+        let _preStackState = null;
+        localStorage.removeItem('preStackState'); // נקה מצב ישן מסשן קודם
+
         function toggleStackMode() {
             isStackMode = !isStackMode;
             let btn = document.getElementById('stackModeToggleBtn');
             let btnText = document.getElementById('stackBtnText');
-            
-            if(isStackMode) {
+
+            if (isStackMode) {
                 let currentCount = updateStackCount();
-                if(currentCount === 0) {
+                if (currentCount === 0) {
                     alert("השינון הממוקד ריק!\nהוסף מילים לשינון קודם בעזרת הכפתור הסגול למטה.");
                     isStackMode = false;
                     return;
                 }
+                // שמור מצב לפני הכניסה
+                _preStackState = {
+                    source: document.getElementById('sourceFilter').value,
+                    unit:   document.getElementById('unitFilter').value,
+                    level:  document.getElementById('levelFilter').value,
+                    status: document.getElementById('statusFilter').value,
+                    search: document.getElementById('searchInput').value,
+                    mode:   currentMode,
+                    wordEn: currentList[currentIndex] ? currentList[currentIndex].en : null
+                };
+                localStorage.setItem('preStackState', JSON.stringify(_preStackState));
+
                 btn.classList.add('active');
-                if(btnText) btnText.innerText = 'יציאה מ-שינון ממוקד';
+                if (btnText) btnText.innerText = 'יציאה מ-שינון ממוקד';
                 document.getElementById('statusFilter').value = 'All';
+                applyFilters();
+
             } else {
                 btn.classList.remove('active');
-                if(btnText) btnText.innerText = 'שינון ממוקד';
+                if (btnText) btnText.innerText = 'שינון ממוקד';
+
+                // שחזר מצב קודם
+                let saved = _preStackState || JSON.parse(localStorage.getItem('preStackState'));
+                if (saved) {
+                    document.getElementById('sourceFilter').value = saved.source;
+                    document.getElementById('unitFilter').value   = saved.unit;
+                    document.getElementById('levelFilter').value  = saved.level;
+                    document.getElementById('statusFilter').value = saved.status;
+                    document.getElementById('searchInput').value  = saved.search || '';
+
+                    // שחזר טאב ללא רינדור
+                    let m = saved.mode || 'flash';
+                    currentMode = m;
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    document.getElementById(`tab-${m}`).classList.add('active');
+                    document.getElementById('flashcard-section').style.display = m === 'flash' ? 'flex' : 'none';
+                    document.getElementById('quiz-section').style.display      = m === 'quiz'  ? 'flex' : 'none';
+                    document.getElementById('list-section').style.display      = m === 'list'  ? 'flex' : 'none';
+
+                    applyFilters(); // מאפס currentIndex=0 ומרנדר
+
+                    // שחזר מיקום בתוך הרשימה
+                    if (saved.wordEn) {
+                        let idx = currentList.findIndex(w => w.en === saved.wordEn);
+                        if (idx >= 0) {
+                            currentIndex = idx;
+                            if (m === 'flash') updateCard();
+                            else if (m === 'list') renderList();
+                        }
+                    }
+                    localStorage.removeItem('preStackState');
+                    _preStackState = null;
+                } else {
+                    applyFilters();
+                }
             }
-            applyFilters();
         }
 
         function toggleStackWord() {
