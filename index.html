@@ -444,6 +444,18 @@
         body.dark-mode .sc-nav-btn:not(:disabled):hover { border-color: #7c3aed; background: rgba(124,58,237,0.12); }
         body.dark-mode .side-btn:hover { border-color: #7c3aed; background: rgba(124,58,237,0.12); }
 
+        /* Timer settings modal */
+        .timer-setting-section { padding: 14px 0; border-bottom: 1px solid var(--border-color); }
+        .timer-setting-section:last-of-type { border-bottom: none; padding-bottom: 0; }
+        .timer-setting-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .timer-setting-label { font-size: 15px; font-weight: 800; color: var(--text-color); }
+        .timer-dur-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+        .timer-preset-btn { padding: 7px 11px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.15s; }
+        .timer-preset-btn.active { background: var(--btn-primary); color: white; border-color: var(--btn-primary); }
+        .timer-preset-btn:hover:not(.active) { border-color: var(--btn-primary); }
+        .timer-custom-input { width: 62px; padding: 7px 8px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; outline: none; text-align: center; }
+        .timer-custom-input:focus { border-color: var(--btn-primary); }
+
         @media print { body > *:not(#printArea) { display: none !important; } body { background: white; color: black; margin: 0; padding: 0;} #printArea { display: block !important; width: 100%; direction: rtl; } .print-table { width: 100%; border-collapse: collapse; margin-top: 20px;} .print-table th, .print-table td { border: 1px solid #000; padding: 8px; text-align: right; } .print-en { direction: ltr; font-weight: bold; text-align: left !important;} .print-instructions { text-align: center; margin-bottom: 20px; font-size: 14px; font-weight: bold; padding: 10px; border: 2px solid #000; display: inline-block; background: #eee;} .print-cards-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; } .print-card-foldable { width: 48%; border: 2px solid #000; display: flex; box-sizing: border-box; page-break-inside: avoid; height: 120px; margin-bottom: 15px; } .print-card-half { width: 50%; display: flex; align-items: center; justify-content: center; padding: 10px; text-align: center; box-sizing: border-box; } .he-side { font-size: 18px; font-weight: bold; } .en-side { font-size: 20px; font-weight: bold; direction: ltr; border-left: 2px dashed #999; } }
     </style>
 </head>
@@ -462,6 +474,7 @@
                 <button class="dropdown-item" onclick="exportProgress()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> גיבוי נתונים (הורדה)</button>
                 <button class="dropdown-item" onclick="document.getElementById('fileInput').click()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> שחזור נתונים מקובץ</button>
                 <button class="dropdown-item" onclick="openPrintModal()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg> הדפסת רשימות</button>
+                <button class="dropdown-item" onclick="openTimerSettings()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> הגדרות טיימר</button>
                 <button class="dropdown-item" onclick="toggleDarkMode()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> מצב לילה / יום</button>
                 <button class="dropdown-item danger" onclick="toggleAdminMode()" id="adminBtnMenu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> מצב מחיקת מילים</button>
                 <button class="dropdown-item danger" onclick="resetProgressOnly()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12a10 10 0 1 0 10-10 1 1 0 0 0-1 1v3"></path><path d="M2 12h3"></path></svg> איפוס מילים שלמדתי</button>
@@ -570,6 +583,7 @@
             <button class="back-to-texts" onclick="closeReadingText()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg> חזור לרשימת הטקסטים</button>
             <div class="reading-content-box"><h3 id="rc-title" style="direction:ltr; text-align:left;"></h3><div id="rc-content"></div><button id="rc-tts-passage" class="tts-btn tts-row-btn" style="margin-top:12px;" onclick="ttsPassage(this)">🔊 הקרא את הקטע</button></div>
             <h3 style="margin: 10px 0 0 0; color: var(--btn-primary); font-size: 24px; text-align:left; direction:ltr;">Questions</h3>
+            <div id="rc-timer-wrap"></div>
             <div id="rc-questions" style="display:flex; flex-direction:column; gap:25px;"></div>
         </div>
     </div>
@@ -630,6 +644,54 @@
         </div>
     </div>
     <div id="printOptionsModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">הדפסה</h3><button class="action-btn-top" onclick="executePrint('list')"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line></svg> רשימה מסודרת</button><button class="action-btn-top" onclick="executePrint('cards')" style="background:#34c759;"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg> כרטיסיות</button><button class="action-btn-top" style="background:#94a3b8;" onclick="document.getElementById('printOptionsModal').style.display='none'">ביטול</button></div></div>
+    <div id="timerSettingsModal" class="modal" onclick="if(event.target===this)this.style.display='none'">
+        <div class="modal-content" style="max-width:360px;direction:rtl;text-align:right;gap:0;padding:24px 22px;">
+            <h3 style="margin:0 0 18px;font-size:19px;font-weight:800;display:flex;align-items:center;gap:10px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;stroke:var(--btn-primary);flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                הגדרות טיימר
+            </h3>
+            <div class="timer-setting-section">
+                <div class="timer-setting-header">
+                    <span class="timer-setting-label">השלמת משפטים</span>
+                    <label class="sc-toggle-switch"><input type="checkbox" id="ts-sc-en" onchange="updateTimerSetting('sc')"><span class="sc-toggle-slider"></span></label>
+                </div>
+                <div class="timer-dur-row" id="ts-sc-dur">
+                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',30)">30ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',60)">60ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',90)">90ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',120)">2ד׳</button>
+                    <input type="number" class="timer-custom-input" id="ts-sc-custom" min="10" max="600" placeholder="שנ׳" title="זמן מותאם אישית" onchange="setTimerDuration('sc', +this.value||60)">
+                </div>
+            </div>
+            <div class="timer-setting-section">
+                <div class="timer-setting-header">
+                    <span class="timer-setting-label">ניסוח מחדש</span>
+                    <label class="sc-toggle-switch"><input type="checkbox" id="ts-rs-en" onchange="updateTimerSetting('rs')"><span class="sc-toggle-slider"></span></label>
+                </div>
+                <div class="timer-dur-row" id="ts-rs-dur">
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',30)">30ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',60)">60ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',90)">90ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',120)">2ד׳</button>
+                    <input type="number" class="timer-custom-input" id="ts-rs-custom" min="10" max="600" placeholder="שנ׳" title="זמן מותאם אישית" onchange="setTimerDuration('rs', +this.value||120)">
+                </div>
+            </div>
+            <div class="timer-setting-section">
+                <div class="timer-setting-header">
+                    <span class="timer-setting-label">הבנת הנקרא</span>
+                    <label class="sc-toggle-switch"><input type="checkbox" id="ts-rc-en" onchange="updateTimerSetting('rc')"><span class="sc-toggle-slider"></span></label>
+                </div>
+                <div class="timer-dur-row" id="ts-rc-dur">
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rc',60)">60ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rc',90)">90ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rc',120)">2ד׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rc',180)">3ד׳</button>
+                    <input type="number" class="timer-custom-input" id="ts-rc-custom" min="10" max="600" placeholder="שנ׳" title="זמן מותאם אישית" onchange="setTimerDuration('rc', +this.value||90)">
+                </div>
+            </div>
+            <button class="action-btn-top" style="background:#94a3b8;margin-top:18px;height:48px;font-size:16px;" onclick="document.getElementById('timerSettingsModal').style.display='none'">סגור</button>
+        </div>
+    </div>
     <div id="printArea"></div>
 
     <script>
@@ -1123,7 +1185,7 @@ let aiPreloadedData = {};
             document.getElementById('reading-screen').style.display = screen === 'reading' ? 'flex' : 'none';
             document.getElementById('sentences-screen').style.display = screen === 'sentences' ? 'flex' : 'none';
             document.getElementById('restatements-screen').style.display = screen === 'restatements' ? 'flex' : 'none';
-            if (screen !== 'sentences' && screen !== 'restatements') stopSCTimer();
+            if (screen !== 'sentences' && screen !== 'restatements' && screen !== 'reading') stopSCTimer();
             ttsStop();
 
             document.getElementById('nav-vocab').classList.toggle('active', screen === 'vocab');
@@ -1726,12 +1788,17 @@ function generateAIContent(word) {
                     </div>
                 </div>`;
             });
-            document.getElementById('rc-questions').innerHTML = qHtml; 
+            document.getElementById('rc-questions').innerHTML = qHtml;
+
+            // RC timer
+            let rcWrap = document.getElementById('rc-timer-wrap');
+            rcWrap.innerHTML = timerHTML('rc');
+            startSCTimer('rc');
         }
-        
+
         document.addEventListener('click', () => { document.querySelectorAll('.tooltip').forEach(tt => tt.classList.remove('show-tooltip')); });
         
-        function closeReadingText() { ttsStop(); document.getElementById('active-reading').style.display = 'none'; document.getElementById('texts-list').style.display = 'flex'; renderReadingTexts(); }
+        function closeReadingText() { ttsStop(); stopSCTimer(); document.getElementById('rc-timer-wrap').innerHTML = ''; document.getElementById('active-reading').style.display = 'none'; document.getElementById('texts-list').style.display = 'flex'; renderReadingTexts(); }
         
         function answerRC(qIndex, selectedOpt, correctOpt, explanation) { 
             let btns = document.getElementById(`q-opts-${qIndex}`).querySelectorAll('.q-opt-btn'); 
@@ -2208,13 +2275,6 @@ function generateAIContent(word) {
                         <span class="stat-unseen">○ טרם: ${unseenCount}</span>
                     </div>
                 </div>
-                <div class="sc-timer-toggle-row">
-                    <span style="font-size:14px; font-weight:700; color:var(--text-color);">⏱ טיימר 60 שניות</span>
-                    <label class="sc-toggle-switch">
-                        <input type="checkbox" id="sc-timer-toggle" ${scTimerEnabled ? 'checked' : ''} onchange="toggleSCTimerEnabled()">
-                        <span class="sc-toggle-slider"></span>
-                    </label>
-                </div>
                 <div class="sc-grid">${gridHtml}</div>
                 <button class="sc-reset-btn" onclick="resetSentenceProgress()">איפוס התקדמות</button>
             `;
@@ -2222,11 +2282,10 @@ function generateAIContent(word) {
 
         function showSCQuestion(index) {
             currentSentenceIndex = index;
-            scTimerTotal = 60;
             document.getElementById('sc-list-view').style.display = 'none';
             document.getElementById('sc-question-view').style.display = 'block';
             renderSentenceQuestion();
-            startSCTimer();
+            startSCTimer('sc');
         }
 
         function showSCList() {
@@ -2300,7 +2359,7 @@ function generateAIContent(word) {
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
-                ${scTimerHTML()}
+                ${timerHTML('sc')}
                 <div class="sentence-q-card">
                     <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;">
                         <div class="sentence-text-q" style="margin-top:0;flex:1;">${q.q}</div>
@@ -2762,13 +2821,6 @@ function generateAIContent(word) {
                         <span class="stat-unseen">○ טרם: ${unseenCount}</span>
                     </div>
                 </div>
-                <div class="sc-timer-toggle-row">
-                    <span style="font-size:14px; font-weight:700; color:var(--text-color);">⏱ טיימר 2 דקות</span>
-                    <label class="sc-toggle-switch">
-                        <input type="checkbox" id="rs-timer-toggle" ${scTimerEnabled ? 'checked' : ''} onchange="toggleRSTimerEnabled()">
-                        <span class="sc-toggle-slider"></span>
-                    </label>
-                </div>
                 <div class="sc-grid">${gridHtml}</div>
                 <button class="sc-reset-btn" onclick="resetRestatementProgress()">איפוס התקדמות</button>
             `;
@@ -2776,11 +2828,10 @@ function generateAIContent(word) {
 
         function showRSQuestion(index) {
             currentRestatementIndex = index;
-            scTimerTotal = 120;
             document.getElementById('rs-list-view').style.display = 'none';
             document.getElementById('rs-question-view').style.display = 'block';
             renderRestatementQuestion();
-            startSCTimer();
+            startSCTimer('rs');
         }
 
         function showRSList() {
@@ -2823,7 +2874,7 @@ function generateAIContent(word) {
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
-                ${scTimerHTML()}
+                ${timerHTML('rs')}
                 <div class="sentence-q-card">
                     <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;">
                         <div class="sentence-text-q" style="margin-top:0;flex:1;direction:ltr;text-align:left;">${q.q}</div>
@@ -2879,21 +2930,20 @@ function generateAIContent(word) {
             }
         }
 
-        function toggleRSTimerEnabled() {
-            scTimerEnabled = document.getElementById('rs-timer-toggle').checked;
-            localStorage.setItem('scTimerEnabled', scTimerEnabled);
-            if (!scTimerEnabled) stopSCTimer();
-            else if (document.getElementById('rs-question-view').style.display !== 'none') startSCTimer();
-        }
-
-        // ===== טיימר השלמת משפטים =====
-        const SC_TIMER_TOTAL = 60;
+        // ===== טיימר מאוחד (SC / RS / RC) =====
         const SC_ARC_R = 26;
-        const SC_ARC_C = 2 * Math.PI * SC_ARC_R; // היקף המעגל
+        const SC_ARC_C = 2 * Math.PI * SC_ARC_R;
 
-        let scTimerEnabled  = localStorage.getItem('scTimerEnabled') !== 'false';
-        let scTimerTotal    = SC_TIMER_TOTAL;
-        let scTimeLeft      = SC_TIMER_TOTAL;
+        let timerSettings = JSON.parse(localStorage.getItem('timerSettings')) || {
+            sc: { enabled: true,  duration: 60  },
+            rs: { enabled: true,  duration: 120 },
+            rc: { enabled: false, duration: 90  }
+        };
+        function saveTimerSettings() { localStorage.setItem('timerSettings', JSON.stringify(timerSettings)); }
+
+        let _activeTimerScreen = 'sc';
+        let scTimerTotal    = 60;
+        let scTimeLeft      = 60;
         let scTimerInterval = null;
         let scTimerPaused   = false;
         let scTimerExpired  = false;
@@ -2933,10 +2983,13 @@ function generateAIContent(word) {
             if (msg) msg.style.display = scTimerExpired ? 'block' : 'none';
         }
 
-        function startSCTimer() {
+        function startSCTimer(screen) {
             stopSCTimer();
-            if (!scTimerEnabled) return;
-            scTimeLeft    = scTimerTotal;
+            _activeTimerScreen = screen || _activeTimerScreen;
+            let s = timerSettings[_activeTimerScreen];
+            if (!s.enabled) return;
+            scTimerTotal  = s.duration;
+            scTimeLeft    = s.duration;
             scTimerPaused = false;
             scTimerExpired= false;
             updateSCTimerUI();
@@ -2980,28 +3033,18 @@ function generateAIContent(word) {
                 : '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> השהה';
         }
 
-        function toggleSCTimerEnabled() {
-            scTimerEnabled = document.getElementById('sc-timer-toggle').checked;
-            localStorage.setItem('scTimerEnabled', scTimerEnabled);
-            // אם כבוי תוך כדי שאלה — עצור
-            if (!scTimerEnabled) stopSCTimer();
-            // אם הופעל תוך כדי שאלה — התחל
-            else if (document.getElementById('sc-question-view').style.display !== 'none') startSCTimer();
-        }
-
-        function scTimerHTML() {
-            if (!scTimerEnabled) return '';
-            let dashOffset = SC_ARC_C; // מתחיל מלא
+        function timerHTML(screen) {
+            if (!timerSettings[screen].enabled) return '';
+            let dur = timerSettings[screen].duration;
             return `
             <div class="sc-timer-wrap">
                 <div class="sc-timer-circle-box">
                     <svg class="sc-timer-svg" width="72" height="72" viewBox="0 0 72 72">
                         <circle class="sc-timer-track" cx="36" cy="36" r="${SC_ARC_R}"/>
                         <circle id="sc-arc" class="sc-timer-arc" cx="36" cy="36" r="${SC_ARC_R}"
-                            stroke-dasharray="${SC_ARC_C}"
-                            stroke-dashoffset="0"/>
+                            stroke-dasharray="${SC_ARC_C}" stroke-dashoffset="0"/>
                     </svg>
-                    <div id="sc-count" class="sc-timer-count">${scTimerTotal}</div>
+                    <div id="sc-count" class="sc-timer-count">${dur}</div>
                 </div>
                 <div class="sc-timer-controls">
                     <button id="sc-pause-btn" class="sc-timer-pause-btn" onclick="toggleSCTimerPause(); updateSCPauseBtn();">
@@ -3010,6 +3053,42 @@ function generateAIContent(word) {
                     <div id="sc-expired-msg" class="sc-timer-expired-msg" style="display:none;">⏰ פג הזמן!</div>
                 </div>
             </div>`;
+        }
+
+        function openTimerSettings() {
+            document.getElementById('topMenu').classList.remove('show');
+            let m = document.getElementById('timerSettingsModal');
+            ['sc','rs','rc'].forEach(s => {
+                document.getElementById(`ts-${s}-en`).checked = timerSettings[s].enabled;
+                refreshTimerPresets(s);
+            });
+            m.style.display = 'flex';
+        }
+
+        function refreshTimerPresets(screen) {
+            let dur = timerSettings[screen].duration;
+            let row = document.getElementById(`ts-${screen}-dur`);
+            if (!row) return;
+            row.querySelectorAll('.timer-preset-btn').forEach(btn => {
+                let v = parseInt(btn.getAttribute('onclick').match(/,(\d+)\)/)[1]);
+                btn.classList.toggle('active', v === dur);
+            });
+            let inp = document.getElementById(`ts-${screen}-custom`);
+            let presets = Array.from(row.querySelectorAll('.timer-preset-btn')).map(b => parseInt(b.getAttribute('onclick').match(/,(\d+)\)/)[1]));
+            inp.value = presets.includes(dur) ? '' : dur;
+        }
+
+        function updateTimerSetting(screen) {
+            timerSettings[screen].enabled = document.getElementById(`ts-${screen}-en`).checked;
+            saveTimerSettings();
+            if (!timerSettings[screen].enabled) stopSCTimer();
+        }
+
+        function setTimerDuration(screen, dur) {
+            if (!dur || dur < 10) return;
+            timerSettings[screen].duration = dur;
+            saveTimerSettings();
+            refreshTimerPresets(screen);
         }
 
         // ===== הסבר AI =====
