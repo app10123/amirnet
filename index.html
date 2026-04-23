@@ -2006,7 +2006,6 @@ function generateAIContent(word) {
                     <div class="q-explanation" id="sc-exp-${i}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> הסבר לתשובה:</h4>
                         <p>${q.explanation}</p>
-                        <div id="sc-ai-${i}" class="ai-explanation-wrap" style="${isAnswered && localStorage.getItem('aiExplanation_completion_'+i) ? '' : 'display:none'}">${isAnswered ? (localStorage.getItem('aiExplanation_completion_'+i) || '') : ''}</div>
                         <button class="action-btn-top" style="margin-top:20px;width:100%;height:50px;font-size:17px;" onclick="nextSentence()">${nextLabel}</button>
                     </div>
                 </div>`;
@@ -2028,9 +2027,6 @@ function generateAIContent(word) {
                 btns[correctOpt].classList.add('correct');
             }
             document.getElementById(`sc-exp-${qIndex}`).style.display = 'block';
-
-            let q = sentenceQuestions[qIndex];
-            fetchAIExplanation(`sc-ai-${qIndex}`, 'completion', q.q, q.options, correctOpt, selectedOpt);
         }
 
         function nextSentence() {
