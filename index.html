@@ -2115,6 +2115,246 @@ function generateAIContent(word) {
                 ],
                 correct: 0,
                 explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "שחרור רגשות טינה דורש כוח רב" — פרפרזה של "סליחה היא תכונת החזקים": מי שמסוגל לסלוח הוא חזק. שמירה מדויקת על הרעיון.</p><p>✗ <strong>תשובה 2:</strong> מחליפה סובייקט ואובייקט — "חזקים זוכים לסליחה" במקום "חזקים סולחים". המקור: חזקים הם המוחלים, לא המקבלים.</p><p>✗ <strong>תשובה 3:</strong> "לסלוח לחזקים היא תכונה" — מצמצמת את הסליחה לסליחה ספציפית לחזקים, בעוד המקור מדבר על סליחה בכלל כתכונה של חזקים.</p><p>✗ <strong>תשובה 4:</strong> "קשה לסלוח לאנשים חזקים" — שוב מכוונת את הסליחה כלפי חזקים, ולא מחזקים. שגיאת כיוון זהה לתשובה 2.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים פילוסופיים קצרים — זהה מי הסובייקט ומי האובייקט. "חזקים סולחים" (=המקור) שונה לחלוטין מ-"סולחים לחזקים" (=שגויות 2, 3, 4).</p></div>`
+            },
+            {
+                q: "The government decided to reduce taxes in order to encourage economic growth.",
+                options: ["The government lowered taxes so that the economy would develop faster.","Economic growth caused the government to collect fewer taxes.","The government's decision to grow the economy resulted in higher taxes.","Reducing economic growth was the government's main tax strategy."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "reduce taxes to encourage growth" = "lowered taxes so economy would develop faster". הסיבה והמטרה נשמרו במדויק.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הסיבתיות — הצמיחה הכלכלית גרמה לפחות מסים, בעוד המקור אומר ההפך.</p><p>✗ <strong>תשובה 3:</strong> אומרת שהמסים עלו, בעוד המקור אומר שהם ירדו.</p><p>✗ <strong>תשובה 4:</strong> הממשלה רצתה לעודד צמיחה, לא להפחיתה — היפוך מוחלט.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "in order to" = מטרה. חפש תשובה שמשמרת את הסיבה (הפחתת מסים) ואת המטרה (צמיחה כלכלית) בכיוון הנכון.</p></div>`
+            },
+            {
+                q: "Despite the heavy rain, the football match was not cancelled.",
+                options: ["The football match took place even though it was raining heavily.","The football match was cancelled because of the heavy rain.","Heavy rain is the main reason football matches get cancelled.","The football players decided to play in the rain without permission."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "despite" = "even though" — שתיהן מביעות ניגוד. "was not cancelled" = "took place". שמירה מושלמת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה לגמרי — בוטלה בגלל הגשם, בעוד המקור אומר שלא בוטלה.</p><p>✗ <strong>תשובה 3:</strong> מדברת על כלל (גשם גורם לביטולים) ולא על האירוע הספציפי.</p><p>✗ <strong>תשובה 4:</strong> מוסיפה מידע שלא קיים — "ללא רשות". המקור לא הזכיר רשות.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד. חפש תשובה שמשמרת את הניגוד בין הגשם (בכל זאת) למשחק שהתקיים.</p></div>`
+            },
+            {
+                q: "Scientists have discovered that regular physical exercise significantly reduces the risk of heart disease.",
+                options: ["Heart disease can be largely prevented through consistent physical activity.","Scientists who exercise regularly are less likely to get heart disease.","Physical exercise causes heart disease in some cases.","The risk of heart disease is not affected by lifestyle choices."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "reduces the risk" = "can be prevented". "regular" = "consistent". הרעיון המרכזי נשמר.</p><p>✗ <strong>תשובה 2:</strong> מדברת על מדענים ספציפית — המקור עוסק בכל אדם שמתאמן.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — פעילות גורמת למחלת לב.</p><p>✗ <strong>תשובה 4:</strong> סותרת לחלוטין את ממצאי המחקר.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לנושא המשפט — מי עושה מה למי. "exercise reduces risk" ≠ "scientists are less likely".</p></div>`
+            },
+            {
+                q: "The museum offers free admission to children under the age of twelve.",
+                options: ["Children who are younger than twelve do not have to pay to enter the museum.","Children over twelve can enter the museum for free.","The museum charges a special fee for young children.","All visitors to the museum must pay an entrance fee."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "free admission" = "do not have to pay". "under twelve" = "younger than twelve". שקיפות לקסיקלית מדויקת.</p><p>✗ <strong>תשובה 2:</strong> מעל 12 — ההטבה היא לילדים מתחת ל-12, לא מעל.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — המוזיאון גובה דמי כניסה מיוחדים לילדים צעירים.</p><p>✗ <strong>תשובה 4:</strong> שגויה — ילדים נכנסים בחינם, לא כולם משלמים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בדוק מילות גיל בדיוק — under/over/above/below. under 12 = younger than 12, לא older than 12.</p></div>`
+            },
+            {
+                q: "Air pollution in major cities has reached dangerous levels due to increased traffic.",
+                options: ["The rise in the number of vehicles has made city air quality increasingly hazardous.","Dangerous traffic conditions have caused air pollution to decrease in cities.","Major cities have successfully reduced pollution by controlling traffic.","Air pollution affects traffic levels in large urban areas."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "increased traffic" = "rise in vehicles". "dangerous pollution levels" = "hazardous air quality". הכיוון הסיבתי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — זיהום ירד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — ערים הצליחו לצמצם זיהום.</p><p>✗ <strong>תשובה 4:</strong> הופכת את כיוון הסיבתיות — זיהום משפיע על תנועה, לא תנועה על זיהום.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "due to" = בגלל. בדוק מה הסיבה ומה התוצאה ואל תחליף ביניהן.</p></div>`
+            },
+            {
+                q: "The new law requires all employers to provide paid sick leave to their employees.",
+                options: ["According to the new legislation, workers are entitled to paid time off when ill.","Employees must now pay their employers when they take sick days.","The new law allows employers to decide whether to offer sick leave.","Workers who take sick leave will no longer receive payment under the new law."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "requires employers to provide" = "workers are entitled to". "paid sick leave" = "paid time off when ill". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — העובדים משלמים למעסיק.</p><p>✗ <strong>תשובה 3:</strong> שגויה — החוק מחייב, לא מאפשר לבחור ("requires" ≠ "allows").</p><p>✗ <strong>תשובה 4:</strong> הפוכה — העובדים לא יקבלו תשלום.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "requires" = חובה חוקית. "allows" = אפשרות. הבדל מהותי בין שתי המילים.</p></div>`
+            },
+            {
+                q: "The invention of the printing press made books available to a much wider audience.",
+                options: ["Thanks to the printing press, many more people were able to access books.","The printing press was invented in order to make books more expensive.","Before the printing press, books were available to everyone.","The printing press reduced the number of books produced each year."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "wider audience" = "many more people". "available" = "able to access". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> שגויה — לא קשור למחיר. המקור עוסק בנגישות, לא עלות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לפני הדפוס ספרים לא היו נגישים לכולם.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הדפוס הגדיל את כמות הספרים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "wider audience" = נגישות לאנשים רבים יותר. אל תתבלבל בין נגישות לבין מחיר.</p></div>`
+            },
+            {
+                q: "Volunteers who participated in the study showed greater levels of happiness than those who did not.",
+                options: ["People who volunteered were found to be happier than non-volunteers in the study.","The study showed that happiness leads people to become volunteers.","Non-volunteers reported higher levels of happiness than volunteers.","The study concluded that volunteering has no effect on happiness."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> ניסוח ישיר של אותו רעיון — מתנדבים מאושרים יותר מלא-מתנדבים.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — אושר גורם להתנדבות, לא התנדבות לאושר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה לגמרי — לא-מתנדבים מאושרים יותר.</p><p>✗ <strong>תשובה 4:</strong> סותרת את הממצא — להתנדבות אין השפעה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לכיוון הסיבתיות — מה גורם למה. "volunteering → happiness" ≠ "happiness → volunteering".</p></div>`
+            },
+            {
+                q: "The company had to lay off several workers because its profits had declined sharply.",
+                options: ["A significant drop in earnings forced the company to dismiss some of its employees.","The company hired more workers after its profits decreased.","Several workers quit because the company's profits were too high.","The company's layoffs caused its profits to decline."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "lay off" = "dismiss". "profits declined sharply" = "significant drop in earnings". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — גייסו עובדים נוספים.</p><p>✗ <strong>תשובה 3:</strong> שגויה — עובדים עזבו בגלל רווחים גבוהים מדי.</p><p>✗ <strong>תשובה 4:</strong> הופכת סיבה ותוצאה — פיטורים גרמו לירידת רווחים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "lay off" = פיטורים על ידי המעסיק. "quit" = התפטרות העובד. הבדל מהותי.</p></div>`
+            },
+            {
+                q: "Despite being one of the smallest countries in the world, Singapore has one of the strongest economies.",
+                options: ["Singapore's economy is remarkably powerful for a country of its size.","Singapore's small size is the main reason for its strong economy.","Large countries tend to have stronger economies than Singapore.","Singapore's economy has been weakened by its small geographical size."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "despite small size + strong economy" = "remarkably powerful for its size". שמירה על הניגוד.</p><p>✗ <strong>תשובה 2:</strong> שגויה — הגודל הקטן גורם לכלכלה חזקה? המקור מציג ניגוד, לא סיבה.</p><p>✗ <strong>תשובה 3:</strong> שגויה — לא נאמר שמדינות גדולות חזקות יותר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הכלכלה חלשה בגלל הגודל.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד בין שתי עובדות שנראות סותרות. אל תהפוך את הניגוד לסיבתיות.</p></div>`
+            },
+            {
+                q: "Excessive consumption of sugar has been linked to a variety of serious health problems.",
+                options: ["Eating too much sugar can lead to numerous significant health issues.","Sugar consumption is beneficial when done in large quantities.","Health problems cause people to consume more sugar than usual.","Only children are affected by the negative consequences of eating sugar."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "excessive consumption" = "eating too much". "linked to health problems" = "can lead to health issues". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — צריכה גדולה מועילה.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — בעיות בריאות גורמות לאכילת סוכר.</p><p>✗ <strong>תשובה 4:</strong> מצמצמת לילדים בלבד — לא נאמר במקור.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "has been linked to" = קשר מוכח בין שני דברים. בדוק שהכיוון נשמר.</p></div>`
+            },
+            {
+                q: "The ancient Romans built an extensive network of roads that connected their vast empire.",
+                options: ["A large system of roads was constructed by the Romans to link the different parts of their empire.","The Roman Empire expanded because its enemies built roads for them.","Roads in ancient Rome were built exclusively for military purposes.","The Romans destroyed roads throughout their empire to prevent invasions."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "extensive network" = "large system". "connected" = "link". שינוי מבנה בלבד, משמעות זהה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — אויבים בנו. המקור: הרומאים בנו.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה מטרה שלא הוזכרה — "exclusively for military".</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הרסו דרכים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> אל תוסיף מידע שאינו במשפט המקורי — "exclusively", "military" הם תוספות לא מוצדקות.</p></div>`
+            },
+            {
+                q: "Many species of animals are threatened with extinction due to the destruction of their natural habitats.",
+                options: ["The loss of natural environments is putting numerous animal species at risk of disappearing.","Animal species are destroying their own habitats, leading to extinction.","Extinct animals have managed to recover their natural habitats.","Only a small number of animal species are affected by habitat destruction."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "threatened with extinction" = "at risk of disappearing". "destruction of habitats" = "loss of environments". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת — בעלי חיים הורסים את בתי הגידול שלהם.</p><p>✗ <strong>תשובה 3:</strong> שגויה — בעלי חיים שנכחדו כבר לא יכולים לשחזר דבר.</p><p>✗ <strong>תשובה 4:</strong> מצמצמת ל"מעט מינים" — המקור אומר "רבים".</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "threatened with extinction" = בסכנת הכחדה, לא הכחדה ממשית. שים לב להבדל.</p></div>`
+            },
+            {
+                q: "The rise of social media has made it easier than ever to spread false information rapidly.",
+                options: ["Social media platforms have significantly increased the speed at which misinformation can be distributed.","Social media was created specifically to prevent the spread of false information.","False information spread more rapidly before social media was invented.","Social media users are always able to identify and reject misinformation."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "easier to spread rapidly" = "increased the speed of distribution". "false information" = "misinformation". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — נוצרה למנוע מידע שגוי.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לפני הרשתות הפצה הייתה מהירה יותר.</p><p>✗ <strong>תשובה 4:</strong> אופטימית מדי ולא נאמר במקור.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "made it easier than ever" = שינוי לכיוון שלילי (הקלת הפצת מידע כוזב).</p></div>`
+            },
+            {
+                q: "Children who read regularly tend to develop stronger language and communication skills.",
+                options: ["Regular reading habits in children are associated with improved language abilities.","Strong communication skills lead children to read more regularly.","Reading has no significant impact on children's language development.","Only children with strong language skills enjoy reading regularly."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "read regularly" = "regular reading habits". "stronger skills" = "improved abilities". שמירה על הקשר הסיבתי.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — כישורים גורמים לקריאה, לא קריאה לכישורים.</p><p>✗ <strong>תשובה 3:</strong> סותרת לחלוטין את המשפט המקורי.</p><p>✗ <strong>תשובה 4:</strong> הופכת — כישורים גורמים לקריאה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "tend to develop" = נטייה סטטיסטית, לא ודאות מוחלטת. חפש תשובה עם "associated with" או ניסוח דומה.</p></div>`
+            },
+            {
+                q: "The bridge was closed to traffic after engineers discovered serious structural damage.",
+                options: ["Following the detection of major structural problems, the bridge was no longer open to vehicles.","Traffic caused the structural damage that led to the bridge being built.","Engineers opened the bridge after repairing the structural damage.","The bridge was closed because there was too much traffic crossing it."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "discovered" = "detection". "closed to traffic" = "no longer open to vehicles". סדר האירועים נשמר.</p><p>✗ <strong>תשובה 2:</strong> שגויה — תנועה גרמה לנזק ולבניית הגשר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — פתחו אחרי תיקון.</p><p>✗ <strong>תשובה 4:</strong> שגויה — הסגירה הייתה בגלל נזק מבני, לא עומס תנועה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בדוק את סדר האירועים — גילוי נזק → סגירה. אל תתבלבל בין הסיבה לתוצאה.</p></div>`
+            },
+            {
+                q: "Access to clean drinking water remains a major challenge for millions of people in developing countries.",
+                options: ["Millions of people in poorer nations still struggle to obtain safe water for drinking.","Developing countries have recently solved the problem of clean water access.","Clean drinking water is only a challenge in wealthy, developed nations.","The majority of people in developing countries have unlimited access to clean water."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "developing countries" = "poorer nations". "remains a challenge" = "still struggle". "millions" = "millions". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הבעיה נפתרה.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — מדינות עשירות הן האתגר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — יש גישה בלתי מוגבלת.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "remains" = עדיין קיים, הבעיה לא נפתרה. מילת זמן חשובה.</p></div>`
+            },
+            {
+                q: "The new medication proved to be far more effective than existing treatments for the disease.",
+                options: ["Compared to current treatments, the new drug showed significantly better results.","Existing treatments were found to be superior to the newly developed medication.","The new medication was rejected because it was less effective than older treatments.","The disease could not be treated by either the new or the existing medications."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "far more effective" = "significantly better results". "existing treatments" = "current treatments". השוואה נשמרה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הטיפולים הישנים עדיפים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — התרופה נדחתה כי פחות יעילה.</p><p>✗ <strong>תשובה 4:</strong> שגויה — אף טיפול לא עובד.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "proved to be" = הוכח בניסוי. שים לב לכיוון ההשוואה — מי טוב יותר ממי.</p></div>`
+            },
+            {
+                q: "Despite widespread criticism, the mayor refused to change his position on the new housing policy.",
+                options: ["The mayor maintained his stance on the housing policy regardless of the opposition he faced.","The mayor changed his position on housing policy due to public criticism.","The new housing policy was supported by the majority of the population.","Criticism of the mayor led to the cancellation of the housing policy."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "refused to change" = "maintained his stance". "despite criticism" = "regardless of opposition". שמירה על הניגוד.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — שינה עמדה בגלל ביקורת.</p><p>✗ <strong>תשובה 3:</strong> שגויה — רוב תמך במדיניות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המדיניות בוטלה בגלל ביקורת.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" + "refused" = עמידה על עמדה למרות לחץ חיצוני. חפש תשובה שמשמרת את הנחישות.</p></div>`
+            },
+            {
+                q: "The discovery of antibiotics in the 20th century revolutionized the treatment of infectious diseases.",
+                options: ["Infectious diseases became far more treatable after antibiotics were found in the 1900s.","Infectious diseases led scientists in the 20th century to abandon antibiotic research.","Antibiotics were discovered before the 20th century and had little medical impact.","The treatment of infectious diseases became more difficult after the discovery of antibiotics."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "revolutionized" = "became far more treatable". "20th century" = "1900s". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — מדענים זנחו מחקר.</p><p>✗ <strong>תשובה 3:</strong> שגויה — התגלו לפני המאה ה-20 והיה להם מעט השפעה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הטיפול נעשה קשה יותר.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "revolutionized" = שינוי דרמטי לטובה. חפש תשובה שמשמרת את הטון החיובי.</p></div>`
+            },
+            {
+                q: "Unemployment rates dropped significantly after the new factory opened in the region.",
+                options: ["The opening of the factory led to a considerable decrease in joblessness in the area.","The factory closed down because unemployment in the region was too high.","The new factory increased unemployment by replacing workers with machines.","Unemployment in the region had no connection to the opening of the factory."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "dropped" = "decrease". "unemployment" = "joblessness". "significantly" = "considerable". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — המפעל נסגר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — אבטלה עלתה בגלל מכונות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — אין קשר בין המפעל לאבטלה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "dropped significantly" = ירידה ניכרת. "after" = לאחר, לא בגלל — אך ההקשר מציע קשר.</p></div>`
+            },
+            {
+                q: "The athlete trained for years before finally winning an Olympic gold medal.",
+                options: ["After many years of preparation, the athlete achieved Olympic gold.","The athlete won a gold medal and then began years of training.","The athlete gave up training after failing to win an Olympic medal.","Olympic gold medals are awarded to athletes who train for exactly one year."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "trained for years" = "years of preparation". "winning" = "achieved". הסדר הכרונולוגי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הופכת את סדר האירועים — זכה ואז אימן.</p><p>✗ <strong>תשובה 3:</strong> שגויה — ויתר על אימון אחרי כישלון.</p><p>✗ <strong>תשובה 4:</strong> שגויה — שנה אחת בלבד (המקור: שנים).</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לסדר הכרונולוגי — "trained for years BEFORE winning". אל תהפוך את הסדר.</p></div>`
+            },
+            {
+                q: "Renewable energy sources such as solar and wind power are becoming increasingly affordable.",
+                options: ["The cost of clean energy options like solar and wind is steadily decreasing.","Solar and wind energy have always been the cheapest sources of power available.","Renewable energy is becoming more expensive as technology improves.","Affordable energy can only be produced using non-renewable sources."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "increasingly affordable" = "cost is steadily decreasing". "solar and wind" = "solar and wind". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — "always been" לא נאמר. מדובר בשינוי עתידי, לא מצב קיים תמיד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — נעשית יקרה יותר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — רק מקורות לא מתחדשים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "increasingly" = בהדרגה, תהליך מתמשך. "always been" = מצב קבוע מתמיד. הבדל חשוב.</p></div>`
+            },
+            {
+                q: "The student failed the exam because she had not studied the material thoroughly enough.",
+                options: ["Insufficient preparation for the exam resulted in the student's failure.","The student studied thoroughly but still failed the exam unexpectedly.","The student passed the exam despite not having studied the material.","The exam was too difficult for any student to pass, regardless of preparation."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "not studied thoroughly" = "insufficient preparation". "failed" = "failure". הקשר הסיבתי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — למדה לעומק אבל נכשלה בכל זאת.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — עברה את המבחן.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המבחן קשה מדי לכולם, ללא קשר להכנה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "because" = סיבה ישירה לתוצאה. שמור על קשר הסיבה–תוצאה בניסוח.</p></div>`
+            },
+            {
+                q: "Deforestation in tropical regions is contributing to a significant loss of biodiversity.",
+                options: ["The cutting down of forests in tropical areas is causing many species to disappear.","Biodiversity in tropical regions has increased as a result of deforestation.","Tropical forests are growing faster than they are being cut down.","Deforestation only affects the climate and has no impact on biodiversity."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "deforestation" = "cutting down forests". "loss of biodiversity" = "species disappear". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — מגוון ביולוגי עלה.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — יערות גדלים מהר יותר.</p><p>✗ <strong>תשובה 4:</strong> שגויה — משפיע על אקלים בלבד, לא על מגוון.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "contributing to" = אחד הגורמים, לא הגורם היחיד. שמור על הניואנס.</p></div>`
+            },
+            {
+                q: "The company's profits soared after it launched its innovative new product line.",
+                options: ["Introducing a creative range of new products caused the company's earnings to rise sharply.","The company launched new products because its profits had already soared.","The new product line was unsuccessful and led to a decline in profits.","The company's profits remained unchanged following the product launch."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "soared" = "rise sharply". "innovative" = "creative". "launched" = "introducing". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת סיבה ותוצאה — רווחים גרמו להשקת מוצרים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — קו המוצרים נכשל ורווחים ירדו.</p><p>✗ <strong>תשובה 4:</strong> שגויה — רווחים נשארו ללא שינוי.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "soared" = עלייה חדה ומשמעותית. "remained unchanged" = ללא שינוי. הבדל קיצוני.</p></div>`
+            },
+            {
+                q: "Studies suggest that people who sleep fewer than six hours a night are more likely to suffer from depression.",
+                options: ["Getting less than six hours of sleep is associated with a higher risk of depression.","People who suffer from depression tend to sleep more than six hours a night.","Sleeping more than six hours increases a person's likelihood of becoming depressed.","There is no relationship between the amount of sleep a person gets and depression."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "fewer than six hours" = "less than six hours". "more likely to suffer" = "higher risk of depression". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — דיכאון גורם לשינה של יותר מ-6 שעות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — יותר מ-6 שעות מגביר סיכון.</p><p>✗ <strong>תשובה 4:</strong> סותרת לגמרי את ממצאי המחקר.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "suggest" = ממצאי מחקר, לא ודאות. שמור על הניואנס הזה בתשובה.</p></div>`
+            },
+            {
+                q: "The prime minister announced that the country would increase its investment in public education.",
+                options: ["More government funding for public schools was declared by the prime minister.","The prime minister decided to reduce the country's education budget.","Public education will no longer receive any investment from the government.","The prime minister's announcement led to a decrease in educational funding."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "announced" = "declared". "increase investment" = "more funding". "public education" = "public schools". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הפחית תקציב.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — החינוך לא יקבל השקעה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — ההכרזה הובילה לירידה בתקציב.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "increase investment" = יותר תקציב = more funding. ישיר ופשוט.</p></div>`
+            },
+            {
+                q: "Although the treatment was painful, it significantly improved the patient's quality of life.",
+                options: ["Despite causing discomfort, the treatment greatly enhanced how well the patient lived.","The treatment improved the patient's life only because it was painless.","The patient refused the treatment because it was too painful to endure.","The treatment had no effect on the patient's quality of life despite being painful."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "although painful" = "despite causing discomfort". "significantly improved" = "greatly enhanced". הניגוד נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — השתפר רק כי לא כאב.</p><p>✗ <strong>תשובה 3:</strong> שגויה — המטופל סירב לטיפול.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — אין השפעה למרות הכאב.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "although" ו-"despite" = ניגוד בין כאב (שלילי) לשיפור (חיובי). שניהם חייבים להיות בתשובה.</p></div>`
+            },
+            {
+                q: "Global temperatures have been rising steadily over the past century as a result of human activity.",
+                options: ["Human actions over the last hundred years have caused a continuous increase in worldwide temperatures.","Global temperatures have been falling steadily due to increased human activity.","Rising global temperatures have encouraged humans to become more active.","Human activity has had no measurable effect on global temperatures over the past century."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "past century" = "last hundred years". "rising steadily" = "continuous increase". "as a result of" = "caused by". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — טמפרטורות ירדו.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — עלייה בטמפרטורה גורמת לפעילות אנושית.</p><p>✗ <strong>תשובה 4:</strong> סותרת לחלוטין.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "as a result of" = בגלל. קשר סיבתי ברור — פעילות אנושית גורמת לחימום.</p></div>`
+            },
+            {
+                q: "The concert was postponed because the lead singer had lost her voice.",
+                options: ["Due to the singer's inability to perform vocally, the concert was delayed.","The concert was cancelled permanently because the singer refused to perform.","The lead singer lost her voice as a result of performing at the concert.","The concert took place as planned despite the singer's health problems."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "postponed" = "delayed". "lost her voice" = "inability to perform vocally". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — בוטל לצמיתות וסירבה לבצע. "postponed" ≠ "cancelled permanently".</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — ביצוע גרם לאובדן הקול.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — ההופעה התקיימה כמתוכנן.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "postponed" = נדחה לתאריך עתידי. "cancelled" = בוטל לחלוטין. הבדל קריטי.</p></div>`
+            },
+            {
+                q: "Investing in early childhood education yields significant long-term economic benefits for society.",
+                options: ["Society gains substantial financial advantages over time by funding education in early childhood.","Early childhood education is only beneficial for children, not for the broader economy.","Long-term economic benefits are unrelated to investments made in education.","Society loses money when it invests in programs for young children's education."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "yields benefits" = "gains advantages". "long-term economic" = "financial over time". "significant" = "substantial". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> מצמצמת — יועיל לילדים בלבד, לא לכלכלה.</p><p>✗ <strong>תשובה 3:</strong> שוללת את הקשר לחלוטין.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — החברה מפסידה כסף.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "yields" = מניב תוצאות חיוביות. "significant" = משמעותי. שני ניואנסים שחייבים להישמר.</p></div>`
+            },
+            {
+                q: "The earthquake caused widespread destruction, leaving thousands of people without homes.",
+                options: ["Thousands of people were left homeless as a result of the extensive damage caused by the earthquake.","Thousands of people built new homes immediately after the earthquake struck.","The earthquake had a minimal impact on housing in the affected region.","People caused the earthquake by destroying homes throughout the region."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "widespread destruction" = "extensive damage". "without homes" = "homeless". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> שגויה — אנשים בנו בתים חדשים מיד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — השפעה מינימלית על דיור.</p><p>✗ <strong>תשובה 4:</strong> הופכת כיוון — אנשים גרמו לרעידת האדמה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "widespread" = נרחב, על פני שטח גדול. "minimal" = מינימלי. ניגוד מוחלט.</p></div>`
+            },
+            {
+                q: "Many historians argue that the First World War was the direct result of a series of political miscalculations.",
+                options: ["According to numerous historians, political errors played a key role in triggering the First World War.","The First World War led historians to make a series of political miscalculations.","Most historians agree that the First World War was completely unavoidable.","Political leaders successfully prevented the First World War through careful planning."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "miscalculations" = "errors". "direct result" = "played a key role in triggering". "many historians" = "numerous historians". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — מלחמה גרמה להיסטוריונים לטעות.</p><p>✗ <strong>תשובה 3:</strong> שגויה — המלחמה הייתה בלתי נמנעת לחלוטין.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מנהיגים מנעו את המלחמה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "argue" = טענה של היסטוריונים, לא עובדה מוכחת. "agree" שגוי כי לא כולם מסכימים.</p></div>`
+            },
+            {
+                q: "The documentary film raised public awareness about the dangers of plastic pollution in the oceans.",
+                options: ["After watching the documentary, more people became informed about the threat of ocean plastic.","Public awareness about plastic pollution led filmmakers to create the documentary.","The documentary argued that plastic pollution in the oceans is not a serious concern.","The film reduced public interest in environmental issues related to the oceans."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "raised awareness" = "more people became informed". "dangers" = "threat". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — מודעות הציבור גרמה ליצירת הסרט.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — הסרט טוען שאין בעיה רצינית.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הפחית עניין ציבורי.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "raised awareness" = הגביר מודעות = "more people became informed". תמיד חיובי.</p></div>`
+            },
+            {
+                q: "Despite their small size, bees play a crucial role in maintaining the balance of many ecosystems.",
+                options: ["Bees, though tiny, are essential to keeping many natural environments stable.","Large insects are more important than bees in maintaining ecosystem balance.","Bees have a negative impact on ecosystems due to their small size.","Ecosystems can function properly only in the absence of bees."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "crucial role" = "essential". "maintaining balance" = "keeping stable". "small size" = "tiny". הניגוד נשמר.</p><p>✗ <strong>תשובה 2:</strong> שגויה — חרקים גדולים חשובים יותר מדבורים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לדבורים השפעה שלילית.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מערכות אקולוגיות תפקדנה ללא דבורים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד בין גודל קטן (שלילי לכאורה) לתפקיד חיוני (חיובי). שמור על שניהם.</p></div>`
+            },
+            {
+                q: "The new traffic regulations were introduced to reduce the number of road accidents in the city.",
+                options: ["The city implemented new traffic rules with the aim of making roads safer.","Road accidents in the city caused the traffic regulations to be removed.","The new regulations increased the number of traffic accidents significantly.","Traffic regulations were introduced to increase the flow of vehicles in the city."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "introduced to reduce accidents" = "aim of making roads safer". המטרה נשמרה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — תאונות גרמו להסרת התקנות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — תאונות עלו בגלל התקנות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המטרה הייתה להגביר זרימת כלי רכב, לא בטיחות.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "introduced to" = מטרה ברורה. "reduce accidents" = "safer roads". שמור על כיוון המטרה.</p></div>`
+            },
+            {
+                q: "Researchers found that students who ate breakfast performed better academically than those who skipped it.",
+                options: ["Eating breakfast was associated with higher academic achievement among students in the study.","Students who skipped breakfast consistently outperformed those who ate it.","Breakfast had no measurable effect on students' academic performance.","Researchers encouraged students to skip breakfast to improve their concentration."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "performed better academically" = "higher academic achievement". "researchers found" = "was associated with". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — אלו שדילגו על ארוחת בוקר הצטיינו.</p><p>✗ <strong>תשובה 3:</strong> שגויה — אין השפעה מדידה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מחקרים עודדו לדלג.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "found that" = ממצא מחקרי. חפש תשובה עם "associated with" שמשמרת את הזהירות האקדמית.</p></div>`
+            },
+            {
+                q: "The rapid growth of e-commerce has forced many traditional retailers to close their physical stores.",
+                options: ["The boom in online shopping has led numerous brick-and-mortar stores to shut down.","Traditional retailers expanded their physical stores in response to the growth of e-commerce.","E-commerce grew rapidly because traditional retail stores began closing.","Physical stores have become more popular as a result of the rise in online shopping."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "rapid growth of e-commerce" = "boom in online shopping". "close stores" = "shut down". "forced" = "led". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — קמעונאים הרחיבו חנויות.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — סגירת חנויות גרמה לצמיחת סחר אלקטרוני.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — חנויות פיזיות הפכו פופולריות יותר.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "forced" = כפה, לא בחירה חופשית. "boom" = צמיחה מהירה ומשמעותית.</p></div>`
+            },
+            {
+                q: "The scientist was awarded the Nobel Prize for her groundbreaking research on genetic mutations.",
+                options: ["Her pioneering work on changes in genes earned the scientist the Nobel Prize.","The Nobel Prize committee conducted research on genetic mutations alongside the scientist.","The scientist received the Nobel Prize before beginning her research on genetics.","Genetic mutation research has never been recognized by the Nobel Prize committee."],
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "groundbreaking research" = "pioneering work". "genetic mutations" = "changes in genes". "awarded" = "earned". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — הוועדה חקרה לצד המדענית.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — קיבלה את הפרס לפני המחקר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מחקר גנטי לא הוכר מעולם.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "groundbreaking" = פורץ דרך = "pioneering". שני מילים נרדפות חשובות לזכור.</p></div>`
             }
         ];
 
