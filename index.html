@@ -387,7 +387,7 @@
         </div>
 <button id="stackModeToggleBtn" class="stack-mode-btn" onclick="toggleStackMode()">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line></svg>
-            <span id="stackBtnText">מחסנית חרישה</span> 
+            <span id="stackBtnText">שינון ממוקד</span>
             <span class="stack-badge"><span id="stackToggleCount">0</span>/10</span>
         </button>
 		
@@ -433,7 +433,7 @@
                 </div>
                 <button class="btn-stack" onclick="toggleStackWord()">
                     <svg viewBox="0 0 24 24" style="width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2.5;"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
-                    חרישה
+                    שינון ממוקד
                     <span class="stack-count" id="stackCountDisplay">0/10</span>
                 </button>
             </div>
@@ -3159,9 +3159,9 @@ Keep it concise and educational. Use clear section headers for each part.`;
         }
 
         // ==========================================
-        // --- מערכת מחסנית חרישה (Study Stack) ---
+        // --- מערכת שינון ממוקד ---
         // ==========================================// ==========================================
-        // --- מערכת מחסנית חרישה (Study Stack) ---
+        // --- מערכת שינון ממוקד ---
         // ==========================================
         let isStackMode = false;
 
@@ -3183,16 +3183,16 @@ Keep it concise and educational. Use clear section headers for each part.`;
             if(isStackMode) {
                 let currentCount = updateStackCount();
                 if(currentCount === 0) {
-                    alert("המחסנית ריקה!\nהוסף מילים לחרישה קודם בעזרת הכפתור הסגול למטה.");
+                    alert("השינון הממוקד ריק!\nהוסף מילים לשינון קודם בעזרת הכפתור הסגול למטה.");
                     isStackMode = false;
                     return;
                 }
                 btn.classList.add('active');
-                if(btnText) btnText.innerText = 'יציאה ממצב חרישה';
+                if(btnText) btnText.innerText = 'יציאה מ-שינון ממוקד';
                 document.getElementById('statusFilter').value = 'All';
             } else {
                 btn.classList.remove('active');
-                if(btnText) btnText.innerText = 'מחסנית חרישה';
+                if(btnText) btnText.innerText = 'שינון ממוקד';
             }
             applyFilters();
         }
@@ -3206,7 +3206,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
             
             if(!userProgress[wordEn].inStack) {
                 if(currentCount >= 10) {
-                    alert("🛑 המחסנית מלאה (10/10)!\nכנס למצב חרישה למעלה, תלמד את המילים, וסמן אותן כ'יודע' כדי לפנות מקום.");
+                    alert("🛑 השינון הממוקד מלא (10/10)!\nכנס למצב שינון ממוקד למעלה, תלמד את המילים, וסמן אותן כ'יודע' כדי לפנות מקום.");
                     return; 
                 }
                 userProgress[wordEn].inStack = true;
@@ -3221,7 +3221,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
             if(isStackMode && !userProgress[wordEn].inStack) {
                 applyFilters();
                 if(currentList.length === 0) {
-                    alert("סיימת את המחסנית! כל הכבוד 🎉 יוצא ממצב חרישה.");
+                    alert("סיימת את השינון הממוקד! כל הכבוד 🎉 יוצא ממצב שינון ממוקד.");
                     toggleStackMode();
                 }
             } else {
@@ -3229,7 +3229,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
             }
         }
 
-        // דריסת הפילטר המקורי שיתמוך במחסנית
+        // דריסת הפילטר המקורי שיתמוך בשינון ממוקד
         function applyFilters() {
             let sourceVal = document.getElementById('sourceFilter').value; let unitVal = document.getElementById('unitFilter').value; let levelVal = document.getElementById('levelFilter').value; let statusVal = document.getElementById('statusFilter').value; let searchVal = document.getElementById('searchInput').value.toLowerCase();
             let now = Date.now();
@@ -3255,7 +3255,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 return matchSource && matchUnit && matchLevel && matchStatus && matchSearch;
             });
 
-            // פתרון הכפילויות: במצב חרישה מציגים רק כרטיסיה אחת לכל מילה
+            // פתרון הכפילויות: במצב שינון ממוקד מציגים רק כרטיסיה אחת לכל מילה
             if (isStackMode) {
                 let uniqueList = [];
                 let seenWords = new Set();
@@ -3293,7 +3293,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
             if(isStackMode && newStatus === 'known') {
                 applyFilters();
                 if(currentList.length === 0) {
-                    alert("סיימת את המחסנית! כל הכבוד 🎉 יוצא ממצב חרישה.");
+                    alert("סיימת את השינון הממוקד! כל הכבוד 🎉 יוצא ממצב שינון ממוקד.");
                     toggleStackMode();
                 }
             }
