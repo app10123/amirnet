@@ -500,7 +500,7 @@
         .timer-preset-btn { padding: 7px 11px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.15s; }
         .timer-preset-btn.active { background: var(--btn-primary); color: white; border-color: var(--btn-primary); }
         .timer-preset-btn:hover:not(.active) { border-color: var(--btn-primary); }
-        .timer-custom-input { width: 62px; padding: 7px 8px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; outline: none; text-align: center; }
+        .timer-custom-input { width: 62px; padding: 7px 8px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; outline: none; text-align: center; direction: ltr; }
         .timer-custom-input:focus { border-color: var(--btn-primary); }
 
         @media print { body > *:not(#printArea) { display: none !important; } body { background: white; color: black; margin: 0; padding: 0;} #printArea { display: block !important; width: 100%; direction: rtl; } .print-table { width: 100%; border-collapse: collapse; margin-top: 20px;} .print-table th, .print-table td { border: 1px solid #000; padding: 8px; text-align: right; } .print-en { direction: ltr; font-weight: bold; text-align: left !important;} .print-instructions { text-align: center; margin-bottom: 20px; font-size: 14px; font-weight: bold; padding: 10px; border: 2px solid #000; display: inline-block; background: #eee;} .print-cards-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; } .print-card-foldable { width: 48%; border: 2px solid #000; display: flex; box-sizing: border-box; page-break-inside: avoid; height: 120px; margin-bottom: 15px; } .print-card-half { width: 50%; display: flex; align-items: center; justify-content: center; padding: 10px; text-align: center; box-sizing: border-box; } .he-side { font-size: 18px; font-weight: bold; } .en-side { font-size: 20px; font-weight: bold; direction: ltr; border-left: 2px dashed #999; } }
@@ -751,7 +751,7 @@
                 </div>
                 <div class="timer-dur-row" id="ts-sc-dur">
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',30)">30ש׳</button>
-                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',45)">45ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',60)">60ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',90)">90ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',120)">2ד׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',180)">3ד׳</button>
@@ -772,10 +772,10 @@
                 </div>
                 <div class="timer-dur-row" id="ts-rs-dur">
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',30)">30ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',60)">60ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',90)">90ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',120)">2ד׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',180)">3ד׳</button>
-                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',300)">5ד׳</button>
                 </div>
                 <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
                     <input type="number" class="timer-custom-input" id="ts-rs-sec" min="0" max="59" placeholder="שנ׳" style="width:58px;">
@@ -3082,7 +3082,7 @@ function generateAIContent(word) {
 
         let timerSettings = JSON.parse(localStorage.getItem('timerSettings')) || {
             sc: { enabled: true,  duration: 60  },
-            rs: { enabled: true,  duration: 120 },
+            rs: { enabled: true,  duration: 60  },
             rc: { enabled: false, duration: 90  }
         };
         function saveTimerSettings() { localStorage.setItem('timerSettings', JSON.stringify(timerSettings)); }
