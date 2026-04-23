@@ -953,18 +953,57 @@ let aiPreloadedData = {};
         function populateFilters() {
             let sources = new Set(); let units = new Set(); let levels = new Set();
             allWords.forEach(w => { if(w.source) sources.add(w.source); if(w.unit) units.add(w.unit); if(w.level) levels.add(w.level); });
-            
+
             let selectSource = document.getElementById('sourceFilter');
             selectSource.innerHTML = '<option value="All">כל המקורות</option>';
             Array.from(sources).sort().forEach(s => { selectSource.innerHTML += `<option value="${s}">${s}</option>`; });
 
-            let selectUnit = document.getElementById('unitFilter'); 
+            let selectUnit = document.getElementById('unitFilter');
             selectUnit.innerHTML = '<option value="All">כל היחידות</option>';
             Array.from(units).sort((a,b) => (parseInt(a.replace(/\D/g, '')) || 0) - (parseInt(b.replace(/\D/g, '')) || 0)).forEach(u => { selectUnit.innerHTML += `<option value="${u}">${u}</option>`; });
-            
-            let selectLevel = document.getElementById('levelFilter'); 
+
+            let selectLevel = document.getElementById('levelFilter');
             selectLevel.innerHTML = '<option value="All">כל הרמות</option>';
             Array.from(levels).sort().forEach(l => { selectLevel.innerHTML += `<option value="${l}">${l}</option>`; });
+
+            // reset stored labels after rebuilding options
+            ['sourceFilter','unitFilter','levelFilter','statusFilter'].forEach(id => {
+                Array.from(document.getElementById(id).options).forEach(o => { o.dataset.label = ''; });
+            });
+            updateFilterCounts();
+        }
+
+        function wordMatchesFilters(w, srcF, unitF, levelF, statusF) {
+            if (srcF !== 'All' && w.source !== srcF) return false;
+            if (unitF !== 'All' && w.unit !== unitF) return false;
+            if (levelF !== 'All' && w.level !== levelF) return false;
+            let p = userProgress[w.en] || { status: 'unseen', fails: 0, nextReview: 0 };
+            let now = Date.now();
+            if (statusF === 'Known')    return p.status === 'known';
+            if (statusF === 'Learning') return p.status === 'learning';
+            if (statusF === 'Unseen')   return p.status === 'unseen';
+            if (statusF === 'Hard')     return (p.fails || 0) >= 2;
+            if (statusF === 'All' && p.status === 'known' && (p.nextReview || 0) > now) return false;
+            return true;
+        }
+
+        function updateFilterCounts() {
+            let sv  = document.getElementById('sourceFilter').value;
+            let uv  = document.getElementById('unitFilter').value;
+            let lv  = document.getElementById('levelFilter').value;
+            let stv = document.getElementById('statusFilter').value;
+
+            function setCount(selId, fn) {
+                Array.from(document.getElementById(selId).options).forEach(opt => {
+                    if (!opt.dataset.label) opt.dataset.label = opt.text;
+                    let cnt = allWords.filter(w => fn(w, opt.value)).length;
+                    opt.text = opt.dataset.label + ' (' + cnt + ')';
+                });
+            }
+            setCount('sourceFilter', (w,v) => wordMatchesFilters(w, v,  uv,  lv,  stv));
+            setCount('unitFilter',   (w,v) => wordMatchesFilters(w, sv, v,   lv,  stv));
+            setCount('levelFilter',  (w,v) => wordMatchesFilters(w, sv, uv,  v,   stv));
+            setCount('statusFilter', (w,v) => wordMatchesFilters(w, sv, uv,  lv,  v  ));
         }
 
         function switchAppScreen(screen) {
@@ -3231,6 +3270,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
             }
 
             currentIndex = 0; updateStatsUI(); if(currentMode === 'flash') updateCard(); else if(currentMode === 'quiz') startQuiz(); else if(currentMode === 'list') renderList();
+            updateFilterCounts();
         }
 
         let originalUpdateStats = updateStatsUI;
