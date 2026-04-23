@@ -55,11 +55,17 @@
         .stats-text { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: #64748b;}
         .stat-known { color: #34c759; } .stat-learning { color: #ff3b30; } .stat-unseen { color: #94a3b8; }
 .chart-container { display: flex; align-items: flex-end; justify-content: space-between; height: 90px; margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border-color); gap: 4px; }
-        .chart-bar-wrapper { display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 5px; }
-        .chart-bar { width: 100%; max-width: 22px; background: var(--btn-primary); border-radius: 6px 6px 0 0; min-height: 4px; transition: height 0.5s ease; opacity: 0.6; }
+        .chart-bar-wrapper { display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 5px; cursor: pointer; border-radius: 8px; padding: 4px 2px 0; transition: background 0.15s; }
+        .chart-bar-wrapper:hover { background: rgba(0,122,255,0.08); }
+        .chart-bar { width: 100%; max-width: 22px; background: var(--btn-primary); border-radius: 6px 6px 0 0; min-height: 4px; transition: height 0.5s ease, filter 0.15s; opacity: 0.6; }
+        .chart-bar-wrapper:hover .chart-bar { filter: brightness(1.2); opacity: 1; }
         .chart-bar.today { opacity: 1; background: #34c759; }
         body.dark-mode .chart-bar { opacity: 0.8; }
         body.dark-mode .chart-bar.today { background: #34c759; box-shadow: 0 0 10px rgba(52, 199, 89, 0.4); }
+        #dayWordsModal .modal-content { width: min(92vw, 420px); max-height: 80vh; overflow-y: auto; padding: 24px 20px; gap: 10px; }
+        .day-word-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-radius: 12px; background: var(--bg-color); gap: 10px; }
+        .day-word-en { font-size: 16px; font-weight: 800; color: var(--btn-primary); direction: ltr; }
+        .day-word-he { font-size: 14px; font-weight: 600; color: var(--text-color); }
         .chart-label { font-size: 11px; color: #64748b; font-weight: 600; }
         body.dark-mode .chart-label { color: #94a3b8; }
         .chart-val { font-size: 11px; color: var(--text-color); font-weight: 800; margin-bottom: -2px;}
@@ -500,6 +506,13 @@
     </div>
     <div id="assocModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">תומך זיכרון</h3><p id="assocWordTitle" style="text-align:center; font-weight:800; font-size:22px; direction:ltr; margin:5px 0; color:var(--btn-primary);"></p><textarea id="assocInput" rows="3" placeholder="מה יעזור לך לזכור?"></textarea><button class="action-btn-top" onclick="saveCustomAssoc()">שמור</button><button class="action-btn-top" style="background:#94a3b8;" onclick="closeAssocModal()">ביטול</button></div></div>
     <div id="sentenceModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">משפט לדוגמה</h3><p id="sentenceWordTitle" style="text-align:center; font-weight:800; font-size:22px; direction:ltr; margin:5px 0; color:var(--btn-primary);"></p><textarea id="sentenceInput" rows="3" placeholder="משפט באנגלית..." dir="ltr"></textarea><input type="text" id="sentenceHeInput" placeholder="תרגום (אופציונלי)"><button class="action-btn-top" onclick="saveCustomSentence()">שמור</button><button class="action-btn-top" style="background:#94a3b8;" onclick="closeSentenceModal()">ביטול</button></div></div>
+    <div id="dayWordsModal" class="modal" onclick="if(event.target===this)this.style.display='none'">
+        <div class="modal-content">
+            <h3 id="dayModalTitle" style="margin:0; text-align:center; font-size:17px;"></h3>
+            <div id="dayModalBody" style="display:flex; flex-direction:column; gap:8px;"></div>
+            <button class="action-btn-top" style="background:#94a3b8; margin-top:4px;" onclick="document.getElementById('dayWordsModal').style.display='none'">סגור</button>
+        </div>
+    </div>
     <div id="printOptionsModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">הדפסה</h3><button class="action-btn-top" onclick="executePrint('list')"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line></svg> רשימה מסודרת</button><button class="action-btn-top" onclick="executePrint('cards')" style="background:#34c759;"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg> כרטיסיות</button><button class="action-btn-top" style="background:#94a3b8;" onclick="document.getElementById('printOptionsModal').style.display='none'">ביטול</button></div></div>
     <div id="printArea"></div>
 
@@ -1015,9 +1028,9 @@ function updateStatsUI() {
             }
             
             days.forEach(d => {
-                let heightPct = Math.max((d.val / maxVal) * 100, 5); 
+                let heightPct = Math.max((d.val / maxVal) * 100, 5);
                 let barClass = d.isToday ? 'chart-bar today' : 'chart-bar';
-                html += `<div class="chart-bar-wrapper">
+                html += `<div class="chart-bar-wrapper" onclick="openDayModal('${d.dateStr}','${d.dayName}')" title="${d.dayName} — לחץ לפרטים">
                             <span class="chart-val">${d.val > 0 ? d.val : ''}</span>
                             <div class="${barClass}" style="height: ${heightPct}%;"></div>
                             <span class="chart-label">${d.dayName}</span>
@@ -1025,6 +1038,23 @@ function updateStatsUI() {
             });
             chartDiv.innerHTML = html;
         }
+        function openDayModal(dateStr, dayName) {
+            let words = allWords.filter(w => userProgress[w.en] && userProgress[w.en].learnedDate === dateStr);
+            let title = document.getElementById('dayModalTitle');
+            let body  = document.getElementById('dayModalBody');
+            let dateLabel = new Date(dateStr + 'T12:00:00').toLocaleDateString('he-IL', { day: 'numeric', month: 'long' });
+            title.textContent = `${dayName} — ${dateLabel}`;
+            if (words.length === 0) {
+                body.innerHTML = `<div style="text-align:center; padding:20px; color:#94a3b8; font-size:15px;">אין מילים שנלמדו ביום זה</div>`;
+            } else {
+                body.innerHTML = words.map(w => {
+                    let he = editedTranslations[w.en] || w.he;
+                    return `<div class="day-word-row"><span class="day-word-en">${w.en}</span><span class="day-word-he">${he}</span></div>`;
+                }).join('');
+            }
+            document.getElementById('dayWordsModal').style.display = 'flex';
+        }
+
         function smartShuffle() {
             if (currentList.length === 0) return;
 
