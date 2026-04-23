@@ -444,6 +444,53 @@
         body.dark-mode .sc-nav-btn:not(:disabled):hover { border-color: #7c3aed; background: rgba(124,58,237,0.12); }
         body.dark-mode .side-btn:hover { border-color: #7c3aed; background: rgba(124,58,237,0.12); }
 
+        /* ===== SPLASH SCREEN ===== */
+        #splash-screen { position:fixed; inset:0; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; background:linear-gradient(135deg,#0a0a1a 0%,#1a0a2e 50%,#0a1a2e 100%); transition:opacity 0.6s ease, visibility 0.6s ease; }
+        #splash-screen.fade-out { opacity:0; visibility:hidden; }
+        .splash-logo-wrap { display:flex; flex-direction:column; align-items:center; gap:14px; animation:splashIn 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+        @keyframes splashIn { from { opacity:0; transform:scale(0.6) translateY(20px); } to { opacity:1; transform:scale(1) translateY(0); } }
+        .splash-logo-icon { width:90px; height:90px; }
+        .splash-logo-text { font-family:'Rubik',sans-serif; font-size:32px; font-weight:800; background:linear-gradient(135deg,#c4b5fd,#818cf8,#60a5fa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-1px; }
+        .splash-logo-sub { font-family:'Rubik',sans-serif; font-size:14px; font-weight:600; color:rgba(196,181,253,0.6); letter-spacing:2px; text-transform:uppercase; }
+        .splash-bar { width:140px; height:3px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden; margin-top:10px; }
+        .splash-bar-fill { height:100%; background:linear-gradient(90deg,#7c3aed,#2563eb); border-radius:10px; animation:splashLoad 1.4s ease forwards; }
+        @keyframes splashLoad { from { width:0%; } to { width:100%; } }
+
+        /* ===== ANIMATED FLAME ===== */
+        @keyframes flicker { 0%,100% { transform:scaleY(1) rotate(-1deg); } 25% { transform:scaleY(1.06) rotate(1deg); } 50% { transform:scaleY(0.96) rotate(-0.5deg); } 75% { transform:scaleY(1.04) rotate(1.5deg); } }
+        .flame-svg { animation:flicker 1.6s ease-in-out infinite; transform-origin:bottom center; }
+
+        /* ===== ANIMATED SOUND WAVES (TTS) ===== */
+        @keyframes wave1 { 0%,100% { transform:scaleY(0.5); } 50% { transform:scaleY(1); } }
+        @keyframes wave2 { 0%,100% { transform:scaleY(1); } 50% { transform:scaleY(0.4); } }
+        @keyframes wave3 { 0%,100% { transform:scaleY(0.3); } 50% { transform:scaleY(1); } }
+        .tts-wave-bar { display:inline-block; width:3px; background:currentColor; border-radius:2px; transform-origin:bottom center; }
+        .tts-btn.speaking .tts-wave-bar:nth-child(1) { animation:wave1 0.7s ease-in-out infinite; }
+        .tts-btn.speaking .tts-wave-bar:nth-child(2) { animation:wave2 0.7s ease-in-out infinite 0.1s; }
+        .tts-btn.speaking .tts-wave-bar:nth-child(3) { animation:wave3 0.7s ease-in-out infinite 0.2s; }
+        .tts-btn.speaking .tts-wave-bar:nth-child(4) { animation:wave1 0.7s ease-in-out infinite 0.3s; }
+
+        /* ===== GRADIENT BOLT ICON (title) ===== */
+        .bolt-grad stop { }
+        .title-icon-bolt { width:32px; height:32px; filter:drop-shadow(0 0 8px rgba(124,58,237,0.5)); }
+
+        /* ===== APP LOGO HEADER ===== */
+        .app-logo-header { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:22px; padding:0; width:100%; max-width:500px; }
+        .app-logo-svg { width:44px; height:44px; flex-shrink:0; }
+        .app-logo-text { font-size:28px; font-weight:800; background:linear-gradient(135deg,#7c3aed,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.5px; line-height:1; }
+        body.dark-mode .app-logo-text { background:linear-gradient(135deg,#c4b5fd,#818cf8,#60a5fa); -webkit-background-clip:text; background-clip:text; }
+        .app-logo-pro { font-size:11px; font-weight:800; background:linear-gradient(135deg,#7c3aed,#2563eb); color:white; padding:2px 7px; border-radius:6px; margin-top:4px; align-self:flex-start; letter-spacing:0.5px; }
+
+        /* ===== ANIMATED CHECKMARK / X in cells ===== */
+        @keyframes checkDraw { from { stroke-dashoffset:20; } to { stroke-dashoffset:0; } }
+        @keyframes xDraw { from { stroke-dashoffset:15; } to { stroke-dashoffset:0; } }
+        .sc-check-svg { width:16px; height:16px; overflow:visible; }
+        .sc-check-path { fill:none; stroke:white; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:20; stroke-dashoffset:0; animation:checkDraw 0.3s ease-out; }
+        .sc-x-path { fill:none; stroke:white; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:15; stroke-dashoffset:0; animation:xDraw 0.25s ease-out; }
+
+        /* ===== TIMER EXPIRED ICON ===== */
+        .timer-expired-icon { width:16px; height:16px; stroke:#ff3b30; fill:none; stroke-width:2.5; stroke-linecap:round; }
+
         /* Timer settings modal */
         .timer-setting-section { padding: 14px 0; border-bottom: 1px solid var(--border-color); }
         .timer-setting-section:last-of-type { border-bottom: none; padding-bottom: 0; }
@@ -460,6 +507,28 @@
     </style>
 </head>
 <body>
+
+    <!-- SPLASH SCREEN -->
+    <div id="splash-screen">
+        <div class="splash-logo-wrap">
+            <svg class="splash-logo-icon" viewBox="0 0 90 90" fill="none">
+                <defs>
+                    <linearGradient id="splashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#c4b5fd"/>
+                        <stop offset="50%" stop-color="#818cf8"/>
+                        <stop offset="100%" stop-color="#60a5fa"/>
+                    </linearGradient>
+                    <filter id="splashGlow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <circle cx="45" cy="45" r="42" fill="rgba(124,58,237,0.15)" stroke="url(#splashGrad)" stroke-width="1.5"/>
+                <path d="M50 14 L28 48 H44 L40 76 L62 42 H46 Z" fill="url(#splashGrad)" filter="url(#splashGlow)" stroke="none"/>
+            </svg>
+            <div class="splash-logo-text">אמירנט</div>
+            <div class="splash-logo-sub">Psychometric English Pro</div>
+            <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+        </div>
+    </div>
+
     <div id="vocab-screen" class="app-screen">
         
         <div class="top-nav-container">
@@ -483,10 +552,34 @@
             <input type="file" id="fileInput" style="display:none" onchange="importProgress(event)" accept=".json">
         </div>
 
-        <h2 class="screen-title"><svg class="title-icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> אוצר מילים</h2>
+        <div class="app-logo-header">
+            <svg class="app-logo-svg" viewBox="0 0 44 44" fill="none">
+                <defs>
+                    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#7c3aed"/>
+                        <stop offset="100%" stop-color="#2563eb"/>
+                    </linearGradient>
+                    <filter id="boltGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <circle cx="22" cy="22" r="20" fill="rgba(124,58,237,0.1)" stroke="url(#boltGrad)" stroke-width="1.5"/>
+                <path d="M25 8 L14 24 H21 L19 36 L30 20 H23 Z" fill="url(#boltGrad)" filter="url(#boltGlow)"/>
+            </svg>
+            <div>
+                <div class="app-logo-text">אמירנט</div>
+            </div>
+            <span class="app-logo-pro">PRO</span>
+        </div>
+        <h2 class="screen-title"><svg class="title-icon" viewBox="0 0 24 24"><defs><linearGradient id="boltGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#boltGrad2)" stroke="none"/></svg> אוצר מילים</h2>
 
         <div class="stats-panel">
-            <div class="streak" id="streakDisplay"><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2"><path d="M17.657 14.832c0 2.871-2.42 5.168-5.657 5.168-3.237 0-5.657-2.297-5.657-5.168 0-2.41 1.76-4.524 4.026-5.048-.68 1.48-.124 2.83.63 3.655.087-.96.657-2.203 1.95-3.327 1.848-1.606 2.37-3.953 2.062-6.112 3.037 2.274 4.613 5.485 4.613 8.214a1.002 1.002 0 0 1-.005.105c-.015-.436-.184-1.078-.616-1.895 1.09 1.155 1.654 2.716 1.654 4.408z"/></svg> רצף: 0</div>
+            <div class="streak" id="streakDisplay">
+                <svg class="flame-svg" width="22" height="26" viewBox="0 0 22 26" fill="none">
+                    <defs><linearGradient id="flameGrad" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#fbbf24"/><stop offset="60%" stop-color="#f97316"/><stop offset="100%" stop-color="#ef4444"/></linearGradient></defs>
+                    <path d="M11 25C6.5 25 3 21.5 3 17c0-3.5 2-6.5 4-8.5-.5 2 .5 3.5 1.5 4.5C8.5 10 10 7 9.5 3.5 13 6 15 9.5 14 12.5c1.5-1 2.5-2.5 2.5-4.5C18.5 10.5 19 14 19 17c0 4.5-3.5 8-8 8z" fill="url(#flameGrad)"/>
+                    <ellipse cx="11" cy="19" rx="3" ry="3.5" fill="rgba(255,255,255,0.3)"/>
+                </svg>
+                <span id="streakText">רצף: 0</span>
+            </div>
             <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
             <div class="stats-text"><span id="statsKnown" class="stat-known">יודע: 0</span><span id="statsLearning" class="stat-learning">ללמידה: 0</span><span id="statsUnseen" class="stat-unseen">טרם מוין: 0</span></div>
             <button id="reviewYesterdayBtn" onclick="reviewYesterday()" style="display:none; margin-top:12px; width:100%; padding:11px 16px; border-radius:12px; border:none; background:linear-gradient(135deg,#5856d6,#007aff); color:white; font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; align-items:center; justify-content:center; gap:8px; box-shadow:0 3px 10px rgba(88,86,214,0.35); transition:0.2s;"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <span id="reviewYesterdayCount"></span></button>
@@ -581,7 +674,7 @@
         <div id="texts-list" style="width: 100%; display: flex; flex-direction: column; gap: 15px;"></div>
         <div id="active-reading">
             <button class="back-to-texts" onclick="closeReadingText()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg> חזור לרשימת הטקסטים</button>
-            <div class="reading-content-box"><h3 id="rc-title" style="direction:ltr; text-align:left;"></h3><div id="rc-content"></div><button id="rc-tts-passage" class="tts-btn tts-row-btn" style="margin-top:12px;" onclick="ttsPassage(this)">🔊 הקרא את הקטע</button></div>
+            <div class="reading-content-box"><h3 id="rc-title" style="direction:ltr; text-align:left;"></h3><div id="rc-content"></div><button id="rc-tts-passage" class="tts-btn tts-row-btn" style="margin-top:12px;display:flex;align-items:center;gap:8px;" onclick="ttsPassage(this)"></button></div>
             <h3 style="margin: 10px 0 0 0; color: var(--btn-primary); font-size: 24px; text-align:left; direction:ltr;">Questions</h3>
             <div id="rc-timer-wrap"></div>
             <div id="rc-questions" style="display:flex; flex-direction:column; gap:25px;"></div>
@@ -645,11 +738,12 @@
     </div>
     <div id="printOptionsModal" class="modal"><div class="modal-content"><h3 style="margin:0; text-align:center;">הדפסה</h3><button class="action-btn-top" onclick="executePrint('list')"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line></svg> רשימה מסודרת</button><button class="action-btn-top" onclick="executePrint('cards')" style="background:#34c759;"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg> כרטיסיות</button><button class="action-btn-top" style="background:#94a3b8;" onclick="document.getElementById('printOptionsModal').style.display='none'">ביטול</button></div></div>
     <div id="timerSettingsModal" class="modal" onclick="if(event.target===this)this.style.display='none'">
-        <div class="modal-content" style="max-width:360px;direction:rtl;text-align:right;gap:0;padding:24px 22px;">
+        <div class="modal-content" style="max-width:370px;direction:rtl;text-align:right;gap:0;padding:24px 22px;">
             <h3 style="margin:0 0 18px;font-size:19px;font-weight:800;display:flex;align-items:center;gap:10px;">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;stroke:var(--btn-primary);flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;stroke:var(--btn-primary);flex-shrink:0;"><circle cx="12" cy="13" r="8"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="9" y1="3" x2="15" y2="3"/></svg>
                 הגדרות טיימר
             </h3>
+            <!-- SC -->
             <div class="timer-setting-section">
                 <div class="timer-setting-header">
                     <span class="timer-setting-label">השלמת משפטים</span>
@@ -657,12 +751,20 @@
                 </div>
                 <div class="timer-dur-row" id="ts-sc-dur">
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',30)">30ש׳</button>
-                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',60)">60ש׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',45)">45ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',90)">90ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',120)">2ד׳</button>
-                    <input type="number" class="timer-custom-input" id="ts-sc-custom" min="10" max="600" placeholder="שנ׳" title="זמן מותאם אישית" onchange="setTimerDuration('sc', +this.value||60)">
+                    <button class="timer-preset-btn" onclick="setTimerDuration('sc',180)">3ד׳</button>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
+                    <input type="number" class="timer-custom-input" id="ts-sc-sec" min="5" max="59" placeholder="שנ׳" title="שניות" style="width:58px;">
+                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">שנ׳ +</span>
+                    <input type="number" class="timer-custom-input" id="ts-sc-min" min="0" max="10" placeholder="ד׳" title="דקות" style="width:50px;">
+                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">ד׳</span>
+                    <button class="timer-preset-btn" onclick="applyCustomTimer('sc')" style="flex:1;">הגדר</button>
                 </div>
             </div>
+            <!-- RS -->
             <div class="timer-setting-section">
                 <div class="timer-setting-header">
                     <span class="timer-setting-label">ניסוח מחדש</span>
@@ -670,23 +772,37 @@
                 </div>
                 <div class="timer-dur-row" id="ts-rs-dur">
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',30)">30ש׳</button>
-                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',60)">60ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',90)">90ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',120)">2ד׳</button>
-                    <input type="number" class="timer-custom-input" id="ts-rs-custom" min="10" max="600" placeholder="שנ׳" title="זמן מותאם אישית" onchange="setTimerDuration('rs', +this.value||120)">
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',180)">3ד׳</button>
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rs',300)">5ד׳</button>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
+                    <input type="number" class="timer-custom-input" id="ts-rs-sec" min="0" max="59" placeholder="שנ׳" style="width:58px;">
+                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">שנ׳ +</span>
+                    <input type="number" class="timer-custom-input" id="ts-rs-min" min="0" max="10" placeholder="ד׳" style="width:50px;">
+                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">ד׳</span>
+                    <button class="timer-preset-btn" onclick="applyCustomTimer('rs')" style="flex:1;">הגדר</button>
                 </div>
             </div>
+            <!-- RC -->
             <div class="timer-setting-section">
                 <div class="timer-setting-header">
                     <span class="timer-setting-label">הבנת הנקרא</span>
                     <label class="sc-toggle-switch"><input type="checkbox" id="ts-rc-en" onchange="updateTimerSetting('rc')"><span class="sc-toggle-slider"></span></label>
                 </div>
                 <div class="timer-dur-row" id="ts-rc-dur">
-                    <button class="timer-preset-btn" onclick="setTimerDuration('rc',60)">60ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rc',90)">90ש׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rc',120)">2ד׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rc',180)">3ד׳</button>
-                    <input type="number" class="timer-custom-input" id="ts-rc-custom" min="10" max="600" placeholder="שנ׳" title="זמן מותאם אישית" onchange="setTimerDuration('rc', +this.value||90)">
+                    <button class="timer-preset-btn" onclick="setTimerDuration('rc',300)">5ד׳</button>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
+                    <input type="number" class="timer-custom-input" id="ts-rc-sec" min="0" max="59" placeholder="שנ׳" style="width:58px;">
+                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">שנ׳ +</span>
+                    <input type="number" class="timer-custom-input" id="ts-rc-min" min="0" max="10" placeholder="ד׳" style="width:50px;">
+                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">ד׳</span>
+                    <button class="timer-preset-btn" onclick="applyCustomTimer('rc')" style="flex:1;">הגדר</button>
                 </div>
             </div>
             <button class="action-btn-top" style="background:#94a3b8;margin-top:18px;height:48px;font-size:16px;" onclick="document.getElementById('timerSettingsModal').style.display='none'">סגור</button>
@@ -695,6 +811,16 @@
     <div id="printArea"></div>
 
     <script>
+        // ===== SPLASH SCREEN =====
+        (function() {
+            let splash = document.getElementById('splash-screen');
+            if (!splash) return;
+            setTimeout(() => {
+                splash.classList.add('fade-out');
+                setTimeout(() => { splash.style.display = 'none'; }, 650);
+            }, 1500);
+        })();
+
         function fireConfetti() { const colors = ['#34c759', '#007aff', '#ff3b30', '#ffcc00', '#5856d6']; for(let i=0; i<40; i++) { let conf = document.createElement('div'); conf.className = 'confetti-particle'; conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; conf.style.left = Math.random() * 100 + 'vw'; conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; document.body.appendChild(conf); setTimeout(() => conf.remove(), 3500); } }
         function toggleTopMenu() { document.getElementById('topMenu').classList.toggle('show'); }
         document.addEventListener('click', function(e) { if(!e.target.closest('.top-nav-container')) { let menu = document.getElementById('topMenu'); if(menu && menu.classList.contains('show')) menu.classList.remove('show'); } });
@@ -1096,7 +1222,11 @@ let aiPreloadedData = {};
             }
             // ------------------------------------
 
-            document.getElementById('streakDisplay').innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2"><path d="M17.657 14.832c0 2.871-2.42 5.168-5.657 5.168-3.237 0-5.657-2.297-5.657-5.168 0-2.41 1.76-4.524 4.026-5.048-.68 1.48-.124 2.83.63 3.655.087-.96.657-2.203 1.95-3.327 1.848-1.606 2.37-3.953 2.062-6.112 3.037 2.274 4.613 5.485 4.613 8.214a1.002 1.002 0 0 1-.005.105c-.015-.436-.184-1.078-.616-1.895 1.09 1.155 1.654 2.716 1.654 4.408z"/></svg> רצף: ${streak}`;
+            let stEl = document.getElementById('streakText');
+            if (stEl) stEl.textContent = `רצף: ${streak}`;
+            // initialize passage TTS button
+            let pb = document.getElementById('rc-tts-passage');
+            if (pb && !pb.innerHTML.trim()) _ttsSetIcon(pb, false, 'הקרא את הקטע');
             populateFilters(); applyFilters(); renderReadingTexts(); renderSentenceQuestions(); renderRSList();
         }
         
@@ -1259,7 +1389,7 @@ function updateStatsUI() {
             let knownCount = 0; let learningCount = 0;
             relevantWords.forEach(w => { let st = (userProgress[w.en] && userProgress[w.en].status) ? userProgress[w.en].status : 'unseen'; if(st === 'known') knownCount++; if(st === 'learning') learningCount++; });
             let unseenCount = relevantWords.length - knownCount - learningCount; let percentage = relevantWords.length > 0 ? (knownCount / relevantWords.length) * 100 : 0;
-            document.getElementById('statsKnown').innerText = `יודע: ${knownCount}`; document.getElementById('statsLearning').innerText = `ללמידה: ${learningCount}`; document.getElementById('statsUnseen').innerText = `טרם מוין: ${unseenCount}`; document.getElementById('progressFill').style.width = percentage + '%'; document.getElementById('streakDisplay').innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2"><path d="M17.657 14.832c0 2.871-2.42 5.168-5.657 5.168-3.237 0-5.657-2.297-5.657-5.168 0-2.41 1.76-4.524 4.026-5.048-.68 1.48-.124 2.83.63 3.655.087-.96.657-2.203 1.95-3.327 1.848-1.606 2.37-3.953 2.062-6.112 3.037 2.274 4.613 5.485 4.613 8.214a1.002 1.002 0 0 1-.005.105c-.015-.436-.184-1.078-.616-1.895 1.09 1.155 1.654 2.716 1.654 4.408z"/></svg> רצף: ${streak}`;
+            document.getElementById('statsKnown').innerText = `יודע: ${knownCount}`; document.getElementById('statsLearning').innerText = `ללמידה: ${learningCount}`; document.getElementById('statsUnseen').innerText = `טרם מוין: ${unseenCount}`; document.getElementById('progressFill').style.width = percentage + '%'; let _stEl = document.getElementById('streakText'); if (_stEl) _stEl.textContent = `רצף: ${streak}`;
             renderChart();
             updateReviewBadge();
         }
@@ -1757,7 +1887,7 @@ function generateAIContent(word) {
             
             ttsStop();
             let passageBtn = document.getElementById('rc-tts-passage');
-            if (passageBtn) { passageBtn.textContent = '🔊 הקרא את הקטע'; passageBtn.classList.remove('speaking'); }
+            if (passageBtn) { _ttsSetIcon(passageBtn, false, 'הקרא את הקטע'); passageBtn.classList.remove('speaking'); }
 
             let savedProgress = (textProgress[id] && textProgress[id].answered) ? textProgress[id].answered : {};
 
@@ -1779,7 +1909,7 @@ function generateAIContent(word) {
                 qHtml += `<div class="question-box">
                     <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:4px;">
                         <div class="q-text" style="flex:1;margin:0;">${q.q}</div>
-                        <button class="tts-btn" onclick="ttsRCQ(${qIndex},this)" title="הקרא שאלה">🔊</button>
+                        <button class="tts-btn" onclick="ttsRCQ(${qIndex},this)" title="הקרא שאלה" style="display:flex;align-items:center;justify-content:center;">${_TTS_ICON}</button>
                     </div>
                     <div class="q-options" id="q-opts-${qIndex}">${optHtml}</div>
                     <div class="q-explanation" id="q-exp-${qIndex}" style="${expStyle}">
@@ -2261,7 +2391,9 @@ function generateAIContent(word) {
                 let label = i + 1;
                 if (prog && prog.answered) {
                     cls += prog.correct ? ' sc-correct' : ' sc-wrong';
-                    label = prog.correct ? '✓' : '✗';
+                    label = prog.correct
+                        ? `<svg class="sc-check-svg" viewBox="0 0 16 16"><polyline class="sc-check-path" points="2,9 6,13 14,4"/></svg>`
+                        : `<svg class="sc-check-svg" viewBox="0 0 16 16"><line class="sc-x-path" x1="3" y1="3" x2="13" y2="13"/><line class="sc-x-path" x1="13" y1="3" x2="3" y2="13"/></svg>`;
                 }
                 return `<button class="${cls}" onclick="showSCQuestion(${i})">${label}</button>`;
             }).join('');
@@ -2270,9 +2402,9 @@ function generateAIContent(word) {
                 <div class="sc-progress-box">
                     <div class="progress-bar-bg" style="margin-bottom:10px;"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
                     <div class="stats-text">
-                        <span class="stat-known">✓ נכון: ${correctCount}</span>
-                        <span class="stat-learning">✗ שגוי: ${wrongCount}</span>
-                        <span class="stat-unseen">○ טרם: ${unseenCount}</span>
+                        <span class="stat-known"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><polyline points="2,8 5,11 12,3" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> נכון: ${correctCount}</span>
+                        <span class="stat-learning"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><line x1="3" y1="3" x2="11" y2="11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="11" y1="3" x2="3" y2="11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> שגוי: ${wrongCount}</span>
+                        <span class="stat-unseen"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg> טרם: ${unseenCount}</span>
                     </div>
                 </div>
                 <div class="sc-grid">${gridHtml}</div>
@@ -2296,34 +2428,46 @@ function generateAIContent(word) {
         }
 
         // ===== Text-to-Speech =====
+        const _TTS_ICON = `<svg viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;pointer-events:none;flex-shrink:0;"><path d="M3 6H1v6h2l4 3V3L3 6z" fill="currentColor" stroke="none"/><path d="M13 3c2 1.7 3.2 4.2 3.2 6s-1.2 4.3-3.2 6"/><path d="M10.5 6c1 0.9 1.6 2.2 1.6 3s-0.6 2.1-1.6 3"/></svg>`;
+        const _TTS_WAVES = `<span style="display:inline-flex;align-items:center;gap:2px;height:18px;pointer-events:none;"><span class="tts-wave-bar" style="height:8px;"></span><span class="tts-wave-bar" style="height:14px;"></span><span class="tts-wave-bar" style="height:10px;"></span><span class="tts-wave-bar" style="height:14px;"></span></span>`;
+        function _ttsSetIcon(btn, speaking, withLabel) {
+            if (!btn) return;
+            if (withLabel) {
+                btn.innerHTML = speaking ? (_TTS_WAVES + ' ' + withLabel) : (_TTS_ICON + ' ' + withLabel);
+            } else {
+                btn.innerHTML = speaking ? _TTS_WAVES : _TTS_ICON;
+            }
+        }
         let _ttsBtn = null;
+        let _ttsBtnLabel = null;
         function ttsStop() {
             if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
-            if (_ttsBtn) { _ttsBtn.textContent = '🔊'; _ttsBtn.classList.remove('speaking'); _ttsBtn = null; }
+            if (_ttsBtn) { _ttsSetIcon(_ttsBtn, false, _ttsBtnLabel); _ttsBtn.classList.remove('speaking'); _ttsBtn = null; _ttsBtnLabel = null; }
         }
-        function ttsSpeak(texts, btnEl) {
+        function ttsSpeak(texts, btnEl, rowLabel) {
             if (window.speechSynthesis.speaking) {
                 let prevBtn = _ttsBtn;
                 ttsStop();
                 if (prevBtn === btnEl) return;
             }
             _ttsBtn = btnEl;
-            if (btnEl) { btnEl.textContent = '⏹'; btnEl.classList.add('speaking'); }
+            _ttsBtnLabel = rowLabel || null;
+            if (btnEl) { _ttsSetIcon(btnEl, true, rowLabel); btnEl.classList.add('speaking'); }
             const run = (idx) => {
-                if (idx >= texts.length) { if (btnEl) { btnEl.textContent = '🔊'; btnEl.classList.remove('speaking'); } _ttsBtn = null; return; }
+                if (idx >= texts.length) { _ttsSetIcon(btnEl, false, rowLabel); if (btnEl) btnEl.classList.remove('speaking'); _ttsBtn = null; _ttsBtnLabel = null; return; }
                 let utt = new SpeechSynthesisUtterance(texts[idx]);
                 utt.lang = 'en-US';
                 utt.onend = () => run(idx + 1);
-                utt.onerror = () => { if (btnEl) { btnEl.textContent = '🔊'; btnEl.classList.remove('speaking'); } _ttsBtn = null; };
+                utt.onerror = () => { _ttsSetIcon(btnEl, false, rowLabel); if (btnEl) btnEl.classList.remove('speaking'); _ttsBtn = null; _ttsBtnLabel = null; };
                 window.speechSynthesis.speak(utt);
             };
             run(0);
         }
         function ttsSC(btnEl)      { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak([q.q.replace(/_+/g, 'blank')], btnEl); }
-        function ttsSCOpts(btnEl)  { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak(q.options, btnEl); }
+        function ttsSCOpts(btnEl)  { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak(q.options, btnEl, 'הקרא תשובות'); }
         function ttsRS(btnEl)      { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak([q.q], btnEl); }
-        function ttsRSOpts(btnEl)  { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak(q.options, btnEl); }
-        function ttsPassage(btnEl) { let el = document.getElementById('rc-content');     ttsSpeak([el.innerText], btnEl); }
+        function ttsRSOpts(btnEl)  { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak(q.options, btnEl, 'הקרא תשובות'); }
+        function ttsPassage(btnEl) { let el = document.getElementById('rc-content');     ttsSpeak([el.innerText], btnEl, 'הקרא את הקטע'); }
         function ttsRCQ(idx, btnEl){ let t = allTexts.find(x => x.id === currentTextId); ttsSpeak([t.questions[idx].q], btnEl); }
 
         function renderSentenceQuestion() {
@@ -2363,9 +2507,9 @@ function generateAIContent(word) {
                 <div class="sentence-q-card">
                     <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;">
                         <div class="sentence-text-q" style="margin-top:0;flex:1;">${q.q}</div>
-                        <button class="tts-btn" onclick="ttsSC(this)" title="הקרא משפט">🔊</button>
+                        <button class="tts-btn" onclick="ttsSC(this)" title="הקרא משפט" style="display:flex;align-items:center;justify-content:center;">${_TTS_ICON}</button>
                     </div>
-                    <button class="tts-btn tts-row-btn" onclick="ttsSCOpts(this)">🔊 הקרא תשובות</button>
+                    <button class="tts-btn tts-row-btn" onclick="ttsSCOpts(this)" style="display:flex;align-items:center;gap:8px;">${_TTS_ICON} הקרא תשובות</button>
                     <div class="q-options" id="sc-opts-${i}">${optionsHtml}</div>
                     <div class="q-explanation" id="sc-exp-${i}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> הסבר לתשובה:</h4>
@@ -2807,7 +2951,9 @@ function generateAIContent(word) {
                 let label = i + 1;
                 if (prog && prog.answered) {
                     cls  += prog.correct ? ' sc-correct' : ' sc-wrong';
-                    label = prog.correct ? '✓' : '✗';
+                    label = prog.correct
+                        ? `<svg class="sc-check-svg" viewBox="0 0 16 16"><polyline class="sc-check-path" points="2,9 6,13 14,4"/></svg>`
+                        : `<svg class="sc-check-svg" viewBox="0 0 16 16"><line class="sc-x-path" x1="3" y1="3" x2="13" y2="13"/><line class="sc-x-path" x1="13" y1="3" x2="3" y2="13"/></svg>`;
                 }
                 return `<button class="${cls}" onclick="showRSQuestion(${i})">${label}</button>`;
             }).join('');
@@ -2816,9 +2962,9 @@ function generateAIContent(word) {
                 <div class="sc-progress-box">
                     <div class="progress-bar-bg" style="margin-bottom:10px;"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
                     <div class="stats-text">
-                        <span class="stat-known">✓ נכון: ${correctCount}</span>
-                        <span class="stat-learning">✗ שגוי: ${wrongCount}</span>
-                        <span class="stat-unseen">○ טרם: ${unseenCount}</span>
+                        <span class="stat-known"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><polyline points="2,8 5,11 12,3" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> נכון: ${correctCount}</span>
+                        <span class="stat-learning"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><line x1="3" y1="3" x2="11" y2="11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="11" y1="3" x2="3" y2="11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> שגוי: ${wrongCount}</span>
+                        <span class="stat-unseen"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg> טרם: ${unseenCount}</span>
                     </div>
                 </div>
                 <div class="sc-grid">${gridHtml}</div>
@@ -2878,9 +3024,9 @@ function generateAIContent(word) {
                 <div class="sentence-q-card">
                     <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;">
                         <div class="sentence-text-q" style="margin-top:0;flex:1;direction:ltr;text-align:left;">${q.q}</div>
-                        <button class="tts-btn" onclick="ttsRS(this)" title="הקרא משפט">🔊</button>
+                        <button class="tts-btn" onclick="ttsRS(this)" title="הקרא משפט" style="display:flex;align-items:center;justify-content:center;">${_TTS_ICON}</button>
                     </div>
-                    <button class="tts-btn tts-row-btn" onclick="ttsRSOpts(this)">🔊 הקרא תשובות</button>
+                    <button class="tts-btn tts-row-btn" onclick="ttsRSOpts(this)" style="display:flex;align-items:center;gap:8px;">${_TTS_ICON} הקרא תשובות</button>
                     <div class="q-options" id="rs-opts-${i}">${optionsHtml}</div>
                     <div class="q-explanation" id="rs-exp-${i}" style="${expStyle}">
                         ${q.explanation}
@@ -3050,7 +3196,7 @@ function generateAIContent(word) {
                     <button id="sc-pause-btn" class="sc-timer-pause-btn" onclick="toggleSCTimerPause(); updateSCPauseBtn();">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> השהה
                     </button>
-                    <div id="sc-expired-msg" class="sc-timer-expired-msg" style="display:none;">⏰ פג הזמן!</div>
+                    <div id="sc-expired-msg" class="sc-timer-expired-msg" style="display:none;display:flex;align-items:center;gap:5px;"><svg class="timer-expired-icon" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="9" y1="3" x2="15" y2="3"/><path d="M12 13 L15 11" stroke-linecap="round"/></svg> פג הזמן!</div>
                 </div>
             </div>`;
         }
@@ -3061,8 +3207,22 @@ function generateAIContent(word) {
             ['sc','rs','rc'].forEach(s => {
                 document.getElementById(`ts-${s}-en`).checked = timerSettings[s].enabled;
                 refreshTimerPresets(s);
+                let dur = timerSettings[s].duration;
+                let mins = Math.floor(dur / 60), secs = dur % 60;
+                let minEl = document.getElementById(`ts-${s}-min`);
+                let secEl = document.getElementById(`ts-${s}-sec`);
+                if (minEl) minEl.value = mins > 0 ? mins : '';
+                if (secEl) secEl.value = secs > 0 ? secs : '';
             });
             m.style.display = 'flex';
+        }
+
+        function applyCustomTimer(screen) {
+            let mins = parseInt(document.getElementById(`ts-${screen}-min`).value) || 0;
+            let secs = parseInt(document.getElementById(`ts-${screen}-sec`).value) || 0;
+            let total = mins * 60 + secs;
+            if (total < 5) return;
+            setTimerDuration(screen, total);
         }
 
         function refreshTimerPresets(screen) {
@@ -3070,12 +3230,10 @@ function generateAIContent(word) {
             let row = document.getElementById(`ts-${screen}-dur`);
             if (!row) return;
             row.querySelectorAll('.timer-preset-btn').forEach(btn => {
-                let v = parseInt(btn.getAttribute('onclick').match(/,(\d+)\)/)[1]);
-                btn.classList.toggle('active', v === dur);
+                let m = btn.getAttribute('onclick').match(/,(\d+)\)/);
+                if (!m) return;
+                btn.classList.toggle('active', parseInt(m[1]) === dur);
             });
-            let inp = document.getElementById(`ts-${screen}-custom`);
-            let presets = Array.from(row.querySelectorAll('.timer-preset-btn')).map(b => parseInt(b.getAttribute('onclick').match(/,(\d+)\)/)[1]));
-            inp.value = presets.includes(dur) ? '' : dur;
         }
 
         function updateTimerSetting(screen) {
