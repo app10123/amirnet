@@ -984,9 +984,55 @@ let aiPreloadedData = {};
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
             if (document.querySelectorAll('.modal[style*="display: flex"]').length > 0) return;
-            if (document.getElementById('vocab-screen').style.display === 'none') return;
-            if (currentMode === 'flash') { if (e.code === 'Space') { e.preventDefault(); flipCard(); } else if (e.code === 'ArrowRight') { markWord('learning'); } else if (e.code === 'ArrowLeft') { markWord('known'); } }
+
+            // Vocab screen
+            if (document.getElementById('vocab-screen').style.display !== 'none') {
+                if (currentMode === 'flash') { if (e.code === 'Space') { e.preventDefault(); flipCard(); } else if (e.code === 'ArrowRight') { markWord('learning'); } else if (e.code === 'ArrowLeft') { markWord('known'); } }
+                return;
+            }
+
+            // SC screen — only when a question is open
+            if (document.getElementById('sentences-screen').style.display !== 'none' &&
+                document.getElementById('sc-question-view').style.display !== 'none') {
+                handleSCKey(e); return;
+            }
+
+            // RS screen — only when a question is open
+            if (document.getElementById('restatements-screen').style.display !== 'none' &&
+                document.getElementById('rs-question-view').style.display !== 'none') {
+                handleRSKey(e); return;
+            }
         });
+
+        function handleSCKey(e) {
+            let i = currentSentenceIndex;
+            let q = sentenceQuestions[i];
+            let isAnswered = sentenceProgress[i] && sentenceProgress[i].answered;
+            if (!isAnswered && (e.code === 'Digit1' || e.code === 'Digit2' || e.code === 'Digit3' || e.code === 'Digit4')) {
+                e.preventDefault();
+                let opt = parseInt(e.key) - 1;
+                if (opt < q.options.length) answerSC(i, opt, q.correct);
+            } else if (isAnswered && (e.code === 'Enter' || e.code === 'ArrowRight')) {
+                e.preventDefault(); nextSentence();
+            } else if (e.code === 'ArrowLeft') {
+                e.preventDefault(); if (i > 0) showSCQuestion(i - 1);
+            }
+        }
+
+        function handleRSKey(e) {
+            let i = currentRestatementIndex;
+            let q = restatementQuestions[i];
+            let isAnswered = restatementProgress[i] && restatementProgress[i].answered;
+            if (!isAnswered && (e.code === 'Digit1' || e.code === 'Digit2' || e.code === 'Digit3' || e.code === 'Digit4')) {
+                e.preventDefault();
+                let opt = parseInt(e.key) - 1;
+                if (opt < q.options.length) answerRS(i, opt, q.correct);
+            } else if (isAnswered && (e.code === 'Enter' || e.code === 'ArrowRight')) {
+                e.preventDefault(); nextRestatement();
+            } else if (e.code === 'ArrowLeft') {
+                e.preventDefault(); if (i > 0) showRSQuestion(i - 1);
+            }
+        }
 
         function toggleDarkMode() { isDarkMode = !isDarkMode; document.body.classList.toggle('dark-mode'); localStorage.setItem('darkMode', isDarkMode); }
         function toggleAdminMode() { isAdminMode = !isAdminMode; document.getElementById('adminBtnMenu').classList.toggle('admin-active', isAdminMode); if(currentMode === 'list') renderList(); document.getElementById('topMenu').classList.remove('show');}
