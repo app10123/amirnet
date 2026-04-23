@@ -1128,21 +1128,41 @@ function updateStatsUI() {
             });
             chartDiv.innerHTML = html;
         }
+        let _dayWords = [];
+
         function openDayModal(dateStr, dayName) {
-            let words = allWords.filter(w => userProgress[w.en] && userProgress[w.en].learnedDate === dateStr);
-            let title = document.getElementById('dayModalTitle');
-            let body  = document.getElementById('dayModalBody');
+            _dayWords = allWords.filter(w => userProgress[w.en] && userProgress[w.en].learnedDate === dateStr);
             let dateLabel = new Date(dateStr + 'T12:00:00').toLocaleDateString('he-IL', { day: 'numeric', month: 'long' });
-            title.textContent = `${dayName} — ${dateLabel}`;
-            if (words.length === 0) {
-                body.innerHTML = `<div style="text-align:center; padding:20px; color:#94a3b8; font-size:15px;">אין מילים שנלמדו ביום זה</div>`;
+            document.getElementById('dayModalTitle').textContent = `${dayName} — ${dateLabel}`;
+            let body = document.getElementById('dayModalBody');
+            if (_dayWords.length === 0) {
+                body.innerHTML = `<div style="text-align:center;padding:20px;color:#94a3b8;font-size:15px;">אין מילים שנלמדו ביום זה</div>`;
             } else {
-                body.innerHTML = words.map(w => {
-                    let he = editedTranslations[w.en] || w.he;
-                    return `<div class="day-word-row"><span class="day-word-en">${w.en}</span><span class="day-word-he">${he}</span></div>`;
-                }).join('');
+                body.innerHTML = `
+                    <p style="text-align:center;color:#64748b;font-size:14px;margin:4px 0 8px;">${_dayWords.length} מילים</p>
+                    <button class="action-btn-top" style="background:var(--btn-primary);" onclick="dayModalShowList()">
+                        📋 צפה ברשימה
+                    </button>
+                    <button class="action-btn-top" style="background:#34c759;" onclick="dayModalFlashcards()">
+                        🃏 תרגל בכרטיסיות
+                    </button>`;
             }
             document.getElementById('dayWordsModal').style.display = 'flex';
+        }
+
+        function dayModalShowList() {
+            document.getElementById('dayModalBody').innerHTML = _dayWords.map(w => {
+                let he = editedTranslations[w.en] || w.he;
+                return `<div class="day-word-row"><span class="day-word-en">${w.en}</span><span class="day-word-he">${he}</span></div>`;
+            }).join('');
+        }
+
+        function dayModalFlashcards() {
+            document.getElementById('dayWordsModal').style.display = 'none';
+            currentList = [..._dayWords];
+            currentIndex = 0;
+            switchAppScreen('vocab');
+            switchMode('flash');
         }
 
         function smartShuffle() {
