@@ -1480,24 +1480,35 @@ function generateAIContent(word) {
             let passageBtn = document.getElementById('rc-tts-passage');
             if (passageBtn) { passageBtn.textContent = '🔊 הקרא את הקטע'; passageBtn.classList.remove('speaking'); }
 
+            let savedProgress = (textProgress[id] && textProgress[id].answered) ? textProgress[id].answered : {};
+
             let qHtml = "";
             t.questions.forEach((q, qIndex) => {
+                let wasAnswered = savedProgress[qIndex] !== undefined;
+                let optHtml = q.options.map((opt, optIndex) => {
+                    let cls = 'q-opt-btn';
+                    let dis = '';
+                    if (wasAnswered) {
+                        dis = 'disabled';
+                        if (optIndex === q.correct) cls += ' correct';
+                        else if (savedProgress[qIndex] === optIndex) cls += ' wrong';
+                    }
+                    let click = wasAnswered ? '' : `onclick="answerRC(${qIndex}, ${optIndex}, ${q.correct}, '${q.explanation.replace(/'/g, "\\'")}')"`;
+                    return `<button class="${cls}" ${dis} ${click}>${opt}</button>`;
+                }).join('');
+                let expStyle = wasAnswered ? 'display:block' : '';
                 qHtml += `<div class="question-box">
                     <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:4px;">
                         <div class="q-text" style="flex:1;margin:0;">${q.q}</div>
                         <button class="tts-btn" onclick="ttsRCQ(${qIndex},this)" title="הקרא שאלה">🔊</button>
                     </div>
-                    <div class="q-options" id="q-opts-${qIndex}">`; 
-                q.options.forEach((opt, optIndex) => { 
-                    qHtml += `<button class="q-opt-btn" onclick="answerRC(${qIndex}, ${optIndex}, ${q.correct}, '${q.explanation.replace(/'/g, "\\'")}')">${opt}</button>`; 
-                }); 
-                qHtml += `</div>
-                    <div class="q-explanation" id="q-exp-${qIndex}">
+                    <div class="q-options" id="q-opts-${qIndex}">${optHtml}</div>
+                    <div class="q-explanation" id="q-exp-${qIndex}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px; height:20px; stroke:currentColor; fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> אסטרטגיית אמירנט:</h4>
                         <p>${q.explanation}</p>
                     </div>
-                </div>`; 
-            }); 
+                </div>`;
+            });
             document.getElementById('rc-questions').innerHTML = qHtml; 
         }
         
@@ -1517,7 +1528,7 @@ function generateAIContent(word) {
             document.getElementById(`q-exp-${qIndex}`).style.display = 'block'; 
             
             if(!textProgress[currentTextId]) textProgress[currentTextId] = { answered: {} };
-            textProgress[currentTextId].answered[qIndex] = true;
+            textProgress[currentTextId].answered[qIndex] = selectedOpt;
             let t = allTexts.find(x => x.id === currentTextId);
             if(Object.keys(textProgress[currentTextId].answered).length === t.questions.length) {
                 textProgress[currentTextId].completed = true;
@@ -2016,8 +2027,9 @@ function generateAIContent(word) {
         }
         function ttsSpeak(texts, btnEl) {
             if (window.speechSynthesis.speaking) {
+                let prevBtn = _ttsBtn;
                 ttsStop();
-                if (_ttsBtn === btnEl || btnEl === null) return;
+                if (prevBtn === btnEl) return;
             }
             _ttsBtn = btnEl;
             if (btnEl) { btnEl.textContent = '⏹'; btnEl.classList.add('speaking'); }
@@ -2090,6 +2102,13 @@ function generateAIContent(word) {
         function answerSC(qIndex, selectedOpt, correctOpt) {
             stopSCTimer();
             let isCorrect = selectedOpt === correctOpt;
+            if (!sentenceProgress[qIndex]) {
+                let ds = JSON.parse(localStorage.getItem('dailyStats')) || {};
+                let today = new Date().toISOString().split('T')[0];
+                ds[today] = (ds[today] || 0) + 1;
+                localStorage.setItem('dailyStats', JSON.stringify(ds));
+                renderChart();
+            }
             sentenceProgress[qIndex] = { answered: true, correct: isCorrect, selectedOpt: selectedOpt };
             localStorage.setItem('sentenceProgress', JSON.stringify(sentenceProgress));
 
@@ -2605,6 +2624,13 @@ function generateAIContent(word) {
         function answerRS(qIndex, selectedOpt, correctOpt) {
             stopSCTimer();
             let isCorrect = selectedOpt === correctOpt;
+            if (!restatementProgress[qIndex]) {
+                let ds = JSON.parse(localStorage.getItem('dailyStats')) || {};
+                let today = new Date().toISOString().split('T')[0];
+                ds[today] = (ds[today] || 0) + 1;
+                localStorage.setItem('dailyStats', JSON.stringify(ds));
+                renderChart();
+            }
             restatementProgress[qIndex] = { answered: true, correct: isCorrect, selectedOpt: selectedOpt };
             localStorage.setItem('restatementProgress', JSON.stringify(restatementProgress));
 
