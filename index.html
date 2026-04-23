@@ -2062,7 +2062,8 @@ function generateAIContent(word) {
                     "Logical reasoning can improve a great deal when based on emotional motives.",
                     "When making a decision, emotional motives may have a more significant role than logical reasons."
                 ],
-                correct: 3
+                correct: 3,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 4 נכונה:</strong> "may have a more significant role" = "may have a more important role". שומרת על מילת ההסתייגות "may" ועל ההשוואה לחשיבה הלוגית — כל המרכיבים נשמרו.</p><p>✗ <strong>תשובה 1:</strong> "יש יותר מניעים רגשיים מסיבות לוגיות" — מדברת על כמות המניעים, לא על חשיבות תפקידם. שינוי משמעות מהותי.</p><p>✗ <strong>תשובה 2:</strong> מוסיפה הערכה שאינה במקור — "החלטות רגשיות טובות פחות". המשפט המקורי לא הביע שיפוט ערכי.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — טוענת שהחשיבה הלוגית משתפרת הודות לרגש. המקור אמר שהרגש חשוב <em>יותר</em> מהחשיבה הלוגית, לא שהחשיבה מרוויחה מהרגש.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בשאלות ניסוח מחדש — בדוק שלושה דברים: (א) מילות הסתייגות ("may") נשמרו, (ב) כיוון ההשוואה נכון, (ג) לא נוסף מידע שאינו במקור.</p></div>`
             },
             {
                 q: "Russia is the largest exporter of diamonds in the world.",
@@ -2072,7 +2073,8 @@ function generateAIContent(word) {
                     "More large diamonds are exported from Russia than from any other country.",
                     "Diamonds and pearls exported from Russia are the largest in the world."
                 ],
-                correct: 1
+                correct: 1,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "אין מדינה שמייצאת כמו רוסיה" = שקיפות לוגית מדויקת ל"מייצאת הגדולה ביותר". הניסוח שונה לחלוטין אך המשמעות זהה.</p><p>✗ <strong>תשובה 1:</strong> "המדינה הגדולה ביותר שמייצאת יהלומים" — מתייחסת לגודל המדינה (territory), לא לנפח הייצוא. החלפת מושג.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה את המילה "large" (יהלומים גדולים) שאינה במקור. המקור עוסק בכמות הייצוא, לא בגודל האבנים.</p><p>✗ <strong>תשובה 4:</strong> מוסיפה "pearls" (פנינים) שכלל לא הוזכרו, ומשנה את הנושא לגודל האבנים במקום נפח הייצוא.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב להוספות (מילים חדשות: "large", "pearls") ולהחלפות (גודל מדינה ≠ נפח ייצוא). גם שינוי קטן פוסל ניסוח מחדש.</p></div>`
             },
             {
                 q: "African-American civil rights activist Rosa Parks bravely challenged discriminatory laws, which defined strict segregation between races on public facilities in the United States, leading to a revolution in the legal status of African-Americans.",
@@ -2082,7 +2084,8 @@ function generateAIContent(word) {
                     "Due to discriminatory laws, few people opposed racism in the United States, beside Rosa Parks.",
                     "Rosa Parks was able to change the legal status of African-Americans in the United States by demonstrating the racism behind the discriminatory laws."
                 ],
-                correct: 1
+                correct: 1,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "heroically defied" = "bravely challenged", "initiating a revolution" = "leading to a revolution". כל מרכיבי הליבה נשמרו בדיוק.</p><p>✗ <strong>תשובה 1:</strong> "החוקים המפלים היו הדאגה העיקרית שלה" — המקור לא אמר שהחוקים היו הדאגה העיקרית; הוא אמר שהיא אתגרה אותם. עיוות הכוונה.</p><p>✗ <strong>תשובה 3:</strong> "מעטים התנגדו לגזענות מלבד רוזה פארקס" — מידע זה כלל אינו במשפט המקורי. המצאת עובדה.</p><p>✗ <strong>תשובה 4:</strong> "על ידי הדגמת הגזענות שמאחורי החוקים" — משנה את המנגנון. המקור: היא אתגרה את החוקים עצמם. תשובה 4: היא הדגימה את הגזענות שמאחוריהם. הבדל מהותי.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים ארוכים — זהה את פועל הליבה (challenged) ואת התוצאה (revolution). הניסוח הנכון ישמור על שניהם מבלי לשנות את המנגנון.</p></div>`
             },
             {
                 q: "Industrial waste emitted from large factories constitute a major source of pollution in nearby rivers.",
@@ -2092,7 +2095,8 @@ function generateAIContent(word) {
                     "Large factories were the first source found to be emitting pollution into rivers in nearby areas.",
                     "Industrial waste is a negligible source of pollution in rivers that reside near large factories."
                 ],
-                correct: 0
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "רוב הזיהום בנהרות נובע מהפסולת התעשייתית" = "פסולת תעשייתית מהווה מקור עיקרי לזיהום". שקיפות מדויקת עם שינוי מבנה בלבד.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הסיבתיות — "המפעלים פולטים פסולת על ידי זיהום נהרות". המקור: הפסולת גורמת לזיהום. תשובה 2: הזיהום הוא האמצעי לפליטת הפסולת. היפוך לוגי.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה מידע זמני ("היו הראשונים שנמצאו") שאינו קיים כלל במקור.</p><p>✗ <strong>תשובה 4:</strong> "מקור זניח" — הפוך ישיר ל"מקור עיקרי" (major source). ניגוד מוחלט.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> תחילה — פסול מיד תשובות שמשתמשות בניגוד של מילת מפתח (major ↔ negligible). אחר כך — בדוק היפוך סיבתיות. שתי שגיאות קלאסיות אלו מופיעות בכל מבחן.</p></div>`
             },
             {
                 q: "Persian conqueror Cyrus the Great spared those who yielded to him.",
@@ -2102,7 +2106,8 @@ function generateAIContent(word) {
                     "Cyrus the Great betrayed many of the people who trusted him.",
                     "Cyrus the Great adored those who yielded him their allegiance."
                 ],
-                correct: 1
+                correct: 1,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "did not kill" = המשמעות המדויקת של "spared". "surrendered" = "yielded". שקיפות לקסיקלית מושלמת ללא תוספות.</p><p>✗ <strong>תשובה 1:</strong> מוסיפה "enemies" ו-"defeated by Persia" שאינם במקור. המקור אמר פשוט "those who yielded" — ללא הגדרה מי הם.</p><p>✗ <strong>תשובה 3:</strong> "בגד במי שנתן בו אמון" — הפוך לחלוטין מהמשמעות המקורית. כיוון שגוי ב-180 מעלות.</p><p>✗ <strong>תשובה 4:</strong> "adored" חורג מ-"spared" — לא להרוג מישהו ≠ לאהוב אותו. בנוסף, "yielded allegiance" שונה מ-"yielded to him".</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים קצרים הפועל הוא הכל. חפש שקיפות ישירה (spared = did not kill), לא הגזמה (adored) ולא הפוך (betrayed). בדוק גם שלא נוספו מתארים למושא ("enemies", "defeated by Persia").</p></div>`
             },
             {
                 q: "Forgiveness is an attribute of the strong.",
@@ -2112,7 +2117,8 @@ function generateAIContent(word) {
                     "Forgiving the strong is a powerful attribute.",
                     "It is tough to forgive strong people."
                 ],
-                correct: 0
+                correct: 0,
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "שחרור רגשות טינה דורש כוח רב" — פרפרזה של "סליחה היא תכונת החזקים": מי שמסוגל לסלוח הוא חזק. שמירה מדויקת על הרעיון.</p><p>✗ <strong>תשובה 2:</strong> מחליפה סובייקט ואובייקט — "חזקים זוכים לסליחה" במקום "חזקים סולחים". המקור: חזקים הם המוחלים, לא המקבלים.</p><p>✗ <strong>תשובה 3:</strong> "לסלוח לחזקים היא תכונה" — מצמצמת את הסליחה לסליחה ספציפית לחזקים, בעוד המקור מדבר על סליחה בכלל כתכונה של חזקים.</p><p>✗ <strong>תשובה 4:</strong> "קשה לסלוח לאנשים חזקים" — שוב מכוונת את הסליחה כלפי חזקים, ולא מחזקים. שגיאת כיוון זהה לתשובה 2.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים פילוסופיים קצרים — זהה מי הסובייקט ומי האובייקט. "חזקים סולחים" (=המקור) שונה לחלוטין מ-"סולחים לחזקים" (=שגויות 2, 3, 4).</p></div>`
             }
         ];
 
@@ -2214,10 +2220,8 @@ function generateAIContent(word) {
                     <div class="sentence-text-q" style="margin-top:0; direction:ltr; text-align:left;">${q.q}</div>
                     <div class="q-options" id="rs-opts-${i}">${optionsHtml}</div>
                     <div class="q-explanation" id="rs-exp-${i}" style="${expStyle}">
-                        <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> תשובה נכונה:</h4>
-                        <p style="direction:ltr; text-align:left;">${q.options[q.correct]}</p>
-                        <div id="rs-ai-${i}" class="ai-explanation-wrap" style="${isAnswered && localStorage.getItem('aiExplanation_restatement_'+i) ? '' : 'display:none'}">${isAnswered ? (localStorage.getItem('aiExplanation_restatement_'+i) || '') : ''}</div>
-                        <button class="action-btn-top" style="margin-top:20px;width:100%;height:50px;font-size:17px;" onclick="nextRestatement()">${nextLabel}</button>
+                        ${q.explanation}
+                        <button class="action-btn-top" style="margin-top:16px;width:100%;height:50px;font-size:17px;" onclick="nextRestatement()">${nextLabel}</button>
                     </div>
                 </div>`;
         }
@@ -2238,9 +2242,6 @@ function generateAIContent(word) {
                 btns[correctOpt].classList.add('correct');
             }
             document.getElementById(`rs-exp-${qIndex}`).style.display = 'block';
-
-            let q = restatementQuestions[qIndex];
-            fetchAIExplanation(`rs-ai-${qIndex}`, 'restatement', q.q, q.options, correctOpt, selectedOpt);
         }
 
         function nextRestatement() {
