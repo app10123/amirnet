@@ -2031,7 +2031,7 @@ function generateAIContent(word) {
             };
             run(0);
         }
-        function ttsSC(btnEl)      { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak([q.q], btnEl); }
+        function ttsSC(btnEl)      { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak([q.q.replace(/_+/g, 'blank')], btnEl); }
         function ttsSCOpts(btnEl)  { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak(q.options, btnEl); }
         function ttsRS(btnEl)      { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak([q.q], btnEl); }
         function ttsRSOpts(btnEl)  { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak(q.options, btnEl); }
