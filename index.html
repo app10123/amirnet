@@ -328,6 +328,10 @@
         .sc-nav-btn:disabled { opacity: 0.3; cursor: default; }
         .sc-nav-btn svg { stroke: var(--text-color); width: 20px; height: 20px; }
 
+        .tts-btn { background: none; border: 2px solid var(--border-color); border-radius: 10px; font-size: 17px; width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.15s; flex-shrink: 0; line-height: 1; font-family: sans-serif; }
+        .tts-btn:hover { background: var(--bg-color); border-color: var(--btn-primary); }
+        .tts-btn.speaking { border-color: var(--btn-primary); background: rgba(0,122,255,0.1); }
+        .tts-row-btn { width: 100%; height: 38px; font-size: 14px; font-weight: 700; font-family: 'Rubik', sans-serif; color: var(--text-color); margin-bottom: 8px; border-radius: 10px; }
         @media print { body > *:not(#printArea) { display: none !important; } body { background: white; color: black; margin: 0; padding: 0;} #printArea { display: block !important; width: 100%; direction: rtl; } .print-table { width: 100%; border-collapse: collapse; margin-top: 20px;} .print-table th, .print-table td { border: 1px solid #000; padding: 8px; text-align: right; } .print-en { direction: ltr; font-weight: bold; text-align: left !important;} .print-instructions { text-align: center; margin-bottom: 20px; font-size: 14px; font-weight: bold; padding: 10px; border: 2px solid #000; display: inline-block; background: #eee;} .print-cards-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; } .print-card-foldable { width: 48%; border: 2px solid #000; display: flex; box-sizing: border-box; page-break-inside: avoid; height: 120px; margin-bottom: 15px; } .print-card-half { width: 50%; display: flex; align-items: center; justify-content: center; padding: 10px; text-align: center; box-sizing: border-box; } .he-side { font-size: 18px; font-weight: bold; } .en-side { font-size: 20px; font-weight: bold; direction: ltr; border-left: 2px dashed #999; } }
     </style>
 </head>
@@ -452,7 +456,7 @@
         <div id="texts-list" style="width: 100%; display: flex; flex-direction: column; gap: 15px;"></div>
         <div id="active-reading">
             <button class="back-to-texts" onclick="closeReadingText()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg> חזור לרשימת הטקסטים</button>
-            <div class="reading-content-box"><h3 id="rc-title" style="direction:ltr; text-align:left;"></h3><div id="rc-content"></div></div>
+            <div class="reading-content-box"><h3 id="rc-title" style="direction:ltr; text-align:left;"></h3><div id="rc-content"></div><button id="rc-tts-passage" class="tts-btn tts-row-btn" style="margin-top:12px;" onclick="ttsPassage(this)">🔊 הקרא את הקטע</button></div>
             <h3 style="margin: 10px 0 0 0; color: var(--btn-primary); font-size: 24px; text-align:left; direction:ltr;">Questions</h3>
             <div id="rc-questions" style="display:flex; flex-direction:column; gap:25px;"></div>
         </div>
@@ -969,6 +973,7 @@ let aiPreloadedData = {};
             document.getElementById('sentences-screen').style.display = screen === 'sentences' ? 'flex' : 'none';
             document.getElementById('restatements-screen').style.display = screen === 'restatements' ? 'flex' : 'none';
             if (screen !== 'sentences' && screen !== 'restatements') stopSCTimer();
+            ttsStop();
 
             document.getElementById('nav-vocab').classList.toggle('active', screen === 'vocab');
             document.getElementById('nav-reading').classList.toggle('active', screen === 'reading');
@@ -1471,10 +1476,17 @@ function generateAIContent(word) {
                 });
             });
             
-            let qHtml = ""; 
-            t.questions.forEach((q, qIndex) => { 
+            ttsStop();
+            let passageBtn = document.getElementById('rc-tts-passage');
+            if (passageBtn) { passageBtn.textContent = '🔊 הקרא את הקטע'; passageBtn.classList.remove('speaking'); }
+
+            let qHtml = "";
+            t.questions.forEach((q, qIndex) => {
                 qHtml += `<div class="question-box">
-                    <div class="q-text">${q.q}</div>
+                    <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:4px;">
+                        <div class="q-text" style="flex:1;margin:0;">${q.q}</div>
+                        <button class="tts-btn" onclick="ttsRCQ(${qIndex},this)" title="הקרא שאלה">🔊</button>
+                    </div>
                     <div class="q-options" id="q-opts-${qIndex}">`; 
                 q.options.forEach((opt, optIndex) => { 
                     qHtml += `<button class="q-opt-btn" onclick="answerRC(${qIndex}, ${optIndex}, ${q.correct}, '${q.explanation.replace(/'/g, "\\'")}')">${opt}</button>`; 
@@ -1491,7 +1503,7 @@ function generateAIContent(word) {
         
         document.addEventListener('click', () => { document.querySelectorAll('.tooltip').forEach(tt => tt.classList.remove('show-tooltip')); });
         
-        function closeReadingText() { document.getElementById('active-reading').style.display = 'none'; document.getElementById('texts-list').style.display = 'flex'; renderReadingTexts(); }
+        function closeReadingText() { ttsStop(); document.getElementById('active-reading').style.display = 'none'; document.getElementById('texts-list').style.display = 'flex'; renderReadingTexts(); }
         
         function answerRC(qIndex, selectedOpt, correctOpt, explanation) { 
             let btns = document.getElementById(`q-opts-${qIndex}`).querySelectorAll('.q-opt-btn'); 
@@ -1990,11 +2002,41 @@ function generateAIContent(word) {
         }
 
         function showSCList() {
-            stopSCTimer();
+            stopSCTimer(); ttsStop();
             document.getElementById('sc-list-view').style.display = 'block';
             document.getElementById('sc-question-view').style.display = 'none';
             renderSCList();
         }
+
+        // ===== Text-to-Speech =====
+        let _ttsBtn = null;
+        function ttsStop() {
+            if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
+            if (_ttsBtn) { _ttsBtn.textContent = '🔊'; _ttsBtn.classList.remove('speaking'); _ttsBtn = null; }
+        }
+        function ttsSpeak(texts, btnEl) {
+            if (window.speechSynthesis.speaking) {
+                ttsStop();
+                if (_ttsBtn === btnEl || btnEl === null) return;
+            }
+            _ttsBtn = btnEl;
+            if (btnEl) { btnEl.textContent = '⏹'; btnEl.classList.add('speaking'); }
+            const run = (idx) => {
+                if (idx >= texts.length) { if (btnEl) { btnEl.textContent = '🔊'; btnEl.classList.remove('speaking'); } _ttsBtn = null; return; }
+                let utt = new SpeechSynthesisUtterance(texts[idx]);
+                utt.lang = 'en-US';
+                utt.onend = () => run(idx + 1);
+                utt.onerror = () => { if (btnEl) { btnEl.textContent = '🔊'; btnEl.classList.remove('speaking'); } _ttsBtn = null; };
+                window.speechSynthesis.speak(utt);
+            };
+            run(0);
+        }
+        function ttsSC(btnEl)      { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak([q.q], btnEl); }
+        function ttsSCOpts(btnEl)  { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak(q.options, btnEl); }
+        function ttsRS(btnEl)      { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak([q.q], btnEl); }
+        function ttsRSOpts(btnEl)  { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak(q.options, btnEl); }
+        function ttsPassage(btnEl) { let el = document.getElementById('rc-content');     ttsSpeak([el.innerText], btnEl); }
+        function ttsRCQ(idx, btnEl){ let t = allTexts.find(x => x.id === currentTextId); ttsSpeak([t.questions[idx].q], btnEl); }
 
         function renderSentenceQuestion() {
             let container = document.getElementById('sc-container');
@@ -2031,7 +2073,11 @@ function generateAIContent(word) {
                 </div>
                 ${scTimerHTML()}
                 <div class="sentence-q-card">
-                    <div class="sentence-text-q" style="margin-top:0;">${q.q}</div>
+                    <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;">
+                        <div class="sentence-text-q" style="margin-top:0;flex:1;">${q.q}</div>
+                        <button class="tts-btn" onclick="ttsSC(this)" title="הקרא משפט">🔊</button>
+                    </div>
+                    <button class="tts-btn tts-row-btn" onclick="ttsSCOpts(this)">🔊 הקרא תשובות</button>
                     <div class="q-options" id="sc-opts-${i}">${optionsHtml}</div>
                     <div class="q-explanation" id="sc-exp-${i}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> הסבר לתשובה:</h4>
@@ -2502,7 +2548,7 @@ function generateAIContent(word) {
         }
 
         function showRSList() {
-            stopSCTimer();
+            stopSCTimer(); ttsStop();
             document.getElementById('rs-list-view').style.display = 'block';
             document.getElementById('rs-question-view').style.display = 'none';
             renderRSList();
@@ -2543,7 +2589,11 @@ function generateAIContent(word) {
                 </div>
                 ${scTimerHTML()}
                 <div class="sentence-q-card">
-                    <div class="sentence-text-q" style="margin-top:0; direction:ltr; text-align:left;">${q.q}</div>
+                    <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;">
+                        <div class="sentence-text-q" style="margin-top:0;flex:1;direction:ltr;text-align:left;">${q.q}</div>
+                        <button class="tts-btn" onclick="ttsRS(this)" title="הקרא משפט">🔊</button>
+                    </div>
+                    <button class="tts-btn tts-row-btn" onclick="ttsRSOpts(this)">🔊 הקרא תשובות</button>
                     <div class="q-options" id="rs-opts-${i}">${optionsHtml}</div>
                     <div class="q-explanation" id="rs-exp-${i}" style="${expStyle}">
                         ${q.explanation}
