@@ -48,7 +48,12 @@
         .dropdown-item.danger svg { stroke: #ff3b30; }
         .dropdown-item.danger:hover { background: rgba(255, 59, 48, 0.1); }
         .dropdown-divider { height: 1px; background: var(--border-color); margin: 4px 0; }
-        .dropdown-category { font-size: 11px; font-weight: 800; color: #94a3b8; padding: 4px 12px 2px; letter-spacing: 0.5px; text-transform: uppercase; }
+        .dropdown-category { display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:700; color:var(--text-color); padding:10px 12px 10px; cursor:pointer; border-radius:10px; transition:0.15s; user-select:none; width:100%; box-sizing:border-box; background:none; border:none; font-family:'Rubik',sans-serif; }
+        .dropdown-category:hover { background:var(--bg-color); }
+        .dropdown-category .cat-arrow { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; transition:transform 0.2s; flex-shrink:0; }
+        .dropdown-category.open .cat-arrow { transform:rotate(180deg); }
+        .dropdown-group { display:none; flex-direction:column; gap:2px; padding-bottom:2px; }
+        .dropdown-group.open { display:flex; }
 
         .stats-panel { width: 100%; max-width: 500px; background: var(--panel-bg); padding: 14px 16px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 14px; box-sizing: border-box; border: 2px solid var(--border-color); }
         .streak { font-size: 18px; font-weight: 800; color: #ff9800; text-align: center; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 6px;}
@@ -525,9 +530,62 @@
         .timer-stepper-input:focus { border-color:var(--btn-primary); }
 
         @media print { body > *:not(#printArea) { display: none !important; } body { background: white; color: black; margin: 0; padding: 0;} #printArea { display: block !important; width: 100%; direction: rtl; } .print-table { width: 100%; border-collapse: collapse; margin-top: 20px;} .print-table th, .print-table td { border: 1px solid #000; padding: 8px; text-align: right; } .print-en { direction: ltr; font-weight: bold; text-align: left !important;} .print-instructions { text-align: center; margin-bottom: 20px; font-size: 14px; font-weight: bold; padding: 10px; border: 2px solid #000; display: inline-block; background: #eee;} .print-cards-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; } .print-card-foldable { width: 48%; border: 2px solid #000; display: flex; box-sizing: border-box; page-break-inside: avoid; height: 120px; margin-bottom: 15px; } .print-card-half { width: 50%; display: flex; align-items: center; justify-content: center; padding: 10px; text-align: center; box-sizing: border-box; } .he-side { font-size: 18px; font-weight: bold; } .en-side { font-size: 20px; font-weight: bold; direction: ltr; border-left: 2px dashed #999; } }
+
+        /* ===== DASHBOARD ===== */
+        #dashboard-screen { position:fixed; inset:0; z-index:200; background:var(--bg-color); display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:40px 20px 40px; overflow-y:auto; }
+        .dash-logo { display:flex; align-items:center; gap:12px; margin-bottom:32px; }
+        .dash-logo-text { font-size:32px; font-weight:800; background:linear-gradient(135deg,#7c3aed,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .dash-logo-pro { font-size:12px; font-weight:800; background:linear-gradient(135deg,#7c3aed,#2563eb); color:white; padding:3px 8px; border-radius:6px; align-self:flex-start; margin-top:6px; }
+        .dash-greeting { font-size:20px; font-weight:700; color:var(--text-color); margin-bottom:24px; text-align:center; }
+        .dash-stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; width:100%; max-width:460px; margin-bottom:20px; }
+        .dash-stat-card { background:var(--panel-bg); border:2px solid var(--border-color); border-radius:16px; padding:16px; display:flex; flex-direction:column; align-items:center; gap:4px; box-shadow:var(--shadow); }
+        .dash-stat-num { font-size:28px; font-weight:800; }
+        .dash-stat-label { font-size:12px; font-weight:600; color:#94a3b8; }
+        .dash-stat-card.known .dash-stat-num { color:#34c759; }
+        .dash-stat-card.learning .dash-stat-num { color:#ff9500; }
+        .dash-stat-card.unseen .dash-stat-num { color:#94a3b8; }
+        .dash-stat-card.total .dash-stat-num { color:var(--btn-primary); }
+        .dash-section-title { font-size:13px; font-weight:800; color:#94a3b8; letter-spacing:0.5px; width:100%; max-width:460px; margin-bottom:10px; }
+        .dash-last-session { background:var(--panel-bg); border:2px solid var(--border-color); border-radius:16px; padding:16px 20px; width:100%; max-width:460px; margin-bottom:24px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px; box-sizing:border-box; }
+        .dash-session-row { display:flex; justify-content:space-between; align-items:center; font-size:14px; }
+        .dash-session-key { color:#94a3b8; font-weight:600; }
+        .dash-session-val { color:var(--text-color); font-weight:700; }
+        .dash-enter-btn { width:100%; max-width:460px; padding:18px; border-radius:16px; border:none; background:linear-gradient(135deg,#7c3aed,#2563eb); color:white; font-family:'Rubik',sans-serif; font-size:18px; font-weight:800; cursor:pointer; box-shadow:0 4px 20px rgba(124,58,237,0.4); transition:0.2s; display:flex; align-items:center; justify-content:center; gap:10px; }
+        .dash-enter-btn:active { transform:scale(0.97); }
+        body.dark-mode .dash-stat-card { background:rgba(255,255,255,0.06); }
+        body.dark-mode .dash-last-session { background:rgba(255,255,255,0.06); }
+        body.dark-mode .dash-stat-card.known .dash-stat-num { color:#00ff88; text-shadow:0 0 10px rgba(0,255,136,0.4); }
     </style>
 </head>
 <body>
+
+    <div id="dashboard-screen" style="display:none;">
+        <div class="dash-logo">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                <defs><linearGradient id="dgBolt" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#2563eb"/></linearGradient><filter id="dgGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+                <circle cx="22" cy="22" r="20" fill="rgba(124,58,237,0.1)" stroke="url(#dgBolt)" stroke-width="1.5"/>
+                <path d="M25 8 L14 24 H21 L19 36 L30 20 H23 Z" fill="url(#dgBolt)" filter="url(#dgGlow)"/>
+            </svg>
+            <div class="dash-logo-text">אמירנט</div>
+            <span class="dash-logo-pro">PRO</span>
+        </div>
+        <div class="dash-greeting" id="dashGreeting">שלום! כאן סיכום הלמידה שלך</div>
+        <div class="dash-section-title">סטטיסטיקות כלליות</div>
+        <div class="dash-stats-grid">
+            <div class="dash-stat-card known"><span class="dash-stat-num" id="dashKnown">—</span><span class="dash-stat-label">יודע</span></div>
+            <div class="dash-stat-card learning"><span class="dash-stat-num" id="dashLearning">—</span><span class="dash-stat-label">ללמידה</span></div>
+            <div class="dash-stat-card unseen"><span class="dash-stat-num" id="dashUnseen">—</span><span class="dash-stat-label">טרם מוין</span></div>
+            <div class="dash-stat-card total"><span class="dash-stat-num" id="dashTotal">—</span><span class="dash-stat-label">סה"כ מילים</span></div>
+        </div>
+        <div class="dash-section-title">הפעם האחרונה שלמדת</div>
+        <div class="dash-last-session" id="dashLastSession">
+            <div style="text-align:center;color:#94a3b8;font-size:14px;padding:8px 0;">טוען נתונים...</div>
+        </div>
+        <button class="dash-enter-btn" onclick="enterAppFromDash()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            המשך ללמוד
+        </button>
+    </div>
 
     <!-- SPLASH SCREEN -->
     <div id="splash-screen">
@@ -562,21 +620,41 @@
                 <button class="dropdown-item" onclick="reviewYesterday()" id="reviewYesterdayMenuItem"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> חזרה — מילים מאתמול</button>
                 <button class="dropdown-item" onclick="openAddModal()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> הוסף מילה חדשה</button>
                 <div class="dropdown-divider"></div>
-                <div class="dropdown-category">⚙️ תצוגה</div>
-                <button class="dropdown-item" onclick="toggleDarkMode()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> מצב לילה / יום</button>
+                <button class="dropdown-category" onclick="toggleMenuGroup('grp-display')">
+                    <span style="display:flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 7.76a6 6 0 0 0 0 8.49"/></svg> תצוגה</span>
+                    <svg class="cat-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="dropdown-group" id="grp-display">
+                    <button class="dropdown-item" onclick="toggleDarkMode()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> מצב לילה / יום</button>
+                </div>
                 <div class="dropdown-divider"></div>
-                <div class="dropdown-category">⏱️ טיימרים</div>
-                <button class="dropdown-item" onclick="openTimerSettings()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> הגדרות טיימר</button>
+                <button class="dropdown-category" onclick="toggleMenuGroup('grp-timers')">
+                    <span style="display:flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> טיימרים</span>
+                    <svg class="cat-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="dropdown-group" id="grp-timers">
+                    <button class="dropdown-item" onclick="openTimerSettings()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> הגדרות טיימר</button>
+                </div>
                 <div class="dropdown-divider"></div>
-                <div class="dropdown-category">💾 נתונים</div>
-                <button class="dropdown-item" onclick="exportProgress()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> גיבוי נתונים (הורדה)</button>
-                <button class="dropdown-item" onclick="document.getElementById('fileInput').click()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> שחזור נתונים מקובץ</button>
-                <button class="dropdown-item" onclick="openPrintModal()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg> הדפסת רשימות</button>
+                <button class="dropdown-category" onclick="toggleMenuGroup('grp-data')">
+                    <span style="display:flex;align-items:center;gap:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> נתונים</span>
+                    <svg class="cat-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="dropdown-group" id="grp-data">
+                    <button class="dropdown-item" onclick="exportProgress()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> גיבוי נתונים (הורדה)</button>
+                    <button class="dropdown-item" onclick="document.getElementById('fileInput').click()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> שחזור נתונים מקובץ</button>
+                    <button class="dropdown-item" onclick="openPrintModal()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg> הדפסת רשימות</button>
+                </div>
                 <div class="dropdown-divider"></div>
-                <div class="dropdown-category">🗑️ איפוס</div>
-                <button class="dropdown-item danger" onclick="toggleAdminMode()" id="adminBtnMenu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> מצב מחיקת מילים</button>
-                <button class="dropdown-item danger" onclick="resetProgressOnly()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12a10 10 0 1 0 10-10 1 1 0 0 0-1 1v3"></path><path d="M2 12h3"></path></svg> איפוס מילים שלמדתי</button>
-                <button class="dropdown-item danger" onclick="resetAllData()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> איפוס מלא (מחיקת הכל)</button>
+                <button class="dropdown-category" onclick="toggleMenuGroup('grp-reset')">
+                    <span style="display:flex;align-items:center;gap:8px;color:#ff3b30;"><svg viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> איפוס</span>
+                    <svg class="cat-arrow" viewBox="0 0 24 24" style="stroke:#ff3b30;"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="dropdown-group" id="grp-reset">
+                    <button class="dropdown-item danger" onclick="toggleAdminMode()" id="adminBtnMenu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> מצב מחיקת מילים</button>
+                    <button class="dropdown-item danger" onclick="resetProgressOnly()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12a10 10 0 1 0 10-10 1 1 0 0 0-1 1v3"></path><path d="M2 12h3"></path></svg> איפוס מילים שלמדתי</button>
+                    <button class="dropdown-item danger" onclick="resetAllData()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> איפוס מלא (מחיקת הכל)</button>
+                </div>
             </div>
             <input type="file" id="fileInput" style="display:none" onchange="importProgress(event)" accept=".json">
         </div>
@@ -626,7 +704,7 @@
                 <svg id="filterArrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0;transition:transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="filters" id="filtersPanel" style="display:none;">
-                <select id="sourceFilter" onchange="applyFilters()"><option value="All">כל המקורות</option></select>
+                <select id="sourceFilter" onchange="applyFilters();updateLevelFilterVisibility();"><option value="All">כל המקורות</option></select>
                 <select id="unitFilter" onchange="applyFilters()"><option value="All">כל היחידות</option></select>
                 <select id="levelFilter" onchange="applyFilters()"><option value="All">כל הרמות</option></select>
                 <select id="statusFilter" onchange="applyFilters()"><option value="All">כל הסטטוסים</option><option value="Unseen">טרם מוין</option><option value="Learning">ללמידה</option><option value="Known">יודע</option><option value="Hard">קשות במיוחד</option></select>
@@ -1203,10 +1281,47 @@
         }
         if (needsSave) localStorage.setItem('vocabProgress', JSON.stringify(userProgress));
 
-        let currentList = []; let currentIndex = 0; let isDarkMode = localStorage.getItem('darkMode') !== 'false'; let isReverse = false; let streak = parseInt(localStorage.getItem('vocabStreak')) || 0; let currentMode = 'flash';
+        let currentList = []; let currentIndex = 0; let isDarkMode = localStorage.getItem('darkMode') === 'true'; let isReverse = false; let streak = parseInt(localStorage.getItem('vocabStreak')) || 0; let currentMode = 'flash';
         let isAdminMode = false;
         let currentTextId = null;
 let aiPreloadedData = {};
+        function showDashboard() {
+            document.getElementById('dashboard-screen').style.display = 'flex';
+        }
+        function enterAppFromDash() {
+            document.getElementById('dashboard-screen').style.display = 'none';
+        }
+        function populateDashboard() {
+            let known = 0, learning = 0, total = allWords.length;
+            allWords.forEach(w => {
+                let s = (userProgress[w.en] && userProgress[w.en].status) || 'unseen';
+                if (s === 'known') known++;
+                else if (s === 'learning') learning++;
+            });
+            let unseen = total - known - learning;
+            document.getElementById('dashKnown').textContent = known;
+            document.getElementById('dashLearning').textContent = learning;
+            document.getElementById('dashUnseen').textContent = unseen;
+            document.getElementById('dashTotal').textContent = total;
+
+            let sess = JSON.parse(localStorage.getItem('lastSession') || 'null');
+            let sessEl = document.getElementById('dashLastSession');
+            if (sess && sess.date) {
+                let d = new Date(sess.date);
+                let dateStr = d.toLocaleDateString('he-IL', { day:'numeric', month:'long', year:'numeric' });
+                sessEl.innerHTML = `
+                    <div class="dash-session-row"><span class="dash-session-key">תאריך</span><span class="dash-session-val">${dateStr}</span></div>
+                    <div class="dash-session-row"><span class="dash-session-key">מילים שעברתי</span><span class="dash-session-val">${sess.reviewed || 0}</span></div>
+                    <div class="dash-session-row"><span class="dash-session-key">סימנתי כיודע</span><span class="dash-session-val">${sess.markedKnown || 0}</span></div>`;
+            } else {
+                sessEl.innerHTML = '<div style="text-align:center;color:#94a3b8;font-size:14px;padding:8px 0;">עדיין לא למדת — בוא נתחיל!</div>';
+            }
+
+            let hour = new Date().getHours();
+            let greeting = hour < 12 ? 'בוקר טוב!' : hour < 17 ? 'צהריים טובים!' : 'ערב טוב!';
+            document.getElementById('dashGreeting').textContent = `${greeting} כאן סיכום הלמידה שלך`;
+        }
+
       async function initApp() {
             if(isDarkMode) document.body.classList.add('dark-mode');
 			initSwipe();
@@ -1282,8 +1397,10 @@ let aiPreloadedData = {};
             let pb = document.getElementById('rc-tts-passage');
             if (pb && !pb.innerHTML.trim()) _ttsSetIcon(pb, false, 'הקרא את הקטע');
             populateFilters(); applyFilters(); renderReadingTexts(); renderSentenceQuestions(); renderRSList();
+            showDashboard();
+            populateDashboard();
         }
-        
+
         function resetAllData() {
             if(confirm("⚠️ אזהרה חמורה!\nפעולה זו תמחק לחלוטין את כל הנתונים, המילים, הטקסטים וההתקדמות שלך מהאפליקציה.\n\nהאם אתה בטוח שברצונך לאפס הכל?")) {
                 localStorage.clear();
@@ -1322,13 +1439,20 @@ let aiPreloadedData = {};
 
             let selectLevel = document.getElementById('levelFilter');
             selectLevel.innerHTML = '<option value="All">כל הרמות</option>';
-            Array.from(levels).sort().forEach(l => { selectLevel.innerHTML += `<option value="${l}">${l}</option>`; });
+            Array.from(levels).sort().forEach(l => { if (l === 'General') return; selectLevel.innerHTML += `<option value="${l}">${l}</option>`; });
+            updateLevelFilterVisibility();
 
             // reset stored labels after rebuilding options
             ['sourceFilter','unitFilter','levelFilter','statusFilter'].forEach(id => {
                 Array.from(document.getElementById(id).options).forEach(o => { o.dataset.label = ''; });
             });
             updateFilterCounts();
+        }
+
+        function updateLevelFilterVisibility() {
+            let src = document.getElementById('sourceFilter').value;
+            let levelWrap = document.getElementById('levelFilter');
+            if (levelWrap) levelWrap.style.display = src === 'Campus IL' ? 'none' : '';
         }
 
         function wordMatchesFilters(w, srcF, unitF, levelF, statusF) {
@@ -1439,6 +1563,15 @@ let aiPreloadedData = {};
             panel.style.display = open ? 'flex' : 'none';
             btn.classList.toggle('open', open);
         }
+        function toggleMenuGroup(id) {
+            let grp = document.getElementById(id);
+            let btn = grp.previousElementSibling;
+            let isOpen = grp.classList.contains('open');
+            // close all groups first
+            document.querySelectorAll('.dropdown-group').forEach(g => g.classList.remove('open'));
+            document.querySelectorAll('.dropdown-category').forEach(b => b.classList.remove('open'));
+            if (!isOpen) { grp.classList.add('open'); btn.classList.add('open'); }
+        }
         function toggleAdminMode() { isAdminMode = !isAdminMode; document.getElementById('adminBtnMenu').classList.toggle('admin-active', isAdminMode); if(currentMode === 'list') renderList(); document.getElementById('topMenu').classList.remove('show');}
         const _REVERSE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>`;
         function toggleReverse() { isReverse = !isReverse; let btn = document.getElementById('reverseBtn'); btn.innerHTML = isReverse ? `${_REVERSE_SVG}<span>ENG←HEB</span>` : `${_REVERSE_SVG}<span>HEB←ENG</span>`; btn.classList.toggle('active', isReverse); updateCard(); if(currentMode === 'quiz') startQuiz(); }
@@ -1507,10 +1640,10 @@ function updateStatsUI() {
                 body.innerHTML = `
                     <p style="text-align:center;color:#64748b;font-size:14px;margin:4px 0 8px;">${_dayWords.length} מילים</p>
                     <button class="action-btn-top" style="background:var(--btn-primary);" onclick="dayModalShowList()">
-                        📋 צפה ברשימה
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> צפה ברשימה
                     </button>
                     <button class="action-btn-top" style="background:#34c759;" onclick="dayModalFlashcards()">
-                        🃏 תרגל בכרטיסיות
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg> תרגל בכרטיסיות
                     </button>`;
             }
             document.getElementById('dayWordsModal').style.display = 'flex';
@@ -1598,7 +1731,15 @@ function updateStatsUI() {
                 userProgress[wordEn].nextReview = 0; // יחזור מיד ללמידה
             }
             
-            saveProgress(); let card = document.getElementById('flashcard');
+            saveProgress();
+            let _sess = JSON.parse(localStorage.getItem('lastSession') || '{}');
+            if (!_sess.date || new Date(_sess.date).toDateString() !== new Date().toDateString()) {
+                _sess = { date: new Date().toISOString(), reviewed: 0, markedKnown: 0 };
+            }
+            _sess.reviewed = (_sess.reviewed || 0) + 1;
+            if (newStatus === 'known') _sess.markedKnown = (_sess.markedKnown || 0) + 1;
+            localStorage.setItem('lastSession', JSON.stringify(_sess));
+            let card = document.getElementById('flashcard');
             if (card.classList.contains('is-flipped')) { card.classList.remove('is-flipped'); setTimeout(() => { advanceToNextCard(); }, 300); } else { advanceToNextCard(); }
         }
 
@@ -3710,7 +3851,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
             if(isStackMode && !userProgress[wordEn].inStack) {
                 applyFilters();
                 if(currentList.length === 0) {
-                    alert("סיימת את השינון הממוקד! כל הכבוד 🎉 יוצא ממצב שינון ממוקד.");
+                    alert("סיימת את השינון הממוקד! כל הכבוד! יוצא ממצב שינון ממוקד.");
                     toggleStackMode();
                 }
             } else {
@@ -3782,7 +3923,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
             if(isStackMode && newStatus === 'known') {
                 applyFilters();
                 if(currentList.length === 0) {
-                    alert("סיימת את השינון הממוקד! כל הכבוד 🎉 יוצא ממצב שינון ממוקד.");
+                    alert("סיימת את השינון הממוקד! כל הכבוד! יוצא ממצב שינון ממוקד.");
                     toggleStackMode();
                 }
             }
@@ -3807,8 +3948,8 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 <div id="micArea" class="drive-control-box" style="display: none;">
                     <div style="font-size: 14px; color: #64748b; margin-bottom: 8px; font-weight: bold;">הגדרות מצב נסיעה:</div>
                     <select id="driveInteraction" onchange="toggleInteractionMode()" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 16px; margin-bottom: 10px; background: white; font-family: inherit;">
-                        <option value="speak">אני עונה בעצמי (מיקרופון פתוח 🎤)</option>
-                        <option value="listen">האפליקציה מקריאה לי הכל 🔊</option>
+                        <option value="speak">אני עונה בעצמי (מיקרופון)</option>
+                        <option value="listen">האפליקציה מקריאה לי הכל</option>
                     </select>
                     <div id="micControls">
                         <button id="micBtn" onclick="toggleListening()" style="font-size: 40px; background: none; border: none; cursor: pointer; filter: grayscale(100%); transition: 0.3s;">🎤</button>
