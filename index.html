@@ -467,15 +467,16 @@
         body.dark-mode .side-btn:hover { border-color: #7c3aed; background: rgba(124,58,237,0.12); }
 
         /* ===== SPLASH SCREEN ===== */
-        #splash-screen { position:fixed; inset:0; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; background:linear-gradient(135deg,#0a0a1a 0%,#1a0a2e 50%,#0a1a2e 100%); transition:opacity 0.6s ease, visibility 0.6s ease; }
+        #splash-screen { position:fixed; inset:0; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(170deg,#0a0a1a 0%,#0d1b4b 100%); transition:opacity 0.7s ease, visibility 0.7s ease; }
         #splash-screen.fade-out { opacity:0; visibility:hidden; }
-        .splash-logo-wrap { display:flex; flex-direction:column; align-items:center; gap:14px; animation:splashIn 0.8s cubic-bezier(0.34,1.56,0.64,1) forwards; }
-        @keyframes splashIn { from { opacity:0; transform:scale(0.6) translateY(20px); } to { opacity:1; transform:scale(1) translateY(0); } }
-        .splash-logo-icon { width:90px; height:90px; }
-        .splash-logo-text { font-family:'Rubik',sans-serif; font-size:32px; font-weight:800; background:linear-gradient(135deg,#c4b5fd,#818cf8,#60a5fa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-1px; }
-        .splash-logo-sub { font-family:'Rubik',sans-serif; font-size:14px; font-weight:600; color:rgba(196,181,253,0.6); letter-spacing:2px; text-transform:uppercase; }
-        .splash-bar { width:140px; height:3px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden; margin-top:10px; }
-        .splash-bar-fill { height:100%; background:linear-gradient(90deg,#7c3aed,#2563eb); border-radius:10px; animation:splashLoad 1.4s ease forwards; }
+        .splash-logo-wrap { display:flex; flex-direction:column; align-items:center; gap:20px; animation:splashIn 0.9s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+        @keyframes splashIn { from { opacity:0; transform:scale(0.3); } to { opacity:1; transform:scale(1); } }
+        .splash-logo-icon { width:160px; height:160px; border-radius:28px; object-fit:cover; box-shadow:0 0 60px rgba(0,100,255,0.6), 0 0 120px rgba(0,100,255,0.2); }
+        .splash-logo-text { font-family:'Rubik',sans-serif; font-size:38px; font-weight:800; color:#ffffff; text-shadow:0 0 30px rgba(80,140,255,0.9), 0 0 60px rgba(80,140,255,0.4); letter-spacing:-1px; line-height:1; }
+        .splash-logo-pro-badge { font-family:'Rubik',sans-serif; font-size:12px; font-weight:800; background:linear-gradient(135deg,#7c3aed,#2563eb); color:white; padding:3px 9px; border-radius:6px; letter-spacing:1px; align-self:flex-end; margin-top:-14px; }
+        .splash-logo-sub { font-family:'Rubik',sans-serif; font-size:15px; font-weight:600; color:rgba(100,160,255,0.75); letter-spacing:0.5px; margin-top:-8px; }
+        .splash-bar { position:fixed; bottom:0; left:0; width:100%; height:3px; background:rgba(255,255,255,0.08); }
+        .splash-bar-fill { height:100%; background:linear-gradient(90deg,#2563eb,#7c3aed,#2563eb); border-radius:0; animation:splashLoad 2s ease forwards; }
         @keyframes splashLoad { from { width:0%; } to { width:100%; } }
 
         /* ===== ANIMATED FLAME ===== */
@@ -608,22 +609,14 @@
     <!-- SPLASH SCREEN -->
     <div id="splash-screen">
         <div class="splash-logo-wrap">
-            <svg class="splash-logo-icon" viewBox="0 0 90 90" fill="none">
-                <defs>
-                    <linearGradient id="splashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#c4b5fd"/>
-                        <stop offset="50%" stop-color="#818cf8"/>
-                        <stop offset="100%" stop-color="#60a5fa"/>
-                    </linearGradient>
-                    <filter id="splashGlow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                </defs>
-                <circle cx="45" cy="45" r="42" fill="rgba(124,58,237,0.15)" stroke="url(#splashGrad)" stroke-width="1.5"/>
-                <path d="M50 14 L28 48 H44 L40 76 L62 42 H46 Z" fill="url(#splashGrad)" filter="url(#splashGlow)" stroke="none"/>
-            </svg>
-            <div class="splash-logo-text">אמירנט</div>
-            <div class="splash-logo-sub">Psychometric English Pro</div>
-            <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+            <img class="splash-logo-icon" src="icon.png" alt="אמירנט">
+            <div style="display:flex;align-items:flex-end;gap:8px;">
+                <div class="splash-logo-text">אמירנט</div>
+                <span class="splash-logo-pro-badge">PRO</span>
+            </div>
+            <div class="splash-logo-sub">הדרך שלך להצלחה בפסיכומטרי</div>
         </div>
+        <div class="splash-bar"><div class="splash-bar-fill"></div></div>
     </div>
 
     <div id="vocab-screen" class="app-screen">
@@ -678,7 +671,7 @@
         </div>
 
         <div class="app-logo-header">
-            <img src="icon.png" style="width:52px;height:52px;border-radius:12px;object-fit:cover;flex-shrink:0;">
+            <img src="icon.png" style="width:48px;height:48px;border-radius:12px;object-fit:cover;flex-shrink:0;">
             <div>
                 <div class="app-logo-text">אמירנט</div>
             </div>
@@ -957,8 +950,8 @@
             if (!splash) return;
             setTimeout(() => {
                 splash.classList.add('fade-out');
-                setTimeout(() => { splash.style.display = 'none'; }, 650);
-            }, 1500);
+                setTimeout(() => { splash.style.display = 'none'; }, 700);
+            }, 2000);
         })();
 
         function fireConfetti() { const colors = ['#34c759', '#007aff', '#ff3b30', '#ffcc00', '#5856d6']; for(let i=0; i<40; i++) { let conf = document.createElement('div'); conf.className = 'confetti-particle'; conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; conf.style.left = Math.random() * 100 + 'vw'; conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; document.body.appendChild(conf); setTimeout(() => conf.remove(), 3500); } }
