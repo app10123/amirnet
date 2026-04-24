@@ -1309,9 +1309,11 @@
 let aiPreloadedData = {};
         function showDashboard() {
             document.getElementById('dashboard-screen').style.display = 'flex';
+            document.querySelector('.bottom-nav').style.display = 'none';
         }
         function enterAppFromDash() {
             document.getElementById('dashboard-screen').style.display = 'none';
+            document.querySelector('.bottom-nav').style.display = '';
         }
         function toggleDashUnits(toggleId, listId) {
             let btn  = document.getElementById(toggleId);
