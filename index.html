@@ -47,14 +47,16 @@
         .dropdown-item.danger { color: #ff3b30; background: rgba(255, 59, 48, 0.05); }
         .dropdown-item.danger svg { stroke: #ff3b30; }
         .dropdown-item.danger:hover { background: rgba(255, 59, 48, 0.1); }
+        .dropdown-divider { height: 1px; background: var(--border-color); margin: 4px 0; }
+        .dropdown-category { font-size: 11px; font-weight: 800; color: #94a3b8; padding: 4px 12px 2px; letter-spacing: 0.5px; text-transform: uppercase; }
 
-        .stats-panel { width: 100%; max-width: 500px; background: var(--panel-bg); padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 20px; box-sizing: border-box; border: 2px solid var(--border-color); }
-        .streak { font-size: 22px; font-weight: 800; color: #ff9800; text-align: center; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px;}
-        .streak svg { stroke: #ff9800; fill: #ffedd5; }
-        .progress-bar-bg { width: 100%; height: 12px; background-color: #e2e8f0; border-radius: 10px; overflow: hidden; margin-bottom: 12px;}
+        .stats-panel { width: 100%; max-width: 500px; background: var(--panel-bg); padding: 14px 16px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 14px; box-sizing: border-box; border: 2px solid var(--border-color); }
+        .streak { font-size: 18px; font-weight: 800; color: #ff9800; text-align: center; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 6px;}
+        .streak svg { stroke: #ff9800; fill: #ffedd5; width:18px; height:22px; }
+        .progress-bar-bg { width: 100%; height: 8px; background-color: #e2e8f0; border-radius: 10px; overflow: hidden; margin-bottom: 8px;}
         body.dark-mode .progress-bar-bg { background-color: #334155; }
         .progress-bar-fill { height: 100%; background-color: #34c759; width: 0%; transition: width 0.5s ease-in-out; }
-        .stats-text { display: flex; justify-content: space-between; font-size: 15px; font-weight: 600; color: #64748b;}
+        .stats-text { display: flex; justify-content: center; gap: 16px; font-size: 13px; font-weight: 700; color: #64748b;}
         .stat-known { color: #34c759; } .stat-learning { color: #ff3b30; } .stat-unseen { color: #94a3b8; }
 .chart-container { display: flex; align-items: flex-end; justify-content: space-between; height: 90px; margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border-color); gap: 4px; }
         .chart-bar-wrapper { display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; gap: 5px; cursor: pointer; border-radius: 8px; padding: 4px 2px 0; transition: background 0.15s; }
@@ -76,7 +78,22 @@
         .toggle-chart-btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.5; fill: none;}
         .app-screen { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; }
 
-        .controls-panel { width: 100%; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+        .controls-panel { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+        .filter-toggle-btn { display:flex; align-items:center; gap:6px; background:var(--panel-bg); border:2px solid var(--border-color); border-radius:10px; color:var(--text-color); font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; padding:9px 14px; cursor:pointer; width:100%; box-sizing:border-box; transition:0.2s; box-shadow:var(--shadow); }
+        .filter-toggle-btn:hover { border-color:var(--btn-primary); }
+        .filter-toggle-btn.open { border-color:var(--btn-primary); color:var(--btn-primary); }
+        .filter-toggle-btn.open #filterArrow { transform:rotate(180deg); }
+        .vocab-actions-row { display:flex; gap:6px; width:100%; }
+        .vocab-action-btn { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; background:var(--panel-bg); border:2px solid var(--border-color); border-radius:12px; color:var(--text-color); font-family:'Rubik',sans-serif; font-size:11px; font-weight:700; padding:10px 4px; cursor:pointer; transition:0.2s; box-shadow:var(--shadow); }
+        .vocab-action-btn svg { width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .vocab-action-btn:hover { border-color:var(--btn-primary); color:var(--btn-primary); }
+        .vocab-action-btn:active { transform:scale(0.94); }
+        .vocab-action-btn.active { background:var(--btn-primary); color:#fff; border-color:var(--btn-primary); }
+        .vocab-action-btn.active svg { stroke:#fff; }
+        .vocab-action-btn.stack-mode-btn { position:static; animation:none; margin:0; width:auto; padding:10px 4px !important; font-size:11px !important; font-weight:700; border-radius:12px; flex-direction:column; gap:4px; color:var(--text-color); }
+        .vocab-action-btn.stack-mode-btn svg { width:20px !important; height:20px !important; }
+        .vocab-action-btn.stack-mode-btn.active { background:var(--btn-primary); color:#fff; border-color:var(--btn-primary); animation:none; }
+        .vocab-action-btn.stack-mode-btn.active svg { stroke:#fff; }
         .search-container { position: relative; width: 100%; }
         .search-container svg { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); stroke: #94a3b8; }
         .search-bar { width: 100%; padding: 14px 45px 14px 14px; font-size: 16px; font-family: 'Rubik', sans-serif; border-radius: 12px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); box-sizing: border-box; outline: none; transition: 0.2s;}
@@ -500,8 +517,12 @@
         .timer-preset-btn { padding: 7px 11px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.15s; }
         .timer-preset-btn.active { background: var(--btn-primary); color: white; border-color: var(--btn-primary); }
         .timer-preset-btn:hover:not(.active) { border-color: var(--btn-primary); }
-        .timer-custom-input { width: 62px; padding: 7px 8px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; outline: none; text-align: center; direction: ltr; }
-        .timer-custom-input:focus { border-color: var(--btn-primary); }
+        .timer-stepper { display:flex; align-items:center; direction:ltr; gap:3px; }
+        .timer-stepper-btn { width:28px; height:28px; border-radius:7px; border:2px solid var(--border-color); background:var(--panel-bg); color:var(--text-color); font-size:17px; font-weight:800; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.15s; padding:0; font-family:'Rubik',sans-serif; flex-shrink:0; line-height:1; }
+        .timer-stepper-btn:hover { border-color:var(--btn-primary); color:var(--btn-primary); }
+        .timer-stepper-btn:active { transform:scale(0.88); }
+        .timer-stepper-input { width:38px; height:28px; text-align:center; border:2px solid var(--border-color); border-radius:7px; padding:0 2px; font-size:15px; font-weight:800; color:var(--text-color); background:var(--panel-bg); font-family:'Rubik',sans-serif; direction:ltr; box-sizing:border-box; outline:none; }
+        .timer-stepper-input:focus { border-color:var(--btn-primary); }
 
         @media print { body > *:not(#printArea) { display: none !important; } body { background: white; color: black; margin: 0; padding: 0;} #printArea { display: block !important; width: 100%; direction: rtl; } .print-table { width: 100%; border-collapse: collapse; margin-top: 20px;} .print-table th, .print-table td { border: 1px solid #000; padding: 8px; text-align: right; } .print-en { direction: ltr; font-weight: bold; text-align: left !important;} .print-instructions { text-align: center; margin-bottom: 20px; font-size: 14px; font-weight: bold; padding: 10px; border: 2px solid #000; display: inline-block; background: #eee;} .print-cards-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; } .print-card-foldable { width: 48%; border: 2px solid #000; display: flex; box-sizing: border-box; page-break-inside: avoid; height: 120px; margin-bottom: 15px; } .print-card-half { width: 50%; display: flex; align-items: center; justify-content: center; padding: 10px; text-align: center; box-sizing: border-box; } .he-side { font-size: 18px; font-weight: bold; } .en-side { font-size: 20px; font-weight: bold; direction: ltr; border-left: 2px dashed #999; } }
     </style>
@@ -540,11 +561,19 @@
             <div class="top-dropdown" id="topMenu">
                 <button class="dropdown-item" onclick="reviewYesterday()" id="reviewYesterdayMenuItem"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> חזרה — מילים מאתמול</button>
                 <button class="dropdown-item" onclick="openAddModal()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> הוסף מילה חדשה</button>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-category">⚙️ תצוגה</div>
+                <button class="dropdown-item" onclick="toggleDarkMode()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> מצב לילה / יום</button>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-category">⏱️ טיימרים</div>
+                <button class="dropdown-item" onclick="openTimerSettings()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> הגדרות טיימר</button>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-category">💾 נתונים</div>
                 <button class="dropdown-item" onclick="exportProgress()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> גיבוי נתונים (הורדה)</button>
                 <button class="dropdown-item" onclick="document.getElementById('fileInput').click()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> שחזור נתונים מקובץ</button>
                 <button class="dropdown-item" onclick="openPrintModal()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg> הדפסת רשימות</button>
-                <button class="dropdown-item" onclick="openTimerSettings()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> הגדרות טיימר</button>
-                <button class="dropdown-item" onclick="toggleDarkMode()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> מצב לילה / יום</button>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-category">🗑️ איפוס</div>
                 <button class="dropdown-item danger" onclick="toggleAdminMode()" id="adminBtnMenu"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> מצב מחיקת מילים</button>
                 <button class="dropdown-item danger" onclick="resetProgressOnly()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12a10 10 0 1 0 10-10 1 1 0 0 0-1 1v3"></path><path d="M2 12h3"></path></svg> איפוס מילים שלמדתי</button>
                 <button class="dropdown-item danger" onclick="resetAllData()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> איפוס מלא (מחיקת הכל)</button>
@@ -569,11 +598,11 @@
             </div>
             <span class="app-logo-pro">PRO</span>
         </div>
-        <h2 class="screen-title"><svg class="title-icon" viewBox="0 0 24 24"><defs><linearGradient id="boltGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#boltGrad2)" stroke="none"/></svg> אוצר מילים</h2>
+        <h2 class="screen-title">אוצר מילים</h2>
 
         <div class="stats-panel">
             <div class="streak" id="streakDisplay">
-                <svg class="flame-svg" width="22" height="26" viewBox="0 0 22 26" fill="none">
+                <svg class="flame-svg" width="16" height="20" viewBox="0 0 22 26" fill="none">
                     <defs><linearGradient id="flameGrad" x1="50%" y1="0%" x2="50%" y2="100%"><stop offset="0%" stop-color="#fbbf24"/><stop offset="60%" stop-color="#f97316"/><stop offset="100%" stop-color="#ef4444"/></linearGradient></defs>
                     <path d="M11 25C6.5 25 3 21.5 3 17c0-3.5 2-6.5 4-8.5-.5 2 .5 3.5 1.5 4.5C8.5 10 10 7 9.5 3.5 13 6 15 9.5 14 12.5c1.5-1 2.5-2.5 2.5-4.5C18.5 10.5 19 14 19 17c0 4.5-3.5 8-8 8z" fill="url(#flameGrad)"/>
                     <ellipse cx="11" cy="19" rx="3" ry="3.5" fill="rgba(255,255,255,0.3)"/>
@@ -591,23 +620,24 @@
                 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <input type="text" id="searchInput" class="search-bar" placeholder="חפש מילה באנגלית או בעברית..." oninput="applyFilters()">
             </div>
-            <div class="filters">
+            <button class="filter-toggle-btn" id="filterToggleBtn" onclick="toggleFilters()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;flex-shrink:0;"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+                סינון
+                <svg id="filterArrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0;transition:transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="filters" id="filtersPanel" style="display:none;">
                 <select id="sourceFilter" onchange="applyFilters()"><option value="All">כל המקורות</option></select>
                 <select id="unitFilter" onchange="applyFilters()"><option value="All">כל היחידות</option></select>
                 <select id="levelFilter" onchange="applyFilters()"><option value="All">כל הרמות</option></select>
                 <select id="statusFilter" onchange="applyFilters()"><option value="All">כל הסטטוסים</option><option value="Unseen">טרם מוין</option><option value="Learning">ללמידה</option><option value="Known">יודע</option><option value="Hard">קשות במיוחד</option></select>
             </div>
-            <div class="filters">
-                <button class="action-btn-top" onclick="smartShuffle()"><svg viewBox="0 0 24 24"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg> ערבב</button>
-                <button class="action-btn-top" onclick="toggleReverse()" id="reverseBtn"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg> ENG ➡️ HEB</button>
-                <button class="action-btn-top" id="driveModeBtn" onclick="toggleDrivingMode()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> נסיעה</button>
+            <div class="vocab-actions-row">
+                <button class="vocab-action-btn" onclick="smartShuffle()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg><span>ערבב</span></button>
+                <button class="vocab-action-btn" onclick="toggleReverse()" id="reverseBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg><span>HEB←ENG</span></button>
+                <button class="vocab-action-btn" id="driveModeBtn" onclick="toggleDrivingMode()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"></polygon></svg><span>נסיעה</span></button>
+                <button class="vocab-action-btn stack-mode-btn" id="stackModeToggleBtn" onclick="toggleStackMode()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line></svg><span id="stackBtnText">שינון</span><span class="stack-badge" style="font-size:10px;padding:1px 5px;"><span id="stackToggleCount">0</span>/10</span></button>
             </div>
         </div>
-<button id="stackModeToggleBtn" class="stack-mode-btn" onclick="toggleStackMode()">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="2" y1="12" x2="5" y2="12"></line><line x1="19" y1="12" x2="22" y2="12"></line></svg>
-            <span id="stackBtnText">שינון ממוקד</span>
-            <span class="stack-badge"><span id="stackToggleCount">0</span>/10</span>
-        </button>
 		
         <div class="tabs">
             <div class="tab-btn active" id="tab-flash" onclick="switchMode('flash')"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg> כרטיסיות</div>
@@ -756,12 +786,20 @@
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',120)">2ד׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('sc',180)">3ד׳</button>
                 </div>
-                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
-                    <input type="number" class="timer-custom-input" id="ts-sc-sec" min="5" max="59" placeholder="שנ׳" title="שניות" style="width:58px;">
-                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">שנ׳ +</span>
-                    <input type="number" class="timer-custom-input" id="ts-sc-min" min="0" max="10" placeholder="ד׳" title="דקות" style="width:50px;">
-                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">ד׳</span>
-                    <button class="timer-preset-btn" onclick="applyCustomTimer('sc')" style="flex:1;">הגדר</button>
+                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;flex-wrap:wrap;">
+                    <div class="timer-stepper">
+                        <button class="timer-stepper-btn" onclick="stepTimer('sc','min',-1)">−</button>
+                        <input type="text" inputmode="numeric" class="timer-stepper-input" id="ts-sc-min" value="1" maxlength="2">
+                        <button class="timer-stepper-btn" onclick="stepTimer('sc','min',+1)">+</button>
+                    </div>
+                    <span style="font-weight:700;font-size:13px;color:var(--text-color);">ד׳</span>
+                    <div class="timer-stepper">
+                        <button class="timer-stepper-btn" onclick="stepTimer('sc','sec',-1)">−</button>
+                        <input type="text" inputmode="numeric" class="timer-stepper-input" id="ts-sc-sec" value="0" maxlength="2">
+                        <button class="timer-stepper-btn" onclick="stepTimer('sc','sec',+1)">+</button>
+                    </div>
+                    <span style="font-weight:700;font-size:13px;color:var(--text-color);">שנ׳</span>
+                    <button class="timer-preset-btn" onclick="applyCustomTimer('sc')" style="flex:1;min-width:60px;">הגדר</button>
                 </div>
             </div>
             <!-- RS -->
@@ -777,12 +815,20 @@
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',120)">2ד׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rs',180)">3ד׳</button>
                 </div>
-                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
-                    <input type="number" class="timer-custom-input" id="ts-rs-sec" min="0" max="59" placeholder="שנ׳" style="width:58px;">
-                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">שנ׳ +</span>
-                    <input type="number" class="timer-custom-input" id="ts-rs-min" min="0" max="10" placeholder="ד׳" style="width:50px;">
-                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">ד׳</span>
-                    <button class="timer-preset-btn" onclick="applyCustomTimer('rs')" style="flex:1;">הגדר</button>
+                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;flex-wrap:wrap;">
+                    <div class="timer-stepper">
+                        <button class="timer-stepper-btn" onclick="stepTimer('rs','min',-1)">−</button>
+                        <input type="text" inputmode="numeric" class="timer-stepper-input" id="ts-rs-min" value="1" maxlength="2">
+                        <button class="timer-stepper-btn" onclick="stepTimer('rs','min',+1)">+</button>
+                    </div>
+                    <span style="font-weight:700;font-size:13px;color:var(--text-color);">ד׳</span>
+                    <div class="timer-stepper">
+                        <button class="timer-stepper-btn" onclick="stepTimer('rs','sec',-1)">−</button>
+                        <input type="text" inputmode="numeric" class="timer-stepper-input" id="ts-rs-sec" value="0" maxlength="2">
+                        <button class="timer-stepper-btn" onclick="stepTimer('rs','sec',+1)">+</button>
+                    </div>
+                    <span style="font-weight:700;font-size:13px;color:var(--text-color);">שנ׳</span>
+                    <button class="timer-preset-btn" onclick="applyCustomTimer('rs')" style="flex:1;min-width:60px;">הגדר</button>
                 </div>
             </div>
             <!-- RC -->
@@ -797,12 +843,20 @@
                     <button class="timer-preset-btn" onclick="setTimerDuration('rc',180)">3ד׳</button>
                     <button class="timer-preset-btn" onclick="setTimerDuration('rc',300)">5ד׳</button>
                 </div>
-                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
-                    <input type="number" class="timer-custom-input" id="ts-rc-sec" min="0" max="59" placeholder="שנ׳" style="width:58px;">
-                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">שנ׳ +</span>
-                    <input type="number" class="timer-custom-input" id="ts-rc-min" min="0" max="10" placeholder="ד׳" style="width:50px;">
-                    <span style="color:var(--text-color);font-weight:700;font-size:13px;">ד׳</span>
-                    <button class="timer-preset-btn" onclick="applyCustomTimer('rc')" style="flex:1;">הגדר</button>
+                <div style="display:flex;gap:8px;margin-top:8px;align-items:center;flex-wrap:wrap;">
+                    <div class="timer-stepper">
+                        <button class="timer-stepper-btn" onclick="stepTimer('rc','min',-1)">−</button>
+                        <input type="text" inputmode="numeric" class="timer-stepper-input" id="ts-rc-min" value="1" maxlength="2">
+                        <button class="timer-stepper-btn" onclick="stepTimer('rc','min',+1)">+</button>
+                    </div>
+                    <span style="font-weight:700;font-size:13px;color:var(--text-color);">ד׳</span>
+                    <div class="timer-stepper">
+                        <button class="timer-stepper-btn" onclick="stepTimer('rc','sec',-1)">−</button>
+                        <input type="text" inputmode="numeric" class="timer-stepper-input" id="ts-rc-sec" value="0" maxlength="2">
+                        <button class="timer-stepper-btn" onclick="stepTimer('rc','sec',+1)">+</button>
+                    </div>
+                    <span style="font-weight:700;font-size:13px;color:var(--text-color);">שנ׳</span>
+                    <button class="timer-preset-btn" onclick="applyCustomTimer('rc')" style="flex:1;min-width:60px;">הגדר</button>
                 </div>
             </div>
             <button class="action-btn-top" style="background:#94a3b8;margin-top:18px;height:48px;font-size:16px;" onclick="document.getElementById('timerSettingsModal').style.display='none'">סגור</button>
@@ -1149,7 +1203,7 @@
         }
         if (needsSave) localStorage.setItem('vocabProgress', JSON.stringify(userProgress));
 
-        let currentList = []; let currentIndex = 0; let isDarkMode = localStorage.getItem('darkMode') === 'true'; let isReverse = false; let streak = parseInt(localStorage.getItem('vocabStreak')) || 0; let currentMode = 'flash';
+        let currentList = []; let currentIndex = 0; let isDarkMode = localStorage.getItem('darkMode') !== 'false'; let isReverse = false; let streak = parseInt(localStorage.getItem('vocabStreak')) || 0; let currentMode = 'flash';
         let isAdminMode = false;
         let currentTextId = null;
 let aiPreloadedData = {};
@@ -1378,8 +1432,16 @@ let aiPreloadedData = {};
         }
 
         function toggleDarkMode() { isDarkMode = !isDarkMode; document.body.classList.toggle('dark-mode'); localStorage.setItem('darkMode', isDarkMode); }
+        function toggleFilters() {
+            let panel = document.getElementById('filtersPanel');
+            let btn = document.getElementById('filterToggleBtn');
+            let open = panel.style.display === 'none' || panel.style.display === '';
+            panel.style.display = open ? 'flex' : 'none';
+            btn.classList.toggle('open', open);
+        }
         function toggleAdminMode() { isAdminMode = !isAdminMode; document.getElementById('adminBtnMenu').classList.toggle('admin-active', isAdminMode); if(currentMode === 'list') renderList(); document.getElementById('topMenu').classList.remove('show');}
-        function toggleReverse() { isReverse = !isReverse; document.getElementById('reverseBtn').innerHTML = isReverse ? `<svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg> HEB ➡️ ENG` : `<svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg> ENG ➡️ HEB`; updateCard(); if(currentMode === 'quiz') startQuiz(); }
+        const _REVERSE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>`;
+        function toggleReverse() { isReverse = !isReverse; let btn = document.getElementById('reverseBtn'); btn.innerHTML = isReverse ? `${_REVERSE_SVG}<span>ENG←HEB</span>` : `${_REVERSE_SVG}<span>HEB←ENG</span>`; btn.classList.toggle('active', isReverse); updateCard(); if(currentMode === 'quiz') startQuiz(); }
         function switchMode(mode) { currentMode = mode; document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active')); document.getElementById(`tab-${mode}`).classList.add('active'); document.getElementById('flashcard-section').style.display = (mode === 'flash') ? 'flex' : 'none'; document.getElementById('quiz-section').style.display = (mode === 'quiz') ? 'flex' : 'none'; document.getElementById('list-section').style.display = (mode === 'list') ? 'flex' : 'none'; if(mode === 'flash') updateCard(); if(mode === 'quiz') startQuiz(); if(mode === 'list') renderList(); }
         
         function saveProgress() { localStorage.setItem('vocabProgress', JSON.stringify(userProgress)); localStorage.setItem('vocabStreak', streak); localStorage.setItem('editedTranslations', JSON.stringify(editedTranslations)); localStorage.setItem('customSentences', JSON.stringify(customSentences)); localStorage.setItem('customAssocs', JSON.stringify(customAssocs)); updateStatsUI(); }
@@ -3211,10 +3273,17 @@ function generateAIContent(word) {
                 let mins = Math.floor(dur / 60), secs = dur % 60;
                 let minEl = document.getElementById(`ts-${s}-min`);
                 let secEl = document.getElementById(`ts-${s}-sec`);
-                if (minEl) minEl.value = mins > 0 ? mins : '';
-                if (secEl) secEl.value = secs > 0 ? secs : '';
+                if (minEl) minEl.value = mins;
+                if (secEl) secEl.value = secs;
             });
             m.style.display = 'flex';
+        }
+
+        function stepTimer(screen, field, delta) {
+            let el = document.getElementById(`ts-${screen}-${field}`);
+            let max = field === 'min' ? 10 : 59;
+            let val = Math.max(0, Math.min(max, (parseInt(el.value) || 0) + delta));
+            el.value = val;
         }
 
         function applyCustomTimer(screen) {
@@ -3775,7 +3844,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 window.speechSynthesis.cancel();
                 clearTimeout(drivingTimeout);
                 btn.classList.add('drive-mode-active');
-                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg> עצור';
+                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg><span>עצור</span>';
                 transDiv.style.display = 'block';
                 document.getElementById('editLinksContainer').style.display = 'none';
                 if (micArea) micArea.style.display = 'block';
@@ -3785,7 +3854,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 window.speechSynthesis.cancel();
                 clearTimeout(drivingTimeout);
                 btn.classList.remove('drive-mode-active');
-                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg> נסיעה';
+                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"></polygon></svg><span>נסיעה</span>';
                 transDiv.style.display = 'none';
                 document.getElementById('editLinksContainer').style.display = 'flex';
                 if (micArea) micArea.style.display = 'none';
