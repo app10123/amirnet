@@ -777,7 +777,6 @@
                 <svg id="filterArrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;flex-shrink:0;transition:transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="filters" id="filtersPanel" style="display:none;">
-                <select id="sourceFilter" onchange="applyFilters();updateLevelFilterVisibility();"><option value="All">כל המקורות</option></select>
                 <select id="unitFilter" onchange="applyFilters()"><option value="All">כל היחידות</option></select>
                 <select id="levelFilter" onchange="applyFilters()"><option value="All">כל הרמות</option></select>
                 <select id="statusFilter" onchange="applyFilters()"><option value="All">כל הסטטוסים</option><option value="Unseen">טרם מוין</option><option value="Learning">ללמידה</option><option value="Known">יודע</option><option value="Hard">קשות במיוחד</option></select>
@@ -1573,13 +1572,15 @@ let aiPreloadedData = {};
             }
         }
 
-        function populateFilters() {
-            let sources = new Set(); let units = new Set(); let levels = new Set();
-            allWords.forEach(w => { if(w.source) sources.add(w.source); if(w.unit) units.add(w.unit); if(w.level) levels.add(w.level); });
+        function getActiveSource() {
+            return localStorage.getItem('learningSource') || 'All';
+        }
 
-            let selectSource = document.getElementById('sourceFilter');
-            selectSource.innerHTML = '<option value="All">כל המקורות</option>';
-            Array.from(sources).sort().forEach(s => { selectSource.innerHTML += `<option value="${s}">${s}</option>`; });
+        function populateFilters() {
+            let activeSource = getActiveSource();
+            let sourceWords = activeSource === 'All' ? allWords : allWords.filter(w => w.source === activeSource);
+            let units = new Set(); let levels = new Set();
+            sourceWords.forEach(w => { if(w.unit) units.add(w.unit); if(w.level) levels.add(w.level); });
 
             let selectUnit = document.getElementById('unitFilter');
             selectUnit.innerHTML = '<option value="All">כל היחידות</option>';
@@ -1590,20 +1591,20 @@ let aiPreloadedData = {};
             Array.from(levels).sort().forEach(l => { if (l === 'General') return; selectLevel.innerHTML += `<option value="${l}">${l}</option>`; });
             updateLevelFilterVisibility();
 
-            // reset stored labels after rebuilding options
-            ['sourceFilter','unitFilter','levelFilter','statusFilter'].forEach(id => {
+            ['unitFilter','levelFilter','statusFilter'].forEach(id => {
                 Array.from(document.getElementById(id).options).forEach(o => { o.dataset.label = ''; });
             });
             updateFilterCounts();
         }
 
         function updateLevelFilterVisibility() {
-            let src = document.getElementById('sourceFilter').value;
+            let src = getActiveSource();
             let levelWrap = document.getElementById('levelFilter');
             if (levelWrap) levelWrap.style.display = src === 'Campus IL' ? 'none' : '';
         }
 
-        function wordMatchesFilters(w, srcF, unitF, levelF, statusF) {
+        function wordMatchesFilters(w, unitF, levelF, statusF) {
+            let srcF = getActiveSource();
             if (srcF !== 'All' && w.source !== srcF) return false;
             if (unitF !== 'All' && w.unit !== unitF) return false;
             if (levelF !== 'All' && w.level !== levelF) return false;
@@ -1618,7 +1619,6 @@ let aiPreloadedData = {};
         }
 
         function updateFilterCounts() {
-            let sv  = document.getElementById('sourceFilter').value;
             let uv  = document.getElementById('unitFilter').value;
             let lv  = document.getElementById('levelFilter').value;
             let stv = document.getElementById('statusFilter').value;
@@ -1630,10 +1630,9 @@ let aiPreloadedData = {};
                     opt.text = opt.dataset.label + ' (' + cnt + ')';
                 });
             }
-            setCount('sourceFilter', (w,v) => wordMatchesFilters(w, v,  uv,  lv,  stv));
-            setCount('unitFilter',   (w,v) => wordMatchesFilters(w, sv, v,   lv,  stv));
-            setCount('levelFilter',  (w,v) => wordMatchesFilters(w, sv, uv,  v,   stv));
-            setCount('statusFilter', (w,v) => wordMatchesFilters(w, sv, uv,  lv,  v  ));
+            setCount('unitFilter',   (w,v) => wordMatchesFilters(w, v,  lv,  stv));
+            setCount('levelFilter',  (w,v) => wordMatchesFilters(w, uv, v,   stv));
+            setCount('statusFilter', (w,v) => wordMatchesFilters(w, uv, lv,  v  ));
         }
 
         function switchAppScreen(screen) {
@@ -1727,7 +1726,7 @@ let aiPreloadedData = {};
         
         function saveProgress() { localStorage.setItem('vocabProgress', JSON.stringify(userProgress)); localStorage.setItem('vocabStreak', streak); localStorage.setItem('editedTranslations', JSON.stringify(editedTranslations)); localStorage.setItem('customSentences', JSON.stringify(customSentences)); localStorage.setItem('customAssocs', JSON.stringify(customAssocs)); updateStatsUI(); }
 function updateStatsUI() {
-            let sourceVal = document.getElementById('sourceFilter').value; let unitVal = document.getElementById('unitFilter').value; let levelVal = document.getElementById('levelFilter').value;
+            let sourceVal = getActiveSource(); let unitVal = document.getElementById('unitFilter').value; let levelVal = document.getElementById('levelFilter').value;
             let relevantWords = allWords.filter(w => { return (sourceVal === 'All' || w.source === sourceVal) && (unitVal === 'All' || w.unit === unitVal) && (levelVal === 'All' || w.level === levelVal); });
             let knownCount = 0; let learningCount = 0;
             relevantWords.forEach(w => { let st = (userProgress[w.en] && userProgress[w.en].status) ? userProgress[w.en].status : 'unseen'; if(st === 'known') knownCount++; if(st === 'learning') learningCount++; });
@@ -3924,7 +3923,6 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 }
                 // שמור מצב לפני הכניסה
                 _preStackState = {
-                    source: document.getElementById('sourceFilter').value,
                     unit:   document.getElementById('unitFilter').value,
                     level:  document.getElementById('levelFilter').value,
                     status: document.getElementById('statusFilter').value,
@@ -3946,7 +3944,6 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 // שחזר מצב קודם
                 let saved = _preStackState || JSON.parse(localStorage.getItem('preStackState'));
                 if (saved) {
-                    document.getElementById('sourceFilter').value = saved.source;
                     document.getElementById('unitFilter').value   = saved.unit;
                     document.getElementById('levelFilter').value  = saved.level;
                     document.getElementById('statusFilter').value = saved.status;
@@ -4014,7 +4011,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
 
         // דריסת הפילטר המקורי שיתמוך בשינון ממוקד
         function applyFilters() {
-            let sourceVal = document.getElementById('sourceFilter').value; let unitVal = document.getElementById('unitFilter').value; let levelVal = document.getElementById('levelFilter').value; let statusVal = document.getElementById('statusFilter').value; let searchVal = document.getElementById('searchInput').value.toLowerCase();
+            let sourceVal = getActiveSource(); let unitVal = document.getElementById('unitFilter').value; let levelVal = document.getElementById('levelFilter').value; let statusVal = document.getElementById('statusFilter').value; let searchVal = document.getElementById('searchInput').value.toLowerCase();
             let now = Date.now();
 
             currentList = allWords.filter(w => {
