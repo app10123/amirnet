@@ -1894,8 +1894,14 @@ function updateStatsUI() {
             _sess.reviewed = (_sess.reviewed || 0) + 1;
             if (newStatus === 'known') _sess.markedKnown = (_sess.markedKnown || 0) + 1;
             localStorage.setItem('lastSession', JSON.stringify(_sess));
-            let card = document.getElementById('flashcard');
-            if (card.classList.contains('is-flipped')) { card.classList.remove('is-flipped'); setTimeout(() => { advanceToNextCard(); }, 300); } else { advanceToNextCard(); }
+            if (isDrivingMode) {
+                currentIndex++;
+                if (currentIndex >= currentList.length) currentIndex = 0;
+                setTimeout(() => { playNextDrivingWord(); }, 600);
+            } else {
+                let card = document.getElementById('flashcard');
+                if (card.classList.contains('is-flipped')) { card.classList.remove('is-flipped'); setTimeout(() => { advanceToNextCard(); }, 300); } else { advanceToNextCard(); }
+            }
         }
 
         function advanceToNextCard() { if (currentIndex < currentList.length - 1) { currentIndex++; } else { alert('סיימת את הרשימה הנוכחית!'); applyFilters(); return; } updateCard(); }
