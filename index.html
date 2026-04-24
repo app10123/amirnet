@@ -555,6 +555,17 @@
         body.dark-mode .dash-stat-card { background:rgba(255,255,255,0.06); }
         body.dark-mode .dash-last-session { background:rgba(255,255,255,0.06); }
         body.dark-mode .dash-stat-card.known .dash-stat-num { color:#00ff88; text-shadow:0 0 10px rgba(0,255,136,0.4); }
+        .dash-source-block { width:100%; max-width:460px; margin-bottom:16px; }
+        .dash-source-title { font-size:15px; font-weight:800; color:var(--text-color); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+        .dash-source-title svg { width:16px; height:16px; stroke:var(--btn-primary); fill:none; stroke-width:2.5; flex-shrink:0; }
+        .dash-unit-row { display:flex; align-items:center; gap:10px; padding:7px 14px; background:var(--panel-bg); border:1.5px solid var(--border-color); border-radius:10px; margin-bottom:5px; box-shadow:var(--shadow); }
+        .dash-unit-name { font-size:13px; font-weight:700; color:var(--text-color); min-width:64px; flex-shrink:0; }
+        .dash-unit-bar-wrap { flex:1; height:7px; background:var(--border-color); border-radius:4px; overflow:hidden; }
+        .dash-unit-bar { height:100%; background:linear-gradient(90deg,#7c3aed,#2563eb); border-radius:4px; transition:width 0.5s ease; min-width:3px; }
+        .dash-unit-bar.done { background:linear-gradient(90deg,#34c759,#2db34f); }
+        .dash-unit-remain { font-size:12px; font-weight:700; color:#94a3b8; min-width:48px; text-align:left; flex-shrink:0; }
+        .dash-unit-remain.done { color:#34c759; }
+        body.dark-mode .dash-unit-row { background:rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
@@ -577,6 +588,9 @@
             <div class="dash-stat-card unseen"><span class="dash-stat-num" id="dashUnseen">—</span><span class="dash-stat-label">טרם מוין</span></div>
             <div class="dash-stat-card total"><span class="dash-stat-num" id="dashTotal">—</span><span class="dash-stat-label">סה"כ מילים</span></div>
         </div>
+        <div class="dash-section-title">קידום לפי יחידות</div>
+        <div id="dashUnitsKidum" class="dash-source-block"></div>
+        <div id="dashUnitsCampus" class="dash-source-block"></div>
         <div class="dash-section-title">הפעם האחרונה שלמדת</div>
         <div class="dash-last-session" id="dashLastSession">
             <div style="text-align:center;color:#94a3b8;font-size:14px;padding:8px 0;">טוען נתונים...</div>
@@ -1303,6 +1317,35 @@ let aiPreloadedData = {};
             document.getElementById('dashLearning').textContent = learning;
             document.getElementById('dashUnseen').textContent = unseen;
             document.getElementById('dashTotal').textContent = total;
+
+            // Unit breakdown per source
+            function buildSourceUnits(sourceId, containerEl, displayName) {
+                let units = {};
+                allWords.filter(w => w.source === sourceId).forEach(w => {
+                    let u = w.unit || 'כללי';
+                    if (!units[u]) units[u] = { total: 0, known: 0 };
+                    units[u].total++;
+                    if ((userProgress[w.en] && userProgress[w.en].status) === 'known') units[u].known++;
+                });
+                let keys = Object.keys(units).sort((a, b) => (parseInt(a) || 0) - (parseInt(b) || 0));
+                if (keys.length === 0) { containerEl.innerHTML = ''; return; }
+                let icon = `<svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`;
+                let html = `<div class="dash-source-title">${icon} ${displayName}</div>`;
+                keys.forEach(u => {
+                    let { total: t, known: k } = units[u];
+                    let remain = t - k;
+                    let pct = Math.round((k / t) * 100);
+                    let done = remain === 0;
+                    html += `<div class="dash-unit-row">
+                        <span class="dash-unit-name">יחידה ${u}</span>
+                        <div class="dash-unit-bar-wrap"><div class="dash-unit-bar${done ? ' done' : ''}" style="width:${pct}%"></div></div>
+                        <span class="dash-unit-remain${done ? ' done' : ''}">${done ? '✓ הושלם' : remain + ' נשאר'}</span>
+                    </div>`;
+                });
+                containerEl.innerHTML = html;
+            }
+            buildSourceUnits('Kidum', document.getElementById('dashUnitsKidum'), 'קידום');
+            buildSourceUnits('Campus IL', document.getElementById('dashUnitsCampus'), 'קמפוס IL');
 
             let sess = JSON.parse(localStorage.getItem('lastSession') || 'null');
             let sessEl = document.getElementById('dashLastSession');
