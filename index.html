@@ -34,6 +34,9 @@
         
         /* תפריט 3 נקודות חדש */
         .top-nav-container { position: fixed; top: 15px; left: 15px; z-index: 1500; }
+        .home-nav-btn { position: fixed; top: 15px; right: 15px; z-index: 1500; width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--border-color); background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .home-nav-btn:hover { border-color: #7c3aed; box-shadow: 0 0 12px rgba(124,58,237,0.35); }
+        .home-nav-btn svg { width: 22px; height: 22px; }
         .main-menu-btn { background: var(--panel-bg); border: 2px solid var(--border-color); cursor: pointer; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); transition: 0.2s; }
         .main-menu-btn svg { stroke: var(--text-color); width: 24px; height: 24px; }
         .main-menu-btn:active { transform: scale(0.9); }
@@ -714,6 +717,19 @@
         <input type="file" id="fileInput" style="display:none" onchange="importProgress(event)" accept=".json">
     </div>
 
+    <button class="home-nav-btn" id="homeNavBtn" onclick="goToDashboard()" title="מסך הבית">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="homeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#7c3aed"/>
+                    <stop offset="100%" stop-color="#2563eb"/>
+                </linearGradient>
+            </defs>
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="url(#homeGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 21V12h6v9" stroke="url(#homeGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
     <div id="vocab-screen" class="app-screen">
 
         <div class="app-logo-header">
@@ -1346,11 +1362,17 @@ let aiPreloadedData = {};
             document.getElementById('dashboard-screen').style.display = 'flex';
             document.querySelector('.bottom-nav').style.display = 'none';
             document.querySelector('.top-nav-container').style.display = 'none';
+            document.getElementById('homeNavBtn').style.display = 'none';
         }
         function enterAppFromDash() {
             document.getElementById('dashboard-screen').style.display = 'none';
             document.querySelector('.bottom-nav').style.display = '';
             document.querySelector('.top-nav-container').style.display = '';
+            document.getElementById('homeNavBtn').style.display = '';
+        }
+        function goToDashboard() {
+            populateDashboard();
+            showDashboard();
         }
         function toggleDashUnits(toggleId, listId) {
             let btn  = document.getElementById(toggleId);
