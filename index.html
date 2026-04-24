@@ -130,7 +130,7 @@
         .card-back { background: var(--card-back-bg); transform: rotateY(180deg) translateZ(1px); z-index: 1; }
         
         .word-container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 25px; }
-        .word { font-size: 36px; font-weight: 800; color: var(--text-color); margin: 0; line-height: 1.2; word-wrap: break-word; word-break: break-word; max-width: 95%; }
+        .word { font-size: 36px; font-weight: 800; color: var(--text-color); margin: 0; line-height: 1.2; overflow-wrap: break-word; word-break: normal; max-width: 95%; text-align: center; }
         .word-translation-drive { font-size: 26px; font-weight: 700; color: #ff9800; margin-top: 15px; display: none; direction: rtl; animation: fadeIn 0.3s; }
         .translation { font-size: 32px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--text-color);}
         
@@ -580,11 +580,7 @@
 
     <div id="dashboard-screen" style="display:none;">
         <div class="dash-logo">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-                <defs><linearGradient id="dgBolt" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#2563eb"/></linearGradient><filter id="dgGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-                <circle cx="22" cy="22" r="20" fill="rgba(124,58,237,0.1)" stroke="url(#dgBolt)" stroke-width="1.5"/>
-                <path d="M25 8 L14 24 H21 L19 36 L30 20 H23 Z" fill="url(#dgBolt)" filter="url(#dgGlow)"/>
-            </svg>
+            <img src="icon.png" style="width:64px;height:64px;border-radius:16px;object-fit:cover;flex-shrink:0;">
             <div class="dash-logo-text">אמירנט</div>
             <span class="dash-logo-pro">PRO</span>
         </div>
@@ -682,17 +678,7 @@
         </div>
 
         <div class="app-logo-header">
-            <svg class="app-logo-svg" viewBox="0 0 44 44" fill="none">
-                <defs>
-                    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#7c3aed"/>
-                        <stop offset="100%" stop-color="#2563eb"/>
-                    </linearGradient>
-                    <filter id="boltGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                </defs>
-                <circle cx="22" cy="22" r="20" fill="rgba(124,58,237,0.1)" stroke="url(#boltGrad)" stroke-width="1.5"/>
-                <path d="M25 8 L14 24 H21 L19 36 L30 20 H23 Z" fill="url(#boltGrad)" filter="url(#boltGlow)"/>
-            </svg>
+            <img src="icon.png" style="width:52px;height:52px;border-radius:12px;object-fit:cover;flex-shrink:0;">
             <div>
                 <div class="app-logo-text">אמירנט</div>
             </div>
@@ -1881,7 +1867,12 @@ function generateAIContent(word) {
             if (currentList.length === 0) { document.getElementById('wordFront').innerText = "אין מילים"; document.getElementById('wordTranslationDrive').style.display = 'none'; document.querySelector('.hint-container').style.display = 'none'; return; }
             document.querySelector('.hint-container').style.display = 'flex';
             let w = currentList[currentIndex]; let wordStatus = (userProgress[w.en] && userProgress[w.en].status) ? userProgress[w.en].status : 'unseen'; let displayHe = editedTranslations[w.en] || w.he;
-            document.getElementById('wordFront').innerText = isReverse ? displayHe : w.en; document.getElementById('wordFront').dir = isReverse ? "rtl" : "ltr"; document.getElementById('wordBack').innerText = isReverse ? w.en : displayHe;
+            let _wf = document.getElementById('wordFront');
+            let _displayWord = isReverse ? displayHe : w.en;
+            _wf.innerText = _displayWord; _wf.dir = isReverse ? "rtl" : "ltr";
+            let _wlen = _displayWord.replace(/\s+/g,' ').trim().split(' ').reduce((m,p)=>Math.max(m,p.length),0);
+            _wf.style.fontSize = _wlen > 18 ? '1.6rem' : _wlen > 12 ? '2rem' : '36px';
+            document.getElementById('wordBack').innerText = isReverse ? w.en : displayHe;
             let statusIcon = ""; if (wordStatus === 'known') statusIcon = '<svg stroke="#34c759"><path d="M20 6L9 17l-5-5"/></svg>'; else if (wordStatus === 'learning') statusIcon = '<svg stroke="#ff3b30"><path d="M18 6L6 18M6 6l12 12"/></svg>'; else statusIcon = '<svg stroke="#94a3b8"><circle cx="12" cy="12" r="10"></circle></svg>';
             document.getElementById('statusFront').innerHTML = statusIcon; document.getElementById('badgeLevel').innerText = w.level;
             
