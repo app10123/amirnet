@@ -4273,13 +4273,13 @@ function playNextDrivingWord() {
 
             recognition.onend = function() {
                 let mode = document.getElementById('driveInteraction') ? document.getElementById('driveInteraction').value : 'speak';
-                
+
                 // ממשיך להקשיב בלופ רק אם אנחנו במצב נסיעה ואתה בחרת לענות
                 if (isListening && isDrivingMode && mode === 'speak') {
-                    try { recognition.start(); } catch(e) {} 
+                    try { recognition.start(); } catch(e) {}
                 } else {
                     let btn = document.getElementById('micBtn'); if(btn) { btn.classList.remove('mic-listening'); btn.style.filter = "grayscale(100%)"; }
-                    let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = "";
+                    // לא מנקים את micFeedback — הפידבק נשאר גלוי עד שהמילה הבאה מתחילה
                 }
             };
         }
