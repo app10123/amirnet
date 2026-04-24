@@ -666,7 +666,17 @@
     <div id="vocab-screen" class="app-screen">
 
         <div class="app-logo-header">
-            <img src="owl-logo.png" style="width:52px;height:52px;object-fit:contain;background:transparent;border-radius:0;flex-shrink:0;">
+            <svg class="app-logo-svg" viewBox="0 0 44 44" fill="none">
+                <defs>
+                    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#7c3aed"/>
+                        <stop offset="100%" stop-color="#2563eb"/>
+                    </linearGradient>
+                    <filter id="boltGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <circle cx="22" cy="22" r="20" fill="rgba(124,58,237,0.1)" stroke="url(#boltGrad)" stroke-width="1.5"/>
+                <path d="M25 8 L14 24 H21 L19 36 L30 20 H23 Z" fill="url(#boltGrad)" filter="url(#boltGlow)"/>
+            </svg>
             <div>
                 <div class="app-logo-text">אמירנט</div>
             </div>
