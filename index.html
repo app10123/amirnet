@@ -603,6 +603,7 @@
     </style>
 </head>
 <body>
+<script>if(localStorage.getItem('darkMode')==='true')document.body.classList.add('dark-mode');</script>
 
     <div id="dashboard-screen" style="display:none;">
         <div class="dash-logo">
@@ -1027,10 +1028,12 @@
         (function() {
             let splash = document.getElementById('splash-screen');
             if (!splash) return;
+            let returning = !!localStorage.getItem('isFirstLoadComplete_V2');
+            let delay = returning ? 800 : 2000;
             setTimeout(() => {
                 splash.classList.add('fade-out');
                 setTimeout(() => { splash.style.display = 'none'; }, 700);
-            }, 2000);
+            }, delay);
         })();
 
         function fireConfetti() { const colors = ['#34c759', '#007aff', '#ff3b30', '#ffcc00', '#5856d6']; for(let i=0; i<40; i++) { let conf = document.createElement('div'); conf.className = 'confetti-particle'; conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; conf.style.left = Math.random() * 100 + 'vw'; conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; document.body.appendChild(conf); setTimeout(() => conf.remove(), 3500); } }
@@ -1657,7 +1660,7 @@ let aiPreloadedData = {};
             document.getElementById('nav-restatements').classList.toggle('active', screen === 'restatements');
         }
 
-        document.addEventListener('keydown', (e) => {
+        function _globalKeydown(e) {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
             if (document.querySelectorAll('.modal[style*="display: flex"]').length > 0) return;
 
@@ -1678,7 +1681,9 @@ let aiPreloadedData = {};
                 document.getElementById('rs-question-view').style.display !== 'none') {
                 handleRSKey(e); return;
             }
-        });
+        }
+        document.removeEventListener('keydown', _globalKeydown);
+        document.addEventListener('keydown', _globalKeydown);
 
         function handleSCKey(e) {
             let i = currentSentenceIndex;
@@ -1858,7 +1863,11 @@ function updateStatsUI() {
 
         function prevCard() { if(currentIndex > 0) { currentIndex--; let card = document.getElementById('flashcard'); if (card.classList.contains('is-flipped')) { card.classList.remove('is-flipped'); setTimeout(() => { updateCard(); }, 300); } else { updateCard(); } } else { alert('זו המילה הראשונה ברשימה!'); } }
         
+        let _markWordBusy = false;
        function markWord(newStatus) {
+            if (_markWordBusy) return;
+            _markWordBusy = true;
+            setTimeout(() => { _markWordBusy = false; }, 300);
             if(currentList.length === 0) return; let wordEn = currentList[currentIndex].en;
             if(!userProgress[wordEn]) userProgress[wordEn] = { status: 'unseen', fails: 0, reviewLevel: 0, nextReview: 0 };
             let todayStr = new Date().toISOString().split('T')[0];
