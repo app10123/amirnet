@@ -702,6 +702,15 @@
             </button>
             <div class="dropdown-group" id="grp-display">
                 <button class="dropdown-item" onclick="toggleDarkMode()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> מצב לילה / יום</button>
+                <div class="dropdown-item" style="flex-direction:column;align-items:flex-start;gap:8px;cursor:default;">
+                    <span style="font-size:13px;font-weight:700;color:var(--text-color);display:flex;align-items:center;gap:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> מהירות הקראה</span>
+                    <div id="tts-rate-btns" style="display:flex;gap:6px;flex-wrap:wrap;">
+                        <button class="timer-preset-btn" data-rate="0.7" onclick="setTTSRate(0.7);event.stopPropagation();">איטי</button>
+                        <button class="timer-preset-btn" data-rate="0.9" onclick="setTTSRate(0.9);event.stopPropagation();">רגיל</button>
+                        <button class="timer-preset-btn" data-rate="1.2" onclick="setTTSRate(1.2);event.stopPropagation();">מהיר</button>
+                        <button class="timer-preset-btn" data-rate="1.5" onclick="setTTSRate(1.5);event.stopPropagation();">מהיר מאוד</button>
+                    </div>
+                </div>
             </div>
             <div class="dropdown-divider"></div>
             <button class="dropdown-category" onclick="toggleMenuGroup('grp-timers')">
@@ -2226,7 +2235,7 @@ function generateAIContent(word) {
             window.speechSynthesis.cancel();
             let msg = new SpeechSynthesisUtterance(currentList[currentIndex].en); 
             msg.lang = 'en-US'; 
-            msg.rate = 0.8;
+            msg.rate = getTTSRate();
             window.speechSynthesis.speak(msg); 
         }
 
@@ -2837,6 +2846,14 @@ function generateAIContent(word) {
         }
 
         // ===== Text-to-Speech =====
+        function getTTSRate() { return parseFloat(localStorage.getItem('ttsRate') || '0.7'); }
+        function setTTSRate(rate) {
+            localStorage.setItem('ttsRate', rate);
+            document.querySelectorAll('#tts-rate-btns .timer-preset-btn').forEach(btn => {
+                btn.classList.toggle('active', parseFloat(btn.getAttribute('data-rate')) === rate);
+            });
+        }
+
         const _TTS_ICON = `<svg viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;pointer-events:none;flex-shrink:0;"><path d="M3 6H1v6h2l4 3V3L3 6z" fill="currentColor" stroke="none"/><path d="M13 3c2 1.7 3.2 4.2 3.2 6s-1.2 4.3-3.2 6"/><path d="M10.5 6c1 0.9 1.6 2.2 1.6 3s-0.6 2.1-1.6 3"/></svg>`;
         const _TTS_WAVES = `<span style="display:inline-flex;align-items:center;gap:2px;height:18px;pointer-events:none;"><span class="tts-wave-bar" style="height:8px;"></span><span class="tts-wave-bar" style="height:14px;"></span><span class="tts-wave-bar" style="height:10px;"></span><span class="tts-wave-bar" style="height:14px;"></span></span>`;
         function _ttsSetIcon(btn, speaking, withLabel) {
@@ -2866,6 +2883,7 @@ function generateAIContent(word) {
                 if (idx >= texts.length) { _ttsSetIcon(btnEl, false, rowLabel); if (btnEl) btnEl.classList.remove('speaking'); _ttsBtn = null; _ttsBtnLabel = null; return; }
                 let utt = new SpeechSynthesisUtterance(texts[idx]);
                 utt.lang = 'en-US';
+                utt.rate = getTTSRate();
                 utt.onend = () => run(idx + 1);
                 utt.onerror = () => { _ttsSetIcon(btnEl, false, rowLabel); if (btnEl) btnEl.classList.remove('speaking'); _ttsBtn = null; _ttsBtnLabel = null; };
                 window.speechSynthesis.speak(utt);
@@ -4306,12 +4324,12 @@ function playNextDrivingWord() {
             let enUtterance = new SpeechSynthesisUtterance(w.en);
             if(enVoice) enUtterance.voice = enVoice;
             enUtterance.lang = 'en-US';
-            enUtterance.rate = 0.85;
+            enUtterance.rate = getTTSRate();
 
             let heUtterance = new SpeechSynthesisUtterance(displayHe);
             if(heVoice) heUtterance.voice = heVoice;
             heUtterance.lang = 'he-IL';
-            heUtterance.rate = 0.85;
+            heUtterance.rate = getTTSRate();
 
             enUtterance.onend = function() {
                 if(!isDrivingMode) return;
@@ -4451,7 +4469,8 @@ function playNextDrivingWord() {
 		
         // --- פקודת ההפעלה של האפליקציה ---
         initApp();
-        
+        setTTSRate(getTTSRate());
+
         // --- Version check (iOS-compatible update detection) ---
         let _pendingVersion = null;
         async function checkAppVersion() {
