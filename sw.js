@@ -1,6 +1,5 @@
-const CACHE_NAME = 'amirnet-cache-v25';
-const urlsToCache = [
-  './index.html',
+const CACHE_NAME = 'amirnet-cache-v26';
+const STATIC_ASSETS = [
   './vocab_backup.json',
   './manifest.json',
   './icon.png'
@@ -8,9 +7,9 @@ const urlsToCache = [
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then(cache => cache.addAll(STATIC_ASSETS))
   );
-  self.skipWaiting();
+  // Do NOT skipWaiting — wait for the page to send SKIP_WAITING message
 });
 
 self.addEventListener('activate', event => {
@@ -22,12 +21,44 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
+  const url = new URL(event.request.url);
+  const isHTML = event.request.destination === 'document' ||
+                 url.pathname.endsWith('/') ||
+                 url.pathname.endsWith('.html');
+
+  if (isHTML) {
+    // Network First for HTML — get fresh content, fall back to cache
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+  } else {
+    // Cache First for static assets
+    event.respondWith(
+      caches.match(event.request).then(response => {
         if (response) return response;
-        return fetch(event.request);
+        return fetch(event.request).then(networkResponse => {
+          if (networkResponse && networkResponse.status === 200) {
+            const clone = networkResponse.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          }
+          return networkResponse;
+        });
       })
-  );
+    );
+  }
 });
