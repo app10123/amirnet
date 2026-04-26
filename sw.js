@@ -1,4 +1,4 @@
-const CACHE_NAME = 'amirnet-cache-v23';
+const CACHE_NAME = 'amirnet-cache-v24';
 const urlsToCache = [
   './index.html',
   './vocab_backup.json',

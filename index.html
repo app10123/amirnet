@@ -1730,7 +1730,22 @@ let aiPreloadedData = {};
         function toggleAdminMode() { isAdminMode = !isAdminMode; document.getElementById('adminBtnMenu').classList.toggle('admin-active', isAdminMode); if(currentMode === 'list') renderList(); document.getElementById('topMenu').classList.remove('show');}
         const _REVERSE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>`;
         function toggleReverse() { isReverse = !isReverse; let btn = document.getElementById('reverseBtn'); btn.innerHTML = isReverse ? `${_REVERSE_SVG}<span>ENG←HEB</span>` : `${_REVERSE_SVG}<span>HEB←ENG</span>`; btn.classList.toggle('active', isReverse); updateCard(); if(currentMode === 'quiz') startQuiz(); }
-        function switchMode(mode) { currentMode = mode; document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active')); document.getElementById(`tab-${mode}`).classList.add('active'); document.getElementById('flashcard-section').style.display = (mode === 'flash') ? 'flex' : 'none'; document.getElementById('quiz-section').style.display = (mode === 'quiz') ? 'flex' : 'none'; document.getElementById('list-section').style.display = (mode === 'list') ? 'flex' : 'none'; if(mode === 'flash') updateCard(); if(mode === 'quiz') startQuiz(); if(mode === 'list') renderList(); }
+        function switchMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-${mode}`).classList.add('active');
+            document.getElementById('flashcard-section').style.display = (mode === 'flash') ? 'flex' : 'none';
+            document.getElementById('quiz-section').style.display = (mode === 'quiz') ? 'flex' : 'none';
+            document.getElementById('list-section').style.display = (mode === 'list') ? 'flex' : 'none';
+            if (mode === 'quiz' && isReverse) {
+                isReverse = false;
+                let rBtn = document.getElementById('reverseBtn');
+                if (rBtn) { rBtn.innerHTML = `${_REVERSE_SVG}<span>HEB←ENG</span>`; rBtn.classList.remove('active'); }
+            }
+            if (mode === 'flash') updateCard();
+            if (mode === 'quiz') startQuiz();
+            if (mode === 'list') renderList();
+        }
         
         function saveProgress() { localStorage.setItem('vocabProgress', JSON.stringify(userProgress)); localStorage.setItem('vocabStreak', streak); localStorage.setItem('editedTranslations', JSON.stringify(editedTranslations)); localStorage.setItem('customSentences', JSON.stringify(customSentences)); localStorage.setItem('customAssocs', JSON.stringify(customAssocs)); updateStatsUI(); }
 function updateStatsUI() {
@@ -1870,8 +1885,8 @@ function updateStatsUI() {
                 else if (currentLevel === 2) daysToAdd = 7; // פעם שלישית: עוד שבוע
                 else if (currentLevel >= 3) daysToAdd = 14; // פעם רביעית ומעלה: עוד שבועיים
 
-                // שמירת תאריך הלימוד הראשוני
-                if (currentLevel === 0 && !userProgress[wordEn].learnedDate) {
+                // שמירת תאריך הלימוד הראשוני (בכל מעבר ראשון ל-known)
+                if (!userProgress[wordEn].learnedDate) {
                     userProgress[wordEn].learnedDate = todayStr;
                 }
 
@@ -2836,7 +2851,13 @@ function generateAIContent(word) {
         function ttsSCOpts(btnEl)  { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak(q.options, btnEl, 'הקרא תשובות'); }
         function ttsRS(btnEl)      { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak([q.q], btnEl); }
         function ttsRSOpts(btnEl)  { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak(q.options, btnEl, 'הקרא תשובות'); }
-        function ttsPassage(btnEl) { let el = document.getElementById('rc-content');     ttsSpeak([el.innerText], btnEl, 'הקרא את הקטע'); }
+        function ttsPassage(btnEl) {
+            let el = document.getElementById('rc-content');
+            let raw = el.innerText.trim();
+            let sentences = raw.split(/(?<=[.?!])\s+/).map(s => s.trim()).filter(s => s.length > 0);
+            if (sentences.length === 0) sentences = [raw];
+            ttsSpeak(sentences, btnEl, 'הקרא את הקטע');
+        }
         function ttsRCQ(idx, btnEl){ let t = allTexts.find(x => x.id === currentTextId); ttsSpeak([t.questions[idx].q], btnEl); }
 
         function renderSentenceQuestion() {
@@ -3802,10 +3823,14 @@ Keep it concise and educational. Use clear section headers for each part.`;
             setTimeout(() => { if (currentIndex < currentList.length - 1) { currentIndex++; startQuiz(); } else { alert('סיימת את הרשימה במבחן!'); applyFilters(); } }, 1200);
         }
 
-        function renderList() { 
-            let listDiv = document.getElementById('list-section'); 
-            if(currentList.length === 0) { listDiv.innerHTML = "<p style='text-align:center;'>אין מילים בסינון זה.</p>"; return; } 
-            let html = ""; 
+        let _lastListHash = '';
+        function renderList() {
+            let listDiv = document.getElementById('list-section');
+            let hash = currentList.map(w => w.en + ':' + ((userProgress[w.en] && userProgress[w.en].status) || 'u')).join('|') + (isAdminMode ? '|a' : '');
+            if (hash === _lastListHash && listDiv.children.length > 0) return;
+            _lastListHash = hash;
+            if(currentList.length === 0) { listDiv.innerHTML = "<p style='text-align:center;'>אין מילים בסינון זה.</p>"; return; }
+            let html = "";
             currentList.forEach(w => { 
                 let wordStatus = (userProgress[w.en] && userProgress[w.en].status) ? userProgress[w.en].status : 'unseen'; 
                 let btnClass = "list-btn unseen"; let icon = "<svg viewBox='0 0 24 24'><circle cx='12' cy='12' r='10'></circle></svg>"; 
