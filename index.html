@@ -326,13 +326,15 @@
         .sc-timer-arc { fill:none; stroke:#34c759; stroke-width:5; stroke-linecap:round; transition:stroke-dashoffset 0.9s linear, stroke 0.3s; }
         .sc-timer-arc.warn { stroke:#ff9800; }
         .sc-timer-arc.danger { stroke:#ff3b30; }
-        .sc-timer-count { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:22px; font-weight:800; color:var(--text-color); }
+        .sc-timer-count { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:var(--text-color); }
         .sc-timer-count.warn { color:#ff9800; }
         .sc-timer-count.danger { color:#ff3b30; }
         .sc-timer-expired-msg { font-size:15px; font-weight:800; color:#ff3b30; direction:rtl; }
         .sc-timer-controls { display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
         .sc-timer-pause-btn { padding:8px 16px; border-radius:10px; border:2px solid var(--border-color); background:var(--panel-bg); color:var(--text-color); font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; transition:0.2s; box-shadow:var(--shadow); }
         .sc-timer-pause-btn:active { transform:scale(0.95); }
+        .sc-timer-reset-btn { padding:8px 16px; border-radius:10px; border:none; background:linear-gradient(135deg,#7c3aed,#2563eb); color:#fff; font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; transition:0.2s; box-shadow:0 2px 8px rgba(124,58,237,0.35); }
+        .sc-timer-reset-btn:active { transform:scale(0.95); opacity:0.9; }
         .sc-timer-toggle-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; padding:10px 14px; background:var(--panel-bg); border:2px solid var(--border-color); border-radius:12px; direction:rtl; }
         .sc-timer-toggle-label { font-size:14px; font-weight:700; color:var(--text-color); display:flex; align-items:center; gap:8px; }
         .sc-toggle-switch { position:relative; width:46px; height:26px; flex-shrink:0; }
@@ -1662,6 +1664,13 @@ let aiPreloadedData = {};
             document.getElementById('restatements-screen').style.display = screen === 'restatements' ? 'flex' : 'none';
             stopSCTimer();
             ttsStop();
+            if (screen === 'sentences') {
+                let qv = document.getElementById('sc-question-view');
+                if (qv && qv.style.display !== 'none') startSCTimer('sc');
+            } else if (screen === 'restatements') {
+                let qv = document.getElementById('rs-question-view');
+                if (qv && qv.style.display !== 'none') startSCTimer('rs');
+            }
 
             document.getElementById('nav-vocab').classList.toggle('active', screen === 'vocab');
             document.getElementById('nav-reading').classList.toggle('active', screen === 'reading');
@@ -3520,6 +3529,12 @@ function generateAIContent(word) {
             } catch(e) {}
         }
 
+        function formatTimerSec(s) {
+            let m = Math.floor(s / 60);
+            let sec = s % 60;
+            return m + ':' + String(sec).padStart(2, '0');
+        }
+
         function updateSCTimerUI() {
             let arc   = document.getElementById('sc-arc');
             let count = document.getElementById('sc-count');
@@ -3532,7 +3547,7 @@ function generateAIContent(word) {
             let cls = scTimeLeft <= 10 ? 'danger' : scTimeLeft <= 20 ? 'warn' : '';
             arc.className   = 'sc-timer-arc' + (cls ? ' ' + cls : '');
             count.className = 'sc-timer-count'+ (cls ? ' ' + cls : '');
-            count.textContent = scTimeLeft;
+            count.textContent = formatTimerSec(scTimeLeft);
 
             if (msg) msg.style.display = scTimerExpired ? 'block' : 'none';
         }
@@ -3564,6 +3579,10 @@ function generateAIContent(word) {
         function stopSCTimer() {
             clearInterval(scTimerInterval);
             scTimerInterval = null;
+        }
+
+        function resetSCTimer() {
+            startSCTimer(_activeTimerScreen);
         }
 
         // עצור טיימר כשהדף ברקע, חדש אותו בחזרה
@@ -3605,11 +3624,17 @@ function generateAIContent(word) {
                         <circle id="sc-arc" class="sc-timer-arc" cx="36" cy="36" r="${SC_ARC_R}"
                             stroke-dasharray="${SC_ARC_C}" stroke-dashoffset="0"/>
                     </svg>
-                    <div id="sc-count" class="sc-timer-count">${dur}</div>
+                    <div id="sc-count" class="sc-timer-count">${formatTimerSec(dur)}</div>
                 </div>
                 <div class="sc-timer-controls">
                     <button id="sc-pause-btn" class="sc-timer-pause-btn" onclick="toggleSCTimerPause(); updateSCPauseBtn();">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> השהה
+                    </button>
+                    <button class="sc-timer-reset-btn" onclick="resetSCTimer()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#fff;">
+                            <polyline points="1 4 1 10 7 10"></polyline>
+                            <path d="M3.51 15a9 9 0 1 0 .49-4.5"></path>
+                        </svg> התחל מחדש
                     </button>
                     <div id="sc-expired-msg" class="sc-timer-expired-msg" style="display:none;display:flex;align-items:center;gap:5px;"><svg class="timer-expired-icon" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="9" y1="3" x2="15" y2="3"/><path d="M12 13 L15 11" stroke-linecap="round"/></svg> פג הזמן!</div>
                 </div>
