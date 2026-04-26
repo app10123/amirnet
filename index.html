@@ -4432,9 +4432,31 @@ function playNextDrivingWord() {
         // --- פקודת ההפעלה של האפליקציה ---
         initApp();
         
+        // --- Version check (iOS-compatible update detection) ---
+        let _pendingVersion = null;
+        async function checkAppVersion() {
+            try {
+                let res = await fetch('./version.json', { cache: 'no-store' });
+                let data = await res.json();
+                let newVersion = data.version;
+                let stored = localStorage.getItem('appVersion');
+                if (!stored) { localStorage.setItem('appVersion', newVersion); return; }
+                if (stored !== newVersion) {
+                    _pendingVersion = newVersion;
+                    document.getElementById('update-banner').classList.add('show');
+                }
+            } catch(e) {}
+        }
+        checkAppVersion();
+
         // --- Service Worker registration with update detection ---
         let _swReg = null;
         function applyUpdate() {
+            if (_pendingVersion) {
+                localStorage.setItem('appVersion', _pendingVersion);
+                window.location.reload(true);
+                return;
+            }
             if (_swReg && _swReg.waiting) {
                 _swReg.waiting.postMessage({ type: 'SKIP_WAITING' });
             }
