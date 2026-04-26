@@ -330,11 +330,9 @@
         .sc-timer-count.danger { color:#ef4444; }
         .sc-timer-expired-msg { font-size:14px; font-weight:800; color:#ef4444; direction:rtl; display:none; align-items:center; gap:5px; }
         .sc-timer-controls { display:flex; flex-direction:column; gap:7px; align-items:flex-start; }
-        .sc-timer-pause-btn { padding:8px 16px; border-radius:10px; border:none; background:linear-gradient(135deg,#7c3aed,#2563eb); color:#fff; font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; transition:0.2s; box-shadow:0 2px 8px rgba(124,58,237,0.35); }
-        .sc-timer-pause-btn:active { transform:scale(0.95); opacity:0.9; }
+        .sc-timer-pause-btn, .sc-timer-reset-btn { width:38px; height:38px; border-radius:10px; border:none; background:linear-gradient(135deg,#7c3aed,#2563eb); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:0.2s; box-shadow:0 2px 8px rgba(124,58,237,0.35); flex-shrink:0; }
+        .sc-timer-pause-btn:active, .sc-timer-reset-btn:active { transform:scale(0.95); opacity:0.9; }
         .sc-timer-pause-btn:disabled { opacity:0.5; cursor:default; }
-        .sc-timer-reset-btn { padding:8px 16px; border-radius:10px; border:none; background:linear-gradient(135deg,#7c3aed,#2563eb); color:#fff; font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; transition:0.2s; box-shadow:0 2px 8px rgba(124,58,237,0.35); }
-        .sc-timer-reset-btn:active { transform:scale(0.95); opacity:0.9; }
         .sc-timer-toggle-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; padding:10px 14px; background:var(--panel-bg); border:2px solid var(--border-color); border-radius:12px; direction:rtl; }
         .sc-timer-toggle-label { font-size:14px; font-weight:700; color:var(--text-color); display:flex; align-items:center; gap:8px; }
         .sc-toggle-switch { position:relative; width:46px; height:26px; flex-shrink:0; }
@@ -3608,7 +3606,7 @@ function generateAIContent(word) {
             let btn = document.getElementById('sc-pause-btn');
             if (!btn) return;
             if (scTimerExpired) {
-                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><circle cx="12" cy="12" r="10"></circle><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> פג הזמן';
+                btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:18px;height:18px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg>';
                 btn.disabled = true;
                 btn.style.opacity = '0.5';
                 return;
@@ -3616,8 +3614,8 @@ function generateAIContent(word) {
             btn.disabled = false;
             btn.style.opacity = '1';
             btn.innerHTML = scTimerPaused
-                ? '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> המשך'
-                : '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> השהה';
+                ? '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:18px;height:18px;stroke:currentColor;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>'
+                : '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:18px;height:18px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg>';
         }
 
         function timerHTML(screen) {
@@ -3647,14 +3645,14 @@ function generateAIContent(word) {
                     <div id="sc-count" class="sc-timer-count">${formatTimerSec(dur)}</div>
                 </div>
                 <div class="sc-timer-controls">
-                    <button id="sc-pause-btn" class="sc-timer-pause-btn" onclick="toggleSCTimerPause(); updateSCPauseBtn();">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:16px;height:16px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg> השהה
+                    <button id="sc-pause-btn" class="sc-timer-pause-btn" onclick="toggleSCTimerPause(); updateSCPauseBtn();" title="השהה">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:18px;height:18px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg>
                     </button>
-                    <button class="sc-timer-reset-btn" onclick="resetSCTimer()">
-                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#fff;">
+                    <button class="sc-timer-reset-btn" onclick="resetSCTimer()" title="התחל מחדש">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;stroke:#fff;">
                             <polyline points="1 4 1 10 7 10"></polyline>
                             <path d="M3.51 15a9 9 0 1 0 .49-4.5"></path>
-                        </svg> התחל מחדש
+                        </svg>
                     </button>
                 </div>
                 <div id="sc-expired-msg" class="sc-timer-expired-msg" style="display:none;">
