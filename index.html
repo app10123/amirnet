@@ -1960,8 +1960,10 @@ function updateStatsUI() {
             yesterday.setDate(yesterday.getDate() - 1);
             let yesterdayStr = yesterday.toISOString().split('T')[0];
             let dayInMs = 24 * 60 * 60 * 1000;
+            let activeSource = getActiveSource();
 
-            return allWords.filter(w => {
+            let filtered = allWords.filter(w => {
+                if (activeSource !== 'All' && w.source !== activeSource) return false;
                 let prog = userProgress[w.en];
                 if (!prog || prog.status !== 'known') return false;
                 if (prog.learnedDate === yesterdayStr) return true;
@@ -1971,6 +1973,14 @@ function updateStatsUI() {
                     return inferredDate === yesterdayStr;
                 }
                 return false;
+            });
+
+            let seen = new Set();
+            return filtered.filter(w => {
+                let key = w.en.toLowerCase();
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
             });
         }
 
@@ -2000,14 +2010,15 @@ function updateStatsUI() {
         }
         function highlightWordInSentence(sentence, word) { let regex = new RegExp(`\\b(${word})\\b`, 'gi'); return sentence.replace(regex, '<strong>$1</strong>'); }
 function generateAIContent(word) {
-            if (aiPreloadedData[word]) {
-                return aiPreloadedData[word];
-            }
+            let data = aiPreloadedData[word]
+                || aiPreloadedData[word.toLowerCase()]
+                || aiPreloadedData[word.charAt(0).toUpperCase() + word.slice(1)];
+            if (data) return data;
             // במקרה הנדיר שמילה לא נמצאה בקובץ ה-AI
-            return { 
-                assoc: `לא נמצאה אסוציאציה למילה זו. (לחץ ערוך ✏️ להוספה)`, 
-                sentence: `No example sentence found.|לא נמצא משפט לדוגמה.` 
-            }; 
+            return {
+                assoc: `לא נמצאה אסוציאציה למילה זו. (לחץ ערוך ✏️ להוספה)`,
+                sentence: `No example sentence found.|לא נמצא משפט לדוגמה.`
+            };
         }
         function updateCard() {
 		let swipeCard = document.getElementById('swipeCardContainer');
