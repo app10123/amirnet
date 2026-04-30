@@ -2698,5 +2698,1933 @@
   "brave": {
     "assoc": "ברא-בה: הוא ברא בה אופי של לוחמת אמיצה.",
     "sentence": "It was a brave decision to quit his job. | זו הייתה החלטה אמיצה להתפטר מעבודתו."
+  },
+  "absence": {
+    "sentence": "His absence from class worried the teacher.|היעדרותו מהשיעור דאגה למורה.",
+    "assoc": "אבסנס — AB-sence, 'א.ב' נעדר = אבסנטי"
+  },
+  "absent": {
+    "sentence": "Three students were absent today.|שלושה תלמידים נעדרו היום.",
+    "assoc": "אבסנט — אבא שנט (ישן) לא נוכח"
+  },
+  "abundant": {
+    "sentence": "There is abundant wildlife in this forest.|יש חיות בר שופעות ביער הזה.",
+    "assoc": "אבונדנט — אבון-דנט, שפע של שיניים (dent)!"
+  },
+  "accomplish": {
+    "sentence": "She accomplished all her goals this year.|היא השיגה את כל מטרותיה השנה.",
+    "assoc": "אקומפליש — קום ותסיים! A-COME-PLISH"
+  },
+  "accomplished": {
+    "sentence": "He is an accomplished pianist.|הוא פסנתרן מוכשר ומנוסה.",
+    "assoc": "אקומפלישד — מי שכבר עשה זאת (accomplished it)"
+  },
+  "accusation": {
+    "sentence": "The accusation against him proved false.|ההאשמה נגדו הוכחה כשקרית.",
+    "assoc": "אקיוזיישן — YOU did it! = אתה עשית! = האשמה"
+  },
+  "adapt": {
+    "sentence": "Animals adapt to their environment.|בעלי חיים מסתגלים לסביבתם.",
+    "assoc": "אדפט — AD-apt, לעשות מתאים (apt)"
+  },
+  "adaptation": {
+    "sentence": "The film is an adaptation of a novel.|הסרט הוא עיבוד של רומן.",
+    "assoc": "אדפטיישן — adaptation = להתאים (adapt) לצורה חדשה"
+  },
+  "adjacent": {
+    "sentence": "The school is adjacent to the park.|בית הספר סמוך לפארק.",
+    "assoc": "אד'ג'יסנט — AD+jacent, 'הדבר הנוסף' שנמצא ממש לצדך"
+  },
+  "admonish": {
+    "sentence": "The teacher admonished the students for being late.|המורה נזפה בתלמידים על האיחור.",
+    "assoc": "אדמוניש — AD-mon-ish, 'מון' = להזהיר, כמו monitor"
+  },
+  "adopt": {
+    "sentence": "They decided to adopt a child.|הם החליטו לאמץ ילד.",
+    "assoc": "אדופט — A-DOPT, לקחת לתוך האופציה שלך = לאמץ"
+  },
+  "adult": {
+    "sentence": "Only adults are allowed in this area.|רק מבוגרים מורשים להיכנס לאזור זה.",
+    "assoc": "אדלט — ALT = גבוה, מבוגר הוא גבוה יותר"
+  },
+  "after": {
+    "sentence": "We will eat after the meeting.|נאכל אחרי הפגישה.",
+    "assoc": "אפטר — AFTER = אחרי, after-party = מסיבה אחרי"
+  },
+  "afterwards": {
+    "sentence": "We ate dinner, and afterwards we walked.|אכלנו ארוחת ערב, ואחר כך הלכנו לטייל.",
+    "assoc": "אפטרוורדז — after+wards, כיוון (wards) אחרי"
+  },
+  "ahead of": {
+    "sentence": "She finished ahead of everyone else.|היא סיימה לפני כולם.",
+    "assoc": "אהד אוף — HEAD קדימה, a-HEAD = ראש קדימה = לפני"
+  },
+  "aim": {
+    "sentence": "His aim is to become a doctor.|מטרתו להיות רופא.",
+    "assoc": "איים — AIM = לכוון, כמו לכוון רובה למטרה"
+  },
+  "alien": {
+    "sentence": "The idea seemed alien to him.|הרעיון נראה לו זר.",
+    "assoc": "איילין — A-LIEN, לא בשורה (line) = לא משתייך = זר"
+  },
+  "alienate": {
+    "sentence": "His rude behavior alienated his friends.|ההתנהגות הגסה ניכרה את חבריו.",
+    "assoc": "איילינייט — לגרום למישהו להרגיש alien = חייזר"
+  },
+  "alienation": {
+    "sentence": "He felt deep alienation from society.|הוא חש ניכור עמוק מהחברה.",
+    "assoc": "איילינישן — להרגיש alien = חייזר בחברה = ניכור"
+  },
+  "all": {
+    "sentence": "All students must attend the meeting.|כל התלמידים חייבים להגיע לפגישה.",
+    "assoc": "אול — ALL = הכול, all-in = הכל בפנים"
+  },
+  "allege": {
+    "sentence": "He alleged that he was innocent.|הוא טען שהוא חף מפשע.",
+    "assoc": "אלג' — אלג'יר = לטעון כך בלי להוכיח"
+  },
+  "allow": {
+    "sentence": "Please allow me to explain my actions.|אנא אפשר לי להסביר את מעשי.",
+    "assoc": "אלאו — ALLOW = a+LOW, פתח נמוך = כניסה מורשית"
+  },
+  "allowance": {
+    "sentence": "He receives a monthly allowance from his parents.|הוא מקבל קצבה חודשית מהוריו.",
+    "assoc": "אלאונס — allow+ance = מה שמותר לך לקבל"
+  },
+  "altogether": {
+    "sentence": "The cost was altogether too high.|העלות הייתה גבוהה מדי בסך הכל.",
+    "assoc": "אולטוגת'ר — all+together = הכל ביחד = בסך הכל"
+  },
+  "anti": {
+    "sentence": "He is strongly anti-war.|הוא בחוזקה נגד מלחמה.",
+    "assoc": "אנטי — ANTI = אנטי, כולנו מכירים, אנטי = נגד"
+  },
+  "antique": {
+    "sentence": "The antique vase is worth a fortune.|האגרטל העתיק שווה הון.",
+    "assoc": "אנטיק — ANTIQUE = חנות אנטיקות = עתיק ויקר"
+  },
+  "antiquity": {
+    "sentence": "These ruins date back to antiquity.|ההריסות האלו מתוארכות לעת עתיקה.",
+    "assoc": "אנטיקוויטי — antique + ity = תקופת האנטיקות"
+  },
+  "anxiety": {
+    "sentence": "She felt anxiety before the big exam.|היא חשה חרדה לפני הבחינה הגדולה.",
+    "assoc": "אנזייאטי — ANX-iety, ANGST = חרדה בגרמנית, אותו שורש"
+  },
+  "anxious": {
+    "sentence": "He was anxious about the job interview.|הוא היה חרד מראיון העבודה.",
+    "assoc": "אנקשס — anxious = מלא anxiety = חרדה"
+  },
+  "apparatus": {
+    "sentence": "The apparatus broke down during the experiment.|המנגנון התקלקל במהלך הניסוי.",
+    "assoc": "אפרטוס — apparat = מנגנון ברוסית, מהמהפכה"
+  },
+  "appreciate": {
+    "sentence": "I truly appreciate your help.|אני מעריך מאוד את עזרתך.",
+    "assoc": "אפרישיאייט — precious = יקר, appreciate = להחשיב כיקר"
+  },
+  "argue that": {
+    "sentence": "Scientists argue that climate change is real.|מדענים טוענים שינוי האקלים הוא אמיתי.",
+    "assoc": "ארגיו ד'ט — argue = ויכוח, argue that = לטעון שדבר מסוים נכון"
+  },
+  "around": {
+    "sentence": "We walked around the lake for an hour.|הסתובבנו סביב האגם שעה.",
+    "assoc": "אראונד — A-ROUND = עיגול, לסובב = סביב"
+  },
+  "as": {
+    "sentence": "She works as a teacher in the local school.|היא עובדת כמורה בבית הספר המקומי.",
+    "assoc": "אז — AS = כ--, כמו"
+  },
+  "as a result": {
+    "sentence": "It rained all day; as a result the game was canceled.|ירד גשם כל היום; כתוצאה מכך המשחק בוטל.",
+    "assoc": "אז א ריזלט — result = תוצאה, as a result = כתוצאה"
+  },
+  "as a result of": {
+    "sentence": "As a result of the storm, many trees fell.|כתוצאה מהסערה, עצים רבים נפלו.",
+    "assoc": "אז א ריזלט אוף — as a result of X = בגלל X"
+  },
+  "as... as": {
+    "sentence": "She is as tall as her brother.|היא גבוהה כמו אחיה.",
+    "assoc": "אז...אז — AS...AS = כ...כ, השוואת שני דברים"
+  },
+  "assert": {
+    "sentence": "He asserted his innocence loudly.|הוא הצהיר על חפותו בקול.",
+    "assoc": "אסרט — ASSERT = a-SERT, לומר בביטחון עצמי"
+  },
+  "astound": {
+    "sentence": "The magic trick astounded everyone in the room.|תעלול הקסם הדהים את כולם בחדר.",
+    "assoc": "אסטאונד — a-STOUND, כמו STUN = להלם, להדהים"
+  },
+  "at first": {
+    "sentence": "At first I did not understand the question.|בהתחלה לא הבנתי את השאלה.",
+    "assoc": "אט פרסט — first = ראשון, at first = בפעם הראשונה"
+  },
+  "at hand": {
+    "sentence": "Keep your phone at hand in case of emergency.|שמור את הטלפון בהישג יד למקרה חירום.",
+    "assoc": "אט הנד — hand = יד, at hand = בהישג יד"
+  },
+  "at the end": {
+    "sentence": "At the end of the day we were exhausted.|בסוף היום היינו מותשים.",
+    "assoc": "אט ד' אנד — end = סוף, at the end = בסוף"
+  },
+  "at the moment": {
+    "sentence": "He is busy at the moment.|הוא עסוק ברגע זה.",
+    "assoc": "אט ד' מומנט — moment = רגע, at the moment = ברגע זה"
+  },
+  "at the same time": {
+    "sentence": "Two important events happened at the same time.|שני אירועים חשובים התרחשו באותו זמן.",
+    "assoc": "אט ד' סיים טיים — same time = אותו זמן"
+  },
+  "at the time": {
+    "sentence": "At the time, I was living in Tel Aviv.|באותו הזמן, גרתי בתל אביב.",
+    "assoc": "אט ד' טיים — at the time = בזמן ההוא"
+  },
+  "at the turn of": {
+    "sentence": "At the turn of the century, everything changed.|בפנות המאה, הכל השתנה.",
+    "assoc": "אט ד' טרן — turn = פנייה, at the turn of = בנקודת המפנה"
+  },
+  "augment": {
+    "sentence": "They augmented the team with three new players.|הם הגדילו את הצוות עם שלושה שחקנים חדשים.",
+    "assoc": "אוגמנט — AUGmented reality = AR = הגדלה, augment = להגדיל"
+  },
+  "author": {
+    "sentence": "The author signed copies of her new book.|הסופרת חתמה על עותקים מספרה החדש.",
+    "assoc": "אות'ר — AUTHOR = כמו authority, סמכות הכתיבה"
+  },
+  "authorize": {
+    "sentence": "Only the manager can authorize this payment.|רק המנהל יכול לאשר תשלום זה.",
+    "assoc": "אות'ורייז — author = יוצר, לתת לו סמכות = לאשר"
+  },
+  "backward": {
+    "sentence": "She took a backward step and fell.|היא עשתה צעד לאחור ונפלה.",
+    "assoc": "בקווורד — back+ward = כיוון (ward) לאחור (back)"
+  },
+  "ban": {
+    "sentence": "The government banned smoking in all public buildings.|הממשלה אסרה עישון בכל המבנים הציבוריים.",
+    "assoc": "בן — BAN = לאסור, כמו 'banned from the club'"
+  },
+  "banish": {
+    "sentence": "The king banished the traitor from the kingdom.|המלך גירש את הבוגד מהממלכה.",
+    "assoc": "בניש — BAN+ish = לאסור + לגרש"
+  },
+  "bare": {
+    "sentence": "He walked barefoot on the warm sand.|הוא הלך יחף על החול החם.",
+    "assoc": "בר — BARE = חשוף כמו שטח בר ללא עצים"
+  },
+  "barely": {
+    "sentence": "He barely passed the final exam.|הוא עבר את הבחינה הסופית בקושי.",
+    "assoc": "ברלי — BARE+ly, בקושי יש כלום = בקושי"
+  },
+  "became": {
+    "sentence": "She became a doctor after years of hard study.|היא הפכה לרופאה לאחר שנות לימוד קשות.",
+    "assoc": "ביקיים — be+came = להיות מה שבא אחר כך"
+  },
+  "begun": {
+    "sentence": "The construction has already begun.|הבנייה כבר החלה.",
+    "assoc": "ביגן — BEGIN → BEGUN, להתחיל"
+  },
+  "behind": {
+    "sentence": "He hid behind the large door.|הוא התחבא מאחורי הדלת הגדולה.",
+    "assoc": "ביהיינד — be+HIND, hind = האחורי"
+  },
+  "below": {
+    "sentence": "The temperature fell below zero last night.|הטמפרטורה ירדה מתחת לאפס אמש.",
+    "assoc": "בילואו — be+LOW = להיות נמוך = מתחת"
+  },
+  "beneath": {
+    "sentence": "The treasure was buried beneath the old tree.|האוצר היה קבור מתחת לעץ הישן.",
+    "assoc": "בינית' — BENEATH = מתחת, קרוב ל-below אך יותר ספרותי"
+  },
+  "bequeath": {
+    "sentence": "He bequeathed his entire fortune to charity.|הוא הוריש את כל הונו לצדקה.",
+    "assoc": "ביקוויד' — be+QUEATH, quest = חיפוש, מה שמחפשים אחרי מוות"
+  },
+  "beside": {
+    "sentence": "She sat beside her best friend at lunch.|היא ישבה לצד חברתה הטובה בארוחת צהריים.",
+    "assoc": "ביסייד — be+SIDE = להיות לצד"
+  },
+  "beyond": {
+    "sentence": "This task is beyond my ability.|משימה זו מעבר ליכולתי.",
+    "assoc": "ביאונד — be+YOND, yonder = שם רחוק, מעבר"
+  },
+  "blame": {
+    "sentence": "Don't blame others for your own mistakes.|אל תאשים אחרים בטעויותיך שלך.",
+    "assoc": "בליים — BLAME = לתת להם את ה-blame = האשמה"
+  },
+  "border": {
+    "sentence": "The river marks the border between the two countries.|הנהר מסמן את הגבול בין שתי המדינות.",
+    "assoc": "בורדר — BORDER = בסדר + גבול? הגבול צריך להיות בסדר!"
+  },
+  "bore": {
+    "sentence": "The long lecture bored everyone in the room.|ההרצאה הארוכה שיעממה את כולם בחדר.",
+    "assoc": "בור — BORE = לקדוח, מקדח בראש = שעמום"
+  },
+  "boring": {
+    "sentence": "The movie was boring and went on for three hours.|הסרט היה משעמם ונמשך שלוש שעות.",
+    "assoc": "בורינג — boring = כמו לקדוח (drill) חור בראש = משעמם"
+  },
+  "brake": {
+    "sentence": "He pressed the brake hard to stop the car.|הוא לחץ על הבלם בחוזקה לעצור את הרכב.",
+    "assoc": "ברייק — BRAKE vs BREAK: בלם עוצר, לא שובר"
+  },
+  "break": {
+    "sentence": "Be careful not to break the glass.|היזהר לא לשבור את הכוס.",
+    "assoc": "ברייק — BREAK = לשבור, break time = הפסקה"
+  },
+  "breakdown": {
+    "sentence": "The car had a breakdown on the highway.|לרכב הייתה תקלה בכביש המהיר.",
+    "assoc": "ברייקדאון — break+DOWN = לשבור כלפי מטה = להתמוטט"
+  },
+  "bring about": {
+    "sentence": "Hard work can bring about great success.|עבודה קשה יכולה להביא להצלחה גדולה.",
+    "assoc": "בינג אבאוט — להביא דבר אל המציאות = לגרום לו"
+  },
+  "bulky": {
+    "sentence": "The bulky package was hard to carry upstairs.|החבילה המגושמת הייתה קשה לנשיאה למעלה.",
+    "assoc": "בולקי — BULK = נפח גדול, bulky = גדול ומסורבל"
+  },
+  "but": {
+    "sentence": "I tried hard, but I failed the exam.|ניסיתי קשה, אבל נכשלתי בבחינה.",
+    "assoc": "בט — BUT = אבל, הפיכת כיוון המשפט"
+  },
+  "by": {
+    "sentence": "The book was written by a famous author.|הספר נכתב על ידי סופר מפורסם.",
+    "assoc": "בי — BY = על ידי, by the way = אגב"
+  },
+  "by no means": {
+    "sentence": "This is by no means an easy task.|זה בשום אופן לא משימה קלה.",
+    "assoc": "בי נו מינז — NO MEANS = אין אמצעים = בשום אופן לא"
+  },
+  "capability": {
+    "sentence": "She has the capability to lead a large team.|יש לה יכולת להוביל צוות גדול.",
+    "assoc": "קייפביליטי — CAPABLE + ility = מי שיכול"
+  },
+  "capable": {
+    "sentence": "He is capable of doing great things.|הוא מסוגל לעשות דברים גדולים.",
+    "assoc": "קייפבל — CAPE = גלימה, כמו סופרמן = מסוגל לכל"
+  },
+  "casual": {
+    "sentence": "It was just a casual conversation over coffee.|זו הייתה שיחה מזדמנת על כוס קפה.",
+    "assoc": "קאז'ואל — casual = קז'ואל, כמו ביגוד קאז'ואל = לא רשמי"
+  },
+  "casualty": {
+    "sentence": "Fortunately there were no casualties in the accident.|למרבה המזל לא היו נפגעים בתאונה.",
+    "assoc": "קאז'ואלטי — casual → casualty, דבר שקורה אקראית = נפגע"
+  },
+  "cease": {
+    "sentence": "The rain finally ceased in the afternoon.|הגשם פסק סוף סוף בשעות אחר הצהריים.",
+    "assoc": "סיס — CEASE = להפסיק, cease and desist = עצור ופרוש"
+  },
+  "cease fire": {
+    "sentence": "Both sides agreed to a cease fire.|שני הצדדים הסכימו להפסקת אש.",
+    "assoc": "סיס פייר — CEASE the FIRE = עצור את האש"
+  },
+  "ceaselessly": {
+    "sentence": "The machine ran ceaselessly for twelve hours.|המכונה פעלה ללא הרף שתים עשרה שעות.",
+    "assoc": "סיסלסלי — ceaseLESS = ללא עצירה, ceaselessly = כל הזמן"
+  },
+  "celebrate": {
+    "sentence": "We celebrated her birthday with a big party.|חגגנו את יום הולדתה עם מסיבה גדולה.",
+    "assoc": "סלברייט — CELEBRATE, כמו celebrity = מפורסם שחוגגים אותו"
+  },
+  "celebration": {
+    "sentence": "The celebration lasted until midnight.|החגיגה נמשכה עד חצות.",
+    "assoc": "סלברישן — celebrate → celebration = חגיגה"
+  },
+  "challenge": {
+    "sentence": "This is a great challenge for the entire team.|זה אתגר גדול לכל הצוות.",
+    "assoc": "צ'לנג' — CHALLENGE = צ'לנג', תאתגר אותי!"
+  },
+  "clarity": {
+    "sentence": "He explained the problem with great clarity.|הוא הסביר את הבעיה בבהירות רבה.",
+    "assoc": "קלריטי — CLEAR + ity = בהירות, כמו crystal clear"
+  },
+  "clear": {
+    "sentence": "The instructions were clear and easy to follow.|ההוראות היו ברורות וקלות למעקב.",
+    "assoc": "קליר — CLEAR = ברור, all clear = הכל ברור"
+  },
+  "clever": {
+    "sentence": "She found a clever solution to the problem.|היא מצאה פתרון חכם לבעיה.",
+    "assoc": "קלבר — CLEVER = חכם, clover = תלתן בר-מזל = חכמה"
+  },
+  "cleverly": {
+    "sentence": "He cleverly avoided answering the question.|הוא התחמק בחכמה ממתן תשובה לשאלה.",
+    "assoc": "קלברלי — clever+LY = בחכמה"
+  },
+  "close": {
+    "sentence": "Please close the window before you leave.|בבקשה סגור את החלון לפני שתצא.",
+    "assoc": "קלוז — CLOSE = לסגור (פועל), close = קרוב (שם תואר) - שתי הגיות!"
+  },
+  "collect": {
+    "sentence": "He collects rare stamps as a hobby.|הוא אוסף בולים נדירים כתחביב.",
+    "assoc": "קולקט — COL+LECT, lect = לקחת = לאסוף יחד"
+  },
+  "collective": {
+    "sentence": "A collective decision was made by the group.|ההחלטה הקולקטיבית התקבלה על ידי הקבוצה.",
+    "assoc": "קולקטיב — COLLECTIVE = קיבוץ = collective farm"
+  },
+  "collectively": {
+    "sentence": "They worked collectively to solve the issue.|הם עבדו ביחד לפתור את הבעיה.",
+    "assoc": "קולקטיבלי — collectively = כמו קיבוץ ביחד"
+  },
+  "comfort": {
+    "sentence": "The warm blanket gave her comfort.|השמיכה החמה נתנה לה נוחות.",
+    "assoc": "קומפורט — com+FORT = כוח (fort) יחד = נוחות וביטחון"
+  },
+  "comfortable": {
+    "sentence": "The new sofa is very comfortable.|הספה החדשה נוחה מאוד.",
+    "assoc": "קומפורטבל — comfortable = comfort+able = מסוגל להרגיש בנוחות"
+  },
+  "comfortably": {
+    "sentence": "She sat comfortably in her favorite chair.|היא ישבה בנוחות בכיסאה האהוב.",
+    "assoc": "קומפורטבלי — comfortably = בצורה נוחה"
+  },
+  "commend": {
+    "sentence": "I commend you for your excellent work.|אני משבח אותך על עבודתך המצוינת.",
+    "assoc": "קומנד — com+MEND = לתקן שם טוב = לשבח"
+  },
+  "common": {
+    "sentence": "It is common to see pigeons in the city.|נפוץ לראות יונים בעיר.",
+    "assoc": "קומון — COMMON = common knowledge = ידע נפוץ לכולם"
+  },
+  "complain": {
+    "sentence": "She always complains about the cold weather.|היא תמיד מתלוננת על מזג האוויר הקר.",
+    "assoc": "קומפליין — com+PLAIN = להפוך פשוט (plain) = להתלונן"
+  },
+  "compose": {
+    "sentence": "Mozart composed his first symphony at age eight.|מוצרט חיבר את הסימפוניה הראשונה שלו בגיל שמונה.",
+    "assoc": "קומפוז — com+POSE = לשים ביחד (pose) = להרכיב"
+  },
+  "composition": {
+    "sentence": "The composition of the orchestra changed this season.|הרכב התזמורת השתנה עונה זו.",
+    "assoc": "קומפוזישן — compose + tion = מה שחובר"
+  },
+  "comprehend": {
+    "sentence": "It is difficult to comprehend his strange behavior.|קשה להבין את התנהגותו המוזרה.",
+    "assoc": "קומפריהנד — com+pre+HEND, לתפוס (hend) מראש = להבין"
+  },
+  "comprise": {
+    "sentence": "The team comprises ten experienced players.|הצוות כולל עשרה שחקנים מנוסים.",
+    "assoc": "קומפרייז — com+PRISE, prize = לתפוס, לכלול בתוכו"
+  },
+  "conclusively": {
+    "sentence": "He proved conclusively that the theory was wrong.|הוא הוכיח בצורה מכרעת שהתיאוריה הייתה שגויה.",
+    "assoc": "קונקלוסיבלי — conclusive = conclusion = מסקנה מכרעת"
+  },
+  "confront": {
+    "sentence": "She had to confront her deepest fears.|היא נאלצה להתעמת עם פחדיה העמוקים.",
+    "assoc": "קונפרונט — con+FRONT = להתייצב חזית אל חזית"
+  },
+  "consequently": {
+    "sentence": "He forgot to study; consequently he failed the test.|הוא שכח ללמוד; כתוצאה מכך נכשל במבחן.",
+    "assoc": "קונסיקוונטלי — consequence = תוצאה, consequently = לכן"
+  },
+  "constantly": {
+    "sentence": "She is constantly busy with work.|היא עסוקה כל הזמן בעבודה.",
+    "assoc": "קונסטנטלי — CONSTANT = קבוע + ly = ללא הפסקה"
+  },
+  "contaminate": {
+    "sentence": "The chemical spill contaminated the river.|הדליפה הכימית זיהמה את הנהר.",
+    "assoc": "קונטמינייט — con+TAMIN, tamper = לטמא = לזהם"
+  },
+  "contemporary": {
+    "sentence": "She is one of the greatest contemporary artists.|היא אחת האמניות הגדולות בנות זמננו.",
+    "assoc": "קונטמפוררי — con+TEMPO+rary, טמפו = זמן = אותו זמן"
+  },
+  "content": {
+    "sentence": "She was content with her final results.|היא הייתה מרוצה מתוצאותיה הסופיות.",
+    "assoc": "קונטנט — CONTENT = תוכן, גם = מרוצה, מי שיש לו תוכן שמח"
+  },
+  "contest": {
+    "sentence": "He won the singing contest easily.|הוא ניצח בתחרות השירה בקלות.",
+    "assoc": "קונטסט — con+TEST = מבחן בין כולם = תחרות"
+  },
+  "continue": {
+    "sentence": "Please continue with your presentation.|אנא המשך עם ההצגה שלך.",
+    "assoc": "קונטיניו — con+TIN+ue, פח (tin) שממשיך = להמשיך"
+  },
+  "contradict": {
+    "sentence": "His actions contradict his words.|מעשיו סותרים את דבריו.",
+    "assoc": "קונטרדיקט — CONTRA+DICT, contra = נגד, dict = לומר = לומר ההפך"
+  },
+  "contradictory": {
+    "sentence": "The two witnesses gave contradictory statements.|שני העדים נתנו עדויות סותרות.",
+    "assoc": "קונטרדיקטורי — contradictory = מלא סתירות"
+  },
+  "contribute to": {
+    "sentence": "Stress can contribute to serious health problems.|לחץ יכול לתרום לבעיות בריאות חמורות.",
+    "assoc": "קונטריביוט — con+TRIBUTE = מס (tribute) יחד = לתרום"
+  },
+  "convenience": {
+    "sentence": "For convenience, we use online shopping.|לנוחיות, אנו משתמשים בקניות מקוונות.",
+    "assoc": "קונוויניינס — convenient = נוח, convenience = הנוחיות"
+  },
+  "convenient": {
+    "sentence": "Is this time convenient for you?|האם הזמן הזה נוח לך?",
+    "assoc": "קונוויניינט — con+VENI+ent, veni = לבוא, נוח לגשת"
+  },
+  "convince": {
+    "sentence": "He tried to convince her to stay for dinner.|הוא ניסה לשכנע אותה להישאר לארוחת ערב.",
+    "assoc": "קונוינס — con+VINCE, vince = לנצח = לנצח בויכוח = לשכנע"
+  },
+  "correspond": {
+    "sentence": "His actions do not correspond with his words.|מעשיו אינם מתאימים לדבריו.",
+    "assoc": "קורספונד — cor+RESPOND = לענות בחזרה = להתכתב"
+  },
+  "countless": {
+    "sentence": "There are countless stars in the night sky.|יש אין-ספור כוכבים בשמים בלילה.",
+    "assoc": "קאונטלס — count+LESS = לא ניתן לספור = אין-ספור"
+  },
+  "courage": {
+    "sentence": "It takes courage to admit when you are wrong.|צריך אומץ להודות כשאתה טועה.",
+    "assoc": "קוריג' — COURAGE, לב (cour בצרפתית) גדול = אומץ"
+  },
+  "courageous": {
+    "sentence": "The courageous firefighter saved three lives.|הכבאי האמיץ הציל שלושה חיים.",
+    "assoc": "קורייג'ס — courageous = full of courage = אמיץ"
+  },
+  "create": {
+    "sentence": "Artists create beautiful works from simple materials.|אמנים יוצרים יצירות יפות מחומרים פשוטים.",
+    "assoc": "קריאייט — CREATE = ליצור, Creation = בריאה"
+  },
+  "crime": {
+    "sentence": "Robbery is a very serious crime.|שוד הוא פשע חמור מאוד.",
+    "assoc": "קריים — CRIME = פשע, crime scene = זירת הפשע"
+  },
+  "criminal": {
+    "sentence": "The criminal was caught by the police.|הפושע נתפס על ידי המשטרה.",
+    "assoc": "קרימינל — CRIMINAL = crime+inal = מי שעושה פשע"
+  },
+  "crudely": {
+    "sentence": "He crudely interrupted the important speech.|הוא הפריע לנאום החשוב בגסות.",
+    "assoc": "קרודלי — CRUDE = גולמי, גס, crude oil = נפט גולמי"
+  },
+  "cultural": {
+    "sentence": "This is an important cultural event for the city.|זהו אירוע תרבותי חשוב לעיר.",
+    "assoc": "קולצ'ורל — culture → cultural = תרבותי"
+  },
+  "culture": {
+    "sentence": "Every country has its own unique culture.|לכל מדינה יש תרבות ייחודית משלה.",
+    "assoc": "קולצ'ר — CULTURE = תרבות, cultured = מתורבת"
+  },
+  "damp": {
+    "sentence": "The basement walls were cold and damp.|קירות המרתף היו קרים ולחים.",
+    "assoc": "דמפ — DAMP = לח, dampness = לחות, כמו ספוג רטוב"
+  },
+  "deceased": {
+    "sentence": "The estate was left to charity by the deceased.|העיזבון הושאר לצדקה על ידי המנוח.",
+    "assoc": "דיסיסד — de+CEASED = הפסיק (ceased) לחיות = נפטר"
+  },
+  "definitely": {
+    "sentence": "She will definitely come to the party tomorrow.|היא בהחלט תבוא למסיבה מחר.",
+    "assoc": "דפיניטלי — definite = מוחלט, definitely = בהחלט"
+  },
+  "delay": {
+    "sentence": "The flight was delayed by two hours due to fog.|הטיסה התעכבה בשעתיים בגלל ערפל.",
+    "assoc": "דילי — DELAY = de+LAY, לשכב (lay) מחדש = לדחות"
+  },
+  "delight": {
+    "sentence": "The children were filled with delight at the surprise.|הילדים היו מלאים בשמחה מהפתעה.",
+    "assoc": "דיליט — de+LIGHT = קל ומלא אור = תענוג"
+  },
+  "derive": {
+    "sentence": "He derived great pleasure from reading.|הוא שאב הנאה רבה מקריאה.",
+    "assoc": "דריב — de+RIVE, rive = לחצוב, לחלץ = לגזור"
+  },
+  "derive (from)": {
+    "sentence": "The word 'biology' derives from Greek.|המילה 'ביולוגיה' נגזרת מיוונית.",
+    "assoc": "דריב פרום — derive from = נגזר מ / נובע מ"
+  },
+  "destroy": {
+    "sentence": "The fire destroyed the entire building.|האש הרסה את הבניין כולו.",
+    "assoc": "דיסטרוי — de+STROY, להרוס עד לאפס"
+  },
+  "destruction": {
+    "sentence": "The earthquake caused widespread destruction.|הרעידה גרמה להרס נרחב.",
+    "assoc": "דיסטרקשן — destroy → destruction = תוצאת ההרס"
+  },
+  "die": {
+    "sentence": "All living things must eventually die.|כל הדברים החיים חייבים בסופו של דבר למות.",
+    "assoc": "דיי — DIE = למות, dice = קוביות = להמר עם החיים"
+  },
+  "die out": {
+    "sentence": "Many animal species die out every year.|מינים רבים של בעלי חיים נכחדים כל שנה.",
+    "assoc": "דיי אאוט — die+OUT = למות לגמרי, לכחד"
+  },
+  "diminish": {
+    "sentence": "The noise gradually diminished over time.|הרעש הלך והצטמצם עם הזמן.",
+    "assoc": "דימיניש — dimin = MINI = קטן, להקטין"
+  },
+  "discord": {
+    "sentence": "There was growing discord between the two groups.|הייתה מחלוקת גוברת בין שתי הקבוצות.",
+    "assoc": "דיסקורד — dis+CORD = לנתק חוט (cord) = סכסוך"
+  },
+  "dislocated": {
+    "sentence": "He dislocated his shoulder during the football game.|הוא נקע את כתפו במשחק הכדורגל.",
+    "assoc": "דיסלוקייטד — dis+LOCATE = לצאת ממקומו = נקע"
+  },
+  "disparate": {
+    "sentence": "The two cultures are fundamentally disparate.|שתי התרבויות שונות מהותית.",
+    "assoc": "דיספרט — dis+PARITY, parity = שוויון, dis = ניגוד = שונים"
+  },
+  "dispute": {
+    "sentence": "There is an ongoing dispute over the land.|יש ויכוח מתמשך על האדמה.",
+    "assoc": "דיספיוט — dis+PUTE, PUT = לשים, לשים ויכוח = מחלוקת"
+  },
+  "dissimilar": {
+    "sentence": "The two cases are completely dissimilar.|שני המקרים שונים לחלוטין.",
+    "assoc": "דיסימילר — dis+SIMILAR = לא דומה = שונה"
+  },
+  "distance": {
+    "sentence": "The distance between the two cities is fifty kilometers.|המרחק בין שתי הערים הוא חמישים קילומטר.",
+    "assoc": "דיסטנס — dis+STANCE = לעמוד (stance) רחוק = מרחק"
+  },
+  "distant": {
+    "sentence": "The mountains are distant but visible.|ההרים רחוקים אבל נראים.",
+    "assoc": "דיסטנט — DISTANT = כמו distance = רחוק"
+  },
+  "distinct": {
+    "sentence": "The two colors are clearly distinct.|שני הצבעים ברורים ומובחנים.",
+    "assoc": "דיסטינקט — dis+TINCT, צבוע (tinct) בצורה שונה = מובחן"
+  },
+  "down": {
+    "sentence": "The price of oil went down this month.|מחיר הנפט ירד החודש.",
+    "assoc": "דאון — DOWN = מטה, down town = עיר תחתית"
+  },
+  "downgrade": {
+    "sentence": "His performance led to a downgrade in his position.|ביצועיו הובילו להורדת דרגה בתפקידו.",
+    "assoc": "דאונגרייד — DOWN+GRADE = לרדת בדרגה"
+  },
+  "drift": {
+    "sentence": "The small boat drifted slowly in the current.|הסירה הקטנה נסחפה לאט בזרם.",
+    "assoc": "דריפט — DRIFT = לנסוע ללא כיוון, snow drift = שלג נסחף"
+  },
+  "drop": {
+    "sentence": "Do not drop the glass on the floor.|אל תפיל את הכוס לרצפה.",
+    "assoc": "דרופ — DROP = טיפה, to drop = ליפול כמו טיפה"
+  },
+  "due to": {
+    "sentence": "Due to heavy rain, the event was canceled.|עקב גשם כבד, האירוע בוטל.",
+    "assoc": "דיו טו — DUE = מגיע, due to = מגיע בגלל = עקב"
+  },
+  "during": {
+    "sentence": "During the meeting, she took detailed notes.|במהלך הפגישה, היא רשמה הערות מפורטות.",
+    "assoc": "דיורינג — DURING = לאורך, durable = עמיד לאורך זמן"
+  },
+  "dying": {
+    "sentence": "The old oak tree was slowly dying.|עץ האלון הישן היה גוסס לאט.",
+    "assoc": "דאיינג — DYING = die+ing = בתהליך גסיסה"
+  },
+  "earlier": {
+    "sentence": "She arrived earlier than expected.|היא הגיעה מוקדם יותר ממה שציפינו.",
+    "assoc": "ארלייר — EARLIER = early+er = יותר מוקדם"
+  },
+  "early": {
+    "sentence": "We need to leave early tomorrow morning.|אנחנו צריכים לצאת מוקדם מחר בבוקר.",
+    "assoc": "ארלי — EARLY = מוקדם, the early bird catches the worm"
+  },
+  "ease": {
+    "sentence": "The medicine brought ease to his chronic pain.|התרופה הקלה על כאבו הכרוני.",
+    "assoc": "איז — EASE = קלות, at ease = בנינוחות"
+  },
+  "eccentric": {
+    "sentence": "He is an eccentric inventor with strange ideas.|הוא ממציא אקסצנטרי עם רעיונות מוזרים.",
+    "assoc": "אקסנטריק — EX+CENTER = מחוץ למרכז = מוזר"
+  },
+  "embellish": {
+    "sentence": "She embellished her dress with colorful jewels.|היא קישטה את שמלתה בתכשיטים צבעוניים.",
+    "assoc": "אמבליש — em+BELL+ish, פעמון (bell) מקשט"
+  },
+  "emit": {
+    "sentence": "The factory emits large amounts of smoke.|המפעל פולט כמויות גדולות של עשן.",
+    "assoc": "אמיט — E+MIT = להוציא החוצה = לפלוט"
+  },
+  "encircling": {
+    "sentence": "The encircling mountains protect the valley.|ההרים המקיפים מגנים על העמק.",
+    "assoc": "אינסרקלינג — en+CIRCLE+ing = לעטוף בעיגול"
+  },
+  "enclose": {
+    "sentence": "Please enclose a stamped envelope with your application.|אנא צרף מעטפה ממוענת לבקשתך.",
+    "assoc": "אינקלוז — en+CLOSE = לסגור בתוך = לצרף"
+  },
+  "enclosing": {
+    "sentence": "The enclosing fence kept the animals inside.|הגדר הסוגרת שמרה את החיות בפנים.",
+    "assoc": "אינקלוזינג — enclosing = closing in = סוגר מסביב"
+  },
+  "encompassing": {
+    "sentence": "The project is encompassing all departments.|הפרויקט כולל את כל המחלקות.",
+    "assoc": "אינקמפסינג — en+COMPASS+ing, מצפן שמקיף = מכיל הכל"
+  },
+  "endlessly": {
+    "sentence": "She talked endlessly about her vacation.|היא דיברה ללא סוף על חופשתה.",
+    "assoc": "אנדלסלי — END+LESS = ללא סוף + ly"
+  },
+  "entirely": {
+    "sentence": "I entirely agree with your assessment.|אני מסכים לחלוטין עם הערכתך.",
+    "assoc": "אינטיירלי — ENTIRE = שלם, entirely = לחלוטין, במלואו"
+  },
+  "equivalent": {
+    "sentence": "A kilometer is equivalent to 0.62 miles.|קילומטר שקול ל-0.62 מייל.",
+    "assoc": "אקוויולנט — EQUI+VALENT, equi = שווה = שוות ערך"
+  },
+  "erroneously": {
+    "sentence": "He was erroneously accused of the crime.|הוא הואשם בטעות בפשע.",
+    "assoc": "אירוניאסלי — ERRONE = ERROR = טעות + ously"
+  },
+  "establish": {
+    "sentence": "They established a successful new company.|הם ייסדו חברה חדשה מצליחה.",
+    "assoc": "אסטבליש — e+STABLE+ish = לבסס (stable), לייצב"
+  },
+  "establishment": {
+    "sentence": "He works at a well-respected establishment.|הוא עובד במוסד מכובד מאוד.",
+    "assoc": "אסטבלישמנט — establishment = מה שהוקם ומושרש"
+  },
+  "even": {
+    "sentence": "Even I can solve that problem.|אפילו אני יכול לפתור את הבעיה הזו.",
+    "assoc": "איבן — EVEN = שווה, even number = זוגי, even = אפילו"
+  },
+  "even though": {
+    "sentence": "Even though she was tired, she continued working.|למרות שהייתה עייפה, היא המשיכה לעבוד.",
+    "assoc": "איבן דו — even though = אפילו אם = למרות"
+  },
+  "eventually": {
+    "sentence": "Eventually, everything worked out for the best.|בסופו של דבר, הכל הסתדר לטובה.",
+    "assoc": "איבנצ'ואלי — EVENT+ually = אחרי כל האירועים = בסוף"
+  },
+  "ever": {
+    "sentence": "Have you ever been to Paris?|האם היית אי פעם בפריז?",
+    "assoc": "אבר — EVER = לנצח, for ever = לנצח, ever = אי פעם"
+  },
+  "every": {
+    "sentence": "Every student must submit their homework.|כל תלמיד חייב להגיש את שיעורי הבית.",
+    "assoc": "אברי — EVERY = כל אחד ואחד"
+  },
+  "everybody": {
+    "sentence": "Everybody loves a good story.|כולם אוהבים סיפור טוב.",
+    "assoc": "אברבאדי — every+BODY = כל גוף = כולם"
+  },
+  "everyone": {
+    "sentence": "Everyone in the class knew the answer.|כולם בכיתה ידעו את התשובה.",
+    "assoc": "אברוון — every+ONE = כל אחד"
+  },
+  "everything": {
+    "sentence": "He lost everything in the terrible fire.|הוא איבד הכל בשריפה הנוראה.",
+    "assoc": "אברית'ינג — every+THING = כל דבר"
+  },
+  "except": {
+    "sentence": "Everyone came to the party except John.|כולם באו למסיבה חוץ מג'ון.",
+    "assoc": "אקספט — EX+CEPT, לקחת (cept) החוצה = להוציא מהכלל"
+  },
+  "exceptionally": {
+    "sentence": "She is exceptionally talented in mathematics.|היא מוכשרת יוצאת דופן במתמטיקה.",
+    "assoc": "אקספשנלי — exception = יוצא דופן, exceptionally = באופן חריג"
+  },
+  "exhale": {
+    "sentence": "Take a deep breath and slowly exhale.|קח נשימה עמוקה ונשוף לאט.",
+    "assoc": "אקסהייל — EX+HALE = להוציא (ex) נשימה (hale) = לנשוף"
+  },
+  "expect": {
+    "sentence": "I expect you to be on time for the meeting.|אני מצפה שתהיה בזמן לפגישה.",
+    "assoc": "אקספקט — ex+PECT, pect = להסתכל = להסתכל קדימה = לצפות"
+  },
+  "explain": {
+    "sentence": "Can you explain why you were late?|תוכל להסביר מדוע איחרת?",
+    "assoc": "אקספליין — ex+PLAIN = לעשות פשוט (plain) = להסביר"
+  },
+  "expose": {
+    "sentence": "The journalist exposed government corruption.|העיתונאי חשף שחיתות ממשלתית.",
+    "assoc": "אקספוז — ex+POSE = לחשוף לעין = להציג"
+  },
+  "exposed": {
+    "sentence": "The electrical wires were dangerously exposed.|החוטים החשמליים היו חשופים בצורה מסוכנת.",
+    "assoc": "אקספוזד — exposed = חשוף, מ-expose"
+  },
+  "exposure": {
+    "sentence": "Exposure to sunlight is healthy in moderation.|חשיפה לאור השמש בריאה במידה.",
+    "assoc": "אקספוז'ר — expose → exposure = מצב החשיפה"
+  },
+  "exterior": {
+    "sentence": "The exterior of the old house was repainted.|החלק החיצוני של הבית הישן נצבע מחדש.",
+    "assoc": "אקסטיריאר — exter+ior, exterior = exterior design = חיצוני"
+  },
+  "external": {
+    "sentence": "External factors affected the final results.|גורמים חיצוניים השפיעו על התוצאות הסופיות.",
+    "assoc": "אקסטרנל — EX+TERNAL, EX = חוץ = חיצוני"
+  },
+  "extremely": {
+    "sentence": "It was extremely cold outside last night.|היה קר ביותר בחוץ אמש.",
+    "assoc": "אקסטרימלי — extreme → extremely = במידה קיצונית"
+  },
+  "far": {
+    "sentence": "The school is too far from our house.|בית הספר רחוק מדי מביתנו.",
+    "assoc": "פר — FAR = רחוק, far away = מרחוק"
+  },
+  "favor": {
+    "sentence": "Can you please do me a small favor?|תוכל לעשות לי טובה קטנה?",
+    "assoc": "פייבר — FAVOR = חסד, in favor of = בעד"
+  },
+  "feasible": {
+    "sentence": "The plan looks feasible within the given budget.|התוכנית נראית ישימה בתקציב הנתון.",
+    "assoc": "פיזבל — feasible = FEAS+ible, feas = לעשות, ניתן לעשייה"
+  },
+  "feed": {
+    "sentence": "She feeds the birds every morning without fail.|היא מאכילה את הציפורים כל בוקר ללא כישלון.",
+    "assoc": "פיד — FEED = להאכיל, feedback = הזנה חוזרת"
+  },
+  "feel": {
+    "sentence": "How do you feel after a good night's sleep?|איך אתה מרגיש אחרי לילה טוב של שינה?",
+    "assoc": "פיל — FEEL = להרגיש, feelings = רגשות"
+  },
+  "female": {
+    "sentence": "The female lion is called a lioness.|האריה הנקבה נקראת לביאה.",
+    "assoc": "פימייל — FE+MALE, fe = נקבה, male = זכר"
+  },
+  "few": {
+    "sentence": "Only a few students passed the difficult exam.|רק מעט תלמידים עברו את הבחינה הקשה.",
+    "assoc": "פיו — FEW = מעט, few and far between = נדיר"
+  },
+  "fewer": {
+    "sentence": "Fewer people came than we expected.|פחות אנשים באו ממה שציפינו.",
+    "assoc": "פיואר — FEWER = fewer than few = פחות"
+  },
+  "finally": {
+    "sentence": "After hours of searching, he finally found his keys.|אחרי שעות של חיפוש, הוא סוף סוף מצא את המפתחות.",
+    "assoc": "פיינלי — FINAL+LY = סופי, בסוף"
+  },
+  "first": {
+    "sentence": "She was the first student to arrive at school.|היא הייתה התלמידה הראשונה להגיע לבית הספר.",
+    "assoc": "פרסט — FIRST = ראשון, first aid = עזרה ראשונה"
+  },
+  "fission": {
+    "sentence": "Nuclear fission releases enormous amounts of energy.|ביקוע גרעיני משחרר כמויות אדירות של אנרגיה.",
+    "assoc": "פישן — FISSION = fish+ion, הדג התחלק! ביקוע גרעיני"
+  },
+  "flexible": {
+    "sentence": "She has a very flexible work schedule.|יש לה לוח עבודה גמיש מאוד.",
+    "assoc": "פלקסיבל — FLEX = להכפיף, flexible = יכול להתכופף"
+  },
+  "fling": {
+    "sentence": "He flung the ball across the entire field.|הוא השליך את הכדור לרחבי השדה כולו.",
+    "assoc": "פלינג — FLING = להשליך בכוח, כמו catapult"
+  },
+  "following": {
+    "sentence": "The following day brought better weather.|היום הבא הביא מזג אוויר טוב יותר.",
+    "assoc": "פולואינג — FOLLOW+ING = הולך אחרי = הבא"
+  },
+  "for": {
+    "sentence": "This gift is especially for you.|המתנה הזו מיועדת במיוחד עבורך.",
+    "assoc": "פור — FOR = עבור, for good = לתמיד"
+  },
+  "forever": {
+    "sentence": "True friendship lasts forever.|ידידות אמיתית נמשכת לנצח.",
+    "assoc": "פוראבר — for+EVER = לנצח, forever young"
+  },
+  "form": {
+    "sentence": "Water takes the form of its container.|מים לוקחים את צורת הכלי שלהם.",
+    "assoc": "פורם — FORM = צורה, formal = רשמי, reform = לשנות צורה"
+  },
+  "forward": {
+    "sentence": "Move forward with confidence and determination.|התקדם קדימה בביטחון ובנחישות.",
+    "assoc": "פורוורד — fore+WARD, fore = קדמי, כיוון קדימה"
+  },
+  "found": {
+    "sentence": "He found a new school in the old building.|הוא ייסד בית ספר חדש בבניין הישן.",
+    "assoc": "פאונד — FOUND = מצא (עבר), גם = ייסד = לבנות בסיס"
+  },
+  "foundation": {
+    "sentence": "The foundation of the old building is very solid.|היסוד של הבניין הישן מוצק מאוד.",
+    "assoc": "פאונדישן — FOUND+ation = בסיס שנבנה"
+  },
+  "fraction": {
+    "sentence": "Only a fraction of the applicants were accepted.|רק שבר קטן מהמועמדים התקבל.",
+    "assoc": "פרקשן — FRACTION = שבר, fraction = חלק קטן"
+  },
+  "fully": {
+    "sentence": "I fully understand the complexity of the situation.|אני מבין לחלוטין את מורכבות המצב.",
+    "assoc": "פולי — FULL+Y = מלא + ית = לחלוטין"
+  },
+  "gain": {
+    "sentence": "She gained valuable experience from the internship.|היא רכשה ניסיון יקר ערך מהתמחות.",
+    "assoc": "גיין — GAIN = רווח, gain weight = לעלות במשקל"
+  },
+  "genetics": {
+    "sentence": "Genetics explains many inherited traits.|גנטיקה מסבירה תכונות תורשתיות רבות.",
+    "assoc": "ג'נטיקס — GENETICS = genesis + ics = מדע הבריאה הגנטית"
+  },
+  "give rise": {
+    "sentence": "New technology gives rise to new opportunities.|טכנולוגיה חדשה גורמת להזדמנויות חדשות.",
+    "assoc": "גיב ריז — give RISE = לתת עלייה = לגרום להתפתחות"
+  },
+  "give rise to": {
+    "sentence": "Poor diet can give rise to serious illness.|תזונה לקויה יכולה לגרום למחלה חמורה.",
+    "assoc": "גיב ריז טו — give rise to = להצמיח, לגרום ל"
+  },
+  "grade": {
+    "sentence": "She received the highest grade in the class.|היא קיבלה את הציון הגבוה ביותר בכיתה.",
+    "assoc": "גרייד — GRADE = ציון / דרגה, upgrade = שדרוג"
+  },
+  "gradual": {
+    "sentence": "The change in temperature was slow and gradual.|השינוי בטמפרטורה היה איטי והדרגתי.",
+    "assoc": "גראדז'ואל — GRADUAL = grade+ual, שלב אחרי שלב"
+  },
+  "gradually": {
+    "sentence": "He gradually improved his English skills.|הוא שיפר בהדרגה את כישורי האנגלית שלו.",
+    "assoc": "גראדז'ואלי — gradually = gradual+ly = בהדרגה"
+  },
+  "greater part": {
+    "sentence": "The greater part of the work is already done.|החלק הגדול של העבודה כבר בוצע.",
+    "assoc": "גרייטר פרט — greater part = החלק הגדול יותר"
+  },
+  "grow": {
+    "sentence": "Children grow very quickly in their first years.|ילדים גדלים מהר מאוד בשנים הראשונות.",
+    "assoc": "גרו — GROW = לגדול, grow up = לגדול, grown-up = מבוגר"
+  },
+  "growth": {
+    "sentence": "The company showed impressive growth this year.|החברה הראתה צמיחה מרשימה השנה.",
+    "assoc": "גרות' — GROWTH = צמיחה, מ-grow"
+  },
+  "haul": {
+    "sentence": "It took two men to haul the heavy equipment.|לקח שני אנשים לגרור את הציוד הכבד.",
+    "assoc": "הול — HAUL = לגרור, long haul = מרחק ארוך"
+  },
+  "have an effect": {
+    "sentence": "Exercise has a positive effect on mental health.|פעילות גופנית משפיעה לטובה על בריאות הנפש.",
+    "assoc": "האב אן אפקט — have an EFFECT = להחזיק השפעה"
+  },
+  "have an impact": {
+    "sentence": "Good teachers have a lasting impact on students.|מורים טובים משפיעים לאורך זמן על תלמידים.",
+    "assoc": "האב אן אימפקט — have an IMPACT = להשפיע חזק"
+  },
+  "hence": {
+    "sentence": "He is tired, hence he cannot concentrate.|הוא עייף, לכן לא יכול להתרכז.",
+    "assoc": "הנס — HENCE = from here = מכאן = לכן"
+  },
+  "herd": {
+    "sentence": "A large herd of cattle crossed the river.|עדר גדול של בקר חצה את הנהר.",
+    "assoc": "הרד — HERD = עדר, herd mentality = מנטליות עדר"
+  },
+  "hesitate": {
+    "sentence": "Don't hesitate to ask for help when you need it.|אל תהסס לבקש עזרה כשאתה צריך.",
+    "assoc": "הזיטייט — HESITATE = HES-itate, כמו 'HEY, WAIT!'"
+  },
+  "high": {
+    "sentence": "The mountains in this region are very high.|ההרים באזור זה גבוהים מאוד.",
+    "assoc": "היי — HIGH = גבוה, high five = חמש גבוהה"
+  },
+  "higher": {
+    "sentence": "The price of rent is higher this year.|מחיר השכירות גבוה יותר השנה.",
+    "assoc": "הייאר — HIGHER = high+er = יותר גבוה"
+  },
+  "hostile": {
+    "sentence": "The hostile crowd shouted loudly.|הקהל העויין צעק בקול רם.",
+    "assoc": "הוסטל — HOST+ILE, האורח (host) הפך לאויב"
+  },
+  "hostility": {
+    "sentence": "There was clear hostility between the two teams.|הייתה עוינות ברורה בין שתי הקבוצות.",
+    "assoc": "הוסטיליטי — hostile → hostility = עוינות"
+  },
+  "however": {
+    "sentence": "It was cold; however, we decided to go out.|היה קר; אולם, החלטנו לצאת.",
+    "assoc": "האואבר — HOW+EVER = ובכל זאת, אבל"
+  },
+  "illegal": {
+    "sentence": "Parking in this area is strictly illegal.|חנייה באזור זה אסורה לחלוטין על פי חוק.",
+    "assoc": "איליגל — IL+LEGAL, IL = לא, LEGAL = חוקי = לא חוקי"
+  },
+  "illusion": {
+    "sentence": "The magician created a perfect optical illusion.|הקוסם יצר אשליה אופטית מושלמת.",
+    "assoc": "אילוז'ן — illusion = ILL+usion, אשליה כמו מחלה (ill)"
+  },
+  "illusive": {
+    "sentence": "The solution to the problem seemed illusive.|הפתרון לבעיה נראה בלתי ניתן להשגה.",
+    "assoc": "אילוסיב — illusive = like an illusion = מתעתע"
+  },
+  "immortal": {
+    "sentence": "In Greek myths, gods were immortal.|במיתולוגיה היוונית, האלים היו בני אלמוות.",
+    "assoc": "אימורטל — IM+MORTAL = לא (im) בן תמותה = אלמוות"
+  },
+  "impartial": {
+    "sentence": "A judge must remain completely impartial.|שופט חייב להישאר חסר פניות לחלוטין.",
+    "assoc": "אימפרשל — IM+PARTIAL = לא (im) חלקי / משוחד"
+  },
+  "impartially": {
+    "sentence": "He judged all cases impartially and fairly.|הוא שפט את כל המקרים בצורה הוגנת.",
+    "assoc": "אימפרשלי — impartial+ly = בצורה הוגנת"
+  },
+  "in": {
+    "sentence": "She lives in a small village near the sea.|היא גרה בכפר קטן ליד הים.",
+    "assoc": "אין — IN = בתוך, inside = פנימה"
+  },
+  "in front of": {
+    "sentence": "Please stand in front of the camera.|אנא עמוד מול המצלמה.",
+    "assoc": "אין פרונט אוף — FRONT = קדמי, in front of = לפני"
+  },
+  "in no way": {
+    "sentence": "In no way will I agree to this proposal.|בשום אופן לא אסכים להצעה הזו.",
+    "assoc": "אין נו וויי — in no WAY = אין שום דרך = לא"
+  },
+  "in spite of": {
+    "sentence": "In spite of the heavy rain, we continued.|למרות הגשם הכבד, המשכנו.",
+    "assoc": "אין ספייט אוף — SPITE = כעס, in spite of = למרות הכל"
+  },
+  "in the beginning": {
+    "sentence": "In the beginning there was only darkness.|בהתחלה היה רק חושך.",
+    "assoc": "אין ד' בגינינג — beginning = ראשית, in the beginning"
+  },
+  "in view of": {
+    "sentence": "In view of the evidence, he was convicted.|לנוכח הראיות, הוא הורשע.",
+    "assoc": "אין ויו אוף — in VIEW of = in light of = לאור"
+  },
+  "increase": {
+    "sentence": "Prices increase significantly every year.|מחירים עולים משמעותית כל שנה.",
+    "assoc": "אינקריס — IN+CREASE, crease = קפל, לקפל = להוסיף"
+  },
+  "indefinite": {
+    "sentence": "He left for an indefinite period of time.|הוא עזב לתקופה לא מוגדרת.",
+    "assoc": "אינדפיניט — IN+DEFINITE = לא מוגדר"
+  },
+  "indulge": {
+    "sentence": "She indulges in chocolate after a stressful day.|היא מפנקת את עצמה בשוקולד אחרי יום מלחיץ.",
+    "assoc": "אינדאלג' — in+DULCE, dulce = מתוק בספרדית = לפנק"
+  },
+  "indulgence": {
+    "sentence": "An occasional indulgence is perfectly acceptable.|פינוק מדי פעם מקובל לחלוטין.",
+    "assoc": "אינדאלג'נס — indulge → indulgence = פינוק"
+  },
+  "influence": {
+    "sentence": "Music has a powerful influence on our mood.|למוזיקה יש השפעה חזקה על מצב רוחנו.",
+    "assoc": "אינפלואנס — in+FLU+ence, flu = זרם, הזרמה פנימה"
+  },
+  "inhale": {
+    "sentence": "Inhale deeply through your nose and hold it.|שאף עמוק דרך האף ועצור.",
+    "assoc": "אינהייל — IN+HALE = להכניס (in) נשימה = לשאוף"
+  },
+  "initially": {
+    "sentence": "Initially, the project seemed impossible.|בתחילה, הפרויקט נראה בלתי אפשרי.",
+    "assoc": "אינישלי — INITIAL = ראשי תיבות = ראשוני, initially = בתחילה"
+  },
+  "innumerable": {
+    "sentence": "There are innumerable stars visible on a clear night.|יש אין-ספור כוכבים נראים בלילה בהיר.",
+    "assoc": "אינניומרבל — IN+NUMERABLE = לא ניתן למניין"
+  },
+  "inside": {
+    "sentence": "The key is inside the small wooden box.|המפתח נמצא בתוך הקופסה הקטנה מעץ.",
+    "assoc": "אינסייד — IN+SIDE = הצד הפנימי"
+  },
+  "instead of": {
+    "sentence": "Use honey instead of sugar in the recipe.|השתמש בדבש במקום סוכר במתכון.",
+    "assoc": "אינסטד אוף — in+STEAD, stead = מקום = במקום"
+  },
+  "intensify": {
+    "sentence": "The conflict intensified over the following weeks.|הסכסוך התגבר במשך השבועות הבאים.",
+    "assoc": "אינטנסיפיי — INTENSE+ify = לעשות יותר עז"
+  },
+  "intensity": {
+    "sentence": "The intensity of the summer heat was unbearable.|עוצמת החום הקיצי הייתה בלתי נסבלת.",
+    "assoc": "אינטנסיטי — intense → intensity = עוצמה"
+  },
+  "interior": {
+    "sentence": "The interior of the old castle was stunning.|הפנים של הטירה הישנה היו מדהימים.",
+    "assoc": "אינטיריאר — interior design = עיצוב פנים = חלק הפנימי"
+  },
+  "internal": {
+    "sentence": "He suffered from serious internal bleeding.|הוא סבל מדימום פנימי חמור.",
+    "assoc": "אינטרנל — INTER+NAL, inter = פנים = פנימי"
+  },
+  "intricacy": {
+    "sentence": "The intricacy of the design impressed everyone.|מורכבות העיצוב הרשימה את כולם.",
+    "assoc": "אינטריקסי — intricate = מורכב, intricacy = מורכבות"
+  },
+  "invisible": {
+    "sentence": "Bacteria are invisible to the naked eye.|חיידקים בלתי נראים לעין בלתי מזוינת.",
+    "assoc": "אינביזיבל — IN+VISIBLE = לא נראה, invisible man = האיש הבלתי נראה"
+  },
+  "invisibly": {
+    "sentence": "The disease spread invisibly through the population.|המחלה התפשטה באופן בלתי נראה בקרב האוכלוסייה.",
+    "assoc": "אינביזיבלי — invisible+ly = בצורה שלא ניתן לראות"
+  },
+  "irreversibly": {
+    "sentence": "The environment was irreversibly damaged by the spill.|הסביבה ניזוקה באופן בלתי הפיך מהדליפה.",
+    "assoc": "אירוורסיבלי — IR+REVERSIBLE+ly = לא ניתן להחזיר אחורה"
+  },
+  "jag": {
+    "sentence": "The broken bottle had a sharp jag on one side.|לבקבוק השבור הייתה בליטה חדה בצד אחד.",
+    "assoc": "ג'ג — JAG = בליטה חדה, כמו זיג-זג אחד"
+  },
+  "jagged": {
+    "sentence": "The jagged rocks along the coast were dangerous.|הסלעים המשוננים לאורך החוף היו מסוכנים.",
+    "assoc": "ג'גד — JAGGED = jag+ged = מלא קצוות חדים"
+  },
+  "kit": {
+    "sentence": "She bought a first aid kit for the car.|היא קנתה ערכת עזרה ראשונה לרכב.",
+    "assoc": "קיט — KIT = ערכה, kit car = רכב לבנייה עצמית מחלקים"
+  },
+  "lament": {
+    "sentence": "She lamented the loss of her dear friend.|היא קוננה על אובדן חברתה היקרה.",
+    "assoc": "למנט — LAMENT = la+ment, מנטה מרה = קינה מרה"
+  },
+  "land": {
+    "sentence": "The plane landed safely at the airport.|המטוס נחת בבטחה בשדה התעופה.",
+    "assoc": "לנד — LAND = קרקע, to land = לנחות על הקרקע"
+  },
+  "last": {
+    "sentence": "She was the last person to leave the office.|היא הייתה האדם האחרון לעזוב את המשרד.",
+    "assoc": "לסט — LAST = אחרון, last but not least = אחרון אך לא פחות"
+  },
+  "later": {
+    "sentence": "We will discuss this matter later today.|נדון בעניין זה מאוחר יותר היום.",
+    "assoc": "לייטר — LATE+R = יותר מאוחר, see you later = להתראות"
+  },
+  "law": {
+    "sentence": "Everyone must respect and obey the law.|כולם חייבים לכבד ולציית לחוק.",
+    "assoc": "לו — LAW = חוק, law enforcement = אכיפת חוק"
+  },
+  "legal": {
+    "sentence": "Make sure the contract is legally binding.|ודא שהחוזה מחייב מבחינה משפטית.",
+    "assoc": "ליגל — LEGAL = מ-lex בלטינית = חוקי"
+  },
+  "legible": {
+    "sentence": "Her handwriting is very clear and legible.|כתב היד שלה ברור וקריא מאוד.",
+    "assoc": "לג'יבל — LEG+ible, leg = לקרוא בלטינית, ניתן לקריאה"
+  },
+  "legislate": {
+    "sentence": "The parliament will legislate new environmental laws.|הפרלמנט יחוקק חוקי סביבה חדשים.",
+    "assoc": "לג'יסלייט — LEGIS+LATE, legis = חוק, לחוקק"
+  },
+  "legislation": {
+    "sentence": "New legislation was passed to protect workers.|נחקקה חקיקה חדשה להגנת העובדים.",
+    "assoc": "לג'יסלישן — legislate → legislation = תוצאת החקיקה"
+  },
+  "legislative": {
+    "sentence": "The legislative process can take many months.|התהליך החקיקתי יכול לקחת חודשים רבים.",
+    "assoc": "לג'יסלטיב — LEGISLATIVE = של החקיקה = חקיקתי"
+  },
+  "legislator": {
+    "sentence": "The legislator proposed a new bill.|המחוקק הציע הצעת חוק חדשה.",
+    "assoc": "לג'יסלייטור — LEGISLATOR = מי שמחוקק = מחוקק"
+  },
+  "less": {
+    "sentence": "He earns less money than his older brother.|הוא מרוויח פחות כסף מאחיו הגדול.",
+    "assoc": "לס — LESS = פחות, -less suffix = ללא, hopeless = חסר תקווה"
+  },
+  "lessen": {
+    "sentence": "Rest will lessen the pain significantly.|מנוחה תפחית את הכאב משמעותית.",
+    "assoc": "לסן — LESS+EN = לעשות פחות = להפחית"
+  },
+  "liberally": {
+    "sentence": "She gives liberally to charitable causes.|היא תורמת בנדיבות לסיבות צדקה.",
+    "assoc": "ליברלי — LIBERAL = חופשי/נדיב, liberally = בנדיבות"
+  },
+  "liberate": {
+    "sentence": "The allied forces liberated the city from occupation.|כוחות הברית שחררו את העיר מהכיבוש.",
+    "assoc": "ליברייט — LIBER = חופש בלטינית, liberty = חירות"
+  },
+  "liberation": {
+    "sentence": "The liberation of the prisoners was celebrated nationwide.|שחרור האסירים חוגג ברחבי המדינה.",
+    "assoc": "ליברישן — liberate → liberation = שחרור"
+  },
+  "lie": {
+    "sentence": "Do not lie to me about what happened.|אל תשקר לי על מה שקרה.",
+    "assoc": "לי — LIE = שקר, lie down = לשכב, שתי משמעויות!"
+  },
+  "like": {
+    "sentence": "She sings exactly like a professional.|היא שרה בדיוק כמו מקצוענית.",
+    "assoc": "לייק — LIKE = לאהוב, גם = כמו, like = לייק בפייסבוק"
+  },
+  "lone": {
+    "sentence": "A lone wolf was spotted near the village.|זאב בודד נצפה ליד הכפר.",
+    "assoc": "לון — LONE = לבד, the lone ranger = הרוכב הבודד"
+  },
+  "lower": {
+    "sentence": "The temperature is significantly lower today.|הטמפרטורה נמוכה משמעותית יותר היום.",
+    "assoc": "לואר — LOW+ER = יותר נמוך, to lower = להוריד"
+  },
+  "lucrative": {
+    "sentence": "He found a very lucrative job in finance.|הוא מצא עבודה רווחית מאוד בפיננסים.",
+    "assoc": "לוקרטיב — LUCRE = כסף (לטינית), lucrative = מניב כסף"
+  },
+  "luminous": {
+    "sentence": "The luminous stars lit up the dark sky.|הכוכבים הזורחים האירו את השמיים האפלים.",
+    "assoc": "לומינס — LUMIN = אור בלטינית, כמו illuminate = להאיר"
+  },
+  "male": {
+    "sentence": "The male bird has much brighter colors.|לציפור הזכר יש צבעים בהירים הרבה יותר.",
+    "assoc": "מייל — MALE = זכר, female = נקבה, male = מאסקולין"
+  },
+  "malnutrition": {
+    "sentence": "Malnutrition affects millions of children worldwide.|תת-תזונה משפיעה על מיליוני ילדים ברחבי העולם.",
+    "assoc": "מלניוטרישן — MAL+NUTRITION, mal = רע = תזונה רעה"
+  },
+  "many": {
+    "sentence": "Many people attended the outdoor concert.|אנשים רבים השתתפו בקונצרט החיצוני.",
+    "assoc": "מני — MANY = הרבה, כמו 'many thanks'"
+  },
+  "margin": {
+    "sentence": "He won the election by a very narrow margin.|הוא ניצח בבחירות בהפרש קטן מאוד.",
+    "assoc": "מרג'ין — MARGIN = שוליים של דף, גם = הפרש"
+  },
+  "mature": {
+    "sentence": "Wine becomes more mature and complex with age.|יין הופך לבשל ומורכב יותר עם הגיל.",
+    "assoc": "מטיור — MATURE = בשל, maturity = בגרות"
+  },
+  "maturity": {
+    "sentence": "He showed remarkable maturity for his young age.|הוא הראה בשלות יוצאת דופן לגילו הצעיר.",
+    "assoc": "מטיוריטי — mature → maturity = בגרות/בשלות"
+  },
+  "may": {
+    "sentence": "You may leave the classroom when finished.|אתה רשאי לעזוב את הכיתה כשתסיים.",
+    "assoc": "מיי — MAY = חודש מאי, also = מותר, also = אולי"
+  },
+  "maybe": {
+    "sentence": "Maybe it will rain tomorrow afternoon.|אולי ירד גשם מחר בשעות הצהריים.",
+    "assoc": "מייבי — may+BE = אולי יהיה = אולי"
+  },
+  "mercifully": {
+    "sentence": "The judge treated the young offender mercifully.|השופט נהג כלפי העבריין הצעיר ברחמים.",
+    "assoc": "מרסיפולי — MERCY+fully = מלא רחמים = ברחמים"
+  },
+  "might": {
+    "sentence": "With all his might he tried to lift the rock.|בכל כוחו הוא ניסה להרים את הסלע.",
+    "assoc": "מייט — MIGHT = כוח, also = might = אולי (עבר של may)"
+  },
+  "mistake": {
+    "sentence": "Everyone makes mistakes from time to time.|כולם עושים טעויות מפעם לפעם.",
+    "assoc": "מיסטייק — MIS+TAKE = לקחת (take) לא נכון = טעות"
+  },
+  "mistaken": {
+    "sentence": "She was mistaken about the time of the meeting.|היא טעתה לגבי שעת הפגישה.",
+    "assoc": "מיסטיקן — mistaken = mistake+n = מוטעה"
+  },
+  "mistakenly": {
+    "sentence": "He mistakenly sent the email to the wrong person.|הוא שלח בטעות את האימייל לאדם הלא נכון.",
+    "assoc": "מיסטיקנלי — mistakenly = בטעות"
+  },
+  "mock": {
+    "sentence": "Do not mock others for their mistakes.|אל תלעג לאחרים בגלל טעויותיהם.",
+    "assoc": "מוק — MOCK = ללעוג, mock exam = מבחן דמה = מבחן לגלג"
+  },
+  "more than": {
+    "sentence": "She earns more than twice his salary.|היא מרוויחה יותר מפי שניים ממשכורתו.",
+    "assoc": "מור דן — MORE+THAN = יותר מ, comparative"
+  },
+  "mortal": {
+    "sentence": "All human beings are mortal by nature.|כל בני האדם הם בני תמותה מטבעם.",
+    "assoc": "מורטל — MORTAL = בן תמותה, mortal combat = קרב מוות"
+  },
+  "mortality": {
+    "sentence": "Infant mortality rates have dropped significantly.|שיעורי תמותת תינוקות ירדו משמעותית.",
+    "assoc": "מורטליטי — mortal → mortality = שיעור התמותה"
+  },
+  "most": {
+    "sentence": "She is the most talented student in the class.|היא התלמידה המוכשרת ביותר בכיתה.",
+    "assoc": "מוסט — MOST = הכי, the most = סופרלטיב"
+  },
+  "mutual": {
+    "sentence": "There is genuine mutual respect between the two leaders.|יש כבוד הדדי אמיתי בין שני המנהיגים.",
+    "assoc": "מיוצ'ואל — MUTUAL benefit = הדדיות, שני הצדדים מרוויחים"
+  },
+  "navigate": {
+    "sentence": "She used a map to navigate through the forest.|היא השתמשה במפה לניווט דרך היער.",
+    "assoc": "נביגייט — NAVIG = ספינה בלטינית, navigate = לנווט ספינה"
+  },
+  "navigation": {
+    "sentence": "Modern navigation relies heavily on GPS systems.|הניווט המודרני מסתמך רבות על מערכות GPS.",
+    "assoc": "נביגישן — navigate → navigation = ניווט"
+  },
+  "neglect": {
+    "sentence": "Do not neglect your health for the sake of work.|אל תזניח את בריאותך למען העבודה.",
+    "assoc": "נגלקט — NEG+LECT, neg = לא, lect = לתת תשומת לב = הזנחה"
+  },
+  "negligence": {
+    "sentence": "The accident was caused by sheer negligence.|התאונה נגרמה עקב רשלנות גמורה.",
+    "assoc": "נגליג'נס — negligence = negligent + ce = חוסר תשומת לב"
+  },
+  "neighboring": {
+    "sentence": "The neighboring country offered humanitarian aid.|המדינה השכנה הציעה סיוע הומניטרי.",
+    "assoc": "נייברינג — NEIGHBOR+ING = שכן + ינג = שכן"
+  },
+  "nevertheless": {
+    "sentence": "It was difficult; nevertheless, she succeeded.|היה קשה; בכל זאת, היא הצליחה.",
+    "assoc": "נברד'לס — never+the+LESS = בכל זאת, ולמרות הכל"
+  },
+  "next": {
+    "sentence": "Who is next in line, please?|מי הבא בתור, בבקשה?",
+    "assoc": "נקסט — NEXT = הבא, next to = ליד"
+  },
+  "next to": {
+    "sentence": "Please sit next to me at the table.|בבקשה שב לידי ליד השולחן.",
+    "assoc": "נקסט טו — next to = ממש לצד = ליד"
+  },
+  "no doubt": {
+    "sentence": "There is no doubt about his incredible talent.|אין ספק בכישרונו המדהים.",
+    "assoc": "נו דאוט — NO+DOUBT = ללא ספק, no doubt = וודאי"
+  },
+  "no more than": {
+    "sentence": "He is no more than a child playing games.|הוא לא יותר מילד שמשחק משחקים.",
+    "assoc": "נו מור דן — no more than = לא מעבר מ = רק"
+  },
+  "no one": {
+    "sentence": "No one knew the answer to the difficult question.|אף אחד לא ידע את התשובה לשאלה הקשה.",
+    "assoc": "נו ואן — NO+ONE = אף אחד לא"
+  },
+  "no other than": {
+    "sentence": "The winner was no other than the youngest competitor.|הזוכה היה לא אחר מהמתחרה הצעיר ביותר.",
+    "assoc": "נו אות'ר דן — no other than = לא אחר מלבד"
+  },
+  "none": {
+    "sentence": "None of the answers given were correct.|אף אחת מהתשובות שניתנו לא הייתה נכונה.",
+    "assoc": "נאן — NONE = no+one = כלום, אף אחד"
+  },
+  "nothing but": {
+    "sentence": "It was nothing but a series of lies.|זה לא היה אלא שורה של שקרים.",
+    "assoc": "נאת'ינג בט — nothing but = כלום חוץ מ = רק, גרסה דרמטית"
+  },
+  "notwithstanding": {
+    "sentence": "Notwithstanding the challenges, he completed the project.|למרות האתגרים, הוא השלים את הפרויקט.",
+    "assoc": "נוטוית'סטנדינג — not+with+STANDING = עומד נגד"
+  },
+  "now": {
+    "sentence": "Please do it right now without any delay.|אנא עשה זאת עכשיו ללא כל עיכוב.",
+    "assoc": "נאו — NOW = עכשיו, now or never = עכשיו או לעולם לא"
+  },
+  "nowadays": {
+    "sentence": "Nowadays almost everyone owns a smartphone.|בימינו כמעט לכולם יש סמארטפון.",
+    "assoc": "נאודייז — NOW+A+DAYS = בימי עכשיו = כיום"
+  },
+  "nuisance": {
+    "sentence": "The constant noise from the street was a real nuisance.|הרעש המתמיד מהרחוב היה מטרד אמיתי.",
+    "assoc": "ניוסנס — NUISANCE = new-sance, הדבר החדש שמרגיז"
+  },
+  "nutrition": {
+    "sentence": "Good nutrition is absolutely essential for healthy growth.|תזונה טובה חיונית לחלוטין לצמיחה בריאה.",
+    "assoc": "ניוטרישן — NUTRIENT = חומר מזין, nutrition = תזונה"
+  },
+  "obstacle": {
+    "sentence": "Fear is often the biggest obstacle to success.|פחד הוא לרוב המכשול הגדול ביותר להצלחה.",
+    "assoc": "אובסטקל — OB+STACLE, stacle = לעמוד, מה שעומד בדרך"
+  },
+  "obstruct": {
+    "sentence": "Fallen trees obstructed the main road.|עצים שנפלו חסמו את הדרך הראשית.",
+    "assoc": "אובסטרקט — OB+STRUCT, struct = לבנות, לבנות חסם"
+  },
+  "on": {
+    "sentence": "The book is on the table next to the lamp.|הספר על השולחן ליד המנורה.",
+    "assoc": "און — ON = על, on and on = שוב ושוב"
+  },
+  "on account of": {
+    "sentence": "On account of the bad weather, we canceled the trip.|בשל מזג האוויר הגרוע, ביטלנו את הטיול.",
+    "assoc": "און אקאונט אוף — account = חשבון, on account of = בגלל"
+  },
+  "on no account": {
+    "sentence": "On no account should you open that door.|בשום פנים ואופן אל תפתח את הדלת הזו.",
+    "assoc": "און נו אקאונט — on no account = בשום חשבון = אסור לחלוטין"
+  },
+  "on top of": {
+    "sentence": "On top of that, he arrived two hours late.|בנוסף לכך, הוא הגיע שעתיים מאוחר.",
+    "assoc": "און טופ אוף — on TOP of = מעל + בנוסף"
+  },
+  "only": {
+    "sentence": "Only she knew the full truth of what happened.|רק היא ידעה את האמת המלאה על מה שקרה.",
+    "assoc": "אונלי — ONLY = one+ly = אחד בלבד = רק"
+  },
+  "opaque": {
+    "sentence": "The frosted glass was completely opaque.|הזכוכית המחוספסת הייתה אטומה לחלוטין.",
+    "assoc": "אופיק — OPAQUE = OP+aque, אופק = לא ניתן לראות מעבר"
+  },
+  "opinion": {
+    "sentence": "In my opinion, this decision is completely wrong.|לדעתי, ההחלטה הזו שגויה לחלוטין.",
+    "assoc": "אופיניון — OPINION = your own opinion = דעה אישית"
+  },
+  "oppose": {
+    "sentence": "Many citizens oppose the new tax law.|אזרחים רבים מתנגדים לחוק המס החדש.",
+    "assoc": "אופוז — OP+POSE = עמדה (pose) הפוכה = להתנגד"
+  },
+  "out": {
+    "sentence": "Please get out of this room immediately.|אנא צא מהחדר הזה מיד.",
+    "assoc": "אאוט — OUT = החוצה, out of = מחוץ ל"
+  },
+  "outbreak": {
+    "sentence": "There was a sudden outbreak of influenza.|הייתה התפרצות פתאומית של שפעת.",
+    "assoc": "אאוטברייק — OUT+BREAK = פריצה החוצה = התפרצות"
+  },
+  "outlook": {
+    "sentence": "She always has a very positive outlook on life.|תמיד יש לה השקפה חיובית מאוד על החיים.",
+    "assoc": "אאוטלוק — OUT+LOOK = להסתכל החוצה = נקודת מבט"
+  },
+  "outlying": {
+    "sentence": "He lives in an outlying area far from the center.|הוא גר באזור מרוחק הרחק מהמרכז.",
+    "assoc": "אאוטלאיינג — out+LYING = שוכב בחוץ = מרוחק"
+  },
+  "outside": {
+    "sentence": "The children played happily outside in the garden.|הילדים שיחקו בשמחה בחוץ בגינה.",
+    "assoc": "אאוטסייד — OUT+SIDE = הצד החיצוני"
+  },
+  "over": {
+    "sentence": "The airplane flew over the city at low altitude.|המטוס עף מעל העיר בגובה נמוך.",
+    "assoc": "אובר — OVER = מעל, game over = המשחק נגמר"
+  },
+  "overwhelm": {
+    "sentence": "The amount of homework overwhelmed the students.|כמות שיעורי הבית הציפה את התלמידים.",
+    "assoc": "אוברוולם — OVER+WHELM = להציף מעבר לגבול הסבל"
+  },
+  "part": {
+    "sentence": "This is an important part of the overall plan.|זה חלק חשוב מהתוכנית הכוללת.",
+    "assoc": "פרט — PART = חלק, take part = להשתתף"
+  },
+  "partial": {
+    "sentence": "He made only a partial payment of the debt.|הוא שילם רק תשלום חלקי של החוב.",
+    "assoc": "פרשל — PARTIAL = PART+ial = חלקי"
+  },
+  "participation": {
+    "sentence": "Active participation in class is highly valued.|השתתפות פעילה בשיעור מוערכת מאוד.",
+    "assoc": "פרטיסיפישן — participate → participation = השתתפות"
+  },
+  "pay attention": {
+    "sentence": "Pay close attention to every detail in the instructions.|שים לב מקרוב לכל פרט בהוראות.",
+    "assoc": "פיי אטנשן — to PAY attention = לשלם בתשומת לב = להשקיע"
+  },
+  "perpetually": {
+    "sentence": "She perpetually worries about her children's safety.|היא מודאגת תמידית מבטיחות ילדיה.",
+    "assoc": "פרפטשואלי — PERPETUAL = נצחי + ly = לנצח, כל הזמן"
+  },
+  "persuade": {
+    "sentence": "He finally persuaded her to try the new restaurant.|הוא סוף סוף שכנע אותה לנסות את המסעדה החדשה.",
+    "assoc": "פרסוויד — PER+SUADE, per = דרך, להוביל דרך נכונה = לשכנע"
+  },
+  "persuasion": {
+    "sentence": "With great persuasion, she finally agreed to join.|בשכנוע רב, היא סוף סוף הסכימה להצטרף.",
+    "assoc": "פרסוויז'ן — persuade → persuasion = שכנוע"
+  },
+  "persuasively": {
+    "sentence": "He argued very persuasively in front of the jury.|הוא טען בצורה משכנעת מאוד בפני חבר המושבעים.",
+    "assoc": "פרסוויסיבלי — persuasive+ly = בצורה משכנעת"
+  },
+  "pinch": {
+    "sentence": "She gave him a playful pinch on the cheek.|היא נתנה לו צביטה משחקית על הלחי.",
+    "assoc": "פינץ' — PINCH = לצבוט, in a pinch = בשעת דחק קטנה"
+  },
+  "pitch": {
+    "sentence": "The tent was quickly pitched on the grassy field.|האוהל הוקם במהירות על השדה הירוק.",
+    "assoc": "פיץ' — PITCH = זפת (שחור), גובה צליל, מגרש, לזרוק"
+  },
+  "political": {
+    "sentence": "This is a highly sensitive political decision.|זוהי החלטה פוליטית רגישה ביותר.",
+    "assoc": "פוליטיקל — politics → political = פוליטי"
+  },
+  "politics": {
+    "sentence": "She is very interested in international politics.|היא מאוד מתעניינת בפוליטיקה בינלאומית.",
+    "assoc": "פוליטיקס — POLIS = עיר ביוונית, politics = ענייני העיר"
+  },
+  "poor": {
+    "sentence": "The poor children had no warm clothes for winter.|לילדים העניים לא היו בגדים חמים לחורף.",
+    "assoc": "פור — POOR = עני, poor quality = איכות גרועה"
+  },
+  "poorly": {
+    "sentence": "He performed poorly on every exam this semester.|הוא ביצע את כל הבחינות בצורה גרועה הסמסטר הזה.",
+    "assoc": "פורלי — POOR+LY = בצורה גרועה"
+  },
+  "power": {
+    "sentence": "The power of the ocean storm was terrifying.|עוצמת סערת האוקיינוס הייתה מפחידה.",
+    "assoc": "פאואר — POWER = כוח, power plant = תחנת כוח"
+  },
+  "powerful": {
+    "sentence": "She is a very powerful and influential leader.|היא מנהיגה חזקה ומשפיעה מאוד.",
+    "assoc": "פאורפול — POWER+FUL = מלא כוח"
+  },
+  "praise": {
+    "sentence": "The teacher praised his excellent essay.|המורה שיבחה את החיבור המצוין שלו.",
+    "assoc": "פרייז — PRAISE = שבח, praise the Lord = הלל את האל"
+  },
+  "premature": {
+    "sentence": "The baby was born three weeks premature.|התינוק נולד שלושה שבועות בטרם עת.",
+    "assoc": "פרימטיור — PRE+MATURE = לפני בשלות = מוקדם מדי"
+  },
+  "present": {
+    "sentence": "All team members were present at the meeting.|כל חברי הצוות היו נוכחים בפגישה.",
+    "assoc": "פרזנט — PRESENT = נוכח, גם = מתנה, גם = להציג"
+  },
+  "prevail": {
+    "sentence": "In the end, justice will always prevail.|בסופו של דבר, הצדק תמיד ינצח.",
+    "assoc": "פרוויל — PRE+VAIL, vail = להיכנע, לגבור על = לנצח"
+  },
+  "prevent": {
+    "sentence": "Regular exercise can prevent many serious diseases.|פעילות גופנית סדירה יכולה למנוע מחלות חמורות רבות.",
+    "assoc": "פרוונט — PRE+VENT = לפני שמגיע = למנוע מראש"
+  },
+  "previous": {
+    "sentence": "Please review the previous chapter before class.|אנא סקור את הפרק הקודם לפני השיעור.",
+    "assoc": "פריביאס — PRE+VIOUS = PRE = לפני = הקודם"
+  },
+  "prior to": {
+    "sentence": "Prior to the meeting, please read all documents.|לפני הפגישה, אנא קרא את כל המסמכים.",
+    "assoc": "פריאור טו — PRIOR = ראשון, prior to = לפני"
+  },
+  "privilege": {
+    "sentence": "Access to quality education is a great privilege.|גישה לחינוך איכותי הוא זכות יתר גדולה.",
+    "assoc": "פריבילג' — PRIVI+LEGE, private law = חוק פרטי = זכות יתר"
+  },
+  "procure": {
+    "sentence": "He managed to procure all the necessary materials.|הוא הצליח להשיג את כל החומרים הנדרשים.",
+    "assoc": "פרוקיור — PRO+CURE, cure = לטפל, להשיג בעקשנות"
+  },
+  "produce": {
+    "sentence": "The factory produces five hundred cars per day.|המפעל מייצר חמש מאות מכוניות ביום.",
+    "assoc": "פרודיוס — PRO+DUCE, duce = להוביל קדימה = לייצר"
+  },
+  "profit": {
+    "sentence": "The company made a record profit this quarter.|החברה הרוויחה רווח שיא ברבעון זה.",
+    "assoc": "פרופיט — PROFIT = pro+fit, FIT = מתאים = רווח שמתאים"
+  },
+  "profitable": {
+    "sentence": "The investment turned out to be highly profitable.|ההשקעה הוכחה כרווחית ביותר.",
+    "assoc": "פרופיטבל — profit+ABLE = מסוגל לייצר רווח"
+  },
+  "prompt": {
+    "sentence": "Please give a prompt reply to the urgent email.|אנא ענה בזמן לאימייל הדחוף.",
+    "assoc": "פרומפט — PROMPT = מהיר, theater prompt = רמז לשחקן"
+  },
+  "proof": {
+    "sentence": "There is no solid proof of his involvement.|אין הוכחה מוצקה למעורבותו.",
+    "assoc": "פרוף — PROOF = הוכחה, bulletproof = עמיד לכדורים"
+  },
+  "proportion": {
+    "sentence": "The proportion of women in management is rising.|שיעור הנשים בניהול עולה.",
+    "assoc": "פרופורשן — PRO+PORTION = חלק (portion) מהשלם = יחס"
+  },
+  "prove": {
+    "sentence": "She proved her theory with solid evidence.|היא הוכיחה את תיאוריתה עם ראיות מוצקות.",
+    "assoc": "פרוב — PROVE = להוכיח, proof = הוכחה"
+  },
+  "provide": {
+    "sentence": "The school provides free meals to all students.|בית הספר מספק ארוחות חינם לכל התלמידים.",
+    "assoc": "פרובייד — PRO+VIDE, vide = לראות, לדאוג שיהיה"
+  },
+  "provided that": {
+    "sentence": "I will join you provided that you pay for dinner.|אצטרף אליכם בתנאי שתשלמו על הארוחה.",
+    "assoc": "פרובייד ד'ט — provided that = with the condition that = בתנאי ש"
+  },
+  "provisions": {
+    "sentence": "They packed enough provisions for a week in the wild.|הם ארזו אספקה מספקת לשבוע בטבע.",
+    "assoc": "פרוביז'נס — provide → provisions = מה שסופק = אספקה"
+  },
+  "punish": {
+    "sentence": "The court decided to punish him severely.|בית המשפט החליט להעניש אותו בחומרה.",
+    "assoc": "פניש — PUNISH = להעניש, punishment = עונש"
+  },
+  "punishment": {
+    "sentence": "The punishment must fit the crime committed.|העונש חייב להתאים לפשע שבוצע.",
+    "assoc": "פניישמנט — punish → punishment = עונש"
+  },
+  "quantify": {
+    "sentence": "It is very difficult to quantify human happiness.|קשה מאוד לכמת את האושר האנושי.",
+    "assoc": "קוונטיפיי — QUANTITY+ify = לתת מספר לכמות"
+  },
+  "quantity": {
+    "sentence": "A large quantity of food was ordered for the event.|כמות גדולה של אוכל הוזמנה לאירוע.",
+    "assoc": "קוונטיטי — QUANTITY = quanto = כמה בלטינית"
+  },
+  "quasar": {
+    "sentence": "A quasar is one of the brightest objects in the universe.|קוואזר הוא אחד העצמים הבהירים ביותר ביקום.",
+    "assoc": "קוויזר — QUASAR = quasi-stellar object = כמעט-כוכב"
+  },
+  "raise": {
+    "sentence": "Please raise your hand if you know the answer.|אנא הרם יד אם אתה יודע את התשובה.",
+    "assoc": "רייז — RAISE = להרים, raise the bar = להגביה את הרף"
+  },
+  "rather than": {
+    "sentence": "I prefer walking rather than driving.|אני מעדיף ללכת ברגל במקום לנהוג.",
+    "assoc": "ראת'ר דן — RATHER than = עדיף מ = במקום"
+  },
+  "reap": {
+    "sentence": "You reap exactly what you sow in life.|את מה שאתה זורע בחיים, אתה קוצר.",
+    "assoc": "ריפ — REAP = לקצור, reap the rewards = לקצור את הפירות"
+  },
+  "rear": {
+    "sentence": "She raised her children in the rear of the old house.|היא גידלה את ילדיה בחלק האחורי של הבית הישן.",
+    "assoc": "ריר — REAR = אחורי, to rear children = לגדל ילדים"
+  },
+  "recommend": {
+    "sentence": "I highly recommend this excellent restaurant.|אני ממליץ בחום על המסעדה המצוינת הזו.",
+    "assoc": "רקומנד — re+COMMEND = לשבח שוב = להמליץ"
+  },
+  "reform": {
+    "sentence": "The government plans to reform the entire education system.|הממשלה מתכננת לרפורם את כל מערכת החינוך.",
+    "assoc": "ריפורם — RE+FORM = לעצב מחדש = רפורמה"
+  },
+  "refute": {
+    "sentence": "He successfully refuted all the accusations against him.|הוא הפריך בהצלחה את כל ההאשמות נגדו.",
+    "assoc": "ריפיוט — REFUTE = re+fute, להפריך טענה = להוכיח ההפך"
+  },
+  "regain": {
+    "sentence": "After the illness, she slowly regained her strength.|לאחר המחלה, היא לאט-לאט החזירה את כוחה.",
+    "assoc": "ריגיין — RE+GAIN = להשיג מחדש"
+  },
+  "regard": {
+    "sentence": "Regard others with the respect they deserve.|התייחס לאחרים בכבוד שהם ראויים לו.",
+    "assoc": "ריגארד — RE+GUARD = לשמור מחדש = לתת תשומת לב"
+  },
+  "regret": {
+    "sentence": "She deeply regrets the harsh words she said.|היא מצטערת עמוקות על המילים הקשות שאמרה.",
+    "assoc": "ריגרט — RE+GRET = לגעת (greet) בכאב שוב = חרטה"
+  },
+  "regrettable": {
+    "sentence": "It is truly regrettable that he had to leave.|זה מצער מאוד שהוא נאלץ לעזוב.",
+    "assoc": "ריגרטבל — regret+ABLE = ראוי להצטערות = מצער"
+  },
+  "reject": {
+    "sentence": "The company rejected his job application.|החברה דחתה את בקשת העבודה שלו.",
+    "assoc": "ריג'קט — RE+JECT, ject = לזרוק, לזרוק חזרה = לדחות"
+  },
+  "reluctant": {
+    "sentence": "She was reluctant to accept the new terms.|היא הייתה מסוייגת לקבל את התנאים החדשים.",
+    "assoc": "רילוקטנט — re+LUCT, luct = לגרור, לגרור לאחור = לא רוצה"
+  },
+  "remote": {
+    "sentence": "They discovered a remote village deep in the mountains.|הם גילו כפר מרוחק עמוק בהרים.",
+    "assoc": "רימוט — REMOTE = שלט רחוק = מרוחק"
+  },
+  "resemblance": {
+    "sentence": "There is a strong resemblance between the two brothers.|יש דמיון חזק בין שני האחים.",
+    "assoc": "ריזמבלנס — RESEMBLE → resemblance = דמיון"
+  },
+  "resolve": {
+    "sentence": "She resolved to work harder and never give up.|היא החליטה לעבוד קשה יותר ולעולם לא לוותר.",
+    "assoc": "ריזולב — RE+SOLVE = לפתור מחדש = נחישות לפתור"
+  },
+  "responsible for": {
+    "sentence": "He is fully responsible for the project's success.|הוא אחראי לחלוטין על הצלחת הפרויקט.",
+    "assoc": "ריספונסיבל פור — response = תגובה, responsible = שיכול להגיב"
+  },
+  "result in": {
+    "sentence": "Poor planning will inevitably result in failure.|תכנון לקוי יוביל בהכרח לכישלון.",
+    "assoc": "ריזלט אין — result IN = להוביל לתוך תוצאה"
+  },
+  "ridicule": {
+    "sentence": "He was subjected to public ridicule for his mistake.|הוא הועמד ללעג ציבורי בגלל טעותו.",
+    "assoc": "ריידיקיול — RIDICULE = ridiculous = מגוחך, ללעוג"
+  },
+  "ridiculous": {
+    "sentence": "The idea of flying cars still sounds ridiculous.|הרעיון של מכוניות מעופפות עדיין נשמע מגוחך.",
+    "assoc": "ריידיקולס — RIDICUL+OUS = מלא לעג = מגוחך"
+  },
+  "round": {
+    "sentence": "The conference table was perfectly round.|שולחן הוועידה היה עגול לחלוטין.",
+    "assoc": "ראונד — ROUND = עגול, round of applause = מחיאות כפיים"
+  },
+  "say": {
+    "sentence": "What exactly did she say to you?|מה בדיוק היא אמרה לך?",
+    "assoc": "סיי — SAY = לומר, as they say = כפי שאומרים"
+  },
+  "scanty": {
+    "sentence": "The scanty evidence was not enough to convict him.|הראיות הדלות לא הספיקו להרשיע אותו.",
+    "assoc": "סקנטי — SCANT = דל, scanty = דל מאוד = מועט"
+  },
+  "scold": {
+    "sentence": "The mother gently scolded the child for lying.|האם נזפה בעדינות בילד על השקר.",
+    "assoc": "סקולד — SCOLD = לנזוף, cold shoulder = כתף קרה"
+  },
+  "scrutinize": {
+    "sentence": "The inspector carefully scrutinized every document.|המפקח בדק בעיון כל מסמך.",
+    "assoc": "סקרוטינייז — SCRUTINY = בחינה מדוקדקת, לבחון בזכוכית מגדלת"
+  },
+  "see": {
+    "sentence": "Can you see the mountains from your window?|האם אתה יכול לראות את ההרים מחלונך?",
+    "assoc": "סי — SEE = לראות, see-through = שקוף"
+  },
+  "seeing that": {
+    "sentence": "Seeing that you agree, let us move forward.|מכיוון שאתה מסכים, בוא נתקדם.",
+    "assoc": "סיאינג ד'ט — seeing that = רואה ש = מכיוון ש"
+  },
+  "seem": {
+    "sentence": "It seems that he has already left the building.|נראה שהוא כבר עזב את הבניין.",
+    "assoc": "סים — SEEM = נראה, כמו 'it seems to me'"
+  },
+  "several": {
+    "sentence": "Several students were absent from school today.|מספר תלמידים נעדרו מבית הספר היום.",
+    "assoc": "סברל — SEVERAL = sever+al, SEVER = לחלק = כמה חלקים"
+  },
+  "shape": {
+    "sentence": "The cloud has a very unusual shape today.|לענן יש צורה חריגה מאוד היום.",
+    "assoc": "שייפ — SHAPE = צורה, to shape = לעצב, in shape = בכושר"
+  },
+  "simultaneous": {
+    "sentence": "The two explosions were simultaneous and devastating.|שני הפיצוצים היו בו-זמניים והרסניים.",
+    "assoc": "סיימולטיינייס — SIMUL = יחד בלטינית, simultaneous = בו-זמני"
+  },
+  "since": {
+    "sentence": "Since he left, nothing has been the same.|מאז שהוא עזב, שום דבר לא היה אותו דבר.",
+    "assoc": "סינס — SINCE = מאז, also = מכיוון ש, since when? = מאימתי?"
+  },
+  "slow": {
+    "sentence": "The turtle moves at a very slow pace.|הצב זז בקצב איטי מאוד.",
+    "assoc": "סלואו — SLOW = איטי, slow motion = תנועה איטית"
+  },
+  "small part": {
+    "sentence": "Only a small part of the budget remains unused.|רק חלק קטן מהתקציב נשאר בלתי מנוצל.",
+    "assoc": "סמול פרט — small part = portion קטן"
+  },
+  "so": {
+    "sentence": "It was so cold that we stayed inside all day.|היה כל כך קר שנשארנו בפנים כל היום.",
+    "assoc": "סו — SO = כל כך, also = לכן, so what? = אז מה?"
+  },
+  "solve": {
+    "sentence": "Can you solve this complex mathematical puzzle?|תוכל לפתור את החידה המתמטית המורכבת הזו?",
+    "assoc": "סולב — SOLVE = לפתור, solution = פתרון"
+  },
+  "sooner": {
+    "sentence": "Sooner or later, the truth always comes out.|מוקדם או מאוחר, האמת תמיד יוצאת לאור.",
+    "assoc": "סונר — SOONER = soon+er = יותר מהר, sooner or later = מוקדם או מאוחר"
+  },
+  "stem": {
+    "sentence": "The problem stems from a lack of communication.|הבעיה נובעת מחוסר תקשורת.",
+    "assoc": "סטם — STEM = גבעול, stem from = לנבוע מ, כמו ענף מגבעול"
+  },
+  "struggle": {
+    "sentence": "She struggled to finish the exam on time.|היא נאבקה לסיים את הבחינה בזמן.",
+    "assoc": "סטרגל — STRUGGLE = מאמץ + גרירה, להיאבק בקושי"
+  },
+  "stun": {
+    "sentence": "The unexpected news stunned everyone in the room.|הידיעה הבלתי צפויה הלמה את כולם בחדר.",
+    "assoc": "סטאן — STUN gun = אקדח הלם, stun = להלם"
+  },
+  "stunned": {
+    "sentence": "She was completely stunned by the surprise party.|היא הייתה המומה לגמרי ממסיבת ההפתעה.",
+    "assoc": "סטאנד — stunned = stun+ned = המום, לא יכול לזוז"
+  },
+  "stunning": {
+    "sentence": "The view from the mountaintop was absolutely stunning.|הנוף מפסגת ההר היה מדהים לחלוטין.",
+    "assoc": "סטאנינג — stunning = מהמם, מ-stun = הלם"
+  },
+  "subject": {
+    "sentence": "The main subject of the essay is freedom of speech.|הנושא המרכזי של החיבור הוא חופש הביטוי.",
+    "assoc": "סבג'קט — SUB+JECT, ject = לזרוק מתחת = נושא"
+  },
+  "subjective": {
+    "sentence": "Art appreciation is entirely subjective.|הערכת אמנות היא סובייקטיבית לחלוטין.",
+    "assoc": "סבג'קטיב — subject → subjective = של האדם עצמו"
+  },
+  "subsequently": {
+    "sentence": "He resigned, and subsequently the project was canceled.|הוא התפטר, ולאחר מכן הפרויקט בוטל.",
+    "assoc": "סבסיקוונטלי — SUB+SEQUENT, sequent = הבא בתור"
+  },
+  "succeeding": {
+    "sentence": "Each succeeding generation faces new unique challenges.|כל דור עוקב מתמודד עם אתגרים חדשים ייחודיים.",
+    "assoc": "סקסידינג — succeed → succeeding = הבא, שבא אחרי"
+  },
+  "successor": {
+    "sentence": "Who will be chosen as his successor?|מי ייבחר כיורשו?",
+    "assoc": "סקסור — SUCCESS+OR = מי שמצליח אחריו = יורש"
+  },
+  "suffer": {
+    "sentence": "She suffers from chronic back pain every day.|היא סובלת מכאבי גב כרוניים כל יום.",
+    "assoc": "ספר — SUFFER = סבל, כמו suffocate = להחנק מסבל"
+  },
+  "suffering": {
+    "sentence": "The suffering of the refugees moved the entire world.|סבל הפליטים הזיז את כל העולם.",
+    "assoc": "ספרינג — suffer → suffering = סבל"
+  },
+  "superior": {
+    "sentence": "This new model is clearly superior to the old one.|הדגם החדש עדיף בבירור על הישן.",
+    "assoc": "סופיריאר — SUPER+IOR, super = מעל = עדיף"
+  },
+  "surrounding": {
+    "sentence": "The surrounding landscape is breathtakingly beautiful.|הנוף הסובב עוצר נשימה ביופיו.",
+    "assoc": "סראונדינג — surround = לסבב + ing = מקיף"
+  },
+  "thanks to": {
+    "sentence": "Thanks to your help, we finished on time.|בזכות עזרתך, סיימנו בזמן.",
+    "assoc": "ת'נקס טו — thanks to = תודות ל = בזכות"
+  },
+  "that is why": {
+    "sentence": "He was sick; that is why he missed the class.|הוא היה חולה; לכן הוא החסיר את השיעור.",
+    "assoc": "ד'ט איז ווי — that is WHY = זו הסיבה = לכן"
+  },
+  "the most": {
+    "sentence": "She is the most dedicated student in the school.|היא התלמידה המסורה ביותר בבית הספר.",
+    "assoc": "ד' מוסט — THE MOST = סופרלטיב, הכי"
+  },
+  "the other way around": {
+    "sentence": "I thought he was older, but it is the other way around.|חשבתי שהוא יותר זקן, אבל זה ההפך.",
+    "assoc": "ד' אות'ר וויי אראונד — the other way = הצד האחר = הפוך"
+  },
+  "the worst": {
+    "sentence": "This was by far the worst day of my entire life.|זה היה הרחק היום הגרוע ביותר בכל חיי.",
+    "assoc": "ד' וורסט — WORST = superlative of bad = הגרוע ביותר"
+  },
+  "therefore": {
+    "sentence": "He studied hard every day; therefore he passed.|הוא למד קשה כל יום; לפיכך עבר.",
+    "assoc": "ד'רפור — there+FORE = מכאן = לכן, therefore = conclusion"
+  },
+  "think": {
+    "sentence": "Always think carefully before you make a decision.|תמיד חשוב בזהירות לפני שאתה מקבל החלטה.",
+    "assoc": "ת'ינק — THINK = לחשוב, think tank = מכון מחקר"
+  },
+  "thoroughly": {
+    "sentence": "Please read the instructions thoroughly before starting.|אנא קרא את ההוראות ביסודיות לפני שתתחיל.",
+    "assoc": "ת'ורולי — THOROUGH = מקיף לחלוטין, thoroughly = ביסודיות"
+  },
+  "though": {
+    "sentence": "Though it was raining, we went out for a walk.|למרות שירד גשם, יצאנו לטיול.",
+    "assoc": "דו — THOUGH = למרות, כמו although, even though"
+  },
+  "threat": {
+    "sentence": "The bully made a serious threat against him.|הפורע השמיע איום חמור נגדו.",
+    "assoc": "ת'רט — THREAT = איום, threatened species = מין מאוים"
+  },
+  "thus": {
+    "sentence": "He failed the exam; thus he must repeat the course.|הוא נכשל בבחינה; לכן עליו לחזור על הקורס.",
+    "assoc": "דס — THUS = לכן, thus far = עד כה, כמו therefore"
+  },
+  "to this day": {
+    "sentence": "To this day, no one knows where he disappeared to.|עד היום, אף אחד לא יודע לאן הוא נעלם.",
+    "assoc": "טו דיס דיי — to this DAY = until today = עד עצם היום הזה"
+  },
+  "today": {
+    "sentence": "Today is an important and special day for all of us.|היום הוא יום חשוב ומיוחד לכולנו.",
+    "assoc": "טודיי — TO+DAY = אל + יום = היום"
+  },
+  "torture": {
+    "sentence": "Torture is absolutely prohibited by international law.|עינוי אסור בהחלט לפי החוק הבינלאומי.",
+    "assoc": "טורצ'ר — TORTURE = tort+ure, tort = עוות = עינוי"
+  },
+  "transform": {
+    "sentence": "The experience completely transformed his personality.|החוויה שינתה לחלוטין את אישיותו.",
+    "assoc": "טרנספורם — TRANS+FORM = לשנות צורה = להפוך"
+  },
+  "treat": {
+    "sentence": "The doctor treated the patient with great care.|הרופא טיפל במטופל בזהירות רבה.",
+    "assoc": "טריט — TREAT = לטפל, treat = פינוק, טרט!"
+  },
+  "treatable": {
+    "sentence": "Fortunately, the disease is completely treatable.|למרבה המזל, המחלה ניתנת לטיפול לחלוטין.",
+    "assoc": "טריטבל — treat+ABLE = ניתן לטיפול"
+  },
+  "treatment": {
+    "sentence": "The medical treatment proved very effective.|הטיפול הרפואי הוכח כיעיל מאוד.",
+    "assoc": "טריטמנט — treat → treatment = טיפול"
+  },
+  "tutor": {
+    "sentence": "She hired a private tutor to help with mathematics.|היא שכרה מורה פרטי לעזור במתמטיקה.",
+    "assoc": "טיוטר — TUTOR = מורה פרטי, כמו tutorial = הדרכה"
+  },
+  "ultimately": {
+    "sentence": "Ultimately, he made the right decision for everyone.|בסופו של דבר, הוא קיבל את ההחלטה הנכונה לכולם.",
+    "assoc": "אולטימטלי — ULTIMATE = אולטימטיבי = סופי, ultimately = בסוף"
+  },
+  "unclear": {
+    "sentence": "The instructions were completely unclear to everyone.|ההוראות היו לא ברורות לחלוטין לכולם.",
+    "assoc": "אנקליר — UN+CLEAR = לא ברור"
+  },
+  "underneath": {
+    "sentence": "The cat was hiding underneath the kitchen table.|החתול התחבא מתחת לשולחן המטבח.",
+    "assoc": "אנדרנית' — under+NEATH = מתחת ממש"
+  },
+  "undoubtedly": {
+    "sentence": "She is undoubtedly the most talented person here.|היא ללא ספק האדם המוכשר ביותר כאן.",
+    "assoc": "אנדאוטדלי — UN+DOUBTEDLY = ללא ספק"
+  },
+  "unequal": {
+    "sentence": "The distribution of wealth is very unequal.|חלוקת העושר אינה שווה כלל.",
+    "assoc": "אניקוול — UN+EQUAL = לא שווה"
+  },
+  "unfathomable": {
+    "sentence": "The vastness of the universe is truly unfathomable.|עצמת היקום היא בלתי ניתנת להבנה.",
+    "assoc": "אנפד'מבל — UN+FATHOM, fathom = למדוד עומק, בלתי מדיד"
+  },
+  "uniform": {
+    "sentence": "All students are required to wear a uniform.|כל התלמידים נדרשים ללבוש מדים.",
+    "assoc": "יוניפורם — UNI+FORM = צורה אחת = מדים אחידים"
+  },
+  "uniformity": {
+    "sentence": "The uniformity of the design creates a clean look.|אחידות העיצוב יוצרת מראה נקי.",
+    "assoc": "יוניפורמיטי — uniform → uniformity = אחידות"
+  },
+  "unlike": {
+    "sentence": "Unlike his quiet brother, he is very outgoing.|בניגוד לאחיו השקט, הוא חברותי מאוד.",
+    "assoc": "אנלייק — UN+LIKE = לא כמו = בניגוד ל"
+  },
+  "unprecedented": {
+    "sentence": "The storm caused unprecedented damage to the city.|הסערה גרמה לנזק חסר תקדים לעיר.",
+    "assoc": "אנפרסידנטד — UN+PRECEDENT+ED = ללא תקדים"
+  },
+  "until": {
+    "sentence": "Please wait here until I return from the meeting.|אנא המתן כאן עד שאחזור מהפגישה.",
+    "assoc": "אנטיל — UNTIL = up+till = עד"
+  },
+  "upgrade": {
+    "sentence": "He decided to upgrade his laptop to a newer model.|הוא החליט לשדרג את המחשב הנייד שלו לדגם חדש יותר.",
+    "assoc": "אפגרייד — UP+GRADE = לעלות בדרגה = לשדרג"
+  },
+  "utility": {
+    "sentence": "Water and electricity are essential public utilities.|מים וחשמל הם שירותים ציבוריים חיוניים.",
+    "assoc": "יוטיליטי — UTIL = להשתמש, utility = שימושיות / שירות"
+  },
+  "utilize": {
+    "sentence": "Utilize all available resources to solve the problem.|השתמש בכל המשאבים הזמינים לפתרון הבעיה.",
+    "assoc": "יוטילייז — UTIL+ize = להשתמש, useful = שימושי"
+  },
+  "utterly": {
+    "sentence": "He was utterly exhausted after the long journey.|הוא היה מותש לחלוטין אחרי המסע הארוך.",
+    "assoc": "אטרלי — UTTER = לחלוטין + ly = לחלוטין לגמרי"
+  },
+  "vary": {
+    "sentence": "Prices vary significantly between different stores.|מחירים משתנים משמעותית בין חנויות שונות.",
+    "assoc": "וורי — VARY = להשתנות, variety = מגוון"
+  },
+  "very": {
+    "sentence": "She is very intelligent and hardworking.|היא מאוד אינטליגנטית ועמלנית.",
+    "assoc": "ורי — VERY = מאוד, the very same = בדיוק אותו"
+  },
+  "vicious": {
+    "sentence": "The vicious dog attacked without any warning.|הכלב הפרוע תקף ללא כל אזהרה.",
+    "assoc": "ויישס — VICIOUS, vici = ניצחתי בלטינית, מרושע כמו קיסר"
+  },
+  "view": {
+    "sentence": "The view from the top of the hill was breathtaking.|הנוף מפסגת הגבעה עצר את הנשימה.",
+    "assoc": "ויו — VIEW = מראה, point of view = נקודת מבט"
+  },
+  "visibility": {
+    "sentence": "Poor visibility on the road caused several accidents.|נראות ירודה בדרך גרמה לתאונות רבות.",
+    "assoc": "ויזיביליטי — visible → visibility = יכולת הראייה"
+  },
+  "visible": {
+    "sentence": "The mountain peak was clearly visible from the city.|פסגת ההר הייתה נראית בבירור מהעיר.",
+    "assoc": "ויזיבל — VISIBLE = VIS+ible, vis = לראות בלטינית"
+  },
+  "vulnerable": {
+    "sentence": "Young children are especially vulnerable to infections.|ילדים קטנים פגיעים במיוחד לזיהומים.",
+    "assoc": "וולנרבל — VULN = פצע בלטינית, vulnerable = פגיע לפציעה"
+  },
+  "weaken": {
+    "sentence": "The long illness significantly weakened his immune system.|המחלה הממושכת החלישה משמעותית את מערכת החיסון שלו.",
+    "assoc": "ויקן — WEAK+EN = לעשות חלש = להחליש"
+  },
+  "while": {
+    "sentence": "She studied while listening to classical music.|היא למדה בזמן שהאזינה למוזיקה קלאסית.",
+    "assoc": "ווייל — WHILE = בזמן ש, meanwhile = בינתיים"
+  },
+  "whole": {
+    "sentence": "He ate the whole pizza by himself.|הוא אכל את כל הפיצה לבדו.",
+    "assoc": "הול — WHOLE = שלם, whole milk = חלב מלא"
+  },
+  "within": {
+    "sentence": "Please finish this task within the next two hours.|אנא סיים את המשימה הזו בתוך שעתיים הבאות.",
+    "assoc": "וויד'ין — WITH+IN = עם + בפנים = בתוך"
+  },
+  "worsen": {
+    "sentence": "The situation worsened rapidly over the following days.|המצב החמיר במהירות במהלך הימים הבאים.",
+    "assoc": "וורסן — WORSE+N = לעשות גרוע יותר = להחמיר"
+  },
+  "wreck": {
+    "sentence": "The crash completely wrecked the front of the car.|ההתנגשות הרסה לחלוטין את החלק הקדמי של הרכב.",
+    "assoc": "רק — WRECK = הרס, shipwreck = אוניה טרופה"
+  },
+  "wreckage": {
+    "sentence": "Rescue teams searched through the wreckage for survivors.|צוותי חילוץ חיפשו בין השרידים ניצולים.",
+    "assoc": "רקאג' — wreck → wreckage = שאריות ההרס"
+  },
+  "yarn": {
+    "sentence": "She knitted a warm sweater from colorful yarn.|היא סרגה סוודר חם מחוט צבעוני.",
+    "assoc": "יארן — YARN = חוט, to spin a yarn = לספר סיפור מעניין"
   }
 }
