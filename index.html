@@ -4252,8 +4252,6 @@ Keep it concise and educational. Use clear section headers for each part.`;
         };
         // ==========================================
  // --- מערכת זיהוי קול למצב נסיעה (Speech to Text) ---
-        let recognition;
-        let isListening = false;
         let drivingTimeout;
         let waitingTime = parseInt(localStorage.getItem('driveWaitingTime')) || 3000;
 
@@ -4269,19 +4267,11 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 flashcardSection.insertAdjacentHTML('afterend', `
                 <div id="micArea" class="drive-control-box" style="display: none;">
                     <div style="font-size: 14px; color: #64748b; margin-bottom: 8px; font-weight: bold;">הגדרות מצב נסיעה:</div>
-                    <select id="driveInteraction" onchange="toggleInteractionMode()" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 16px; margin-bottom: 10px; background: white; font-family: inherit;">
-                        <option value="speak">אני עונה בעצמי (מיקרופון)</option>
-                        <option value="listen">האפליקציה מקריאה לי הכל</option>
-                    </select>
-                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; justify-content:center;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px; justify-content:center;">
                         <span style="font-size:14px; color:#64748b; font-weight:bold;">⏱ רווח אנגלית ← עברית:</span>
                         <button onclick="setDriveDelay(-1)" style="width:32px; height:32px; border-radius:8px; border:1px solid #cbd5e1; background:white; font-size:18px; cursor:pointer; line-height:1;">−</button>
                         <span id="driveDelayLabel" style="font-size:16px; font-weight:bold; color:#1e293b; min-width:44px; text-align:center;"></span>
                         <button onclick="setDriveDelay(1)" style="width:32px; height:32px; border-radius:8px; border:1px solid #cbd5e1; background:white; font-size:18px; cursor:pointer; line-height:1;">+</button>
-                    </div>
-                    <div id="micControls">
-                        <button id="micBtn" onclick="toggleListening()" style="font-size: 40px; background: none; border: none; cursor: pointer; filter: grayscale(100%); transition: 0.3s;">🎤</button>
-                        <div id="micFeedback" style="font-size: 16px; color: #64748b; min-height: 25px; margin-top: 5px; font-weight: bold;"></div>
                     </div>
                 </div>`);
                 let lbl = document.getElementById('driveDelayLabel');
@@ -4296,17 +4286,6 @@ Keep it concise and educational. Use clear section headers for each part.`;
             localStorage.setItem('driveWaitingTime', waitingTime);
             let lbl = document.getElementById('driveDelayLabel');
             if (lbl) lbl.textContent = secs + ' שנ\'';
-        }
-
-        function toggleInteractionMode() {
-            let mode = document.getElementById('driveInteraction').value;
-            if (mode === 'listen') {
-                document.getElementById('micControls').style.display = 'none';
-                if (isListening && recognition) { isListening = false; try { recognition.stop(); } catch(e){} }
-            } else {
-                document.getElementById('micControls').style.display = 'block';
-                if (isDrivingMode && !isListening) toggleListening();
-            }
         }
 
         function toggleDrivingMode() {
@@ -4338,7 +4317,6 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 transDiv.style.display = 'none';
                 document.getElementById('editLinksContainer').style.display = 'flex';
                 if (micArea) micArea.style.display = 'none';
-                if (isListening && recognition) { isListening = false; try { recognition.stop(); } catch(e){} }
             }
         }
 function playNextDrivingWord() {
@@ -4348,14 +4326,7 @@ function playNextDrivingWord() {
             updateCard();
             window.speechSynthesis.cancel();
             clearTimeout(drivingTimeout);
-            
-            // מוודאים שהמיקרופון כבוי לפני שמתחילים מילה חדשה
-            if (isListening && recognition) { 
-                try { recognition.stop(); } catch(e){} 
-                isListening = false; 
-                let btn = document.getElementById('micBtn'); if(btn) btn.classList.remove('mic-listening');
-            }
-            
+
             let w = currentList[currentIndex];
             let displayHe = editedTranslations[w.en] || w.he;
 
@@ -4382,30 +4353,9 @@ function playNextDrivingWord() {
                 transDiv.innerText = displayHe;
                 transDiv.style.display = 'block';
 
-                let mode = document.getElementById('driveInteraction') ? document.getElementById('driveInteraction').value : 'speak';
-                let waitTime = waitingTime;
-
-                // --- הפתרון: השהיה קטנטנה של 200ms לפני הדלקת המיקרופון ---
-                setTimeout(() => {
-                    if (mode === 'speak' && isDrivingMode) {
-                        try { 
-                            if (!recognition) initSpeech();
-                            recognition.start(); 
-                            isListening = true;
-                            let btn = document.getElementById('micBtn'); if(btn) btn.classList.add('mic-listening');
-                        } catch(e) {}
-                    }
-                }, 200);
-
                 drivingTimeout = setTimeout(() => {
-                    // מכבים את המיקרופון שנייה לפני שהיא מקריאה עברית
-                    if (isListening && recognition) { 
-                        try { recognition.stop(); } catch(e){} 
-                        isListening = false; 
-                        let btn = document.getElementById('micBtn'); if(btn) btn.classList.remove('mic-listening');
-                    }
                     if(isDrivingMode) window.speechSynthesis.speak(heUtterance);
-                }, waitTime);
+                }, waitingTime);
             };
 
             heUtterance.onend = function() {
@@ -4421,97 +4371,7 @@ function playNextDrivingWord() {
 
             window.speechSynthesis.speak(enUtterance);
         }
-        function initSpeech() {
-            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if (!SpeechRecognition) return;
-            recognition = new SpeechRecognition();
-            recognition.lang = 'he-IL';
-            recognition.interimResults = false;
-            recognition.maxAlternatives = 1;
 
-            recognition.onstart = function() {
-                isListening = true;
-                let btn = document.getElementById('micBtn'); if(btn) { btn.classList.add('mic-listening'); btn.style.filter = "none"; }
-                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = "מקשיב לתשובה שלך...";
-            };
-
-            recognition.onresult = function(event) {
-                const spokenText = event.results[0][0].transcript.trim().toLowerCase();
-                checkSpokenAnswer(spokenText);
-            };
-
-            recognition.onerror = function(event) {
-                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = "לא שמעתי ברור...";
-                isListening = false;
-                let btn = document.getElementById('micBtn'); if(btn) { btn.classList.remove('mic-listening'); btn.style.filter = "grayscale(100%)"; }
-            };
-
-            recognition.onend = function() {
-                let mode = document.getElementById('driveInteraction') ? document.getElementById('driveInteraction').value : 'speak';
-
-                // ממשיך להקשיב בלופ רק אם אנחנו במצב נסיעה ואתה בחרת לענות
-                if (isListening && isDrivingMode && mode === 'speak') {
-                    try { recognition.start(); } catch(e) {}
-                } else {
-                    let btn = document.getElementById('micBtn'); if(btn) { btn.classList.remove('mic-listening'); btn.style.filter = "grayscale(100%)"; }
-                    // לא מנקים את micFeedback — הפידבק נשאר גלוי עד שהמילה הבאה מתחילה
-                }
-            };
-        }
-
-        function toggleListening() {
-            if (!recognition) initSpeech();
-            if (!recognition) return;
-            if (isListening) { isListening = false; if (recognition) recognition.stop(); } 
-            else { try { recognition.start(); } catch(e) {} }
-        }
-
-  function checkSpokenAnswer(spokenText) {
-            if(currentList.length === 0) return;
-            let word = currentList[currentIndex];
-            let correctHe = (editedTranslations[word.en] || word.he).toLowerCase();
-            
-            // מנקה סימני פיסוק מהזיהוי של הטלפון שיכולים להפריע
-            let cleanSpoken = spokenText.replace(/[.,?!]/g, "").trim();
-            
-            if (cleanSpoken.includes("דלג") || cleanSpoken.includes("לא יודע") || cleanSpoken.includes("עבור")) {
-                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `אמרת: "לא יודע". מדלג...`;
-                clearTimeout(drivingTimeout); // הורג את שעון ה-3 שניות
-                window.speechSynthesis.cancel(); // משתיק כל הקראה שמתוכננת
-                if (isListening && recognition) { try { recognition.stop(); } catch(e){} isListening = false; }
-                
-                // פידבק קולי
-                let msg = new SpeechSynthesisUtterance("מדלג");
-                msg.lang = 'he-IL';
-                window.speechSynthesis.speak(msg);
-                
-                // ממתין שנייה כדי שתשמע את המילה, ואז עובר
-                setTimeout(() => { markWord('learning'); }, 1000);
-                return;
-            }
-
-            let correctWords = correctHe.split(/[,|\/]/).map(w => w.trim());
-            let isCorrect = correctWords.some(cw => cleanSpoken === cw || cleanSpoken.includes(cw) || cw.includes(cleanSpoken));
-
-            if (isCorrect) {
-                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `אלוף! ענית נכון.`;
-                clearTimeout(drivingTimeout); // הורג את שעון ה-3 שניות!
-                window.speechSynthesis.cancel(); // משתיק לחלוטין את הקראת העברית שתוכננה!
-                if (isListening && recognition) { try { recognition.stop(); } catch(e){} isListening = false; }
-                
-                // פידבק קולי להצלחה
-                let msg = new SpeechSynthesisUtterance("מעולה");
-                msg.lang = 'he-IL';
-                msg.rate = 1.2;
-                window.speechSynthesis.speak(msg);
-                
-                // ממתין שנייה כדי שתשמע "מעולה", ואז עובר הלאה
-                setTimeout(() => { markWord('known'); }, 1000);
-            } else {
-                let fb = document.getElementById('micFeedback'); if(fb) fb.innerText = `שמעתי: "${cleanSpoken}" (נסה שוב או תגיד "דלג")`;
-            }
-        }
-		
         // --- פקודת ההפעלה של האפליקציה ---
         initApp();
         setTTSRate(getTTSRate());
