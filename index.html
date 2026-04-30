@@ -4255,7 +4255,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
         let recognition;
         let isListening = false;
         let drivingTimeout;
-        let waitingTime = 3000;
+        let waitingTime = parseInt(localStorage.getItem('driveWaitingTime')) || 3000;
 
         document.head.insertAdjacentHTML('beforeend', `<style>
             .mic-listening { color: red !important; animation: micPulse 1s infinite; }
@@ -4273,13 +4273,30 @@ Keep it concise and educational. Use clear section headers for each part.`;
                         <option value="speak">אני עונה בעצמי (מיקרופון)</option>
                         <option value="listen">האפליקציה מקריאה לי הכל</option>
                     </select>
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; justify-content:center;">
+                        <span style="font-size:14px; color:#64748b; font-weight:bold;">⏱ רווח אנגלית ← עברית:</span>
+                        <button onclick="setDriveDelay(-1)" style="width:32px; height:32px; border-radius:8px; border:1px solid #cbd5e1; background:white; font-size:18px; cursor:pointer; line-height:1;">−</button>
+                        <span id="driveDelayLabel" style="font-size:16px; font-weight:bold; color:#1e293b; min-width:44px; text-align:center;"></span>
+                        <button onclick="setDriveDelay(1)" style="width:32px; height:32px; border-radius:8px; border:1px solid #cbd5e1; background:white; font-size:18px; cursor:pointer; line-height:1;">+</button>
+                    </div>
                     <div id="micControls">
                         <button id="micBtn" onclick="toggleListening()" style="font-size: 40px; background: none; border: none; cursor: pointer; filter: grayscale(100%); transition: 0.3s;">🎤</button>
                         <div id="micFeedback" style="font-size: 16px; color: #64748b; min-height: 25px; margin-top: 5px; font-weight: bold;"></div>
                     </div>
                 </div>`);
+                let lbl = document.getElementById('driveDelayLabel');
+                if (lbl) lbl.textContent = Math.round(waitingTime / 1000) + ' שנ\'';
             }
         });
+
+        function setDriveDelay(delta) {
+            let secs = Math.round(waitingTime / 1000);
+            secs = Math.min(10, Math.max(1, secs + delta));
+            waitingTime = secs * 1000;
+            localStorage.setItem('driveWaitingTime', waitingTime);
+            let lbl = document.getElementById('driveDelayLabel');
+            if (lbl) lbl.textContent = secs + ' שנ\'';
+        }
 
         function toggleInteractionMode() {
             let mode = document.getElementById('driveInteraction').value;
@@ -4366,7 +4383,7 @@ function playNextDrivingWord() {
                 transDiv.style.display = 'block';
 
                 let mode = document.getElementById('driveInteraction') ? document.getElementById('driveInteraction').value : 'speak';
-                let waitTime = (mode === 'listen') ? 1500 : waitingTime; 
+                let waitTime = waitingTime;
 
                 // --- הפתרון: השהיה קטנטנה של 200ms לפני הדלקת המיקרופון ---
                 setTimeout(() => {
