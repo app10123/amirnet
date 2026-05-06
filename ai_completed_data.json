@@ -17438,5 +17438,73 @@
   "zealot": {
     "assoc": "זלוט — 'זה-לוט' קנאי כמו לוט שברח עם כל מה שיש!",
     "sentence": "The zealot refused to compromise on his beliefs.|הקנאי סירב להתפשר על אמונותיו."
+  },
+  "equally": {
+    "assoc": "איקוואלי — שווה בדיוק, כמו 'equal' — כולם מקבלים חתיכה שווה מהעוגה!",
+    "sentence": "All students are treated equally in this class.|כל התלמידים מטופלים במידה שווה בכיתה הזו."
+  },
+  "begin/an/un": {
+    "assoc": "ביגין — ראש ממשלה שהתחיל הרבה דברים! לְהַתְחִיל!",
+    "sentence": "Let us begin the meeting now.|בואו נתחיל את הפגישה עכשיו."
+  },
+  "blow, blew": {
+    "assoc": "בלו — הרוח בלו-בלו ונשפה חזק, אחר כך בלְיוּ כבר נפוצץ!",
+    "sentence": "The wind blew all the leaves away.|הרוח נשפה את כל העלים."
+  },
+  "catch, caught": {
+    "assoc": "קאצ'ט — כמו 'קאץ'' בכדורבסיס, תופסים את הכדור בידיים!",
+    "sentence": "She caught the ball before it hit the ground.|היא תפסה את הכדור לפני שנגע בקרקע."
+  },
+  "die (dice)": {
+    "assoc": "דַאי — קוביית משחק, תגלגל ותראה מה גורלך — כמו ל'מות' על תוצאה רעה!",
+    "sentence": "Roll the die and move your piece forward.|גלגל את הקובייה והזז את הכלי שלך קדימה."
+  },
+  "teach, taught": {
+    "assoc": "טִיצ' — המורה 'תיץ' אותך בידע! לִמֵּד בעוצמה!",
+    "sentence": "She taught mathematics for twenty years.|היא לימדה מתמטיקה במשך עשרים שנה."
+  },
+  "think, thought": {
+    "assoc": "ת'ינק — 'תחשוב!' אומר המוח, אחר כך ת'וט — כבר חשבת!",
+    "sentence": "He thought carefully before giving his answer.|הוא חשב בזהירות לפני שנתן את תשובתו."
+  },
+  "ally (allies)": {
+    "assoc": "אַלִי — 'אלי' הוא חבר שלי, בן-ברית אמיתי לכל דבר!",
+    "sentence": "France was an important ally during the war.|צרפת הייתה בת-ברית חשובה במהלך המלחמה."
+  },
+  "arise": {
+    "assoc": "אֲרַייז — 'א-רייז' כמו לקום ולהופיע על הבמה בגדול!",
+    "sentence": "New problems may arise during the project.|בעיות חדשות עשויות להופיע במהלך הפרויקט."
+  },
+  "arise, arose": {
+    "assoc": "אֲרוֹז — קמת בבוקר ואָרַזְת את הציוד — קם והתחיל!",
+    "sentence": "He arose early to watch the sunrise.|הוא קם מוקדם כדי לצפות בזריחה."
+  },
+  "know, knew": {
+    "assoc": "נוּ — 'נו, ידעת!' אומרת סבתא, כי נוּ זה ידע בפידיש!",
+    "sentence": "She knew the answer immediately.|היא ידעה את התשובה מיד."
+  },
+  "spring, sprang": {
+    "assoc": "ספּרינג — קפיץ שקופץ סְפּרינג-ספּרנג — כמו אביב שקופץ מהחורף!",
+    "sentence": "The cat sprang onto the table in one leap.|החתול קפץ על השולחן בקפיצה אחת."
+  },
+  "fight, fought": {
+    "assoc": "פַייט — 'פייט' זה ריב, כמו פייטן שרב עם כולם!",
+    "sentence": "They fought over the last piece of cake.|הם רבו על החתיכה האחרונה של העוגה."
+  },
+  "seek, sought": {
+    "assoc": "סִיק — 'סיק' לחפש כמו מחלה שמחפשת אותך — סוֹט, נמצאת!",
+    "sentence": "The detective sought clues at the crime scene.|הבלש חיפש רמזים בזירת הפשע."
+  },
+  "leaf (leaves)": {
+    "assoc": "לִיף — עלה שמְלִיף בָּאוויר, עלים רבים מְלִיפִים!",
+    "sentence": "A single leaf fell from the old oak tree.|עלה אחד נפל מעץ האלון הישן."
+  },
+  "mouse (mice)": {
+    "assoc": "מַאוס — 'מאוס' לעכבר כי מאוס לך לראות אותו במטבח!",
+    "sentence": "The mouse ran quickly under the refrigerator.|העכבר רץ במהירות מתחת למקרר."
+  },
+  "shelf (shelves)": {
+    "assoc": "שֶׁלף — 'שֶׁלף' מהמדף! שלוף ספר מהמדף — שֶׁלְף-שֶׁלְבֶּז!",
+    "sentence": "He placed the book back on the shelf.|הוא הניח את הספר בחזרה על המדף."
   }
 }
