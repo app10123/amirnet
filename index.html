@@ -1099,7 +1099,7 @@
             let delay = returning ? 800 : 2000;
             setTimeout(() => {
                 splash.classList.add('fade-out');
-                setTimeout(() => { splash.style.display = 'none'; }, 700);
+                setTimeout(() => { splash.style.display = 'none'; if (window.startTourIfNeeded) window.startTourIfNeeded(); }, 700);
             }, delay);
         })();
 
@@ -4600,8 +4600,7 @@ function playNextDrivingWord() {
             window.addEventListener('resize', render);
         }
 
-        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initTour);
-        else initTour();
+        window.startTourIfNeeded = initTour;
     })();
     </script>
     <!-- ===== END PRODUCT TOUR ===== -->
