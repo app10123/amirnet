@@ -4522,6 +4522,7 @@ function playNextDrivingWord() {
         ];
 
         let step = 0;
+        let _firstRender = false;
         const TT_W = () => Math.min(310, window.innerWidth * 0.88);
 
         function render() {
@@ -4533,7 +4534,9 @@ function playNextDrivingWord() {
 
             // spotlight
             const sp = document.getElementById('tour-spotlight');
-            sp.style.cssText = `top:${r.top-p}px;left:${r.left-p}px;width:${r.width+p*2}px;height:${r.height+p*2}px;border-radius:${s.br}px;`;
+            const noTrans = _firstRender ? 'transition:none;' : '';
+            _firstRender = false;
+            sp.style.cssText = `${noTrans}top:${r.top-p}px;left:${r.left-p}px;width:${r.width+p*2}px;height:${r.height+p*2}px;border-radius:${s.br}px;`;
 
             // tooltip
             const tt = document.getElementById('tour-tooltip');
@@ -4595,9 +4598,10 @@ function playNextDrivingWord() {
                 d.className = 'tour-dot';
                 dotsEl.appendChild(d);
             });
+            _firstRender = true;
             ['tour-overlay','tour-spotlight','tour-tooltip'].forEach(id =>
                 document.getElementById(id).classList.remove('tour-hidden'));
-            setTimeout(render, 120);
+            render();
             window.addEventListener('resize', render);
         }
 
