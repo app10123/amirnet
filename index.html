@@ -4586,7 +4586,9 @@ function playNextDrivingWord() {
             document.getElementById('tourTitle').textContent = s.title;
             document.getElementById('tourDesc').textContent = s.desc;
             document.getElementById('tourStepLbl').textContent = `שלב ${step+1} מתוך ${STEPS.length}`;
-            document.getElementById('tourBtnNext').textContent = step === STEPS.length-1 ? 'בואו נתחיל! 🚀' : 'הבא ←';
+            document.getElementById('tourBtnNext').innerHTML = step === STEPS.length-1
+                ? '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;vertical-align:-2px;margin-left:5px;"><polyline points="3 10 8 15 17 5"/></svg>בואו נתחיל!'
+                : 'הבא ←';
             document.getElementById('tourBtnBack').style.visibility = step === 0 ? 'hidden' : 'visible';
 
             document.querySelectorAll('.tour-dot').forEach((d,i) => d.classList.toggle('active', i===step));
