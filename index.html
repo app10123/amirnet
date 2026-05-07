@@ -645,7 +645,7 @@
         .tour-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-color); transition: all .3s; }
         .tour-dot.active { background: var(--btn-primary); width: 18px; border-radius: 4px; }
         .tour-ttitle { font-size: 17px; font-weight: 800; color: var(--text-color); margin-bottom: 6px; }
-        .tour-tdesc { font-size: 13.5px; line-height: 1.65; color: #64748b; margin-bottom: 16px; }
+        .tour-tdesc { font-size: 13.5px; line-height: 1.65; color: #64748b; margin-bottom: 16px; white-space: pre-line; }
         body.dark-mode .tour-tdesc { color: #94a3b8; }
         .tour-btns { display: flex; gap: 7px; align-items: center; }
         .tour-btn-next { flex: 1; padding: 11px; border-radius: 12px; border: none; background: var(--btn-primary); color: #fff; font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer; }
@@ -4478,7 +4478,7 @@ function playNextDrivingWord() {
     </script>
 
     <!-- ===== PRODUCT TOUR ===== -->
-    <div id="tour-overlay" class="tour-hidden" onclick="closeTour()"></div>
+    <div id="tour-overlay" class="tour-hidden"></div>
     <div id="tour-spotlight" class="tour-hidden"></div>
     <div id="tour-tooltip" class="tour-hidden">
         <div class="tour-arrow arr-up" id="tourArrow"></div>
@@ -4554,7 +4554,8 @@ function playNextDrivingWord() {
             tt.style.left = ttLeft + 'px';
 
             if (below) {
-                tt.style.top = (r.bottom + p + 14) + 'px';
+                const ttH2 = tt.offsetHeight || 170;
+                tt.style.top = Math.max(8, Math.min(r.bottom + p + 14, window.innerHeight - ttH2 - 8)) + 'px';
                 tt.style.bottom = '';
             } else {
                 const ttH = tt.offsetHeight || 170;
