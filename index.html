@@ -4718,7 +4718,7 @@ function playNextDrivingWord() {
                         'anthropic-dangerous-direct-browser-access': 'true'
                     },
                     body: JSON.stringify({
-                        model: 'claude-sonnet-4-20250514',
+                        model: 'claude-sonnet-4-5',
                         max_tokens: 2048,
                         messages: [{ role: 'user', content: prompt }]
                     })
@@ -4939,11 +4939,10 @@ Generate exactly ${count} questions now:`;
                 s.selectedAnswer = null;
 
                 showPhase('question');
-                startTimer(sec.minutes * 60);
+                if (s.currentQ === 0) startTimer(sec.minutes * 60);
             }
 
             function atSelectOption(idx) {
-                if (atState.selectedAnswer !== null) return; // already locked? no, allow change
                 atState.selectedAnswer = idx;
                 const opts = document.querySelectorAll('.at-option');
                 opts.forEach((o, i) => o.classList.toggle('at-opt-selected', i === idx));
