@@ -1441,12 +1441,12 @@ let aiPreloadedData = {};
             document.querySelector('.top-nav-container').style.display = 'none';
             document.getElementById('homeNavBtn').style.display = 'none';
         }
-        function enterAppFromDash() {
+        function enterAppFromDash(skipTour) {
             document.getElementById('dashboard-screen').style.display = 'none';
             document.querySelector('.bottom-nav').style.display = '';
             document.querySelector('.top-nav-container').style.display = '';
             document.getElementById('homeNavBtn').style.display = '';
-            if (window.startTourIfNeeded) window.startTourIfNeeded();
+            if (!skipTour && window.startTourIfNeeded) window.startTourIfNeeded();
         }
         function goToDashboard() {
             populateDashboard();
@@ -4499,6 +4499,18 @@ function playNextDrivingWord() {
     <script>
     (function() {
         const STEPS = [
+            // ── שלבי דשבורד ──
+            { sel: '#dashStatsView', pad: 10, br: 16, phase: 'dash',
+              title: 'סיכום הלמידה שלך',
+              desc: 'כאן רואים כמה מילים ידועות, כמה בתהליך ואיזה אחוז מהחומר השלמת.\nהנתונים מוצגים לפי המקור שבחרת.' },
+            { sel: '.dash-change-source-btn', pad: 8, br: 10, phase: 'dash',
+              title: 'בחירת מקור לימוד',
+              desc: 'לחיצה כאן מאפשרת לחזור ולבחור בין המקורות:\nKidum — ספרי קידום לפסיכומטרי\nCampus IL — ספרי קמפוס IL' },
+            { sel: '.dash-enter-btn', pad: 8, br: 14, phase: 'dash',
+              title: 'כניסה ללמידה',
+              desc: 'לחץ כאן כדי להיכנס לאפליקציה ולהתחיל ללמוד.',
+              onNext: function() { enterAppFromDash(true); } },
+            // ── שלבי האפליקציה ──
             { sel: '#swipeCardContainer', pad: 10, br: 20,
               title: 'הכרטיס הראשי',
               desc: 'לחץ על הכרטיס כדי להפוך ולגלות את התרגום. אפשר גם להחליק ימינה או שמאלה.' },
@@ -4519,7 +4531,10 @@ function playNextDrivingWord() {
               desc: 'עבור בין: השלמת משפטים · ניסוח מחדש · טקסטים — כל מסך מדמה שאלה מהבגרות.' },
             { sel: '.top-nav-container', pad: 10, br: 50,
               title: 'תפריט',
-              desc: 'סטטיסטיקות, סינון לפי יחידה ורמה, ייצוא מילים, הגדרות ועוד.' }
+              desc: 'סטטיסטיקות, סינון לפי יחידה ורמה, ייצוא מילים, הגדרות ועוד.' },
+            { sel: '#homeNavBtn', pad: 8, br: 50,
+              title: 'מסך הבית',
+              desc: 'לחיצה כאן מחזירה אותך למסך הסטטיסטיקה, שם תוכל לראות את ההתקדמות שלך ולשנות את מקור הלימוד.' }
         ];
 
         let step = 0;
@@ -4578,10 +4593,15 @@ function playNextDrivingWord() {
         }
 
         window.tourNext = function() {
+            if (STEPS[step].onNext) STEPS[step].onNext();
             if (step < STEPS.length-1) { step++; render(); } else closeTour();
         };
         window.tourBack = function() {
-            if (step > 0) { step--; render(); }
+            if (step > 0) {
+                step--;
+                if (STEPS[step].phase === 'dash') goToDashboard();
+                render();
+            }
         };
         window.closeTour = function() {
             ['tour-overlay','tour-spotlight','tour-tooltip'].forEach(id =>
@@ -4591,6 +4611,7 @@ function playNextDrivingWord() {
 
         function initTour() {
             if (localStorage.getItem('tourSeen_v2')) return;
+            goToDashboard();
             step = 0;
             const dotsEl = document.getElementById('tourDots');
             dotsEl.innerHTML = '';
