@@ -1099,7 +1099,7 @@
             let delay = returning ? 800 : 2000;
             setTimeout(() => {
                 splash.classList.add('fade-out');
-                setTimeout(() => { splash.style.display = 'none'; if (window.startTourIfNeeded) window.startTourIfNeeded(); }, 700);
+                setTimeout(() => { splash.style.display = 'none'; }, 700);
             }, delay);
         })();
 
@@ -1446,6 +1446,7 @@ let aiPreloadedData = {};
             document.querySelector('.bottom-nav').style.display = '';
             document.querySelector('.top-nav-container').style.display = '';
             document.getElementById('homeNavBtn').style.display = '';
+            if (window.startTourIfNeeded) window.startTourIfNeeded();
         }
         function goToDashboard() {
             populateDashboard();

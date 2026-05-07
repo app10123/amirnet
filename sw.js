@@ -1,4 +1,4 @@
-const CACHE_NAME = 'amirnet-cache-v29';
+const CACHE_NAME = 'amirnet-cache-v30';
 const STATIC_ASSETS = [
   './vocab_backup.json',
   './manifest.json',
