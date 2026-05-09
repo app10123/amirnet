@@ -795,30 +795,30 @@
         /* Break screen */
         .at-break-card {
             background: var(--panel-bg); border: 1.5px solid var(--border-color);
-            border-radius: 18px; padding: 32px 24px; max-width: 420px; width: 100%;
+            border-radius: 18px; padding: 40px 28px; max-width: 380px; width: 100%;
             margin: auto; text-align: center;
         }
-        .at-break-pct {
-            font-size: 64px; font-weight: 900; line-height: 1;
+        .at-break-check {
+            width: 68px; height: 68px; border-radius: 50%;
             background: linear-gradient(135deg,#7c3aed,#2563eb);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #fff; font-size: 30px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px;
         }
-        .at-break-label { font-size: 15px; color: #94a3b8; margin: 6px 0 18px; }
-        .at-diff-arrow {
-            font-size: 32px; margin: 10px 0;
+        .at-break-done-title {
+            font-size: 20px; font-weight: 800; color: var(--text-color); margin-bottom: 20px;
         }
-        .at-diff-text { font-size: 14px; color: var(--text-color); font-weight: 600; margin-bottom: 24px; }
-        .at-break-progress-bg {
-            width: 100%; height: 6px; background: var(--border-color);
-            border-radius: 3px; overflow: hidden; margin-top: 16px;
+        .at-break-dots {
+            display: flex; gap: 8px; justify-content: center; margin-bottom: 20px;
         }
-        .at-break-progress-fill {
-            height: 100%; background: linear-gradient(90deg,#7c3aed,#2563eb);
-            border-radius: 3px; width: 0%;
-            transition: width 0.1s linear;
+        .at-break-dot {
+            width: 11px; height: 11px; border-radius: 50%;
+            background: var(--border-color); transition: background 0.3s;
         }
-        .at-break-countdown { font-size: 13px; color: #94a3b8; margin-top: 8px; }
+        .at-break-dot-done {
+            background: linear-gradient(135deg,#7c3aed,#2563eb);
+        }
+        .at-break-label { font-size: 14px; color: #94a3b8; margin-top: 4px; }
 
         /* Results screen */
         .at-results-card {
@@ -5155,9 +5155,11 @@ function playNextDrivingWord() {
                 const q = sectionData.questions[s.currentQ];
                 const totalInSection = sec.count;
 
-                // Header: just question counter
-                $id('at-header-title').textContent = `שאלה ${s.currentQ + 1} / ${totalInSection}`;
-                $id('at-header-meta').style.display = 'none';
+                // Header: section number + question counter
+                const secNum = s.currentSection + 1;
+                $id('at-header-title').textContent = `חלק ${secNum} / ${AT_SECTIONS.length}`;
+                $id('at-header-meta').textContent = `שאלה ${s.currentQ + 1} מתוך ${totalInSection}`;
+                $id('at-header-meta').style.display = 'block';
 
                 // Progress bar
                 $id('at-progress-fill').style.width = `${(s.currentQ / totalInSection) * 100}%`;
@@ -5262,14 +5264,17 @@ function playNextDrivingWord() {
                 const nextSectionIdx = s.currentSection + 1;
                 const nextData = generateSection(nextSectionIdx, nextDiff);
 
-                // Brief 1-second pause showing "ממשיכים..."
-                $id('at-break-section-label').textContent = `חלק ${s.currentSection + 1} הסתיים`;
-                $id('at-break-pct').textContent = `${correct}/${total}`;
-                $id('at-break-score-label').textContent = 'ממשיכים...';
-                $id('at-break-arrow').textContent = '';
-                $id('at-break-diff-text').textContent = '';
-                $id('at-break-progress-fill').style.width = '100%';
-                $id('at-break-countdown').textContent = '';
+                // Brief pause — no score/difficulty revealed
+                $id('at-break-section-label').textContent = `חלק ${s.currentSection + 1} / ${AT_SECTIONS.length} הסתיים`;
+                $id('at-break-score-label').textContent = 'עוברים לחלק הבא...';
+                // Draw section progress dots
+                const dotsEl = $id('at-break-dots');
+                dotsEl.innerHTML = '';
+                for (let i = 0; i < AT_SECTIONS.length; i++) {
+                    const d = document.createElement('span');
+                    d.className = 'at-break-dot' + (i <= s.currentSection ? ' at-break-dot-done' : '');
+                    dotsEl.appendChild(d);
+                }
                 showPhase('break');
 
                 s.breakTimer = setInterval(() => {
@@ -5529,15 +5534,10 @@ function playNextDrivingWord() {
             <!-- BREAK PHASE -->
             <div id="at-phase-break" class="at-hidden">
                 <div class="at-break-card">
-                    <div style="font-size:14px;color:#94a3b8;margin-bottom:8px;" id="at-break-section-label">סיום חלק 1</div>
-                    <div class="at-break-pct" id="at-break-pct">75%</div>
-                    <div class="at-break-label" id="at-break-score-label">3 מתוך 4 נכונות</div>
-                    <div class="at-diff-arrow" id="at-break-arrow">⬆</div>
-                    <div class="at-diff-text" id="at-break-diff-text">החלק הבא: רמה קשה יותר</div>
-                    <div class="at-break-progress-bg">
-                        <div class="at-break-progress-fill" id="at-break-progress-fill"></div>
-                    </div>
-                    <div class="at-break-countdown" id="at-break-countdown">ממשיך בעוד 5 שניות...</div>
+                    <div class="at-break-check">✓</div>
+                    <div class="at-break-done-title" id="at-break-section-label">חלק 1 הסתיים</div>
+                    <div class="at-break-dots" id="at-break-dots"></div>
+                    <div class="at-break-label" id="at-break-score-label">עוברים לחלק הבא...</div>
                 </div>
             </div>
 
