@@ -5097,20 +5097,20 @@ function playNextDrivingWord() {
                 const sectionData = s.sections[s.currentSection];
                 const sec = AT_SECTIONS[s.currentSection];
                 const q = sectionData.questions[s.currentQ];
-
-                // Header meta
-                $id('at-header-title').textContent = `חלק ${sec.id}: ${TYPE_HE[sec.type]}`;
-                $id('at-header-meta').textContent  = `רמה: ${DIFF_LABELS[sectionData.diff]}`;
-
-                // Progress
                 const totalInSection = sec.count;
-                $id('at-progress-fill').style.width = `${((s.currentQ) / totalInSection) * 100}%`;
 
-                // Type badge
-                $id('at-q-type-badge').textContent = TYPE_LABELS[sec.type];
-                $id('at-q-num').textContent = `Question ${s.currentQ + 1} of ${totalInSection}  ·  Section ${sec.id} of 6`;
+                // Header: just question counter
+                $id('at-header-title').textContent = `שאלה ${s.currentQ + 1} / ${totalInSection}`;
+                $id('at-header-meta').style.display = 'none';
 
-                // Passage (RC only, show for all questions in section)
+                // Progress bar
+                $id('at-progress-fill').style.width = `${(s.currentQ / totalInSection) * 100}%`;
+
+                // Hide type badge and num
+                $id('at-q-type-badge').style.display = 'none';
+                $id('at-q-num').style.display = 'none';
+
+                // Passage (RC only)
                 const passageContainer = $id('at-passage-container');
                 if (sec.type === 'RC' && sectionData.passage) {
                     passageContainer.style.display = 'block';
@@ -5121,9 +5121,9 @@ function playNextDrivingWord() {
 
                 // Question text
                 let qText = '';
-                if (sec.type === 'SC') qText = q.sentence || q.question || '';
+                if (sec.type === 'SC') qText = q.sentence || '';
                 else if (sec.type === 'RC') qText = q.question || '';
-                else if (sec.type === 'RS') qText = q.original || q.question || '';
+                else if (sec.type === 'RS') qText = q.original || '';
                 $id('at-q-text').textContent = qText;
 
                 // Options
@@ -5138,8 +5138,8 @@ function playNextDrivingWord() {
                     optList.appendChild(div);
                 });
 
-                // Footer
-                $id('at-footer-info').textContent = `${TYPE_HE[sec.type]} · רמה ${DIFF_LABELS[sectionData.diff]}`;
+                // Footer: hide info label
+                $id('at-footer-info').style.display = 'none';
                 const nextBtn = $id('at-next-btn');
                 nextBtn.disabled = true;
                 s.selectedAnswer = null;
@@ -5193,61 +5193,37 @@ function playNextDrivingWord() {
                 const sectionData = s.sections[s.currentSection];
                 const correct = sectionData.answers.filter(Boolean).length;
                 const total   = AT_SECTIONS[s.currentSection].count;
-                const pct     = total > 0 ? Math.round((correct / total) * 100) : 0;
                 const nextDiff = nextDifficulty(correct, total, sectionData.diff);
-
-                $id('at-break-section-label').textContent = `סיום חלק ${s.currentSection + 1} מתוך 6`;
-                $id('at-break-pct').textContent = pct + '%';
-                $id('at-break-score-label').textContent = `${correct} מתוך ${total} נכונות`;
-
-                let arrow = '➡', diffText = 'החלק הבא: אותה רמת קושי';
-                if (nextDiff !== sectionData.diff) {
-                    if (DIFF_LEVELS.indexOf(nextDiff) > DIFF_LEVELS.indexOf(sectionData.diff)) {
-                        arrow = '⬆'; diffText = `החלק הבא: רמה קשה יותר (${DIFF_LABELS[nextDiff]})`;
-                    } else {
-                        arrow = '⬇'; diffText = `החלק הבא: רמה קלה יותר (${DIFF_LABELS[nextDiff]})`;
-                    }
-                } else {
-                    diffText = `החלק הבא: רמה ${DIFF_LABELS[nextDiff]}`;
-                }
-
                 const isLast = s.currentSection >= AT_SECTIONS.length - 1;
-                if (isLast) {
-                    arrow = '🏁'; diffText = 'סיום המבחן!';
-                }
 
-                $id('at-break-arrow').textContent = arrow;
-                $id('at-break-diff-text').textContent = diffText;
-
-                showPhase('break');
-
-                let elapsed = 0;
-                const BREAK_MS = 5000;
-                const fill = $id('at-break-progress-fill');
-                const countdown = $id('at-break-countdown');
                 clearInterval(s.breakTimer);
 
-                const nextData = !isLast ? generateSection(s.currentSection + 1, nextDiff) : null;
+                if (isLast) {
+                    atShowResults();
+                    return;
+                }
+
+                const nextSectionIdx = s.currentSection + 1;
+                const nextData = generateSection(nextSectionIdx, nextDiff);
+
+                // Brief 1-second pause showing "ממשיכים..."
+                $id('at-break-section-label').textContent = `חלק ${s.currentSection + 1} הסתיים`;
+                $id('at-break-pct').textContent = `${correct}/${total}`;
+                $id('at-break-score-label').textContent = 'ממשיכים...';
+                $id('at-break-arrow').textContent = '';
+                $id('at-break-diff-text').textContent = '';
+                $id('at-break-progress-fill').style.width = '100%';
+                $id('at-break-countdown').textContent = '';
+                showPhase('break');
 
                 s.breakTimer = setInterval(() => {
-                    elapsed += 100;
-                    const pctBar = Math.min(100, (elapsed / BREAK_MS) * 100);
-                    fill.style.width = pctBar + '%';
-                    const secLeft = Math.max(0, Math.ceil((BREAK_MS - elapsed) / 1000));
-                    countdown.textContent = isLast ? 'מציג תוצאות...' : `ממשיך בעוד ${secLeft} שניות...`;
-                    if (elapsed >= BREAK_MS) {
-                        clearInterval(s.breakTimer);
-                        if (isLast) {
-                            atShowResults();
-                        } else {
-                            s.currentSection++;
-                            s.currentQ = 0;
-                            s.sections[s.currentSection] = { ...nextData, answers: [] };
-                            atState.difficulty = nextDiff;
-                            renderQuestion();
-                        }
-                    }
-                }, 100);
+                    clearInterval(s.breakTimer);
+                    s.currentSection = nextSectionIdx;
+                    s.currentQ = 0;
+                    s.sections[s.currentSection] = { ...nextData, answers: [] };
+                    atState.difficulty = nextDiff;
+                    renderQuestion();
+                }, 1000);
             }
 
             function atShowResults() {
@@ -5300,8 +5276,7 @@ function playNextDrivingWord() {
                 $id('at-overlay').classList.remove('at-hidden');
                 document.body.style.overflow = 'hidden';
                 atState = freshState();
-                showPhase('intro');
-                atRenderHistory();
+                atStartTest();
             };
 
             window.closeAdaptiveTest = function() {
@@ -5326,8 +5301,7 @@ function playNextDrivingWord() {
                 clearInterval(atState?.timerInterval);
                 clearInterval(atState?.breakTimer);
                 atState = freshState();
-                showPhase('intro');
-                atRenderHistory();
+                atStartTest();
             };
 
             function atRenderHistory() {
