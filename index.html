@@ -560,6 +560,14 @@
         .dash-session-val { color:var(--text-color); font-weight:700; }
         .dash-enter-btn { width:100%; max-width:460px; padding:18px; border-radius:16px; border:none; background:linear-gradient(135deg,#7c3aed,#2563eb); color:white; font-family:'Rubik',sans-serif; font-size:18px; font-weight:800; cursor:pointer; box-shadow:0 4px 20px rgba(124,58,237,0.4); transition:0.2s; display:flex; align-items:center; justify-content:center; gap:10px; }
         .dash-enter-btn:active { transform:scale(0.97); }
+        .dash-test-card { width:100%; max-width:460px; margin-top:12px; padding:15px 18px; border-radius:16px; border:2px solid var(--border-color); background:var(--panel-bg); font-family:'Rubik',sans-serif; cursor:pointer; display:flex; align-items:center; gap:14px; box-shadow:var(--shadow); transition:0.18s; text-align:right; }
+        .dash-test-card:hover { border-color:#7c3aed55; }
+        .dash-test-card:active { transform:scale(0.97); }
+        .dash-test-icon { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#7c3aed,#2563eb); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .dash-test-info { flex:1; }
+        .dash-test-title { font-size:15px; font-weight:800; color:var(--text-color); }
+        .dash-test-sub { font-size:12px; font-weight:600; color:#94a3b8; margin-top:2px; }
+        .dash-test-arrow { color:#94a3b8; flex-shrink:0; }
         body.dark-mode .dash-stat-card { background:rgba(255,255,255,0.06); }
         body.dark-mode .dash-last-session { background:rgba(255,255,255,0.06); }
         body.dark-mode .dash-stat-card.known .dash-stat-num { color:#00ff88; text-shadow:0 0 10px rgba(0,255,136,0.4); }
@@ -953,6 +961,18 @@
             <button class="dash-enter-btn" onclick="enterAppFromDash()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                 המשך ללמוד
+            </button>
+            <button class="dash-test-card" onclick="openAdaptiveTest()">
+                <div class="dash-test-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div class="dash-test-info">
+                    <div class="dash-test-title">מבחן פסיכומטרי אדפטיבי</div>
+                    <div class="dash-test-sub">סימולציה מלאה · 6 חלקים · MST</div>
+                </div>
+                <div class="dash-test-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M15 18l-6-6 6-6"/></svg>
+                </div>
             </button>
         </div>
     </div>
