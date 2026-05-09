@@ -4692,131 +4692,317 @@ function playNextDrivingWord() {
             function freshState() {
                 return {
                     phase: 'intro',
-                    currentSection: 0,        // index into AT_SECTIONS
-                    currentQ: 0,              // index within current section questions
+                    currentSection: 0,
+                    currentQ: 0,
                     difficulty: 'medium',
-                    sections: [],             // array of { questions[], answers[], diff }
+                    sections: [],
                     selectedAnswer: null,
                     timerInterval: null,
                     secondsLeft: 0,
-                    passage: null,            // RC passage for section 3
+                    passage: null,
                     breakTimer: null,
+                    usedQ: { SC: { easy: new Set(), medium: new Set(), hard: new Set() },
+                             RC: { easy: new Set(), medium: new Set(), hard: new Set() },
+                             RS: { easy: new Set(), medium: new Set(), hard: new Set() } }
                 };
             }
 
-            // ---- API helpers ----
-            function getApiKey() { return localStorage.getItem('atApiKey') || ''; }
-
-            async function callClaude(prompt) {
-                const apiKey = getApiKey();
-                const res = await fetch('https://api.anthropic.com/v1/messages', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'x-api-key': apiKey,
-                        'anthropic-version': '2023-06-01',
-                        'anthropic-dangerous-direct-browser-access': 'true'
-                    },
-                    body: JSON.stringify({
-                        model: 'claude-sonnet-4-5',
-                        max_tokens: 2048,
-                        messages: [{ role: 'user', content: prompt }]
-                    })
-                });
-                if (!res.ok) {
-                    const err = await res.json().catch(() => ({}));
-                    throw new Error(err.error?.message || 'API error ' + res.status);
+            // ---- Question Bank ----
+            const QB = {
+                SC: {
+                    easy: [
+                        { sentence: "The new student found it difficult to ___ to the school's strict schedule.", options: ["adapt", "object", "respond", "contribute"], correctIndex: 0, explanation: "Adapt means to adjust to new conditions." },
+                        { sentence: "Regular exercise has a ___ effect on overall physical and mental health.", options: ["beneficial", "harmful", "negligible", "temporary"], correctIndex: 0, explanation: "Beneficial means producing good or helpful results." },
+                        { sentence: "The professor asked students to ___ the causes of the conflict carefully.", options: ["examine", "avoid", "dismiss", "celebrate"], correctIndex: 0, explanation: "Examine means to investigate or study in detail." },
+                        { sentence: "She kept her notes ___ so she could review them quickly before the exam.", options: ["organized", "hidden", "scattered", "deleted"], correctIndex: 0, explanation: "Organized means arranged in a clear, systematic way." },
+                        { sentence: "The scientist's ___ led her to continue research even after many failed attempts.", options: ["persistence", "reluctance", "indifference", "disappointment"], correctIndex: 0, explanation: "Persistence means continued effort despite difficulties." },
+                        { sentence: "The new policy was designed to ___ equal access to education for all children.", options: ["guarantee", "restrict", "complicate", "reduce"], correctIndex: 0, explanation: "Guarantee means to make certain that something will happen." },
+                        { sentence: "The manager praised the employee for her ___ work and positive attitude.", options: ["outstanding", "average", "minimal", "careless"], correctIndex: 0, explanation: "Outstanding means exceptionally good." },
+                        { sentence: "After the flood, volunteers gathered to ___ the affected communities.", options: ["support", "ignore", "evacuate", "criticize"], correctIndex: 0, explanation: "Support means to give assistance to someone." },
+                        { sentence: "The library offered ___ resources for students conducting research projects.", options: ["extensive", "limited", "outdated", "expensive"], correctIndex: 0, explanation: "Extensive means covering a large area or range." },
+                        { sentence: "She made a ___ decision to pursue a career in medicine after years of consideration.", options: ["firm", "rash", "careless", "temporary"], correctIndex: 0, explanation: "Firm means resolute and not likely to change." },
+                        { sentence: "The study found a ___ link between sleep quality and academic performance.", options: ["significant", "weak", "disputed", "random"], correctIndex: 0, explanation: "Significant means notable or important in effect." },
+                        { sentence: "The documentary ___ light on the challenges faced by deep-sea explorers.", options: ["shed", "reflected", "blocked", "absorbed"], correctIndex: 0, explanation: "'Shed light on' is an idiom meaning to reveal or clarify." },
+                        { sentence: "The community came together to ___ a garden in the empty lot downtown.", options: ["establish", "destroy", "abandon", "purchase"], correctIndex: 0, explanation: "Establish means to set up or create something new." },
+                        { sentence: "The team worked throughout the night to ___ the project on time.", options: ["complete", "begin", "cancel", "delay"], correctIndex: 0, explanation: "Complete means to finish successfully." },
+                        { sentence: "The architect's design was praised for its ___ use of natural light.", options: ["clever", "wasteful", "excessive", "random"], correctIndex: 0, explanation: "Clever means showing skill and original thinking." }
+                    ],
+                    medium: [
+                        { sentence: "The professor's ___ remarks helped students grasp the full complexity of the issue.", options: ["insightful", "superficial", "irrelevant", "ambiguous"], correctIndex: 0, explanation: "Insightful means showing deep understanding." },
+                        { sentence: "The new regulations were intended to ___ the growing problem of urban air pollution.", options: ["mitigate", "exacerbate", "ignore", "document"], correctIndex: 0, explanation: "Mitigate means to make less severe or harmful." },
+                        { sentence: "Despite initial resistance, the reform was eventually ___ by the community.", options: ["embraced", "rejected", "modified", "delayed"], correctIndex: 0, explanation: "Embraced means accepted willingly or enthusiastically." },
+                        { sentence: "The evidence presented in the report was ___, making a strong case for urgent change.", options: ["compelling", "inconclusive", "fabricated", "irrelevant"], correctIndex: 0, explanation: "Compelling means powerfully persuasive." },
+                        { sentence: "Her ___ approach to problem-solving helped the team find creative solutions quickly.", options: ["innovative", "conventional", "cautious", "passive"], correctIndex: 0, explanation: "Innovative means introducing new ideas or methods." },
+                        { sentence: "Scientists remain ___ about the long-term effects of the experimental drug.", options: ["skeptical", "certain", "enthusiastic", "indifferent"], correctIndex: 0, explanation: "Skeptical means not easily convinced; having doubts." },
+                        { sentence: "The politician's speech was ___ with historical references and literary quotations.", options: ["replete", "devoid", "brief", "simplified"], correctIndex: 0, explanation: "Replete means full or well-supplied with something." },
+                        { sentence: "The treaty was designed to ___ peaceful relations between the two rival nations.", options: ["foster", "undermine", "complicate", "terminate"], correctIndex: 0, explanation: "Foster means to encourage the development of something." },
+                        { sentence: "The research team had to ___ their hypothesis after unexpected results emerged.", options: ["revise", "confirm", "publicize", "abandon"], correctIndex: 0, explanation: "Revise means to reconsider and alter." },
+                        { sentence: "His argument, though ___, failed to address several key counterpoints raised.", options: ["articulate", "incoherent", "irrelevant", "brief"], correctIndex: 0, explanation: "Articulate means clearly and effectively expressed." },
+                        { sentence: "The environmental impact study revealed ___ damage to the local ecosystem.", options: ["substantial", "minimal", "negligible", "temporary"], correctIndex: 0, explanation: "Substantial means of considerable importance or size." },
+                        { sentence: "The discovery of the ancient manuscript ___ our understanding of medieval history.", options: ["transformed", "confirmed", "simplified", "complicated"], correctIndex: 0, explanation: "Transformed means changed dramatically." },
+                        { sentence: "The author's writing style was praised for its ___ clarity and precision throughout.", options: ["remarkable", "ordinary", "excessive", "surprising"], correctIndex: 0, explanation: "Remarkable means worthy of attention; extraordinary." },
+                        { sentence: "The museum's new exhibit ___ the complex relationship between technology and society.", options: ["explores", "ignores", "simplifies", "contradicts"], correctIndex: 0, explanation: "Explores means to examine carefully and in depth." },
+                        { sentence: "The company's decision to relocate was ___ primarily by financial pressures.", options: ["motivated", "opposed", "celebrated", "questioned"], correctIndex: 0, explanation: "Motivated means driven by a particular reason or cause." }
+                    ],
+                    hard: [
+                        { sentence: "The philosopher's ___ treatise challenged centuries of conventional intellectual thought.", options: ["seminal", "derivative", "commonplace", "superficial"], correctIndex: 0, explanation: "Seminal means strongly influencing later developments; groundbreaking." },
+                        { sentence: "Critics argued that the author's dense prose was unnecessarily ___, obscuring rather than illuminating her ideas.", options: ["abstruse", "lucid", "transparent", "accessible"], correctIndex: 0, explanation: "Abstruse means difficult to understand; obscure." },
+                        { sentence: "The historian's ___ account of the revolution conveniently omitted many inconvenient facts.", options: ["tendentious", "balanced", "objective", "comprehensive"], correctIndex: 0, explanation: "Tendentious means promoting a particular cause in a biased way." },
+                        { sentence: "Her ___ ability to predict economic trends earned her clients' lasting confidence.", options: ["prescient", "flawed", "ordinary", "overestimated"], correctIndex: 0, explanation: "Prescient means having knowledge of events before they take place." },
+                        { sentence: "The CEO's ___ dismissal of employee concerns contributed significantly to the company's collapse.", options: ["cavalier", "thoughtful", "cautious", "genuine"], correctIndex: 0, explanation: "Cavalier means showing a lack of proper concern; dismissive." },
+                        { sentence: "The treaty's ___ language allowed both parties to interpret it in entirely self-serving ways.", options: ["equivocal", "precise", "binding", "unambiguous"], correctIndex: 0, explanation: "Equivocal means open to more than one interpretation; ambiguous." },
+                        { sentence: "The scholar's reputation for ___ attention to archival sources set the standard for the entire field.", options: ["punctilious", "cursory", "selective", "excessive"], correctIndex: 0, explanation: "Punctilious means showing great attention to detail or correct behavior." },
+                        { sentence: "His refusal to compromise was seen as evidence of ___ rather than principled commitment.", options: ["intransigence", "flexibility", "wisdom", "courage"], correctIndex: 0, explanation: "Intransigence means refusal to change one's views or to agree." },
+                        { sentence: "The speaker's ___ monologue lasted three hours, thoroughly exhausting the audience.", options: ["interminable", "brief", "engaging", "concise"], correctIndex: 0, explanation: "Interminable means endless or seemingly without end." },
+                        { sentence: "The new CEO's ___ management style clashed sharply with the company's collaborative culture.", options: ["autocratic", "democratic", "inclusive", "flexible"], correctIndex: 0, explanation: "Autocratic means taking control with little input from others." },
+                        { sentence: "The poem's ___ imagery drew from classical mythology and Renaissance art history.", options: ["erudite", "simplistic", "original", "modern"], correctIndex: 0, explanation: "Erudite means having or showing great knowledge or learning." },
+                        { sentence: "The government's response to the crisis was criticized as ___ and poorly coordinated.", options: ["inept", "swift", "decisive", "effective"], correctIndex: 0, explanation: "Inept means lacking skill, competence, or aptitude." },
+                        { sentence: "The professor's lectures were celebrated for their ___ — covering vast terrain with remarkable efficiency.", options: ["conciseness", "verbosity", "repetitiveness", "obscurity"], correctIndex: 0, explanation: "Conciseness means the quality of giving information clearly and briefly." },
+                        { sentence: "The biographer's ___ portrayal of the statesman revealed both his triumphs and his moral failures.", options: ["unflinching", "flattering", "apologetic", "cursory"], correctIndex: 0, explanation: "Unflinching means not showing fear or hesitation when facing difficult truths." },
+                        { sentence: "The novel's ___ narrative structure challenged readers to question their most basic assumptions.", options: ["labyrinthine", "straightforward", "predictable", "simplistic"], correctIndex: 0, explanation: "Labyrinthine means intricate and confusing, like a labyrinth." }
+                    ]
+                },
+                RS: {
+                    easy: [
+                        { original: "Many students find it hard to concentrate when they are tired.", options: ["Fatigue often makes it difficult for students to focus.", "Students who concentrate well are rarely tired.", "Tired students always fail their exams.", "Students should sleep more to improve their grades."], correctIndex: 0, explanation: "Option A directly restates that tiredness impairs concentration." },
+                        { original: "The weather forecast predicted heavy rain for the entire week.", options: ["Rain was expected every day for the coming week.", "The forecast was wrong about the upcoming rain.", "Light showers were expected at the end of the week.", "The week's weather remained uncertain."], correctIndex: 0, explanation: "Option A accurately restates that heavy rain was forecast for all seven days." },
+                        { original: "Reading books improves vocabulary and enhances communication skills.", options: ["Books help develop both word knowledge and the ability to communicate.", "Good communicators read books to maintain their skills.", "Vocabulary improvement is more important than communication.", "Only certain books can improve communication skills."], correctIndex: 0, explanation: "Option A captures both aspects: vocabulary and communication skills." },
+                        { original: "The museum was closed due to renovation work scheduled to last three months.", options: ["The museum would remain shut for three months while being renovated.", "The museum closed permanently after three months of operation.", "Renovation work was postponed for three months.", "The museum closed briefly for minor repairs."], correctIndex: 0, explanation: "Option A correctly states the museum would be closed during a three-month renovation." },
+                        { original: "She practiced the piano every day and eventually became a skilled performer.", options: ["Daily practice helped her develop into an accomplished pianist.", "She became a performer without much effort or practice.", "She practiced often but never improved her piano skills.", "Professional pianists must practice daily to remain skilled."], correctIndex: 0, explanation: "Option A directly restates that consistent daily practice led to her skill." },
+                        { original: "The experiment failed because the temperature was not properly controlled.", options: ["Poor temperature control caused the experiment to be unsuccessful.", "The experiment succeeded despite temperature control problems.", "Temperature is rarely important in scientific experiments.", "Controlling temperature always ensures experimental success."], correctIndex: 0, explanation: "Option A directly restates the cause-and-effect relationship described." },
+                        { original: "Children learn languages more easily than adults do.", options: ["Language acquisition is generally easier for children than for adults.", "Adults are better language learners than children.", "Children and adults learn languages at the same pace.", "It is impossible for adults to learn a new language."], correctIndex: 0, explanation: "Option A correctly restates that children have greater ease with language learning." },
+                        { original: "The new transportation system reduced travel time by almost half.", options: ["The transportation system cut travel time by nearly fifty percent.", "Travel time increased significantly with the new system.", "The system eliminated all delays in public transportation.", "Only some routes saw reduced travel time."], correctIndex: 0, explanation: "Option A correctly restates 'reduced by almost half' as 'cut by nearly fifty percent.'" },
+                        { original: "Without a balanced diet, it is difficult to maintain good health.", options: ["Good health is hard to sustain without eating a variety of nutritious foods.", "People who eat balanced diets never get sick.", "A balanced diet is the only factor that determines health.", "Diet has little impact on overall health."], correctIndex: 0, explanation: "Option A accurately restates the importance of a balanced diet for health." },
+                        { original: "The city built new parks to give residents more green spaces.", options: ["New parks were created to provide city residents with more outdoor areas.", "Residents were asked to build parks in their neighborhoods.", "The city replaced parks with new residential buildings.", "Green spaces were removed to make room for new development."], correctIndex: 0, explanation: "Option A correctly restates the purpose and result of park construction." },
+                        { original: "Scientists believe that reducing carbon emissions is key to fighting climate change.", options: ["Lowering carbon emissions is considered essential by scientists for addressing climate change.", "Scientists disagree about whether carbon emissions affect the climate.", "Climate change can be reversed without reducing carbon emissions.", "Carbon emissions have no measurable impact on global temperatures."], correctIndex: 0, explanation: "Option A accurately captures the scientific belief about emissions and climate." },
+                        { original: "The teacher gave extra time to students who were struggling with the assignment.", options: ["Students who found the assignment difficult were given additional time by the teacher.", "All students were given extra time for the assignment.", "Struggling students were given easier assignments.", "The teacher took extra time to grade the assignments."], correctIndex: 0, explanation: "Option A correctly states who received extra time and why." },
+                        { original: "The novel was praised for its realistic portrayal of life during wartime.", options: ["The book received acclaim for depicting wartime experiences authentically.", "The novel was criticized for its inaccurate description of wartime.", "Few readers appreciated the novel's portrayal of war.", "The novel avoided realistic descriptions of wartime events."], correctIndex: 0, explanation: "Option A correctly restates that the novel was praised for its authentic wartime depiction." },
+                        { original: "The company offered discounts to attract new customers.", options: ["Reduced prices were used by the company to draw in new buyers.", "The company increased prices to attract wealthy customers.", "New customers were offered discounts after their first purchase.", "The company attracted customers through advertising rather than discounts."], correctIndex: 0, explanation: "Option A correctly restates the use of price reductions to attract customers." },
+                        { original: "The bridge was closed to traffic after engineers detected structural damage.", options: ["Structural problems discovered by engineers led to the closure of the bridge.", "The bridge was closed for routine maintenance.", "Engineers opened the bridge after repairing the damage.", "Traffic was diverted due to heavy congestion on the bridge."], correctIndex: 0, explanation: "Option A accurately states both the cause and the effect." }
+                    ],
+                    medium: [
+                        { original: "The committee's decision to delay the vote was met with widespread criticism from opposition leaders.", options: ["Opposition leaders strongly criticized the committee for postponing the vote.", "The committee voted to delay the decision following criticism from opponents.", "Opposition leaders supported the committee's choice to postpone the vote.", "The delay in voting was proposed by opposition leaders."], correctIndex: 0, explanation: "Option A correctly identifies who criticized whom and why." },
+                        { original: "Despite its limited budget, the research team produced findings of exceptional significance.", options: ["The team achieved highly significant results even with scarce financial resources.", "A generous budget enabled the team to achieve significant findings.", "The team's findings were limited due to budget constraints.", "Exceptional significance can only be achieved with adequate funding."], correctIndex: 0, explanation: "Option A preserves both the contrast and the outcome." },
+                        { original: "Technological advances have transformed the way information is stored and retrieved.", options: ["Progress in technology has fundamentally changed how information is saved and accessed.", "The way information is stored has remained unchanged despite technological progress.", "Technology has made information retrieval slower and more complex.", "Information storage has improved only in certain technological sectors."], correctIndex: 0, explanation: "Option A correctly restates 'transformed' as 'fundamentally changed.'" },
+                        { original: "The study suggests that early intervention is more effective than treatment initiated later in life.", options: ["According to the study, treating conditions early yields better outcomes than later treatment.", "The study found that later intervention produces the most effective results.", "Early and late interventions were found to be equally effective.", "The study questioned whether early intervention has any lasting benefit."], correctIndex: 0, explanation: "Option A accurately restates the comparative finding about timing of intervention." },
+                        { original: "Economic inequality tends to persist across generations when access to quality education is limited.", options: ["When quality education is inaccessible, economic inequality is likely to continue through generations.", "Economic inequality is caused entirely by differences in educational quality.", "Improving education always eliminates economic inequality between generations.", "Generational poverty exists independently of access to education."], correctIndex: 0, explanation: "Option A correctly restates both the condition and the result." },
+                        { original: "The decline in bird populations has been linked to habitat destruction and pesticide use.", options: ["Research associates falling bird numbers with the loss of habitat and the use of pesticides.", "Bird populations have declined solely because of increasing pesticide use.", "Habitat destruction has increased bird populations in urban areas.", "Scientists have found no clear cause for the decline in bird numbers."], correctIndex: 0, explanation: "Option A correctly identifies both causes and uses 'associates' for 'linked.'" },
+                        { original: "Governments must balance economic growth with environmental protection to ensure sustainable development.", options: ["Sustainable development requires that economic progress and environmental care be maintained together.", "Economic growth should be prioritized over environmental concerns by governments.", "Environmental protection always comes at the expense of economic growth.", "Governments should focus solely on environmental issues to achieve sustainability."], correctIndex: 0, explanation: "Option A captures the balance required for sustainability." },
+                        { original: "Social media platforms have been criticized for prioritizing engagement over the accuracy of information.", options: ["Critics argue that social media companies favor user interaction at the expense of factual content.", "Social media platforms have been praised for promoting accurate information.", "Engagement and accuracy are equally prioritized by most social media platforms.", "Social media companies have been criticized for restricting user engagement."], correctIndex: 0, explanation: "Option A correctly identifies the criticism: prioritizing engagement over accuracy." },
+                        { original: "The policy was revised after data revealed that the original approach had unintended consequences.", options: ["After finding that the initial strategy produced unexpected results, officials updated the policy.", "The policy was revised because it was unpopular, despite achieving its intended goals.", "Data confirmed that the original policy was effective, prompting no changes.", "Officials chose not to revise the policy despite evidence of unintended consequences."], correctIndex: 0, explanation: "Option A correctly states that unintended consequences revealed by data prompted the revision." },
+                        { original: "Biodiversity is essential to ecosystem resilience, enabling natural systems to recover from disturbances.", options: ["A variety of species is crucial for ecosystems to withstand and recover from disruptions.", "Biodiversity is primarily important for the economic value of natural resources.", "Ecosystems with low biodiversity tend to be more resilient to environmental changes.", "Natural systems can recover from disturbances only through human intervention."], correctIndex: 0, explanation: "Option A correctly links biodiversity to ecosystem resilience and recovery." },
+                        { original: "The memoir offered an intimate account of the author's struggle with identity during adolescence.", options: ["The author used the memoir to explore personal challenges related to identity in her teenage years.", "The memoir described the author's successful resolution of identity issues in adulthood.", "Identity problems in adolescence were only briefly mentioned in the memoir.", "The memoir focused on external events rather than the author's inner experiences."], correctIndex: 0, explanation: "Option A correctly captures both the personal nature and the adolescent focus." },
+                        { original: "Trade agreements can benefit consumers by lowering prices but may threaten domestic industries.", options: ["While trade deals can reduce costs for buyers, they pose risks to local manufacturing sectors.", "Trade agreements always benefit consumers without negatively affecting local businesses.", "Domestic industries typically gain the most from international trade agreements.", "Lower prices resulting from trade agreements always lead to greater inequality."], correctIndex: 0, explanation: "Option A correctly preserves the dual effect: consumer benefit and industry risk." },
+                        { original: "The judge ruled that the evidence presented was insufficient to support the prosecution's claims.", options: ["The court found that the prosecution had not provided enough evidence to prove its case.", "The judge supported the prosecution's case despite the limited evidence provided.", "The evidence was deemed excessive and therefore excluded from the trial.", "The prosecution's claims were supported by evidence the judge found credible."], correctIndex: 0, explanation: "Option A correctly restates that evidence was insufficient for the prosecution's argument." },
+                        { original: "The artist's later work was characterized by bold experimentation that departed sharply from her earlier style.", options: ["A strong shift toward experimental risk-taking defined the artist's mature work compared to her beginnings.", "The artist's early and later works shared a consistent experimental approach.", "The artist's later work was praised for continuing her original style.", "Experimentation was evident throughout all stages of the artist's career."], correctIndex: 0, explanation: "Option A captures both the experimental nature and the sharp departure from earlier work." },
+                        { original: "The director's unconventional approach to the material attracted both admiration and controversy.", options: ["The director's unusual treatment of the subject generated both praise and debate.", "The director avoided controversy by using traditional methods.", "The film was universally praised for its innovative but uncontroversial approach.", "The director's unconventional methods were rejected by critics and audiences alike."], correctIndex: 0, explanation: "Option A restates 'admiration and controversy' as 'praise and debate.'" }
+                    ],
+                    hard: [
+                        { original: "The epistemological implications of quantum indeterminacy have led some philosophers to question the validity of classical notions of causality.", options: ["Some philosophers argue that quantum physics undermines traditional ideas about cause and effect.", "Quantum physics has confirmed classical theories of causality in philosophical discourse.", "Philosophers generally regard quantum indeterminacy as irrelevant to epistemology.", "The concept of causality has been abandoned entirely in modern philosophy."], correctIndex: 0, explanation: "Option A correctly restates that quantum indeterminacy challenges classical causality." },
+                        { original: "Hegemonic discourse tends to naturalize prevailing power structures, rendering alternatives inconceivable.", options: ["Dominant forms of discourse often make existing power arrangements seem inevitable, suppressing alternative views.", "Alternative power structures are actively promoted through hegemonic discourse.", "Hegemonic discourse is ineffective at maintaining dominant power structures.", "Power structures are typically challenged rather than reinforced by prevailing discourse."], correctIndex: 0, explanation: "Option A captures the naturalization of power and suppression of alternatives." },
+                        { original: "The proliferation of misinformation in digital ecosystems poses an acute threat to epistemic communities.", options: ["The rapid spread of false information online seriously endangers shared knowledge and public discourse.", "Digital ecosystems have improved the quality of information available to epistemic communities.", "Misinformation spreads primarily through traditional rather than digital media.", "Epistemic communities have effectively neutralized the threat of digital misinformation."], correctIndex: 0, explanation: "Option A correctly identifies misinformation's threat to knowledge-based communities." },
+                        { original: "The author employs dramatic irony to highlight the protagonist's tragic obliviousness to his own downfall.", options: ["Through dramatic irony, the author reveals that the main character is unaware of the tragedy approaching him.", "The protagonist uses irony deliberately to conceal his awareness of his fate.", "Irony is used to show that the protagonist successfully avoids his downfall.", "The author avoids irony in order to maintain the protagonist's tragic dignity."], correctIndex: 0, explanation: "Option A correctly restates that dramatic irony reveals the protagonist's unawareness of his fate." },
+                        { original: "Neuroplasticity research suggests that cognitive capacities long presumed immutable are, in fact, susceptible to environmental modification.", options: ["Studies on brain plasticity indicate that mental abilities once thought fixed can actually be shaped by experience.", "Research has confirmed that cognitive abilities are entirely determined by genetics and cannot change.", "Neuroplasticity studies have shown that environmental factors play no role in shaping cognition.", "Cognitive capacities are immutable regardless of environmental conditions, according to recent research."], correctIndex: 0, explanation: "Option A correctly restates that neuroplasticity shows cognitive abilities can change." },
+                        { original: "The fiscal austerity measures implemented by the government disproportionately burdened the most economically vulnerable segments of society.", options: ["Government spending cuts placed an unequal burden on the poorest and most financially insecure groups.", "Austerity measures were designed to distribute the economic burden equally across all social groups.", "The most affluent segments of society bore the greatest burden of the government's austerity policies.", "Economic austerity measures benefited all segments of society in the long term."], correctIndex: 0, explanation: "Option A correctly states that cuts hit the most vulnerable disproportionately." },
+                        { original: "The ostensibly neutral rhetoric of meritocracy can serve to legitimize and perpetuate structural inequality.", options: ["The seemingly fair language of meritocracy may actually justify and reinforce deep-seated social inequalities.", "Meritocracy has proven to be an effective means of eliminating structural inequalities.", "Neutral rhetoric is rarely used in discussions of meritocracy and social justice.", "Structural inequality is effectively challenged by meritocratic frameworks."], correctIndex: 0, explanation: "Option A correctly restates that meritocracy's 'neutral' language can legitimize inequality." },
+                        { original: "Ecological tipping points, once surpassed, may trigger cascading, self-perpetuating changes that are largely irreversible.", options: ["Crossing critical ecological thresholds can set off chain reactions in ecosystems that are difficult to reverse.", "Ecological tipping points can be easily reversed if addressed promptly.", "Cascading ecological changes occur only in the absence of human intervention.", "Self-perpetuating ecological changes are typically short-lived and reversible."], correctIndex: 0, explanation: "Option A correctly captures both the chain reaction and irreversibility of tipping points." },
+                        { original: "The philosopher contended that moral relativism, taken to its logical conclusion, undermines any grounds for ethical judgment.", options: ["According to the philosopher, fully accepting moral relativism leaves no basis for making ethical evaluations.", "The philosopher argued that moral relativism strengthens the foundations of ethical reasoning.", "Moral relativism was defended by the philosopher as compatible with universal ethical standards.", "The philosopher accepted moral relativism while maintaining that ethical judgments remain valid."], correctIndex: 0, explanation: "Option A correctly restates that full relativism eliminates the basis for ethical judgment." },
+                        { original: "The suppression of indigenous languages has been identified as a mechanism through which colonial legacies continue to shape cultural identity.", options: ["Ongoing suppression of native languages is seen as a way colonial influences still affect how communities understand themselves.", "Colonial powers successfully promoted indigenous languages as a means of preserving cultural identity.", "Indigenous languages have flourished despite attempts to suppress them under colonial rule.", "Cultural identity is shaped by language acquisition independent of any colonial legacy."], correctIndex: 0, explanation: "Option A correctly identifies language suppression as a vehicle of continuing colonial influence." },
+                        { original: "The ascendancy of technocratic governance has been accompanied by a corresponding atrophy of public deliberation.", options: ["The rise of expert-led government has coincided with a decline in meaningful public debate and participation.", "Technocratic governance has strengthened democratic processes by encouraging wider public deliberation.", "Public deliberation and technocratic governance have developed in parallel without significant interaction.", "The decline of technocracy has been followed by a resurgence of public political discourse."], correctIndex: 0, explanation: "Option A correctly restates that technocracy's rise correlates with declining public deliberation." },
+                        { original: "The market's failure to price environmental externalities accurately leads to systematic underinvestment in sustainable practices.", options: ["Because markets do not reflect true environmental costs, less money than needed goes toward sustainable approaches.", "Environmental costs are effectively priced by markets, ensuring adequate investment in sustainability.", "Sustainable practices are popular with investors despite the market's tendency to overprice environmental damage.", "Underinvestment in sustainable practices results from excessive regulation rather than market failures."], correctIndex: 0, explanation: "Option A correctly captures how mispricing of externalities leads to underinvestment." },
+                        { original: "The novel's unreliable narrator forces readers to scrutinize the gap between subjective experience and objective truth.", options: ["By using a narrator whose account cannot be fully trusted, the novel invites readers to question the difference between personal perception and fact.", "The narrator's unreliability undermines the novel's ability to convey any meaningful truth.", "The novel uses a reliable narrator to demonstrate that subjective experience aligns with objective truth.", "Readers are encouraged to accept the narrator's perspective as an accurate account of reality."], correctIndex: 0, explanation: "Option A correctly restates that the unreliable narrator prompts examination of subjective vs. objective truth." },
+                        { original: "Technological solutionism — the belief that every social problem has a technical fix — often oversimplifies complex human realities.", options: ["The assumption that technology can solve all social problems tends to ignore the complexity of human situations.", "Technological solutions have proven equally effective for both technical and social problems.", "Social problems are, in most cases, best addressed through purely technical means.", "Solutionism argues that human realities must be simplified before technical fixes can be applied."], correctIndex: 0, explanation: "Option A correctly captures the oversimplification inherent in assuming technology solves all social problems." },
+                        { original: "The paradox of tolerance holds that unlimited tolerance must ultimately lead to the destruction of tolerance itself.", options: ["If a society tolerates everything without limit, it may eventually tolerate movements that will destroy tolerance.", "Absolute tolerance prevents intolerance from developing in any society.", "The paradox of tolerance argues that intolerant societies eventually become tolerant.", "Tolerance and intolerance are not related concepts in political philosophy."], correctIndex: 0, explanation: "Option A correctly captures the argument that unlimited tolerance enables its own destruction." }
+                    ]
+                },
+                RC: {
+                    easy: [
+                        {
+                            passage: "Smartphones have transformed the way people communicate and access information. Introduced in the early 2000s, these devices combine the functions of a phone, camera, and computer into a single portable tool. Today, billions of people around the world rely on smartphones for daily activities, from sending messages to navigating unfamiliar cities. Critics, however, argue that excessive smartphone use has led to reduced attention spans and diminished face-to-face interaction. Studies suggest that many people check their phones over one hundred times each day, often disrupting sleep and concentration. Despite these concerns, smartphones have also enabled people in remote areas to access healthcare, education, and financial services that were previously unavailable. The debate over their net impact remains ongoing. As technology continues to evolve, it is likely that smartphones will become even more integrated into everyday life, raising new questions about privacy, health, and human connection.",
+                            questions: [
+                                { question: "What is the main topic of this passage?", options: ["The impact of smartphones on modern life", "The history of mobile phone development", "Privacy concerns related to smartphones", "The economic benefits of smartphone technology"], correctIndex: 0, explanation: "The passage broadly discusses how smartphones affect daily life, including both benefits and concerns." },
+                                { question: "According to the passage, critics of smartphones point to which concern?", options: ["Reduced attention spans and less face-to-face contact", "High cost of smartphone devices", "Environmental damage from smartphone production", "Poor camera quality in early devices"], correctIndex: 0, explanation: "The passage explicitly states critics argue smartphone use has led to reduced attention spans and diminished face-to-face interaction." },
+                                { question: "Which of the following does the passage mention as a benefit of smartphones?", options: ["Access to healthcare for remote populations", "Elimination of face-to-face communication problems", "Increased attention spans in users", "Reduced reliance on cameras"], correctIndex: 0, explanation: "The passage states smartphones have enabled people in remote areas to access healthcare." },
+                                { question: "According to the passage, how often do many people check their phones?", options: ["Over one hundred times a day", "About fifty times a day", "Once every few hours", "Only when they receive messages"], correctIndex: 0, explanation: "The passage states that many people check their phones over one hundred times each day." },
+                                { question: "What does the author suggest about the future of smartphones?", options: ["They will become more integrated into everyday life", "Their use will likely decline as new technologies emerge", "Governments will restrict smartphone use", "People will return to older forms of communication"], correctIndex: 0, explanation: "The passage states that smartphones will likely become even more integrated into everyday life." }
+                            ]
+                        },
+                        {
+                            passage: "Forests play a vital role in regulating the Earth's climate by absorbing carbon dioxide and releasing oxygen. They also provide habitat for more than half of the world's species and support the livelihoods of millions of people who depend on them for food, medicine, and income. Unfortunately, global deforestation rates remain alarming. Each year, millions of hectares of forest are cleared for agriculture, timber, and urban expansion. This destruction not only reduces biodiversity but also accelerates climate change by releasing stored carbon into the atmosphere. Some governments and organizations have launched reforestation programs to restore damaged ecosystems, but experts warn that planting new trees cannot fully replace the complex ecological functions of ancient forests. Protecting existing forests is considered far more effective than attempting to restore areas that have already been destroyed. International cooperation and stronger regulation are widely seen as essential to addressing the ongoing crisis.",
+                            questions: [
+                                { question: "What is the primary purpose of this passage?", options: ["To describe the importance of forests and the threat of deforestation", "To argue for international agreements on climate change", "To explain how reforestation programs work", "To compare tropical and temperate forests"], correctIndex: 0, explanation: "The passage describes both the vital role of forests and the dangers of deforestation." },
+                                { question: "According to the passage, what happens when forests are cleared?", options: ["Stored carbon is released into the atmosphere", "Biodiversity in the area increases", "New habitats are created for endangered species", "Rainfall patterns improve in nearby regions"], correctIndex: 0, explanation: "The passage states that clearing forests releases stored carbon into the atmosphere." },
+                                { question: "What does the passage say about reforestation programs?", options: ["They cannot fully replace the functions of ancient forests", "They are the most effective solution to deforestation", "They have successfully reversed global deforestation", "They are too expensive to be practical"], correctIndex: 0, explanation: "The passage states experts warn that planting new trees cannot fully replace ancient forests." },
+                                { question: "Which best describes the author's view on protecting versus restoring forests?", options: ["Protection is considered far more effective than restoration", "Restoration is more effective than protection", "Both approaches are equally effective", "Neither approach can address the deforestation crisis"], correctIndex: 0, explanation: "The passage explicitly states protecting existing forests is far more effective than restoring destroyed areas." },
+                                { question: "According to the passage, forests support millions of people in which ways?", options: ["By providing food, medicine, and income", "By supplying clean drinking water", "By reducing the need for agricultural land", "By creating employment in tourism"], correctIndex: 0, explanation: "The passage states forests support livelihoods through food, medicine, and income." }
+                            ]
+                        },
+                        {
+                            passage: "Sleep is essential for maintaining both physical and mental health. During sleep, the body repairs tissues, strengthens the immune system, and consolidates memories. Research shows that adults who regularly sleep fewer than seven hours per night are at greater risk of developing conditions such as obesity, diabetes, and cardiovascular disease. Despite this, surveys indicate that a significant proportion of the population in industrialized nations does not get enough sleep. Contributing factors include long working hours, excessive screen time before bed, and high levels of stress. Health experts recommend establishing consistent sleep schedules and reducing exposure to electronic devices in the evening. While sleep medications are commonly used, doctors generally advise non-pharmaceutical approaches as the first line of treatment for insomnia. Understanding the importance of sleep and making behavioral changes are considered the most sustainable ways to improve sleep quality over the long term.",
+                            questions: [
+                                { question: "What is the main argument of this passage?", options: ["Sleep is vital for health, yet many people do not get enough", "Medications are the best solution for sleep problems", "Sleep disorders are caused primarily by stress", "Adults need at least nine hours of sleep each night"], correctIndex: 0, explanation: "The passage argues sleep is vital and many people in industrialized nations don't get enough." },
+                                { question: "According to the passage, what happens to the body during sleep?", options: ["Tissues are repaired and memories are consolidated", "The body reduces its energy consumption permanently", "The immune system becomes temporarily inactive", "The body stores excess calories as fat"], correctIndex: 0, explanation: "The passage states the body repairs tissues, strengthens the immune system, and consolidates memories." },
+                                { question: "What does the passage identify as a factor contributing to insufficient sleep?", options: ["Excessive screen time before bed", "Working fewer hours than recommended", "Eating large meals during the day", "Lack of physical exercise"], correctIndex: 0, explanation: "The passage lists excessive screen time before bed as a contributing factor." },
+                                { question: "What approach do doctors generally recommend for insomnia first?", options: ["Non-pharmaceutical behavioral changes", "Prescription sleep medications", "Surgery to correct sleep disorders", "Dietary supplements and vitamins"], correctIndex: 0, explanation: "The passage states doctors generally advise non-pharmaceutical approaches as the first line of treatment." },
+                                { question: "Which health risk is associated with sleeping fewer than seven hours?", options: ["Cardiovascular disease", "Improved memory consolidation", "Reduced stress levels", "Stronger immune function"], correctIndex: 0, explanation: "The passage lists cardiovascular disease as a risk associated with fewer than seven hours of sleep." }
+                            ]
+                        },
+                        {
+                            passage: "Public libraries have long served as important community resources, offering free access to books, digital media, and educational programs. In recent decades, libraries have expanded their services well beyond lending books. Many now provide computer access and internet connectivity, which is especially valuable for people who cannot afford these at home. Libraries also host workshops on topics ranging from job searching to financial literacy, helping community members develop practical skills. Some critics argue that digital technology has made libraries obsolete, as most information is now available online. However, librarians and educators point out that libraries provide trained guidance that helps people evaluate sources and use information effectively. Furthermore, libraries offer quiet, safe spaces that are particularly important for students, the elderly, and those experiencing homelessness. Despite budget pressures in many municipalities, libraries continue to adapt and remain relevant institutions in their communities.",
+                            questions: [
+                                { question: "What is the passage mainly about?", options: ["The evolving role of public libraries in communities", "The decline of libraries in the digital age", "Budget challenges faced by modern libraries", "The history of public libraries in Western countries"], correctIndex: 0, explanation: "The passage describes how libraries have expanded their role beyond lending books." },
+                                { question: "According to the passage, which group benefits particularly from library spaces?", options: ["Students, the elderly, and homeless people", "Business professionals and entrepreneurs", "Local government officials", "Teachers and university faculty"], correctIndex: 0, explanation: "The passage explicitly names students, the elderly, and those experiencing homelessness." },
+                                { question: "What argument do critics make about libraries?", options: ["Digital technology has made them unnecessary", "They do not provide enough computer access", "They should focus exclusively on lending books", "Their hours of operation are too limited"], correctIndex: 0, explanation: "The passage states some critics argue digital technology has made libraries obsolete." },
+                                { question: "What do librarians offer that the internet does not, according to the passage?", options: ["Trained guidance for evaluating and using information", "Free access to academic journals", "Personal computers for home use", "Financial assistance programs"], correctIndex: 0, explanation: "The passage states librarians provide trained guidance to help people evaluate sources." },
+                                { question: "According to the passage, what practical skills do libraries help develop?", options: ["Job searching and financial literacy", "Foreign languages and advanced mathematics", "Programming and web design", "Cooking and home management"], correctIndex: 0, explanation: "The passage explicitly mentions job searching and financial literacy workshops." }
+                            ]
+                        },
+                        {
+                            passage: "The Silk Road was not a single road but a vast network of trade routes connecting China to Europe and the Middle East for over a millennium. Along these routes, merchants transported silk, spices, precious metals, and glassware, among many other goods. However, the Silk Road was far more than a commercial network. It served as a conduit for the exchange of ideas, religions, technologies, and artistic traditions. Buddhism spread from India to China along these routes, and Islamic scholarship reached Central Asia through the same pathways. The printing press, paper, and gunpowder — all invented in China — eventually found their way to Europe via the Silk Road. The routes began to decline in the fifteenth century as maritime trade routes became more efficient and economical. Despite its decline, the Silk Road's cultural and commercial legacy continues to influence the regions it once connected.",
+                            questions: [
+                                { question: "What is the Silk Road best described as in this passage?", options: ["A network of trade routes connecting distant civilizations", "A single road built by Chinese merchants", "A maritime trade system in the ancient world", "A political alliance between Asian kingdoms"], correctIndex: 0, explanation: "The passage explicitly states it was a vast network of trade routes, not a single road." },
+                                { question: "According to the passage, what was transmitted along the Silk Road besides goods?", options: ["Ideas, religions, and technologies", "Military strategies and weapons", "Political systems and forms of government", "Agricultural techniques only"], correctIndex: 0, explanation: "The passage states the Silk Road facilitated exchange of ideas, religions, technologies, and artistic traditions." },
+                                { question: "Which invention mentioned in the passage originated in China?", options: ["The printing press", "Glassware", "The compass", "The wheel"], correctIndex: 0, explanation: "The passage lists the printing press, paper, and gunpowder as Chinese inventions that traveled west." },
+                                { question: "What caused the decline of the Silk Road, according to the passage?", options: ["The rise of more efficient maritime trade routes", "The collapse of the Chinese empire", "European political instability", "The end of demand for Asian goods"], correctIndex: 0, explanation: "The passage states the routes declined as maritime trade routes became more efficient." },
+                                { question: "What does the passage suggest about the Silk Road's lasting impact?", options: ["Its cultural legacy still influences the regions it connected", "Its economic impact ended completely with its decline", "Few of the goods traded along it have survived", "It had limited impact outside of commercial exchange"], correctIndex: 0, explanation: "The passage states the Silk Road's cultural and commercial legacy continues to influence those regions." }
+                            ]
+                        }
+                    ],
+                    medium: [
+                        {
+                            passage: "Cognitive behavioral therapy, commonly known as CBT, has become one of the most widely practiced and evidence-based approaches in modern psychology. Developed in the 1960s by psychiatrist Aaron Beck, CBT operates on the premise that dysfunctional thought patterns contribute significantly to emotional distress and maladaptive behaviors. The therapeutic process involves identifying these negative cognitions and challenging them through structured techniques, ultimately replacing them with more balanced and realistic thinking. Unlike psychoanalytic approaches, which delve into unconscious processes over extended periods, CBT is typically short-term and goal-oriented, often lasting between twelve and twenty sessions. Its efficacy has been demonstrated across a wide range of conditions, including depression, anxiety disorders, post-traumatic stress, and obsessive-compulsive disorder. Critics, however, argue that its focus on cognition may neglect the role of deeper emotional and relational dynamics. Despite such critiques, CBT remains the gold standard of psychological treatment in many healthcare systems worldwide.",
+                            questions: [
+                                { question: "What is the central claim of this passage regarding CBT?", options: ["CBT is a widely used, evidence-based therapy focused on changing thought patterns", "CBT is superior to all other psychological therapies without exception", "CBT is effective only for depression and anxiety disorders", "CBT requires unconscious exploration conducted over many years"], correctIndex: 0, explanation: "The passage describes CBT as widely practiced, evidence-based, and focused on dysfunctional thought patterns." },
+                                { question: "How does CBT differ from psychoanalytic approaches, according to the passage?", options: ["CBT is short-term and goal-oriented, whereas psychoanalysis is longer and focuses on the unconscious", "CBT addresses unconscious processes more effectively than psychoanalysis", "CBT is only practiced in the United States, while psychoanalysis is global", "Both approaches use identical techniques but differ in duration"], correctIndex: 0, explanation: "The passage contrasts CBT's short-term, goal-oriented nature with psychoanalysis's focus on unconscious processes." },
+                                { question: "What is a criticism of CBT mentioned in the passage?", options: ["It may overlook deeper emotional and relational dynamics", "It is too long and expensive for most patients", "It has not been tested for conditions beyond depression", "It relies too heavily on unconscious processes"], correctIndex: 0, explanation: "Critics argue CBT's focus on cognition may neglect deeper emotional and relational dynamics." },
+                                { question: "Which condition does the passage mention as responding to CBT?", options: ["Post-traumatic stress", "Schizophrenia", "Alzheimer's disease", "Bipolar disorder"], correctIndex: 0, explanation: "The passage explicitly lists post-traumatic stress among conditions where CBT's efficacy is demonstrated." },
+                                { question: "What does the phrase 'gold standard' suggest about CBT?", options: ["It is considered the most reliable and respected form of treatment", "It is the most expensive psychological treatment available", "It has been standardized internationally but not thoroughly tested", "It is used only in wealthy nations"], correctIndex: 0, explanation: "'Gold standard' indicates CBT is the benchmark treatment against which others are measured." }
+                            ]
+                        },
+                        {
+                            passage: "The concept of opportunity cost lies at the heart of economic decision-making. When an individual or organization chooses one course of action, they necessarily forgo the potential benefits of alternatives. Opportunity cost is therefore defined as the value of the best alternative not chosen. Unlike accounting costs, opportunity costs are often invisible — they represent what is sacrificed rather than what is spent. This concept is critical in both personal and policy decisions. For example, a government that spends money on a new highway must consider what else that money could have funded, such as education or healthcare. Similarly, a student who chooses to study full-time rather than work forgoes the income they could have earned. Recognizing opportunity cost encourages more rigorous evaluation of trade-offs and helps prevent the misallocation of resources. Critics of pure economic rationalism, however, argue that not all values can be reduced to quantifiable trade-offs, and that human decisions often involve motivations beyond simple cost-benefit analysis.",
+                            questions: [
+                                { question: "How does the passage define opportunity cost?", options: ["The value of the best alternative foregone when making a choice", "The actual monetary cost of a product or service", "The total financial losses incurred by poor decision-making", "The cost of changing one's mind after a decision has been made"], correctIndex: 0, explanation: "The passage explicitly defines opportunity cost as the value of the best alternative not chosen." },
+                                { question: "What makes opportunity costs different from accounting costs, according to the passage?", options: ["They are invisible, representing what is sacrificed rather than what is spent", "They are always larger than the accounting costs", "They appear only in government spending decisions", "They can be easily measured in financial terms"], correctIndex: 0, explanation: "The passage states opportunity costs are often invisible, representing what is sacrificed rather than spent." },
+                                { question: "Which example illustrates opportunity cost in government spending?", options: ["Choosing to build a highway instead of funding education or healthcare", "Investing in renewable energy rather than fossil fuels", "Funding military operations over social programs", "Offering tax cuts instead of increasing public services"], correctIndex: 0, explanation: "The passage uses the highway example to illustrate government opportunity cost." },
+                                { question: "What do critics of pure economic rationalism argue, according to the passage?", options: ["Not all values can be reduced to quantifiable trade-offs", "Opportunity costs are irrelevant to modern economic theory", "Cost-benefit analysis should be applied to all human decisions", "Government spending should be based on accounting costs alone"], correctIndex: 0, explanation: "Critics argue that not all values can be quantified and human decisions involve more than cost-benefit analysis." },
+                                { question: "What benefit does recognizing opportunity cost provide, according to the passage?", options: ["It encourages rigorous evaluation of trade-offs and helps prevent resource misallocation", "It eliminates the need for cost-benefit analysis", "It ensures all decisions are based on financial considerations", "It prevents governments from making unnecessary spending decisions"], correctIndex: 0, explanation: "The passage states recognizing opportunity cost encourages trade-off evaluation and prevents misallocation." }
+                            ]
+                        },
+                        {
+                            passage: "Symbiosis refers to a close and long-term biological interaction between two or more species. Scientists classify these relationships according to how each organism is affected. In mutualism, both species benefit — the relationship between flowering plants and their pollinators, such as bees, is a classic example. In commensalism, one species benefits while the other is neither helped nor harmed, as when barnacles attach themselves to whales to gain access to food-rich waters. Parasitism, by contrast, benefits one organism while harming the other; tapeworms living in a host's intestine illustrate this type of interaction. Symbiotic relationships have played a crucial role in the evolution of life on Earth. The mitochondria found in eukaryotic cells, for example, are believed to have originated as independent bacteria that were engulfed by larger cells in an early mutualistic relationship. Understanding symbiosis has important applications in medicine, agriculture, and conservation biology.",
+                            questions: [
+                                { question: "What is the primary purpose of this passage?", options: ["To explain different types of symbiotic relationships and their significance", "To argue that parasitism is the most harmful biological interaction", "To trace the evolutionary history of bacteria and eukaryotic cells", "To describe the relationship between plants and pollinators specifically"], correctIndex: 0, explanation: "The passage explains mutualism, commensalism, and parasitism and their evolutionary significance." },
+                                { question: "What characterizes a mutualistic relationship, according to the passage?", options: ["Both species benefit from the interaction", "One species benefits while the other is harmed", "One species benefits while the other is unaffected", "Both species are harmed by the interaction"], correctIndex: 0, explanation: "The passage states that in mutualism, both species benefit from the interaction." },
+                                { question: "Which example is given as an instance of commensalism?", options: ["Barnacles attaching to whales", "Bees pollinating flowers", "Tapeworms in a host's intestine", "Bacteria in eukaryotic cells"], correctIndex: 0, explanation: "The passage gives barnacles on whales as the example of commensalism." },
+                                { question: "What does the passage suggest about the origin of mitochondria?", options: ["They originated as independent bacteria that formed a mutualistic relationship with larger cells", "They evolved independently within eukaryotic cells over millions of years", "They were introduced into cells through parasitic infection", "They originated from plant cells through commensalism"], correctIndex: 0, explanation: "The passage states mitochondria are believed to have originated as independent bacteria engulfed by larger cells." },
+                                { question: "In which fields does understanding symbiosis have practical applications, according to the passage?", options: ["Medicine, agriculture, and conservation biology", "Physics, chemistry, and engineering", "Economics, sociology, and political science", "Archaeology, geology, and astronomy"], correctIndex: 0, explanation: "The passage explicitly names medicine, agriculture, and conservation biology." }
+                            ]
+                        },
+                        {
+                            passage: "The term 'carbon footprint' refers to the total amount of greenhouse gases — primarily carbon dioxide and methane — emitted directly or indirectly by an individual, organization, or product. The concept gained widespread popularity in the early 2000s, partly through an advertising campaign funded by the fossil fuel industry, a fact that has led some critics to argue that emphasizing individual carbon footprints distracts from structural changes needed at the corporate and governmental level. Nevertheless, carbon footprint analysis remains a useful tool for identifying emission sources and guiding personal and policy decisions. Diet, transportation, and home energy use are typically the largest contributors to an individual's footprint. Research shows that shifting to plant-based diets and using public transportation can significantly reduce emissions. Carbon offsetting — paying for projects that reduce emissions elsewhere — has emerged as a popular but contested strategy, with critics questioning whether it allows emitters to avoid making genuine reductions.",
+                            questions: [
+                                { question: "What is an important limitation of the carbon footprint concept, according to the passage?", options: ["It may deflect attention from structural changes needed at corporate and governmental levels", "It is too complicated for most individuals to calculate accurately", "It focuses exclusively on carbon dioxide while ignoring methane", "It was developed as an academic concept without practical applications"], correctIndex: 0, explanation: "Critics argue that emphasizing individual footprints distracts from necessary structural changes." },
+                                { question: "What does the passage identify as the largest contributors to an individual's carbon footprint?", options: ["Diet, transportation, and home energy use", "Air travel, manufacturing, and agriculture", "Household waste, water use, and clothing production", "Consumer electronics, internet use, and healthcare"], correctIndex: 0, explanation: "The passage explicitly identifies diet, transportation, and home energy use as the largest contributors." },
+                                { question: "Why do some critics oppose carbon offsetting, according to the passage?", options: ["It allows emitters to avoid making genuine reductions in their own emissions", "It is too expensive for most individuals and organizations", "It focuses on developing countries rather than wealthy nations", "It produces inaccurate measurements of carbon emissions"], correctIndex: 0, explanation: "Critics question whether offsetting allows emitters to avoid genuine reductions." },
+                                { question: "What does the passage say about the origin of the carbon footprint concept?", options: ["It was popularized partly through a fossil fuel industry advertising campaign", "It was developed by environmental scientists at major research universities", "It originated from international climate policy agreements", "It was created by individual activists to raise awareness of climate change"], correctIndex: 0, explanation: "The passage states the concept was popularized partly through a fossil fuel industry advertising campaign." },
+                                { question: "What does the passage suggest about shifting to plant-based diets?", options: ["It can significantly reduce an individual's carbon emissions", "It has a negligible impact on overall carbon footprints", "It is the single most effective way to combat climate change", "It is impractical for most people in industrialized nations"], correctIndex: 0, explanation: "The passage states research shows plant-based diets can significantly reduce emissions." }
+                            ]
+                        },
+                        {
+                            passage: "Language is not merely a tool for communication; it also shapes the way its speakers perceive and categorize the world. This idea, known as the Sapir-Whorf hypothesis or linguistic relativity, has been debated by linguists and cognitive scientists for decades. In its strong form, the hypothesis holds that language determines thought — that speakers of different languages cannot conceptualize ideas for which their language lacks words. The strong version is now largely rejected, as research has shown that people can think about concepts even in the absence of specific words for them. The weaker version, however, has gained support: language influences, though does not fully determine, thought. For example, studies show that speakers of languages with many color terms distinguish shades more readily than those with fewer terms. Similarly, languages that use cardinal directions rather than relative terms like 'left' and 'right' appear to shape spatial reasoning in distinctive ways.",
+                            questions: [
+                                { question: "What is the Sapir-Whorf hypothesis about?", options: ["The idea that language shapes how its speakers perceive and categorize the world", "The theory that all human languages share a universal grammatical structure", "The argument that written language is superior to spoken language", "The claim that bilingual speakers always think in their native language"], correctIndex: 0, explanation: "The passage defines the hypothesis as the idea that language shapes perception and categorization." },
+                                { question: "Why is the strong form of the hypothesis largely rejected, according to the passage?", options: ["Research shows people can think about concepts even without words for them", "Most linguists argue that language and thought are completely unrelated", "The hypothesis was never tested using proper scientific methods", "Languages have been shown to have no impact on cognitive abilities"], correctIndex: 0, explanation: "Research has shown people can conceptualize ideas even without specific words for them." },
+                                { question: "Which finding provides evidence for the weaker version of the hypothesis?", options: ["Speakers of languages with many color terms distinguish shades more readily", "Speakers of all languages perceive colors in exactly the same way", "Languages with fewer words for colors have richer color perception", "Cardinal direction terms are found in only a small number of languages"], correctIndex: 0, explanation: "The color term study supports the weaker version by showing language influences (but doesn't determine) perception." },
+                                { question: "How does the passage describe the relationship between language and thought in the weak version?", options: ["Language influences but does not fully determine thought", "Language and thought are entirely independent of each other", "Language completely determines the thoughts its speakers can have", "Thought determines the structure of language, not the reverse"], correctIndex: 0, explanation: "The passage explicitly states the weak version holds that language influences but does not fully determine thought." },
+                                { question: "What example does the passage give about spatial reasoning?", options: ["Languages using cardinal directions seem to shape spatial reasoning differently", "Speakers of languages without left/right terms have poor spatial awareness", "Cardinal direction languages are found only in cultures near the equator", "Spatial reasoning is entirely unaffected by the language a person speaks"], correctIndex: 0, explanation: "The passage states languages using cardinal directions appear to shape spatial reasoning distinctively." }
+                            ]
+                        }
+                    ],
+                    hard: [
+                        {
+                            passage: "The hard problem of consciousness, as articulated by philosopher David Chalmers, draws a fundamental distinction between the 'easy problems' and the genuinely hard problem. The easy problems — explaining how the brain processes information, integrates sensory data, or produces behavioral responses — are considered tractable because they involve mapping cognitive functions onto neural mechanisms. The hard problem, by contrast, asks why and how physical processes in the brain give rise to subjective, first-person experience: why there is 'something it is like' to see red or feel pain. No account of neural correlates, however exhaustive, seems to logically entail the existence of phenomenal consciousness. This explanatory gap has led some philosophers to embrace dualism, while others argue for eliminativist positions that deny the reality of subjective experience altogether. A third camp, panpsychism, holds that consciousness is a fundamental feature of reality, present even in simple physical systems.",
+                            questions: [
+                                { question: "What does the 'hard problem' of consciousness refer to, according to the passage?", options: ["Why physical brain processes give rise to subjective experience", "How the brain integrates sensory information from the environment", "Why certain cognitive functions cannot be mapped onto neural mechanisms", "How consciousness evolved from simpler biological systems"], correctIndex: 0, explanation: "The hard problem asks why physical processes give rise to subjective first-person experience." },
+                                { question: "Why does Chalmers consider the 'easy problems' tractable, according to the passage?", options: ["They involve mapping cognitive functions onto neural mechanisms", "They do not require any explanation of subjective experience", "They have already been fully solved by neuroscience", "They are not related to physical processes in the brain"], correctIndex: 0, explanation: "The passage states easy problems are tractable because they involve mapping cognitive functions onto neural mechanisms." },
+                                { question: "What is the 'explanatory gap' referred to in the passage?", options: ["The inability of neural accounts to logically entail the existence of subjective experience", "The gap between philosophical theories and neuroscientific evidence", "The lack of consensus among philosophers about consciousness", "The difficulty of studying subjective experience using objective methods"], correctIndex: 0, explanation: "The explanatory gap is the inability of exhaustive neural accounts to logically entail phenomenal consciousness." },
+                                { question: "What position does panpsychism hold, according to the passage?", options: ["Consciousness is a fundamental feature of reality present even in simple physical systems", "Consciousness does not exist as a real phenomenon", "Consciousness is exclusively produced by complex biological organisms", "The mind and body are entirely separate substances"], correctIndex: 0, explanation: "The passage defines panpsychism as the view that consciousness is fundamental to all reality." },
+                                { question: "What does the passage suggest about eliminativism?", options: ["It denies the reality of subjective experience altogether", "It argues that consciousness is a fundamental feature of all matter", "It holds that physical processes fully explain subjective experience", "It proposes that dualism is the most accurate account of consciousness"], correctIndex: 0, explanation: "The passage describes eliminativism as denying the reality of subjective experience." }
+                            ]
+                        },
+                        {
+                            passage: "The tension between liberty and equality has been one of the defining problematics of modern political philosophy. Classical liberals, following thinkers such as John Locke and John Stuart Mill, have traditionally prioritized negative liberty — freedom from external interference — as the cornerstone of a just society. By contrast, egalitarians argue that formal freedoms are hollow unless accompanied by substantive equality of opportunity, or even outcome. John Rawls's influential theory of justice attempts to reconcile these competing values through two principles: first, that each person should have equal basic liberties; second, that social and economic inequalities are permissible only if they benefit the least advantaged members of society — the 'difference principle.' Critics from the libertarian right, notably Robert Nozick, contend that Rawls's redistributive framework violates individuals' rights to their property and labor. From the left, Marxist theorists argue that Rawls's theory is insufficient because it leaves the capitalist mode of production fundamentally unchallenged.",
+                            questions: [
+                                { question: "What do classical liberals prioritize, according to the passage?", options: ["Negative liberty, meaning freedom from external interference", "Substantive equality of outcome for all members of society", "The redistribution of wealth through government programs", "Collective ownership of property and means of production"], correctIndex: 0, explanation: "The passage states classical liberals prioritize negative liberty — freedom from external interference." },
+                                { question: "What does Rawls's 'difference principle' hold, according to the passage?", options: ["Social and economic inequalities are acceptable only if they benefit the least advantaged", "All social and economic inequalities must be eliminated for justice to prevail", "Individual liberty must always take precedence over equality", "The state must guarantee equal outcomes for all citizens"], correctIndex: 0, explanation: "The difference principle allows inequalities only if they benefit the least advantaged members." },
+                                { question: "What is Nozick's main criticism of Rawls's theory, according to the passage?", options: ["It violates individual rights to property and labor through redistribution", "It fails to protect the interests of the least advantaged", "It places too little emphasis on negative liberty", "It does not go far enough in promoting equality of outcome"], correctIndex: 0, explanation: "Nozick argues Rawls's redistributive framework violates individual property and labor rights." },
+                                { question: "How do Marxist theorists critique Rawls's theory, according to the passage?", options: ["It leaves the capitalist mode of production fundamentally unchallenged", "It is too focused on individual liberty at the expense of collective welfare", "It fails to adequately define the concept of negative liberty", "It grants excessive power to government institutions"], correctIndex: 0, explanation: "Marxists argue Rawls is insufficient because it doesn't challenge capitalism." },
+                                { question: "What is the passage primarily concerned with?", options: ["The philosophical tension between liberty and equality illustrated through key thinkers", "The history of democratic governance in Western societies", "The practical application of Rawls's theory in modern welfare states", "The debate between socialism and capitalism in contemporary politics"], correctIndex: 0, explanation: "The passage explores the liberty-equality tension using Rawls, Nozick, and Marxist perspectives." }
+                            ]
+                        },
+                        {
+                            passage: "Kin selection, formalized by biologist W. D. Hamilton in the 1960s, offers an evolutionary explanation for altruistic behavior among genetically related individuals. Hamilton's rule states that altruistic behavior will evolve if the cost to the altruist, discounted by the coefficient of genetic relatedness, is outweighed by the benefit to the recipient. Put simply, organisms may sacrifice personal fitness to benefit relatives who share copies of their genes, thereby ensuring the propagation of shared genetic material. The social insects — ants, bees, and wasps — provide striking examples, with workers who forgo reproduction entirely to serve the colony. Critics, including E. O. Wilson in his later work, have argued that inclusive fitness theory is mathematically flawed and that group selection, rather than kin selection, better explains the evolution of eusociality. This debate remains one of the most contentious in evolutionary biology, touching on fundamental questions about the unit of natural selection and the origins of cooperation.",
+                            questions: [
+                                { question: "What does Hamilton's rule state, according to the passage?", options: ["Altruistic behavior evolves when the cost to the altruist, adjusted for relatedness, is outweighed by benefit to the recipient", "Altruistic behavior evolves whenever genetic relatedness between individuals exceeds fifty percent", "Organisms will always sacrifice their fitness to benefit genetically identical relatives", "Altruism evolves primarily in species with large group sizes rather than close genetic ties"], correctIndex: 0, explanation: "Hamilton's rule requires the cost-to-benefit ratio, adjusted for relatedness, to favor the recipient." },
+                                { question: "What example illustrates kin selection in the passage?", options: ["Social insects like ants and bees, whose workers forgo reproduction to serve the colony", "Dolphins that protect unrelated individuals from predators", "Birds that warn others of predators at personal risk", "Primates that share food with non-kin members of their group"], correctIndex: 0, explanation: "The passage uses social insects whose workers forego reproduction as the prime example." },
+                                { question: "What is E. O. Wilson's criticism of inclusive fitness theory?", options: ["It is mathematically flawed and group selection better explains eusociality", "Kin selection is too focused on genetic relatedness to explain complex social behavior", "Hamilton's rule cannot account for cooperation in non-social species", "Inclusive fitness ignores environmental pressures on altruistic behavior"], correctIndex: 0, explanation: "Wilson argues inclusive fitness is mathematically flawed and group selection better explains eusociality." },
+                                { question: "What fundamental question does the debate over kin selection touch on?", options: ["The unit of natural selection and the origins of cooperation", "Whether altruism can evolve without genetic relatedness", "The mathematical accuracy of Hamilton's original formulation", "How eusociality differs from simpler social behavior"], correctIndex: 0, explanation: "The passage states the debate touches on the unit of natural selection and the origins of cooperation." },
+                                { question: "What does 'coefficient of genetic relatedness' refer to in the passage?", options: ["The degree to which two individuals share copies of the same genes", "The number of offspring an organism can produce in its lifetime", "The proportion of genes shared between members of the same species", "The probability that an altruistic gene will spread in a population"], correctIndex: 0, explanation: "The coefficient of genetic relatedness measures the degree of shared genetic material between individuals." }
+                            ]
+                        },
+                        {
+                            passage: "The emergence of abstract expressionism in post-World War II New York marked a decisive shift in the center of gravity of the Western art world from Paris to the United States. Artists such as Jackson Pollock, Mark Rothko, and Willem de Kooning rejected representational conventions in favor of works that foregrounded process, materiality, and the emotional immediacy of artistic creation. Pollock's drip paintings, created by pouring and dripping paint across canvases laid on the floor, dissolved the traditional hierarchy between line and color while emphasizing the physicality of artistic gesture. Rothko's large-scale color field paintings aimed at producing meditative, almost spiritual responses in viewers through the subtle interplay of luminous rectangular forms. Critics such as Clement Greenberg championed abstract expressionism as the culmination of the modernist project, arguing that each medium's pursuit of its own essential qualities — in painting, flatness and the act of painting itself — was the logical endpoint of avant-garde art.",
+                            questions: [
+                                { question: "What significant shift does the passage associate with abstract expressionism?", options: ["The move of the Western art world's center from Paris to New York", "The rejection of all color in favor of monochromatic painting", "The return to classical representational techniques in American art", "The dominance of sculpture over painting in postwar art movements"], correctIndex: 0, explanation: "The passage states abstract expressionism marked a shift in the art world's center from Paris to New York." },
+                                { question: "How does the passage describe Pollock's drip paintings?", options: ["As works made by pouring paint on floor-laid canvases, dissolving the hierarchy of line and color", "As carefully planned compositions using traditional brushwork", "As minimalist works focused on spiritual emptiness", "As large-scale representations of wartime trauma"], correctIndex: 0, explanation: "The passage describes Pollock's technique of pouring paint and its effect on the line-color hierarchy." },
+                                { question: "What effect did Rothko's paintings aim to produce?", options: ["Meditative and almost spiritual responses through luminous rectangular forms", "Energetic, visceral reactions through dynamic gestural marks", "Intellectual engagement with the history of abstract art", "Humor and irony through playful use of color"], correctIndex: 0, explanation: "The passage states Rothko aimed at meditative, almost spiritual responses through luminous forms." },
+                                { question: "According to Greenberg, what was the logical endpoint of avant-garde art?", options: ["Each medium's pursuit of its own essential qualities, such as flatness in painting", "The complete rejection of aesthetic standards in favor of pure expression", "A return to classical representational techniques refined through modernism", "The merger of all visual art forms into a unified practice"], correctIndex: 0, explanation: "Greenberg argued each medium should pursue its own essential qualities — for painting, flatness." },
+                                { question: "What does the passage suggest about abstract expressionism and the modernist project?", options: ["Critics like Greenberg saw it as the culmination of modernism's central goals", "Abstract expressionism represented a complete break from the modernist tradition", "Modernism rejected abstract expressionism as too commercially oriented", "The modernist project was unaffected by abstract expressionism"], correctIndex: 0, explanation: "Greenberg championed abstract expressionism as the culmination of the modernist project." }
+                            ]
+                        },
+                        {
+                            passage: "Quantum entanglement is a phenomenon in which two or more particles become correlated such that the quantum state of each cannot be described independently of the others, regardless of the distance separating them. When a measurement is made on one entangled particle, the outcome instantaneously determines the state of the other — a property Einstein called 'spooky action at a distance,' which troubled him because it seemed to violate local realism. However, experiments by Alain Aspect and others in the 1980s confirmed that entanglement is genuine, ruling out local hidden variables that Einstein had hoped might restore classical predictability. Despite common misconceptions, entanglement cannot transmit information faster than light, because measurement outcomes are random and cannot be controlled by either party. Entanglement is, however, a crucial resource in quantum computing and quantum cryptography, enabling capabilities fundamentally beyond the reach of classical systems.",
+                            questions: [
+                                { question: "What was Einstein's concern about quantum entanglement, according to the passage?", options: ["It seemed to violate the principle of local realism by suggesting instantaneous distant effects", "It implied that particles could travel faster than light under certain conditions", "It challenged the mathematical framework of classical quantum mechanics", "It suggested that particle behavior could not be predicted at all"], correctIndex: 0, explanation: "Einstein was troubled because entanglement seemed to violate local realism through instantaneous distant effects." },
+                                { question: "What did Aspect's experiments confirm, according to the passage?", options: ["Entanglement is genuine and local hidden variables do not exist", "Entanglement can transmit information faster than light", "Quantum entanglement supports Einstein's principle of local realism", "Classical hidden variable theories accurately predict quantum behavior"], correctIndex: 0, explanation: "Aspect's experiments confirmed entanglement is real and ruled out local hidden variables." },
+                                { question: "Why cannot entanglement transmit information faster than light?", options: ["Measurement outcomes are random and cannot be controlled by either party", "Entangled particles lose their correlation when separated by large distances", "Quantum measurements always take too long to process", "The principle of local realism prevents instantaneous communication"], correctIndex: 0, explanation: "Because measurement outcomes are random and uncontrollable, no information can be encoded or transmitted." },
+                                { question: "What is the significance of entanglement for computing and cryptography?", options: ["It enables capabilities fundamentally beyond the reach of classical systems", "It allows information to be transmitted instantaneously between distant locations", "It provides a way to verify that Einstein's local realism is correct", "It makes conventional computers faster and more reliable"], correctIndex: 0, explanation: "The passage states entanglement enables capabilities fundamentally beyond classical systems." },
+                                { question: "What did Einstein hope 'local hidden variables' would achieve?", options: ["Restore classical predictability to quantum measurements", "Prove that quantum entanglement violates relativity", "Explain how particles communicate across large distances", "Demonstrate that quantum mechanics is mathematically inconsistent"], correctIndex: 0, explanation: "Einstein hoped hidden variables would restore the classical predictability that quantum indeterminacy undermines." }
+                            ]
+                        }
+                    ]
                 }
-                const data = await res.json();
-                return data.content[0].text;
+            };
+
+            // ---- Pick functions ----
+            function pickRandom(bank, diff, n, used) {
+                const pool = QB[bank][diff];
+                const available = pool.map((_, i) => i).filter(i => !used.has(i));
+                const source = available.length >= n ? available : pool.map((_, i) => i);
+                const chosen = source.slice().sort(() => Math.random() - 0.5).slice(0, n);
+                chosen.forEach(i => used.add(i));
+                return chosen.map(i => pool[i]);
             }
 
-            function extractJSON(text) {
-                const fence = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-                const src = fence ? fence[1] : text;
-                const start = src.search(/[\[{]/);
-                const end = src.length - [...src].reverse().join('').search(/[\]}]/) ;
-                return JSON.parse(src.slice(start, end));
-            }
-
-            // ---- Question generators ----
-            function wordsForDiff(diff) {
-                const all = window.allWords || [];
-                const lvlMap = { easy: ['1','2','easy'], medium: ['3','4','medium'], hard: ['5','6','hard'] };
-                const keys = lvlMap[diff];
-                let filtered = all.filter(w => keys.some(k => String(w.level).toLowerCase().includes(k)));
-                if (filtered.length < 20) filtered = all;
-                return filtered;
-            }
-
-            function sampleWords(diff, n) {
-                const pool = wordsForDiff(diff);
-                const shuffled = pool.slice().sort(() => Math.random() - 0.5);
-                return shuffled.slice(0, n).map(w => w.en);
-            }
-
-            async function generateSC(count, diff) {
-                const vocabList = sampleWords(diff, count * 6);
-                const prompt = `Generate ${count} sentence completion questions for an English proficiency test at ${diff} difficulty level.
-Use some of these vocabulary words where natural: ${vocabList.join(', ')}.
-
-Return ONLY a JSON array. Each element must have:
-- "sentence": string with exactly one blank represented by "___"
-- "options": array of exactly 4 strings (the choices)
-- "correctIndex": number 0-3 indicating the correct option index
-- "explanation": brief explanation (1 sentence)
-
-Example:
-[{"sentence":"The scientist's ___ discovery changed our understanding.","options":["groundbreaking","ordinary","simple","boring"],"correctIndex":0,"explanation":"Groundbreaking means revolutionary."}]
-
-Generate exactly ${count} questions now:`;
-                const text = await callClaude(prompt);
-                return extractJSON(text);
-            }
-
-            async function generateRC(diff) {
-                const prompt = `Generate a reading comprehension passage (150-200 words) for an English proficiency test at ${diff} difficulty level, followed by exactly 5 comprehension questions.
-
-Return ONLY a JSON object with:
-- "passage": string (the passage text, 150-200 words)
-- "questions": array of 5 objects, each with:
-  - "question": string
-  - "options": array of exactly 4 strings
-  - "correctIndex": number 0-3
-  - "explanation": brief explanation (1 sentence)
-
-The passage should be about an interesting topic (science, history, culture, etc.).
-Questions should test inference, vocabulary-in-context, main idea, and detail comprehension.
-Return only the JSON, no other text.`;
-                const text = await callClaude(prompt);
-                return extractJSON(text);
-            }
-
-            async function generateRS(count, diff) {
-                const prompt = `Generate ${count} restatement questions for an English proficiency test at ${diff} difficulty level.
-Each question presents an original sentence, and the student must choose the option that best restates its meaning.
-
-Return ONLY a JSON array. Each element must have:
-- "original": string (the original sentence)
-- "options": array of exactly 4 strings (paraphrases/restatements)
-- "correctIndex": number 0-3 indicating which option best restates the original meaning
-- "explanation": brief explanation (1 sentence)
-
-Generate exactly ${count} questions now:`;
-                const text = await callClaude(prompt);
-                return extractJSON(text);
-            }
-
-            async function generateSection(sectionIdx, diff) {
+            function generateSection(sectionIdx, diff) {
                 const sec = AT_SECTIONS[sectionIdx];
+                const used = atState.usedQ;
                 if (sec.type === 'SC') {
-                    const qs = await generateSC(sec.count, diff);
+                    const qs = pickRandom('SC', diff, sec.count, used.SC[diff]);
                     return { questions: qs, diff, passage: null };
                 } else if (sec.type === 'RC') {
-                    const rc = await generateRC(diff);
+                    const passages = QB.RC[diff];
+                    const usedRC = used.RC[diff];
+                    const available = passages.map((_, i) => i).filter(i => !usedRC.has(i));
+                    const idx = available.length > 0
+                        ? available[Math.floor(Math.random() * available.length)]
+                        : Math.floor(Math.random() * passages.length);
+                    usedRC.add(idx);
+                    const rc = passages[idx];
                     return { questions: rc.questions, diff, passage: rc.passage };
-                } else { // RS
-                    const qs = await generateRS(sec.count, diff);
+                } else {
+                    const qs = pickRandom('RS', diff, sec.count, used.RS[diff]);
                     return { questions: qs, diff, passage: null };
                 }
             }
@@ -4825,7 +5011,7 @@ Generate exactly ${count} questions now:`;
             function $id(id) { return document.getElementById(id); }
 
             function showPhase(name) {
-                ['setup','intro','loading','question','break','results'].forEach(p => {
+                ['intro','loading','question','break','results'].forEach(p => {
                     const el = $id('at-phase-' + p);
                     if (el) el.classList.toggle('at-hidden', p !== name);
                 });
@@ -5015,26 +5201,13 @@ Generate exactly ${count} questions now:`;
 
                 showPhase('break');
 
-                // Auto-advance bar + generate next section simultaneously
                 let elapsed = 0;
                 const BREAK_MS = 5000;
                 const fill = $id('at-break-progress-fill');
                 const countdown = $id('at-break-countdown');
                 clearInterval(s.breakTimer);
 
-                // Start generating next section during break
-                let nextReady = false, nextData = null, nextError = null;
-                let wantsAdvance = false;
-
-                if (!isLast) {
-                    generateSection(s.currentSection + 1, nextDiff).then(data => {
-                        nextData = data; nextReady = true;
-                        if (wantsAdvance) doAdvance();
-                    }).catch(e => {
-                        nextError = e; nextReady = true;
-                        if (wantsAdvance) doAdvanceError();
-                    });
-                }
+                const nextData = !isLast ? generateSection(s.currentSection + 1, nextDiff) : null;
 
                 s.breakTimer = setInterval(() => {
                     elapsed += 100;
@@ -5044,29 +5217,17 @@ Generate exactly ${count} questions now:`;
                     countdown.textContent = isLast ? 'מציג תוצאות...' : `ממשיך בעוד ${secLeft} שניות...`;
                     if (elapsed >= BREAK_MS) {
                         clearInterval(s.breakTimer);
-                        wantsAdvance = true;
                         if (isLast) {
                             atShowResults();
-                        } else if (nextReady) {
-                            if (nextData) doAdvance();
-                            else doAdvanceError();
+                        } else {
+                            s.currentSection++;
+                            s.currentQ = 0;
+                            s.sections[s.currentSection] = { ...nextData, answers: [] };
+                            atState.difficulty = nextDiff;
+                            renderQuestion();
                         }
-                        // else wait for generation to finish
                     }
                 }, 100);
-
-                function doAdvance() {
-                    s.currentSection++;
-                    s.currentQ = 0;
-                    s.sections[s.currentSection] = { ...nextData, answers: [] };
-                    atState.difficulty = nextDiff;
-                    renderQuestion();
-                }
-
-                function doAdvanceError() {
-                    alert('שגיאה ביצירת שאלות: ' + (nextError?.message || 'Unknown error'));
-                    atShowResults();
-                }
             }
 
             function atShowResults() {
@@ -5114,24 +5275,13 @@ Generate exactly ${count} questions now:`;
 
             // ---- Phase transitions ----
             window.openAdaptiveTest = function() {
-                // Close menu
                 const menu = document.getElementById('topMenu');
                 if (menu) menu.classList.remove('open');
-
-                const overlay = $id('at-overlay');
-                overlay.classList.remove('at-hidden');
+                $id('at-overlay').classList.remove('at-hidden');
                 document.body.style.overflow = 'hidden';
-
-                if (!getApiKey()) {
-                    showPhase('setup');
-                    atState = freshState();
-                    atState.phase = 'setup';
-                } else {
-                    atState = freshState();
-                    atState.phase = 'intro';
-                    showPhase('intro');
-                    atRenderHistory();
-                }
+                atState = freshState();
+                showPhase('intro');
+                atRenderHistory();
             };
 
             window.closeAdaptiveTest = function() {
@@ -5143,36 +5293,13 @@ Generate exactly ${count} questions now:`;
                 document.body.style.overflow = '';
             };
 
-            window.atSaveApiKey = function() {
-                const key = $id('at-api-key-input').value.trim();
-                if (!key.startsWith('sk-')) { alert('מפתח API לא תקין (צריך להתחיל עם sk-)'); return; }
-                localStorage.setItem('atApiKey', key);
-                atState = freshState();
-                showPhase('intro');
-                atRenderHistory();
-            };
 
-            window.atChangeApiKey = function() {
-                localStorage.removeItem('atApiKey');
-                atState = freshState();
-                showPhase('setup');
-            };
-
-            window.atStartTest = async function() {
-                showPhase('loading');
-                $id('at-loading-text').textContent = 'מייצר שאלות לחלק הראשון...';
-                $id('at-loading-sub').textContent  = 'Claude AI מכין שאלות מותאמות לרמה בינונית';
-                try {
-                    const data = await generateSection(0, 'medium');
-                    atState.sections[0] = { ...data, answers: [] };
-                    atState.currentSection = 0;
-                    atState.currentQ = 0;
-                    atState.difficulty = 'medium';
-                    renderQuestion();
-                } catch (e) {
-                    alert('שגיאה ביצירת שאלות: ' + e.message);
-                    showPhase('intro');
-                }
+            window.atStartTest = function() {
+                atState.sections[0] = { ...generateSection(0, 'medium'), answers: [] };
+                atState.currentSection = 0;
+                atState.currentQ = 0;
+                atState.difficulty = 'medium';
+                renderQuestion();
             };
 
             window.atRestartTest = function() {
@@ -5277,18 +5404,6 @@ Generate exactly ${count} questions now:`;
 
         <div class="at-body" id="at-body">
 
-            <!-- SETUP PHASE -->
-            <div id="at-phase-setup" class="at-hidden">
-                <div class="at-setup-card">
-                    <div class="at-setup-icon">🔑</div>
-                    <div class="at-setup-title">הגדרת API Key</div>
-                    <div class="at-setup-desc">המבחן משתמש ב-Claude AI ליצירת שאלות.<br>הזן את מפתח ה-API של Anthropic שלך.</div>
-                    <input class="at-api-input" id="at-api-key-input" type="password" placeholder="sk-ant-..." dir="ltr" />
-                    <button class="at-btn-primary" onclick="atSaveApiKey()">שמור והמשך</button>
-                    <div style="margin-top:14px; font-size:12px; color:#94a3b8;">המפתח נשמר רק על המכשיר שלך (localStorage)</div>
-                </div>
-            </div>
-
             <!-- INTRO PHASE -->
             <div id="at-phase-intro" class="at-hidden">
                 <div class="at-intro-card">
@@ -5310,9 +5425,6 @@ Generate exactly ${count} questions now:`;
                     </div>
                     <button class="at-btn-primary" onclick="atStartTest()">התחל מבחן ←</button>
                     <div id="at-history-preview"></div>
-                    <div style="margin-top:10px;font-size:12px;color:#94a3b8;text-align:center;">
-                        <span style="cursor:pointer;color:#7c3aed;" onclick="atChangeApiKey()">שנה API Key</span>
-                    </div>
                 </div>
             </div>
 
