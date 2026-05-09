@@ -823,7 +823,7 @@
         /* Results screen */
         .at-results-card {
             background: var(--panel-bg); border: 1.5px solid var(--border-color);
-            border-radius: 18px; padding: 28px 22px; max-width: 460px; width: 100%;
+            border-radius: 18px; padding: 28px 22px; max-width: 480px; width: 100%;
             margin: auto; text-align: center;
         }
         .at-score-circle {
@@ -838,16 +838,40 @@
             display: inline-block; background: linear-gradient(135deg,#7c3aed18,#2563eb18);
             border: 1.5px solid var(--border-color); border-radius: 20px;
             padding: 6px 18px; font-size: 14px; font-weight: 700; color: var(--btn-primary);
-            margin-bottom: 22px;
+            margin-bottom: 12px;
         }
-        .at-breakdown-title { font-size: 15px; font-weight: 800; color: var(--text-color); margin-bottom: 12px; text-align: right; }
-        .at-breakdown-row {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 8px 0; border-bottom: 1px solid var(--border-color);
-            font-size: 13px; color: var(--text-color);
+        /* Difficulty summary banner */
+        .at-diff-summary {
+            border-radius: 10px; padding: 9px 14px; font-size: 13px; font-weight: 700;
+            margin-bottom: 20px; text-align: center;
         }
+        .at-diff-summary-hard { background: #7c3aed18; color: #7c3aed; border: 1.5px solid #7c3aed44; }
+        .at-diff-summary-med  { background: #2563eb18; color: #2563eb; border: 1.5px solid #2563eb44; }
+        .at-diff-summary-easy { background: #22c55e18; color: #16a34a; border: 1.5px solid #22c55e44; }
+        /* Section breakdown */
+        .at-breakdown-title { font-size: 14px; font-weight: 800; color: var(--text-color); margin-bottom: 10px; text-align: right; }
+        .at-breakdown-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border-color); }
         .at-breakdown-row:last-child { border-bottom: none; }
-        .at-bd-score { font-weight: 800; color: var(--btn-primary); }
+        .at-bd-left { flex: 1; text-align: right; }
+        .at-bd-right { flex-shrink: 0; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 52px; }
+        .at-bd-title { font-size: 12px; font-weight: 700; color: var(--text-color); margin-bottom: 2px; }
+        .at-bd-why { font-size: 11px; color: #94a3b8; margin-bottom: 5px; }
+        .at-bd-bar-bg { width: 100%; height: 5px; background: var(--border-color); border-radius: 3px; overflow: hidden; }
+        .at-bd-bar-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease; width: 0%; }
+        .at-bd-diff-pill { font-size: 10px; font-weight: 700; border-radius: 7px; padding: 2px 7px; white-space: nowrap; }
+        .at-diff-hard   { background: #7c3aed18; color: #7c3aed; }
+        .at-diff-medium { background: #2563eb18; color: #2563eb; }
+        .at-diff-easy   { background: #22c55e18; color: #16a34a; }
+        .at-bd-score { font-size: 13px; font-weight: 800; color: var(--btn-primary); }
+        /* Type breakdown */
+        .at-type-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border-color); }
+        .at-type-row:last-child { border-bottom: none; }
+        .at-type-label { font-size: 11px; color: var(--text-color); font-weight: 700; min-width: 100px; text-align: right; white-space: nowrap; }
+        .at-type-bar-bg { flex: 1; height: 6px; background: var(--border-color); border-radius: 3px; overflow: hidden; }
+        .at-type-bar-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease; width: 0%; }
+        .at-type-score { font-size: 11px; font-weight: 800; color: var(--btn-primary); min-width: 28px; text-align: left; }
+        /* Score history graph */
+        .at-history-graph { width: 100%; margin-bottom: 4px; }
         .at-results-btns { display: flex; gap: 10px; margin-top: 20px; }
         .at-btn-outline {
             flex: 1; padding: 13px; border-radius: 12px;
@@ -5287,33 +5311,138 @@ function playNextDrivingWord() {
                 }, 1000);
             }
 
+            function atRenderScoreGraph(hist) {
+                const el = $id('at-history-graph');
+                if (!el) return;
+                if (hist.length < 2) {
+                    el.innerHTML = '<div style="text-align:center;color:#94a3b8;font-size:12px;padding:12px 0;">הגרף יופיע לאחר 2 מבחנים</div>';
+                    return;
+                }
+                const data   = hist.slice().reverse(); // oldest → newest
+                const scores = data.map(h => h.score);
+                const maxS   = Math.max(...scores);
+                const minS   = Math.min(...scores);
+                const rng    = Math.max(maxS - minS, 10);
+                const W = 300, H = 80, PX = 18, PY = 16;
+                const xs = data.map((_, i) => PX + (i / Math.max(data.length - 1, 1)) * (W - 2 * PX));
+                const ys = scores.map(s => H - PY - ((s - minS) / rng) * (H - 2 * PY));
+                const pts  = xs.map((x, i) => `${x.toFixed(1)},${ys[i].toFixed(1)}`).join(' ');
+                const area = `M ${xs[0].toFixed(1)},${H} ` +
+                             xs.map((x, i) => `L ${x.toFixed(1)},${ys[i].toFixed(1)}`).join(' ') +
+                             ` L ${xs[xs.length-1].toFixed(1)},${H} Z`;
+                const dots = data.map((h, i) => `
+                    <circle cx="${xs[i].toFixed(1)}" cy="${ys[i].toFixed(1)}" r="4" fill="#7c3aed"/>
+                    <text x="${xs[i].toFixed(1)}" y="${(ys[i]-8).toFixed(1)}" text-anchor="middle" font-size="9" fill="var(--text-color)" font-family="Rubik,sans-serif" font-weight="700">${h.score}</text>
+                    <text x="${xs[i].toFixed(1)}" y="${H+11}" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="Rubik,sans-serif">מ${h.testNum}</text>
+                `).join('');
+                el.innerHTML = `<svg width="100%" viewBox="0 0 ${W} ${H+14}" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
+                    <defs>
+                        <linearGradient id="atGrd" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.28"/>
+                            <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.02"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="${area}" fill="url(#atGrd)"/>
+                    <polyline points="${pts}" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+                    ${dots}
+                </svg>`;
+            }
+
             function atShowResults() {
                 clearInterval(atState.timerInterval);
                 const score = calcFinalScore();
                 const lo = Math.max(50, score - 5), hi = Math.min(150, score + 5);
 
-                // Breakdown
+                // ----- Section breakdown with difficulty reasoning -----
                 const list = $id('at-breakdown-list');
                 list.innerHTML = '';
+                const hardParts = [], easyParts = [];
+
                 atState.sections.forEach((sec, i) => {
                     if (!sec) return;
                     const correct = sec.answers.filter(Boolean).length;
                     const total   = sec.questions.length;
+                    const diff    = sec.diff;
+                    const pct     = total > 0 ? Math.round((correct / total) * 100) : 0;
+                    const barClr  = pct >= 70 ? '#22c55e' : pct >= 40 ? '#f59e0b' : '#ef4444';
+
+                    if (diff === 'hard') hardParts.push(i + 1);
+                    else if (diff === 'easy') easyParts.push(i + 1);
+
+                    let whyText = '';
+                    if (i === 0) {
+                        whyText = 'חלק פתיחה · רמה בינונית';
+                    } else {
+                        const prev = atState.sections[i - 1];
+                        if (prev) {
+                            const pc = prev.answers.filter(Boolean).length;
+                            const pt = prev.questions.length;
+                            const pp = Math.round((pc / pt) * 100);
+                            whyText = `על בסיס חלק ${i}: ${pc}/${pt} (${pp}%)`;
+                        }
+                    }
+
                     const row = document.createElement('div');
                     row.className = 'at-breakdown-row';
-                    row.innerHTML = `<span>חלק ${i+1}: ${TYPE_HE[AT_SECTIONS[i].type]}</span>
-                        <span>
-                            <span style="color:#94a3b8;font-size:12px;">${DIFF_LABELS[sec.diff]}</span>
-                            &nbsp;
-                            <span class="at-bd-score">${correct}/${total}</span>
-                        </span>`;
+                    row.innerHTML = `
+                        <div class="at-bd-left">
+                            <div class="at-bd-title">חלק ${i+1} — ${TYPE_HE[AT_SECTIONS[i].type]}</div>
+                            <div class="at-bd-why">${whyText}</div>
+                            <div class="at-bd-bar-bg"><div class="at-bd-bar-fill" style="background:${barClr}" data-w="${pct}%"></div></div>
+                        </div>
+                        <div class="at-bd-right">
+                            <div class="at-bd-diff-pill at-diff-${diff}">${DIFF_LABELS[diff]}</div>
+                            <div class="at-bd-score">${correct}/${total}</div>
+                        </div>`;
                     list.appendChild(row);
                 });
 
-                // Save used questions globally (cross-test tracking)
-                saveGlobalUsed(atState.usedQ);
+                // ----- MST difficulty summary line -----
+                const summaryEl = $id('at-diff-summary');
+                if (hardParts.length > 0) {
+                    summaryEl.textContent = `הגעת לרמה קשה בחלקים: ${hardParts.join(', ')}`;
+                    summaryEl.className = 'at-diff-summary at-diff-summary-hard';
+                } else if (easyParts.length >= 3) {
+                    summaryEl.textContent = `המבחן הותאם לרמה קלה בחלקים: ${easyParts.join(', ')}`;
+                    summaryEl.className = 'at-diff-summary at-diff-summary-easy';
+                } else {
+                    summaryEl.textContent = 'הגעת לרמה בינונית לאורך המבחן';
+                    summaryEl.className = 'at-diff-summary at-diff-summary-med';
+                }
 
-                // Save to history
+                // ----- Type breakdown (SC / RC / RS) -----
+                const typeList = $id('at-type-breakdown-list');
+                typeList.innerHTML = '';
+                const tStats = { SC: { c: 0, t: 0 }, RS: { c: 0, t: 0 }, RC: { c: 0, t: 0 } };
+                atState.sections.forEach((sec, i) => {
+                    if (!sec) return;
+                    const tp = AT_SECTIONS[i].type;
+                    tStats[tp].c += sec.answers.filter(Boolean).length;
+                    tStats[tp].t += sec.questions.length;
+                });
+                ['SC', 'RC', 'RS'].forEach(tp => {
+                    const { c, t } = tStats[tp];
+                    if (t === 0) return;
+                    const pct = Math.round((c / t) * 100);
+                    const bar = pct >= 70 ? '#22c55e' : pct >= 40 ? '#f59e0b' : '#ef4444';
+                    const row = document.createElement('div');
+                    row.className = 'at-type-row';
+                    row.innerHTML = `
+                        <div class="at-type-label">${TYPE_HE[tp]}</div>
+                        <div class="at-type-bar-bg"><div class="at-type-bar-fill" style="background:${bar}" data-w="${pct}%"></div></div>
+                        <div class="at-type-score">${c}/${t}</div>`;
+                    typeList.appendChild(row);
+                });
+
+                // Animate bars after paint
+                setTimeout(() => {
+                    document.querySelectorAll('.at-bd-bar-fill[data-w], .at-type-bar-fill[data-w]').forEach(el => {
+                        el.style.width = el.dataset.w;
+                    });
+                }, 60);
+
+                // ----- Save to history -----
+                saveGlobalUsed(atState.usedQ);
                 const hist = JSON.parse(localStorage.getItem('atHistory') || '[]');
                 const testNum = hist.length + 1;
                 hist.unshift({
@@ -5329,10 +5458,12 @@ function playNextDrivingWord() {
                 });
                 localStorage.setItem('atHistory', JSON.stringify(hist.slice(0, 20)));
 
+                // ----- Score progression graph -----
+                atRenderScoreGraph(hist);
+
                 $id('at-final-score').textContent = score;
                 $id('at-score-range').textContent = `מבחן #${testNum}  ·  טווח מוערך: ${lo}–${hi}`;
                 atUpdateResultsFooter();
-
                 showPhase('results');
             }
 
@@ -5549,8 +5680,17 @@ function playNextDrivingWord() {
                         <div class="at-score-lbl">ניקוד</div>
                     </div>
                     <div class="at-range-pill" id="at-score-range">טווח מוערך: 115–125</div>
+                    <div class="at-diff-summary" id="at-diff-summary"></div>
+
                     <div class="at-breakdown-title">פירוט לפי חלקים</div>
                     <div id="at-breakdown-list"></div>
+
+                    <div class="at-breakdown-title" style="margin-top:18px;">פירוט לפי סוג שאלה</div>
+                    <div id="at-type-breakdown-list"></div>
+
+                    <div class="at-breakdown-title" style="margin-top:18px;">התקדמות ציונים</div>
+                    <div class="at-history-graph" id="at-history-graph"></div>
+
                     <div class="at-results-btns">
                         <button class="at-btn-outline" onclick="closeAdaptiveTest()">סגור</button>
                         <button class="at-btn-primary" style="flex:1;" onclick="atRestartTest()">מבחן חדש</button>
