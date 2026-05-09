@@ -5127,6 +5127,12 @@ function playNextDrivingWord() {
             }
 
             // ---- Pick functions ----
+            function shuffleOptions(q) {
+                const correctAnswer = q.options[q.correctIndex];
+                const shuffled = q.options.slice().sort(() => Math.random() - 0.5);
+                return { ...q, options: shuffled, correctIndex: shuffled.indexOf(correctAnswer) };
+            }
+
             function pickRandom(bank, diff, n, used) {
                 const pool = QB[bank][diff];
                 let available = pool.map((_, i) => i).filter(i => !used.has(i));
@@ -5136,7 +5142,7 @@ function playNextDrivingWord() {
                 }
                 const chosen = available.slice().sort(() => Math.random() - 0.5).slice(0, n);
                 chosen.forEach(i => used.add(i));
-                return chosen.map(i => pool[i]);
+                return chosen.map(i => shuffleOptions(pool[i]));
             }
 
             function generateSection(sectionIdx, diff) {
@@ -5154,7 +5160,7 @@ function playNextDrivingWord() {
                         : Math.floor(Math.random() * passages.length);
                     usedRC.add(idx);
                     const rc = passages[idx];
-                    return { questions: rc.questions, diff, passage: rc.passage };
+                    return { questions: rc.questions.map(shuffleOptions), diff, passage: rc.passage };
                 } else {
                     const qs = pickRandom('RS', diff, sec.count, used.RS[diff]);
                     return { questions: qs, diff, passage: null };
