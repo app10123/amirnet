@@ -968,7 +968,7 @@
                 </div>
                 <div class="dash-test-info">
                     <div class="dash-test-title">מבחן פסיכומטרי אדפטיבי</div>
-                    <div class="dash-test-sub">סימולציה מלאה · 6 חלקים · MST</div>
+                    <div class="dash-test-sub" id="dashTestSub">5 מבחנים ייחודיים · MST</div>
                 </div>
                 <div class="dash-test-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M15 18l-6-6 6-6"/></svg>
@@ -1716,6 +1716,16 @@ let aiPreloadedData = {};
         function goToDashboard() {
             populateDashboard();
             showDashboard();
+            // Update adaptive test card subtitle
+            const sub = document.getElementById('dashTestSub');
+            if (sub) {
+                const hist = JSON.parse(localStorage.getItem('atHistory') || '[]');
+                const done = hist.length;
+                const remaining = Math.max(0, 5 - done);
+                sub.textContent = remaining > 0
+                    ? `${remaining} מבחנים ייחודיים נותרו · MST`
+                    : `${done} מבחנים הושלמו · MST`;
+            }
         }
         function toggleDashUnits(toggleId, listId) {
             let btn  = document.getElementById(toggleId);
@@ -4710,6 +4720,7 @@ function playNextDrivingWord() {
             let atState = null;
 
             function freshState() {
+                const mk = () => ({ easy: new Set(), medium: new Set(), hard: new Set() });
                 return {
                     phase: 'intro',
                     currentSection: 0,
@@ -4721,9 +4732,7 @@ function playNextDrivingWord() {
                     secondsLeft: 0,
                     passage: null,
                     breakTimer: null,
-                    usedQ: { SC: { easy: new Set(), medium: new Set(), hard: new Set() },
-                             RC: { easy: new Set(), medium: new Set(), hard: new Set() },
-                             RS: { easy: new Set(), medium: new Set(), hard: new Set() } }
+                    usedQ: loadGlobalUsed() || { SC: mk(), RS: mk(), RC: mk() }
                 };
             }
 
@@ -4745,7 +4754,12 @@ function playNextDrivingWord() {
                         { sentence: "The documentary ___ light on the challenges faced by deep-sea explorers.", options: ["shed", "reflected", "blocked", "absorbed"], correctIndex: 0, explanation: "'Shed light on' is an idiom meaning to reveal or clarify." },
                         { sentence: "The community came together to ___ a garden in the empty lot downtown.", options: ["establish", "destroy", "abandon", "purchase"], correctIndex: 0, explanation: "Establish means to set up or create something new." },
                         { sentence: "The team worked throughout the night to ___ the project on time.", options: ["complete", "begin", "cancel", "delay"], correctIndex: 0, explanation: "Complete means to finish successfully." },
-                        { sentence: "The architect's design was praised for its ___ use of natural light.", options: ["clever", "wasteful", "excessive", "random"], correctIndex: 0, explanation: "Clever means showing skill and original thinking." }
+                        { sentence: "The architect's design was praised for its ___ use of natural light.", options: ["clever", "wasteful", "excessive", "random"], correctIndex: 0, explanation: "Clever means showing skill and original thinking." },
+                        { sentence: "The results of the survey were ___ with the predictions made by researchers.", options: ["consistent", "contradictory", "unrelated", "surprising"], correctIndex: 0, explanation: "Consistent means in agreement or harmony with something." },
+                        { sentence: "The author's argument was ___ by new evidence published after the book appeared.", options: ["undermined", "strengthened", "ignored", "repeated"], correctIndex: 0, explanation: "Undermined means weakened or made less effective." },
+                        { sentence: "It was ___ that the small team managed to finish the project ahead of schedule.", options: ["impressive", "unsurprising", "expected", "disappointing"], correctIndex: 0, explanation: "Impressive means inspiring admiration through quality or scale." },
+                        { sentence: "The volunteer program had a ___ impact on the lives of local families.", options: ["meaningful", "minimal", "temporary", "harmful"], correctIndex: 0, explanation: "Meaningful means having real importance or value." },
+                        { sentence: "She ___ her speech with examples drawn from everyday life to make it relatable.", options: ["illustrated", "began", "concluded", "interrupted"], correctIndex: 0, explanation: "Illustrated means made clear or vivid by using examples." }
                     ],
                     medium: [
                         { sentence: "The professor's ___ remarks helped students grasp the full complexity of the issue.", options: ["insightful", "superficial", "irrelevant", "ambiguous"], correctIndex: 0, explanation: "Insightful means showing deep understanding." },
@@ -4762,7 +4776,12 @@ function playNextDrivingWord() {
                         { sentence: "The discovery of the ancient manuscript ___ our understanding of medieval history.", options: ["transformed", "confirmed", "simplified", "complicated"], correctIndex: 0, explanation: "Transformed means changed dramatically." },
                         { sentence: "The author's writing style was praised for its ___ clarity and precision throughout.", options: ["remarkable", "ordinary", "excessive", "surprising"], correctIndex: 0, explanation: "Remarkable means worthy of attention; extraordinary." },
                         { sentence: "The museum's new exhibit ___ the complex relationship between technology and society.", options: ["explores", "ignores", "simplifies", "contradicts"], correctIndex: 0, explanation: "Explores means to examine carefully and in depth." },
-                        { sentence: "The company's decision to relocate was ___ primarily by financial pressures.", options: ["motivated", "opposed", "celebrated", "questioned"], correctIndex: 0, explanation: "Motivated means driven by a particular reason or cause." }
+                        { sentence: "The company's decision to relocate was ___ primarily by financial pressures.", options: ["motivated", "opposed", "celebrated", "questioned"], correctIndex: 0, explanation: "Motivated means driven by a particular reason or cause." },
+                        { sentence: "The senator's ___ position on the issue alienated voters on both sides of the debate.", options: ["ambiguous", "decisive", "progressive", "conservative"], correctIndex: 0, explanation: "Ambiguous means unclear or open to more than one interpretation." },
+                        { sentence: "The documentary sought to ___ common misconceptions about the role of technology in schools.", options: ["dispel", "reinforce", "introduce", "ignore"], correctIndex: 0, explanation: "Dispel means to drive away or cause to vanish." },
+                        { sentence: "The committee's report was both ___ and accessible, suited to experts and laypeople alike.", options: ["rigorous", "superficial", "biased", "incomplete"], correctIndex: 0, explanation: "Rigorous means extremely thorough and careful." },
+                        { sentence: "Her ___ interpretation of the data led the team to overlook a critical variable.", options: ["flawed", "precise", "thorough", "independent"], correctIndex: 0, explanation: "Flawed means having a fault that undermines validity." },
+                        { sentence: "The organization worked to ___ the gap between wealthy and underserved communities.", options: ["bridge", "widen", "ignore", "measure"], correctIndex: 0, explanation: "Bridge means to reduce or connect differences between two things." }
                     ],
                     hard: [
                         { sentence: "The philosopher's ___ treatise challenged centuries of conventional intellectual thought.", options: ["seminal", "derivative", "commonplace", "superficial"], correctIndex: 0, explanation: "Seminal means strongly influencing later developments; groundbreaking." },
@@ -4779,7 +4798,12 @@ function playNextDrivingWord() {
                         { sentence: "The government's response to the crisis was criticized as ___ and poorly coordinated.", options: ["inept", "swift", "decisive", "effective"], correctIndex: 0, explanation: "Inept means lacking skill, competence, or aptitude." },
                         { sentence: "The professor's lectures were celebrated for their ___ — covering vast terrain with remarkable efficiency.", options: ["conciseness", "verbosity", "repetitiveness", "obscurity"], correctIndex: 0, explanation: "Conciseness means the quality of giving information clearly and briefly." },
                         { sentence: "The biographer's ___ portrayal of the statesman revealed both his triumphs and his moral failures.", options: ["unflinching", "flattering", "apologetic", "cursory"], correctIndex: 0, explanation: "Unflinching means not showing fear or hesitation when facing difficult truths." },
-                        { sentence: "The novel's ___ narrative structure challenged readers to question their most basic assumptions.", options: ["labyrinthine", "straightforward", "predictable", "simplistic"], correctIndex: 0, explanation: "Labyrinthine means intricate and confusing, like a labyrinth." }
+                        { sentence: "The novel's ___ narrative structure challenged readers to question their most basic assumptions.", options: ["labyrinthine", "straightforward", "predictable", "simplistic"], correctIndex: 0, explanation: "Labyrinthine means intricate and confusing, like a labyrinth." },
+                        { sentence: "The treaty's ___ provisions ensured that neither party could claim a clear victory.", options: ["ambivalent", "decisive", "unilateral", "transparent"], correctIndex: 0, explanation: "Ambivalent means having mixed or contradictory elements; not clearly one thing." },
+                        { sentence: "The scholar's ___ refusal to engage with counterevidence undermined her academic credibility.", options: ["obstinate", "judicious", "reluctant", "occasional"], correctIndex: 0, explanation: "Obstinate means stubbornly refusing to change one's position despite good reason." },
+                        { sentence: "The regime's propaganda was so ___ that citizens began to mistake fiction for established fact.", options: ["insidious", "transparent", "ineffective", "obvious"], correctIndex: 0, explanation: "Insidious means proceeding gradually in a subtle but harmful way." },
+                        { sentence: "His ___ grasp of theoretical nuance allowed him to synthesize decades of competing scholarship.", options: ["formidable", "rudimentary", "partial", "superficial"], correctIndex: 0, explanation: "Formidable means inspiring respect through impressive ability or scale." },
+                        { sentence: "The critic's review was a masterpiece of ___, praising the novel's structure while condemning its prose.", options: ["equivocation", "candor", "brevity", "clarity"], correctIndex: 0, explanation: "Equivocation means using ambiguous language to avoid commitment to a clear position." }
                     ]
                 },
                 RS: {
@@ -4995,12 +5019,44 @@ function playNextDrivingWord() {
                 }
             };
 
+            // ---- Global cross-test usage tracking ----
+            const AT_USED_KEY = 'atGlobalUsed';
+
+            function loadGlobalUsed() {
+                try {
+                    const raw = JSON.parse(localStorage.getItem(AT_USED_KEY) || 'null');
+                    if (!raw) return null;
+                    const mk = () => ({ easy: new Set(), medium: new Set(), hard: new Set() });
+                    const out = { SC: mk(), RS: mk(), RC: mk() };
+                    ['SC','RS','RC'].forEach(t => ['easy','medium','hard'].forEach(d => {
+                        (raw[t]?.[d] || []).forEach(i => out[t][d].add(i));
+                    }));
+                    return out;
+                } catch(e) { return null; }
+            }
+
+            function saveGlobalUsed(usedQ) {
+                const out = {};
+                ['SC','RS','RC'].forEach(t => {
+                    out[t] = {};
+                    ['easy','medium','hard'].forEach(d => { out[t][d] = [...usedQ[t][d]]; });
+                });
+                localStorage.setItem(AT_USED_KEY, JSON.stringify(out));
+            }
+
+            function resetGlobalUsed() {
+                localStorage.removeItem(AT_USED_KEY);
+            }
+
             // ---- Pick functions ----
             function pickRandom(bank, diff, n, used) {
                 const pool = QB[bank][diff];
-                const available = pool.map((_, i) => i).filter(i => !used.has(i));
-                const source = available.length >= n ? available : pool.map((_, i) => i);
-                const chosen = source.slice().sort(() => Math.random() - 0.5).slice(0, n);
+                let available = pool.map((_, i) => i).filter(i => !used.has(i));
+                if (available.length < n) {
+                    used.clear(); // auto-reset this difficulty pool when exhausted
+                    available = pool.map((_, i) => i);
+                }
+                const chosen = available.slice().sort(() => Math.random() - 0.5).slice(0, n);
                 chosen.forEach(i => used.add(i));
                 return chosen.map(i => pool[i]);
             }
@@ -5231,9 +5287,6 @@ function playNextDrivingWord() {
                 const score = calcFinalScore();
                 const lo = Math.max(50, score - 5), hi = Math.min(150, score + 5);
 
-                $id('at-final-score').textContent = score;
-                $id('at-score-range').textContent = `טווח מוערך: ${lo}–${hi}`;
-
                 // Breakdown
                 const list = $id('at-breakdown-list');
                 list.innerHTML = '';
@@ -5252,11 +5305,16 @@ function playNextDrivingWord() {
                     list.appendChild(row);
                 });
 
+                // Save used questions globally (cross-test tracking)
+                saveGlobalUsed(atState.usedQ);
+
                 // Save to history
                 const hist = JSON.parse(localStorage.getItem('atHistory') || '[]');
+                const testNum = hist.length + 1;
                 hist.unshift({
                     date: new Date().toISOString(),
                     score,
+                    testNum,
                     sections: atState.sections.map((sec, i) => sec ? {
                         type: AT_SECTIONS[i].type,
                         diff: sec.diff,
@@ -5265,6 +5323,10 @@ function playNextDrivingWord() {
                     } : null)
                 });
                 localStorage.setItem('atHistory', JSON.stringify(hist.slice(0, 20)));
+
+                $id('at-final-score').textContent = score;
+                $id('at-score-range').textContent = `מבחן #${testNum}  ·  טווח מוערך: ${lo}–${hi}`;
+                atUpdateResultsFooter();
 
                 showPhase('results');
             }
@@ -5303,6 +5365,25 @@ function playNextDrivingWord() {
                 atState = freshState();
                 atStartTest();
             };
+
+            window.atResetAllTests = function() {
+                if (!confirm('לאפס את כל השאלות שנוצלו? המבחן הבא יתחיל מחדש עם שאלות חדשות.')) return;
+                resetGlobalUsed();
+                localStorage.removeItem('atHistory');
+                closeAdaptiveTest();
+            };
+
+            function atUpdateResultsFooter() {
+                const hist = JSON.parse(localStorage.getItem('atHistory') || '[]');
+                const n = hist.length;
+                const lbl = $id('at-tests-done-label');
+                const rst = $id('at-reset-link');
+                if (!lbl) return;
+                lbl.textContent = n <= 5
+                    ? `מבחן ${n} מתוך 5 · שאלות ייחודיות`
+                    : `${n} מבחנים הושלמו`;
+                if (rst) rst.style.display = n > 0 ? 'inline' : 'none';
+            }
 
             function atRenderHistory() {
                 const hist = JSON.parse(localStorage.getItem('atHistory') || '[]');
@@ -5473,6 +5554,10 @@ function playNextDrivingWord() {
                     <div class="at-results-btns">
                         <button class="at-btn-outline" onclick="closeAdaptiveTest()">סגור</button>
                         <button class="at-btn-primary" style="flex:1;" onclick="atRestartTest()">מבחן חדש</button>
+                    </div>
+                    <div style="margin-top:12px;text-align:center;">
+                        <span id="at-tests-done-label" style="font-size:12px;color:#94a3b8;"></span>
+                        <span id="at-reset-link" style="font-size:12px;color:#7c3aed;cursor:pointer;margin-right:10px;display:none;" onclick="atResetAllTests()">אפס שאלות</span>
                     </div>
                 </div>
             </div>
