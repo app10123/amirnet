@@ -789,7 +789,7 @@
             padding: 12px 28px; font-size: 15px; font-weight: 800;
             font-family: 'Rubik', sans-serif; cursor: pointer; transition: opacity 0.18s;
         }
-        .at-next-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .at-next-btn:disabled { opacity: 0; pointer-events: none; }
         .at-next-btn:not(:disabled):hover { opacity: 0.88; }
 
         /* Break screen */
@@ -880,6 +880,48 @@
             font-family: 'Rubik', sans-serif; cursor: pointer; transition: border-color 0.18s;
         }
         .at-btn-outline:hover { border-color: #7c3aed; }
+        /* ===== EXAM MODE — hide all chrome during test ===== */
+        body.exam-mode .top-nav-container,
+        body.exam-mode .home-nav-btn,
+        body.exam-mode .bottom-nav { display: none !important; }
+
+        /* ===== DASHBOARD STREAK BLOCK ===== */
+        .dash-streak-block {
+            width: 100%; max-width: 460px;
+            background: linear-gradient(135deg,#fff7ed,#fef3c7);
+            border: 2px solid #fed7aa; border-radius: 18px;
+            padding: 22px 24px 18px; text-align: center; margin-bottom: 14px;
+            box-shadow: 0 4px 16px rgba(234,88,12,0.1);
+        }
+        body.dark-mode .dash-streak-block {
+            background: linear-gradient(135deg,#1c1209,#1c1500);
+            border-color: #78350f55;
+        }
+        .dash-streak-fire { font-size: 44px; line-height: 1; margin-bottom: 6px; }
+        .dash-streak-num { font-size: 40px; font-weight: 900; color: #ea580c; line-height: 1; }
+        .dash-streak-lbl { font-size: 13px; color: #92400e; font-weight: 700; margin-top: 5px; }
+        body.dark-mode .dash-streak-num { color: #fb923c; }
+        body.dark-mode .dash-streak-lbl { color: #fdba74; }
+
+        /* ===== MICRO-FEEDBACK WIDGET ===== */
+        .at-feedback-wrap {
+            border-top: 1.5px solid var(--border-color);
+            margin-top: 18px; padding-top: 16px;
+        }
+        .at-feedback-q { font-size: 14px; font-weight: 700; color: var(--text-color); margin-bottom: 10px; }
+        .at-feedback-btns { display: flex; gap: 8px; }
+        .at-feedback-btn {
+            flex: 1; padding: 10px 4px; border-radius: 12px;
+            border: 2px solid var(--border-color); background: var(--panel-bg);
+            color: var(--text-color); font-family: 'Rubik', sans-serif;
+            font-size: 12px; font-weight: 700; cursor: pointer; transition: 0.18s;
+            display: flex; flex-direction: column; align-items: center; gap: 3px;
+        }
+        .at-feedback-btn span.fb-emoji { font-size: 20px; }
+        .at-feedback-btn:hover { border-color: #7c3aed; background: #7c3aed11; }
+        .at-feedback-btn:active { transform: scale(0.95); }
+        .at-feedback-done { text-align: center; color: #94a3b8; font-size: 13px; padding: 8px 0; }
+
         /* ===== PRODUCT TOUR ===== */
         #tour-overlay {
             position: fixed; inset: 0; z-index: 9000; pointer-events: all;
@@ -964,8 +1006,36 @@
                 <span id="dashSourceName" class="dash-source-name-badge"></span>
                 <button class="dash-change-source-btn" onclick="changeLearningSource()">שנה מקור</button>
             </div>
-            <div class="dash-greeting" id="dashGreeting">שלום! כאן סיכום הלמידה שלך</div>
-            <div class="dash-section-title">התקדמות כללית</div>
+
+            <!-- 1. STREAK — top, prominent -->
+            <div class="dash-streak-block">
+                <div class="dash-streak-fire">🔥</div>
+                <div class="dash-streak-num" id="dashStreakNum">0</div>
+                <div class="dash-streak-lbl">ימי רצף</div>
+            </div>
+
+            <!-- 2. PRIMARY ACTION -->
+            <button class="dash-enter-btn" onclick="enterAppFromDash()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                המשך ללמוד
+            </button>
+
+            <!-- 3. SECONDARY: Adaptive test -->
+            <button class="dash-test-card" onclick="openAdaptiveTest()">
+                <div class="dash-test-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div class="dash-test-info">
+                    <div class="dash-test-title">מבחן פסיכומטרי אדפטיבי</div>
+                    <div class="dash-test-sub" id="dashTestSub">5 מבחנים ייחודיים · MST</div>
+                </div>
+                <div class="dash-test-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M15 18l-6-6 6-6"/></svg>
+                </div>
+            </button>
+
+            <!-- 4. SECONDARY: Stats -->
+            <div class="dash-section-title" style="margin-top:18px;">התקדמות כללית</div>
             <div class="dash-progress-wrap">
                 <div class="dash-progress-bar-bg"><div class="dash-progress-bar-fill" id="dashProgressFill" style="width:0%"></div></div>
                 <span class="dash-progress-pct" id="dashProgressPct">0%</span>
@@ -982,22 +1052,6 @@
             <div class="dash-last-session" id="dashLastSession">
                 <div style="text-align:center;color:#94a3b8;font-size:14px;padding:8px 0;">טוען נתונים...</div>
             </div>
-            <button class="dash-enter-btn" onclick="enterAppFromDash()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-                המשך ללמוד
-            </button>
-            <button class="dash-test-card" onclick="openAdaptiveTest()">
-                <div class="dash-test-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                </div>
-                <div class="dash-test-info">
-                    <div class="dash-test-title">מבחן פסיכומטרי אדפטיבי</div>
-                    <div class="dash-test-sub" id="dashTestSub">5 מבחנים ייחודיים · MST</div>
-                </div>
-                <div class="dash-test-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M15 18l-6-6 6-6"/></svg>
-                </div>
-            </button>
         </div>
     </div>
 
@@ -1015,17 +1069,10 @@
     </div>
 
     <div class="top-nav-container">
-        <button class="main-menu-btn" id="mainMenuBtn" onclick="toggleTopMenu()" title="תפריט אפשרויות">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="dotsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#7c3aed"/>
-                        <stop offset="100%" stop-color="#2563eb"/>
-                    </linearGradient>
-                </defs>
-                <circle cx="12" cy="5" r="2" fill="url(#dotsGrad)"></circle>
-                <circle cx="12" cy="12" r="2" fill="url(#dotsGrad)"></circle>
-                <circle cx="12" cy="19" r="2" fill="url(#dotsGrad)"></circle>
+        <button class="main-menu-btn" id="mainMenuBtn" onclick="toggleTopMenu()" title="הגדרות">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
             </svg>
         </button>
         <div class="top-dropdown" id="topMenu">
@@ -1814,6 +1861,8 @@ let aiPreloadedData = {};
             statsView.style.display = 'flex';
             let srcLabel = src === 'Kidum' ? 'קידום' : 'קמפוס IL';
             document.getElementById('dashSourceName').textContent = srcLabel;
+            const dsn = document.getElementById('dashStreakNum');
+            if (dsn) dsn.textContent = streak;
             let sourceWords = allWords.filter(w => w.source === src);
             let known = 0, learning = 0, total = sourceWords.length;
             sourceWords.forEach(w => {
@@ -5461,6 +5510,15 @@ function playNextDrivingWord() {
                 // ----- Score progression graph -----
                 atRenderScoreGraph(hist);
 
+                // Reset feedback widget
+                const fw = $id('at-feedback-wrap');
+                if (fw) fw.innerHTML = `<div class="at-feedback-q">כמה קשה היה המבחן?</div>
+                    <div class="at-feedback-btns">
+                        <button class="at-feedback-btn" onclick="atSaveFeedback('easy')"><span class="fb-emoji">😅</span>קל לי</button>
+                        <button class="at-feedback-btn" onclick="atSaveFeedback('ok')"><span class="fb-emoji">😐</span>בסדר</button>
+                        <button class="at-feedback-btn" onclick="atSaveFeedback('hard')"><span class="fb-emoji">💪</span>קשה</button>
+                    </div>`;
+
                 $id('at-final-score').textContent = score;
                 $id('at-score-range').textContent = `מבחן #${testNum}  ·  טווח מוערך: ${lo}–${hi}`;
                 atUpdateResultsFooter();
@@ -5470,9 +5528,11 @@ function playNextDrivingWord() {
             // ---- Phase transitions ----
             window.openAdaptiveTest = function() {
                 const menu = document.getElementById('topMenu');
-                if (menu) menu.classList.remove('open');
+                if (menu) menu.classList.remove('show');
                 $id('at-overlay').classList.remove('at-hidden');
                 document.body.style.overflow = 'hidden';
+                document.body.classList.add('exam-mode');
+                try { document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); } catch(e) {}
                 atState = freshState();
                 atStartTest();
             };
@@ -5484,6 +5544,8 @@ function playNextDrivingWord() {
                 }
                 $id('at-overlay').classList.add('at-hidden');
                 document.body.style.overflow = '';
+                document.body.classList.remove('exam-mode');
+                try { document.exitFullscreen && document.exitFullscreen(); } catch(e) {}
             };
 
 
@@ -5507,6 +5569,13 @@ function playNextDrivingWord() {
                 resetGlobalUsed();
                 localStorage.removeItem('atHistory');
                 closeAdaptiveTest();
+            };
+
+            window.atSaveFeedback = function(val) {
+                const hist = JSON.parse(localStorage.getItem('atHistory') || '[]');
+                if (hist.length > 0) { hist[0].feedback = val; localStorage.setItem('atHistory', JSON.stringify(hist)); }
+                const fw = $id('at-feedback-wrap');
+                if (fw) fw.innerHTML = '<div class="at-feedback-done">תודה על המשוב!</div>';
             };
 
             function atUpdateResultsFooter() {
@@ -5607,9 +5676,8 @@ function playNextDrivingWord() {
             <button class="at-close-btn" onclick="closeAdaptiveTest()" title="סגור">✕</button>
         </div>
 
-        <!-- Simple top bar for non-question phases -->
-        <div class="at-header" id="at-simple-header">
-            <div class="at-header-title">🎯 מבחן פסיכומטרי אדפטיבי</div>
+        <!-- Minimal top bar for non-question phases (break / results) -->
+        <div class="at-header" id="at-simple-header" style="justify-content:flex-end;">
             <button class="at-close-btn" onclick="closeAdaptiveTest()" title="סגור">✕</button>
         </div>
 
@@ -5698,6 +5766,16 @@ function playNextDrivingWord() {
                     <div style="margin-top:12px;text-align:center;">
                         <span id="at-tests-done-label" style="font-size:12px;color:#94a3b8;"></span>
                         <span id="at-reset-link" style="font-size:12px;color:#7c3aed;cursor:pointer;margin-right:10px;display:none;" onclick="atResetAllTests()">אפס שאלות</span>
+                    </div>
+
+                    <!-- Micro-feedback -->
+                    <div class="at-feedback-wrap" id="at-feedback-wrap">
+                        <div class="at-feedback-q">כמה קשה היה המבחן?</div>
+                        <div class="at-feedback-btns">
+                            <button class="at-feedback-btn" onclick="atSaveFeedback('easy')"><span class="fb-emoji">😅</span>קל לי</button>
+                            <button class="at-feedback-btn" onclick="atSaveFeedback('ok')"><span class="fb-emoji">😐</span>בסדר</button>
+                            <button class="at-feedback-btn" onclick="atSaveFeedback('hard')"><span class="fb-emoji">💪</span>קשה</button>
+                        </div>
                     </div>
                 </div>
             </div>
