@@ -2129,6 +2129,21 @@ let aiPreloadedData = {};
             document.getElementById('dashProgressPct').textContent = pct + '%';
             buildSourceUnits(src, document.getElementById('dashUnitsContainer'), srcLabel, 'togMain', 'listMain');
             let sess = JSON.parse(localStorage.getItem('lastSession') || 'null');
+            // Fallback: derive last-study date from learnedDate in userProgress when lastSession is missing
+            if (!sess || !sess.date) {
+                let latestDate = null;
+                let knownCount = 0;
+                for (let key in userProgress) {
+                    let p = userProgress[key];
+                    if (p.learnedDate && (!latestDate || p.learnedDate > latestDate)) latestDate = p.learnedDate;
+                    if (p.status === 'known') knownCount++;
+                }
+                if (latestDate) {
+                    sess = { date: latestDate, reviewed: knownCount, markedKnown: knownCount, _derived: true };
+                    // Persist it so next time we don't need to derive
+                    localStorage.setItem('lastSession', JSON.stringify(sess));
+                }
+            }
             let sessEl = document.getElementById('dashLastSession');
             if (sess && sess.date) {
                 let d = new Date(sess.date);
