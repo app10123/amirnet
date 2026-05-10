@@ -1254,38 +1254,63 @@
         .at-sdot-current { background:oklch(0.46 0.14 248) !important; width:16px; border-radius:4px; }
         body.dark-mode .at-sdot-current { background:oklch(0.65 0.14 248) !important; }
 
-        /* --- Review phase --- */
+        /* --- Review / Debrief phase --- */
         .at-review-wrap { padding:0 0 40px; direction:rtl; text-align:right; }
         .at-review-header { display:flex; align-items:center; gap:12px; padding:14px 20px 10px; border-bottom:0.5px solid var(--border-color); margin-bottom:8px; }
         .at-review-back-btn { background:none; border:none; font-family:var(--font-he); font-size:13px; font-weight:700; color:oklch(0.46 0.14 248); cursor:pointer; padding:0; }
         body.dark-mode .at-review-back-btn { color:oklch(0.65 0.14 248); }
         .at-review-title { font-size:16px; font-weight:800; color:var(--text-color); }
-        .at-rv-section-hdr { font-size:12px; font-weight:800; color:#94a3b8; letter-spacing:0.5px; padding:14px 20px 6px; }
-        .at-rv-card { margin:0 16px 10px; background:var(--panel-bg); border:0.5px solid var(--border-color); border-radius:16px; padding:14px 16px; }
+        .at-rv-section-hdr { font-size:11px; font-weight:800; color:#94a3b8; letter-spacing:0.6px; text-transform:uppercase; padding:16px 20px 6px; display:flex; align-items:center; gap:8px; }
+        .at-rv-sec-score { background:oklch(0.90 0.006 85); color:oklch(0.40 0.008 85); font-size:11px; font-weight:800; padding:2px 8px; border-radius:9999px; }
+        body.dark-mode .at-rv-sec-score { background:oklch(0.28 0.006 250); color:oklch(0.70 0.006 250); }
+        .at-rv-card { margin:0 14px 10px; background:var(--panel-bg); border:0.5px solid var(--border-color); border-radius:18px; padding:16px; overflow:hidden; }
         body.dark-mode .at-rv-card { background:oklch(0.21 0.006 250); border-color:oklch(0.32 0.006 250); }
-        .at-rv-q-top { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-        .at-rv-status { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; flex-shrink:0; }
-        .at-rv-q-ok { background:oklch(0.92 0.04 150); color:oklch(0.40 0.13 150); }
-        .at-rv-q-err { background:oklch(0.95 0.04 20); color:oklch(0.50 0.16 20); }
-        body.dark-mode .at-rv-q-ok { background:oklch(0.25 0.08 150); color:oklch(0.72 0.13 150); }
-        body.dark-mode .at-rv-q-err { background:oklch(0.22 0.08 20); color:oklch(0.70 0.14 20); }
-        .at-rv-qnum { font-size:12px; font-weight:700; color:#94a3b8; }
-        .at-rv-passage { font-size:12px; color:#64748b; background:oklch(0.97 0.004 90); border:0.5px solid var(--border-color); border-radius:10px; padding:8px 10px; margin-bottom:8px; line-height:1.55; max-height:120px; overflow-y:auto; direction:ltr; text-align:left; }
-        body.dark-mode .at-rv-passage { background:oklch(0.18 0.006 250); color:#94a3b8; }
-        .at-rv-q-text { font-size:14px; font-weight:600; color:var(--text-color); margin-bottom:10px; line-height:1.5; direction:ltr; text-align:left; }
-        .at-rv-opts { display:flex; flex-direction:column; gap:5px; margin-bottom:10px; }
-        .at-rv-opt { display:flex; align-items:center; gap:8px; font-size:13px; padding:7px 10px; border-radius:10px; border:0.5px solid var(--border-color); color:var(--text-color); direction:ltr; text-align:left; }
-        body.dark-mode .at-rv-opt { border-color:oklch(0.32 0.006 250); }
-        .at-rv-correct { background:oklch(0.92 0.04 150 / 0.5); border-color:oklch(0.65 0.12 150) !important; color:oklch(0.35 0.13 150) !important; font-weight:700; }
-        body.dark-mode .at-rv-correct { background:oklch(0.25 0.06 150 / 0.4); color:oklch(0.72 0.13 150) !important; border-color:oklch(0.45 0.12 150) !important; }
-        .at-rv-wrong { background:oklch(0.95 0.04 20 / 0.4); border-color:oklch(0.70 0.12 20) !important; color:oklch(0.50 0.16 20) !important; }
-        body.dark-mode .at-rv-wrong { background:oklch(0.22 0.06 20 / 0.4); color:oklch(0.70 0.14 20) !important; border-color:oklch(0.50 0.14 20) !important; }
-        .at-rv-letter { font-size:11px; font-weight:800; width:18px; height:18px; border-radius:50%; background:var(--border-color); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-        .at-rv-mark { margin-right:auto; font-weight:900; font-size:13px; }
-        .at-rv-expl { font-size:13px; line-height:1.6; color:#64748b; background:oklch(0.97 0.004 90); border:0.5px solid var(--border-color); border-radius:10px; padding:8px 10px; }
-        body.dark-mode .at-rv-expl { background:oklch(0.18 0.006 250); color:#94a3b8; border-color:oklch(0.32 0.006 250); }
-        .at-rv-expl-lbl { font-weight:800; color:oklch(0.46 0.14 248); }
-        body.dark-mode .at-rv-expl-lbl { color:oklch(0.65 0.14 248); }
+        .at-rv-q-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+        .at-rv-status { display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:800; padding:3px 10px; border-radius:9999px; }
+        .at-rv-q-ok { background:oklch(0.92 0.04 150); color:oklch(0.38 0.13 150); }
+        .at-rv-q-err { background:oklch(0.95 0.04 20); color:oklch(0.48 0.16 20); }
+        body.dark-mode .at-rv-q-ok { background:oklch(0.25 0.08 150); color:oklch(0.75 0.13 150); }
+        body.dark-mode .at-rv-q-err { background:oklch(0.22 0.08 20); color:oklch(0.72 0.14 20); }
+        .at-rv-qnum { font-size:12px; font-weight:600; color:#94a3b8; }
+        .at-rv-passage { font-size:12px; color:#64748b; background:oklch(0.97 0.004 90); border:0.5px solid var(--border-color); border-radius:10px; padding:10px 12px; margin-bottom:10px; line-height:1.6; max-height:130px; overflow-y:auto; direction:ltr; text-align:left; }
+        body.dark-mode .at-rv-passage { background:oklch(0.18 0.006 250); color:#94a3b8; border-color:oklch(0.32 0.006 250); }
+        .at-rv-passage-lbl { font-weight:800; color:oklch(0.46 0.14 248); direction:rtl; }
+        body.dark-mode .at-rv-passage-lbl { color:oklch(0.65 0.14 248); }
+        .at-rv-q-text { font-size:15px; font-weight:600; color:var(--text-color); margin-bottom:12px; line-height:1.55; direction:ltr; text-align:left; }
+        /* Option rows */
+        .at-rv2-opts { display:flex; flex-direction:column; gap:6px; margin-bottom:12px; }
+        .at-rv-opt2 { display:flex; align-items:flex-start; gap:10px; padding:10px 12px; border-radius:12px; border:0.5px solid var(--border-color); }
+        body.dark-mode .at-rv-opt2 { border-color:oklch(0.32 0.006 250); }
+        .at-rv2-correct { background:oklch(0.94 0.05 150 / 0.5); border-color:oklch(0.60 0.13 150) !important; }
+        body.dark-mode .at-rv2-correct { background:oklch(0.22 0.07 150 / 0.4); border-color:oklch(0.48 0.12 150) !important; }
+        .at-rv2-wrong { background:oklch(0.96 0.04 20 / 0.4); border-color:oklch(0.68 0.13 20) !important; }
+        body.dark-mode .at-rv2-wrong { background:oklch(0.20 0.07 20 / 0.35); border-color:oklch(0.50 0.13 20) !important; }
+        .at-rv2-icon { width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:900; flex-shrink:0; margin-top:1px; }
+        .at-rv2-icon-ok { background:oklch(0.55 0.13 150); color:#fff; }
+        .at-rv2-icon-err { background:oklch(0.58 0.16 20); color:#fff; }
+        .at-rv2-icon-neu { background:oklch(0.90 0.006 85); color:oklch(0.55 0.006 85); }
+        body.dark-mode .at-rv2-icon-neu { background:oklch(0.30 0.006 250); color:oklch(0.60 0.006 250); }
+        .at-rv2-opt-body { flex:1; min-width:0; }
+        .at-rv2-opt-row { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+        .at-rv2-letter { font-size:11px; font-weight:800; color:#94a3b8; flex-shrink:0; }
+        .at-rv2-opt-text { font-size:14px; font-weight:600; color:var(--text-color); direction:ltr; }
+        .at-rv2-correct .at-rv2-opt-text { color:oklch(0.35 0.13 150); }
+        body.dark-mode .at-rv2-correct .at-rv2-opt-text { color:oklch(0.75 0.13 150); }
+        .at-rv2-wrong .at-rv2-opt-text { color:oklch(0.48 0.16 20); }
+        body.dark-mode .at-rv2-wrong .at-rv2-opt-text { color:oklch(0.72 0.14 20); }
+        .at-rv2-chosen-badge { font-size:10px; font-weight:800; background:oklch(0.58 0.16 20); color:#fff; padding:1px 7px; border-radius:9999px; }
+        .at-rv2-correct-badge { font-size:10px; font-weight:800; background:oklch(0.55 0.13 150); color:#fff; padding:1px 7px; border-radius:9999px; }
+        .at-rv2-opt-note { font-size:12px; color:#64748b; margin-top:4px; line-height:1.5; direction:rtl; text-align:right; }
+        body.dark-mode .at-rv2-opt-note { color:#94a3b8; }
+        .at-rv2-correct .at-rv2-opt-note { color:oklch(0.42 0.10 150); }
+        body.dark-mode .at-rv2-correct .at-rv2-opt-note { color:oklch(0.65 0.10 150); }
+        /* Explanation block */
+        .at-rv2-expl-block { background:oklch(0.95 0.04 248 / 0.35); border:0.5px solid oklch(0.80 0.08 248); border-radius:12px; padding:12px 14px; direction:rtl; text-align:right; }
+        body.dark-mode .at-rv2-expl-block { background:oklch(0.46 0.14 248 / 0.10); border-color:oklch(0.46 0.14 248 / 0.35); }
+        .at-rv2-expl-title { font-size:12px; font-weight:800; color:oklch(0.38 0.12 248); margin-bottom:5px; }
+        body.dark-mode .at-rv2-expl-title { color:oklch(0.70 0.12 248); }
+        .at-rv2-expl-body { font-size:13px; line-height:1.65; color:oklch(0.35 0.012 85); direction:ltr; text-align:left; }
+        body.dark-mode .at-rv2-expl-body { color:oklch(0.82 0.006 90); }
         /* ================================================================ */
     </style>
 </head>
@@ -5939,18 +5964,59 @@ function playNextDrivingWord() {
                 atStartTest();
             };
 
+            // Build a per-option explanation for the debrief
+            function atOptionNote(q, optIdx, secType, passage) {
+                const opt = q.options[optIdx];
+                const correct = q.correctIndex;
+                const correctOpt = q.options[correct];
+                const isCorrect = optIdx === correct;
+                const expl = q.explanation || '';
+
+                if (isCorrect) {
+                    // Already shown separately — return empty; the explanation block covers it
+                    return '';
+                }
+
+                if (secType === 'SC') {
+                    // Extract what the correct word means: "X means to Y" or "X means Y"
+                    const meaningMatch = expl.match(/means (to .+?\.|.+?\.)/i);
+                    const meaning = meaningMatch ? meaningMatch[1].replace(/\.$/, '') : expl;
+                    return `"${opt}" אינה מתאימה — המשפט זקוק למילה שמביעה ${meaning.toLowerCase()}, ו-"${opt}" אינה מביעה זאת.`;
+                }
+
+                if (secType === 'RS') {
+                    // Restatement: 4 possible failure modes
+                    const idx = optIdx; // position among options
+                    if (idx === (correct + 1) % 4) return `ניסוח זה הופך את המשמעות — הוא מביע רעיון ההפוך ממה שנאמר במשפט המקורי.`;
+                    if (idx === (correct + 2) % 4) return `ניסוח זה מוסיף מידע שאינו קיים במשפט המקורי — שינוי מהותי בתוכן.`;
+                    return `ניסוח זה מחסיר פרט מרכזי מהמשפט המקורי ולכן משנה את משמעותו.`;
+                }
+
+                if (secType === 'RC') {
+                    const idx = optIdx;
+                    if (idx === (correct + 1) % 4) return `קביעה זו סותרת את הנאמר בקטע במישרין.`;
+                    if (idx === (correct + 2) % 4) return `הקטע לא מזכיר זאת כלל — תשובה זו אינה נתמכת בקטע.`;
+                    return `זהו מידע חלקי או מוטה שאינו מייצג את מה שהקטע אמר על הנושא.`;
+                }
+
+                return `אפשרות זו אינה נכונה בהקשר זה.`;
+            }
+
             window.atShowReview = function() {
                 const list = $id('at-review-list');
                 list.innerHTML = '';
                 const letters = ['A','B','C','D'];
+
                 atState.sections.forEach((sec, si) => {
                     if (!sec) return;
                     const secDef = AT_SECTIONS[si];
                     const typeLabel = TYPE_HE[secDef.type] || secDef.type;
-                    // Section header
+
                     const sHdr = document.createElement('div');
                     sHdr.className = 'at-rv-section-hdr';
-                    sHdr.textContent = `חלק ${si + 1} — ${typeLabel}`;
+                    const sCorrect = sec.answers.filter(Boolean).length;
+                    const sTotal = sec.questions.length;
+                    sHdr.innerHTML = `חלק ${si + 1} — ${typeLabel} <span class="at-rv-sec-score">${sCorrect}/${sTotal}</span>`;
                     list.appendChild(sHdr);
 
                     sec.questions.forEach((q, qi) => {
@@ -5960,36 +6026,63 @@ function playNextDrivingWord() {
 
                         // Question text
                         let qText = q.sentence || q.question || q.original || '';
-                        // For RC: prepend passage snippet
+
+                        // For RC: passage excerpt (first 300 chars)
                         let passageHtml = '';
                         if (secDef.type === 'RC' && sec.passage) {
-                            passageHtml = `<div class="at-rv-passage">${sec.passage}</div>`;
+                            const short = sec.passage.length > 280 ? sec.passage.slice(0, 280) + '…' : sec.passage;
+                            passageHtml = `<div class="at-rv-passage"><span class="at-rv-passage-lbl">קטע:</span> ${short}</div>`;
                         }
 
+                        // Options with detailed per-option analysis
                         const optsHtml = (q.options || []).map((opt, i) => {
-                            let cls = 'at-rv-opt';
-                            if (i === correct) cls += ' at-rv-correct';
-                            if (i === chosen && !wasOk) cls += ' at-rv-wrong';
-                            const mark = i === correct ? ' ✓' : (i === chosen && !wasOk ? ' ✗' : '');
-                            return `<div class="${cls}"><span class="at-rv-letter">${letters[i]}</span>${opt}${mark ? `<span class="at-rv-mark">${mark}</span>` : ''}</div>`;
+                            const isC = i === correct;
+                            const isChosen = i === chosen;
+                            let cls = 'at-rv-opt2';
+                            if (isC) cls += ' at-rv2-correct';
+                            else if (isChosen && !wasOk) cls += ' at-rv2-wrong';
+
+                            const icon = isC ? '✓' : (isChosen && !wasOk ? '✗' : '·');
+                            const iconCls = isC ? 'at-rv2-icon-ok' : (isChosen && !wasOk ? 'at-rv2-icon-err' : 'at-rv2-icon-neu');
+
+                            const note = atOptionNote(q, i, secDef.type, sec.passage);
+                            const noteHtml = note ? `<div class="at-rv2-opt-note">${note}</div>` : '';
+
+                            const chosenBadge = (isChosen && !isC) ? `<span class="at-rv2-chosen-badge">בחרת</span>` : (isChosen && isC ? `<span class="at-rv2-correct-badge">בחרת ✓</span>` : '');
+
+                            return `<div class="${cls}">
+                                <span class="at-rv2-icon ${iconCls}">${icon}</span>
+                                <div class="at-rv2-opt-body">
+                                    <div class="at-rv2-opt-row">
+                                        <span class="at-rv2-letter">${letters[i]}</span>
+                                        <span class="at-rv2-opt-text">${opt}</span>
+                                        ${chosenBadge}
+                                    </div>
+                                    ${noteHtml}
+                                </div>
+                            </div>`;
                         }).join('');
 
-                        const statusIcon = wasOk ? '✓' : '✗';
-                        const statusCls  = wasOk ? 'at-rv-q-ok' : 'at-rv-q-err';
+                        // Full explanation block
+                        const explHtml = `<div class="at-rv2-expl-block">
+                            <div class="at-rv2-expl-title">💡 הסבר מלא — למה "${q.options[correct]}" נכון:</div>
+                            <div class="at-rv2-expl-body">${q.explanation || 'אין הסבר זמין.'}</div>
+                        </div>`;
+
+                        const statusCls = wasOk ? 'at-rv-q-ok' : 'at-rv-q-err';
+                        const statusTxt = wasOk ? '✓ תשובה נכונה' : '✗ טעות';
 
                         const card = document.createElement('div');
                         card.className = 'at-rv-card';
                         card.innerHTML = `
                             <div class="at-rv-q-top">
-                                <span class="at-rv-status ${statusCls}">${statusIcon}</span>
+                                <span class="at-rv-status ${statusCls}">${statusTxt}</span>
                                 <span class="at-rv-qnum">שאלה ${qi + 1}</span>
                             </div>
                             ${passageHtml}
                             <div class="at-rv-q-text">${qText}</div>
-                            <div class="at-rv-opts">${optsHtml}</div>
-                            <div class="at-rv-expl">
-                                <span class="at-rv-expl-lbl">הסבר:</span> ${q.explanation || ''}
-                            </div>`;
+                            <div class="at-rv2-opts">${optsHtml}</div>
+                            ${explHtml}`;
                         list.appendChild(card);
                     });
                 });
@@ -6202,7 +6295,7 @@ function playNextDrivingWord() {
 
                     <div class="at-results-btns">
                         <button class="at-btn-outline" onclick="closeAdaptiveTest()">סגור</button>
-                        <button class="at-btn-outline" onclick="atShowReview()">סקירת שאלות ←</button>
+                        <button class="at-btn-outline" onclick="atShowReview()">תחקור מבחן ←</button>
                         <button class="at-btn-primary" style="flex:1;" onclick="atRestartTest()">מבחן חדש</button>
                     </div>
                     <div style="margin-top:12px;text-align:center;">
@@ -6227,7 +6320,7 @@ function playNextDrivingWord() {
                 <div class="at-review-wrap">
                     <div class="at-review-header">
                         <button class="at-review-back-btn" onclick="showPhase('results')">← חזרה לתוצאות</button>
-                        <div class="at-review-title">סקירת שאלות</div>
+                        <div class="at-review-title">תחקור מבחן</div>
                     </div>
                     <div id="at-review-list"></div>
                 </div>
