@@ -1178,8 +1178,17 @@
         body.dark-mode .dash-last-session { background: oklch(0.21 0.006 250) !important; border: 0.5px solid oklch(0.32 0.006 250) !important; }
         .dash-enter-btn { background: oklch(0.46 0.14 248); border-radius: 18px; box-shadow: 0 6px 20px oklch(0.46 0.14 248 / 0.4); }
         body.dark-mode .dash-enter-btn { background: oklch(0.65 0.14 248); box-shadow: none; }
-        .dash-streak-block { background: oklch(0.97 0.02 75); border-color: oklch(0.88 0.06 75); }
+        .dash-streak-block {
+            display: inline-flex; align-items: center; gap: 6px;
+            width: auto; max-width: none; align-self: flex-start;
+            padding: 6px 14px; border-radius: 9999px;
+            background: oklch(0.97 0.02 75); border: 1px solid oklch(0.88 0.06 75);
+            box-shadow: none; margin-bottom: 10px;
+        }
         body.dark-mode .dash-streak-block { background: oklch(0.18 0.03 75) !important; border-color: oklch(0.32 0.06 75) !important; }
+        .dash-streak-fire { font-size: 16px !important; line-height: 1 !important; margin-bottom: 0 !important; }
+        .dash-streak-num { font-size: 15px !important; font-weight: 800 !important; line-height: 1 !important; }
+        .dash-streak-lbl { font-size: 13px !important; margin-top: 0 !important; }
 
         /* --- AT overlay buttons --- */
         .at-btn-primary { background: oklch(0.46 0.14 248); border-radius: 14px; }
