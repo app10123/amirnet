@@ -1242,6 +1242,50 @@
         .dash-collapse-body { width:100%; max-width:460px; background:var(--panel-bg); border:0.5px solid var(--border-color); border-top:none; border-radius:0 0 14px 14px; box-sizing:border-box; overflow:hidden; }
         .dash-collapse-closed { display:none !important; }
         body.dark-mode .dash-collapse-body { background:oklch(0.21 0.006 250) !important; border-color:oklch(0.32 0.006 250) !important; }
+        /* --- btn-stack smaller --- */
+        .btn-stack { height:36px !important; padding:0 14px !important; font-size:13px !important; }
+        .btn-stack span.stack-count { font-size:11px !important; padding:1px 6px !important; }
+
+        /* --- Section progress dots in test header --- */
+        .at-section-dots { display:flex; gap:4px; margin-top:5px; }
+        .at-sdot { width:7px; height:7px; border-radius:50%; background:oklch(0.82 0.006 85); transition:all 0.2s; }
+        body.dark-mode .at-sdot { background:oklch(0.35 0.006 250); }
+        .at-sdot-done { background:oklch(0.55 0.13 150) !important; }
+        .at-sdot-current { background:oklch(0.46 0.14 248) !important; width:16px; border-radius:4px; }
+        body.dark-mode .at-sdot-current { background:oklch(0.65 0.14 248) !important; }
+
+        /* --- Review phase --- */
+        .at-review-wrap { padding:0 0 40px; direction:rtl; text-align:right; }
+        .at-review-header { display:flex; align-items:center; gap:12px; padding:14px 20px 10px; border-bottom:0.5px solid var(--border-color); margin-bottom:8px; }
+        .at-review-back-btn { background:none; border:none; font-family:var(--font-he); font-size:13px; font-weight:700; color:oklch(0.46 0.14 248); cursor:pointer; padding:0; }
+        body.dark-mode .at-review-back-btn { color:oklch(0.65 0.14 248); }
+        .at-review-title { font-size:16px; font-weight:800; color:var(--text-color); }
+        .at-rv-section-hdr { font-size:12px; font-weight:800; color:#94a3b8; letter-spacing:0.5px; padding:14px 20px 6px; }
+        .at-rv-card { margin:0 16px 10px; background:var(--panel-bg); border:0.5px solid var(--border-color); border-radius:16px; padding:14px 16px; }
+        body.dark-mode .at-rv-card { background:oklch(0.21 0.006 250); border-color:oklch(0.32 0.006 250); }
+        .at-rv-q-top { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+        .at-rv-status { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:900; flex-shrink:0; }
+        .at-rv-q-ok { background:oklch(0.92 0.04 150); color:oklch(0.40 0.13 150); }
+        .at-rv-q-err { background:oklch(0.95 0.04 20); color:oklch(0.50 0.16 20); }
+        body.dark-mode .at-rv-q-ok { background:oklch(0.25 0.08 150); color:oklch(0.72 0.13 150); }
+        body.dark-mode .at-rv-q-err { background:oklch(0.22 0.08 20); color:oklch(0.70 0.14 20); }
+        .at-rv-qnum { font-size:12px; font-weight:700; color:#94a3b8; }
+        .at-rv-passage { font-size:12px; color:#64748b; background:oklch(0.97 0.004 90); border:0.5px solid var(--border-color); border-radius:10px; padding:8px 10px; margin-bottom:8px; line-height:1.55; max-height:120px; overflow-y:auto; direction:ltr; text-align:left; }
+        body.dark-mode .at-rv-passage { background:oklch(0.18 0.006 250); color:#94a3b8; }
+        .at-rv-q-text { font-size:14px; font-weight:600; color:var(--text-color); margin-bottom:10px; line-height:1.5; direction:ltr; text-align:left; }
+        .at-rv-opts { display:flex; flex-direction:column; gap:5px; margin-bottom:10px; }
+        .at-rv-opt { display:flex; align-items:center; gap:8px; font-size:13px; padding:7px 10px; border-radius:10px; border:0.5px solid var(--border-color); color:var(--text-color); direction:ltr; text-align:left; }
+        body.dark-mode .at-rv-opt { border-color:oklch(0.32 0.006 250); }
+        .at-rv-correct { background:oklch(0.92 0.04 150 / 0.5); border-color:oklch(0.65 0.12 150) !important; color:oklch(0.35 0.13 150) !important; font-weight:700; }
+        body.dark-mode .at-rv-correct { background:oklch(0.25 0.06 150 / 0.4); color:oklch(0.72 0.13 150) !important; border-color:oklch(0.45 0.12 150) !important; }
+        .at-rv-wrong { background:oklch(0.95 0.04 20 / 0.4); border-color:oklch(0.70 0.12 20) !important; color:oklch(0.50 0.16 20) !important; }
+        body.dark-mode .at-rv-wrong { background:oklch(0.22 0.06 20 / 0.4); color:oklch(0.70 0.14 20) !important; border-color:oklch(0.50 0.14 20) !important; }
+        .at-rv-letter { font-size:11px; font-weight:800; width:18px; height:18px; border-radius:50%; background:var(--border-color); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .at-rv-mark { margin-right:auto; font-weight:900; font-size:13px; }
+        .at-rv-expl { font-size:13px; line-height:1.6; color:#64748b; background:oklch(0.97 0.004 90); border:0.5px solid var(--border-color); border-radius:10px; padding:8px 10px; }
+        body.dark-mode .at-rv-expl { background:oklch(0.18 0.006 250); color:#94a3b8; border-color:oklch(0.32 0.006 250); }
+        .at-rv-expl-lbl { font-weight:800; color:oklch(0.46 0.14 248); }
+        body.dark-mode .at-rv-expl-lbl { color:oklch(0.65 0.14 248); }
         /* ================================================================ */
     </style>
 </head>
@@ -1535,8 +1579,8 @@
                     <button class="side-btn" onclick="speakWord()"><svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
                 </div>
                 <button class="btn-stack" onclick="toggleStackWord()">
-                    <svg viewBox="0 0 24 24" style="width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2.5;"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
-                    שינון ממוקד
+                    <svg viewBox="0 0 24 24" style="width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5;"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+                    הוסף לשינון ממוקד
                     <span class="stack-count" id="stackCountDisplay">0/10</span>
                 </button>
             </div>
@@ -5482,7 +5526,7 @@ function playNextDrivingWord() {
             function $id(id) { return document.getElementById(id); }
 
             function showPhase(name) {
-                ['intro','loading','question','break','results'].forEach(p => {
+                ['intro','loading','question','break','results','review'].forEach(p => {
                     const el = $id('at-phase-' + p);
                     if (el) el.classList.toggle('at-hidden', p !== name);
                 });
@@ -5556,6 +5600,17 @@ function playNextDrivingWord() {
                 $id('at-header-meta').textContent = `שאלה ${s.currentQ + 1} מתוך ${totalInSection}`;
                 $id('at-header-meta').style.display = 'block';
 
+                // Section progress dots
+                const dotsEl = $id('at-section-dots');
+                if (dotsEl) {
+                    dotsEl.innerHTML = AT_SECTIONS.map((_, i) => {
+                        let cls = 'at-sdot';
+                        if (i < s.currentSection) cls += ' at-sdot-done';
+                        else if (i === s.currentSection) cls += ' at-sdot-current';
+                        return `<span class="${cls}"></span>`;
+                    }).join('');
+                }
+
                 // Progress bar
                 $id('at-progress-fill').style.width = `${(s.currentQ / totalInSection) * 100}%`;
 
@@ -5614,19 +5669,17 @@ function playNextDrivingWord() {
                 const sectionData = s.sections[s.currentSection];
                 const q = sectionData.questions[s.currentQ];
 
-                // Lock answer and show feedback
+                // Lock answer — no visual reveal during test
                 const correct = q.correctIndex;
                 const chosen  = s.selectedAnswer;
                 const wasCorrect = chosen === correct;
                 sectionData.answers.push(wasCorrect);
+                // Store chosen index for post-test review
+                if (!sectionData.chosenAnswers) sectionData.chosenAnswers = [];
+                sectionData.chosenAnswers.push(chosen);
 
-                // Visual feedback (brief)
                 const opts = document.querySelectorAll('.at-option');
-                opts.forEach((o, i) => {
-                    o.classList.add('at-opt-disabled');
-                    if (i === correct) o.classList.add('at-opt-correct');
-                    else if (i === chosen && !wasCorrect) o.classList.add('at-opt-wrong');
-                });
+                opts.forEach(o => o.classList.add('at-opt-disabled'));
                 $id('at-next-btn').disabled = true;
 
                 setTimeout(() => {
@@ -5886,6 +5939,63 @@ function playNextDrivingWord() {
                 atStartTest();
             };
 
+            window.atShowReview = function() {
+                const list = $id('at-review-list');
+                list.innerHTML = '';
+                const letters = ['A','B','C','D'];
+                atState.sections.forEach((sec, si) => {
+                    if (!sec) return;
+                    const secDef = AT_SECTIONS[si];
+                    const typeLabel = TYPE_HE[secDef.type] || secDef.type;
+                    // Section header
+                    const sHdr = document.createElement('div');
+                    sHdr.className = 'at-rv-section-hdr';
+                    sHdr.textContent = `חלק ${si + 1} — ${typeLabel}`;
+                    list.appendChild(sHdr);
+
+                    sec.questions.forEach((q, qi) => {
+                        const chosen  = (sec.chosenAnswers || [])[qi];
+                        const correct = q.correctIndex;
+                        const wasOk   = chosen === correct;
+
+                        // Question text
+                        let qText = q.sentence || q.question || q.original || '';
+                        // For RC: prepend passage snippet
+                        let passageHtml = '';
+                        if (secDef.type === 'RC' && sec.passage) {
+                            passageHtml = `<div class="at-rv-passage">${sec.passage}</div>`;
+                        }
+
+                        const optsHtml = (q.options || []).map((opt, i) => {
+                            let cls = 'at-rv-opt';
+                            if (i === correct) cls += ' at-rv-correct';
+                            if (i === chosen && !wasOk) cls += ' at-rv-wrong';
+                            const mark = i === correct ? ' ✓' : (i === chosen && !wasOk ? ' ✗' : '');
+                            return `<div class="${cls}"><span class="at-rv-letter">${letters[i]}</span>${opt}${mark ? `<span class="at-rv-mark">${mark}</span>` : ''}</div>`;
+                        }).join('');
+
+                        const statusIcon = wasOk ? '✓' : '✗';
+                        const statusCls  = wasOk ? 'at-rv-q-ok' : 'at-rv-q-err';
+
+                        const card = document.createElement('div');
+                        card.className = 'at-rv-card';
+                        card.innerHTML = `
+                            <div class="at-rv-q-top">
+                                <span class="at-rv-status ${statusCls}">${statusIcon}</span>
+                                <span class="at-rv-qnum">שאלה ${qi + 1}</span>
+                            </div>
+                            ${passageHtml}
+                            <div class="at-rv-q-text">${qText}</div>
+                            <div class="at-rv-opts">${optsHtml}</div>
+                            <div class="at-rv-expl">
+                                <span class="at-rv-expl-lbl">הסבר:</span> ${q.explanation || ''}
+                            </div>`;
+                        list.appendChild(card);
+                    });
+                });
+                showPhase('review');
+            };
+
             window.atResetAllTests = function() {
                 if (!confirm('לאפס את כל השאלות שנוצלו? המבחן הבא יתחיל מחדש עם שאלות חדשות.')) return;
                 resetGlobalUsed();
@@ -5993,6 +6103,7 @@ function playNextDrivingWord() {
             <div class="at-header-info">
                 <div class="at-header-title" id="at-header-title">מבחן אמירנט</div>
                 <div class="at-header-meta" id="at-header-meta"></div>
+                <div class="at-section-dots" id="at-section-dots"></div>
             </div>
             <div class="at-header-timer-col">
                 <div class="at-timer" id="at-timer"></div>
@@ -6091,6 +6202,7 @@ function playNextDrivingWord() {
 
                     <div class="at-results-btns">
                         <button class="at-btn-outline" onclick="closeAdaptiveTest()">סגור</button>
+                        <button class="at-btn-outline" onclick="atShowReview()">סקירת שאלות ←</button>
                         <button class="at-btn-primary" style="flex:1;" onclick="atRestartTest()">מבחן חדש</button>
                     </div>
                     <div style="margin-top:12px;text-align:center;">
@@ -6107,6 +6219,17 @@ function playNextDrivingWord() {
                             <button class="at-feedback-btn" onclick="atSaveFeedback('hard')"><span class="fb-emoji">💪</span>קשה</button>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- REVIEW PHASE -->
+            <div id="at-phase-review" class="at-hidden">
+                <div class="at-review-wrap">
+                    <div class="at-review-header">
+                        <button class="at-review-back-btn" onclick="showPhase('results')">← חזרה לתוצאות</button>
+                        <div class="at-review-title">סקירת שאלות</div>
+                    </div>
+                    <div id="at-review-list"></div>
                 </div>
             </div>
 
