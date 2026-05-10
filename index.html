@@ -1880,12 +1880,14 @@ function VocabScreen({ t, allWords, progress, onBack, onStartFlash }) {
   const [unitFilter, setUnitFilter] = useState('הכל');
   const [levelFilter, setLevelFilter] = useState('הכל');
   const [statusFilter, setStatusFilter] = useState('הכל');
+  const [search, setSearch] = useState('');
 
   const known = allWords.filter(w => progress[w.en]?.status === 'known').length;
   const learning = allWords.filter(w => progress[w.en]?.status === 'learning').length;
   const unseen = allWords.length - known - learning;
 
   const filteredWords = useMemo(() => {
+    const q = search.trim().toLowerCase();
     return allWords.filter(w => {
       if (unitFilter !== 'הכל' && w.unit !== unitFilter) return false;
       if (levelFilter !== 'הכל' && w.level !== levelFilter) return false;
@@ -1893,9 +1895,11 @@ function VocabScreen({ t, allWords, progress, onBack, onStartFlash }) {
       if (statusFilter === 'יודע' && s !== 'known') return false;
       if (statusFilter === 'ללמידה' && s !== 'learning') return false;
       if (statusFilter === 'טרם' && s !== 'unseen') return false;
+      if (q && !w.en.toLowerCase().includes(q) && !w.he.includes(q)) return false;
       return true;
-    }).slice(0, 100);
-  }, [allWords, progress, unitFilter, levelFilter, statusFilter]);
+    });
+  }, [allWords, progress, unitFilter, levelFilter, statusFilter, search]);
+  const displayWords = filteredWords.slice(0, 100);
 
   const sColors = { known: t.c.statusGreen, learning: t.accent, unseen: t.c.muted };
   const sLabels = { known: 'יודע', learning: 'ללמידה', unseen: 'טרם' };
@@ -1922,17 +1926,28 @@ function VocabScreen({ t, allWords, progress, onBack, onStartFlash }) {
           <div key={u} onClick={() => setUnitFilter(u)} style={{ flexShrink:0, padding:'7px 14px', borderRadius:9999, fontSize:12.5, fontWeight:600, background: unitFilter===u ? t.c.ink : (t.dark ? 'rgba(255,255,255,0.06)' : 'rgba(20,20,30,0.05)'), color: unitFilter===u ? t.c.surface : t.c.ink2, cursor:'pointer' }}>{u}</div>
         )}
       </div>
-      <div style={{ display:'flex', gap:6, marginBottom:14, overflowX:'auto', paddingBottom:4 }}>
+      <div style={{ display:'flex', gap:6, marginBottom:10, overflowX:'auto', paddingBottom:4 }}>
         {['הכל','Basic','Medium','Extreme'].map(l =>
           <Pill key={l} t={t} selected={levelFilter===l} onClick={() => setLevelFilter(l)}>{l}</Pill>
         )}
       </div>
+      <div style={{ position:'relative', marginBottom:4 }}>
+        <span style={{ position:'absolute', right:12, top:'50%', transform:'translateY(-50%)', pointerEvents:'none', display:'flex' }}>
+          <Icon name="search" size={16} color={t.c.muted}/>
+        </span>
+        <input
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          placeholder="חיפוש מילה..."
+          style={{ width:'100%', boxSizing:'border-box', padding:'10px 38px 10px 12px', borderRadius:12, border:`1px solid ${t.c.line}`, background:t.c.surface2, color:t.c.ink, fontSize:14, fontFamily:t.fontHe, outline:'none', direction:'rtl' }}
+        />
+      </div>
     </div>
-    <div style={{ padding:`0 ${t.pad}px 110px`, overflow:'auto' }}>
-      {filteredWords.length === 0
+    <div style={{ padding:`0 ${t.pad}px 130px`, overflow:'auto' }}>
+      {displayWords.length === 0
         ? <div style={{ textAlign:'center', padding:'40px 0', color:t.c.muted, fontSize:14 }}>אין מילים תואמות</div>
         : <Card t={t} pad={0} style={{ overflow:'hidden' }}>
-          {filteredWords.map((w, i) => {
+          {displayWords.map((w, i) => {
             const s = progress[w.en]?.status || 'unseen';
             return <React.Fragment key={w.en+w.unit+i}>
               {i > 0 && <Divider t={t}/>}
@@ -1952,6 +1967,13 @@ function VocabScreen({ t, allWords, progress, onBack, onStartFlash }) {
             </React.Fragment>;
           })}
         </Card>}
+      {filteredWords.length > 100 && <div style={{ textAlign:'center', padding:'10px 0', fontSize:12, color:t.c.muted }}>מציג 100 מתוך {filteredWords.length} מילים</div>}
+    </div>
+    <div style={{ position:'fixed', bottom:0, left:0, right:0, padding:`14px ${t.pad}px 36px`, background: t.dark ? 'linear-gradient(180deg,transparent,oklch(0.16 0.006 250) 30%)' : 'linear-gradient(180deg,transparent,oklch(0.975 0.006 85) 30%)' }}>
+      <PrimaryButton t={t} large onClick={() => onStartFlash(filteredWords)} style={filteredWords.length === 0 ? { opacity:0.5, pointerEvents:'none' } : {}}>
+        התחל כרטיסיות <span style={{ opacity:0.75, fontSize:12, fontFamily:t.fontEn }}>({filteredWords.length})</span>
+        <Icon name="chevron-left" size={16} color="#fff" stroke={2.2}/>
+      </PrimaryButton>
     </div>
   </div>;
 }
@@ -2022,12 +2044,14 @@ function ExamScreen({ t, mode, onBack, onFinish }) {
   const questions = useMemo(() => {
     if (mode === 'sc') return shuffle(sentenceQuestions).slice(0, 12);
     if (mode === 'rs') return shuffle(restatementQuestions).slice(0, 10);
-    return [...shuffle(sentenceQuestions).slice(0, 13), ...shuffle(restatementQuestions).slice(0, 6), ...shuffle(sentenceQuestions).slice(13, 17)];
+    const sc = shuffle(sentenceQuestions);
+    return [...sc.slice(0, 13), ...shuffle(restatementQuestions).slice(0, 6), ...sc.slice(13, 17)];
   }, [mode]);
 
   const [qIndex, setQIndex] = useState(0);
   const [answered, setAnswered] = useState(null);
   const [results, setResults] = useState([]);
+  const resultsRef = useRef([]);
 
   const q = questions[qIndex];
   const isRS = mode === 'rs' || (mode === 'mixed' && qIndex >= 13 && qIndex < 19);
@@ -2037,8 +2061,10 @@ function ExamScreen({ t, mode, onBack, onFinish }) {
   const answer = (chosen) => {
     if (answered) return;
     const isRight = chosen === q.correct;
+    const entry = { correct: isRight, type: isRS ? 'rs' : 'sc' };
+    resultsRef.current = [...resultsRef.current, entry];
     setAnswered({ chosen, correct: q.correct, explanation: q.explanation });
-    setResults(r => [...r, { correct: isRight, type: isRS ? 'rs' : 'sc' }]);
+    setResults(r => [...r, entry]);
   };
 
   const next = () => {
@@ -2046,12 +2072,12 @@ function ExamScreen({ t, mode, onBack, onFinish }) {
     if (qIndex < questions.length - 1) {
       setQIndex(qIndex + 1);
     } else {
-      const r = [...results];
+      const r = resultsRef.current;
       onFinish({ results: r, scResults: r.filter(x => x.type==='sc'), rsResults: r.filter(x => x.type==='rs') });
     }
   };
 
-  return <div className="screen-in" style={{ height:'100%', display:'flex', flexDirection:'column', fontFamily:t.fontHe }}>
+  return <div className="screen-in" style={{ position:'relative', height:'100%', display:'flex', flexDirection:'column', fontFamily:t.fontHe }}>
     <div style={{ padding:`12px ${t.pad}px 8px`, display:'flex', alignItems:'center', gap:10, flexShrink:0 }}>
       <NavPill t={t} onClick={onBack}><Icon name="x" size={17} color={t.c.ink2} stroke={2}/></NavPill>
       <div style={{ flex:1 }}>
@@ -2294,7 +2320,7 @@ function ReadingScreen({ t, passage, onBack }) {
     </div>;
   }
 
-  return <div className="screen-in" style={{ height:'100%', display:'flex', flexDirection:'column', fontFamily:t.fontHe }}>
+  return <div className="screen-in" style={{ position:'relative', height:'100%', display:'flex', flexDirection:'column', fontFamily:t.fontHe }}>
     <div style={{ display:'flex', alignItems:'center', gap:12, padding:`12px ${t.pad}px 10px`, flexShrink:0 }}>
       <NavPill t={t} onClick={onBack}><Icon name="x" size={17} color={t.c.ink2} stroke={2}/></NavPill>
       <div style={{ flex:1 }}>
@@ -2540,7 +2566,6 @@ function App() {
   const t = makeTokens({ palette:'ink', dark:isDark });
 
   useEffect(() => {
-    document.body.style.background = t.c.bg;
     fetch('./ai_completed_data.json').then(r => r.json()).then(setAiData).catch(() => {});
     const splash = document.getElementById('splash');
     if (splash) {
@@ -2549,6 +2574,7 @@ function App() {
       localStorage.setItem('isFirstLoadComplete_V2','true');
     }
   }, []);
+  useEffect(() => { document.body.style.background = t.c.bg; }, [t.c.bg]);
 
   const allWords = useMemo(() => {
     const map = new Map();
