@@ -5639,8 +5639,10 @@ function playNextDrivingWord() {
                 // Progress bar
                 $id('at-progress-fill').style.width = `${(s.currentQ / totalInSection) * 100}%`;
 
-                // Hide type badge and num
-                $id('at-q-type-badge').style.display = 'none';
+                // Section name badge
+                const badge = $id('at-q-type-badge');
+                badge.textContent = TYPE_LABELS[sec.type] || sec.type;
+                badge.style.display = 'block';
                 $id('at-q-num').style.display = 'none';
 
                 // Passage (RC only)
