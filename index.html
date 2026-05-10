@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>אמירנט Pro</title>
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#007aff">
+    <meta name="theme-color" content="#1d5fb5">
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #f0f4ff; --text-color: #0f172a; --card-front-bg: #ffffff; --card-back-bg: #f8fafc;
-            --btn-primary: #7c3aed; --btn-text: #ffffff; --panel-bg: #ffffff; --border-color: #e2e8f0;
-            --shadow: 0 4px 20px rgba(124,58,237,0.08), 0 1px 3px rgba(0,0,0,0.04);
-            --radius: 20px; --bottom-nav-height: 70px;
-            --glow: rgba(124,58,237,0.3);
+            --bg-color: #f5f2eb; --text-color: #1a1714; --card-front-bg: #ffffff; --card-back-bg: #faf8f4;
+            --btn-primary: #1d5fb5; --btn-text: #ffffff; --panel-bg: #ffffff; --border-color: #e5e0d6;
+            --shadow: 0 1px 0 rgba(20,20,40,0.025), 0 6px 22px -12px rgba(20,20,40,0.10);
+            --radius: 22px; --bottom-nav-height: 70px;
+            --glow: rgba(29,95,181,0.22);
+            --accent-soft: #edf2fb;
+            --font-he: 'Heebo', -apple-system, system-ui, sans-serif;
+            --font-serif: 'Crimson Pro', Georgia, serif;
         }
         body.dark-mode {
-            --bg-color: #0a0a1a; --text-color: #e2e8f0; --card-front-bg: rgba(255,255,255,0.06); --card-back-bg: rgba(255,255,255,0.03);
-            --btn-primary: #7c3aed; --panel-bg: rgba(255,255,255,0.05); --border-color: rgba(255,255,255,0.1);
-            --shadow: 0 8px 32px rgba(0,0,0,0.5); --glow: rgba(124,58,237,0.5);
+            --bg-color: #131211; --text-color: #f0ece4; --card-front-bg: rgba(255,255,255,0.06); --card-back-bg: rgba(255,255,255,0.03);
+            --btn-primary: #4a88d8; --panel-bg: rgba(255,255,255,0.06); --border-color: rgba(255,255,255,0.1);
+            --shadow: 0 8px 32px rgba(0,0,0,0.5); --glow: rgba(74,136,216,0.4);
+            --accent-soft: rgba(74,136,216,0.18);
         }
-        body { font-family: 'Rubik', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 20px 15px calc(var(--bottom-nav-height) + 20px) 15px; display: flex; flex-direction: column; align-items: center; transition: background-color 0.3s; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-he); background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 20px 15px calc(var(--bottom-nav-height) + 20px) 15px; display: flex; flex-direction: column; align-items: center; transition: background-color 0.3s; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         
         .screen-title { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 20px 0; text-align: center; font-weight: 800; font-size: 28px; letter-spacing: -0.5px; }
         .title-icon { width: 32px; height: 32px; stroke: var(--btn-primary); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
@@ -44,7 +48,7 @@
         .top-dropdown { position: absolute; top: 60px; left: 0; background: var(--panel-bg); border: 2px solid var(--border-color); border-radius: 16px; padding: 10px; display: none; flex-direction: column; gap: 5px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); width: 240px; }
         body.dark-mode .top-dropdown { box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
         .top-dropdown.show { display: flex; animation: fadeIn 0.2s ease-out; }
-        .dropdown-item { display: flex; align-items: center; justify-content: flex-start; gap: 12px; background: none; border: none; font-family: 'Rubik', sans-serif; font-size: 15px; font-weight: 600; color: var(--text-color); cursor: pointer; width: 100%; text-align: right; padding: 12px; border-radius: 10px; transition: 0.2s; }
+        .dropdown-item { display: flex; align-items: center; justify-content: flex-start; gap: 12px; background: none; border: none; font-family: var(--font-he); font-size: 15px; font-weight: 600; color: var(--text-color); cursor: pointer; width: 100%; text-align: right; padding: 12px; border-radius: 10px; transition: 0.2s; }
         .dropdown-item:hover { background: var(--bg-color); }
         .dropdown-item svg { width: 20px; height: 20px; stroke: #64748b; flex-shrink: 0; }
         body.dark-mode .dropdown-item svg { stroke: #94a3b8; }
@@ -59,7 +63,7 @@
         .dropdown-group { display:none; flex-direction:column; gap:2px; padding-bottom:2px; }
         .dropdown-group.open { display:flex; }
 
-        .stats-panel { width: 100%; max-width: 500px; background: var(--panel-bg); padding: 14px 16px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 14px; box-sizing: border-box; border: 2px solid var(--border-color); }
+        .stats-panel { width: 100%; max-width: 500px; background: var(--panel-bg); padding: 14px 16px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 14px; box-sizing: border-box; border: 1px solid var(--border-color); }
         .streak { font-size: 18px; font-weight: 800; color: #ff9800; text-align: center; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 6px;}
         .streak svg { stroke: #ff9800; fill: #ffedd5; width:18px; height:22px; }
         .progress-bar-bg { width: 100%; height: 8px; background-color: #e2e8f0; border-radius: 10px; overflow: hidden; margin-bottom: 8px;}
@@ -82,7 +86,7 @@
         .chart-label { font-size: 11px; color: #64748b; font-weight: 600; }
         body.dark-mode .chart-label { color: #94a3b8; }
         .chart-val { font-size: 11px; color: var(--text-color); font-weight: 800; margin-bottom: -2px;}
-		.toggle-chart-btn { background: none; border: none; color: var(--btn-primary); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 15px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 6px; opacity: 0.8; transition: 0.2s; }
+		.toggle-chart-btn { background: none; border: none; color: var(--btn-primary); font-family: var(--font-he); font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 15px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 6px; opacity: 0.8; transition: 0.2s; }
         .toggle-chart-btn:hover { opacity: 1; }
         .toggle-chart-btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.5; fill: none;}
         .app-screen { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; }
@@ -105,11 +109,11 @@
         .vocab-action-btn.stack-mode-btn.active svg { stroke:#fff; }
         .search-container { position: relative; width: 100%; }
         .search-container svg { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); stroke: #94a3b8; }
-        .search-bar { width: 100%; padding: 14px 45px 14px 14px; font-size: 16px; font-family: 'Rubik', sans-serif; border-radius: 12px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); box-sizing: border-box; outline: none; transition: 0.2s;}
+        .search-bar { width: 100%; padding: 14px 45px 14px 14px; font-size: 16px; font-family: var(--font-he); border-radius: 12px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); box-sizing: border-box; outline: none; transition: 0.2s;}
         .search-bar:focus { border-color: var(--btn-primary); }
         
         .filters { display: flex; gap: 8px; flex-wrap: wrap; }
-        select, .action-btn-top { flex: 1; padding: 12px 8px; font-size: 13px; font-family: 'Rubik', sans-serif; border: 2px solid var(--border-color); border-radius: 10px; background: var(--panel-bg); color: var(--text-color); cursor: pointer; font-weight: 600; outline: none; box-shadow: var(--shadow);}
+        select, .action-btn-top { flex: 1; padding: 12px 8px; font-size: 13px; font-family: var(--font-he); border: 2px solid var(--border-color); border-radius: 10px; background: var(--panel-bg); color: var(--text-color); cursor: pointer; font-weight: 600; outline: none; box-shadow: var(--shadow);}
         .action-btn-top { background: var(--btn-primary); color: var(--btn-text); border: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: 0.2s;}
         .action-btn-top svg { stroke: white; width: 18px; height: 18px; }
         .action-btn-top:active { transform: scale(0.96); }
@@ -129,12 +133,12 @@
         .card-container.animating { transition: transform 0.25s ease-out, opacity 0.25s ease-out !important; }
         .card { width: 100%; height: 100%; position: relative; transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1); transform-style: preserve-3d; cursor: pointer; }
         .card.is-flipped { transform: rotateY(180deg); }
-        .card-face { width: 100%; height: 100%; position: absolute; top: 0; left: 0; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border-radius: 28px; box-shadow: var(--shadow); padding: 30px 20px; box-sizing: border-box; text-align: center; border: 2px solid var(--border-color); }
+        .card-face { width: 100%; height: 100%; position: absolute; top: 0; left: 0; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: space-between; border-radius: 28px; box-shadow: 0 1px 0 rgba(20,20,40,0.03), 0 8px 32px -10px rgba(20,20,40,0.12); padding: 30px 20px; box-sizing: border-box; text-align: center; border: 1px solid var(--border-color); }
         .card-front { background: var(--card-front-bg); transform: rotateY(0deg) translateZ(1px); z-index: 2; }
         .card-back { background: var(--card-back-bg); transform: rotateY(180deg) translateZ(1px); z-index: 1; }
         
         .word-container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 25px; }
-        .word { font-size: 36px; font-weight: 800; color: var(--text-color); margin: 0; line-height: 1.2; overflow-wrap: break-word; word-break: normal; max-width: 95%; text-align: center; }
+        .word { font-size: 40px; font-weight: 500; font-family: var(--font-serif); color: var(--text-color); margin: 0; line-height: 1.15; overflow-wrap: break-word; word-break: normal; max-width: 95%; text-align: center; letter-spacing: -0.01em; }
         .word-translation-drive { font-size: 26px; font-weight: 700; color: #ff9800; margin-top: 15px; display: none; direction: rtl; animation: fadeIn 0.3s; }
         .translation { font-size: 32px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--text-color);}
         
@@ -150,7 +154,7 @@
 
         .hint-container { margin-top: auto; width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 10; position: relative;}
         .hint-buttons { display: flex; gap: 10px; width: 100%; justify-content: center; margin-bottom: 5px;}
-        .hint-btn { flex: 1; background: rgba(255, 193, 7, 0.15); color: #b08100; border: 2px solid rgba(255, 193, 7, 0.4); padding: 10px 5px; border-radius: 12px; font-weight: 700; font-family: 'Rubik', sans-serif; cursor: pointer; font-size: 13px; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;}
+        .hint-btn { flex: 1; background: rgba(255, 193, 7, 0.15); color: #b08100; border: 2px solid rgba(255, 193, 7, 0.4); padding: 10px 5px; border-radius: 12px; font-weight: 700; font-family: var(--font-he); cursor: pointer; font-size: 13px; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;}
         .hint-btn svg { stroke: #b08100; width: 16px; height: 16px;}
         .hint-btn:active { transform: scale(0.95); }
         body.dark-mode .hint-btn { color: #ffda6a; border-color: rgba(255, 218, 106, 0.4); }
@@ -169,70 +173,70 @@
         body.dark-mode .sentence-he { border-color: #334155; color: #94a3b8;}
 
         .edit-links { display: flex; gap: 15px; margin-top: 12px; justify-content: center; width: 100%;}
-        .hint-edit { font-size: 13px; color: #64748b; text-decoration: none; font-weight: 600; cursor: pointer; background: none; border: none; opacity: 0.8; transition: 0.2s; font-family: 'Rubik', sans-serif; display: flex; align-items: center; gap: 4px;}
+        .hint-edit { font-size: 13px; color: #64748b; text-decoration: none; font-weight: 600; cursor: pointer; background: none; border: none; opacity: 0.8; transition: 0.2s; font-family: var(--font-he); display: flex; align-items: center; gap: 4px;}
         .hint-edit svg { width: 14px; height: 14px; stroke: #64748b;}
         .hint-edit:hover, .hint-edit:hover svg { color: var(--btn-primary); stroke: var(--btn-primary); opacity: 1;}.action-btns { display: flex; gap: 6px; width: 100%; justify-content: space-between; align-items: center; direction: ltr; }
-        .btn-know, .btn-dontknow { flex: 1; height: 55px; font-size: 15px; font-family: 'Rubik', sans-serif; border-radius: 28px; border: none; color: white; cursor: pointer; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 5px; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15); padding: 0; min-width: 0; }
+        .btn-know, .btn-dontknow { flex: 1; height: 55px; font-size: 15px; font-family: var(--font-he); border-radius: 28px; border: none; color: white; cursor: pointer; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 5px; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15); padding: 0; min-width: 0; }
         .btn-know { background-color: #34c759; } .btn-know svg { stroke: white; width: 18px; height: 18px; flex-shrink: 0; } .btn-know:active { transform: scale(0.95); background-color: #2db34f;}
         .btn-dontknow { background-color: #ff3b30; } .btn-dontknow svg { stroke: white; width: 18px; height: 18px; flex-shrink: 0; } .btn-dontknow:active { transform: scale(0.95); background-color: #e6352b;}
-        .btn-stack { background-color: rgba(88, 86, 214, 0.1); color: #5856d6; width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: 'Rubik', sans-serif; border-radius: 22px; border: 2px solid rgba(88, 86, 214, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
-        .btn-stack:active { transform: scale(0.95); background-color: rgba(88, 86, 214, 0.2); border-color: #5856d6; }
-        .btn-stack span.stack-count { font-size: 13px; font-weight: 800; background: #5856d6; color: white; padding: 2px 8px; border-radius: 10px; margin-right: 5px; }
-        body.dark-mode .btn-stack { background-color: rgba(165, 165, 255, 0.1); color: #a5a5ff; border-color: rgba(165, 165, 255, 0.4); }
+        .btn-stack { background-color: rgba(29, 95, 181, 0.1); color: var(--btn-primary); width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: var(--font-he); border-radius: 22px; border: 2px solid rgba(29, 95, 181, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
+        .btn-stack:active { transform: scale(0.95); background-color: rgba(29, 95, 181, 0.2); border-color: var(--btn-primary); }
+        .btn-stack span.stack-count { font-size: 13px; font-weight: 800; background: var(--btn-primary); color: white; padding: 2px 8px; border-radius: 10px; margin-right: 5px; }
+        body.dark-mode .btn-stack { background-color: rgba(74, 136, 216, 0.1); color: #a5a5ff; border-color: rgba(74, 136, 216, 0.4); }
         body.dark-mode .btn-stack span.stack-count { background: #a5a5ff; color: #1e293b; }
 
-        .stack-mode-btn { width: 100%; padding: 15px 20px; margin-bottom: 20px; border-radius: 16px; border: 2px solid #5856d6; background: rgba(88, 86, 214, 0.1); color: #5856d6; font-size: 18px; font-weight: 800; font-family: 'Rubik', sans-serif; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow); box-sizing: border-box; }
-        .stack-mode-btn.active { background: #5856d6; color: white; animation: pulseStack 2s infinite; }
+        .stack-mode-btn { width: 100%; padding: 15px 20px; margin-bottom: 20px; border-radius: 16px; border: 2px solid var(--btn-primary); background: rgba(29, 95, 181, 0.1); color: var(--btn-primary); font-size: 18px; font-weight: 800; font-family: var(--font-he); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow); box-sizing: border-box; }
+        .stack-mode-btn.active { background: var(--btn-primary); color: white; animation: pulseStack 2s infinite; }
         .stack-mode-btn svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 2.5; fill: none; flex-shrink: 0; }
-        .stack-badge { background: #5856d6; color: white; padding: 4px 12px; border-radius: 12px; font-size: 15px; margin-right: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;}
-        .stack-mode-btn.active .stack-badge { background: white; color: #5856d6; }
-        @keyframes pulseStack { 0% { box-shadow: 0 0 0 0 rgba(88, 86, 214, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(88, 86, 214, 0); } 100% { box-shadow: 0 0 0 0 rgba(88, 86, 214, 0); } }
-        body.dark-mode .stack-mode-btn { background: rgba(88, 86, 214, 0.2); color: #a5a5ff; border-color: #a5a5ff; }
-        body.dark-mode .stack-mode-btn.active { background: #5856d6; color: white; border-color: #5856d6; }
+        .stack-badge { background: var(--btn-primary); color: white; padding: 4px 12px; border-radius: 12px; font-size: 15px; margin-right: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;}
+        .stack-mode-btn.active .stack-badge { background: white; color: var(--btn-primary); }
+        @keyframes pulseStack { 0% { box-shadow: 0 0 0 0 rgba(29, 95, 181, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(29, 95, 181, 0); } 100% { box-shadow: 0 0 0 0 rgba(29, 95, 181, 0); } }
+        body.dark-mode .stack-mode-btn { background: rgba(29, 95, 181, 0.2); color: #a5a5ff; border-color: #a5a5ff; }
+        body.dark-mode .stack-mode-btn.active { background: var(--btn-primary); color: white; border-color: var(--btn-primary); }
 
         .side-btn { width: 50px; height: 50px; border-radius: 25px; background: var(--panel-bg); border: 2px solid var(--border-color); display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: var(--shadow); flex-shrink: 0; transition: 0.2s;}
         .side-btn svg { stroke: #64748b; width: 22px; height: 22px; flex-shrink: 0; } 
         body.dark-mode .side-btn svg { stroke: #94a3b8; }
         .side-btn:active { transform: scale(0.9); }.action-btns-wrapper { display: flex; flex-direction: column; gap: 12px; width: 100%; }
         .action-btns { display: flex; gap: 15px; width: 100%; justify-content: space-between; align-items: center; direction: ltr; }
-        .btn-know, .btn-dontknow { flex: 1; height: 60px; font-size: 19px; font-family: 'Rubik', sans-serif; border-radius: 30px; border: none; color: white; cursor: pointer; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.15);}
-        .btn-know { background-color: #34c759; } .btn-know svg { stroke: white; } .btn-know:active { transform: scale(0.95); background-color: #2db34f;}
-        .btn-dontknow { background-color: #ff3b30; } .btn-dontknow svg { stroke: white; } .btn-dontknow:active { transform: scale(0.95); background-color: #e6352b;}
+        .btn-know, .btn-dontknow { flex: 1; height: 56px; font-size: 17px; font-family: var(--font-he); border-radius: 9999px; border: none; color: white; cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.18s; letter-spacing: 0.01em;}
+        .btn-know { background-color: #28a745; box-shadow: 0 6px 20px -6px rgba(40,167,69,0.55); } .btn-know svg { stroke: white; } .btn-know:active { transform: scale(0.96); background-color: #22913c; box-shadow: none;}
+        .btn-dontknow { background-color: #dc3545; box-shadow: 0 6px 20px -6px rgba(220,53,69,0.55); } .btn-dontknow svg { stroke: white; } .btn-dontknow:active { transform: scale(0.96); background-color: #c62f3d; box-shadow: none;}
         
-        .btn-stack { background-color: rgba(88, 86, 214, 0.1); color: #5856d6; width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: 'Rubik', sans-serif; border-radius: 22px; border: 2px solid rgba(88, 86, 214, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
-        .btn-stack:active { transform: scale(0.95); background-color: rgba(88, 86, 214, 0.2); border-color: #5856d6; }
-        .btn-stack span.stack-count { font-size: 13px; font-weight: 800; background: #5856d6; color: white; padding: 2px 8px; border-radius: 10px; margin-right: 5px; }
-        body.dark-mode .btn-stack { background-color: rgba(165, 165, 255, 0.1); color: #a5a5ff; border-color: rgba(165, 165, 255, 0.4); }
+        .btn-stack { background-color: rgba(29, 95, 181, 0.1); color: var(--btn-primary); width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: var(--font-he); border-radius: 22px; border: 2px solid rgba(29, 95, 181, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
+        .btn-stack:active { transform: scale(0.95); background-color: rgba(29, 95, 181, 0.2); border-color: var(--btn-primary); }
+        .btn-stack span.stack-count { font-size: 13px; font-weight: 800; background: var(--btn-primary); color: white; padding: 2px 8px; border-radius: 10px; margin-right: 5px; }
+        body.dark-mode .btn-stack { background-color: rgba(74, 136, 216, 0.1); color: #a5a5ff; border-color: rgba(74, 136, 216, 0.4); }
         body.dark-mode .btn-stack span.stack-count { background: #a5a5ff; color: #1e293b; }
 
-        .stack-mode-btn { width: 100%; padding: 15px 20px; margin-bottom: 20px; border-radius: 16px; border: 2px solid #5856d6; background: rgba(88, 86, 214, 0.1); color: #5856d6; font-size: 18px; font-weight: 800; font-family: 'Rubik', sans-serif; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow); box-sizing: border-box; }
-        .stack-mode-btn.active { background: #5856d6; color: white; animation: pulseStack 2s infinite; }
+        .stack-mode-btn { width: 100%; padding: 15px 20px; margin-bottom: 20px; border-radius: 16px; border: 2px solid var(--btn-primary); background: rgba(29, 95, 181, 0.1); color: var(--btn-primary); font-size: 18px; font-weight: 800; font-family: var(--font-he); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow); box-sizing: border-box; }
+        .stack-mode-btn.active { background: var(--btn-primary); color: white; animation: pulseStack 2s infinite; }
         .stack-mode-btn svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 2.5; fill: none; flex-shrink: 0; }
-        .stack-badge { background: #5856d6; color: white; padding: 4px 12px; border-radius: 12px; font-size: 15px; margin-right: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;}
-        .stack-mode-btn.active .stack-badge { background: white; color: #5856d6; }
-        @keyframes pulseStack { 0% { box-shadow: 0 0 0 0 rgba(88, 86, 214, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(88, 86, 214, 0); } 100% { box-shadow: 0 0 0 0 rgba(88, 86, 214, 0); } }
-        body.dark-mode .stack-mode-btn { background: rgba(88, 86, 214, 0.2); color: #a5a5ff; border-color: #a5a5ff; }
-        body.dark-mode .stack-mode-btn.active { background: #5856d6; color: white; border-color: #5856d6; }
+        .stack-badge { background: var(--btn-primary); color: white; padding: 4px 12px; border-radius: 12px; font-size: 15px; margin-right: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;}
+        .stack-mode-btn.active .stack-badge { background: white; color: var(--btn-primary); }
+        @keyframes pulseStack { 0% { box-shadow: 0 0 0 0 rgba(29, 95, 181, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(29, 95, 181, 0); } 100% { box-shadow: 0 0 0 0 rgba(29, 95, 181, 0); } }
+        body.dark-mode .stack-mode-btn { background: rgba(29, 95, 181, 0.2); color: #a5a5ff; border-color: #a5a5ff; }
+        body.dark-mode .stack-mode-btn.active { background: var(--btn-primary); color: white; border-color: var(--btn-primary); }
 
         .side-btn { width: 60px; height: 60px; border-radius: 30px; background: var(--panel-bg); border: 2px solid var(--border-color); display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: var(--shadow); flex-shrink: 0; transition: 0.2s;}
         .side-btn svg { stroke: #64748b; width: 24px; height: 24px; } body.dark-mode .side-btn svg { stroke: #94a3b8; }
         .side-btn:active { transform: scale(0.9); }
 
         #quiz-section { width: 100%; display: none; flex-direction: column; align-items: center; }
-        .quiz-question { font-size: 34px; font-weight: 800; margin-bottom: 25px; text-align: center; direction: ltr; background: var(--panel-bg); padding: 30px; border-radius: var(--radius); width: 100%; box-shadow: var(--shadow); box-sizing: border-box; border: 2px solid var(--border-color); color: var(--text-color);}
-        .quiz-options { display: flex; flex-direction: column; gap: 14px; width: 100%; }
-        .quiz-btn { padding: 20px; font-size: 19px; font-family: 'Rubik', sans-serif; border-radius: 16px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); cursor: pointer; transition: 0.2s; font-weight: 700; box-shadow: var(--shadow);}
+        .quiz-question { font-size: 38px; font-weight: 500; font-family: var(--font-serif); letter-spacing: -0.01em; margin-bottom: 25px; text-align: center; direction: ltr; background: var(--panel-bg); padding: 30px; border-radius: var(--radius); width: 100%; box-shadow: var(--shadow); box-sizing: border-box; border: 1px solid var(--border-color); color: var(--text-color);}
+        .quiz-options { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+        .quiz-btn { padding: 18px 20px; font-size: 17px; font-family: var(--font-serif); border-radius: 18px; border: 1px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); cursor: pointer; transition: 0.18s; font-weight: 500; box-shadow: var(--shadow); letter-spacing: -0.005em;}
         .quiz-btn.correct { background: #34c759 !important; color: white !important; border-color: #34c759; }
         .quiz-btn.wrong { background: #ff3b30 !important; color: white !important; border-color: #ff3b30; }
 
         /* רשימה */
         #list-section { width: 100%; display: none; flex-direction: column; gap: 12px; max-height: 65vh; overflow-y: auto; padding-right: 5px; }
-        .list-item { display: flex; justify-content: space-between; align-items: center; background: var(--panel-bg); padding: 15px; border-radius: 16px; border: 2px solid var(--border-color); box-shadow: var(--shadow); gap: 10px;}
+        .list-item { display: flex; justify-content: space-between; align-items: center; background: var(--panel-bg); padding: 15px; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow); gap: 10px;}
         .list-words { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; text-align: right;}
-        .list-en { font-weight: 800; font-size: 18px; direction: ltr; text-align: left; color: var(--text-color); white-space: normal; word-break: break-word;}
+        .list-en { font-weight: 500; font-size: 20px; font-family: var(--font-serif); direction: ltr; text-align: left; color: var(--text-color); white-space: normal; word-break: break-word; letter-spacing: -0.005em;}
         .list-he { font-size: 15px; color: #64748b; font-weight: 600; text-align: left; direction: rtl; word-break: break-word;}
         .list-btn-group { display: flex; gap: 8px; flex-shrink: 0; align-items: center; justify-content: flex-end;}
-        .list-btn { padding: 10px 14px; border-radius: 12px; border: none; font-weight: 800; font-family: 'Rubik', sans-serif; cursor: pointer; font-size: 13px; color: white; transition: 0.2s; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; gap: 6px; width: 95px; box-sizing: border-box;}
+        .list-btn { padding: 10px 14px; border-radius: 12px; border: none; font-weight: 800; font-family: var(--font-he); cursor: pointer; font-size: 13px; color: white; transition: 0.2s; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; gap: 6px; width: 95px; box-sizing: border-box;}
         .list-btn svg { width: 18px; height: 18px; stroke: white; stroke-width: 2.5; fill: none; flex-shrink:0;}
         .list-btn.known { background-color: #34c759; } .list-btn.learning { background-color: #ff3b30; } .list-btn.unseen { background-color: #94a3b8; }
         .delete-btn { background-color: #ff3b30; color: white; border: none; border-radius: 12px; padding: 10px; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: var(--shadow); width: 40px; box-sizing: border-box;}
@@ -247,11 +251,11 @@
         .text-desc { font-size: 14px; color: #64748b; margin: 0; font-weight: 600; direction: rtl;}
         
         #active-reading { display: none; flex-direction: column; gap: 20px; width: 100%; }
-        .back-to-texts { background: var(--panel-bg); border: 2px solid var(--border-color); color: var(--text-color); border-radius: 14px; font-family: 'Rubik'; font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; box-shadow: var(--shadow); transition: 0.2s; width: fit-content; margin-bottom: 10px;}
+        .back-to-texts { background: var(--panel-bg); border: 2px solid var(--border-color); color: var(--text-color); border-radius: 14px; font-family: var(--font-he); font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; box-shadow: var(--shadow); transition: 0.2s; width: fit-content; margin-bottom: 10px;}
         .back-to-texts:active { transform: scale(0.95); }
         .back-to-texts svg { width: 18px; height: 18px; stroke: var(--text-color); }
         
-        .reading-content-box { background: var(--panel-bg); border: 2px solid var(--border-color); border-radius: 20px; padding: 25px; box-shadow: var(--shadow); direction: ltr; text-align: left; font-size: 17px; line-height: 1.7; color: var(--text-color); position: relative;}
+        .reading-content-box { background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 20px; padding: 25px; box-shadow: var(--shadow); direction: ltr; text-align: left; font-size: 18px; line-height: 1.7; color: var(--text-color); position: relative; font-family: var(--font-serif); font-weight: 400;}
         .reading-content-box h3 { margin-top: 0; margin-bottom: 20px; color: var(--btn-primary); font-size: 26px; border-bottom: 2px solid var(--border-color); padding-bottom: 15px;}
         
         /* Tooltip */
@@ -263,7 +267,7 @@
         .question-box { background: var(--panel-bg); border: 2px solid var(--border-color); border-radius: 20px; padding: 25px; box-shadow: var(--shadow); direction: ltr; text-align: left;}
         .q-text { font-size: 19px; font-weight: 800; margin: 0 0 20px 0; color: var(--text-color); line-height: 1.4;}
         .q-options { display: flex; flex-direction: column; gap: 12px; }
-        .q-opt-btn { padding: 16px; border: 2px solid var(--border-color); border-radius: 14px; background: var(--bg-color); color: var(--text-color); font-family: 'Rubik'; font-size: 16px; font-weight: 600; text-align: left; cursor: pointer; transition: 0.2s;}
+        .q-opt-btn { padding: 16px; border: 2px solid var(--border-color); border-radius: 14px; background: var(--bg-color); color: var(--text-color); font-family: var(--font-he); font-size: 16px; font-weight: 600; text-align: left; cursor: pointer; transition: 0.2s;}
         .q-opt-btn:hover:not(:disabled) { border-color: var(--btn-primary); background: #f0f7ff; }
         body.dark-mode .q-opt-btn:hover:not(:disabled) { background: #1e3a8a; }
         .q-opt-btn:disabled { cursor: default; }
@@ -283,17 +287,17 @@
         /* ניסוח מחדש */
         #restatements-screen { display: none; width: 100%; max-width: 600px; flex-direction: column; gap: 20px; padding-bottom: 20px; }
         .sentence-q-card { background: var(--panel-bg); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); border: 2px solid var(--border-color); margin-bottom: 15px; direction: ltr; text-align: left; position: relative;}
-        .sentence-text-q { font-size: 19px; font-weight: 700; color: var(--text-color); margin-bottom: 20px; line-height: 1.5; margin-top: 30px;}
+        .sentence-text-q { font-size: 21px; font-weight: 500; font-family: var(--font-serif); color: var(--text-color); margin-bottom: 20px; line-height: 1.55; margin-top: 30px; letter-spacing: 0;}
 
-        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; height: var(--bottom-nav-height); background: var(--panel-bg); border-top: 2px solid var(--border-color); display: flex; justify-content: space-around; align-items: center; z-index: 1000; padding-bottom: env(safe-area-inset-bottom); box-shadow: 0 -4px 20px rgba(0,0,0,0.05);}
-        .nav-item { flex: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: none; border: none; cursor: pointer; color: #94a3b8; font-family: 'Rubik'; font-size: 13px; font-weight: 700; transition: 0.2s; padding: 0;}
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; height: var(--bottom-nav-height); background: var(--panel-bg); border-top: 1px solid var(--border-color); display: flex; justify-content: space-around; align-items: center; z-index: 1000; padding-bottom: env(safe-area-inset-bottom); box-shadow: 0 -4px 20px rgba(0,0,0,0.04);}
+        .nav-item { flex: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: none; border: none; cursor: pointer; color: #9a9590; font-family: var(--font-he); font-size: 13px; font-weight: 600; transition: 0.2s; padding: 0;}
         .nav-item svg { stroke: currentColor; width: 24px; height: 24px;}
         .nav-item.active { color: var(--btn-primary); }
-        .nav-item.active svg { stroke: var(--btn-primary); fill: rgba(0, 122, 255, 0.1);}
+        .nav-item.active svg { stroke: var(--btn-primary); fill: var(--accent-soft);}
 
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);}
         .modal-content { background: var(--panel-bg); padding: 30px; border-radius: 24px; width: 340px; display: flex; flex-direction: column; gap: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); box-sizing: border-box;}
-        .modal-content input, .modal-content select, .modal-content textarea { padding: 16px; font-size: 16px; border-radius: 14px; border: 2px solid var(--border-color); background: var(--bg-color); color: var(--text-color); font-family: 'Rubik', sans-serif; font-weight: 600; outline:none; box-sizing: border-box; width: 100%;}
+        .modal-content input, .modal-content select, .modal-content textarea { padding: 16px; font-size: 16px; border-radius: 14px; border: 2px solid var(--border-color); background: var(--bg-color); color: var(--text-color); font-family: var(--font-he); font-weight: 600; outline:none; box-sizing: border-box; width: 100%;}
         .modal-content input:focus, .modal-content textarea:focus { border-color: var(--btn-primary); }
         #printArea { display: none; }
         
@@ -302,12 +306,12 @@
 
         /* הסבר AI */
         .ai-explanation-wrap { margin-top:16px; margin-bottom:8px; }
-        .ai-loading-box { display:flex; align-items:center; gap:10px; padding:14px 16px; background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(139,92,246,.08)); border:1.5px solid rgba(139,92,246,.25); border-radius:14px; direction:rtl; font-size:14px; color:#7c3aed; font-weight:700; }
+        .ai-loading-box { display:flex; align-items:center; gap:10px; padding:14px 16px; background:linear-gradient(135deg,rgba(29,95,181,.08),rgba(29,95,181,.08)); border:1.5px solid rgba(29,95,181,.25); border-radius:14px; direction:rtl; font-size:14px; color:var(--btn-primary); font-weight:700; }
         @keyframes spin { to { transform:rotate(360deg); } }
-        .ai-spinner { width:20px; height:20px; border:3px solid rgba(139,92,246,.2); border-top-color:#7c3aed; border-radius:50%; animation:spin .8s linear infinite; flex-shrink:0; }
+        .ai-spinner { width:20px; height:20px; border:3px solid rgba(29,95,181,.2); border-top-color:var(--btn-primary); border-radius:50%; animation:spin .8s linear infinite; flex-shrink:0; }
         @keyframes aiSlideIn { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
-        .ai-explanation-box { animation:aiSlideIn .35s ease-out; background:linear-gradient(135deg,rgba(99,102,241,.06),rgba(139,92,246,.06)); border:1.5px solid rgba(139,92,246,.22); border-radius:14px; padding:16px 18px; font-size:14px; line-height:1.7; color:var(--text-color); direction:rtl; text-align:right; }
-        .ai-explanation-box h4 { margin:0 0 6px; font-size:14px; color:#7c3aed; display:flex; align-items:center; gap:6px; }
+        .ai-explanation-box { animation:aiSlideIn .35s ease-out; background:linear-gradient(135deg,rgba(29,95,181,.06),rgba(29,95,181,.06)); border:1.5px solid rgba(29,95,181,.22); border-radius:14px; padding:16px 18px; font-size:14px; line-height:1.7; color:var(--text-color); direction:rtl; text-align:right; }
+        .ai-explanation-box h4 { margin:0 0 6px; font-size:14px; color:var(--btn-primary); display:flex; align-items:center; gap:6px; }
         .ai-explanation-box .ai-section { margin-bottom:12px; }
         .ai-explanation-box .ai-section:last-child { margin-bottom:0; }
         .ai-error-box { padding:12px 14px; background:rgba(255,59,48,.07); border:1.5px solid rgba(255,59,48,.3); border-radius:12px; font-size:13px; color:#ff3b30; direction:rtl; }
@@ -345,11 +349,11 @@
         /* גריד השלמת משפטים */
         .sc-progress-box { background: var(--panel-bg); border: 2px solid var(--border-color); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 16px; box-shadow: var(--shadow); }
         .sc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; width: 100%; margin-bottom: 16px; }
-        .sc-cell { aspect-ratio: 1; border-radius: 12px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.15s; box-shadow: var(--shadow); padding: 0; }
+        .sc-cell { aspect-ratio: 1; border-radius: 12px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: var(--font-he); font-size: 13px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.15s; box-shadow: var(--shadow); padding: 0; }
         .sc-cell:active { transform: scale(0.93); }
         .sc-cell.sc-correct { background: #34c759; color: white; border-color: #34c759; }
         .sc-cell.sc-wrong { background: #ff3b30; color: white; border-color: #ff3b30; }
-        .sc-reset-btn { width: 100%; padding: 12px; border-radius: 12px; border: 2px solid #ff3b30; background: rgba(255,59,48,0.07); color: #ff3b30; font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+        .sc-reset-btn { width: 100%; padding: 12px; border-radius: 12px; border: 2px solid #ff3b30; background: rgba(255,59,48,0.07); color: #ff3b30; font-family: var(--font-he); font-size: 14px; font-weight: 700; cursor: pointer; transition: 0.2s; }
         .sc-reset-btn:hover { background: rgba(255,59,48,0.15); }
         .sc-nav-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; direction: rtl; }
         .sc-nav-btn { width: 44px; height: 44px; border-radius: 22px; background: var(--panel-bg); border: 2px solid var(--border-color); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow); transition: 0.2s; flex-shrink: 0; }
@@ -359,7 +363,7 @@
         .tts-btn { background: none; border: 2px solid var(--border-color); border-radius: 10px; font-size: 17px; width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.15s; flex-shrink: 0; line-height: 1; font-family: sans-serif; }
         .tts-btn:hover { background: var(--bg-color); border-color: var(--btn-primary); }
         .tts-btn.speaking { border-color: var(--btn-primary); background: rgba(0,122,255,0.1); }
-        .tts-row-btn { width: 100%; height: 38px; font-size: 14px; font-weight: 700; font-family: 'Rubik', sans-serif; color: var(--text-color); margin-bottom: 8px; border-radius: 10px; }
+        .tts-row-btn { width: 100%; height: 38px; font-size: 14px; font-weight: 700; font-family: var(--font-he); color: var(--text-color); margin-bottom: 8px; border-radius: 10px; }
 
         /* ===== PREMIUM DESIGN ===== */
         @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
@@ -440,7 +444,7 @@
 
         /* Stack mode gradient button */
         body.dark-mode .stack-mode-btn { background: linear-gradient(135deg, rgba(88,86,214,0.25), rgba(124,58,237,0.25)); border-color: rgba(165,165,255,0.45); box-shadow: 0 0 20px rgba(88,86,214,0.15); color: #a5a5ff; }
-        body.dark-mode .stack-mode-btn.active { background: linear-gradient(135deg, #5856d6, #7c3aed); box-shadow: 0 0 30px rgba(88,86,214,0.55); color: white; border-color: transparent; }
+        body.dark-mode .stack-mode-btn.active { background: linear-gradient(135deg, var(--btn-primary), #7c3aed); box-shadow: 0 0 30px rgba(88,86,214,0.55); color: white; border-color: transparent; }
 
         /* btn-stack mini button */
         body.dark-mode .btn-stack { background: rgba(165,165,255,0.12); color: #c4b5fd; border-color: rgba(165,165,255,0.35); }
@@ -527,7 +531,7 @@
         .timer-setting-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .timer-setting-label { font-size: 15px; font-weight: 800; color: var(--text-color); }
         .timer-dur-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-        .timer-preset-btn { padding: 7px 11px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.15s; }
+        .timer-preset-btn { padding: 7px 11px; border-radius: 10px; border: 2px solid var(--border-color); background: var(--panel-bg); color: var(--text-color); font-family: var(--font-he); font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.15s; }
         .timer-preset-btn.active { background: var(--btn-primary); color: white; border-color: var(--btn-primary); }
         .timer-preset-btn:hover:not(.active) { border-color: var(--btn-primary); }
         .timer-stepper { display:flex; align-items:center; direction:ltr; gap:3px; }
@@ -561,7 +565,7 @@
         .dash-enter-btn { width:100%; max-width:460px; padding:18px; border-radius:16px; border:none; background:linear-gradient(135deg,#7c3aed,#2563eb); color:white; font-family:'Rubik',sans-serif; font-size:18px; font-weight:800; cursor:pointer; box-shadow:0 4px 20px rgba(124,58,237,0.4); transition:0.2s; display:flex; align-items:center; justify-content:center; gap:10px; }
         .dash-enter-btn:active { transform:scale(0.97); }
         .dash-test-card { width:100%; max-width:460px; margin-top:12px; padding:15px 18px; border-radius:16px; border:2px solid var(--border-color); background:var(--panel-bg); font-family:'Rubik',sans-serif; cursor:pointer; display:flex; align-items:center; gap:14px; box-shadow:var(--shadow); transition:0.18s; text-align:right; }
-        .dash-test-card:hover { border-color:#7c3aed55; }
+        .dash-test-card:hover { border-color:var(--btn-primary)55; }
         .dash-test-card:active { transform:scale(0.97); }
         .dash-test-icon { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,#7c3aed,#2563eb); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
         .dash-test-info { flex:1; }
@@ -621,7 +625,7 @@
             position: fixed; inset: 0; z-index: 9999;
             background: var(--bg-color);
             display: flex; flex-direction: column;
-            font-family: 'Rubik', sans-serif;
+            font-family: var(--font-he);
             overflow: hidden;
         }
 
@@ -675,7 +679,7 @@
         .at-api-input {
             width: 100%; box-sizing: border-box;
             border: 1.5px solid var(--border-color); border-radius: 10px;
-            padding: 12px 14px; font-size: 14px; font-family: 'Rubik', sans-serif;
+            padding: 12px 14px; font-size: 14px; font-family: var(--font-he);
             background: var(--bg-color); color: var(--text-color);
             margin-bottom: 14px; outline: none; transition: border 0.2s;
         }
@@ -684,7 +688,7 @@
             width: 100%; padding: 14px; border-radius: 12px; border: none;
             background: linear-gradient(135deg,#7c3aed,#2563eb);
             color: #fff; font-size: 16px; font-weight: 800;
-            font-family: 'Rubik', sans-serif; cursor: pointer; transition: opacity 0.2s;
+            font-family: var(--font-he); cursor: pointer; transition: opacity 0.2s;
         }
         .at-btn-primary:hover { opacity: 0.88; }
         .at-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -792,7 +796,7 @@
             background: linear-gradient(135deg,#7c3aed,#2563eb);
             color: #fff; border: none; border-radius: 12px;
             padding: 12px 28px; font-size: 15px; font-weight: 800;
-            font-family: 'Rubik', sans-serif; cursor: pointer; transition: opacity 0.18s;
+            font-family: var(--font-he); cursor: pointer; transition: opacity 0.18s;
         }
         .at-next-btn:disabled { opacity: 0; pointer-events: none; }
         .at-next-btn:not(:disabled):hover { opacity: 0.88; }
@@ -882,7 +886,7 @@
             flex: 1; padding: 13px; border-radius: 12px;
             border: 2px solid var(--border-color); background: none;
             color: var(--text-color); font-size: 14px; font-weight: 700;
-            font-family: 'Rubik', sans-serif; cursor: pointer; transition: border-color 0.18s;
+            font-family: var(--font-he); cursor: pointer; transition: border-color 0.18s;
         }
         .at-btn-outline:hover { border-color: #7c3aed; }
         /* ===== EXAM MODE — hide all chrome during test ===== */
@@ -918,7 +922,7 @@
         .at-feedback-btn {
             flex: 1; padding: 10px 4px; border-radius: 12px;
             border: 2px solid var(--border-color); background: var(--panel-bg);
-            color: var(--text-color); font-family: 'Rubik', sans-serif;
+            color: var(--text-color); font-family: var(--font-he);
             font-size: 12px; font-weight: 700; cursor: pointer; transition: 0.18s;
             display: flex; flex-direction: column; align-items: center; gap: 3px;
         }
@@ -970,9 +974,9 @@
         .tour-tdesc { font-size: 13.5px; line-height: 1.65; color: #64748b; margin-bottom: 16px; white-space: pre-line; }
         body.dark-mode .tour-tdesc { color: #94a3b8; }
         .tour-btns { display: flex; gap: 7px; align-items: center; }
-        .tour-btn-next { flex: 1; padding: 11px; border-radius: 12px; border: none; background: var(--btn-primary); color: #fff; font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer; }
-        .tour-btn-back { padding: 11px 13px; border-radius: 12px; border: 2px solid var(--border-color); background: none; font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 700; color: var(--text-color); cursor: pointer; }
-        .tour-btn-skip { background: none; border: none; font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 700; color: #94a3b8; cursor: pointer; padding: 0 2px; white-space: nowrap; }
+        .tour-btn-next { flex: 1; padding: 11px; border-radius: 12px; border: none; background: var(--btn-primary); color: #fff; font-family: var(--font-he); font-size: 14px; font-weight: 800; cursor: pointer; }
+        .tour-btn-back { padding: 11px 13px; border-radius: 12px; border: 2px solid var(--border-color); background: none; font-family: var(--font-he); font-size: 14px; font-weight: 700; color: var(--text-color); cursor: pointer; }
+        .tour-btn-skip { background: none; border: none; font-family: var(--font-he); font-size: 12px; font-weight: 700; color: #94a3b8; cursor: pointer; padding: 0 2px; white-space: nowrap; }
         .tour-hidden { display: none !important; }
         /* ===== END PRODUCT TOUR ===== */
     </style>
@@ -1179,7 +1183,7 @@
             </div>
             <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
             <div class="stats-text"><span id="statsKnown" class="stat-known">יודע: 0</span><span id="statsLearning" class="stat-learning">ללמידה: 0</span><span id="statsUnseen" class="stat-unseen">טרם מוין: 0</span></div>
-            <button id="reviewYesterdayBtn" onclick="reviewYesterday()" style="display:none; margin-top:12px; width:100%; padding:11px 16px; border-radius:12px; border:none; background:linear-gradient(135deg,#5856d6,#007aff); color:white; font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; align-items:center; justify-content:center; gap:8px; box-shadow:0 3px 10px rgba(88,86,214,0.35); transition:0.2s;"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <span id="reviewYesterdayCount"></span></button>
+            <button id="reviewYesterdayBtn" onclick="reviewYesterday()" style="display:none; margin-top:12px; width:100%; padding:11px 16px; border-radius:12px; border:none; background:linear-gradient(135deg,var(--btn-primary),#007aff); color:white; font-family:'Rubik',sans-serif; font-size:14px; font-weight:700; cursor:pointer; align-items:center; justify-content:center; gap:8px; box-shadow:0 3px 10px rgba(88,86,214,0.35); transition:0.2s;"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <span id="reviewYesterdayCount"></span></button>
 <button class="toggle-chart-btn" onclick="toggleChart()" id="chartToggleBtn"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> הצג גרף התקדמות</button>
             <div class="chart-container" id="weeklyChart" style="display: none;"></div>			
         </div>
@@ -1215,7 +1219,7 @@
 		<div class="card-container" id="swipeCardContainer">
                 <div class="card" id="flashcard">
                     <div class="card-face card-front">
-                        <div class="badges"><div class="badge" id="badgeLevel" style="background:#5856d6;">Level</div><div class="badge" id="badgeUnit" style="background:#8e8e93;">Unit</div></div>
+                        <div class="badges"><div class="badge" id="badgeLevel" style="background:var(--btn-primary);">Level</div><div class="badge" id="badgeUnit" style="background:#8e8e93;">Unit</div></div>
                         <div class="status-badge" id="statusFront"></div>
                         <div class="word-container">
                             <div class="word" id="wordFront" dir="ltr">Word</div>
@@ -1444,7 +1448,7 @@
             }, delay);
         })();
 
-        function fireConfetti() { const colors = ['#34c759', '#007aff', '#ff3b30', '#ffcc00', '#5856d6']; for(let i=0; i<40; i++) { let conf = document.createElement('div'); conf.className = 'confetti-particle'; conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; conf.style.left = Math.random() * 100 + 'vw'; conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; document.body.appendChild(conf); setTimeout(() => conf.remove(), 3500); } }
+        function fireConfetti() { const colors = ['#34c759', '#007aff', '#ff3b30', '#ffcc00', 'var(--btn-primary)']; for(let i=0; i<40; i++) { let conf = document.createElement('div'); conf.className = 'confetti-particle'; conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; conf.style.left = Math.random() * 100 + 'vw'; conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; document.body.appendChild(conf); setTimeout(() => conf.remove(), 3500); } }
         function toggleTopMenu() { document.getElementById('topMenu').classList.toggle('show'); }
         document.addEventListener('click', function(e) { if(!e.target.closest('.top-nav-container')) { let menu = document.getElementById('topMenu'); if(menu && menu.classList.contains('show')) menu.classList.remove('show'); } });
 
@@ -3421,7 +3425,7 @@ function generateAIContent(word) {
                     "When making a decision, emotional motives may have a more significant role than logical reasons."
                 ],
                 correct: 3,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 4 נכונה:</strong> "may have a more significant role" = "may have a more important role". שומרת על מילת ההסתייגות "may" ועל ההשוואה לחשיבה הלוגית — כל המרכיבים נשמרו.</p><p>✗ <strong>תשובה 1:</strong> "יש יותר מניעים רגשיים מסיבות לוגיות" — מדברת על כמות המניעים, לא על חשיבות תפקידם. שינוי משמעות מהותי.</p><p>✗ <strong>תשובה 2:</strong> מוסיפה הערכה שאינה במקור — "החלטות רגשיות טובות פחות". המשפט המקורי לא הביע שיפוט ערכי.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — טוענת שהחשיבה הלוגית משתפרת הודות לרגש. המקור אמר שהרגש חשוב <em>יותר</em> מהחשיבה הלוגית, לא שהחשיבה מרוויחה מהרגש.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בשאלות ניסוח מחדש — בדוק שלושה דברים: (א) מילות הסתייגות ("may") נשמרו, (ב) כיוון ההשוואה נכון, (ג) לא נוסף מידע שאינו במקור.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 4 נכונה:</strong> "may have a more significant role" = "may have a more important role". שומרת על מילת ההסתייגות "may" ועל ההשוואה לחשיבה הלוגית — כל המרכיבים נשמרו.</p><p>✗ <strong>תשובה 1:</strong> "יש יותר מניעים רגשיים מסיבות לוגיות" — מדברת על כמות המניעים, לא על חשיבות תפקידם. שינוי משמעות מהותי.</p><p>✗ <strong>תשובה 2:</strong> מוסיפה הערכה שאינה במקור — "החלטות רגשיות טובות פחות". המשפט המקורי לא הביע שיפוט ערכי.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — טוענת שהחשיבה הלוגית משתפרת הודות לרגש. המקור אמר שהרגש חשוב <em>יותר</em> מהחשיבה הלוגית, לא שהחשיבה מרוויחה מהרגש.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בשאלות ניסוח מחדש — בדוק שלושה דברים: (א) מילות הסתייגות ("may") נשמרו, (ב) כיוון ההשוואה נכון, (ג) לא נוסף מידע שאינו במקור.</p></div>`
             },
             {
                 q: "Russia is the largest exporter of diamonds in the world.",
@@ -3432,7 +3436,7 @@ function generateAIContent(word) {
                     "Diamonds and pearls exported from Russia are the largest in the world."
                 ],
                 correct: 1,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "אין מדינה שמייצאת כמו רוסיה" = שקיפות לוגית מדויקת ל"מייצאת הגדולה ביותר". הניסוח שונה לחלוטין אך המשמעות זהה.</p><p>✗ <strong>תשובה 1:</strong> "המדינה הגדולה ביותר שמייצאת יהלומים" — מתייחסת לגודל המדינה (territory), לא לנפח הייצוא. החלפת מושג.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה את המילה "large" (יהלומים גדולים) שאינה במקור. המקור עוסק בכמות הייצוא, לא בגודל האבנים.</p><p>✗ <strong>תשובה 4:</strong> מוסיפה "pearls" (פנינים) שכלל לא הוזכרו, ומשנה את הנושא לגודל האבנים במקום נפח הייצוא.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב להוספות (מילים חדשות: "large", "pearls") ולהחלפות (גודל מדינה ≠ נפח ייצוא). גם שינוי קטן פוסל ניסוח מחדש.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "אין מדינה שמייצאת כמו רוסיה" = שקיפות לוגית מדויקת ל"מייצאת הגדולה ביותר". הניסוח שונה לחלוטין אך המשמעות זהה.</p><p>✗ <strong>תשובה 1:</strong> "המדינה הגדולה ביותר שמייצאת יהלומים" — מתייחסת לגודל המדינה (territory), לא לנפח הייצוא. החלפת מושג.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה את המילה "large" (יהלומים גדולים) שאינה במקור. המקור עוסק בכמות הייצוא, לא בגודל האבנים.</p><p>✗ <strong>תשובה 4:</strong> מוסיפה "pearls" (פנינים) שכלל לא הוזכרו, ומשנה את הנושא לגודל האבנים במקום נפח הייצוא.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב להוספות (מילים חדשות: "large", "pearls") ולהחלפות (גודל מדינה ≠ נפח ייצוא). גם שינוי קטן פוסל ניסוח מחדש.</p></div>`
             },
             {
                 q: "African-American civil rights activist Rosa Parks bravely challenged discriminatory laws, which defined strict segregation between races on public facilities in the United States, leading to a revolution in the legal status of African-Americans.",
@@ -3443,7 +3447,7 @@ function generateAIContent(word) {
                     "Rosa Parks was able to change the legal status of African-Americans in the United States by demonstrating the racism behind the discriminatory laws."
                 ],
                 correct: 1,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "heroically defied" = "bravely challenged", "initiating a revolution" = "leading to a revolution". כל מרכיבי הליבה נשמרו בדיוק.</p><p>✗ <strong>תשובה 1:</strong> "החוקים המפלים היו הדאגה העיקרית שלה" — המקור לא אמר שהחוקים היו הדאגה העיקרית; הוא אמר שהיא אתגרה אותם. עיוות הכוונה.</p><p>✗ <strong>תשובה 3:</strong> "מעטים התנגדו לגזענות מלבד רוזה פארקס" — מידע זה כלל אינו במשפט המקורי. המצאת עובדה.</p><p>✗ <strong>תשובה 4:</strong> "על ידי הדגמת הגזענות שמאחורי החוקים" — משנה את המנגנון. המקור: היא אתגרה את החוקים עצמם. תשובה 4: היא הדגימה את הגזענות שמאחוריהם. הבדל מהותי.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים ארוכים — זהה את פועל הליבה (challenged) ואת התוצאה (revolution). הניסוח הנכון ישמור על שניהם מבלי לשנות את המנגנון.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "heroically defied" = "bravely challenged", "initiating a revolution" = "leading to a revolution". כל מרכיבי הליבה נשמרו בדיוק.</p><p>✗ <strong>תשובה 1:</strong> "החוקים המפלים היו הדאגה העיקרית שלה" — המקור לא אמר שהחוקים היו הדאגה העיקרית; הוא אמר שהיא אתגרה אותם. עיוות הכוונה.</p><p>✗ <strong>תשובה 3:</strong> "מעטים התנגדו לגזענות מלבד רוזה פארקס" — מידע זה כלל אינו במשפט המקורי. המצאת עובדה.</p><p>✗ <strong>תשובה 4:</strong> "על ידי הדגמת הגזענות שמאחורי החוקים" — משנה את המנגנון. המקור: היא אתגרה את החוקים עצמם. תשובה 4: היא הדגימה את הגזענות שמאחוריהם. הבדל מהותי.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים ארוכים — זהה את פועל הליבה (challenged) ואת התוצאה (revolution). הניסוח הנכון ישמור על שניהם מבלי לשנות את המנגנון.</p></div>`
             },
             {
                 q: "Industrial waste emitted from large factories constitute a major source of pollution in nearby rivers.",
@@ -3454,7 +3458,7 @@ function generateAIContent(word) {
                     "Industrial waste is a negligible source of pollution in rivers that reside near large factories."
                 ],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "רוב הזיהום בנהרות נובע מהפסולת התעשייתית" = "פסולת תעשייתית מהווה מקור עיקרי לזיהום". שקיפות מדויקת עם שינוי מבנה בלבד.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הסיבתיות — "המפעלים פולטים פסולת על ידי זיהום נהרות". המקור: הפסולת גורמת לזיהום. תשובה 2: הזיהום הוא האמצעי לפליטת הפסולת. היפוך לוגי.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה מידע זמני ("היו הראשונים שנמצאו") שאינו קיים כלל במקור.</p><p>✗ <strong>תשובה 4:</strong> "מקור זניח" — הפוך ישיר ל"מקור עיקרי" (major source). ניגוד מוחלט.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> תחילה — פסול מיד תשובות שמשתמשות בניגוד של מילת מפתח (major ↔ negligible). אחר כך — בדוק היפוך סיבתיות. שתי שגיאות קלאסיות אלו מופיעות בכל מבחן.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "רוב הזיהום בנהרות נובע מהפסולת התעשייתית" = "פסולת תעשייתית מהווה מקור עיקרי לזיהום". שקיפות מדויקת עם שינוי מבנה בלבד.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הסיבתיות — "המפעלים פולטים פסולת על ידי זיהום נהרות". המקור: הפסולת גורמת לזיהום. תשובה 2: הזיהום הוא האמצעי לפליטת הפסולת. היפוך לוגי.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה מידע זמני ("היו הראשונים שנמצאו") שאינו קיים כלל במקור.</p><p>✗ <strong>תשובה 4:</strong> "מקור זניח" — הפוך ישיר ל"מקור עיקרי" (major source). ניגוד מוחלט.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> תחילה — פסול מיד תשובות שמשתמשות בניגוד של מילת מפתח (major ↔ negligible). אחר כך — בדוק היפוך סיבתיות. שתי שגיאות קלאסיות אלו מופיעות בכל מבחן.</p></div>`
             },
             {
                 q: "Persian conqueror Cyrus the Great spared those who yielded to him.",
@@ -3465,7 +3469,7 @@ function generateAIContent(word) {
                     "Cyrus the Great adored those who yielded him their allegiance."
                 ],
                 correct: 1,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "did not kill" = המשמעות המדויקת של "spared". "surrendered" = "yielded". שקיפות לקסיקלית מושלמת ללא תוספות.</p><p>✗ <strong>תשובה 1:</strong> מוסיפה "enemies" ו-"defeated by Persia" שאינם במקור. המקור אמר פשוט "those who yielded" — ללא הגדרה מי הם.</p><p>✗ <strong>תשובה 3:</strong> "בגד במי שנתן בו אמון" — הפוך לחלוטין מהמשמעות המקורית. כיוון שגוי ב-180 מעלות.</p><p>✗ <strong>תשובה 4:</strong> "adored" חורג מ-"spared" — לא להרוג מישהו ≠ לאהוב אותו. בנוסף, "yielded allegiance" שונה מ-"yielded to him".</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים קצרים הפועל הוא הכל. חפש שקיפות ישירה (spared = did not kill), לא הגזמה (adored) ולא הפוך (betrayed). בדוק גם שלא נוספו מתארים למושא ("enemies", "defeated by Persia").</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 2 נכונה:</strong> "did not kill" = המשמעות המדויקת של "spared". "surrendered" = "yielded". שקיפות לקסיקלית מושלמת ללא תוספות.</p><p>✗ <strong>תשובה 1:</strong> מוסיפה "enemies" ו-"defeated by Persia" שאינם במקור. המקור אמר פשוט "those who yielded" — ללא הגדרה מי הם.</p><p>✗ <strong>תשובה 3:</strong> "בגד במי שנתן בו אמון" — הפוך לחלוטין מהמשמעות המקורית. כיוון שגוי ב-180 מעלות.</p><p>✗ <strong>תשובה 4:</strong> "adored" חורג מ-"spared" — לא להרוג מישהו ≠ לאהוב אותו. בנוסף, "yielded allegiance" שונה מ-"yielded to him".</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים קצרים הפועל הוא הכל. חפש שקיפות ישירה (spared = did not kill), לא הגזמה (adored) ולא הפוך (betrayed). בדוק גם שלא נוספו מתארים למושא ("enemies", "defeated by Persia").</p></div>`
             },
             {
                 q: "Forgiveness is an attribute of the strong.",
@@ -3476,307 +3480,307 @@ function generateAIContent(word) {
                     "It is tough to forgive strong people."
                 ],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "שחרור רגשות טינה דורש כוח רב" — פרפרזה של "סליחה היא תכונת החזקים": מי שמסוגל לסלוח הוא חזק. שמירה מדויקת על הרעיון.</p><p>✗ <strong>תשובה 2:</strong> מחליפה סובייקט ואובייקט — "חזקים זוכים לסליחה" במקום "חזקים סולחים". המקור: חזקים הם המוחלים, לא המקבלים.</p><p>✗ <strong>תשובה 3:</strong> "לסלוח לחזקים היא תכונה" — מצמצמת את הסליחה לסליחה ספציפית לחזקים, בעוד המקור מדבר על סליחה בכלל כתכונה של חזקים.</p><p>✗ <strong>תשובה 4:</strong> "קשה לסלוח לאנשים חזקים" — שוב מכוונת את הסליחה כלפי חזקים, ולא מחזקים. שגיאת כיוון זהה לתשובה 2.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים פילוסופיים קצרים — זהה מי הסובייקט ומי האובייקט. "חזקים סולחים" (=המקור) שונה לחלוטין מ-"סולחים לחזקים" (=שגויות 2, 3, 4).</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "שחרור רגשות טינה דורש כוח רב" — פרפרזה של "סליחה היא תכונת החזקים": מי שמסוגל לסלוח הוא חזק. שמירה מדויקת על הרעיון.</p><p>✗ <strong>תשובה 2:</strong> מחליפה סובייקט ואובייקט — "חזקים זוכים לסליחה" במקום "חזקים סולחים". המקור: חזקים הם המוחלים, לא המקבלים.</p><p>✗ <strong>תשובה 3:</strong> "לסלוח לחזקים היא תכונה" — מצמצמת את הסליחה לסליחה ספציפית לחזקים, בעוד המקור מדבר על סליחה בכלל כתכונה של חזקים.</p><p>✗ <strong>תשובה 4:</strong> "קשה לסלוח לאנשים חזקים" — שוב מכוונת את הסליחה כלפי חזקים, ולא מחזקים. שגיאת כיוון זהה לתשובה 2.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> במשפטים פילוסופיים קצרים — זהה מי הסובייקט ומי האובייקט. "חזקים סולחים" (=המקור) שונה לחלוטין מ-"סולחים לחזקים" (=שגויות 2, 3, 4).</p></div>`
             },
             {
                 q: "The government decided to reduce taxes in order to encourage economic growth.",
                 options: ["The government lowered taxes so that the economy would develop faster.","Economic growth caused the government to collect fewer taxes.","The government's decision to grow the economy resulted in higher taxes.","Reducing economic growth was the government's main tax strategy."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "reduce taxes to encourage growth" = "lowered taxes so economy would develop faster". הסיבה והמטרה נשמרו במדויק.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הסיבתיות — הצמיחה הכלכלית גרמה לפחות מסים, בעוד המקור אומר ההפך.</p><p>✗ <strong>תשובה 3:</strong> אומרת שהמסים עלו, בעוד המקור אומר שהם ירדו.</p><p>✗ <strong>תשובה 4:</strong> הממשלה רצתה לעודד צמיחה, לא להפחיתה — היפוך מוחלט.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "in order to" = מטרה. חפש תשובה שמשמרת את הסיבה (הפחתת מסים) ואת המטרה (צמיחה כלכלית) בכיוון הנכון.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "reduce taxes to encourage growth" = "lowered taxes so economy would develop faster". הסיבה והמטרה נשמרו במדויק.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הסיבתיות — הצמיחה הכלכלית גרמה לפחות מסים, בעוד המקור אומר ההפך.</p><p>✗ <strong>תשובה 3:</strong> אומרת שהמסים עלו, בעוד המקור אומר שהם ירדו.</p><p>✗ <strong>תשובה 4:</strong> הממשלה רצתה לעודד צמיחה, לא להפחיתה — היפוך מוחלט.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "in order to" = מטרה. חפש תשובה שמשמרת את הסיבה (הפחתת מסים) ואת המטרה (צמיחה כלכלית) בכיוון הנכון.</p></div>`
             },
             {
                 q: "Despite the heavy rain, the football match was not cancelled.",
                 options: ["The football match took place even though it was raining heavily.","The football match was cancelled because of the heavy rain.","Heavy rain is the main reason football matches get cancelled.","The football players decided to play in the rain without permission."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "despite" = "even though" — שתיהן מביעות ניגוד. "was not cancelled" = "took place". שמירה מושלמת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה לגמרי — בוטלה בגלל הגשם, בעוד המקור אומר שלא בוטלה.</p><p>✗ <strong>תשובה 3:</strong> מדברת על כלל (גשם גורם לביטולים) ולא על האירוע הספציפי.</p><p>✗ <strong>תשובה 4:</strong> מוסיפה מידע שלא קיים — "ללא רשות". המקור לא הזכיר רשות.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד. חפש תשובה שמשמרת את הניגוד בין הגשם (בכל זאת) למשחק שהתקיים.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "despite" = "even though" — שתיהן מביעות ניגוד. "was not cancelled" = "took place". שמירה מושלמת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה לגמרי — בוטלה בגלל הגשם, בעוד המקור אומר שלא בוטלה.</p><p>✗ <strong>תשובה 3:</strong> מדברת על כלל (גשם גורם לביטולים) ולא על האירוע הספציפי.</p><p>✗ <strong>תשובה 4:</strong> מוסיפה מידע שלא קיים — "ללא רשות". המקור לא הזכיר רשות.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד. חפש תשובה שמשמרת את הניגוד בין הגשם (בכל זאת) למשחק שהתקיים.</p></div>`
             },
             {
                 q: "Scientists have discovered that regular physical exercise significantly reduces the risk of heart disease.",
                 options: ["Heart disease can be largely prevented through consistent physical activity.","Scientists who exercise regularly are less likely to get heart disease.","Physical exercise causes heart disease in some cases.","The risk of heart disease is not affected by lifestyle choices."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "reduces the risk" = "can be prevented". "regular" = "consistent". הרעיון המרכזי נשמר.</p><p>✗ <strong>תשובה 2:</strong> מדברת על מדענים ספציפית — המקור עוסק בכל אדם שמתאמן.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — פעילות גורמת למחלת לב.</p><p>✗ <strong>תשובה 4:</strong> סותרת לחלוטין את ממצאי המחקר.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לנושא המשפט — מי עושה מה למי. "exercise reduces risk" ≠ "scientists are less likely".</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "reduces the risk" = "can be prevented". "regular" = "consistent". הרעיון המרכזי נשמר.</p><p>✗ <strong>תשובה 2:</strong> מדברת על מדענים ספציפית — המקור עוסק בכל אדם שמתאמן.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — פעילות גורמת למחלת לב.</p><p>✗ <strong>תשובה 4:</strong> סותרת לחלוטין את ממצאי המחקר.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לנושא המשפט — מי עושה מה למי. "exercise reduces risk" ≠ "scientists are less likely".</p></div>`
             },
             {
                 q: "The museum offers free admission to children under the age of twelve.",
                 options: ["Children who are younger than twelve do not have to pay to enter the museum.","Children over twelve can enter the museum for free.","The museum charges a special fee for young children.","All visitors to the museum must pay an entrance fee."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "free admission" = "do not have to pay". "under twelve" = "younger than twelve". שקיפות לקסיקלית מדויקת.</p><p>✗ <strong>תשובה 2:</strong> מעל 12 — ההטבה היא לילדים מתחת ל-12, לא מעל.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — המוזיאון גובה דמי כניסה מיוחדים לילדים צעירים.</p><p>✗ <strong>תשובה 4:</strong> שגויה — ילדים נכנסים בחינם, לא כולם משלמים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בדוק מילות גיל בדיוק — under/over/above/below. under 12 = younger than 12, לא older than 12.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "free admission" = "do not have to pay". "under twelve" = "younger than twelve". שקיפות לקסיקלית מדויקת.</p><p>✗ <strong>תשובה 2:</strong> מעל 12 — ההטבה היא לילדים מתחת ל-12, לא מעל.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — המוזיאון גובה דמי כניסה מיוחדים לילדים צעירים.</p><p>✗ <strong>תשובה 4:</strong> שגויה — ילדים נכנסים בחינם, לא כולם משלמים.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בדוק מילות גיל בדיוק — under/over/above/below. under 12 = younger than 12, לא older than 12.</p></div>`
             },
             {
                 q: "Air pollution in major cities has reached dangerous levels due to increased traffic.",
                 options: ["The rise in the number of vehicles has made city air quality increasingly hazardous.","Dangerous traffic conditions have caused air pollution to decrease in cities.","Major cities have successfully reduced pollution by controlling traffic.","Air pollution affects traffic levels in large urban areas."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "increased traffic" = "rise in vehicles". "dangerous pollution levels" = "hazardous air quality". הכיוון הסיבתי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — זיהום ירד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — ערים הצליחו לצמצם זיהום.</p><p>✗ <strong>תשובה 4:</strong> הופכת את כיוון הסיבתיות — זיהום משפיע על תנועה, לא תנועה על זיהום.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "due to" = בגלל. בדוק מה הסיבה ומה התוצאה ואל תחליף ביניהן.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "increased traffic" = "rise in vehicles". "dangerous pollution levels" = "hazardous air quality". הכיוון הסיבתי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — זיהום ירד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — ערים הצליחו לצמצם זיהום.</p><p>✗ <strong>תשובה 4:</strong> הופכת את כיוון הסיבתיות — זיהום משפיע על תנועה, לא תנועה על זיהום.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "due to" = בגלל. בדוק מה הסיבה ומה התוצאה ואל תחליף ביניהן.</p></div>`
             },
             {
                 q: "The new law requires all employers to provide paid sick leave to their employees.",
                 options: ["According to the new legislation, workers are entitled to paid time off when ill.","Employees must now pay their employers when they take sick days.","The new law allows employers to decide whether to offer sick leave.","Workers who take sick leave will no longer receive payment under the new law."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "requires employers to provide" = "workers are entitled to". "paid sick leave" = "paid time off when ill". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — העובדים משלמים למעסיק.</p><p>✗ <strong>תשובה 3:</strong> שגויה — החוק מחייב, לא מאפשר לבחור ("requires" ≠ "allows").</p><p>✗ <strong>תשובה 4:</strong> הפוכה — העובדים לא יקבלו תשלום.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "requires" = חובה חוקית. "allows" = אפשרות. הבדל מהותי בין שתי המילים.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "requires employers to provide" = "workers are entitled to". "paid sick leave" = "paid time off when ill". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — העובדים משלמים למעסיק.</p><p>✗ <strong>תשובה 3:</strong> שגויה — החוק מחייב, לא מאפשר לבחור ("requires" ≠ "allows").</p><p>✗ <strong>תשובה 4:</strong> הפוכה — העובדים לא יקבלו תשלום.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "requires" = חובה חוקית. "allows" = אפשרות. הבדל מהותי בין שתי המילים.</p></div>`
             },
             {
                 q: "The invention of the printing press made books available to a much wider audience.",
                 options: ["Thanks to the printing press, many more people were able to access books.","The printing press was invented in order to make books more expensive.","Before the printing press, books were available to everyone.","The printing press reduced the number of books produced each year."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "wider audience" = "many more people". "available" = "able to access". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> שגויה — לא קשור למחיר. המקור עוסק בנגישות, לא עלות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לפני הדפוס ספרים לא היו נגישים לכולם.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הדפוס הגדיל את כמות הספרים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "wider audience" = נגישות לאנשים רבים יותר. אל תתבלבל בין נגישות לבין מחיר.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "wider audience" = "many more people". "available" = "able to access". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> שגויה — לא קשור למחיר. המקור עוסק בנגישות, לא עלות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לפני הדפוס ספרים לא היו נגישים לכולם.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הדפוס הגדיל את כמות הספרים.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "wider audience" = נגישות לאנשים רבים יותר. אל תתבלבל בין נגישות לבין מחיר.</p></div>`
             },
             {
                 q: "Volunteers who participated in the study showed greater levels of happiness than those who did not.",
                 options: ["People who volunteered were found to be happier than non-volunteers in the study.","The study showed that happiness leads people to become volunteers.","Non-volunteers reported higher levels of happiness than volunteers.","The study concluded that volunteering has no effect on happiness."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> ניסוח ישיר של אותו רעיון — מתנדבים מאושרים יותר מלא-מתנדבים.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — אושר גורם להתנדבות, לא התנדבות לאושר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה לגמרי — לא-מתנדבים מאושרים יותר.</p><p>✗ <strong>תשובה 4:</strong> סותרת את הממצא — להתנדבות אין השפעה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לכיוון הסיבתיות — מה גורם למה. "volunteering → happiness" ≠ "happiness → volunteering".</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> ניסוח ישיר של אותו רעיון — מתנדבים מאושרים יותר מלא-מתנדבים.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — אושר גורם להתנדבות, לא התנדבות לאושר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה לגמרי — לא-מתנדבים מאושרים יותר.</p><p>✗ <strong>תשובה 4:</strong> סותרת את הממצא — להתנדבות אין השפעה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לכיוון הסיבתיות — מה גורם למה. "volunteering → happiness" ≠ "happiness → volunteering".</p></div>`
             },
             {
                 q: "The company had to lay off several workers because its profits had declined sharply.",
                 options: ["A significant drop in earnings forced the company to dismiss some of its employees.","The company hired more workers after its profits decreased.","Several workers quit because the company's profits were too high.","The company's layoffs caused its profits to decline."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "lay off" = "dismiss". "profits declined sharply" = "significant drop in earnings". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — גייסו עובדים נוספים.</p><p>✗ <strong>תשובה 3:</strong> שגויה — עובדים עזבו בגלל רווחים גבוהים מדי.</p><p>✗ <strong>תשובה 4:</strong> הופכת סיבה ותוצאה — פיטורים גרמו לירידת רווחים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "lay off" = פיטורים על ידי המעסיק. "quit" = התפטרות העובד. הבדל מהותי.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "lay off" = "dismiss". "profits declined sharply" = "significant drop in earnings". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — גייסו עובדים נוספים.</p><p>✗ <strong>תשובה 3:</strong> שגויה — עובדים עזבו בגלל רווחים גבוהים מדי.</p><p>✗ <strong>תשובה 4:</strong> הופכת סיבה ותוצאה — פיטורים גרמו לירידת רווחים.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "lay off" = פיטורים על ידי המעסיק. "quit" = התפטרות העובד. הבדל מהותי.</p></div>`
             },
             {
                 q: "Despite being one of the smallest countries in the world, Singapore has one of the strongest economies.",
                 options: ["Singapore's economy is remarkably powerful for a country of its size.","Singapore's small size is the main reason for its strong economy.","Large countries tend to have stronger economies than Singapore.","Singapore's economy has been weakened by its small geographical size."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "despite small size + strong economy" = "remarkably powerful for its size". שמירה על הניגוד.</p><p>✗ <strong>תשובה 2:</strong> שגויה — הגודל הקטן גורם לכלכלה חזקה? המקור מציג ניגוד, לא סיבה.</p><p>✗ <strong>תשובה 3:</strong> שגויה — לא נאמר שמדינות גדולות חזקות יותר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הכלכלה חלשה בגלל הגודל.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד בין שתי עובדות שנראות סותרות. אל תהפוך את הניגוד לסיבתיות.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "despite small size + strong economy" = "remarkably powerful for its size". שמירה על הניגוד.</p><p>✗ <strong>תשובה 2:</strong> שגויה — הגודל הקטן גורם לכלכלה חזקה? המקור מציג ניגוד, לא סיבה.</p><p>✗ <strong>תשובה 3:</strong> שגויה — לא נאמר שמדינות גדולות חזקות יותר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הכלכלה חלשה בגלל הגודל.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד בין שתי עובדות שנראות סותרות. אל תהפוך את הניגוד לסיבתיות.</p></div>`
             },
             {
                 q: "Excessive consumption of sugar has been linked to a variety of serious health problems.",
                 options: ["Eating too much sugar can lead to numerous significant health issues.","Sugar consumption is beneficial when done in large quantities.","Health problems cause people to consume more sugar than usual.","Only children are affected by the negative consequences of eating sugar."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "excessive consumption" = "eating too much". "linked to health problems" = "can lead to health issues". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — צריכה גדולה מועילה.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — בעיות בריאות גורמות לאכילת סוכר.</p><p>✗ <strong>תשובה 4:</strong> מצמצמת לילדים בלבד — לא נאמר במקור.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "has been linked to" = קשר מוכח בין שני דברים. בדוק שהכיוון נשמר.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "excessive consumption" = "eating too much". "linked to health problems" = "can lead to health issues". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — צריכה גדולה מועילה.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — בעיות בריאות גורמות לאכילת סוכר.</p><p>✗ <strong>תשובה 4:</strong> מצמצמת לילדים בלבד — לא נאמר במקור.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "has been linked to" = קשר מוכח בין שני דברים. בדוק שהכיוון נשמר.</p></div>`
             },
             {
                 q: "The ancient Romans built an extensive network of roads that connected their vast empire.",
                 options: ["A large system of roads was constructed by the Romans to link the different parts of their empire.","The Roman Empire expanded because its enemies built roads for them.","Roads in ancient Rome were built exclusively for military purposes.","The Romans destroyed roads throughout their empire to prevent invasions."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "extensive network" = "large system". "connected" = "link". שינוי מבנה בלבד, משמעות זהה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — אויבים בנו. המקור: הרומאים בנו.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה מטרה שלא הוזכרה — "exclusively for military".</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הרסו דרכים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> אל תוסיף מידע שאינו במשפט המקורי — "exclusively", "military" הם תוספות לא מוצדקות.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "extensive network" = "large system". "connected" = "link". שינוי מבנה בלבד, משמעות זהה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — אויבים בנו. המקור: הרומאים בנו.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה מטרה שלא הוזכרה — "exclusively for military".</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הרסו דרכים.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> אל תוסיף מידע שאינו במשפט המקורי — "exclusively", "military" הם תוספות לא מוצדקות.</p></div>`
             },
             {
                 q: "Many species of animals are threatened with extinction due to the destruction of their natural habitats.",
                 options: ["The loss of natural environments is putting numerous animal species at risk of disappearing.","Animal species are destroying their own habitats, leading to extinction.","Extinct animals have managed to recover their natural habitats.","Only a small number of animal species are affected by habitat destruction."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "threatened with extinction" = "at risk of disappearing". "destruction of habitats" = "loss of environments". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת — בעלי חיים הורסים את בתי הגידול שלהם.</p><p>✗ <strong>תשובה 3:</strong> שגויה — בעלי חיים שנכחדו כבר לא יכולים לשחזר דבר.</p><p>✗ <strong>תשובה 4:</strong> מצמצמת ל"מעט מינים" — המקור אומר "רבים".</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "threatened with extinction" = בסכנת הכחדה, לא הכחדה ממשית. שים לב להבדל.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "threatened with extinction" = "at risk of disappearing". "destruction of habitats" = "loss of environments". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת — בעלי חיים הורסים את בתי הגידול שלהם.</p><p>✗ <strong>תשובה 3:</strong> שגויה — בעלי חיים שנכחדו כבר לא יכולים לשחזר דבר.</p><p>✗ <strong>תשובה 4:</strong> מצמצמת ל"מעט מינים" — המקור אומר "רבים".</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "threatened with extinction" = בסכנת הכחדה, לא הכחדה ממשית. שים לב להבדל.</p></div>`
             },
             {
                 q: "The rise of social media has made it easier than ever to spread false information rapidly.",
                 options: ["Social media platforms have significantly increased the speed at which misinformation can be distributed.","Social media was created specifically to prevent the spread of false information.","False information spread more rapidly before social media was invented.","Social media users are always able to identify and reject misinformation."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "easier to spread rapidly" = "increased the speed of distribution". "false information" = "misinformation". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — נוצרה למנוע מידע שגוי.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לפני הרשתות הפצה הייתה מהירה יותר.</p><p>✗ <strong>תשובה 4:</strong> אופטימית מדי ולא נאמר במקור.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "made it easier than ever" = שינוי לכיוון שלילי (הקלת הפצת מידע כוזב).</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "easier to spread rapidly" = "increased the speed of distribution". "false information" = "misinformation". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — נוצרה למנוע מידע שגוי.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לפני הרשתות הפצה הייתה מהירה יותר.</p><p>✗ <strong>תשובה 4:</strong> אופטימית מדי ולא נאמר במקור.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "made it easier than ever" = שינוי לכיוון שלילי (הקלת הפצת מידע כוזב).</p></div>`
             },
             {
                 q: "Children who read regularly tend to develop stronger language and communication skills.",
                 options: ["Regular reading habits in children are associated with improved language abilities.","Strong communication skills lead children to read more regularly.","Reading has no significant impact on children's language development.","Only children with strong language skills enjoy reading regularly."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "read regularly" = "regular reading habits". "stronger skills" = "improved abilities". שמירה על הקשר הסיבתי.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — כישורים גורמים לקריאה, לא קריאה לכישורים.</p><p>✗ <strong>תשובה 3:</strong> סותרת לחלוטין את המשפט המקורי.</p><p>✗ <strong>תשובה 4:</strong> הופכת — כישורים גורמים לקריאה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "tend to develop" = נטייה סטטיסטית, לא ודאות מוחלטת. חפש תשובה עם "associated with" או ניסוח דומה.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "read regularly" = "regular reading habits". "stronger skills" = "improved abilities". שמירה על הקשר הסיבתי.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — כישורים גורמים לקריאה, לא קריאה לכישורים.</p><p>✗ <strong>תשובה 3:</strong> סותרת לחלוטין את המשפט המקורי.</p><p>✗ <strong>תשובה 4:</strong> הופכת — כישורים גורמים לקריאה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "tend to develop" = נטייה סטטיסטית, לא ודאות מוחלטת. חפש תשובה עם "associated with" או ניסוח דומה.</p></div>`
             },
             {
                 q: "The bridge was closed to traffic after engineers discovered serious structural damage.",
                 options: ["Following the detection of major structural problems, the bridge was no longer open to vehicles.","Traffic caused the structural damage that led to the bridge being built.","Engineers opened the bridge after repairing the structural damage.","The bridge was closed because there was too much traffic crossing it."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "discovered" = "detection". "closed to traffic" = "no longer open to vehicles". סדר האירועים נשמר.</p><p>✗ <strong>תשובה 2:</strong> שגויה — תנועה גרמה לנזק ולבניית הגשר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — פתחו אחרי תיקון.</p><p>✗ <strong>תשובה 4:</strong> שגויה — הסגירה הייתה בגלל נזק מבני, לא עומס תנועה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בדוק את סדר האירועים — גילוי נזק → סגירה. אל תתבלבל בין הסיבה לתוצאה.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "discovered" = "detection". "closed to traffic" = "no longer open to vehicles". סדר האירועים נשמר.</p><p>✗ <strong>תשובה 2:</strong> שגויה — תנועה גרמה לנזק ולבניית הגשר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — פתחו אחרי תיקון.</p><p>✗ <strong>תשובה 4:</strong> שגויה — הסגירה הייתה בגלל נזק מבני, לא עומס תנועה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> בדוק את סדר האירועים — גילוי נזק → סגירה. אל תתבלבל בין הסיבה לתוצאה.</p></div>`
             },
             {
                 q: "Access to clean drinking water remains a major challenge for millions of people in developing countries.",
                 options: ["Millions of people in poorer nations still struggle to obtain safe water for drinking.","Developing countries have recently solved the problem of clean water access.","Clean drinking water is only a challenge in wealthy, developed nations.","The majority of people in developing countries have unlimited access to clean water."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "developing countries" = "poorer nations". "remains a challenge" = "still struggle". "millions" = "millions". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הבעיה נפתרה.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — מדינות עשירות הן האתגר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — יש גישה בלתי מוגבלת.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "remains" = עדיין קיים, הבעיה לא נפתרה. מילת זמן חשובה.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "developing countries" = "poorer nations". "remains a challenge" = "still struggle". "millions" = "millions". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הבעיה נפתרה.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — מדינות עשירות הן האתגר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — יש גישה בלתי מוגבלת.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "remains" = עדיין קיים, הבעיה לא נפתרה. מילת זמן חשובה.</p></div>`
             },
             {
                 q: "The new medication proved to be far more effective than existing treatments for the disease.",
                 options: ["Compared to current treatments, the new drug showed significantly better results.","Existing treatments were found to be superior to the newly developed medication.","The new medication was rejected because it was less effective than older treatments.","The disease could not be treated by either the new or the existing medications."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "far more effective" = "significantly better results". "existing treatments" = "current treatments". השוואה נשמרה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הטיפולים הישנים עדיפים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — התרופה נדחתה כי פחות יעילה.</p><p>✗ <strong>תשובה 4:</strong> שגויה — אף טיפול לא עובד.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "proved to be" = הוכח בניסוי. שים לב לכיוון ההשוואה — מי טוב יותר ממי.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "far more effective" = "significantly better results". "existing treatments" = "current treatments". השוואה נשמרה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הטיפולים הישנים עדיפים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — התרופה נדחתה כי פחות יעילה.</p><p>✗ <strong>תשובה 4:</strong> שגויה — אף טיפול לא עובד.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "proved to be" = הוכח בניסוי. שים לב לכיוון ההשוואה — מי טוב יותר ממי.</p></div>`
             },
             {
                 q: "Despite widespread criticism, the mayor refused to change his position on the new housing policy.",
                 options: ["The mayor maintained his stance on the housing policy regardless of the opposition he faced.","The mayor changed his position on housing policy due to public criticism.","The new housing policy was supported by the majority of the population.","Criticism of the mayor led to the cancellation of the housing policy."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "refused to change" = "maintained his stance". "despite criticism" = "regardless of opposition". שמירה על הניגוד.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — שינה עמדה בגלל ביקורת.</p><p>✗ <strong>תשובה 3:</strong> שגויה — רוב תמך במדיניות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המדיניות בוטלה בגלל ביקורת.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" + "refused" = עמידה על עמדה למרות לחץ חיצוני. חפש תשובה שמשמרת את הנחישות.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "refused to change" = "maintained his stance". "despite criticism" = "regardless of opposition". שמירה על הניגוד.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — שינה עמדה בגלל ביקורת.</p><p>✗ <strong>תשובה 3:</strong> שגויה — רוב תמך במדיניות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המדיניות בוטלה בגלל ביקורת.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" + "refused" = עמידה על עמדה למרות לחץ חיצוני. חפש תשובה שמשמרת את הנחישות.</p></div>`
             },
             {
                 q: "The discovery of antibiotics in the 20th century revolutionized the treatment of infectious diseases.",
                 options: ["Infectious diseases became far more treatable after antibiotics were found in the 1900s.","Infectious diseases led scientists in the 20th century to abandon antibiotic research.","Antibiotics were discovered before the 20th century and had little medical impact.","The treatment of infectious diseases became more difficult after the discovery of antibiotics."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "revolutionized" = "became far more treatable". "20th century" = "1900s". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — מדענים זנחו מחקר.</p><p>✗ <strong>תשובה 3:</strong> שגויה — התגלו לפני המאה ה-20 והיה להם מעט השפעה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הטיפול נעשה קשה יותר.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "revolutionized" = שינוי דרמטי לטובה. חפש תשובה שמשמרת את הטון החיובי.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "revolutionized" = "became far more treatable". "20th century" = "1900s". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — מדענים זנחו מחקר.</p><p>✗ <strong>תשובה 3:</strong> שגויה — התגלו לפני המאה ה-20 והיה להם מעט השפעה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הטיפול נעשה קשה יותר.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "revolutionized" = שינוי דרמטי לטובה. חפש תשובה שמשמרת את הטון החיובי.</p></div>`
             },
             {
                 q: "Unemployment rates dropped significantly after the new factory opened in the region.",
                 options: ["The opening of the factory led to a considerable decrease in joblessness in the area.","The factory closed down because unemployment in the region was too high.","The new factory increased unemployment by replacing workers with machines.","Unemployment in the region had no connection to the opening of the factory."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "dropped" = "decrease". "unemployment" = "joblessness". "significantly" = "considerable". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — המפעל נסגר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — אבטלה עלתה בגלל מכונות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — אין קשר בין המפעל לאבטלה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "dropped significantly" = ירידה ניכרת. "after" = לאחר, לא בגלל — אך ההקשר מציע קשר.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "dropped" = "decrease". "unemployment" = "joblessness". "significantly" = "considerable". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — המפעל נסגר.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — אבטלה עלתה בגלל מכונות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — אין קשר בין המפעל לאבטלה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "dropped significantly" = ירידה ניכרת. "after" = לאחר, לא בגלל — אך ההקשר מציע קשר.</p></div>`
             },
             {
                 q: "The athlete trained for years before finally winning an Olympic gold medal.",
                 options: ["After many years of preparation, the athlete achieved Olympic gold.","The athlete won a gold medal and then began years of training.","The athlete gave up training after failing to win an Olympic medal.","Olympic gold medals are awarded to athletes who train for exactly one year."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "trained for years" = "years of preparation". "winning" = "achieved". הסדר הכרונולוגי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הופכת את סדר האירועים — זכה ואז אימן.</p><p>✗ <strong>תשובה 3:</strong> שגויה — ויתר על אימון אחרי כישלון.</p><p>✗ <strong>תשובה 4:</strong> שגויה — שנה אחת בלבד (המקור: שנים).</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לסדר הכרונולוגי — "trained for years BEFORE winning". אל תהפוך את הסדר.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "trained for years" = "years of preparation". "winning" = "achieved". הסדר הכרונולוגי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הופכת את סדר האירועים — זכה ואז אימן.</p><p>✗ <strong>תשובה 3:</strong> שגויה — ויתר על אימון אחרי כישלון.</p><p>✗ <strong>תשובה 4:</strong> שגויה — שנה אחת בלבד (המקור: שנים).</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב לסדר הכרונולוגי — "trained for years BEFORE winning". אל תהפוך את הסדר.</p></div>`
             },
             {
                 q: "Renewable energy sources such as solar and wind power are becoming increasingly affordable.",
                 options: ["The cost of clean energy options like solar and wind is steadily decreasing.","Solar and wind energy have always been the cheapest sources of power available.","Renewable energy is becoming more expensive as technology improves.","Affordable energy can only be produced using non-renewable sources."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "increasingly affordable" = "cost is steadily decreasing". "solar and wind" = "solar and wind". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — "always been" לא נאמר. מדובר בשינוי עתידי, לא מצב קיים תמיד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — נעשית יקרה יותר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — רק מקורות לא מתחדשים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "increasingly" = בהדרגה, תהליך מתמשך. "always been" = מצב קבוע מתמיד. הבדל חשוב.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "increasingly affordable" = "cost is steadily decreasing". "solar and wind" = "solar and wind". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — "always been" לא נאמר. מדובר בשינוי עתידי, לא מצב קיים תמיד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — נעשית יקרה יותר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — רק מקורות לא מתחדשים.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "increasingly" = בהדרגה, תהליך מתמשך. "always been" = מצב קבוע מתמיד. הבדל חשוב.</p></div>`
             },
             {
                 q: "The student failed the exam because she had not studied the material thoroughly enough.",
                 options: ["Insufficient preparation for the exam resulted in the student's failure.","The student studied thoroughly but still failed the exam unexpectedly.","The student passed the exam despite not having studied the material.","The exam was too difficult for any student to pass, regardless of preparation."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "not studied thoroughly" = "insufficient preparation". "failed" = "failure". הקשר הסיבתי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — למדה לעומק אבל נכשלה בכל זאת.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — עברה את המבחן.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המבחן קשה מדי לכולם, ללא קשר להכנה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "because" = סיבה ישירה לתוצאה. שמור על קשר הסיבה–תוצאה בניסוח.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "not studied thoroughly" = "insufficient preparation". "failed" = "failure". הקשר הסיבתי נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — למדה לעומק אבל נכשלה בכל זאת.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — עברה את המבחן.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המבחן קשה מדי לכולם, ללא קשר להכנה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "because" = סיבה ישירה לתוצאה. שמור על קשר הסיבה–תוצאה בניסוח.</p></div>`
             },
             {
                 q: "Deforestation in tropical regions is contributing to a significant loss of biodiversity.",
                 options: ["The cutting down of forests in tropical areas is causing many species to disappear.","Biodiversity in tropical regions has increased as a result of deforestation.","Tropical forests are growing faster than they are being cut down.","Deforestation only affects the climate and has no impact on biodiversity."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "deforestation" = "cutting down forests". "loss of biodiversity" = "species disappear". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — מגוון ביולוגי עלה.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — יערות גדלים מהר יותר.</p><p>✗ <strong>תשובה 4:</strong> שגויה — משפיע על אקלים בלבד, לא על מגוון.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "contributing to" = אחד הגורמים, לא הגורם היחיד. שמור על הניואנס.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "deforestation" = "cutting down forests". "loss of biodiversity" = "species disappear". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — מגוון ביולוגי עלה.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — יערות גדלים מהר יותר.</p><p>✗ <strong>תשובה 4:</strong> שגויה — משפיע על אקלים בלבד, לא על מגוון.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "contributing to" = אחד הגורמים, לא הגורם היחיד. שמור על הניואנס.</p></div>`
             },
             {
                 q: "The company's profits soared after it launched its innovative new product line.",
                 options: ["Introducing a creative range of new products caused the company's earnings to rise sharply.","The company launched new products because its profits had already soared.","The new product line was unsuccessful and led to a decline in profits.","The company's profits remained unchanged following the product launch."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "soared" = "rise sharply". "innovative" = "creative". "launched" = "introducing". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת סיבה ותוצאה — רווחים גרמו להשקת מוצרים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — קו המוצרים נכשל ורווחים ירדו.</p><p>✗ <strong>תשובה 4:</strong> שגויה — רווחים נשארו ללא שינוי.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "soared" = עלייה חדה ומשמעותית. "remained unchanged" = ללא שינוי. הבדל קיצוני.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "soared" = "rise sharply". "innovative" = "creative". "launched" = "introducing". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת סיבה ותוצאה — רווחים גרמו להשקת מוצרים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — קו המוצרים נכשל ורווחים ירדו.</p><p>✗ <strong>תשובה 4:</strong> שגויה — רווחים נשארו ללא שינוי.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "soared" = עלייה חדה ומשמעותית. "remained unchanged" = ללא שינוי. הבדל קיצוני.</p></div>`
             },
             {
                 q: "Studies suggest that people who sleep fewer than six hours a night are more likely to suffer from depression.",
                 options: ["Getting less than six hours of sleep is associated with a higher risk of depression.","People who suffer from depression tend to sleep more than six hours a night.","Sleeping more than six hours increases a person's likelihood of becoming depressed.","There is no relationship between the amount of sleep a person gets and depression."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "fewer than six hours" = "less than six hours". "more likely to suffer" = "higher risk of depression". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — דיכאון גורם לשינה של יותר מ-6 שעות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — יותר מ-6 שעות מגביר סיכון.</p><p>✗ <strong>תשובה 4:</strong> סותרת לגמרי את ממצאי המחקר.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "suggest" = ממצאי מחקר, לא ודאות. שמור על הניואנס הזה בתשובה.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "fewer than six hours" = "less than six hours". "more likely to suffer" = "higher risk of depression". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — דיכאון גורם לשינה של יותר מ-6 שעות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — יותר מ-6 שעות מגביר סיכון.</p><p>✗ <strong>תשובה 4:</strong> סותרת לגמרי את ממצאי המחקר.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "suggest" = ממצאי מחקר, לא ודאות. שמור על הניואנס הזה בתשובה.</p></div>`
             },
             {
                 q: "The prime minister announced that the country would increase its investment in public education.",
                 options: ["More government funding for public schools was declared by the prime minister.","The prime minister decided to reduce the country's education budget.","Public education will no longer receive any investment from the government.","The prime minister's announcement led to a decrease in educational funding."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "announced" = "declared". "increase investment" = "more funding". "public education" = "public schools". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הפחית תקציב.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — החינוך לא יקבל השקעה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — ההכרזה הובילה לירידה בתקציב.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "increase investment" = יותר תקציב = more funding. ישיר ופשוט.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "announced" = "declared". "increase investment" = "more funding". "public education" = "public schools". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הפחית תקציב.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — החינוך לא יקבל השקעה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — ההכרזה הובילה לירידה בתקציב.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "increase investment" = יותר תקציב = more funding. ישיר ופשוט.</p></div>`
             },
             {
                 q: "Although the treatment was painful, it significantly improved the patient's quality of life.",
                 options: ["Despite causing discomfort, the treatment greatly enhanced how well the patient lived.","The treatment improved the patient's life only because it was painless.","The patient refused the treatment because it was too painful to endure.","The treatment had no effect on the patient's quality of life despite being painful."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "although painful" = "despite causing discomfort". "significantly improved" = "greatly enhanced". הניגוד נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — השתפר רק כי לא כאב.</p><p>✗ <strong>תשובה 3:</strong> שגויה — המטופל סירב לטיפול.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — אין השפעה למרות הכאב.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "although" ו-"despite" = ניגוד בין כאב (שלילי) לשיפור (חיובי). שניהם חייבים להיות בתשובה.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "although painful" = "despite causing discomfort". "significantly improved" = "greatly enhanced". הניגוד נשמר.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — השתפר רק כי לא כאב.</p><p>✗ <strong>תשובה 3:</strong> שגויה — המטופל סירב לטיפול.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — אין השפעה למרות הכאב.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "although" ו-"despite" = ניגוד בין כאב (שלילי) לשיפור (חיובי). שניהם חייבים להיות בתשובה.</p></div>`
             },
             {
                 q: "Global temperatures have been rising steadily over the past century as a result of human activity.",
                 options: ["Human actions over the last hundred years have caused a continuous increase in worldwide temperatures.","Global temperatures have been falling steadily due to increased human activity.","Rising global temperatures have encouraged humans to become more active.","Human activity has had no measurable effect on global temperatures over the past century."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "past century" = "last hundred years". "rising steadily" = "continuous increase". "as a result of" = "caused by". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — טמפרטורות ירדו.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — עלייה בטמפרטורה גורמת לפעילות אנושית.</p><p>✗ <strong>תשובה 4:</strong> סותרת לחלוטין.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "as a result of" = בגלל. קשר סיבתי ברור — פעילות אנושית גורמת לחימום.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "past century" = "last hundred years". "rising steadily" = "continuous increase". "as a result of" = "caused by". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — טמפרטורות ירדו.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — עלייה בטמפרטורה גורמת לפעילות אנושית.</p><p>✗ <strong>תשובה 4:</strong> סותרת לחלוטין.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "as a result of" = בגלל. קשר סיבתי ברור — פעילות אנושית גורמת לחימום.</p></div>`
             },
             {
                 q: "The concert was postponed because the lead singer had lost her voice.",
                 options: ["Due to the singer's inability to perform vocally, the concert was delayed.","The concert was cancelled permanently because the singer refused to perform.","The lead singer lost her voice as a result of performing at the concert.","The concert took place as planned despite the singer's health problems."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "postponed" = "delayed". "lost her voice" = "inability to perform vocally". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — בוטל לצמיתות וסירבה לבצע. "postponed" ≠ "cancelled permanently".</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — ביצוע גרם לאובדן הקול.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — ההופעה התקיימה כמתוכנן.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "postponed" = נדחה לתאריך עתידי. "cancelled" = בוטל לחלוטין. הבדל קריטי.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "postponed" = "delayed". "lost her voice" = "inability to perform vocally". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — בוטל לצמיתות וסירבה לבצע. "postponed" ≠ "cancelled permanently".</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — ביצוע גרם לאובדן הקול.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — ההופעה התקיימה כמתוכנן.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "postponed" = נדחה לתאריך עתידי. "cancelled" = בוטל לחלוטין. הבדל קריטי.</p></div>`
             },
             {
                 q: "Investing in early childhood education yields significant long-term economic benefits for society.",
                 options: ["Society gains substantial financial advantages over time by funding education in early childhood.","Early childhood education is only beneficial for children, not for the broader economy.","Long-term economic benefits are unrelated to investments made in education.","Society loses money when it invests in programs for young children's education."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "yields benefits" = "gains advantages". "long-term economic" = "financial over time". "significant" = "substantial". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> מצמצמת — יועיל לילדים בלבד, לא לכלכלה.</p><p>✗ <strong>תשובה 3:</strong> שוללת את הקשר לחלוטין.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — החברה מפסידה כסף.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "yields" = מניב תוצאות חיוביות. "significant" = משמעותי. שני ניואנסים שחייבים להישמר.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "yields benefits" = "gains advantages". "long-term economic" = "financial over time". "significant" = "substantial". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> מצמצמת — יועיל לילדים בלבד, לא לכלכלה.</p><p>✗ <strong>תשובה 3:</strong> שוללת את הקשר לחלוטין.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — החברה מפסידה כסף.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "yields" = מניב תוצאות חיוביות. "significant" = משמעותי. שני ניואנסים שחייבים להישמר.</p></div>`
             },
             {
                 q: "The earthquake caused widespread destruction, leaving thousands of people without homes.",
                 options: ["Thousands of people were left homeless as a result of the extensive damage caused by the earthquake.","Thousands of people built new homes immediately after the earthquake struck.","The earthquake had a minimal impact on housing in the affected region.","People caused the earthquake by destroying homes throughout the region."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "widespread destruction" = "extensive damage". "without homes" = "homeless". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> שגויה — אנשים בנו בתים חדשים מיד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — השפעה מינימלית על דיור.</p><p>✗ <strong>תשובה 4:</strong> הופכת כיוון — אנשים גרמו לרעידת האדמה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "widespread" = נרחב, על פני שטח גדול. "minimal" = מינימלי. ניגוד מוחלט.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "widespread destruction" = "extensive damage". "without homes" = "homeless". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> שגויה — אנשים בנו בתים חדשים מיד.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — השפעה מינימלית על דיור.</p><p>✗ <strong>תשובה 4:</strong> הופכת כיוון — אנשים גרמו לרעידת האדמה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "widespread" = נרחב, על פני שטח גדול. "minimal" = מינימלי. ניגוד מוחלט.</p></div>`
             },
             {
                 q: "Many historians argue that the First World War was the direct result of a series of political miscalculations.",
                 options: ["According to numerous historians, political errors played a key role in triggering the First World War.","The First World War led historians to make a series of political miscalculations.","Most historians agree that the First World War was completely unavoidable.","Political leaders successfully prevented the First World War through careful planning."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "miscalculations" = "errors". "direct result" = "played a key role in triggering". "many historians" = "numerous historians". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — מלחמה גרמה להיסטוריונים לטעות.</p><p>✗ <strong>תשובה 3:</strong> שגויה — המלחמה הייתה בלתי נמנעת לחלוטין.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מנהיגים מנעו את המלחמה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "argue" = טענה של היסטוריונים, לא עובדה מוכחת. "agree" שגוי כי לא כולם מסכימים.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "miscalculations" = "errors". "direct result" = "played a key role in triggering". "many historians" = "numerous historians". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — מלחמה גרמה להיסטוריונים לטעות.</p><p>✗ <strong>תשובה 3:</strong> שגויה — המלחמה הייתה בלתי נמנעת לחלוטין.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מנהיגים מנעו את המלחמה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "argue" = טענה של היסטוריונים, לא עובדה מוכחת. "agree" שגוי כי לא כולם מסכימים.</p></div>`
             },
             {
                 q: "The documentary film raised public awareness about the dangers of plastic pollution in the oceans.",
                 options: ["After watching the documentary, more people became informed about the threat of ocean plastic.","Public awareness about plastic pollution led filmmakers to create the documentary.","The documentary argued that plastic pollution in the oceans is not a serious concern.","The film reduced public interest in environmental issues related to the oceans."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "raised awareness" = "more people became informed". "dangers" = "threat". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — מודעות הציבור גרמה ליצירת הסרט.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — הסרט טוען שאין בעיה רצינית.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הפחית עניין ציבורי.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "raised awareness" = הגביר מודעות = "more people became informed". תמיד חיובי.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "raised awareness" = "more people became informed". "dangers" = "threat". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> הופכת את הכיוון — מודעות הציבור גרמה ליצירת הסרט.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — הסרט טוען שאין בעיה רצינית.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הפחית עניין ציבורי.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "raised awareness" = הגביר מודעות = "more people became informed". תמיד חיובי.</p></div>`
             },
             {
                 q: "Despite their small size, bees play a crucial role in maintaining the balance of many ecosystems.",
                 options: ["Bees, though tiny, are essential to keeping many natural environments stable.","Large insects are more important than bees in maintaining ecosystem balance.","Bees have a negative impact on ecosystems due to their small size.","Ecosystems can function properly only in the absence of bees."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "crucial role" = "essential". "maintaining balance" = "keeping stable". "small size" = "tiny". הניגוד נשמר.</p><p>✗ <strong>תשובה 2:</strong> שגויה — חרקים גדולים חשובים יותר מדבורים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לדבורים השפעה שלילית.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מערכות אקולוגיות תפקדנה ללא דבורים.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד בין גודל קטן (שלילי לכאורה) לתפקיד חיוני (חיובי). שמור על שניהם.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "crucial role" = "essential". "maintaining balance" = "keeping stable". "small size" = "tiny". הניגוד נשמר.</p><p>✗ <strong>תשובה 2:</strong> שגויה — חרקים גדולים חשובים יותר מדבורים.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — לדבורים השפעה שלילית.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מערכות אקולוגיות תפקדנה ללא דבורים.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = ניגוד בין גודל קטן (שלילי לכאורה) לתפקיד חיוני (חיובי). שמור על שניהם.</p></div>`
             },
             {
                 q: "The new traffic regulations were introduced to reduce the number of road accidents in the city.",
                 options: ["The city implemented new traffic rules with the aim of making roads safer.","Road accidents in the city caused the traffic regulations to be removed.","The new regulations increased the number of traffic accidents significantly.","Traffic regulations were introduced to increase the flow of vehicles in the city."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "introduced to reduce accidents" = "aim of making roads safer". המטרה נשמרה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — תאונות גרמו להסרת התקנות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — תאונות עלו בגלל התקנות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המטרה הייתה להגביר זרימת כלי רכב, לא בטיחות.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "introduced to" = מטרה ברורה. "reduce accidents" = "safer roads". שמור על כיוון המטרה.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "introduced to reduce accidents" = "aim of making roads safer". המטרה נשמרה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — תאונות גרמו להסרת התקנות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — תאונות עלו בגלל התקנות.</p><p>✗ <strong>תשובה 4:</strong> שגויה — המטרה הייתה להגביר זרימת כלי רכב, לא בטיחות.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "introduced to" = מטרה ברורה. "reduce accidents" = "safer roads". שמור על כיוון המטרה.</p></div>`
             },
             {
                 q: "Researchers found that students who ate breakfast performed better academically than those who skipped it.",
                 options: ["Eating breakfast was associated with higher academic achievement among students in the study.","Students who skipped breakfast consistently outperformed those who ate it.","Breakfast had no measurable effect on students' academic performance.","Researchers encouraged students to skip breakfast to improve their concentration."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "performed better academically" = "higher academic achievement". "researchers found" = "was associated with". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — אלו שדילגו על ארוחת בוקר הצטיינו.</p><p>✗ <strong>תשובה 3:</strong> שגויה — אין השפעה מדידה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מחקרים עודדו לדלג.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "found that" = ממצא מחקרי. חפש תשובה עם "associated with" שמשמרת את הזהירות האקדמית.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "performed better academically" = "higher academic achievement". "researchers found" = "was associated with". שקיפות ישירה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — אלו שדילגו על ארוחת בוקר הצטיינו.</p><p>✗ <strong>תשובה 3:</strong> שגויה — אין השפעה מדידה.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מחקרים עודדו לדלג.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "found that" = ממצא מחקרי. חפש תשובה עם "associated with" שמשמרת את הזהירות האקדמית.</p></div>`
             },
             {
                 q: "The rapid growth of e-commerce has forced many traditional retailers to close their physical stores.",
                 options: ["The boom in online shopping has led numerous brick-and-mortar stores to shut down.","Traditional retailers expanded their physical stores in response to the growth of e-commerce.","E-commerce grew rapidly because traditional retail stores began closing.","Physical stores have become more popular as a result of the rise in online shopping."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "rapid growth of e-commerce" = "boom in online shopping". "close stores" = "shut down". "forced" = "led". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — קמעונאים הרחיבו חנויות.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — סגירת חנויות גרמה לצמיחת סחר אלקטרוני.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — חנויות פיזיות הפכו פופולריות יותר.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "forced" = כפה, לא בחירה חופשית. "boom" = צמיחה מהירה ומשמעותית.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "rapid growth of e-commerce" = "boom in online shopping". "close stores" = "shut down". "forced" = "led". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — קמעונאים הרחיבו חנויות.</p><p>✗ <strong>תשובה 3:</strong> הופכת את הכיוון — סגירת חנויות גרמה לצמיחת סחר אלקטרוני.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — חנויות פיזיות הפכו פופולריות יותר.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "forced" = כפה, לא בחירה חופשית. "boom" = צמיחה מהירה ומשמעותית.</p></div>`
             },
             {
                 q: "The scientist was awarded the Nobel Prize for her groundbreaking research on genetic mutations.",
                 options: ["Her pioneering work on changes in genes earned the scientist the Nobel Prize.","The Nobel Prize committee conducted research on genetic mutations alongside the scientist.","The scientist received the Nobel Prize before beginning her research on genetics.","Genetic mutation research has never been recognized by the Nobel Prize committee."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "groundbreaking research" = "pioneering work". "genetic mutations" = "changes in genes". "awarded" = "earned". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — הוועדה חקרה לצד המדענית.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — קיבלה את הפרס לפני המחקר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מחקר גנטי לא הוכר מעולם.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "groundbreaking" = פורץ דרך = "pioneering". שני מילים נרדפות חשובות לזכור.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "groundbreaking research" = "pioneering work". "genetic mutations" = "changes in genes". "awarded" = "earned". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — הוועדה חקרה לצד המדענית.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — קיבלה את הפרס לפני המחקר.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מחקר גנטי לא הוכר מעולם.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "groundbreaking" = פורץ דרך = "pioneering". שני מילים נרדפות חשובות לזכור.</p></div>`
             },
             {
                 q: "The population of the city doubled in size over the last two decades.",
                 options: ["The city's population grew to twice its previous size within twenty years.","The city's population decreased by half over the past twenty years.","It took the city more than twenty years to increase its population slightly.","The city was built to accommodate double the number of its current residents."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "doubled" = "grew to twice its previous size". "two decades" = "twenty years". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — האוכלוסייה ירדה בחצי.</p><p>✗ <strong>תשובה 3:</strong> שגויה — עלייה קטנה בלבד, ולקח יותר מעשרים שנה.</p><p>✗ <strong>תשובה 4:</strong> שגויה — העיר נבנתה לצורך כפל תושבים, לא שאוכלוסייתה כפלה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "doubled" = כפל, בדיוק פי 2. "two decades" = עשרים שנה — המרה סטנדרטית.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "doubled" = "grew to twice its previous size". "two decades" = "twenty years". שקיפות מדויקת.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — האוכלוסייה ירדה בחצי.</p><p>✗ <strong>תשובה 3:</strong> שגויה — עלייה קטנה בלבד, ולקח יותר מעשרים שנה.</p><p>✗ <strong>תשובה 4:</strong> שגויה — העיר נבנתה לצורך כפל תושבים, לא שאוכלוסייתה כפלה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "doubled" = כפל, בדיוק פי 2. "two decades" = עשרים שנה — המרה סטנדרטית.</p></div>`
             },
             {
                 q: "The professor's lecture was so complex that most students struggled to follow it.",
                 options: ["Most students found it difficult to understand the professor's complicated lecture.","The professor simplified the lecture because students could not follow it.","Most students enjoyed the lecture despite its complexity.","The professor's lecture was easy to follow due to its clear structure."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "complex" = "complicated". "struggled to follow" = "found it difficult to understand". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — הפרופסור הפשיט את ההרצאה, לא המקור.</p><p>✗ <strong>תשובה 3:</strong> שגויה — רוב הסטודנטים נהנו, בניגוד למקור.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — ההרצאה הייתה קלה לעקיבה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "struggled to" = התקשו, מצאו קושי — ביטוי מאמץ כושל.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "complex" = "complicated". "struggled to follow" = "found it difficult to understand". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> שגויה — הפרופסור הפשיט את ההרצאה, לא המקור.</p><p>✗ <strong>תשובה 3:</strong> שגויה — רוב הסטודנטים נהנו, בניגוד למקור.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — ההרצאה הייתה קלה לעקיבה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "struggled to" = התקשו, מצאו קושי — ביטוי מאמץ כושל.</p></div>`
             },
             {
                 q: "The government introduced stricter regulations to protect consumers from misleading advertisements.",
                 options: ["New, tougher rules were put in place to shield buyers from deceptive marketing.","Consumers demanded that the government remove all advertising regulations.","The government relaxed its regulations in response to misleading advertisements.","Stricter regulations made it easier for companies to advertise their products."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "stricter regulations" = "tougher rules". "protect" = "shield". "consumers" = "buyers". "misleading" = "deceptive". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הצרכנים דרשו הסרת תקנות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — הממשלה הקלה על תקנות.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — התקנות הקלו על פרסום.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "introduced" = הכניסו לתוקף חדש. "misleading" = מטעה = "deceptive" — שתי מילים נרדפות.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "stricter regulations" = "tougher rules". "protect" = "shield". "consumers" = "buyers". "misleading" = "deceptive". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — הצרכנים דרשו הסרת תקנות.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — הממשלה הקלה על תקנות.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — התקנות הקלו על פרסום.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "introduced" = הכניסו לתוקף חדש. "misleading" = מטעה = "deceptive" — שתי מילים נרדפות.</p></div>`
             },
             {
                 q: "Despite receiving little formal education, the entrepreneur built a highly successful business empire.",
                 options: ["The entrepreneur achieved great business success even without much schooling.","The entrepreneur's formal education was the key factor in building a successful business.","The entrepreneur failed in business because of a lack of formal education.","Formal education is essential for building a successful business empire."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "despite little formal education" = "even without much schooling". "highly successful" = "great success". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — השכלה הפורמלית היא המפתח, בניגוד ל-"despite".</p><p>✗ <strong>תשובה 3:</strong> הפוכה — נכשל בגלל חוסר השכלה.</p><p>✗ <strong>תשובה 4:</strong> סותרת — השכלה חיונית, בניגוד לרוח המקור.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = למרות — הניגוד בין שתי עובדות הוא לב השאלה. שמור עליו בניסוח.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "despite little formal education" = "even without much schooling". "highly successful" = "great success". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — השכלה הפורמלית היא המפתח, בניגוד ל-"despite".</p><p>✗ <strong>תשובה 3:</strong> הפוכה — נכשל בגלל חוסר השכלה.</p><p>✗ <strong>תשובה 4:</strong> סותרת — השכלה חיונית, בניגוד לרוח המקור.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "despite" = למרות — הניגוד בין שתי עובדות הוא לב השאלה. שמור עליו בניסוח.</p></div>`
             },
             {
                 q: "The city council voted unanimously to ban single-use plastics in all public spaces.",
                 options: ["All council members agreed to prohibit disposable plastic items in public areas.","The city council was divided over the decision to ban plastics in public spaces.","Single-use plastics were made available in all public spaces by the city council.","The city council voted to encourage the use of single-use plastics in public areas."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "unanimously" = "all members agreed". "ban" = "prohibit". "single-use" = "disposable". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — המועצה הייתה חלוקה, בניגוד ל-"unanimously".</p><p>✗ <strong>תשובה 3:</strong> הפוכה — הנגישו פלסטיק במקום לאסור.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — עודדו שימוש במקום לאסור.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "unanimously" = פה אחד, ללא מתנגדים — תשובה שמזכירה חלוקה היא מייד שגויה.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "unanimously" = "all members agreed". "ban" = "prohibit". "single-use" = "disposable". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — המועצה הייתה חלוקה, בניגוד ל-"unanimously".</p><p>✗ <strong>תשובה 3:</strong> הפוכה — הנגישו פלסטיק במקום לאסור.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — עודדו שימוש במקום לאסור.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "unanimously" = פה אחד, ללא מתנגדים — תשובה שמזכירה חלוקה היא מייד שגויה.</p></div>`
             },
             {
                 q: "Regular meditation has been shown to reduce stress and improve mental well-being.",
                 options: ["Practicing meditation consistently can lower stress levels and enhance psychological health.","People who are stressed are unable to practice meditation regularly.","Meditation has been proven to increase stress in most practitioners.","Mental well-being has no connection to meditation or relaxation practices."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "regular" = "consistently". "reduce stress" = "lower stress levels". "improve mental well-being" = "enhance psychological health". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — אנשים לחוצים אינם יכולים לתרגל.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — מגביר לחץ במקום להפחית.</p><p>✗ <strong>תשובה 4:</strong> שגויה — אין קשר בין רווחה נפשית למדיטציה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "has been shown to" = הוכח במחקר. "consistently" = באופן עקבי = "regular".</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "regular" = "consistently". "reduce stress" = "lower stress levels". "improve mental well-being" = "enhance psychological health". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — אנשים לחוצים אינם יכולים לתרגל.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — מגביר לחץ במקום להפחית.</p><p>✗ <strong>תשובה 4:</strong> שגויה — אין קשר בין רווחה נפשית למדיטציה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "has been shown to" = הוכח במחקר. "consistently" = באופן עקבי = "regular".</p></div>`
             },
             {
                 q: "The construction of the new highway significantly reduced travel time between the two cities.",
                 options: ["Building the new road made journeys between the two cities considerably faster.","Travel time between the two cities increased after the highway was constructed.","The new highway was built because travel time between the cities was already short.","The construction of the highway had no effect on travel time between the cities."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "reduced travel time" = "journeys faster". "significantly" = "considerably". "construction" = "building". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — זמן הנסיעה עלה לאחר הבנייה.</p><p>✗ <strong>תשובה 3:</strong> שגויה — הכביש נבנה כי הזמן כבר היה קצר.</p><p>✗ <strong>תשובה 4:</strong> שגויה — לכביש לא הייתה השפעה.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "significantly" = באופן משמעותי = "considerably" — שתי מילות עוצמה נרדפות.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "reduced travel time" = "journeys faster". "significantly" = "considerably". "construction" = "building". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — זמן הנסיעה עלה לאחר הבנייה.</p><p>✗ <strong>תשובה 3:</strong> שגויה — הכביש נבנה כי הזמן כבר היה קצר.</p><p>✗ <strong>תשובה 4:</strong> שגויה — לכביש לא הייתה השפעה.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "significantly" = באופן משמעותי = "considerably" — שתי מילות עוצמה נרדפות.</p></div>`
             },
             {
                 q: "The charity raised enough funds to provide meals for thousands of homeless people.",
                 options: ["Through its fundraising efforts, the organization was able to feed thousands of people without shelter.","Thousands of homeless people donated money to support the charity's meal program.","The charity failed to raise sufficient funds to feed homeless people in the community.","The charity provided shelter for thousands of people using the funds it raised."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "raised funds" = "fundraising efforts". "provide meals" = "feed". "homeless" = "without shelter". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — חסרי הבית תרמו כסף לעמותה.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — העמותה נכשלה בגיוס כספים.</p><p>✗ <strong>תשובה 4:</strong> שגויה — סיפקה מחסה (shelter) ולא ארוחות (meals).</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב למה בדיוק סיפקו — meals (ארוחות) ולא shelter (מחסה). פרט קריטי.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "raised funds" = "fundraising efforts". "provide meals" = "feed". "homeless" = "without shelter". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — חסרי הבית תרמו כסף לעמותה.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — העמותה נכשלה בגיוס כספים.</p><p>✗ <strong>תשובה 4:</strong> שגויה — סיפקה מחסה (shelter) ולא ארוחות (meals).</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> שים לב למה בדיוק סיפקו — meals (ארוחות) ולא shelter (מחסה). פרט קריטי.</p></div>`
             },
             {
                 q: "The invention of the smartphone transformed the way people communicate and access information.",
                 options: ["Smartphones fundamentally changed how people interact and obtain knowledge.","People communicated more effectively before smartphones were invented.","The smartphone was invented to replace all other forms of communication permanently.","Smartphones have had little impact on the way people access or share information."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "transformed" = "fundamentally changed". "communicate" = "interact". "access information" = "obtain knowledge". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — לפני הסמארטפון תקשורת הייתה יעילה יותר.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה מידע שלא נאמר — להחליף את כל אמצעי התקשורת לצמיתות.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מעט השפעה, בניגוד ל-"transformed".</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "transformed" = שינוי יסודי ומהותי. תשובה שמציינת "מעט השפעה" סותרת ישירות.</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "transformed" = "fundamentally changed". "communicate" = "interact". "access information" = "obtain knowledge". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הפוכה — לפני הסמארטפון תקשורת הייתה יעילה יותר.</p><p>✗ <strong>תשובה 3:</strong> מוסיפה מידע שלא נאמר — להחליף את כל אמצעי התקשורת לצמיתות.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — מעט השפעה, בניגוד ל-"transformed".</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "transformed" = שינוי יסודי ומהותי. תשובה שמציינת "מעט השפעה" סותרת ישירות.</p></div>`
             },
             {
                 q: "Due to a severe drought, farmers in the region suffered significant crop losses this year.",
                 options: ["This year's extreme lack of rainfall caused farmers in the area to lose a large portion of their crops.","Farmers in the region caused the drought by planting too many crops this year.","The drought had a positive effect on crop production in the region this year.","Farmers managed to avoid crop losses despite the severe drought conditions."],
                 correct: 0,
-                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "severe drought" = "extreme lack of rainfall". "significant crop losses" = "lose a large portion of crops". "due to" = "caused". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — החקלאים גרמו לבצורת, לא הבצורת פגעה בהם.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — השפעה חיובית על הייצור.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הצליחו להימנע מהפסדים למרות הבצורת.</p><hr style="border:none;border-top:1px solid rgba(139,92,246,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "due to" = בגלל, הסיבה מגיעה אחריו. "drought" = בצורת = "extreme lack of rainfall".</p></div>`
+                explanation: `<div class="ai-explanation-box"><h4>📝 ניתוח התשובות</h4><p>✓ <strong>תשובה 1 נכונה:</strong> "severe drought" = "extreme lack of rainfall". "significant crop losses" = "lose a large portion of crops". "due to" = "caused". שקיפות מלאה.</p><p>✗ <strong>תשובה 2:</strong> הופכת כיוון — החקלאים גרמו לבצורת, לא הבצורת פגעה בהם.</p><p>✗ <strong>תשובה 3:</strong> הפוכה — השפעה חיובית על הייצור.</p><p>✗ <strong>תשובה 4:</strong> הפוכה — הצליחו להימנע מהפסדים למרות הבצורת.</p><hr style="border:none;border-top:1px solid rgba(29,95,181,.2);margin:10px 0;"><p>💡 <strong>טיפ:</strong> "due to" = בגלל, הסיבה מגיעה אחריו. "drought" = בצורת = "extreme lack of rainfall".</p></div>`
             }
         ];
 
@@ -4173,7 +4177,7 @@ function generateAIContent(word) {
         function aiMarkdown(text) {
             return text
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/^## (.+)$/gm, '<div class="ai-section"><strong style="color:#7c3aed;font-size:14px;">$1</strong></div>')
+                .replace(/^## (.+)$/gm, '<div class="ai-section"><strong style="color:var(--btn-primary);font-size:14px;">$1</strong></div>')
                 .replace(/^### (.+)$/gm, '<strong>$1</strong>')
                 .replace(/^[-•] (.+)$/gm, '<div style="margin:3px 0 3px 8px;">• $1</div>')
                 .replace(/\n\n+/g, '<br>')
@@ -5784,7 +5788,7 @@ function playNextDrivingWord() {
                     </div>
                     <div style="margin-top:12px;text-align:center;">
                         <span id="at-tests-done-label" style="font-size:12px;color:#94a3b8;"></span>
-                        <span id="at-reset-link" style="font-size:12px;color:#7c3aed;cursor:pointer;margin-right:10px;display:none;" onclick="atResetAllTests()">אפס שאלות</span>
+                        <span id="at-reset-link" style="font-size:12px;color:var(--btn-primary);cursor:pointer;margin-right:10px;display:none;" onclick="atResetAllTests()">אפס שאלות</span>
                     </div>
 
                     <!-- Micro-feedback -->
