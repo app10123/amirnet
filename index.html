@@ -1241,6 +1241,7 @@
 
         <!-- STATS VIEW -->
         <div id="dashStatsView" style="display:none;">
+            <div class="dash-greeting" id="dashGreeting"></div>
             <div class="dash-source-header">
                 <span id="dashSourceName" class="dash-source-name-badge"></span>
                 <button class="dash-change-source-btn" onclick="changeLearningSource()">שנה מקור</button>
@@ -2024,8 +2025,8 @@ let aiPreloadedData = {};
             if (!skipTour && window.startTourIfNeeded) window.startTourIfNeeded();
         }
         function goToDashboard() {
-            populateDashboard();
             showDashboard();
+            populateDashboard();
             // Update adaptive test card subtitle
             const sub = document.getElementById('dashTestSub');
             if (sub) {
