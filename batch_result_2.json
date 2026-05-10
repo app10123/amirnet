@@ -1,0 +1,322 @@
+{
+  "fortunate": {
+    "assoc": "פור-צ'ונייט – 'פור' זה כמו 'פור' בפורים – וכולם יודעים שפורים זה חג של מזל!",
+    "sentence": "She was fortunate to win the scholarship.|היא הייתה בת מזל שזכתה במלגה."
+  },
+  "fortune": {
+    "assoc": "פור-צ'ן – 'פור' כמו בפורים, חג של מזל וגם הרבה ממתקים (הון)!",
+    "sentence": "He made a fortune from his business.|הוא עשה הון מהעסק שלו."
+  },
+  "gesture": {
+    "assoc": "ג'סצ'ר – 'ג'ס' נשמע כמו 'ג'ס עשה תנועה' – מחווה יפה לחבר!",
+    "sentence": "A small gesture can mean a lot.|מחווה קטנה יכולה לאמר הרבה."
+  },
+  "gravitation": {
+    "assoc": "גרביטיישן – 'גרב' שלי נפלה – כוח המשיכה שוב עובד!",
+    "sentence": "Gravitation keeps us on the ground.|כוח המשיכה שומר אותנו על הקרקע."
+  },
+  "ill": {
+    "assoc": "איל – 'איל' נשמע כמו 'אל' – אל תהיה חולה, לך לישון!",
+    "sentence": "He felt ill after eating the fish.|הוא הרגיש חולה אחרי שאכל את הדג."
+  },
+  "illness": {
+    "assoc": "אילנס – 'אילן' שלנו חלה – מה המחלה של אילן?",
+    "sentence": "Her illness lasted for two weeks.|המחלה שלה נמשכה שבועיים."
+  },
+  "inanimate": {
+    "assoc": "אינ-אנימייט – 'אין אנימציה' – דומם לא זז, אין לו אנימציה!",
+    "sentence": "Rocks are inanimate objects.|סלעים הם עצמים דוממים."
+  },
+  "inaudible": {
+    "assoc": "אינ-אודיבל – 'אין אודיו' – לא ניתן לשמוע, האודיו נעלם!",
+    "sentence": "His voice was inaudible over the noise.|קולו לא נשמע מעל הרעש."
+  },
+  "individual": {
+    "assoc": "אינדיבידואל – 'אינדי' – זמר עצמאי, פרט בפני עצמו!",
+    "sentence": "Every individual has rights.|לכל פרט יש זכויות."
+  },
+  "inventor": {
+    "assoc": "אינוונטור – 'אין ונטור' – מי שאין לו מנטור, ממציא לבד!",
+    "sentence": "Edison was a great inventor.|אדיסון היה ממציא גדול."
+  },
+  "inventory": {
+    "assoc": "אינוונטורי – 'אינוונטור' שבדק את המלאי שלו – רשימת המצאות!",
+    "sentence": "We need to check the inventory.|אנחנו צריכים לבדוק את רשימת המלאי."
+  },
+  "isolate": {
+    "assoc": "איזוליישן – 'איזו לייט' – מי שמבודד לבד, מוצא שלווה (לייט)!",
+    "sentence": "They had to isolate the sick patient.|הם נאלצו לבודד את החולה."
+  },
+  "magical": {
+    "assoc": "מג'יקל – 'מג'יק' כמו קסם – מג'יקל זה פשוט קסום!",
+    "sentence": "The show was absolutely magical.|המופע היה קסום לחלוטין."
+  },
+  "market": {
+    "assoc": "מרקט – 'מרק ט' – בשוק קנינו מרק טעים!",
+    "sentence": "We went to the market to buy vegetables.|הלכנו לשוק לקנות ירקות."
+  },
+  "nomination": {
+    "assoc": "נומינציה – 'נומי' קיבל מינוי – מזל טוב נומי!",
+    "sentence": "She received a nomination for best actress.|היא קיבלה מועמדות לשחקנית הטובה ביותר."
+  },
+  "nominee": {
+    "assoc": "נומיני – 'נומי' הוא המועמד – כולם מצביעים לנומי!",
+    "sentence": "He was the nominee for class president.|הוא היה המועמד לנשיא הכיתה."
+  },
+  "ordain": {
+    "assoc": "אורדיין – 'אורד' קיבל אורד – הוסמך לרב!",
+    "sentence": "He was ordained as a priest.|הוא הוסמך ככומר."
+  },
+  "overestimated": {
+    "assoc": "אוברסטימייטד – 'אובר' זה יתר על המידה – הוא הפריז בהערכה, הגזים, עשה אובר!",
+    "sentence": "He overestimated how long the trip would take.|הוא העריך יתר על המידה כמה זמן הנסיעה תיקח."
+  },
+  "overlook": {
+    "assoc": "אוברלוק – 'אובר' מסתכל מלמעלה ומעלים עין – נראה הכל ומתעלם!",
+    "sentence": "The teacher decided to overlook his mistake.|המורה החליטה להתעלם מהטעות שלו."
+  },
+  "peer": {
+    "assoc": "פיר – 'פיר' נשמע כמו 'פייר' – פייר הוא החבר השווה לי בכיתה, עמית!",
+    "sentence": "Learn from your peers.|למד מהעמיתים שלך."
+  },
+  "plant": {
+    "assoc": "פלנט – 'פלנט' כמו פלנטה – בכוכב אחר שתלו מפעל ענק!",
+    "sentence": "She decided to plant a tree in the garden.|היא החליטה לשתול עץ בגינה."
+  },
+  "plantation": {
+    "assoc": "פלנטיישן – 'פלנטה' עם 'יישן' – על הפלנטה יישן מטע ענק!",
+    "sentence": "The plantation produced tons of sugar.|המטע ייצר טונות של סוכר."
+  },
+  "population": {
+    "assoc": "פופיולישן – 'פופ' – כמה אנשים שומעים פופ? כל האוכלוסייה!",
+    "sentence": "The population of the city is growing.|אוכלוסיית העיר גדלה."
+  },
+  "pure": {
+    "assoc": "פיור – 'פיור' נשמע כמו 'פיורה' – מים פיורה הם טהורים!",
+    "sentence": "The water in the mountain spring is pure.|המים במעיין ההרי הם טהורים."
+  },
+  "purification": {
+    "assoc": "פיוריפיקיישן – 'פיורי' + 'פיקציה' – זה לא פיקציה, הטיהור הוא אמיתי!",
+    "sentence": "Water purification is essential for health.|טיהור מים חיוני לבריאות."
+  },
+  "range": {
+    "assoc": "ריינג' – 'ריינג'' כמו 'ריינג'ר' – לריינג'ר יש טווח ירי ארוך!",
+    "sentence": "The mountain range stretches for miles.|רכס ההרים נמשך מייל אחרי מייל."
+  },
+  "recruit": {
+    "assoc": "ריקרוט – 'רי-קרוט' – גייסו אותו בגלל שקרא לעוד קרוטים לצבא!",
+    "sentence": "The army will recruit new soldiers next month.|הצבא יגייס חיילים חדשים בחודש הבא."
+  },
+  "recruitment": {
+    "assoc": "ריקרוטמנט – 'ריקרוט-מנט' – מנת הגיוס, תהליך הגיוס!",
+    "sentence": "The recruitment process was very competitive.|תהליך הגיוס היה תחרותי מאוד."
+  },
+  "rehabilitation": {
+    "assoc": "ריהביליטיישן – 'ריהב' בית – שיקמו את הבית, עכשיו הוא כמו חדש!",
+    "sentence": "After the accident, she needed rehabilitation.|אחרי התאונה, היא הייתה זקוקה לשיקום."
+  },
+  "relate": {
+    "assoc": "רילייט – 'רי-לייט' – ספר לי שוב, הדלק לי את האור בסיפור!",
+    "sentence": "Can you relate to this feeling?|האם אתה יכול לייחס את עצמך לתחושה הזו?"
+  },
+  "relations": {
+    "assoc": "רילייששנס – 'רילי' יש לו 'שן' – ליחסים יש שיניים!",
+    "sentence": "The two countries have good relations.|לשתי המדינות יש יחסים טובים."
+  },
+  "relationship": {
+    "assoc": "רילייששנשיפ – 'ספינת יחסים' – מערכת יחסים היא כמו ספינה, צריך לנווט!",
+    "sentence": "They have a strong relationship.|יש להם קשר חזק."
+  },
+  "relative": {
+    "assoc": "רלטיב – 'רלי-טיב' – קרוב משפחה שרץ ברלי (מרוץ) – טיב היחס יחסי!",
+    "sentence": "He is a distant relative of mine.|הוא קרוב משפחה רחוק שלי."
+  },
+  "relatively": {
+    "assoc": "רלטיבלי – 'רלי-טיבלי' – בצורה יחסית, רלי-טיבלי קל!",
+    "sentence": "The test was relatively easy.|המבחן היה קל באופן יחסי."
+  },
+  "release": {
+    "assoc": "רליס – 'ר-ליס' – שיחררו את ליס מהכלא, ואז פרסמו את זה!",
+    "sentence": "The band will release a new album.|הלהקה תפרסם אלבום חדש."
+  },
+  "request": {
+    "assoc": "ריקווסט – 'רי-קווסט' – הוא חזר לשאול שוב – בקשה נוספת!",
+    "sentence": "She made a request to leave early.|היא הגישה בקשה לצאת מוקדם."
+  },
+  "ruin": {
+    "assoc": "רואין – 'רו-אין' – 'רוא' (ראה) מה קרה בפנים – הכל נהרס!",
+    "sentence": "The storm ruined the crops.|הסופה הרסה את היבולים."
+  },
+  "ruins": {
+    "assoc": "רוינס – 'רו-אינס' – ראה את הריסות – כל כך עצוב!",
+    "sentence": "We visited the ancient ruins.|ביקרנו בהריסות העתיקות."
+  },
+  "sacred": {
+    "assoc": "סיקרד – 'סי-קרד' – קראו לזה סוד קדוש – מקודש!",
+    "sentence": "This place is sacred to many religions.|המקום הזה קדוש לדתות רבות."
+  },
+  "shelter": {
+    "assoc": "שלטר – 'שלט ר' – השלט הוביל למחסה!",
+    "sentence": "They found shelter from the storm.|הם מצאו מחסה מהסופה."
+  },
+  "slavery": {
+    "assoc": "סלייווארי – 'סלייב' זה עבד – סלייב-ארי, ארי העבד – עבדות!",
+    "sentence": "Slavery was abolished in the 19th century.|העבדות בוטלה במאה ה-19."
+  },
+  "strike": {
+    "assoc": "סטרייק – בבולינג 'סטרייק' זה להכות את כולם – שביתה מנצחת!",
+    "sentence": "The workers went on strike for better pay.|העובדים יצאו לשביתה לשכר טוב יותר."
+  },
+  "target": {
+    "assoc": "טרגט – 'טר-גט' – 'תר' ו'גט' – תר אחרי המטרה וקבל גט ממנה!",
+    "sentence": "The archer hit the target perfectly.|הקשת פגע במטרה בצורה מושלמת."
+  },
+  "tempt": {
+    "assoc": "טמפט – 'טמפ' – כשחם (טמפרטורה), הגלידה מפתה אותך!",
+    "sentence": "Don't tempt me with chocolate!|אל תפתה אותי עם שוקולד!"
+  },
+  "tense": {
+    "assoc": "טנס – 'טניס' – שחקן טניס לפני מחזור – מתוח ולחוץ!",
+    "sentence": "She felt tense before the exam.|היא הרגישה מתוחה לפני הבחינה."
+  },
+  "tension": {
+    "assoc": "טנשן – 'טנ-שן' – שן מתוחה בפה – הרגשת את המתח!",
+    "sentence": "There was tension in the room.|היה מתח בחדר."
+  },
+  "tradition": {
+    "assoc": "טרדישן – 'טרדי-שן' – סבתא מאחרת (טרדי) לשמור על המסורת!",
+    "sentence": "Lighting candles is a family tradition.|הדלקת נרות היא מסורת משפחתית."
+  },
+  "transplant": {
+    "assoc": "טרנספלנט – 'טרנס-פלנט' – העבירו (טרנס) את הצמח (פלנט) – השתלה!",
+    "sentence": "He received a heart transplant.|הוא קיבל השתלת לב."
+  },
+  "underestimated": {
+    "assoc": "אנדרסטימייטד – 'אנדר' זה מתחת – הוא הסתכל מלמטה והעריך נמוך מדי!",
+    "sentence": "He underestimated the difficulty of the task.|הוא העריך נמוך מדי את קושי המשימה."
+  },
+  "unfortunate": {
+    "assoc": "אנפורצ'ונט – 'אן-פור' – אין פור, אין מזל – אומלל!",
+    "sentence": "It was an unfortunate situation.|זו הייתה מצב אומלל."
+  },
+  "urge": {
+    "assoc": "ארג' – 'ארגז' דוחף אותך מאחורה – דחף שלא ניתן לעצור!",
+    "sentence": "He felt the urge to run away.|הוא הרגיש דחף לברוח."
+  },
+  "urgency": {
+    "assoc": "ארג'נסי – 'ארגנסי' – צריך לארגן הכל עכשיו – דחיפות!",
+    "sentence": "There was a sense of urgency in her voice.|היה תחושת דחיפות בקולה."
+  },
+  "urgent": {
+    "assoc": "ארג'נט – 'ארגנ-ט' – טלפון דחוף, ארגן את עצמך מהר!",
+    "sentence": "This is an urgent matter.|זהו עניין דחוף."
+  },
+  "vast": {
+    "assoc": "ואסט – 'וואסט' כמו 'waste' – מרחב עצום שנבזבז – רחב ועצום!",
+    "sentence": "The ocean is vast and deep.|האוקיינוס הוא רחב ועמוק."
+  },
+  "version": {
+    "assoc": "וורשן – 'ורד-שן' – לכל ורד יש גרסה אחרת של שן!",
+    "sentence": "This is the latest version of the software.|זוהי הגרסה האחרונה של התוכנה."
+  },
+  "withhold": {
+    "assoc": "ויתהולד – 'ויתה-הולד' – הוא ויתר על להחזיק – מנע מאחרים!",
+    "sentence": "He chose to withhold the information.|הוא בחר למנוע את המידע."
+  },
+  "witness": {
+    "assoc": "ויטנס – 'וויט-נס' – עד שרואה הכל עם 'wit' (חוכמה) וחוש!",
+    "sentence": "She was a witness to the accident.|היא הייתה עדה לתאונה."
+  },
+  "stress": {
+    "assoc": "סטרס – 'סטרס' נשמע כמו 'סטרס-בול' – כדור לחץ שדוחסים כשלחוצים!",
+    "sentence": "Exams cause a lot of stress.|בחינות גורמות להרבה לחץ."
+  },
+  "substitute": {
+    "assoc": "סבסטיטיוט – 'סבס-טיט' – סובסידיה לתחליף חלב – תחליף!",
+    "sentence": "Honey can be a substitute for sugar.|דבש יכול לשמש תחליף לסוכר."
+  },
+  "superficial": {
+    "assoc": "סופרפישל – 'סופר-פיש' – דג הסופר שחי על פני המים – שטחי!",
+    "sentence": "His knowledge of the subject is superficial.|הידע שלו בנושא הוא שטחי."
+  },
+  "distressingly": {
+    "assoc": "דיסטרסינגלי – 'דיס-טרס' – דיס לטרס (מכתב מרגיז) – באופן מרגיז!",
+    "sentence": "The situation was distressingly complicated.|המצב היה מרגיז בסיבוכו."
+  },
+  "encompass": {
+    "assoc": "אנקמפס – 'אן-קמפ-ס' – במחנה (קמפ) הקיפו אותנו מכל הכיוונים!",
+    "sentence": "The project will encompass many areas.|הפרויקט יקיף תחומים רבים."
+  },
+  "fall": {
+    "assoc": "פול – 'פול' נפל – בסתיו העלים נופלים, פול-פול-פול!",
+    "sentence": "Be careful not to fall on the ice.|היזהר לא ליפול על הקרח."
+  },
+  "hectic": {
+    "assoc": "הקטיק – 'הקטיק' זה כמו 'הקטר' – לוח זמנים עמוס כמו הקטר קדחתני!",
+    "sentence": "It has been a very hectic week.|זה היה שבוע עמוס מאוד."
+  },
+  "achieve": {
+    "assoc": "אצ'יב – 'א-צ'יב' – אחי-ב, אחי השיג הכל בחיים!",
+    "sentence": "Hard work helps you achieve your goals.|עבודה קשה עוזרת לך להשיג את המטרות שלך."
+  },
+  "act": {
+    "assoc": "אקט – 'אקט' כמו שחקן – הוא עשה מעשה גדול על הבמה!",
+    "sentence": "It is time to act and not just talk.|הגיע הזמן לפעול ולא רק לדבר."
+  },
+  "allure": {
+    "assoc": "אלור – 'אל-אור' – האור מפתה אותך להיכנס – פיתוי של אור!",
+    "sentence": "The allure of the city attracted many people.|הפיתוי של העיר משך אנשים רבים."
+  },
+  "condone": {
+    "assoc": "קונדון – 'קונדון' נשמע כמו 'קונה-דון' – קנית סליחה מהדון – מחלת לו!",
+    "sentence": "We cannot condone such behavior.|אנחנו לא יכולים למחול על התנהגות כזו."
+  },
+  "constitute": {
+    "assoc": "קונסטיטיוט – 'קונסטי-טיוט' – קונסטיטוציה מרכיבה ומהווה את המדינה!",
+    "sentence": "Five members constitute the committee.|חמישה חברים מהווים את הוועדה."
+  },
+  "distress": {
+    "assoc": "דיסטרס – 'דיס-טרס' – 'דיס' לטירוף – מצוקה גמורה!",
+    "sentence": "The child was in great distress.|הילד היה במצוקה גדולה."
+  },
+  "incite": {
+    "assoc": "אינסייט – 'אין-סייט' – 'אין סייט' (sight) – מסית אותך עד שלא רואים!",
+    "sentence": "His speech was meant to incite the crowd.|נאומו נועד להסית את ההמון."
+  },
+  "industrialization": {
+    "assoc": "אינדסטריאליזיישן – 'אינדסטרי' + 'ליזיישן' – תיעוש הפך את העולם לפסי ייצור!",
+    "sentence": "Industrialization changed society in the 19th century.|התיעוש שינה את החברה במאה ה-19."
+  },
+  "industrious": {
+    "assoc": "אינדסטריאס – 'אינדסטרי-אס' – עובד בתעשייה כמו אס – חרוץ ושקדן!",
+    "sentence": "She is an industrious student.|היא תלמידה חרוצה."
+  },
+  "industriously": {
+    "assoc": "אינדסטריאסלי – 'אינדסטרי-אסלי' – עובד בשקדנות כמו מפעל שרץ ללא הפסקה!",
+    "sentence": "He worked industriously to finish the project.|הוא עבד בשקדנות כדי לסיים את הפרויקט."
+  },
+  "industry": {
+    "assoc": "אינדסטרי – 'אינדי-סטרי' – אינדי זמר עצמאי שבנה תעשייה שלמה לבד!",
+    "sentence": "The technology industry is growing fast.|תעשיית הטכנולוגיה גדלה במהירות."
+  },
+  "limit": {
+    "assoc": "לימיט – 'לי-מיט' – לי יש מגבלה, אל תחצה את הגבול שלי!",
+    "sentence": "There is a limit to what I can do.|יש גבול למה שאני יכול לעשות."
+  },
+  "lure": {
+    "assoc": "לור – 'לור' כמו 'לורד' – הלורד פיתה אותם עם פיתיון מפואר!",
+    "sentence": "The smell of food was a lure for the animals.|ריח האוכל היה פיתיון לבעלי החיים."
+  },
+  "luring": {
+    "assoc": "לורינג – 'לורינג' – הלורד לורינג מפתה את כולם – מפתה!",
+    "sentence": "The advertisement was luring customers in.|הפרסומת הייתה מפתה לקוחות."
+  },
+  "mediate": {
+    "assoc": "מידייט – 'מידי-את' – 'מידי' זה באמצע – את עומדת באמצע ומתווכת!",
+    "sentence": "He agreed to mediate between the two sides.|הוא הסכים לתווך בין שני הצדדים."
+  },
+  "mediator": {
+    "assoc": "מידייטור – 'מידי-טור' – הטייר (tour) האמצעי – המתווך בסיור השלום!",
+    "sentence": "The mediator helped resolve the conflict.|המתווך עזר לפתור את הסכסוך."
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "classify": {
+    "assoc": "קלאס-יפי: בכיתה (Class) מסווגים את התלמידים לפי יופי? לא! לפי הישגים!",
+    "sentence": "Scientists classify animals into different groups based on their characteristics.|מדענים מסווגים בעלי חיים לקבוצות שונות בהתאם למאפיינים שלהם."
+  },
+  "companion": {
+    "assoc": "קום-פניון: בוא 'קום' (come) איתי לכל מקום - בן הלוויה שלי!",
+    "sentence": "My dog has been my faithful companion for ten years.|הכלב שלי היה בן הלוויה הנאמן שלי במשך עשר שנים."
+  },
+  "compromise": {
+    "assoc": "קום-פרו-מייז: 'קום' תיעשה פשרה, אחרת תישאר במבוך הוויכוח לנצח!",
+    "sentence": "Both sides agreed to a compromise to end the dispute.|שני הצדדים הסכימו לפשרה כדי לסיים את הסכסוך."
+  },
+  "confer": {
+    "assoc": "קונ-פר: הקונפר (כינוס) הוא מקום שבו מתייעצים ומעניקים תארים.",
+    "sentence": "The doctors decided to confer before making a final decision.|הרופאים החליטו להתייעץ לפני קבלת החלטה סופית."
+  },
+  "conference": {
+    "assoc": "קון-פרנס: 'קון-פרנס' - כשכולם קמים (קון) ורצים (runs) לוועידה!",
+    "sentence": "She gave a speech at the international conference.|היא נשאה נאום בוועידה הבינלאומית."
+  },
+  "consistency": {
+    "assoc": "קון-סיס-טנ-סי: האחות (Sister) שלי תמיד עקבית - כל יום בדיוק אותו הדבר!",
+    "sentence": "Consistency in your studies will lead to better results.|עקביות בלימודים שלך תוביל לתוצאות טובות יותר."
+  },
+  "detach": {
+    "assoc": "דה-טאץ': 'דה טאץ'' - תסיר את הטאץ' (Touch) מהמסך, כלומר תנתק אותו!",
+    "sentence": "Please detach the form and send it separately.|אנא הפרד את הטופס ושלח אותו בנפרד."
+  },
+  "disappear": {
+    "assoc": "דיס-א-פיר: ה'דיס' (שלילה) של 'להופיע' (appear) - להיעלם פשוטו כמשמעו!",
+    "sentence": "The magician made the rabbit disappear.|הקוסם גרם לארנב להיעלם."
+  },
+  "distort": {
+    "assoc": "דיס-טורט: עוגה (Torte) מעוותת - מישהו עיוות לה את הצורה לגמרי!",
+    "sentence": "The reporter was accused of distorting the facts.|הכתב הואשם בעיוות העובדות."
+  },
+  "distorted": {
+    "assoc": "דיס-טורטד: ה'דיס' (שלילה) של העוגה (Torte) - הדבר הזה מעוות לחלוטין!",
+    "sentence": "The image in the funhouse mirror was completely distorted.|התמונה במראה בית השעשועים הייתה מעוותת לחלוטין."
+  },
+  "distract": {
+    "assoc": "דיס-טרקט: דיס-טרקטור - הטרקטור הסיח את דעתי מהלימודים!",
+    "sentence": "Do not let social media distract you from your homework.|אל תתן לרשתות חברתיות להסיח את דעתך מהשיעורים שלך."
+  },
+  "distraction": {
+    "assoc": "דיס-טרק-שן: הטרקטור (Tractor) ברחוב - הסחה ענקית מהריכוז!",
+    "sentence": "His phone was a constant distraction during class.|הטלפון שלו היה הסחה מתמדת בכיתה."
+  },
+  "event": {
+    "assoc": "א-ונט: הכניסה (Vent) לאירוע היא דרך פתח האוורור!",
+    "sentence": "The school organized a special event for the end of the year.|בית הספר ארגן אירוע מיוחד לסוף השנה."
+  },
+  "exploit": {
+    "assoc": "אקס-פלויט: ה'אקס' שלך עכשיו מנצל אותך לגמרי!",
+    "sentence": "It is wrong to exploit workers by paying them low wages.|זה לא בסדר לנצל עובדים על ידי תשלום שכר נמוך."
+  },
+  "familiar with": {
+    "assoc": "פמיליה-ר: הפמיליה (משפחה) שלי - אני מכיר אותם היטב, בקיא בכל הסודות שלהם!",
+    "sentence": "Are you familiar with the rules of this game?|האם אתה מכיר את חוקי המשחק הזה?"
+  },
+  "feelings": {
+    "assoc": "פילינגס: כשיש לך 'פיל' (Feel) בגוף - זו תחושה ורגש גדול!",
+    "sentence": "She had mixed feelings about moving to a new city.|היו לה רגשות מעורבים לגבי המעבר לעיר חדשה."
+  },
+  "fertile": {
+    "assoc": "פר-טיל: הפר (שור) עומד על טיל - האדמה כל כך פורה שאפילו הפרות טסות!",
+    "sentence": "The Nile River made the surrounding land very fertile.|נהר הנילוס הפך את האדמה שסביבו לפורה מאוד."
+  },
+  "fertility": {
+    "assoc": "פרטיל-יטי: פוריות העיר - כשהפרות טסות, הכל צומח ומניב!",
+    "sentence": "The fertility of the soil in this region is exceptional.|פוריות הקרקע באזור זה יוצאת מן הכלל."
+  },
+  "fertilize": {
+    "assoc": "פרטיל-איז: 'פרטיל' (פורה) 'איז' (הוא) - האיכר מפרה את השדה שלו כל בוקר!",
+    "sentence": "Farmers use special products to fertilize their crops.|חקלאים משתמשים במוצרים מיוחדים להפרות היבולים שלהם."
+  },
+  "generate": {
+    "assoc": "ג'נרטור: ה'ג'נרטור' בבית מייצר חשמל - לחולל אנרגיה!",
+    "sentence": "Wind turbines generate electricity for thousands of homes.|טורבינות רוח מייצרות חשמל לאלפי בתים."
+  },
+  "generators": {
+    "assoc": "ג'נרטורים: כמה ג'נרטורים ביחד - מחוללים חשמל בכוח!",
+    "sentence": "The hospital uses generators during power outages.|בית החולים משתמש בגנרטורים בזמן הפסקות חשמל."
+  },
+  "hibernate": {
+    "assoc": "היי-בר-נייט: הדב (Bear) אומר 'היי' ואז נרדם לכל החורף בלילה (Night) - תרדמת חורף!",
+    "sentence": "Bears hibernate during the cold winter months.|דובים נמצאים בתרדמת חורף במהלך חודשי החורף הקרים."
+  },
+  "immodest": {
+    "assoc": "אין-מודסט: אין לו צניעות בכלל - חסר בושה וחצוף לגמרי!",
+    "sentence": "His immodest behavior shocked everyone at the ceremony.|ההתנהגות חסרת הבושה שלו הדהימה את כולם בטקס."
+  },
+  "inflict": {
+    "assoc": "אין-פליקט: 'אין פליקט' - אין ברירה, הוא גורם לך עונש וסבל!",
+    "sentence": "War can inflict terrible suffering on innocent people.|מלחמה יכולה להטיל סבל נורא על אנשים חפים מפשע."
+  },
+  "inspection": {
+    "assoc": "אינ-ספקציה: הספקן בודק הכל בפיקוח - הוא עורך בדיקה קפדנית!",
+    "sentence": "The factory had to pass a strict safety inspection.|המפעל היה צריך לעבור בדיקת בטיחות קפדנית."
+  },
+  "institute": {
+    "assoc": "אינסטי-טיוט: אינסטגרם של הטיוטות - מוסד שמקים רעיונות חדשים!",
+    "sentence": "He decided to institute new rules at the school.|הוא החליט להקים כללים חדשים בבית הספר."
+  },
+  "intrude": {
+    "assoc": "אין-טרוד: 'אין' כניסה - אבל הוא התפרץ פנימה בכל זאת!",
+    "sentence": "I am sorry to intrude, but I have an urgent message.|סליחה שאני מפריע, אבל יש לי הודעה דחופה."
+  },
+  "invade": {
+    "assoc": "אין-וויד: העשבים השוטים (Weed) פולשים לגינה - הם פשוט מתפרצים פנימה!",
+    "sentence": "The army decided to invade the neighboring territory.|הצבא החליט לפלוש לשטח השכן."
+  },
+  "lethargic": {
+    "assoc": "לת'ארג'-יק: הבריאות (Health) שלו ירגה - ירד כל כך שהוא רדום ועייף לגמרי!",
+    "sentence": "After eating so much, he felt lethargic and tired.|אחרי שאכל כל כך הרבה, הוא הרגיש רדום ועייף."
+  },
+  "logic": {
+    "assoc": "לוגיקה: בדיוק כמו בעברית - היגיון פשוט וברור!",
+    "sentence": "There is no logic in his argument.|אין היגיון בטיעון שלו."
+  },
+  "medium": {
+    "assoc": "מדיום: בבשריה אומרים 'מדיום' - לא חי ולא שרוף, בינוני בדיוק!",
+    "sentence": "He ordered his steak medium, not too rare and not too well done.|הוא הזמין את הסטייק שלו בינוני, לא חי מדי ולא צלוי מדי."
+  },
+  "mention": {
+    "assoc": "מנ-שן: לציין את ה'מנשן' (הבית הגדול) שקנית - לא שכחת להזכיר אותו!",
+    "sentence": "Did you mention my name in your speech?|האם ציינת את שמי בנאום שלך?"
+  },
+  "modest": {
+    "assoc": "מוד-סט: הוא לובש 'מוד' (אופנה) ב'סט' (קבוצה) - אבל בצנוע, בלי להתפאר!",
+    "sentence": "Despite his great talent, he remained modest and humble.|למרות כישרונו הרב, הוא נשאר צנוע וענוותן."
+  },
+  "motivation": {
+    "assoc": "מוטיבציה: בדיוק כמו בעברית - זה מה שמניע אותך קדימה לפעול!",
+    "sentence": "Her strong motivation helped her achieve her goals.|המוטיבציה החזקה שלה עזרה לה להשיג את מטרותיה."
+  },
+  "mundane": {
+    "assoc": "מון-דיין: ה'מון' (ירח בצרפתית) של 'דיין' - אפילו משפטי 'דיין' הפכו ליומיומיים ושגרתיים!",
+    "sentence": "She was tired of her mundane daily routine.|היא הייתה עייפה משגרת יומה היומיומית."
+  },
+  "novelty": {
+    "assoc": "נובל-טי: כמו 'נובל' - פרס נובל הוא תמיד חידוש גדול ומרגש!",
+    "sentence": "The novelty of the new smartphone wore off quickly.|חידוש הסמארטפון החדש דעך במהירות."
+  },
+  "observe": {
+    "assoc": "אוב-זרב: אוב! זה מה שאומרת הציפור כשהיא מתבוננת ומבחינה בכל!",
+    "sentence": "The scientist stopped to observe the behavior of the ants.|המדען עצר להתבונן בהתנהגות הנמלים."
+  },
+  "obtain": {
+    "assoc": "אוב-טיין: 'אוב' (מעל) 'טיין' (נער) - הנער מושיט יד מלמעלה להשיג ולקבל את מה שרוצה!",
+    "sentence": "You need to obtain a permit before starting construction.|אתה צריך להשיג היתר לפני שמתחילים לבנות."
+  },
+  "ornament": {
+    "assoc": "אורנ-מנט: אורן ה'מנטה' - עץ האורן עם קישוטי מנטה מבריקים!",
+    "sentence": "The Christmas tree was covered with colorful ornaments.|עץ חג המולד היה מכוסה בקישוטים צבעוניים."
+  },
+  "outline": {
+    "assoc": "אאוט-ליין: קו שיוצא (Out) מהקו (Line) - קו מתאר חיצוני שמגדיר את הצורה!",
+    "sentence": "Before writing the essay, I drew an outline of the main points.|לפני כתיבת החיבור, שרטטתי קו מתאר של הנקודות העיקריות."
+  },
+  "outstanding": {
+    "assoc": "אאוט-סטנ-דינג: עומד (Standing) בחוץ (Out) מכולם - בולט ויוצא מהכלל!",
+    "sentence": "She gave an outstanding performance in the school play.|היא נתנה הופעה יוצאת מהכלל במחזה בית הספר."
+  },
+  "petition": {
+    "assoc": "פטי-שן: 'פטי' (קטן בצרפתית) - גם עצומה קטנה יכולה לשנות חוק גדול!",
+    "sentence": "Students signed a petition to keep the school library open.|תלמידים חתמו על עצומה לשמור על ספריית בית הספר פתוחה."
+  },
+  "polite": {
+    "assoc": "פוליט: 'פולי' הציפור תמיד אומרת 'תודה ובבקשה' - כל כך מנומסת!",
+    "sentence": "It is important to be polite when speaking to adults.|חשוב להיות מנומס כשמדברים עם מבוגרים."
+  },
+  "politely": {
+    "assoc": "פוליט-לי: 'פולי לי' - פולי הציפור תמיד מדברת איתי בנימוס!",
+    "sentence": "She politely asked the teacher for more time.|היא ביקשה בנימוס מהמורה עוד זמן."
+  },
+  "pool": {
+    "assoc": "פול: בבריכה (Pool) אפשר לעשות פול-פוש ולצלול לתוך מאגר המים!",
+    "sentence": "The children spent the afternoon swimming in the pool.|הילדים בילו את אחר הצהריים בשחייה בבריכה."
+  },
+  "postpone": {
+    "assoc": "פוסט-פון: שלחתי 'פוסט' (הודעה) בפון (טלפון) שהפגישה נדחית!",
+    "sentence": "They had to postpone the match due to heavy rain.|הם נאלצו לדחות את המשחק בגלל גשם כבד."
+  },
+  "predict": {
+    "assoc": "פרה-דיקט: 'פרה' ב'דיקטטורה' - אפילו הפרה יכולה לחזות מי ינצח בבחירות!",
+    "sentence": "It is difficult to predict the weather a week in advance.|קשה לחזות את מזג האוויר שבוע מראש."
+  },
+  "predictable": {
+    "assoc": "פרה-דיקט-אבל: אפשר (able) לחזות - כל כך צפוי שאפשר להניח מה יקרה!",
+    "sentence": "The ending of the movie was completely predictable.|הסיום של הסרט היה לגמרי צפוי."
+  },
+  "prediction": {
+    "assoc": "פרדיקשן: הפרה (Pre) ניבאה - מה תחזות הפרה? גשם? שמש? תחזית!",
+    "sentence": "The weather prediction for tomorrow is sunny and warm.|תחזית מזג האוויר למחר היא שמשי וחם."
+  },
+  "prize": {
+    "assoc": "פרייז: 'פרייז' כמו 'praise' (לשבח) - מי שמוקיר ומשבח זוכה בפרס!",
+    "sentence": "She won the first prize in the science competition.|היא זכתה בפרס הראשון בתחרות המדעית."
+  },
+  "prophecy": {
+    "assoc": "פרופ-א-סי: הפרופסור (Prof) אמר 'א-סי!' (אוי לי!) - ואז ניבא את העתיד!",
+    "sentence": "The ancient prophecy predicted a great disaster.|הנבואה העתיקה חזתה אסון גדול."
+  },
+  "prophet": {
+    "assoc": "פרופ-ט: הפרופסור (Prof) הוא הנביא של הקמפוס - תמיד יודע מה יהיה בבחינה!",
+    "sentence": "Moses is considered a great prophet in Jewish tradition.|משה נחשב לנביא גדול במסורת היהודית."
+  },
+  "provincial": {
+    "assoc": "פרובינ-ציאלי: פרובינציה - מי שמגיע מהפרובינציה חושב רק על הכפר שלו!",
+    "sentence": "He had a rather provincial attitude toward big city life.|הייתה לו גישה פרובינציאלית למדי כלפי חיי העיר הגדולה."
+  },
+  "radiation": {
+    "assoc": "רדיאציה: בדיוק כמו בעברית - קרינה מסוכנת שאי אפשר לראות!",
+    "sentence": "Workers in nuclear plants must be protected from radiation.|עובדים במתקנים גרעיניים חייבים להיות מוגנים מפני קרינה."
+  },
+  "regardless": {
+    "assoc": "ריגארד-לס: 'לס' (פחות) כבוד (Regard) - ללא התחשבות בכלל באחרים!",
+    "sentence": "She continued to work hard regardless of the criticism.|היא המשיכה לעבוד קשה ללא התחשבות בביקורת."
+  },
+  "reply": {
+    "assoc": "ריפ-ליי: 'ריפ לי' - תפלי לי תשובה! (להשיב הלאה)",
+    "sentence": "Please reply to my email as soon as possible.|אנא השב למייל שלי בהקדם האפשרי."
+  },
+  "resemble": {
+    "assoc": "ריז-אמבל: 'ריז' (אורז) אמבל - האורז (Rice) שלנו נראה בדיוק כמו אמבל, אחד דומה לשני!",
+    "sentence": "She resembles her mother so much that people often confuse them.|היא דומה לאמא שלה כל כך שאנשים לעתים קרובות מבלבלים ביניהן."
+  },
+  "ritual": {
+    "assoc": "ריטו-אל: 'ריטואל' - כמו בעברית, טקס ופולחן שחוזר על עצמו!",
+    "sentence": "Morning coffee is a daily ritual for many people.|קפה בוקר הוא פולחן יומי עבור אנשים רבים."
+  },
+  "scene": {
+    "assoc": "סין: כמו 'סין' (סין-מה) - בסרט יש סצנה ונוף מדהים!",
+    "sentence": "The final scene of the movie made everyone cry.|הסצנה האחרונה של הסרט גרמה לכולם לבכות."
+  },
+  "scenery": {
+    "assoc": "סינ-רי: ה'סצנות' (Scenes) + 'רי' (ראה!) - ראה את כל הנוף שמסביב!",
+    "sentence": "The mountain scenery was absolutely breathtaking.|הנוף ההררי היה ממש מדהים ועוצר נשימה."
+  },
+  "smooth": {
+    "assoc": "סמות': 'סמות'י' (Smoothie) - שייק חלק ועדין לגמרי, אין בו גושים!",
+    "sentence": "The road was smooth and easy to drive on.|הכביש היה חלק ונוח לנהיגה."
+  },
+  "strict": {
+    "assoc": "סטריקט: המורה ה'סטריקטית' - קפדנית ונוקשה, לא מוותרת על כלום!",
+    "sentence": "Our gym teacher is very strict about punctuality.|מורה החדר הכושר שלנו קפדני מאוד בנוגע לדייקנות."
+  },
+  "strictly": {
+    "assoc": "סטריקטלי: המורה דיברה 'סטריקטלי' - בקפידה ובדיוק רב!",
+    "sentence": "The rules must be strictly followed at all times.|יש לעמוד בכללים בקפידה בכל עת."
+  },
+  "submit": {
+    "assoc": "סאב-מיט: 'סאב' (תת) פגישה (Meet) - להגיש מטה, להכנע לסמכות!",
+    "sentence": "You must submit your assignment before the deadline.|עליך להגיש את המטלה לפני המועד האחרון."
+  },
+  "sympathetic": {
+    "assoc": "סימפ-תטיק: ה'סימפ' (מי שתמיד מסכים) הכי אוהד וסימפתי לכולם!",
+    "sentence": "The teacher was sympathetic when she heard about his difficult situation.|המורה הייתה אוהדת כשנודע לה על מצבו הקשה."
+  },
+  "unpredictable": {
+    "assoc": "אן-פרה-דיקט-אבל: אי-אפשר (un-able) לחזות את הפרה הזו - בלתי צפויה לחלוטין!",
+    "sentence": "The weather in this region is very unpredictable.|מזג האוויר באזור זה הוא בלתי צפוי מאוד."
+  },
+  "adequate": {
+    "assoc": "אדקוויט: 'אד' (לכו בערבית) 'קוויט' (שקט) - תלכו בשקט, זה מספיק והולם!",
+    "sentence": "The salary was barely adequate to cover his expenses.|המשכורת הייתה בקושי מספיקה לכסות את הוצאותיו."
+  },
+  "ascend": {
+    "assoc": "א-סנד: 'א-סנד' - כשהוא עולה למעלה, השמש (Sun) זורחת עליו מלמעלה!",
+    "sentence": "The hikers began to ascend the steep mountain trail.|המטיילים החלו לעלות על שביל ההר התלול."
+  },
+  "boundary": {
+    "assoc": "באונד-רי: 'באונד' (קפיצה) + 'רי!' - אל תקפוץ מעבר לגבול הזה!",
+    "sentence": "The river marks the boundary between the two countries.|הנהר מסמן את הגבול בין שתי המדינות."
+  },
+  "coarse": {
+    "assoc": "קורס: 'קורס' - בקורס לימדו אותנו שחול גס הוא 'coarse', לא כמו חול עדין של ים!",
+    "sentence": "The coarse sand scratched his feet.|החול הגס שרט את רגליו."
+  },
+  "defer": {
+    "assoc": "דיפ-ר: 'דיפ' (עמוק) לחשוב - כשחושבים עמוק, דוחים ומעכבים את ההחלטה!",
+    "sentence": "He decided to defer his military service to finish his studies.|הוא החליט לדחות את השירות הצבאי כדי לסיים את לימודיו."
+  },
+  "descend": {
+    "assoc": "דה-סנד: 'דה סנד' - בחול (Sand) אפשר לרדת בגלישה בקלות!",
+    "sentence": "Be careful as you descend the steep stairs.|היה זהיר כשאתה יורד במדרגות התלולות."
+  },
+  "detain": {
+    "assoc": "דה-טיין: ה-Teen (נער) נעצר! עכבו אותו בגלל שעשה שטות בכיתה!",
+    "sentence": "The police decided to detain the suspect for questioning.|המשטרה החליטה לעצור את החשוד לחקירה."
+  },
+  "diverse": {
+    "assoc": "דיי-ורס: 'דיי' (יום) שונה מ'ורס' (שיר) - כל יום שיר אחר - מגוון ושונה!",
+    "sentence": "Our school has a very diverse student population.|לבית הספר שלנו אוכלוסיית תלמידים מגוונת מאוד."
+  },
+  "diversity": {
+    "assoc": "דיי-ור-סיטי: 'דיי' (יום) 'סיטי' (עיר) - בעיר כל יום גיוון אחר ברחובות!",
+    "sentence": "The diversity of cultures in the city makes it an interesting place to live.|הגיוון התרבותי בעיר הופך אותה למקום מעניין לחיות בו."
+  },
+  "enroll in": {
+    "assoc": "אין-רול אין: 'אין' (ב) 'רול' (גליל) - להכניס את השם לגליל הרישום, כלומר לקחת חלק!",
+    "sentence": "She decided to enroll in an art class this semester.|היא החליטה לקחת חלק בשיעור אמנות בסמסטר הזה."
+  },
+  "extent": {
+    "assoc": "אקס-טנט: ה'אקס' (לשעבר) גר ב'טנט' (אוהל) - ועד כמה? עד האוהל הכי רחוק שיש!",
+    "sentence": "To what extent does social media affect teenage behavior?|עד איזו מידה הרשתות החברתיות משפיעות על התנהגות של מתבגרים?"
+  },
+  "hereditary": {
+    "assoc": "הרדיטרי: 'הרד' (עדר) 'טרי' - עדר פרות תורשתי, אבא פרה בן פרה - תורשתי!",
+    "sentence": "Some diseases are hereditary and can be passed from parents to children.|חלק מהמחלות הן תורשתיות ויכולות לעבור מהורים לילדים."
+  },
+  "inadequate": {
+    "assoc": "אין-אדקוויט: 'אין' (שלילה) + 'אדקוויט' (מספיק) - פשוט בלתי מתאים ולא מספיק!",
+    "sentence": "The resources provided were inadequate for the task.|המשאבים שסופקו לא היו מתאימים למשימה."
+  },
+  "inert": {
+    "assoc": "אינ-ארט: 'אין' ל'ארט' (אמנות) - חסר חיים ואדיש לחלוטין, אפילו לאמנות!",
+    "sentence": "He sat there completely inert, not responding to anything.|הוא ישב שם לגמרי אדיש, לא מגיב לשום דבר."
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "affiliation": {
+    "assoc": "אפי-ליי-שן – אפי הצטרף לקבוצה כי רצה שייכות!",
+    "sentence": "His affiliation with the club gave him a sense of belonging.|השתייכותו למועדון נתנה לו תחושת שייכות."
+  },
+  "bewilder": {
+    "assoc": "בי-וויל-דר? – 'בי-וויל-ד-ר?' – אתה שואל שאלות ומתבלבל לחלוטין!",
+    "sentence": "The complex instructions bewildered the new students.|ההוראות המורכבות בלבלו את התלמידים החדשים."
+  },
+  "bewilderment": {
+    "assoc": "בי-וויל-דר-מנט – מנטה של בלבול! אכלת מנטה ולא ידעת אם זה חם או קר?",
+    "sentence": "Her bewilderment grew as the magician performed his tricks.|הבלבול שלה גדל ככל שהקוסם ביצע את הטריקים שלו."
+  },
+  "chronic": {
+    "assoc": "קרוני – כמו חולה 'כרוני' שכרוני לו כל הזמן – זה מתמשך ולא נגמר!",
+    "sentence": "He has suffered from chronic back pain for years.|הוא סבל מכאבי גב כרוניים במשך שנים."
+  },
+  "chronicle": {
+    "assoc": "כרוניקל – 'קרו-ניקל' – המטבע (nickel) קרוי בקורות ימי-הביניים! תיעוד היסטורי.",
+    "sentence": "The book chronicles the history of the ancient kingdom.|הספר מתעד את ההיסטוריה של הממלכה העתיקה."
+  },
+  "compensate": {
+    "assoc": "קומפנסייט – 'קום-פה-נסייט' – בוא לפה נסדר את הפיצוי שמגיע לך!",
+    "sentence": "The company agreed to compensate the workers for the extra hours.|החברה הסכימה לפצות את העובדים על השעות הנוספות."
+  },
+  "compensation": {
+    "assoc": "קומפנסיי-שן – 'קום-פה-שן' – הגעת לנשיונל לקבל פיצוי? בוא פה!",
+    "sentence": "He received compensation for the damage to his car.|הוא קיבל פיצוי על הנזק לרכבו."
+  },
+  "component": {
+    "assoc": "קומ-פו-נֶנט – 'קום-פה-נט' – בוא לרשת (net) ותמצא את הרכיב החסר!",
+    "sentence": "Every component of the engine must work perfectly.|כל רכיב במנוע חייב לעבוד בצורה מושלמת."
+  },
+  "convey": {
+    "assoc": "קון-ווי – 'קון-ביי-ביי' – קנה ביי ביי (קנה ופרוד) – זה מה שרצית להעביר בנאום פרידה!",
+    "sentence": "His smile conveyed his happiness better than words.|חיוכו העביר את שמחתו טוב יותר ממילים."
+  },
+  "deficiency": {
+    "assoc": "דה-פישן-סי – 'דה-פיש' – הדג (fish) הזה חסר! יש לנו מחסור בדגים בים.",
+    "sentence": "A vitamin D deficiency can cause weak bones.|מחסור בויטמין D עלול לגרום לעצמות חלשות."
+  },
+  "deficit": {
+    "assoc": "דה-פי-סיט – 'שב (sit) לפה' ותגלה שיש לך גירעון בחשבון הבנק!",
+    "sentence": "The government announced a large budget deficit this year.|הממשלה הכריזה על גירעון תקציבי גדול השנה."
+  },
+  "depend": {
+    "assoc": "די-פנד – 'ד-אנד' – ב'סוף' (end) כל דבר, אתה תלוי במישהו!",
+    "sentence": "Children depend on their parents for food and shelter.|ילדים תלויים בהוריהם למזון ומחסה."
+  },
+  "dependence": {
+    "assoc": "דה-פנ-דנס – 'דה-פנד-נס' – ה'נס' של להיות תלוי: תמיד יש מי שיעזור לך!",
+    "sentence": "His dependence on coffee made mornings difficult without it.|התלות שלו בקפה הפכה את הבוקר לקשה בלעדיו."
+  },
+  "depict": {
+    "assoc": "די-פיקט – 'דה-פיק' – בחרת את הפיק (פסגה) הכי יפה לצלם ולתאר אותה!",
+    "sentence": "The painting depicts a beautiful sunset over the ocean.|הציור מתאר שקיעה יפהפיה מעל הים."
+  },
+  "dexterity": {
+    "assoc": "דקסטריטי – 'דקסטר' – זוכרים את דקסטר מהמעבדה? הוא מלא מיומנות בידיים!",
+    "sentence": "A surgeon needs great dexterity to perform operations.|מנתח זקוק למיומנות רבה כדי לבצע ניתוחים."
+  },
+  "domestic": {
+    "assoc": "דו-מסטיק – עושים מסטיק בבית? זה כבר מוצר ביתי מקומי!",
+    "sentence": "The domestic flights are cheaper than international ones.|הטיסות הפנים-ארציות זולות יותר מהטיסות הבינלאומיות."
+  },
+  "domesticated": {
+    "assoc": "דו-מסטי-קייטד – הכלב הוא החיה המבויתת הכי קיוט (cute) שיש!",
+    "sentence": "The horse is one of the earliest domesticated animals.|הסוס הוא אחד החיות המבויתות הקדומות ביותר."
+  },
+  "dominate": {
+    "assoc": "דומי-נייט – 'דומינו-נייט' – בלילה (night) הדומינו שולט בשולחן המשחקים!",
+    "sentence": "The experienced team dominated the entire game.|הקבוצה המנוסה שלטה בכל המשחק."
+  },
+  "duplicate": {
+    "assoc": "דופלי-קייט – 'דו-פלי-קייט' – קייט הכפילה (double) את עצמה – לשכפל!",
+    "sentence": "Please do not duplicate the files on the shared drive.|בבקשה אל תשכפל את הקבצים בכונן המשותף."
+  },
+  "envy": {
+    "assoc": "אן-וִי – 'אנ-וי?' – 'אני וי?!' – אני קנאי? כן, אני קנא בך!",
+    "sentence": "She felt envy when she saw her friend's new phone.|היא הרגישה קנאה כשראתה את הטלפון החדש של חברתה."
+  },
+  "ferment": {
+    "assoc": "פֶר-מֶנט – 'פֵּר-מֶנְט' – הפרי (pear) עם מנטה תסס והפך לכמהין!",
+    "sentence": "Grapes ferment and turn into wine over time.|ענבים תוססים והופכים ליין עם הזמן."
+  },
+  "gratify": {
+    "assoc": "גרטי-פיי – 'גרַטי-פיי' – 'גרתי ופיי' – גרתי בבית ותשלמת? שביעות רצון מוחלטת!",
+    "sentence": "It will gratify her to know you enjoyed the meal.|זה ישביע את רצונה לדעת שנהנית מהארוחה."
+  },
+  "guarantee": {
+    "assoc": "גרנ-טי – 'גַּרָן-טִי' – הסבא שלי תמיד אומר: 'אני ערב ומתחייב לתה הזה!'",
+    "sentence": "The store offers a one-year guarantee on all products.|החנות מציעה אחריות של שנה על כל המוצרים."
+  },
+  "icicle": {
+    "assoc": "אי-סי-קל – 'אייס-יקֶל' – 'קל' כקרח (ice)! נטיף קרח קל וצלול.",
+    "sentence": "A large icicle hung from the roof after the snowstorm.|נטיף קרח גדול תלה מהגג לאחר סופת השלג."
+  },
+  "impose": {
+    "assoc": "אים-פּוֹז – 'אים-פּוֹז' – הבוס (boss) כופה תנוחה (pose) על כולם: 'כולם עמוד!'",
+    "sentence": "The government decided to impose new taxes on luxury goods.|הממשלה החליטה לכפות מסים חדשים על מוצרי יוקרה."
+  },
+  "independent": {
+    "assoc": "אין-דה-פנ-דנט – 'אין-דה-פנד' – אין לו פנד (תלות) – הוא עצמאי לחלוטין!",
+    "sentence": "She became financially independent after getting her first job.|היא הפכה עצמאית כלכלית לאחר שקיבלה את עבודתה הראשונה."
+  },
+  "life span": {
+    "assoc": "לייף-ספאן – 'לייף-ספן' – כמה זמן 'ספן' (עבר) מאז שהחיים שלך התחילו? זו תוחלת החיים!",
+    "sentence": "The life span of a sea turtle can exceed one hundred years.|תוחלת החיים של צב ים יכולה לעלות על מאה שנה."
+  },
+  "modify": {
+    "assoc": "מוֹ-דִי-פַיי – 'מוד-יי-פיי' – שינית את המוד (מצב רוח) שלך? שינית את עצמך!",
+    "sentence": "The teacher decided to modify the assignment after the students complained.|המורה החליטה לשנות את המטלה לאחר שהתלמידים התלוננו."
+  },
+  "pen": {
+    "assoc": "פֶּן – 'פֶּן' – 'פן תיכף תכתוב בי' – הוא עט! ו'פן' גם כלוב... שניהם 'פן'!",
+    "sentence": "He used a pen to sign the important document.|הוא השתמש בעט כדי לחתום על המסמך החשוב."
+  },
+  "pose": {
+    "assoc": "פּוֹז – כשצלם אומר 'פוז!' אתה קופא בתנוחה ומעמיד פנים שאתה מגניב.",
+    "sentence": "She posed for the photograph with a big smile.|היא קפאה לתמונה עם חיוך גדול."
+  },
+  "predominate": {
+    "assoc": "פרי-דומי-נייט – 'פרה-דומינו' – הפרות שלטו בשולחן הדומינו ובלטו מעל כולם!",
+    "sentence": "Blue and white colors predominate in the national flag.|הצבעים הכחול והלבן שולטים בדגל הלאומי."
+  },
+  "promptly": {
+    "assoc": "פּרוֹמְפְּטְלִי – 'פרומפט-לי' – כשהמחשב מראה לך פרומפט – עלייך לפעול מיד, ללא דיחוי!",
+    "sentence": "She replied promptly to the important email.|היא הגיבה מיידית למייל החשוב."
+  },
+  "roam": {
+    "assoc": "רוֹאָם – 'רוֹם' (Rome)! כשאתה נוסע לרומא אתה משוטט ברחובות העתיקים.",
+    "sentence": "Wild elephants roam freely across the national park.|פילי בר שוטטים בחופשיות ברחבי הפארק הלאומי."
+  },
+  "stimulate": {
+    "assoc": "סטִי-מיו-לֵייט – 'סטים-מיאו' – הקיטור (steam) של הקפה ממריץ אותך כמו חתול שמיילל!",
+    "sentence": "Exercise can stimulate the brain and improve memory.|פעילות גופנית יכולה להמריץ את המוח ולשפר את הזיכרון."
+  },
+  "timid": {
+    "assoc": "טִי-מִיד – 'טים-מיד' – ה'טים' (צוות) שמיד מתבייש ולא מדבר – ביישן!",
+    "sentence": "The timid child hid behind his mother when the guests arrived.|הילד הביישן הסתתר מאחורי אמו כשהאורחים הגיעו."
+  },
+  "vanquish": {
+    "assoc": "וַן-קוִויש – 'וואן-קוויש' – ואן (רכב) שמרסק ('קווישה') כל מה שבדרכו – מנצח הכל!",
+    "sentence": "The hero managed to vanquish the dragon and save the village.|הגיבור הצליח להביס את הדרקון ולהציל את הכפר."
+  },
+  "agency": {
+    "assoc": "אֵי-גֶ'ן-סִי – 'אייג'נט-סי' – ראית סוכן (agent) בים (sea)? ודאי בא מהסוכנות!",
+    "sentence": "She found a job through a recruitment agency.|היא מצאה עבודה דרך סוכנות גיוס."
+  },
+  "arrangement": {
+    "assoc": "אֲ-רֵינְג'-מֶנְט – 'אה-ריינג' – כשמסדרים את הטבעת (ring), הכל נראה כמו הסכם מסודר!",
+    "sentence": "We made an arrangement to meet at the café at noon.|עשינו סידור להיפגש בבית הקפה בצהריים."
+  },
+  "blow": {
+    "assoc": "בְּלוֹ – 'בלו' – 'בלו' (כחול) ממכה! כשמישהו נותן מכה, אתה כחול מחבורות.",
+    "sentence": "A strong wind began to blow from the north.|רוח חזקה החלה לנשוף מהצפון."
+  },
+  "bone": {
+    "assoc": "בּוֹן – 'בּוֹן אפֶּטִי' בצרפתית – כשאוכלים עצמות, מאחלים תיאבון!",
+    "sentence": "The dog chewed happily on a large bone.|הכלב לעס בשמחה על עצם גדולה."
+  },
+  "displacement": {
+    "assoc": "דִּיס-פְּלֵייס-מֶנְט – 'דיס-פלייס' – 'המקום הזה (place) בוטל!' – אתה עקור ממקומך!",
+    "sentence": "The flood caused the displacement of thousands of families.|השיטפון גרם לעקירת אלפי משפחות."
+  },
+  "dusty": {
+    "assoc": "דָּאסְטִי – 'דאסט-י' – 'דאסטי' הוא שם לאיש שתמיד מכוסה באבק – מאובק!",
+    "sentence": "The old books on the top shelf were dusty.|הספרים הישנים על המדף העליון היו מאובקים."
+  },
+  "dwell": {
+    "assoc": "דְּוֶל – 'דְוֶל' – 'ד'וֶל' – כשגר (דר) בבאר (well), אתה מתגורר שם!",
+    "sentence": "Many animals dwell in the depths of the rainforest.|בעלי חיים רבים מתגוררים בעומקי יער הגשם."
+  },
+  "dwelling": {
+    "assoc": "דְּוֶלִינְג – 'דְוֶל-ינג' – צעיר (young) שגר (dwells) במשכן קטן ועגול.",
+    "sentence": "The ancient dwelling was carved into the side of a cliff.|המשכן העתיק היה חצוב בצלע המצוק."
+  },
+  "education": {
+    "assoc": "אֶדְיוּ-קֵי-שֶׁן – 'אד-יו-קיי-שן' – 'אד יו!' (מתנה לך!) – חינוך הוא המתנה שנותנים לך!",
+    "sentence": "Education is the key to a successful future.|חינוך הוא המפתח לעתיד מוצלח."
+  },
+  "educational": {
+    "assoc": "אֶדְיוּ-קֵי-שֶׁנָל – 'אד-יו-קיישנל' – המתנה (education) עם 'אל' – זה לא רק חינוך, זה חינוכי!",
+    "sentence": "The museum visit was a very educational experience for the students.|הביקור במוזיאון היה חוויה חינוכית מאוד לתלמידים."
+  },
+  "effort": {
+    "assoc": "אֶפ-פֶּרְט – 'אה-פּוֹרְט' – לנמל (port) מגיעים רק אחרי מאמץ גדול של שיט!",
+    "sentence": "It takes a lot of effort to learn a new language.|נדרש הרבה מאמץ ללמוד שפה חדשה."
+  },
+  "empty": {
+    "assoc": "אֶמְפְּטִי – 'אֶמְ-פְּ-טִי' – 'אם פיטרה' את כל הרהיטים – הבית ריק!",
+    "sentence": "He returned home to find an empty refrigerator.|הוא חזר הביתה ומצא מקרר ריק."
+  },
+  "end": {
+    "assoc": "אֶנְד – 'אֶנד' – 'זה ה-end!' – הסוף, גמרנו, עד כאן!",
+    "sentence": "They were happy when the long meeting finally came to an end.|הם שמחו כשהפגישה הארוכה הגיעה סוף סוף לסיומה."
+  },
+  "environment": {
+    "assoc": "אֶנְ-וַאי-רוֹן-מֶנְט – 'אן-ויי-רון' – 'רון שואל למה?' – כי הוא אכפתי לסביבה!",
+    "sentence": "We must protect the environment for future generations.|עלינו להגן על הסביבה לדורות הבאים."
+  },
+  "essay": {
+    "assoc": "אֶס-סֵי – 'אֶסֶה' – לכתוב חיבור זה לנסות (essayer בצרפתית) לכתוב משהו טוב!",
+    "sentence": "She spent the whole weekend writing her history essay.|היא בילתה את כל סוף השבוע בכתיבת החיבור שלה בהיסטוריה."
+  },
+  "exhibit": {
+    "assoc": "אֶגְ-זִי-בִּיט – 'אגז-היביט' – ההוביט הציג את אגוזיו בתערוכה!",
+    "sentence": "The museum will exhibit rare fossils from the dinosaur era.|המוזיאון יציג מאובנים נדירים מעידן הדינוזאורים."
+  },
+  "exhibition": {
+    "assoc": "אֶגְ-זִי-בִּי-שֶׁן – 'אגז-היבי-שן' – השן (tooth) של ההוביט בתערוכה הכי מפורסמת!",
+    "sentence": "The art exhibition attracted thousands of visitors from around the world.|התערוכה האמנותית משכה אלפי מבקרים מרחבי העולם."
+  },
+  "fact": {
+    "assoc": "פַּקְט – 'פאקט' – 'זה פאקט!' – עובדה שכולם יודעים, לא ניתן להכחישה!",
+    "sentence": "It is a fact that the Earth revolves around the Sun.|זוהי עובדה שכדור הארץ מסתובב סביב השמש."
+  },
+  "famous": {
+    "assoc": "פֵּי-מָס – 'פֵּי-מוּס' – 'פה (mouth) מוס' – מי שמפורסם כולם מדברים עליו בפה מלא!",
+    "sentence": "She became famous after her first novel was published.|היא הפכה מפורסמת לאחר פרסום הרומן הראשון שלה."
+  },
+  "glow": {
+    "assoc": "גְּלוֹ – 'גְלוֹ' – 'גלוּ!' – כמו 'גלו הגאולה' – הכוכב זוהר ומאיר כמו גאולה!",
+    "sentence": "The candles created a warm glow in the dark room.|הנרות יצרו זוהר חם בחדר האפל."
+  },
+  "infamous": {
+    "assoc": "אִינ-פֵּי-מָס – 'אין-פֵּי-מוּס' – 'אין לו פה (mouth) מוסיקה' – ידוע לשמצה ולא מוזמן!",
+    "sentence": "The infamous gangster was finally caught by the police.|הגנגסטר הידוע לשמצה נתפס לבסוף על ידי המשטרה."
+  },
+  "invite": {
+    "assoc": "אִינ-וַאיט – 'אין-לבן (white)' – 'אין לבן על גבי הזמנה' = אתה לא מוזמן!",
+    "sentence": "Did you invite all your friends to the party?|הזמנת את כל חבריך למסיבה?"
+  },
+  "layer": {
+    "assoc": "לֵיְ-יֶר – 'לֵייֶר' – 'ליי-ר' – בחורף לובשים שכבה (layer) אחרי שכבה!",
+    "sentence": "The cake was decorated with many layers of cream.|העוגה עוטרה בשכבות רבות של קצפת."
+  },
+  "leave": {
+    "assoc": "לִיב – 'ליב' – 'ליב' (חי בגרמנית) – כשאתה עוזב, אתה ממשיך לחיות במקום אחר!",
+    "sentence": "She had to leave the party early to catch the last bus.|היא נאלצה לעזוב את המסיבה מוקדם כדי לתפוס את האוטובוס האחרון."
+  },
+  "length": {
+    "assoc": "לֶנְגְ'ת – 'לאנג-ת'' – 'לאנג' (ארוך בגרמנית) + ת' – הת' מוסיפה עוד קצת אורך!",
+    "sentence": "Please measure the length of the table before buying the cloth.|אנא מדוד את אורך השולחן לפני שתקנה את הבד."
+  },
+  "open": {
+    "assoc": "אוֹ-פֶּן – 'אוּ! פֶּן!' – פתחת קופסה ומצאת עט (pen)! פתוח!",
+    "sentence": "Please open the window, it is very hot in here.|אנא פתח את החלון, חם מאוד כאן."
+  },
+  "people": {
+    "assoc": "פִּי-פְּל – 'פִּיפֶּל' – אנשים שאוכלים פיפֶּל (פרג) יחד הם עם אחד!",
+    "sentence": "Millions of people around the world celebrate the new year.|מיליוני אנשים ברחבי העולם חוגגים את השנה החדשה."
+  },
+  "perform": {
+    "assoc": "פֶּר-פוֹרְם – 'פֶּר-פוֹרְם' – 'פרה פורמת' – כשפרה מופיעה בצורה מיוחדת על הבמה!",
+    "sentence": "The band will perform three songs at the school concert.|הלהקה תבצע שלושה שירים בקונצרט בית הספר."
+  },
+  "performance": {
+    "assoc": "פֶּר-פוֹר-מֶנְס – 'פרה-פורמנס' – הפרה עלתה לבמה – ביצוע מרהיב של הפרה הגדולה!",
+    "sentence": "The audience applauded the amazing dance performance.|הקהל מחא כפיים להופעת המחול המדהימה."
+  },
+  "performer": {
+    "assoc": "פֶּר-פוֹר-מֶר – 'פרה-פורמר' – הפרה-פורמר היא אמנית הפרה הגדולה ביותר על הבמה!",
+    "sentence": "She is one of the best performers in the country.|היא אחת האמניות הטובות ביותר בארץ."
+  },
+  "personal": {
+    "assoc": "פֶּר-סָה-נָל – 'פרסון-ל' – אישיות (person) + לי = זה אישי שלי!",
+    "sentence": "Please keep your personal belongings with you at all times.|אנא שמור את חפציך האישיים עמך בכל עת."
+  },
+  "personality": {
+    "assoc": "פֶּר-סָה-נָ-לִי-טִי – 'פרסון-טי' – כל אדם (person) שותה תה (tea) בצורה שמשקפת את אישיותו!",
+    "sentence": "Her bright personality made her popular with everyone.|אישיותה הבוהקת הפכה אותה לאהובה על כולם."
+  },
+  "place": {
+    "assoc": "פְּלֵייס – 'פְּלֵייס' – 'פלייסטיישן' – המקום שלי הוא ליד הפלייסטיישן!",
+    "sentence": "This is the perfect place to watch the sunset.|זהו המקום המושלם לצפות בשקיעה."
+  },
+  "plan": {
+    "assoc": "פְּלֶן – 'פְּלֶן' – 'פלנה טיסה' – כשיש תוכנית טיסה (flight plan), יש תוכנית!",
+    "sentence": "We need a clear plan before we start the project.|אנחנו צריכים תכנית ברורה לפני שנתחיל את הפרויקט."
+  },
+  "preparation": {
+    "assoc": "פְּרֶ-פָּה-רֵי-שֶׁן – 'פרפה-ריישן' – הפרפה מוכן? ציידת! הכנה מוקדמת לארוחה המושלמת!",
+    "sentence": "Careful preparation is the key to success in any exam.|הכנה מדוקדקת היא המפתח להצלחה בכל מבחן."
+  },
+  "press": {
+    "assoc": "פְּרֶס – 'פְּרֶס' – מי שמקבל פרס (prize) נלחץ מהעיתונות (press) שמצלמת אותו!",
+    "sentence": "She had to press the button three times before the door opened.|היא נאלצה ללחוץ על הכפתור שלוש פעמים לפני שהדלת נפתחה."
+  },
+  "promise": {
+    "assoc": "פְּרוֹ-מִיס – 'פְּרוֹ-מִיס' – 'מיס' מקצועית (pro) שתמיד מבטיחה ומקיימת!",
+    "sentence": "He made a promise to help her move to the new apartment.|הוא הבטיח לעזור לה לעבור לדירה החדשה."
+  },
+  "property": {
+    "assoc": "פְּרוֹ-פֶּר-טִי – 'פרו-פרטי' – מה שמצויין (pro) ופרטי שלך – זה הרכוש שלך!",
+    "sentence": "The fence marks the boundary of our property.|הגדר מסמן את גבול הרכוש שלנו."
+  },
+  "retire": {
+    "assoc": "רִי-טַאיר – 'רי-טַייר' – 'שוב (re) לגלגל (tire)' – כשפורשים חוזרים לגלגל החיים הרגוע!",
+    "sentence": "My grandfather plans to retire next year.|סבי מתכנן לפרוש בשנה הבאה."
+  },
+  "retirement": {
+    "assoc": "רִי-טַאיר-מֶנְט – 'רי-טַיר-מנט' – פורשים ומתפנקים עם מנטה בגינה הביתית!",
+    "sentence": "She spent her retirement traveling around the world.|היא בילתה את פרישתה בנסיעות ברחבי העולם."
+  },
+  "share": {
+    "assoc": "שֵׁר – 'שֵׁר' – שרים שיר (share a song) יחד = לחלוק!",
+    "sentence": "He decided to share his lunch with his friend.|הוא החליט לחלוק את ארוחת הצהריים שלו עם חברו."
+  },
+  "shy": {
+    "assoc": "שַׁאי – 'שַׁאי?' – 'שאי?' – הביישן שואל 'מה יש לי להגיד?' ונשאר שקט.",
+    "sentence": "He is too shy to speak in front of the whole class.|הוא ביישן מדי לדבר מול כל הכיתה."
+  },
+  "skill": {
+    "assoc": "סְקִיל – 'סְקִיל' – 'סקיל = גולגולת (skull)' – מי שיש לו מיומנות, יש לו מוח בגולגולת!",
+    "sentence": "Learning to play the guitar is a skill that takes time.|ללמוד לנגן גיטרה היא מיומנות שלוקחת זמן."
+  },
+  "skin": {
+    "assoc": "סְקִין – 'סְקִין' – 'סְקִין-הֶד' (skinhead) – שם שמתאר בדיוק את הדבר: עור בלי שיער!",
+    "sentence": "You should protect your skin from the strong summer sun.|עליך להגן על עורך מהשמש החזקה של הקיץ."
+  }
+}

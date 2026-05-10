@@ -1,0 +1,202 @@
+
+function PracticeHubScreen({ t, allWords, progress, stats, onNavigate, onStartFlash }) {
+  const learningWords = allWords.filter(w => progress[w.en]?.status === 'learning');
+  const unseenWords = allWords.filter(w => !progress[w.en] || progress[w.en].status === 'unseen');
+  const pct = stats.total > 0 ? Math.round(stats.known/stats.total*100) : 0;
+
+  return <div className="screen-in" style={{ fontFamily:t.fontHe }}>
+    <div style={{ padding:`16px ${t.pad}px 4px` }}>
+      <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.14em', color:t.c.muted, fontFamily:t.fontEn }}>PRACTICE</div>
+      <div style={{ fontSize:26, fontWeight:700, color:t.c.ink, letterSpacing:'-0.015em', marginTop:2 }}>בחר מצב תרגול</div>
+      <div style={{ fontSize:13, color:t.c.muted, marginTop:4 }}>ארבעה סוגי תרגול · התקדמות אישית לפי קטגוריה</div>
+    </div>
+    <div style={{ padding:`14px ${t.pad}px 110px`, display:'flex', flexDirection:'column', gap:12 }}>
+      <PracticeCard t={t} en="VOCABULARY" he="אוצר מילים"
+        desc="כרטיסיות שינון, רשימת מילים, מבחני זיכרון"
+        stat={`${stats.known} / ${stats.total}`} statLabel="מילים יודע"
+        progress={pct} icon="cards"
+        onClick={() => { const list=[...shuffle(learningWords),...shuffle(unseenWords)].slice(0,40); onStartFlash(list.length>0?list:shuffle(allWords).slice(0,20)); }}/>
+      <PracticeCard t={t} en="SENTENCE COMPLETION" he="השלמת משפטים"
+        desc="מילה חסרה במשפט · 4 הסחות · משוב מיידי"
+        stat={`${sentenceQuestions.length} שאלות`} statLabel="במאגר"
+        progress={65} icon="quote" onClick={() => onNavigate('exam-sc')}/>
+      <PracticeCard t={t} en="RESTATEMENT" he="ניסוח מחדש"
+        desc="זיהוי הניסוח השומר על משמעות המשפט המקורי"
+        stat={`${restatementQuestions.length} שאלות`} statLabel="במאגר"
+        progress={74} icon="refresh" onClick={() => onNavigate('exam-rs')}/>
+      <PracticeCard t={t} en="READING" he="הבנת הנקרא"
+        desc="קטעי קריאה אקדמיים · שאלות מרובות-ברירה"
+        stat="3 טקסטים" statLabel="זמינים"
+        progress={37} icon="book" onClick={() => onNavigate('texts-list')}/>
+    </div>
+  </div>;
+}
+
+function PracticeCard({ t, en, he, desc, stat, statLabel, progress, icon, onClick }) {
+  return <div onClick={onClick} style={{ padding:'18px', borderRadius:22, background:t.c.surface, border:`1px solid ${t.c.line}`, boxShadow: t.dark ? 'none' : '0 1px 0 rgba(20,20,40,0.025)', cursor:'pointer' }}>
+    <div style={{ display:'flex', alignItems:'flex-start', gap:14 }}>
+      <div style={{ width:42, height:42, borderRadius:14, background:t.accentSoft, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
+        <Icon name={icon} size={20} color={t.accent} stroke={1.8}/>
+      </div>
+      <div style={{ flex:1, minWidth:0 }}>
+        <div style={{ fontSize:10.5, fontWeight:700, letterSpacing:'0.16em', color:t.c.muted, fontFamily:t.fontEn }}>{en}</div>
+        <div style={{ fontSize:19, fontWeight:700, marginTop:3, letterSpacing:'-0.005em', color:t.c.ink }}>{he}</div>
+        <div style={{ fontSize:12.5, marginTop:6, color:t.c.muted, lineHeight:1.4 }}>{desc}</div>
+      </div>
+      <Icon name="chevron-left" size={18} color={t.c.muted} stroke={1.8}/>
+    </div>
+    <div style={{ marginTop:14, paddingTop:14, borderTop:`0.5px solid ${t.c.line}`, display:'flex', alignItems:'center', gap:14 }}>
+      <div style={{ flexShrink:0 }}>
+        <div style={{ fontSize:11, fontWeight:600, color:t.c.muted }}>{statLabel}</div>
+        <div style={{ fontFamily:t.fontEn, fontSize:16, fontWeight:700, marginTop:1, color:t.c.ink, fontVariantNumeric:'tabular-nums' }}>{stat}</div>
+      </div>
+      <div style={{ flex:1 }}>
+        <div style={{ height:4, borderRadius:2, background: t.dark ? 'rgba(255,255,255,0.08)' : 'rgba(20,20,30,0.06)', overflow:'hidden' }}>
+          <div style={{ width:`${progress}%`, height:'100%', background:t.accent }}/>
+        </div>
+      </div>
+    </div>
+  </div>;
+}
+
+function VocabScreen({ t, allWords, progress, onBack, onStartFlash }) {
+  const [unitFilter, setUnitFilter] = useState('הכל');
+  const [levelFilter, setLevelFilter] = useState('הכל');
+  const [statusFilter, setStatusFilter] = useState('הכל');
+
+  const known = allWords.filter(w => progress[w.en]?.status === 'known').length;
+  const learning = allWords.filter(w => progress[w.en]?.status === 'learning').length;
+  const unseen = allWords.length - known - learning;
+
+  const filteredWords = useMemo(() => {
+    return allWords.filter(w => {
+      if (unitFilter !== 'הכל' && w.unit !== unitFilter) return false;
+      if (levelFilter !== 'הכל' && w.level !== levelFilter) return false;
+      const s = progress[w.en]?.status || 'unseen';
+      if (statusFilter === 'יודע' && s !== 'known') return false;
+      if (statusFilter === 'ללמידה' && s !== 'learning') return false;
+      if (statusFilter === 'טרם' && s !== 'unseen') return false;
+      return true;
+    }).slice(0, 100);
+  }, [allWords, progress, unitFilter, levelFilter, statusFilter]);
+
+  const sColors = { known: t.c.statusGreen, learning: t.accent, unseen: t.c.muted };
+  const sLabels = { known: 'יודע', learning: 'ללמידה', unseen: 'טרם' };
+
+  return <div className="screen-in" style={{ fontFamily:t.fontHe }}>
+    <div style={{ padding:`16px ${t.pad}px 0` }}>
+      <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:14 }}>
+        <NavPill t={t} onClick={onBack}><Icon name="chevron-right" size={17} color={t.c.ink2} stroke={2}/></NavPill>
+        <div style={{ flex:1 }}>
+          <div style={{ fontSize:24, fontWeight:700, color:t.c.ink, letterSpacing:'-0.01em' }}>אוצר מילים</div>
+          <div style={{ fontSize:13, color:t.c.muted }}>{allWords.length} מילים · Kidum</div>
+        </div>
+      </div>
+      <div style={{ display:'flex', gap:8, marginBottom:14 }}>
+        {[{color:t.c.statusGreen,label:'יודע',v:known},{color:t.accent,label:'ללמידה',v:learning},{color:t.c.muted,label:'טרם',v:unseen}].map(x =>
+          <div key={x.label} onClick={() => setStatusFilter(x.label)} style={{ flex:1, padding:'10px 12px', borderRadius:16, background:t.c.surface, border: statusFilter===x.label ? `1.5px solid ${t.accent}` : (t.dark ? `0.5px solid ${t.c.line}` : 'none'), boxShadow: t.dark ? 'none' : '0 1px 0 rgba(20,20,40,0.025)', cursor:'pointer' }}>
+            <div style={{ display:'flex', alignItems:'center', gap:5, marginBottom:4 }}><StatusDot color={x.color}/><span style={{ fontSize:11.5, color:t.c.ink2, fontWeight:600 }}>{x.label}</span></div>
+            <div style={{ fontSize:22, fontWeight:700, color:t.c.ink, fontFamily:t.fontEn, lineHeight:1 }}>{x.v}</div>
+          </div>
+        )}
+      </div>
+      <div style={{ display:'flex', gap:6, marginBottom:8, overflowX:'auto', paddingBottom:4 }}>
+        {['הכל','Unit 1','Unit 2','Unit 3','מילות יחס'].map(u =>
+          <div key={u} onClick={() => setUnitFilter(u)} style={{ flexShrink:0, padding:'7px 14px', borderRadius:9999, fontSize:12.5, fontWeight:600, background: unitFilter===u ? t.c.ink : (t.dark ? 'rgba(255,255,255,0.06)' : 'rgba(20,20,30,0.05)'), color: unitFilter===u ? t.c.surface : t.c.ink2, cursor:'pointer' }}>{u}</div>
+        )}
+      </div>
+      <div style={{ display:'flex', gap:6, marginBottom:14, overflowX:'auto', paddingBottom:4 }}>
+        {['הכל','Basic','Medium','Extreme'].map(l =>
+          <Pill key={l} t={t} selected={levelFilter===l} onClick={() => setLevelFilter(l)}>{l}</Pill>
+        )}
+      </div>
+    </div>
+    <div style={{ padding:`0 ${t.pad}px 110px`, overflow:'auto' }}>
+      {filteredWords.length === 0
+        ? <div style={{ textAlign:'center', padding:'40px 0', color:t.c.muted, fontSize:14 }}>אין מילים תואמות</div>
+        : <Card t={t} pad={0} style={{ overflow:'hidden' }}>
+          {filteredWords.map((w, i) => {
+            const s = progress[w.en]?.status || 'unseen';
+            return <React.Fragment key={w.en+w.unit+i}>
+              {i > 0 && <Divider t={t}/>}
+              <div style={{ padding:'14px 18px', display:'flex', alignItems:'center', gap:12 }}>
+                <div style={{ flex:1, minWidth:0 }}>
+                  <div style={{ fontFamily:t.fontSerif, fontSize:20, fontWeight:500, color:t.c.ink, direction:'ltr', textAlign:'right', letterSpacing:'-0.005em', lineHeight:1.1 }}>{w.en}</div>
+                  <div style={{ fontSize:13, color:t.c.ink2, marginTop:3, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{w.he}</div>
+                </div>
+                <div style={{ display:'flex', flexDirection:'column', alignItems:'flex-end', gap:4, flexShrink:0 }}>
+                  <div style={{ display:'flex', alignItems:'center', gap:4 }}>
+                    <StatusDot color={sColors[s]} size={6}/>
+                    <span style={{ fontSize:11, color:t.c.ink2, fontWeight:600 }}>{sLabels[s]}</span>
+                  </div>
+                  <div style={{ fontSize:10.5, fontFamily:t.fontEn, color:t.c.muted, letterSpacing:'0.04em' }}>{w.unit} · {w.level?.charAt(0)}</div>
+                </div>
+              </div>
+            </React.Fragment>;
+          })}
+        </Card>}
+    </div>
+  </div>;
+}
+
+function TestOverviewScreen({ t, onStart, onBack }) {
+  const sections = [
+    { n:1, title:'השלמת משפטים', sub:'Sentence Completion', q:4, time:4 },
+    { n:2, title:'השלמת משפטים', sub:'Sentence Completion', q:4, time:4 },
+    { n:3, title:'הבנת הנקרא', sub:'Reading Comprehension', q:5, time:15 },
+    { n:4, title:'ניסוח מחדש', sub:'Restatement', q:3, time:6 },
+    { n:5, title:'ניסוח מחדש', sub:'Restatement', q:3, time:6 },
+    { n:6, title:'השלמת משפטים', sub:'Sentence Completion', q:4, time:4 },
+  ];
+  return <div className="screen-in" style={{ fontFamily:t.fontHe }}>
+    <div style={{ padding:`16px ${t.pad}px 110px`, overflow:'auto' }}>
+      <div style={{ display:'flex', justifyContent:'space-between', marginBottom:18 }}>
+        <NavPill t={t} onClick={onBack}><Icon name="chevron-right" size={18} color={t.c.ink2}/></NavPill>
+        <NavPill t={t}><Icon name="gear" size={17} color={t.c.ink2}/></NavPill>
+      </div>
+      <div style={{ marginBottom:24 }}>
+        <div style={{ fontSize:11.5, fontWeight:700, letterSpacing:'0.16em', color:t.accent, marginBottom:8 }}>סימולציה · MST</div>
+        <div style={{ fontSize:30, fontWeight:700, color:t.c.ink, lineHeight:1.1, letterSpacing:'-0.01em' }}>מבחן פסיכומטרי<br/><span style={{ color:t.c.ink2, fontWeight:600 }}>אנגלית</span></div>
+        <div style={{ fontSize:14, color:t.c.muted, marginTop:10, lineHeight:1.5 }}>סימולציה של חלק האנגלית — שאלות אותנטיות מהמאגר בסגנון המבחן האמיתי.</div>
+      </div>
+      <Card t={t} pad={0} style={{ marginBottom:22, overflow:'hidden' }}>
+        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr' }}>
+          {[{v:'23',l:'שאלות',mid:false},{v:'39',l:'דקות',mid:true},{v:'6',l:'חלקים',mid:false}].map(x =>
+            <div key={x.l} style={{ padding:'18px 8px', textAlign:'center', borderInline: x.mid ? `0.5px solid ${t.c.line}` : 'none' }}>
+              <div style={{ fontFamily:t.fontEn, fontSize:28, fontWeight:700, letterSpacing:'-0.03em', color:t.c.ink, lineHeight:1 }}>{x.v}</div>
+              <div style={{ fontSize:12, color:t.c.muted, marginTop:4 }}>{x.l}</div>
+            </div>
+          )}
+        </div>
+      </Card>
+      <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.14em', color:t.c.muted, fontFamily:t.fontEn, padding:'0 2px 10px' }}>מבנה המבחן</div>
+      <Card t={t} pad={0} style={{ overflow:'hidden', marginBottom:18 }}>
+        {sections.map((s, i) => <React.Fragment key={i}>
+          {i > 0 && <Divider t={t}/>}
+          <div style={{ padding:'14px 16px', display:'flex', alignItems:'center', gap:12 }}>
+            <div style={{ width:32, height:32, borderRadius:10, background:t.accentSoft, color:t.accentInk, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:t.fontEn, fontWeight:700, fontSize:14, flexShrink:0 }}>{s.n}</div>
+            <div style={{ flex:1, minWidth:0 }}>
+              <div style={{ fontSize:14.5, fontWeight:600, color:t.c.ink }}>{s.title}</div>
+              <div style={{ fontSize:11.5, color:t.c.muted, fontFamily:t.fontEn, letterSpacing:'0.02em', marginTop:2 }}>{s.sub}</div>
+            </div>
+            <div style={{ textAlign:'left' }}>
+              <div style={{ fontSize:12, color:t.c.ink2, fontFamily:t.fontEn, fontWeight:600 }}>{s.q} שאלות</div>
+              <div style={{ fontSize:11, color:t.c.muted, fontFamily:t.fontEn }}>{s.time} דק׳</div>
+            </div>
+          </div>
+        </React.Fragment>)}
+      </Card>
+      <div style={{ padding:'14px 16px', borderRadius:16, background:t.accentSoft, display:'flex', gap:10, alignItems:'flex-start' }}>
+        <Icon name="sparkle" size={16} color={t.accentInk} stroke={1.8}/>
+        <div style={{ fontSize:12.5, color:t.accentInk, lineHeight:1.45 }}>
+          <span style={{ fontWeight:700 }}>שאלות אותנטיות מהמאגר.</span> המבחן משלב שאלות השלמת משפטים וניסוח מחדש בסגנון הפסיכומטרי האמיתי.
+        </div>
+      </div>
+    </div>
+    <div style={{ position:'fixed', bottom:0, left:0, right:0, padding:`14px ${t.pad}px 36px`, background: t.dark ? 'linear-gradient(180deg, transparent, oklch(0.16 0.006 250) 30%)' : 'linear-gradient(180deg, transparent, oklch(0.975 0.006 85) 30%)' }}>
+      <PrimaryButton t={t} large onClick={onStart}>
+        התחל מבחן <Icon name="chevron-left" size={16} color="#fff" stroke={2.2}/>
+      </PrimaryButton>
+    </div>
+  </div>;
+}

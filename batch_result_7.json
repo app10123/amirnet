@@ -1,0 +1,322 @@
+{
+  "inherit": {
+    "assoc": "אין-הֶרִיט? אין ירושה בלי לקבל! (inherit ≈ אין-הרט)",
+    "sentence": "She will inherit her grandmother's house.|היא תקבל בירושה את הבית של סבתה."
+  },
+  "leisure": {
+    "assoc": "לֶ'ז'ר? זה הזמן ללזלז בספה ולנוח – זמן פנאי! (leisure ≈ לז'ר)",
+    "sentence": "He spends his leisure time reading books.|הוא מבלה את זמן הפנאי שלו בקריאת ספרים."
+  },
+  "mimic": {
+    "assoc": "מִימִיק – מי מי קוף? הוא מחקה אותי! (mimic ≈ מי-מי)",
+    "sentence": "The parrot can mimic human speech.|התוכי יודע לחקות דיבור אנושי."
+  },
+  "narration": {
+    "assoc": "נֶרֵיישֶׁן – נו, ריישן (תוכנית) בלי קריין זה לא סיפור! (narration ≈ נרציה)",
+    "sentence": "The narration in the film was very dramatic.|הקריינות בסרט הייתה דרמטית מאוד."
+  },
+  "porous": {
+    "assoc": "פּוֹרוֹס – פּוֹר-וּס? כמו קוביית גבינה, כולה חורים! (porous ≈ פרוס = חתוך/מחורר)",
+    "sentence": "A sponge is porous and absorbs water easily.|ספוג הוא מנוקב ולכן סופג מים בקלות."
+  },
+  "prerequisite": {
+    "assoc": "פּרִי-רֶקוִיזִיט – פרי דרוש מראש לפני הקינוח! (prerequisite ≈ פרי + רקוויזיט)",
+    "sentence": "Math is a prerequisite for this engineering course.|מתמטיקה היא תנאי מוקדם לקורס הנדסה זה."
+  },
+  "reliable": {
+    "assoc": "רִילַיאַבְּל – רלי אבל? רלי תמיד אמין, אבל האחים שלו – פחות! (reliable ≈ רלי-אבל)",
+    "sentence": "She is the most reliable person on the team.|היא האדם הכי אמין בצוות."
+  },
+  "reliance": {
+    "assoc": "רִילַייאַנס – רלי-אנס? התלות שלי ברלי היא גדולה! (reliance ≈ רלי-אנס)",
+    "sentence": "His reliance on coffee every morning is total.|התלות שלו בקפה כל בוקר היא מוחלטת."
+  },
+  "seize": {
+    "assoc": "סִיז – סיז-ן? אל תחכה לעונה, תתפוס את ההזדמנות עכשיו! (seize ≈ סיז)",
+    "sentence": "The police seized the stolen goods.|המשטרה תפסה את הסחורה הגנובה."
+  },
+  "sincerely": {
+    "assoc": "סִינְסִירְלִי – סין-סר-לי? סיר לי בכנות מה אתה חושב! (sincerely ≈ סין-סר-לי)",
+    "sentence": "I sincerely hope you feel better soon.|אני כנה מקווה שתרגיש טוב יותר בקרוב."
+  },
+  "suppress": {
+    "assoc": "סַפְּרֶס – ספר-ס? ספּר! תדחיק את הסיפור ואל תספר לאף אחד! (suppress ≈ ספּרס)",
+    "sentence": "She tried to suppress her laughter during the meeting.|היא ניסתה להדחיק את צחוקה בזמן הישיבה."
+  },
+  "surveillance": {
+    "assoc": "סֶרְוֵיילַנס – סרוויל-אנס? המצלמה עוקבת אחרי כל שירות שאתה עושה! (surveillance ≈ סרוויילנס)",
+    "sentence": "The store uses surveillance cameras to prevent theft.|החנות משתמשת במצלמות מעקב למניעת גניבות."
+  },
+  "sustain": {
+    "assoc": "סַסְטֵיין – סוס-טיין? הסוס הזה טיין (מוכתם) אבל עדיין ממשיך לרוץ! (sustain ≈ סוס-טיין)",
+    "sentence": "Exercise helps sustain a healthy body.|פעילות גופנית עוזרת לשמור על גוף בריא."
+  },
+  "sustainability": {
+    "assoc": "סַסְטֵינַאבִּילִיטִי – סוס-טיין-אביליטי? הסוס בעל היכולת להמשיך – זו קיימות! (sustainability ≈ סוס-טיינ-אבילי-טי)",
+    "sentence": "Sustainability is important for the future of our planet.|קיימות חשובה לעתיד כדור הארץ שלנו."
+  },
+  "sustainable": {
+    "assoc": "סַסְטֵינַאבְּל – סוס-טיין-אבל? הסוס אבל (עצוב) אבל עדיין בר-קיימא! (sustainable ≈ סוס-טיין-אבל)",
+    "sentence": "We need sustainable energy sources for the future.|אנחנו צריכים מקורות אנרגיה בני-קיימא לעתיד."
+  },
+  "synonym": {
+    "assoc": "סִינוֹנִים – סינו-נים? הסינים נמים (ישנים) ובחלום מוצאים מילים נרדפות! (synonym ≈ סינונים)",
+    "sentence": "Happy and joyful are synonyms.|שמח ועליז הן מילים נרדפות."
+  },
+  "unreliable": {
+    "assoc": "אַנְרִילַיאַבְּל – אן-רלי-אבל? אן אמרה שרלי אמינה, אבל היא לא אמינה בכלל! (unreliable ≈ אן-רלי-אבל)",
+    "sentence": "The old car was unreliable and broke down often.|המכונית הישנה הייתה לא אמינה והתקלקלה לעתים קרובות."
+  },
+  "alert": {
+    "assoc": "אַלֶרְט – אל-ארט? אל תהיה אמן (ארט), תהיה דרוך ומוכן לאזהרה! (alert ≈ אל-ארט)",
+    "sentence": "The soldier stayed alert throughout the night.|החייל נשאר דרוך לאורך כל הלילה."
+  },
+  "angle": {
+    "assoc": "אֶנְגְּל – אנגל? אנגליה ידועה בזוויות חדות של המבנים הגותיים שלה! (angle ≈ אנגל)",
+    "sentence": "The photographer found a creative angle for the shot.|הצלם מצא זווית יצירתית לצילום."
+  },
+  "arrive": {
+    "assoc": "אַרַייב – א-רייב? הגעת למסיבת הריייב! (arrive ≈ א-רייב)",
+    "sentence": "We will arrive at the airport two hours early.|נגיע לנמל התעופה שעתיים מוקדם."
+  },
+  "availability": {
+    "assoc": "אֵוֵיילַבִּילִיטִי – אוויל-אבילי-טי? אוויל (טיפש) הוא מי שלא בודק זמינות לפני שמגיע! (availability ≈ אוויל-אבילי-טי)",
+    "sentence": "Please check the availability of the hotel rooms.|אנא בדוק את הזמינות של חדרי המלון."
+  },
+  "begin": {
+    "assoc": "בִּיגִין – ביגין? מנחם בגין התחיל את השלום עם מצרים! (begin ≈ ביגין)",
+    "sentence": "Let us begin the lesson with a short review.|בואו נתחיל את השיעור עם סקירה קצרה."
+  },
+  "beginning": {
+    "assoc": "בִּיגִינִינְג – ביגין-ינג? בגין תמיד בהתחלה של כל נאום! (beginning ≈ ביגין-ינג)",
+    "sentence": "The beginning of the movie was very exciting.|ההתחלה של הסרט הייתה מאוד מרגשת."
+  },
+  "bend": {
+    "assoc": "בֶּנְד – בנד? הלהקה (band) כפפה (bend) את הגיטרה עד שנשברה! (bend ≈ בנד)",
+    "sentence": "Bend your knees before you lift heavy objects.|כופף את הברכיים לפני שאתה מרים חפצים כבדים."
+  },
+  "bend over": {
+    "assoc": "בֶּנְד אוֹבֶר – בנד-אובר? הבנד נגמר (אובר) – כולם מתכופפים! (bend over ≈ בנד-אובר)",
+    "sentence": "Bend over to pick up the pen you dropped.|התכופף להרים את העט שנפל לך."
+  },
+  "bent": {
+    "assoc": "בֶּנְט – בנט? נפתלי בנט – עקום בדעותיו ונחוש לאין שיעור! (bent ≈ בנט)",
+    "sentence": "The nail was bent and could not be used.|המסמר היה עקום ולא ניתן להשתמש בו."
+  },
+  "between": {
+    "assoc": "בִּיטְוִין – בי-טווין? הבי (תינוק) נתקע בין שני תאומים (טווין)! (between ≈ בי-טווין)",
+    "sentence": "The agreement was made between the two countries.|ההסכם נעשה בין שתי המדינות."
+  },
+  "borrow": {
+    "assoc": "בּוֹרוֹ – בּוֹרוֹ? בּוֹר (חפר בור) ורו – מי שחופר בור לחברו לווה ממנו כסף! (borrow ≈ בורו)",
+    "sentence": "Can I borrow your pen for a minute?|אפשר ללוות את העט שלך לדקה?"
+  },
+  "chapter": {
+    "assoc": "צ'פטר – צ'פ-טר? הצ'יפ (זול) טר (טרי) – כל פרק מביא רעיונות טריים! (chapter ≈ צ'פ-טר)",
+    "sentence": "We finished reading the third chapter today.|סיימנו לקרוא את הפרק השלישי היום."
+  },
+  "circuit": {
+    "assoc": "סֶרְקִיט – סר-קיט? הסר את הקיט (ערכה) וחבר את המעגל החשמלי! (circuit ≈ סר-קיט)",
+    "sentence": "The electrician fixed the broken circuit.|החשמלאי תיקן את המעגל החשמלי השבור."
+  },
+  "circular": {
+    "assoc": "סֶרְקְיוּלַר – סרקיולר? סרק (סרוק) בעיגול – זה מחזורי! (circular ≈ סרקיולר)",
+    "sentence": "The planets move in circular orbits around the sun.|הכוכבים נעים במסלולים מעגליים סביב השמש."
+  },
+  "custom": {
+    "assoc": "קַסְטַם – קאסטם? קסטם (קסם) הוא מנהג מסורתי שנראה כמו קסם! (custom ≈ קסטם)",
+    "sentence": "It is a local custom to bow when greeting elders.|זהו מנהג מקומי להשתחוות כשמברכים קשישים."
+  },
+  "exchange": {
+    "assoc": "אֶקְסְצ'ֵינְג' – אקס-צ'יינג'? האקס שלי החליף אותי במישהו אחר! (exchange ≈ אקס-צ'יינג')",
+    "sentence": "They decided to exchange gifts on the last day.|הם החליטו להחליף מתנות ביום האחרון."
+  },
+  "explorer": {
+    "assoc": "אֶקְסְפְּלוֹרֶר – אקספלורר? כמו דפדפן אינטרנט, מגלה ארצות חדשות! (explorer ≈ אקספלורר)",
+    "sentence": "Columbus was a famous explorer who reached America.|קולומבוס היה מגלה ארצות מפורסם שהגיע לאמריקה."
+  },
+  "exploring": {
+    "assoc": "אֶקְסְפְּלוֹרִינְג – אקספלורינג? הוא חוקר את כל ה'אקסים' שלו! (exploring ≈ אקספלורינג)",
+    "sentence": "They spent the day exploring the ancient ruins.|הם בילו את היום בחקר המבנים העתיקים."
+  },
+  "express": {
+    "assoc": "אֶקְסְפְּרֶס – אקספרס? הרכבת האקספרס מהירה כמו ביטוי שיוצא מהפה! (express ≈ אקספרס)",
+    "sentence": "He could not express how happy he felt.|הוא לא יכול היה לבטא כמה הוא הרגיש שמח."
+  },
+  "expression": {
+    "assoc": "אֶקְסְפְּרֶשׁן – אקספרשן? אקס-פרשן – פרשן שכבר אקס, אבל הביטוי שלו נשאר! (expression ≈ אקספרשן)",
+    "sentence": "His expression showed that he was surprised.|הבעת פניו הראתה שהוא היה מופתע."
+  },
+  "fast": {
+    "assoc": "פָּאסְט – פאסט? פאסט-פוד מהיר כל כך שאתה גם אוכל וגם צם בו-זמנית! (fast ≈ פאסט)",
+    "sentence": "The cheetah is the fastest animal on land.|הצ'יטה היא החיה המהירה ביותר ביבשה."
+  },
+  "find": {
+    "assoc": "פַּיינְד – פיינד? פיין-ד – קנס (fine) מוצאים תמיד כשלא מחפשים! (find ≈ פיינד)",
+    "sentence": "Did you find your missing keys?|מצאת את המפתחות האבודים שלך?"
+  },
+  "findings": {
+    "assoc": "פַּיינְדִינְגְס – פיינדינגס? הממצאים מפתיעים כמו ינגה! (findings ≈ פיינד-ינגס)",
+    "sentence": "The scientist published her findings in a journal.|המדענית פרסמה את ממצאיה בכתב עת."
+  },
+  "forget": {
+    "assoc": "פוֹרְגֶט – פור-גט? הפור (גלגל המזל) גט (גרש) את הזיכרון – שכחת! (forget ≈ פור-גט)",
+    "sentence": "Don't forget to bring your homework tomorrow.|אל תשכח להביא את שיעורי הבית מחר."
+  },
+  "forgive": {
+    "assoc": "פוֹרְגִיב – פור-גיב? פור (בשביל) גיב (תן) – תן סליחה בשביל הכל! (forgive ≈ פור-גיב)",
+    "sentence": "It is important to forgive and move on.|חשוב לסלוח ולהמשיך הלאה."
+  },
+  "front": {
+    "assoc": "פְּרַנְט – פרנט? הפרנט (חזית) של הבית צריך פרנסה – לשפץ! (front ≈ פרנט)",
+    "sentence": "She sat in the front row of the classroom.|היא ישבה בשורה הקדמית של הכיתה."
+  },
+  "function": {
+    "assoc": "פַּנְקְשׁן – פנקשן? הפנקס שלי תפקד (פנקשן) כמו מחשב! (function ≈ פנקשן)",
+    "sentence": "The main function of the heart is to pump blood.|התפקיד העיקרי של הלב הוא לשאוב דם."
+  },
+  "gap": {
+    "assoc": "גַּפ – גאפ? הג'ינסים של GAP השאירו פער ענק בארנק שלי! (gap ≈ GAP)",
+    "sentence": "There is a wide gap between the rich and the poor.|יש פער גדול בין העשירים לעניים."
+  },
+  "hobby": {
+    "assoc": "הוֹבִּי – הוֹבִּי? הוֹבִּיט (מה הובי בילבו עושה בזמן הפנוי?) – תחביב! (hobby ≈ הובי)",
+    "sentence": "His hobby is collecting stamps from different countries.|התחביב שלו הוא לאסוף בולים ממדינות שונות."
+  },
+  "hold": {
+    "assoc": "הוֹלְד – הולד? הולד (תינוק שנולד) – מחזיקים אותו בזהירות! (hold ≈ הולד)",
+    "sentence": "Please hold the door open for me.|בבקשה החזק את הדלת פתוחה בשבילי."
+  },
+  "insert": {
+    "assoc": "אִינְסֶרְט – אינסרט? אין-סרט בלי להכניס דיסק! (insert ≈ אין-סרט)",
+    "sentence": "Insert the key into the lock carefully.|הכנס את המפתח למנעול בזהירות."
+  },
+  "light": {
+    "assoc": "לַייט – לייט? לייט-בירה זה קל (light) כמו אור (light) – שניהם לייט! (light ≈ לייט)",
+    "sentence": "The light from the sun helps plants grow.|האור מהשמש עוזר לצמחים לגדול."
+  },
+  "light bulb": {
+    "assoc": "לַייט בַּלְבּ – לייט-בּאלב? בּאלב (הבצל) מאיר כמו נורה! (light bulb ≈ לייט-באלב)",
+    "sentence": "The light bulb in my room stopped working.|הנורה בחדרי הפסיקה לעבוד."
+  },
+  "lightly": {
+    "assoc": "לַייטְלִי – לייט-לי? לי לייט (קל) – בקלות אני עושה הכל! (lightly ≈ לייט-לי)",
+    "sentence": "She lightly touched the butterfly with her finger.|היא נגעה בפרפר בקלות עם אצבעה."
+  },
+  "location": {
+    "assoc": "לוֹקֵיישׁן – לוקיישן? לוקי (בר מזל) שאן (שקט) – מיקום שקט ומוצלח! (location ≈ לוקיישן)",
+    "sentence": "The location of the new school is very central.|המיקום של בית הספר החדש הוא מרכזי מאוד."
+  },
+  "malfunction": {
+    "assoc": "מַלְפַּנְקְשׁן – מל-פנקשן? המל (המלאך) פנקס ואז תפקוד לקוי! (malfunction ≈ מל-פנקשן)",
+    "sentence": "A malfunction in the engine caused the delay.|כשל במנוע גרם לעיכוב."
+  },
+  "natural": {
+    "assoc": "נֶצ'וּרַל – נצ'ורל? הנט (רשת) טבעי – לדוג בצורה טבעית! (natural ≈ נצ'ורל)",
+    "sentence": "Honey is a natural sweetener.|דבש הוא ממתיק טבעי."
+  },
+  "order": {
+    "assoc": "אוֹרְדֶר – אורדר? אורדר (צו, סדר) – הצבא נותן פקודות לשמור על סדר! (order ≈ אורדר)",
+    "sentence": "The general gave the order to advance.|הגנרל נתן פקודה להתקדם."
+  },
+  "patient": {
+    "assoc": "פֵּיישֶׁנְט – פיישנט? פיי (שלם) שנט (שנה) – המטופל שילם שנה שלמה בסבלנות! (patient ≈ פיישנט)",
+    "sentence": "Be patient; the results will come with time.|היה סבלני; התוצאות יגיעו עם הזמן."
+  },
+  "pipe": {
+    "assoc": "פַּייפּ – פייפ? פייפ-ר (חליל) – החליל הוא צינור שמשמיע צלילים! (pipe ≈ פייפ)",
+    "sentence": "The water pipe burst during the cold night.|צינור המים התפוצץ בלילה הקר."
+  },
+  "pretend": {
+    "assoc": "פְּרִיטֶנְד – פרי-טנד? הפרי הזה מעמיד פנים שהוא בשל אבל הוא חמוץ! (pretend ≈ פרי-טנד)",
+    "sentence": "Children often pretend to be superheroes.|ילדים לעתים קרובות מעמידים פנים שהם גיבורי-על."
+  },
+  "profession": {
+    "assoc": "פְּרוֹפֶשׁן – פרופשן? פרופסור-שן – פרופסור הוא מקצוע יוקרתי! (profession ≈ פרופ-שן)",
+    "sentence": "Teaching is a noble profession.|הוראה היא מקצוע נעלה."
+  },
+  "public": {
+    "assoc": "פַּבְּלִיק – פאבליק? פאב-ליק? הפאב (בית מרזח) ציבורי – כל אחד יכול לבוא! (public ≈ פאב-ליק)",
+    "sentence": "The new park is open to the public.|הפארק החדש פתוח לציבור."
+  },
+  "publish": {
+    "assoc": "פַּבְּלִישׁ – פאבליש? פרסם בפאב – כולם ישמעו! (publish ≈ פאב-ליש)",
+    "sentence": "He decided to publish his first novel.|הוא החליט לפרסם את הרומן הראשון שלו."
+  },
+  "quick": {
+    "assoc": "קְוִיק – קוויק? קווי-ק? הקו הזה קצר – מהיר לצייר! (quick ≈ קוויק)",
+    "sentence": "She gave a quick answer without thinking.|היא נתנה תשובה מהירה בלי לחשוב."
+  },
+  "quickly": {
+    "assoc": "קְוִיקְלִי – קוויקלי? לי מהיר יותר מכולם – זריז במיוחד! (quickly ≈ קוויק-לי)",
+    "sentence": "He quickly finished his homework and went out to play.|הוא סיים במהירות את שיעורי הבית ויצא לשחק."
+  },
+  "reproduce": {
+    "assoc": "רִיפְּרוֹדיוּס – רי-פרו-דיוס? ריי מייצר (פרודיוס) שוב ושוב, מתרבה! (reproduce ≈ רי-פרו-דיוס)",
+    "sentence": "Bacteria reproduce very quickly under warm conditions.|חיידקים מתרבים מהר מאוד בתנאים חמים."
+  },
+  "respect": {
+    "assoc": "רֶסְפֶּקְט – ריספקט? ריס-פקט? הריס (הרוס) הכל אבל שמור על פקט (עובדה) אחת – הכבוד! (respect ≈ ריספקט)",
+    "sentence": "We must respect the opinions of others.|עלינו לכבד את דעותיהם של אחרים."
+  },
+  "restrict": {
+    "assoc": "רִיסְטְרִיקְט – ריסטריקט? ריס-טריק-ט? הריס את הטריק – מגביל אותך! (restrict ≈ ריס-טריקט)",
+    "sentence": "The new law will restrict the use of plastic bags.|החוק החדש יגביל את השימוש בשקיות ניילון."
+  },
+  "restriction": {
+    "assoc": "רִיסְטְרִיקְשׁן – ריסטריקשן? שן (שיניים) כואבת מהמגבלות של הרופא! (restriction ≈ ריסטריק-שן)",
+    "sentence": "There are restrictions on the use of mobile phones in class.|יש מגבלות על השימוש בטלפונים ניידים בכיתה."
+  },
+  "show": {
+    "assoc": "שׁוֹ – שו? שו-וו! מה יש להראות? הצגה! (show ≈ שו)",
+    "sentence": "The teacher will show us how to solve the problem.|המורה תראה לנו כיצד לפתור את הבעיה."
+  },
+  "sign": {
+    "assoc": "סַיין – סיין? סיין-פלד! ג'רי סיינפלד תמיד חותם על סימנים מצחיקים! (sign ≈ סיינ)",
+    "sentence": "Please sign your name at the bottom of the form.|אנא חתום על שמך בתחתית הטופס."
+  },
+  "signal": {
+    "assoc": "סִיגְנַל – סיגנל? סיג-נל? הסיגריה (סיג) נשלה – זה הסימן! (signal ≈ סיג-נל)",
+    "sentence": "The referee used a signal to stop the game.|השופט השתמש בסימן כדי לעצור את המשחק."
+  },
+  "space": {
+    "assoc": "סְפֵּייס – ספייס? אחי, החלל החיצון זה מרחב ענק! (space ≈ ספייס)",
+    "sentence": "Astronauts travel to space on special missions.|אסטרונאוטים נוסעים לחלל במשימות מיוחדות."
+  },
+  "spacecraft": {
+    "assoc": "סְפֵּייסְקְרַפְט – ספייס-קרפט? כלי מלאכה (קראפט) לחלל – זו החללית! (spacecraft ≈ ספייס-קראפט)",
+    "sentence": "The spacecraft landed safely on the moon.|החללית נחתה בבטחה על הירח."
+  },
+  "structure": {
+    "assoc": "סְטְרַקְצ'ר – סטרקצ'ר? סטרק (גבור) צ'ר – גיבור הבנייה יוצר מבנה! (structure ≈ סטרקצ'ר)",
+    "sentence": "The structure of the ancient temple was impressive.|המבנה של המקדש העתיק היה מרשים."
+  },
+  "topic": {
+    "assoc": "טוֹפִּיק – טופיק? טופ-איק? הנושא הכי 'טופ' (מוביל) – אייק (כאב) לי הראש לחשוב עליו! (topic ≈ טופ-איק)",
+    "sentence": "The topic of today's lesson is climate change.|הנושא של שיעור היום הוא שינוי האקלים."
+  },
+  "voice": {
+    "assoc": "וֹייס – וויס? וויס-קי? ויסקי גורם לקול צרוד – להביע את עצמך בקושי! (voice ≈ וויס)",
+    "sentence": "She has a beautiful singing voice.|יש לה קול שירה יפה."
+  },
+  "volunteer": {
+    "assoc": "וֹולַנְטִיר – וולנטיר? וול-אן-טיר? הוולט (כספת) שלהם ענק – התנדבות שמשלמת בחוויות! (volunteer ≈ וולנטיר)",
+    "sentence": "Many students volunteer at the local hospital.|תלמידים רבים מתנדבים בבית החולים המקומי."
+  },
+  "weight": {
+    "assoc": "וֵייט – וויט? וויט-ר? המלצר (ווייטר) סוחב משקל כבד של צלחות! (weight ≈ ווייט)",
+    "sentence": "The weight of the suitcase was too heavy to carry.|משקל המזוודה היה כבד מדי לנשיאה."
+  },
+  "weightless": {
+    "assoc": "וֵייטְלֶס – וויטלס? וויט-לס? ללא (לס) משקל (וויט) – חסר משקל בחלל! (weightless ≈ וויט-לס)",
+    "sentence": "Astronauts feel weightless when they are in orbit.|אסטרונאוטים מרגישים חסרי משקל כאשר הם במסלול."
+  },
+  "zone": {
+    "assoc": "זוֹן – זון? זון-שיין? הזון (אזור) שלנו מואר כמו שמש! (zone ≈ זון)",
+    "sentence": "This area is a no-parking zone.|אזור זה הוא אזור ללא חניה."
+  },
+  "ambition": {
+    "assoc": "אַמְבִּישׁן – אמבישן? אמבי-שן? אמבי (שני) שנים של שאיפה – ואז הצלחה! (ambition ≈ אמבי-שן)",
+    "sentence": "Her ambition is to become a doctor one day.|השאיפה שלה היא להפוך לרופאה יום אחד."
+  }
+}

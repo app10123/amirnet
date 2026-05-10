@@ -1,0 +1,402 @@
+chronicle | קורות, היסטוריה
+compensate | לפצות
+compensation | פיצוי
+component | רכיב
+convey | למסור, להעביר
+deficiency | מחסור, פגם
+deficit | גירעון
+depend | תלוי
+dependence | תלות
+depict | לתאר
+dexterity | מיומנות
+domestic | ביתי/מקומי
+domesticated | מבוית, מאולף
+dominate | לשלוט
+duplicate | לשכפל
+envy | לקנא/קנאה
+ferment | לתסוס/תסיסה/שמרים
+gratify | להשביע רצון
+guarantee | להתחייב/אחריות/ערובה
+icicle | נטיף קרח
+impose | לכפות/להציב
+independent | עצמאי/בלתי תלוי
+life span | תוחלת חיים
+modify | לשנות, להתאים
+pen | לכתוב/לכלוא/עט/מכלאה
+pose | למקם/להעמיד פנים/תנוחה
+predominate | לשלוט, להתבלט
+promptly | מיידית, ללא דיחוי
+roam | לשוטט/שוטטות
+stimulate | להמריץ
+timid | ביישן
+vanquish | להעלים/להביס
+agency | סוכנות, משרד
+arrangement | סידור/הסכם
+blow | לנשף/מכה
+bone | עצם (בגוף)
+displacement | העברה, עקירה
+dusty | מאובק
+dwell | להתגורר, לשכון
+dwelling | בית מגורים, משכן
+education | חינוך
+educational | חינוכי
+effort | מאמץ
+empty | לרוקן/ריק
+end | לסיים/סוף
+environment | סביבה
+essay | מאמר, חיבור
+exhibit | להציג/תצוגה, מוצג
+exhibition | תערוכה
+fact | עובדה
+famous | מפורסם
+glow | לזהור/זהר
+infamous | ידוע לשמצה/מגונה
+invite | להזמין
+layer | שכבה
+leave | לעזוב
+length | אורך
+open | לפתוח/פתוח
+people | אנשים/עם
+perform | להופיע/לבצע
+performance | ביצוע/הופעה
+performer | מבצע/אמן
+personal | אישי
+personality | אישיות
+place | למקם/מקום
+plan | לתכנן/תכנית
+preparation | הכנה
+press | ללחוץ/עיתונות
+promise | להבטיח/הבטחה
+property | רכוש/מאפיין, תכונה
+retire | לפרוש
+retirement | פרישה
+share | לחלוק/מנייה/חלק
+shy | ביישן
+skill | מיומנות
+skin | עור
+spend | להעביר (זמן)/לבלות
+staff | צוות, סגל/מטה
+station | להציב, למקם/תחנה
+supply | לספק/אספקה
+survive | לשרוד
+system | שיטה/מערכת
+systematic | מערכתי, שיטתי
+team | לצוות/צוות
+train | לאמן/רכבת
+training | אימון/כושר
+translate | לתרגם
+vote | להצביע/הצבעה
+wave | לנפנף/נפנוף/גל
+wind | לעקל/ללפף/רוח
+windmill | תחנת רוח
+wine | יין
+wood | יער/עץ
+work | עבודה
+acid | חומצה
+approach | להתקרב, לגשת/גישה
+assemble | לכנס, לאסוף/להרכיב
+assembly | אסופה, התקהלות
+asset | נכס, קניין
+attend | להיות נוכח, להשתתף
+attendant | מלווה/משרת/סדרן
+attribute | לייחס/תכונה
+avert | למנוע/להסיט
+capacity | קיבולת/יכולת
+condensation | דחיסה/עיבוי (של מים)
+condense | לדחוס, לרכז/לעבות
+continent | יבשת
+core | ליבה
+counterpart | עמית/מקביל
+describe | לתאר
+description | תיאור
+desert | לעזוב, לנטוש/מדבר
+dispose | להיפטר
+distinction | הבחנה/הבדל/הוקרה
+dump | להשליך/מזבלה/זבל
+elect | לבחור, להצביע
+election | בחירה, בחירות
+eloquent | רהוט
+essence | תמצית, מהות
+essential | חיוני, הכרחי
+excavate | לחפור
+exile | לגרש/גלות, גולה
+fascinate | לרתק, לסקרן
+fascinating | מרתק
+fascination | קסם, משיכה
+feature | תכונה, מאפיין
+fee | שכר, גמול/אגרה
+feud | סכסוך/שנאה
+figure | לחשב/להסיק/דמות
+figure out | להבין
+flow | לזרום/זרם, שטף/גאות
+fund | לממן/הון/קרן
+fundamentally | ביסודו, בעיקרו
+grime | לזהם/זוהמה
+halt | לעצור/עצירה
+immune | לחסן/מחוסן
+immunity | חסינות
+ingredient | מרכיב
+invest | להשקיע
+investment | השקעה
+loom | להופיע במעורפל/לארוג
+motif | מוטיב, רעיון מרכזי
+obstinate | עקשן/נוקשה
+oppress | לדכא, לייסר
+oppression | דיכוי
+orientation | מגמה/אוריינטציה
+pace | לקבוע קצב/לצעוד/קצב
+peak | להגיע לשיא/פסגה, שיא
+phase | לתכנן בשלבים/שלב
+prescribe | לרשום מרשם (רופא)
+proscribe | לגנות/לאסור/להוציא מחוץ לחוק
+reef | שונית, ריף
+refund | החזר כספי
+root | לעקור מהשורש/שורש
+routine | שגרה/שגרתי
+sail | להפליג/מפרש
+sample | לדגום/דוגמה/מדגם
+scatter | לפזר
+shed | להשיל/להשיר/לפזר
+spill | לשפוך, להתיז/דליפה
+spontaneously | באופן ספונטני
+spread | להפיץ/להתפשט/פיזור
+stale | לא טרי, מעופש
+step | לצעוד/צעד/מדרגה
+summit | פסגה
+supposedly | לכאורה
+surround | להקיף, לכתר
+sympathy | אהדה, סימפתיה
+syndrome | תסמונת
+toad | קרפדה
+tomb | קבר
+trace | לעקוב/עקבה/סימן
+trade | לסחור/מסחר
+trend | כיוון, מגמה/טרנד
+tribe | שבט
+undergo | לחוות, להתנסות
+underline | להדגיש בקו
+vigilance | ערנות, דריכות
+vivacious | מלא חיים, נמרץ
+vivid | חד, בהיר/מלא חיים
+wage | לנהל/לערוך/שכר
+weave | לארוג, לרקום
+ambiguous | דו משמעי/מעורפל
+barter | להתמקח/סחר חליפין
+competent | בעל יכולת, כשיר
+courteous | אדיב
+courtesy | התנהגות מנומסת/מחווה
+define | להגדיר
+definition | הגדרה
+drastic | קיצוני, דרסטי
+enhance | לשפר, לשדרג/להעצים
+evoke | לעורר, לגרום
+exert | להפעיל מאמץ
+grave | קבר/חמור, רציני
+hinder | למנוע, לעכב
+intellectual | מלומד, אינטלקטואל
+intersection | צומת, הצטלבות
+irrigation | השקיה
+linger | להתמהמה
+monetary | כספי
+moratorium | דחייה (לרוב כספית)
+nobility | אצולה/התנהגות אצילית
+obscene | מגונה
+obscure | להסתיר/מעורפל, לא ברור
+pest | מטרד
+prosper | לשגשג
+prosperity | שגשוג
+prosperous | משגשג, מצליח
+rigorous | קפדני, מדוקדק
+rural | כפרי
+sage | מרווה/חכם, משכיל
+strain | להתאמץ/מאמץ/צאצא/סיב
+straw | קש
+tremendous | עצום, כביר
+venture | להסתכן/סיכון
+whale | להכות/לוויתן
+wield | להשתמש
+about | אודות, ליד, בערך
+both | שניהם
+comparatively | באופן יחסי
+correspondingly | בהתאמה
+e.g. | לדוגמה
+equally | במידה שווה
+for example | לדוגמה
+for instance | לדוגמה
+identically | באופן זהה
+in other words | במילים אחרות
+in the same way | באותו אופן
+just as | בדיוק כמו
+similarly | באופן דומה
+such as | כמו למשל
+that | ש-
+above all | מעל לכל
+both... and... | גם ... וגם ...
+certainly | בהחלט, בוודאי
+chiefly | בעיקר
+especially | במיוחד
+essentially | בעיקרו, במהותו
+in fact | למעשה
+in general | באופן כללי
+in particular | במיוחד
+incidentally | דרך אגב
+indeed | בהחלט
+just as... so... | בדיוק כמו... גם
+markedly | בצורה ניכרת
+neither... nor... | לא... ולא...
+not only... but also... | לא רק... אלא גם...
+not... but... | לא... אבל...
+of course | כמובן, בוודאי
+on one hand...on the other hand | מצד אחד... מצד שני
+significantly | באופן משמעותי
+specifically | במיוחד
+surely | ללא ספק
+surprisingly | במפתיע
+too | יותר מידי, גם
+truly | באמת
+whether... or... | בין אם... או...
+additionally | בנוסף
+along with | יחד עם
+also | גם
+and | ו
+as well as | כמו גם
+aside from | חוץ מ-
+coupled with | יחד עם
+including | כולל
+moreover | זאת ועוד
+not only | לא רק
+not to mention | שלא לדבר על
+together with | יחד עם
+with | באמצעות, עם
+without | מבלי, ללא
+even so | אף על פי כן
+again | שוב
+as long as | כל עוד
+as soon as | כאשר, ברגע ש-
+at last | סוף סוף
+first of all | ראשית
+from | מ-
+further | בהמשך, לקדם
+in a moment | בעוד רגע
+in due time | בבוא העת
+instantly | מיד
+meanwhile | בינתיים
+past | עבר, שעבר
+shortly | בקיצור, בקרוב
+simultaneously | בו זמנית
+soon | בהקדם, מוקדם
+still | עדיין, למרות זאת
+suddenly | לפתע
+to begin with | בתור התחלה
+until now | עד עתה
+whenever | כש-, מתישהו
+left | שמאלה
+right | ימינה
+sideways | הצידה
+toward | אל, אל עבר
+upon | על
+upside down | הפוך
+across | בצד השני, לרוחב
+adjacent to | ליד
+along | לאורך
+alongside | לצד, במקביל
+amid | בקרב, בין
+at | אצל, ב-
+elsewhere | במקום אחר
+farther | הלאה, יותר
+here | כאן
+into | אל תוך
+of | של, מ-
+there | שם
+up | למעלה
+where | היכן, איפה
+wherever | בכל מקום, לא משנה היכן
+albeit | אף על פי
+conversely | לעומת זאת
+different from | שונה מ-
+in comparison | בהשוואה
+in contrast to | בניגוד ל-
+of course... but... | כמובן... אך...
+on the contrary | בניגוד לכך
+or | או
+otherwise | אחרת
+rather | עדיף
+than | מ-
+vice versa | להיפך
+after all | אחרי הכל
+because of | בגלל
+being that | מכיוון ש-
+given that | בהתחשב בכך
+in light of | לאור
+why | מדוע
+in that case | במקרה הזה
+led to | הוביל ל-
+so that | כך ש-
+consistently | בעקביות
+daily | יומיומי
+every day | כל יום
+every now and then | לפעמים
+for the most part | בדרך-כלל
+from time to time | מפעם לפעם
+hardly ever | כמעט אף פעם
+mostly | לרוב
+once in a while | מידי פעם
+ordinarily | בדרך-כלל
+regularly | באופן קבוע
+seldom | לעיתים רחוקות
+sometimes | לעיתים, לפעמים
+how | איך, כיצד
+what | מה, איזה
+which | איזה
+who | מי, ש-
+whom | מי
+whose | אשר לו, אשר הוא
+1st - first | ראשון
+2nd - second | שני
+3rd - third | שלישי
+4th - fourth | רביעי
+5th - fifth | חמישי
+6th - sixth | שישי
+7th - seventh | שביעי
+8th - eighth | שמיני
+9th - ninth | תשיעי
+10th - tenth | עשירי
+acceptable | מקובל
+acceptance | הסכמה
+activate | להפעיל
+actor | שחקן
+actual | ממשי
+actually | למעשה
+address | לפנות, לטפל, כתובת
+afford | יכל לעמוד בהוצאות
+afraid | מפחד
+agree | להסכים
+agreement | הסכם
+alarm | דאגה, להדאיג, אזעקה
+alive | חי
+almost | כמעט
+alone | לבד
+alternate | התחלף, חלופי
+ambassador | שגריר
+amount | כמות
+anger | כעס, להכעיס
+angry | כועס
+animal | חיה
+another | נוסף, אחר
+apart | בנפרד
+appearance | מראה, הופעה
+architect | ארכיטקט
+architecture | אדריכלות, ארכיטקטורה
+aristocrat | אציל, אריסטוקרט
+arm | לחמש, זרוע
+army | צבא
+arrange | לסדר
+arrest | מעצר, לעצור
+art | אמנות
+article | פריט, מאמר
+articulate | רהוט, להביע
+artist | אמן
+artistic | אמנותי
+as far as | לגבי, בכל הנוגע ל-
+as proof of | כהוכחה ל-
+asked for | ביקש

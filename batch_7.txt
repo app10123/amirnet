@@ -1,0 +1,402 @@
+eyesight | כוונת, ראייה
+familiar | מוכר
+familiarize | להתוודע
+fetus | עובר (ברחם)
+fiber | סיב
+figurative | סמלי
+finalize | לגבש, לסכם
+flagrant | בוטה
+fluctuation | חוסר יציבות
+fluency | שטף
+fluid | נוזל
+footprints | טביעות רגל, עקבות
+foresee | לצפות מראש
+fort | מבצר, מצודה
+fortify | לבצר, לחזק
+freeze, froze | הקפיא, להקפיא
+fulfill | להגשים
+gasoline | בנזין
+genre | סוגה, ז'אנר
+genus | מין, סוג
+giant | ענק
+goblet | גביע
+grief | צער, יגון
+grievance | התמרמרות, טרוניה
+growled | נהם
+halve | לחצות
+harass | להציק
+hasten | להחפז, למהר
+hasty | בהול, מהיר
+hatch | לבקוע (מביצה) / צוהר, פתח
+heed | לשים לב
+hegemony | הגמוניה
+height | גובה
+heresy | כפירה
+hid from | התחבא מ-
+hidden | נסתר, חבוי
+highway | כביש ראשי
+historian | היסטוריון
+horrific | איום
+hospitality | הכנסת אורחים
+host | מארח
+idolize | להעריץ
+illuminate | להאיר
+inadvertently | בלי כוונה, בלי משים
+indebted | אסיר תודה, חייב ל-
+infancy | ינקות
+inject | להזריק
+insanity | אי שפיות
+inspect | לבדוק, לבחון
+integrate | לשלב
+intelligence | מודיעין / אינטליגנציה
+interface | ממשק
+interjection | הפרעה לשיחה, הערה
+keystone | אבן מפתח
+lackluster | העדר כוח, העדר ברק
+leisurely | רגוע, נינוח
+luggage | מזוודות
+lurking | מתגנב, אורב
+magnitude | חשיבות, גודל
+malformation | פגם, עיוות
+manner | אופן, התנהגות
+manners | נימוס
+marriage | נישואין
+masculine | גברי
+merit | הישג, ערך
+metal | מתכתי, מתכת
+migrate | להגר
+minister | שר (בממשלה)
+monarch | מלך
+morose | עגמומי, קודר
+muscle | שריר
+mutation | מוטציה
+narcotic | סם
+neighbor | שכן
+neighborhood | שכונה
+noise | רעש
+nurse | אחות
+nursery | חדר ילדים
+nurture | לחנך, להזין, לטפח
+obligation | התחייבות
+oblige | להכריח, לחייב
+ocean | אוקיינוס
+offset | לקזז
+overly | יותר מידי
+package | חבילה, חפיסה
+painter | צייר
+painting | ציור
+patience | סבלנות
+patiently | בסבלנות
+patients | מטופלים
+peddler | סוחר, רוכל
+perpetuate | להנציח
+petroleum | נפט
+plague | מגפה
+plentiful | שופע, מלא
+pole | מוט, קוטב
+portrait | דיוקן
+posterity | הדורות הבאים
+pot | קדרה, סיר
+potato | תפוח אדמה
+prepare | התכונן
+preside | לנהל
+probation | תקופת מבחן
+proliferate | התפשט במהירות
+prolific | שופע, פורה
+prolong | מתמשך
+prone | נוטה
+propel | לדחוף, להניע
+proposal | הצעה
+proposition | הצעה
+prospective | עתידי, צפוי
+readily | ללא קושי
+readiness | מוכנות
+realize | הבין
+rearing | טיפוח, גידול
+reborn | נולד מחדש
+relic | שריד, שארית
+reorganize | לארגן מחדש
+repelled | הגעיל, דחה
+replica | העתק מדויק
+reputation | מוניטין, שם
+resent | להתרעם, להתנגד
+reservation | שריון מקום, שמורה
+reserve | לשמור, שמורה, מילואים, עתודה
+reservoir | מאגר
+resigned | התפטר
+respectfully | בכבוד
+responsibility | אחריות
+responsible | אחראי
+retreat | נסיגה, לסגת
+rim | שפה, קצה
+rope | חבל
+rub | לשפשף
+sanction | עידוד, עונש, קנס
+saw | מסור
+saw, see | לראות, ראה
+seeds | זרעים
+segment | מקטע, קטע
+self-confidence | ביטחון עצמי
+self-indulgence | סיפוק עצמי
+shatter | לקעקע, להרוס, לנפץ
+shell | מעטפת, קליפה, פגז
+signature | חתימה
+silently | בשקט
+slate | להכניס מישהו לרשימה, לוח, רעף
+slaughter | טבח, לשחוט, לטבוח
+slave | עבד
+slender | רזה
+slope | מדרון, שיפוע
+snicker | גיחוך
+soldier | חייל
+solitary | מבודד
+soul | נשמה
+sound | קול, בריא
+spike | יתד
+splendor | פאר
+spotlight | זרקור
+starve | לרעוב
+store | לאחסן, חנות
+supplement | תוסף
+susceptible | רגישות
+suspend | להשעות
+suspense | מתח, השהיה
+tact | טקט
+testify | להעיד
+texture | טקסטורה, מרקם
+tie | עניבה, קשר, לקשור
+timber | עץ
+trait | תכונה
+tranquilize | להרדים, להרגיע
+transcend | להתעלות
+unconventional | לא שיגרתי
+underestimate | לזלזל, הערכה נמוכה
+vacant | ריק, פנוי
+veteran | יוצא צבא, חייל משוחרר, ותיק
+virtue | מעלה
+warn | להזהיר
+warning | אזהרה
+worry | לדאוג, דאגה
+zoo | גן חיות
+abhor | לתעב, לשנוא
+adolescence | גיל ההתבגרות
+apathetic | אדיש
+apathy | אדישות, אפאתיה
+appease | לפייס
+appetite | רצון עז, תיאבון
+applaud | הריע, מחא כפיים
+arable | מתאים לעיבוד
+attorney | עורך דין
+aura | הילה
+awe | יראת כבוד
+awkward | מגושם, מביך, מוזר
+bail | לשחרר בערבות, ערבות
+bald | קרח
+bargain | עסקה, מציאה, להתמקח
+barn | אסם
+basin | כיור, אגן
+beard | זקן
+beast | מפלצת, חיה
+biblical | תנ"כי
+bland | תפל
+blink | למצמץ
+breed | להפרות, להרביע, גזע, מין
+burglar | פורץ
+butcher | קצב, לשחוט
+cavity | חור
+charm | קסם
+cheat | לבגוד, לרמות
+clash | התנגשות
+cliff | צוק
+cloak | להסוות, מסווה
+coma | תרדמת
+comic | קומי
+cosmopolitan | אוניברסלי
+cough | להשתעל, שיעול
+course | קורס, מנה, מסלול
+cousin | בן-דוד
+cripple | להטיל מום
+croak | קרקור
+crowd | להצטופף, קהל
+curtain | וילון
+dagger | פגיון
+dairy | מחלבה
+dandy | גנדרני
+decorate | לקשט
+decorative | דקורטיבי, קישוטי
+deer | איל
+demented | מטורף, משוגע
+densely | בצפיפות
+density | צפיפות
+derision | לעג
+detail | לפרט, פרט
+detrimental | מזיק
+devastated | מפורק, הרוס
+diet | תזונה, דיאטה
+disarmament | פירוק מנשק
+disgust | להגעיל, גועל
+dissect | לבתר, לנתח
+dissection | ביתור, חיתוך
+disuse | חוסר שימוש
+dose | מינון, מנה
+double standard | מוסר כפול
+draft | גיוס, טיוטה, משיכה, רוח פרצים
+drag | לגרור
+dread | לפחד, פחד
+drench | להספיג, להרטיב
+drip | לטפטף
+dull | סתום, עמום, משעמם
+dye | לצבוע, צבע
+East | מזרח
+ecological | אקולוגי
+elastic | גומיה, אלסטי, גמיש
+elderly | זקן
+embalm | לשמר, לחנוט
+embarrass | להביך
+embitter | גורם התמרמרות
+empathy | אמפתיה, הזדהות
+encroach | לפלוש, להסיג גבול
+engine | מנוע
+engineer | להנדס, מהנדס
+ensue | נבע
+enthusiasm | התלהבות
+envious | קנאי
+epitomize | לאפיין, לייצג
+erosion | כרסום, סחף
+erroneous | שגוי
+evocative | מזכיר, מעלה, מעורר
+expansion | התפתחות
+expatriate | לגרש, להגלות
+explode | להתפוצץ
+extortion | סחיטה
+extraordinary | בלתי רגיל
+extrapolate | לאמוד על סמך מידע קיים
+faint | קלוש, להתעלף
+famine | רעב קשה
+fatigue | לעייף, תשישות, עייפות
+faulty | לא תקין, לקוי
+fever | חום של מחלה
+flavor | לתבל, טעם
+flee, fled | נמלט, להימלט
+flip | להפוך צד, סלטה, להעיף, לזרוק
+focus | מיקוד, להתמקד
+forgettable | שאפשר לשכוח אותו
+foster | מאומץ, אומן
+fracture | שבר
+fraud | הונאה, מרמה
+frightening | מפחיד
+fringes | שוליים
+frugal | חסכני
+fume | עשן, אדים
+fungus | פטרת
+fur | פרווה
+fury | זעם
+gamble | הימר
+gene | גן תורשתי
+genesis | ספר בראשית, התהוות, היווצרות
+genetic | גנטי, תורשתי
+genial | ידידותי
+glance | מבט חטוף
+glitch | הפרעה, תקלה
+glorify | להאדיר
+grain | לטחון, גרעין, תבואה
+hike | טיול, הליכה
+humiliate | להשפיל
+humility | ענוה
+ice cream | גלידה
+iceberg | קרחון
+indigenous | מולד, ילידים
+inflate | לנפח
+infraction | עבירה
+ingest | להכניס משהו לגוף דרך הפה
+ingredients | מרכיבים
+insect | חרק
+instant | בהרף עין, מיידי
+instill | להשריש, להחדיר
+insulate | לבודד
+insurrection | התקוממות
+intact | ללא פגע
+intermediary | אמצעי, מתווך
+interminable | נצחי
+intimidate | להפחיד
+intrusive | פולשני
+invariably | ללא שינוי
+ironic | אירוני
+journey | מסע
+joyous | עליז, שמח
+keep | לשמור, חלק מהמצודה
+kick | בעיטה, לבעוט
+knees | ברכיים
+lamentable | מעציב, מצער
+laugh | לצחוק
+lend | להשאיל, להלוות
+liberal | מתירני, ליברלי
+library | ספריה
+limb | קצה, איבר, גף
+lineage | שושלת, ייחוס
+lodge | אכסנייה, להתאכסן
+mischief | מעשה קונדס, נזק
+miss | להתגעגע, לפספס
+misty | מעורפל
+mix | ערבוב, לערבב
+monument | אנדרטה
+mountain | הר
+mountainside | מדרון
+mountaintop | פסגת הר
+mourning | מתאבל, אבל
+naval | ימי
+neck | צוואר
+nest | לקונן, קן
+norm | תקן, נורמה
+North | צפון
+nose | חרטום, אף
+numb | חסר תחושה, רדום
+obsession | דיבוק, אובססיה
+old-fashioned | מיושן
+outweigh | שוקל יותר מ, עולה על
+owe | להיות חייב
+oxygen | חמצן
+palm | כף יד, דקל
+peek | להציץ
+petty | חסר חשיבות, קטן, קטנוני
+phobia | פחד כרוני, פוביה
+pivot | לסובב על ציר, ציר
+plate | לוח, צלחת
+plead | להתחנן, לעתור
+pleasure | לענג, תענוג
+plight | סכנה, צרה
+plunge | טבילה
+poignant | נוקב, חריף
+poisonous | רעיל
+polish | פולני, לצחצח, להבריק
+portray | לצייר, לתאר
+precious | יקר
+predominantly | באופן ניכר
+probe | לגשש, לברר, לחטט
+proverb | אמרה, פתגם
+pupil | תלמיד
+puzzle | פאזל, חידה
+puzzled | מבולבל
+quench | להרוות, לספק
+rebellion | מרד
+reciprocate | הדדי
+recreation | בילוי
+relegated | הורד בדרגה
+resort | אתר נופש, לנקוט באמצעים
+revitalize | להחיות
+revived | התחדש, קם לתחייה
+revolt | מרד
+rhythm | קֶצֶב
+rotary | נע על ציר סיבובי
+rubber | גומי
+sailor | ימאי
+salvation | גאולה, ישועה
+saturated | רווי
+scales | קשקשים (של דג)
+scan | לסרוק, סריקה
+scorn | מנודה, לזלזל, לבוז
+sculpture | פסל
+sedative | משכך, סם הרגעה
+segregation | הפרדה
+seizure | התקף
+separately | בנפרד

@@ -1,0 +1,150 @@
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useMemo, useCallback, useRef } = React;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function fireConfetti() {
+  const colors = ['#34c759','#1d60b3','#ff9800','#ff3b30','#6ba4f8'];
+  for (let i = 0; i < 38; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-p';
+    el.style.cssText = `background:${colors[i%colors.length]};left:${Math.random()*100}vw;animation-duration:${(Math.random()*1.5+1.5).toFixed(2)}s;animation-delay:${(Math.random()*0.4).toFixed(2)}s`;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 2800);
+  }
+}
+
+function makeTokens({ palette = 'ink', dark = false }) {
+  const p = { accent: dark ? 'oklch(0.65 0.14 248)' : 'oklch(0.46 0.14 248)', accentSoft: dark ? 'oklch(0.46 0.14 248 / 0.22)' : 'oklch(0.92 0.04 248)', accentInk: dark ? 'oklch(0.65 0.14 248)' : 'oklch(0.30 0.12 248)' };
+  const c = dark ? { bg:'oklch(0.16 0.006 250)', surface:'oklch(0.21 0.006 250)', surface2:'oklch(0.25 0.006 250)', line:'oklch(0.32 0.006 250)', ink:'oklch(0.97 0.004 90)', ink2:'oklch(0.78 0.005 90)', muted:'oklch(0.58 0.006 250)', statusGreen:'oklch(0.72 0.13 150)', statusAmber:'oklch(0.78 0.14 75)', statusRose:'oklch(0.70 0.14 20)' } : { bg:'oklch(0.975 0.006 85)', surface:'#ffffff', surface2:'oklch(0.96 0.005 85)', line:'oklch(0.90 0.006 85)', ink:'oklch(0.20 0.012 85)', ink2:'oklch(0.42 0.010 85)', muted:'oklch(0.58 0.008 85)', statusGreen:'oklch(0.55 0.13 150)', statusAmber:'oklch(0.66 0.14 75)', statusRose:'oklch(0.58 0.16 20)' };
+  return { dark, c, accent: p.accent, accentSoft: p.accentSoft, accentInk: p.accentInk, fontHe: '"Heebo","Segoe UI",system-ui,sans-serif', fontEn: '-apple-system,"SF Pro Text",system-ui,sans-serif', fontSerif: '"Crimson Pro","Source Serif 4",Georgia,serif', fontDisplay: '"Newsreader","Iowan Old Style",Georgia,serif', rCard: 22, rPill: 9999, pad: 18 };
+}
+
+function Icon({ name, size = 20, color = 'currentColor', stroke = 1.7 }) {
+  const p = { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: color, strokeWidth: stroke, strokeLinecap: 'round', strokeLinejoin: 'round' };
+  switch (name) {
+    case 'flame': return <svg {...p}><path d="M12 3c1 4 5 5 5 10a5 5 0 1 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3 1-6 1-9z"/></svg>;
+    case 'cards': return <svg {...p}><rect x="4" y="6" width="14" height="14" rx="2"/><path d="M8 3h12v14"/></svg>;
+    case 'check': return <svg {...p}><path d="M4 12l5 5L20 6"/></svg>;
+    case 'x': return <svg {...p}><path d="M6 6l12 12M18 6L6 18"/></svg>;
+    case 'chevron-left': return <svg {...p}><path d="M15 6l-6 6 6 6"/></svg>;
+    case 'chevron-right': return <svg {...p}><path d="M9 6l6 6-6 6"/></svg>;
+    case 'chevron-down': return <svg {...p}><path d="M6 9l6 6 6-6"/></svg>;
+    case 'home': return <svg {...p}><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/></svg>;
+    case 'target': return <svg {...p}><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill={color}/></svg>;
+    case 'user': return <svg {...p}><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>;
+    case 'plus': return <svg {...p}><path d="M12 5v14M5 12h14"/></svg>;
+    case 'star': return <svg {...p}><path d="M12 3l2.6 5.6 6.1.6-4.6 4.2 1.3 6L12 16.8 6.6 19.4l1.3-6L3.3 9.2l6.1-.6z"/></svg>;
+    case 'sparkle': return <svg {...p}><path d="M12 3v6M12 15v6M3 12h6M15 12h6M6 6l3 3M15 15l3 3M6 18l3-3M15 9l3-3"/></svg>;
+    case 'gear': return <svg {...p}><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4.9a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.5a7 7 0 0 0-2 1.2l-2.4-.9-2 3.4 2 1.6A7 7 0 0 0 5 12a7 7 0 0 0 .1 1.2l-2 1.6 2 3.4 2.4-.9a7 7 0 0 0 2 1.2L10 21h4l.5-2.5a7 7 0 0 0 2-1.2l2.4.9 2-3.4-2-1.6c.07-.4.1-.8.1-1.2z"/></svg>;
+    case 'moon': return <svg {...p}><path d="M20 14a8 8 0 1 1-10-10 7 7 0 0 0 10 10z"/></svg>;
+    case 'sun': return <svg {...p}><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>;
+    case 'book': return <svg {...p}><path d="M4 5a2 2 0 0 1 2-2h11v18H6a2 2 0 0 1-2-2zM17 3v18"/></svg>;
+    case 'list': return <svg {...p}><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg>;
+    case 'refresh': return <svg {...p}><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8M20 4v4h-4M20 12a8 8 0 0 1-13.7 5.7L4 16M4 20v-4h4"/></svg>;
+    case 'trash': return <svg {...p}><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>;
+    case 'mic': return <svg {...p}><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>;
+    case 'skip': return <svg {...p}><path d="M5 4l10 8-10 8V4zM19 5v14"/></svg>;
+    case 'clock': return <svg {...p}><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>;
+    case 'quote': return <svg {...p}><path d="M7 7h4v6H7zM7 13c0 2 1 3 3 3M13 7h4v6h-4zM13 13c0 2 1 3 3 3"/></svg>;
+    case 'dot': return <svg {...p} stroke="none"><circle cx="12" cy="12" r="5" fill={color}/></svg>;
+    case 'pin': return <svg {...p}><path d="M12 2l3 7h5l-4 4 1.5 7L12 17l-5.5 3L8 13 4 9h5z"/></svg>;
+    case 'upload': return <svg {...p}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>;
+    case 'download': return <svg {...p}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>;
+    case 'search': return <svg {...p}><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>;
+    case 'lock': return <svg {...p}><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>;
+    case 'globe': return <svg {...p}><circle cx="12" cy="12" r="9"/><path d="M12 3c-2.5 4-2.5 14 0 18M3 9h18M3 15h18"/></svg>;
+    case 'car': return <svg {...p}><path d="M5 17H3v-5l2-5h14l2 5v5h-2M7 17h10"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>;
+    case 'keyboard': return <svg {...p}><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M8 14h8"/></svg>;
+    case 'ear': return <svg {...p}><path d="M6 9a6 6 0 1 1 12 0c0 3-3 5-3 9H9c0-3-3-6-3-9z"/><path d="M9 18a3 3 0 0 0 6 0"/></svg>;
+    case 'shuffle': return <svg {...p}><path d="M16 3h5v5M4 20l17-17"/><path d="M21 16v5h-5M15 15l6 6"/><path d="M4 4l5 5"/></svg>;
+    default: return null;
+  }
+}
+
+function AmirnetMark({ size = 28, color = 'currentColor', stroke = 1.6 }) {
+  return <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
+    <path d="M16 2 L30 16 L16 30 L2 16 Z" stroke={color} strokeWidth={stroke}/>
+    <path d="M16 7 L25 16 L16 25 L7 16 Z" stroke={color} strokeWidth={stroke} opacity="0.6"/>
+    <circle cx="16" cy="16" r="2.4" fill={color}/>
+  </svg>;
+}
+
+function Card({ t, children, style, pad, onAccent }) {
+  return <div style={{ background: onAccent ? t.accent : t.c.surface, borderRadius: t.rCard, padding: pad ?? t.pad, border: t.dark ? `0.5px solid ${t.c.line}` : 'none', boxShadow: t.dark ? 'none' : '0 1px 0 rgba(20,20,40,0.025), 0 6px 22px -12px rgba(20,20,40,0.10)', color: onAccent ? '#fff' : t.c.ink, ...style }}>{children}</div>;
+}
+function StatusDot({ color, size = 8 }) {
+  return <span style={{ display:'inline-block', width:size, height:size, borderRadius:'50%', background:color, flexShrink:0 }}/>;
+}
+function ProgressBar({ t, value, height = 6 }) {
+  return <div style={{ width:'100%', height, borderRadius:height/2, background: t.dark ? 'rgba(255,255,255,0.08)' : 'rgba(20,20,30,0.06)', overflow:'hidden' }}>
+    <div style={{ width:`${Math.min(100,Math.max(0,value))}%`, height:'100%', background:t.accent, borderRadius:height/2, transition:'width 0.3s ease' }}/>
+  </div>;
+}
+function Ring({ t, value, size = 130, stroke = 10, label, sub, color }) {
+  const r = (size - stroke) / 2;
+  const C = 2 * Math.PI * r;
+  const dash = (value / 100) * C;
+  const rc = color || t.accent;
+  return <div style={{ position:'relative', width:size, height:size, flexShrink:0 }}>
+    <svg width={size} height={size} style={{ transform:'rotate(-90deg)' }}>
+      <circle cx={size/2} cy={size/2} r={r} stroke={t.dark ? 'rgba(255,255,255,0.08)' : 'rgba(20,20,30,0.06)'} strokeWidth={stroke} fill="none"/>
+      <circle cx={size/2} cy={size/2} r={r} stroke={rc} strokeWidth={stroke} fill="none" strokeDasharray={`${dash} ${C}`} strokeLinecap="round"/>
+    </svg>
+    <div style={{ position:'absolute', inset:0, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:2 }}>
+      {label && <div style={{ fontSize:size*0.28, fontWeight:700, color:t.c.ink, fontFamily:t.fontEn, letterSpacing:'-0.04em', lineHeight:1 }}>{label}</div>}
+      {sub && <div style={{ fontSize:11, color:t.c.muted, marginTop:2 }}>{sub}</div>}
+    </div>
+  </div>;
+}
+function Pill({ t, children, selected, onClick }) {
+  return <div onClick={onClick} style={{ display:'inline-flex', alignItems:'center', gap:6, padding:'7px 14px', borderRadius:9999, background: selected ? t.accent : (t.dark ? 'rgba(255,255,255,0.08)' : 'rgba(20,20,30,0.05)'), color: selected ? '#fff' : t.c.ink, fontSize:13, fontWeight:600, cursor:'pointer', flexShrink:0 }}>{children}</div>;
+}
+function PrimaryButton({ t, children, onClick, style, large }) {
+  return <div onClick={onClick} style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:8, height: large ? 56 : 50, borderRadius:9999, background:t.accent, color:'#fff', fontWeight:700, fontSize: large ? 17 : 16, letterSpacing:'0.01em', boxShadow:`0 6px 20px -6px ${t.accent}`, cursor:'pointer', userSelect:'none', ...style }}>{children}</div>;
+}
+function GhostButton({ t, children, onClick, style }) {
+  return <div onClick={onClick} style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:8, height:50, borderRadius:9999, background: t.dark ? 'rgba(255,255,255,0.08)' : 'rgba(20,20,30,0.05)', color:t.c.ink, fontWeight:600, fontSize:16, cursor:'pointer', ...style }}>{children}</div>;
+}
+function NavPill({ t, children, onClick }) {
+  return <div onClick={onClick} style={{ width:36, height:36, borderRadius:18, background: t.dark ? 'rgba(255,255,255,0.08)' : 'rgba(20,20,30,0.06)', display:'flex', alignItems:'center', justifyContent:'center', cursor: onClick ? 'pointer' : 'default', flexShrink:0 }}>{children}</div>;
+}
+function SectionHead({ t, title, action, onAction }) {
+  return <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between', padding:'0 2px', marginBottom:10, marginTop:4 }}>
+    <div style={{ fontSize:13, fontWeight:700, color:t.c.ink2 }}>{title}</div>
+    {action && <div onClick={onAction} style={{ fontSize:12, color:t.accent, fontWeight:600, cursor:'pointer' }}>{action} ←</div>}
+  </div>;
+}
+function Divider({ t }) {
+  return <div style={{ height:0.5, background:t.c.line, margin:'0 18px' }}/>;
+}
+function Toggle({ t, on, onToggle }) {
+  return <div onClick={onToggle} style={{ width:48, height:28, borderRadius:14, background: on ? t.accent : (t.dark ? 'rgba(255,255,255,0.15)' : 'rgba(20,20,30,0.12)'), position:'relative', cursor:'pointer', transition:'background 0.2s', flexShrink:0 }}>
+    <div style={{ position:'absolute', top:3, left: on ? 23 : 3, width:22, height:22, borderRadius:11, background:'#fff', boxShadow:'0 1px 4px rgba(0,0,0,0.25)', transition:'left 0.2s' }}/>
+  </div>;
+}
+
+function BottomTabBar({ t, active, onNav }) {
+  const tabs = [
+    { id:'home', label:'בית', icon:'home' },
+    { id:'practice', label:'תרגול', icon:'cards' },
+    { id:'test', label:'מבחן', icon:'target' },
+    { id:'profile', label:'פרופיל', icon:'user' },
+  ];
+  return <div style={{ position:'fixed', bottom:0, left:0, right:0, height:72, background: t.dark ? 'rgba(22,22,28,0.92)' : 'rgba(255,255,255,0.92)', backdropFilter:'blur(20px) saturate(180%)', WebkitBackdropFilter:'blur(20px) saturate(180%)', borderTop:`0.5px solid ${t.dark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.07)'}`, display:'flex', alignItems:'center', justifyContent:'space-around', zIndex:100, fontFamily:t.fontHe, paddingBottom:'env(safe-area-inset-bottom)' }}>
+    {tabs.map(tab => {
+      const on = tab.id === active;
+      return <div key={tab.id} onClick={() => onNav(tab.id)} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:3, color: on ? t.accent : t.c.muted, cursor:'pointer', padding:'4px 16px' }}>
+        <Icon name={tab.icon} size={22} color={on ? t.accent : t.c.muted} stroke={on ? 2.1 : 1.6}/>
+        <span style={{ fontSize:10.5, fontWeight: on ? 700 : 500 }}>{tab.label}</span>
+      </div>;
+    })}
+  </div>;
+}

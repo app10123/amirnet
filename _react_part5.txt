@@ -1,0 +1,290 @@
+
+function Badge({ t, icon, label }) {
+  return <div style={{ padding:'4px 9px 4px 7px', borderRadius:999, background: t.dark ? 'rgba(255,255,255,0.06)' : 'rgba(20,20,30,0.05)', display:'flex', alignItems:'center', gap:4, fontSize:11.5, fontWeight:700, color:t.c.ink2 }}>
+    <Icon name={icon} size={12} color={t.c.ink2} stroke={1.9}/>
+    <span>{label}</span>
+  </div>;
+}
+function BigStat({ t, value, label, sub, color }) {
+  return <div style={{ padding:'14px 14px', borderRadius:18, background:t.c.surface, border:`1px solid ${t.c.line}` }}>
+    <div style={{ width:6, height:6, borderRadius:3, background:color, marginBottom:8 }}/>
+    <div style={{ fontFamily:t.fontEn, fontSize:26, fontWeight:700, color:t.c.ink, letterSpacing:'-0.02em', lineHeight:1, fontVariantNumeric:'tabular-nums' }}>{value}</div>
+    <div style={{ fontSize:12.5, fontWeight:600, color:t.c.ink2, marginTop:6 }}>{label}</div>
+    <div style={{ fontSize:11, color:t.c.muted, marginTop:2 }}>{sub}</div>
+  </div>;
+}
+function AchTile({ t, icon, label, earned }) {
+  return <div style={{ padding:'12px 8px', borderRadius:14, background:t.c.surface, border:`1px solid ${t.c.line}`, display:'flex', flexDirection:'column', alignItems:'center', gap:6, opacity: earned ? 1 : 0.45 }}>
+    <div style={{ width:34, height:34, borderRadius:17, background: earned ? t.accentSoft : (t.dark ? 'rgba(255,255,255,0.06)' : 'rgba(20,20,30,0.05)'), display:'flex', alignItems:'center', justifyContent:'center' }}>
+      <Icon name={icon} size={16} color={earned ? t.accent : t.c.muted} stroke={1.9}/>
+    </div>
+    <div style={{ fontSize:10.5, fontWeight:600, color:t.c.ink2, textAlign:'center', lineHeight:1.2 }}>{label}</div>
+  </div>;
+}
+
+function SettingGroup({ t, title, children }) {
+  return <div>
+    <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.16em', color:t.c.muted, fontFamily:t.fontEn, padding:'0 6px 8px', textTransform:'uppercase' }}>{title}</div>
+    <Card t={t} pad={0} style={{ overflow:'hidden' }}>{children}</Card>
+  </div>;
+}
+function SetRow({ t, icon, label, value, toggle, chevron, danger, onClick, onToggle }) {
+  return <div onClick={onClick} style={{ padding:'12px 16px', display:'flex', alignItems:'center', gap:12, cursor: onClick ? 'pointer' : 'default' }}>
+    <div style={{ width:30, height:30, borderRadius:9, background: danger ? 'oklch(0.95 0.04 20)' : t.accentSoft, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
+      <Icon name={icon} size={15} color={danger ? t.c.statusRose : t.accent} stroke={1.9}/>
+    </div>
+    <div style={{ flex:1, minWidth:0 }}>
+      <div style={{ fontSize:14, fontWeight:600, color: danger ? t.c.statusRose : t.c.ink }}>{label}</div>
+    </div>
+    {toggle ? (
+      <div onClick={onToggle} style={{ width:42, height:26, borderRadius:13, padding:2, background: value ? t.accent : (t.dark ? 'rgba(255,255,255,0.15)' : 'rgba(20,20,30,0.12)'), display:'flex', alignItems:'center', justifyContent: value ? 'flex-end' : 'flex-start', cursor:'pointer', transition:'background 0.2s', flexShrink:0 }}>
+        <div style={{ width:22, height:22, borderRadius:11, background:'#fff', boxShadow:'0 1px 4px rgba(0,0,0,0.25)' }}/>
+      </div>
+    ) : chevron && (
+      <div style={{ display:'flex', alignItems:'center', gap:6 }}>
+        {value && <span style={{ fontSize:13, color:t.c.muted, fontWeight:500 }}>{value}</span>}
+        <Icon name="chevron-left" size={15} color={t.c.muted} stroke={1.8}/>
+      </div>
+    )}
+  </div>;
+}
+
+function ProfileScreen({ t, isDark, onToggleDark, stats, streak, progress, allWords, onNavigate }) {
+  const dailyStats = useMemo(() => {
+    try {
+      const ds = JSON.parse(localStorage.getItem('dailyStats') || '{}');
+      const days = ['א','ב','ג','ד','ה','ו','ש'];
+      return Array.from({length:7}, (_, i) => {
+        const d = new Date();
+        d.setDate(d.getDate() - (6-i));
+        return { d: days[d.getDay()], v: ds[d.toISOString().split('T')[0]] || 0 };
+      });
+    } catch { return Array.from({length:7}, (_, i) => ({ d:['א','ב','ג','ד','ה','ו','ש'][i], v:0 })); }
+  }, []);
+  const maxV = Math.max(...dailyStats.map(d => d.v), 1);
+
+  const handleReset = () => {
+    if (confirm('למחוק את כל נתוני ההתקדמות? הפעולה אינה הפיכה.')) {
+      ['vocabProgress','vocabStreak','dailyStats','lastSession'].forEach(k => localStorage.removeItem(k));
+      window.location.reload();
+    }
+  };
+
+  return <div className="screen-in" style={{ fontFamily:t.fontHe }}>
+    <div style={{ padding:`16px ${t.pad}px 0`, display:'flex', alignItems:'center', gap:10 }}>
+      <NavPill t={t} onClick={() => onNavigate('settings')}><Icon name="gear" size={17} color={t.c.ink2} stroke={1.9}/></NavPill>
+      <div style={{ flex:1, textAlign:'center', fontSize:14, fontWeight:700, color:t.c.ink2 }}>פרופיל</div>
+      <NavPill t={t}><Icon name="upload" size={16} color={t.c.ink2} stroke={1.9}/></NavPill>
+    </div>
+    <div style={{ overflow:'auto', padding:`0 ${t.pad}px 110px` }}>
+      <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:10, padding:'14px 0 22px' }}>
+        <div style={{ width:76, height:76, borderRadius:38, background:t.accentSoft, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:t.fontEn, fontSize:30, fontWeight:700, color:t.accentInk }}>A</div>
+        <div style={{ textAlign:'center' }}>
+          <div style={{ fontSize:20, fontWeight:700, color:t.c.ink, letterSpacing:'-0.01em' }}>אמיר</div>
+          <div style={{ fontSize:12.5, color:t.c.muted, marginTop:2 }}>Kidum · יום {streak} ברצף</div>
+        </div>
+        <div style={{ display:'flex', gap:6, flexWrap:'wrap', justifyContent:'center' }}>
+          <Badge t={t} icon="flame" label={`רצף ${streak}`}/>
+          <Badge t={t} icon="cards" label={`${stats.known} מילים`}/>
+          <Badge t={t} icon="target" label={`${stats.total > 0 ? Math.round(stats.known/stats.total*100) : 0}%`}/>
+        </div>
+      </div>
+
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10, marginBottom:18 }}>
+        <BigStat t={t} value={String(stats.known)} label="מילים יודע" sub={`מתוך ${stats.total}`} color={t.c.statusGreen}/>
+        <BigStat t={t} value={String(stats.learning)} label="ללמידה" sub="בשינון ממוקד" color={t.accent}/>
+        <BigStat t={t} value={`${stats.total > 0 ? Math.round(stats.known/stats.total*100) : 0}%`} label="התקדמות" sub="מהמאגר הכולל" color={t.c.ink}/>
+        <BigStat t={t} value={String(streak)} label="ימי רצף" sub="לימוד עקבי" color={t.c.statusAmber}/>
+      </div>
+
+      <div style={{ marginBottom:18 }}>
+        <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.16em', color:t.c.muted, fontFamily:t.fontEn, padding:'0 2px 10px' }}>שבוע אחרון</div>
+        <Card t={t} pad={18}>
+          <div style={{ display:'flex', alignItems:'flex-end', justifyContent:'space-between', height:90, gap:6 }}>
+            {dailyStats.map((x, i) => (
+              <div key={i} style={{ flex:1, display:'flex', flexDirection:'column', alignItems:'center', gap:6 }}>
+                <div style={{ width:'100%', height:70, display:'flex', alignItems:'flex-end' }}>
+                  <div style={{ width:'100%', height:`${Math.round((x.v/maxV)*100)}%`, minHeight: x.v > 0 ? 4 : 0, background: i === 6 ? t.accent : t.accentSoft, borderRadius:4 }}/>
+                </div>
+                <span style={{ fontSize:11, color:t.c.muted, fontWeight:600 }}>{x.d}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+
+      <div style={{ marginBottom:18 }}>
+        <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.16em', color:t.c.muted, fontFamily:t.fontEn, padding:'0 2px 10px' }}>ACHIEVEMENTS</div>
+        <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:8 }}>
+          <AchTile t={t} icon="flame" label="30 יום ברצף" earned={streak >= 30}/>
+          <AchTile t={t} icon="cards" label="100 מילים" earned={stats.known >= 100}/>
+          <AchTile t={t} icon="target" label="50% מהמאגר" earned={stats.total > 0 && stats.known/stats.total >= 0.5}/>
+          <AchTile t={t} icon="book" label="טקסט ראשון" earned={false}/>
+          <AchTile t={t} icon="star" label="200 מילים" earned={stats.known >= 200}/>
+          <AchTile t={t} icon="sparkle" label="מאסטר אוצר" earned={stats.known >= 500}/>
+        </div>
+      </div>
+
+      <Card t={t} pad={0} style={{ overflow:'hidden', marginBottom:24 }}>
+        <SetRow t={t} icon="moon" label="מצב לילה" toggle value={isDark} onToggle={onToggleDark}/>
+        <Divider t={t}/>
+        <SetRow t={t} icon="gear" label="הגדרות" chevron onClick={() => onNavigate('settings')}/>
+        <Divider t={t}/>
+        <SetRow t={t} icon="refresh" label="איפוס נתונים" chevron danger onClick={handleReset}/>
+      </Card>
+    </div>
+  </div>;
+}
+
+function SettingsScreen({ t, isDark, onToggleDark, onBack, onReset }) {
+  return <div className="screen-in" style={{ fontFamily:t.fontHe }}>
+    <div style={{ padding:`16px ${t.pad}px 6px`, display:'flex', alignItems:'center', gap:10 }}>
+      <NavPill t={t} onClick={onBack}><Icon name="chevron-right" size={17} color={t.c.ink2} stroke={2}/></NavPill>
+      <div style={{ flex:1 }}>
+        <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.14em', color:t.c.muted, fontFamily:t.fontEn }}>SETTINGS</div>
+        <div style={{ fontSize:22, fontWeight:700, color:t.c.ink, letterSpacing:'-0.01em', marginTop:2 }}>הגדרות</div>
+      </div>
+    </div>
+    <div style={{ overflow:'auto', padding:`14px ${t.pad}px 30px`, display:'flex', flexDirection:'column', gap:18 }}>
+      <SettingGroup t={t} title="תצוגה">
+        <SetRow t={t} icon="moon" label="מצב כהה / בהיר" toggle value={isDark} onToggle={onToggleDark}/>
+      </SettingGroup>
+      <SettingGroup t={t} title="טיימרים">
+        <SetRow t={t} icon="clock" label="השלמת משפטים" value="60 שנ׳" chevron/>
+        <Divider t={t}/>
+        <SetRow t={t} icon="clock" label="ניסוח מחדש" value="90 שנ׳" chevron/>
+        <Divider t={t}/>
+        <SetRow t={t} icon="clock" label="הבנת הנקרא" value="5 דק׳" chevron/>
+      </SettingGroup>
+      <SettingGroup t={t} title="גיבוי">
+        <SetRow t={t} icon="download" label="הורדת גיבוי נתונים" chevron/>
+        <Divider t={t}/>
+        <SetRow t={t} icon="upload" label="שחזור מקובץ גיבוי" chevron/>
+      </SettingGroup>
+      <SettingGroup t={t} title="איפוס">
+        <SetRow t={t} icon="refresh" label="איפוס מילים שלמדתי" chevron danger onClick={onReset}/>
+        <Divider t={t}/>
+        <SetRow t={t} icon="x" label="איפוס מלא · מחיקת הכל" chevron danger onClick={onReset}/>
+      </SettingGroup>
+      <div style={{ textAlign:'center', fontSize:11, color:t.c.muted, fontFamily:t.fontEn, marginTop:4 }}>Amirnet Pro · v3.2.1</div>
+    </div>
+  </div>;
+}
+
+function App() {
+  const [isDark, setIsDark] = useState(() => localStorage.getItem('darkMode') === 'true');
+  const [screen, setScreen] = useState('home');
+  const [examMode, setExamMode] = useState(null);
+  const [examResults, setExamResults] = useState({ results:[], scResults:[], rsResults:[] });
+  const [readingPassage, setReadingPassage] = useState(null);
+  const [progress, setProgress] = useState(() => {
+    try {
+      const p = JSON.parse(localStorage.getItem('vocabProgress') || '{}');
+      for (const k in p) { if (p[k].known === true) { p[k].status='known'; delete p[k].known; } else if (p[k].known === false) { p[k].status='learning'; delete p[k].known; } }
+      return p;
+    } catch { return {}; }
+  });
+  const [streak, setStreak] = useState(() => parseInt(localStorage.getItem('vocabStreak') || '0'));
+  const [aiData, setAiData] = useState({});
+  const [flashList, setFlashList] = useState([]);
+
+  const t = makeTokens({ palette:'ink', dark:isDark });
+
+  useEffect(() => {
+    document.body.style.background = t.c.bg;
+    fetch('./ai_completed_data.json').then(r => r.json()).then(setAiData).catch(() => {});
+    const splash = document.getElementById('splash');
+    if (splash) {
+      const delay = localStorage.getItem('isFirstLoadComplete_V2') ? 500 : 1600;
+      setTimeout(() => { splash.style.opacity='0'; setTimeout(() => splash.style.display='none', 600); }, delay);
+      localStorage.setItem('isFirstLoadComplete_V2','true');
+    }
+  }, []);
+
+  const allWords = useMemo(() => {
+    const map = new Map();
+    rawData.forEach(item => {
+      const p = item.split('|');
+      if (p.length >= 4) map.set(p[0].toLowerCase()+'_Kidum', { en:p[0], he:p[1], level:p[2], unit:p[3], source:'Kidum' });
+    });
+    try { JSON.parse(localStorage.getItem('customVocab')||'[]').forEach(cw => { const src=cw.source||'Custom'; map.set(cw.en.toLowerCase()+'_'+src, cw); }); } catch {}
+    return Array.from(map.values());
+  }, []);
+
+  const stats = useMemo(() => {
+    let known=0, learning=0;
+    allWords.forEach(w => { const s=(progress[w.en]&&progress[w.en].status)||'unseen'; if(s==='known')known++; else if(s==='learning')learning++; });
+    return { known, learning, unseen:allWords.length-known-learning, total:allWords.length };
+  }, [allWords, progress]);
+
+  const saveProgress = useCallback((newProg, newStreak) => {
+    localStorage.setItem('vocabProgress', JSON.stringify(newProg));
+    if (newStreak !== undefined) { localStorage.setItem('vocabStreak', String(newStreak)); setStreak(newStreak); }
+    setProgress({...newProg});
+  }, []);
+
+  const startFlash = useCallback((list) => {
+    if (!list || list.length === 0) return;
+    setFlashList(list);
+    setScreen('flashcard');
+  }, []);
+
+  const startExam = useCallback((mode) => {
+    setExamMode(mode);
+    setExamResults({ results:[], scResults:[], rsResults:[] });
+    setScreen('exam');
+  }, []);
+
+  const handleNav = useCallback((tab) => {
+    if (tab === 'home') setScreen('home');
+    else if (tab === 'practice') setScreen('practice');
+    else if (tab === 'test') setScreen('test-overview');
+    else if (tab === 'profile') setScreen('profile');
+  }, []);
+
+  const navigate = useCallback((to) => {
+    if (to === 'exam-sc') { startExam('sc'); return; }
+    if (to === 'exam-rs') { startExam('rs'); return; }
+    setScreen(to);
+  }, [startExam]);
+
+  const toggleDark = useCallback(() => { const d=!isDark; setIsDark(d); localStorage.setItem('darkMode',String(d)); }, [isDark]);
+
+  const handleReset = () => {
+    if (confirm('למחוק את כל נתוני ההתקדמות? הפעולה אינה הפיכה.')) {
+      ['vocabProgress','vocabStreak','dailyStats','lastSession'].forEach(k => localStorage.removeItem(k));
+      window.location.reload();
+    }
+  };
+
+  const activeTab = (() => {
+    if (['practice','flashcard','vocab'].includes(screen)) return 'practice';
+    if (['test-overview','exam','results'].includes(screen)) return 'test';
+    if (['profile','settings'].includes(screen)) return 'profile';
+    return 'home';
+  })();
+
+  const hideTabBar = ['flashcard','exam','reading'].includes(screen);
+
+  return <div dir="rtl" style={{ position:'fixed', inset:0, background:t.c.bg, fontFamily:t.fontHe, color:t.c.ink, display:'flex', flexDirection:'column', overflow:'hidden' }}>
+    <div style={{ flex:1, overflow:'auto', paddingBottom: hideTabBar ? 0 : 72 }}>
+      {screen === 'home' && <HomeScreen t={t} allWords={allWords} progress={progress} stats={stats} streak={streak} onStartFlash={startFlash} onNavigate={navigate}/>}
+      {screen === 'flashcard' && <FlashcardScreen t={t} list={flashList} progress={progress} streak={streak} aiData={aiData} saveProgress={saveProgress} onBack={() => setScreen('home')}/>}
+      {screen === 'practice' && <PracticeHubScreen t={t} allWords={allWords} progress={progress} stats={stats} onNavigate={navigate} onStartFlash={startFlash}/>}
+      {screen === 'vocab' && <VocabScreen t={t} allWords={allWords} progress={progress} onBack={() => setScreen('practice')} onStartFlash={startFlash}/>}
+      {screen === 'test-overview' && <TestOverviewScreen t={t} onStart={() => startExam('mixed')} onBack={() => setScreen('home')}/>}
+      {screen === 'exam' && <ExamScreen t={t} mode={examMode} onBack={() => setScreen(examMode==='mixed'?'test-overview':'practice')} onFinish={(r) => { setExamResults(r); setScreen('results'); }}/>}
+      {screen === 'results' && <ResultsScreen t={t} {...examResults} onBack={() => setScreen('home')} onRestart={() => startExam(examMode)}/>}
+      {screen === 'texts-list' && <TextsListScreen t={t} onBack={() => setScreen('practice')} onRead={(p) => { setReadingPassage(p); setScreen('reading'); }}/>}
+      {screen === 'reading' && readingPassage && <ReadingScreen t={t} passage={readingPassage} onBack={() => setScreen('texts-list')}/>}
+      {screen === 'profile' && <ProfileScreen t={t} isDark={isDark} onToggleDark={toggleDark} stats={stats} streak={streak} progress={progress} allWords={allWords} onNavigate={navigate}/>}
+      {screen === 'settings' && <SettingsScreen t={t} isDark={isDark} onToggleDark={toggleDark} onBack={() => setScreen('profile')} onReset={handleReset}/>}
+    </div>
+    {!hideTabBar && <BottomTabBar t={t} active={activeTab} onNav={handleNav}/>}
+  </div>;
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

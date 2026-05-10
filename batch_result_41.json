@@ -1,0 +1,38 @@
+{
+  "wheat": {
+    "assoc": "וויט נשמע כמו 'חיטה' — הגרעין שמהו לחם!",
+    "sentence": "The farmer harvested wheat from his fields.|החקלאי קצר חיטה מהשדות שלו."
+  },
+  "whistle": {
+    "assoc": "וויסל — 'וויס' כמו ויש לו שריקה חזקה!",
+    "sentence": "The coach blew his whistle to stop the game.|המאמן שרק בשריקה שלו כדי לעצור את המשחק."
+  },
+  "wholesale": {
+    "assoc": "הול-סייל — 'כולו מכירה' בסיטונאות, כמו סייל ענק!",
+    "sentence": "We buy our products wholesale to save money.|אנחנו קונים את המוצרים שלנו בסיטונאות כדי לחסוך כסף."
+  },
+  "wife": {
+    "assoc": "ווייף — נשמע כמו 'וויפ' שאשתו מוחאת כף!",
+    "sentence": "His wife prepared a delicious dinner for the family.|אשתו הכינה ארוחת ערב טעימה למשפחה."
+  },
+  "willow": {
+    "assoc": "וילו — 'ויל-ו' כמו הענפים של ערבה שנדים ויילו!",
+    "sentence": "The willow tree by the river has long drooping branches.|עץ הערבה ליד הנהר מלא ענפים ארוכים שמורידים מטה."
+  },
+  "worm": {
+    "assoc": "וורם — 'וורם' נשמע כמו תולעת שמתפתלת בחום!",
+    "sentence": "The bird pulled a worm out of the ground.|הציפור שלפה תולעת מהאדמה."
+  },
+  "writer": {
+    "assoc": "רייטר — 'כותב' שרייט דברים על הדף!",
+    "sentence": "The writer published her first novel last year.|הסופרת פרסמה את ספרה הראשון בשנה שעברה."
+  },
+  "yawn": {
+    "assoc": "יוון — כמו 'יאן' שפיהק כי השיעור משעמם!",
+    "sentence": "She tried to hide her yawn during the boring meeting.|היא ניסתה להסתיר את הפיהוק שלה במהלך הישיבה המשעממת."
+  },
+  "zealot": {
+    "assoc": "זלוט — 'זה-לוט' קנאי כמו לוט שברח עם כל מה שיש!",
+    "sentence": "The zealot refused to compromise on his beliefs.|הקנאי סירב להתפשר על אמונותיו."
+  }
+}

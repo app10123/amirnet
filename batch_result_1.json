@@ -1,0 +1,322 @@
+{
+  "excessive": {
+    "assoc": "אקס-סֶסִיב: האקס שלי היה מוגזם בכל דבר – קניות, דרמות, הכל!",
+    "sentence": "His excessive spending left him with no savings.|ההוצאות המוגזמות שלו לא השאירו לו חסכונות."
+  },
+  "general": {
+    "assoc": "ג'נרל הוא מפקד כללי של הצבא!",
+    "sentence": "She gave a general overview of the topic.|היא נתנה סקירה כללית של הנושא."
+  },
+  "generalize": {
+    "assoc": "ג'נרל-איז: הג'נרל מכליל פקודות לכל החיילים!",
+    "sentence": "You should not generalize based on one example.|אסור להכליל על סמך דוגמה אחת."
+  },
+  "image": {
+    "assoc": "אִימָג': אמא ג' צילמה תמונה מדהימה!",
+    "sentence": "The brand worked hard to improve its image.|המותג עבד קשה לשפר את תדמיתו."
+  },
+  "imaginary": {
+    "assoc": "אִימָג'ינֶרִי: אמא ג'ין רי המציאה חבר דמיוני לילדה!",
+    "sentence": "The child had an imaginary friend named Bob.|לילד היה חבר דמיוני בשם בוב."
+  },
+  "imaginative": {
+    "assoc": "אִימָג'ינֵטִיב: אמא ג'ין טיב – היא בעלת דמיון עשיר!",
+    "sentence": "She is an imaginative writer who creates vivid worlds.|היא סופרת בעלת דמיון שיוצרת עולמות עשירים."
+  },
+  "imagine": {
+    "assoc": "אִימָג'ין: ג'ון לנון שר 'Imagine' – תדמיין עולם טוב יותר!",
+    "sentence": "Imagine a world without wars.|דמיין עולם ללא מלחמות."
+  },
+  "inaccessible": {
+    "assoc": "אין-אקסס: אין לך גישה (access) לשם – לא נגיש!",
+    "sentence": "The mountain peak is inaccessible in winter.|פסגת ההר אינה נגישה בחורף."
+  },
+  "interest": {
+    "assoc": "אינטרס: לכולם יש אינטרס – עניין אישי!",
+    "sentence": "She showed great interest in science.|היא גילתה עניין רב במדע."
+  },
+  "interesting": {
+    "assoc": "אינטרסטינג: יש כאן אינטרס מעניין מאוד!",
+    "sentence": "That is an interesting idea worth exploring.|זו רעיון מעניין שכדאי לחקור."
+  },
+  "joy": {
+    "assoc": "ג'וי: ג'וי קרי – שמחה אמיתית!",
+    "sentence": "The children jumped for joy when school ended.|הילדים קפצו משמחה כשהסתיים בית הספר."
+  },
+  "lame": {
+    "assoc": "ליים: הצחוק שלו היה לֵיים – חלש ועלוב כמו ליים חמוץ!",
+    "sentence": "That excuse is really lame, try again.|התירוץ הזה ממש עלוב, נסה שוב."
+  },
+  "link": {
+    "assoc": "לינק: לִינְק – לחץ על הקישור וחבר בין הדפים!",
+    "sentence": "Click the link to visit the website.|לחץ על הקישור לביקור באתר."
+  },
+  "linked with": {
+    "assoc": "לינקד-וית': לינקדאין מקשר (linked) בינך לבין אנשים!",
+    "sentence": "Stress is often linked with health problems.|לחץ נפשי קשור לעתים קרובות לבעיות בריאות."
+  },
+  "lose": {
+    "assoc": "לוּז: הלוזר מפסיד ומאבד הכל!",
+    "sentence": "I always lose my keys in the morning.|אני תמיד מאבד את המפתחות שלי בבוקר."
+  },
+  "lost": {
+    "assoc": "לוסט: הלוסט (loser) כבר אבוד ולא יודע לאן ללכת!",
+    "sentence": "We were completely lost in the forest.|היינו אבודים לחלוטין ביער."
+  },
+  "mean": {
+    "assoc": "מין: מה אתה מין-ing? מה אתה מתכוון? ואל תהיה כל כך אכזרי!",
+    "sentence": "What do you mean by that comment?|מה אתה מתכוון בהערה הזו?"
+  },
+  "meaning": {
+    "assoc": "מינינג: מה הַמִּינִינְג – מה המשמעות של כל זה?!",
+    "sentence": "The meaning of this poem is unclear.|משמעות השיר הזה אינה ברורה."
+  },
+  "means": {
+    "assoc": "מינז: מינז שלו – האמצעים שלו מאפשרים לו הכל!",
+    "sentence": "He lacks the means to buy a new car.|חסרים לו האמצעים לקנות מכונית חדשה."
+  },
+  "medication": {
+    "assoc": "מֶדיקֵיישן: מֶדִי (רפואי) + קֵישן = טיפול תרופתי!",
+    "sentence": "Take your medication twice a day.|קח את התרופות שלך פעמיים ביום."
+  },
+  "medicine": {
+    "assoc": "מֶדיסין: מֶדִי-סין – הרופא מסין המציא תרופה מיוחדת!",
+    "sentence": "Modern medicine has saved millions of lives.|הרפואה המודרנית הצילה מיליוני חיים."
+  },
+  "mild": {
+    "assoc": "מיילד: מיי-לד – הילד שלי מתון ועדין מטבעו!",
+    "sentence": "He has a mild fever and should rest.|יש לו חום מתון וכדאי לו לנוח."
+  },
+  "mobile": {
+    "assoc": "מוֹבייל: הטלפון המוֹבייל (נייד) נמצא בכל מקום!",
+    "sentence": "A mobile library visits small villages.|ספרייה ניידת מבקרת בכפרים קטנים."
+  },
+  "move": {
+    "assoc": "מוּב: הסרט הזה מוּב-ving – הוא מזיז אותי ומרגש אותי!",
+    "sentence": "The speech moved the entire audience to tears.|הנאום ריגש את כל הקהל עד דמעות."
+  },
+  "need": {
+    "assoc": "ניד: נִיד ניד – אני צריך (need) אותך כאן עכשיו!",
+    "sentence": "Every child needs love and attention.|כל ילד זקוק לאהבה ותשומת לב."
+  },
+  "pardon": {
+    "assoc": "פָּרְדוֹן: פַּרְדוֹן! (בצרפתית) – אנא סלח לי, אבקש חנינה!",
+    "sentence": "The president granted a pardon to the prisoner.|הנשיא העניק חנינה לאסיר."
+  },
+  "progress": {
+    "assoc": "פרוֹגרֶס: פרוֹ-גרֶס – הפרו (אוהד נלהב) מתקדם לגרס (ניצחון)!",
+    "sentence": "The student made great progress this year.|התלמיד עשה התקדמות גדולה השנה."
+  },
+  "progressive": {
+    "assoc": "פרוֹגרֶסיב: פרוֹ-גרֶסיב – הפרו הכי פרוגרסיבי ומתקדם!",
+    "sentence": "She holds progressive views on social issues.|יש לה השקפות מתקדמות בנושאים חברתיים."
+  },
+  "research": {
+    "assoc": "ריסרץ': ריסרץ' – ריס (כסף פרסי) + רץ' = חוקר שרץ אחרי המחקר!",
+    "sentence": "Scientists research new ways to treat cancer.|מדענים חוקרים דרכים חדשות לטיפול בסרטן."
+  },
+  "rise": {
+    "assoc": "רייז: רייז אנד שיין – קום והתרומם מהמיטה!",
+    "sentence": "The sun rises in the east every morning.|השמש עולה במזרח כל בוקר."
+  },
+  "rude": {
+    "assoc": "רוּד: רוּד מן – הבחור הזה חצוף בצורה בוטה!",
+    "sentence": "It is rude to interrupt someone while speaking.|זה חצוף להפריע למישהו בזמן שהוא מדבר."
+  },
+  "rudely": {
+    "assoc": "רוּדְלי: רוּדְלי – הוא ענה בחוצפה, כמו רוד הגס!",
+    "sentence": "He rudely ignored her greeting.|הוא התעלם מברכתה בחוצפה."
+  },
+  "scale": {
+    "assoc": "סְקֵייל: סְקֵייל – הסולם של הפיל vs. הנמלה: קנה מידה שונה לחלוטין!",
+    "sentence": "The scale of the disaster shocked the world.|קנה המידה של האסון זעזע את העולם."
+  },
+  "science": {
+    "assoc": "סַיינְס: סַי-ינְס – אמר המדען: 'סַי (say) yes לְמָדָע!'",
+    "sentence": "Science helps us understand the natural world.|המדע עוזר לנו להבין את העולם הטבעי."
+  },
+  "scientific": {
+    "assoc": "סַיינְטִיפִיק: סַיינְטִי-פִיק – מדעי עד השיא (peak)!",
+    "sentence": "The experiment followed a scientific method.|הניסוי עקב אחר שיטה מדעית."
+  },
+  "scientist": {
+    "assoc": "סַיינְטִיסְט: סַיינְטִיסְט – המדען ב-T-shirt עם נוסחאות!",
+    "sentence": "The scientist discovered a new element.|המדען גילה יסוד חדש."
+  },
+  "search": {
+    "assoc": "סֶרְץ': סֶרְץ' – כמו Search בגוגל: חיפוש בלי סוף!",
+    "sentence": "She searched the internet for information.|היא חיפשה מידע באינטרנט."
+  },
+  "seat": {
+    "assoc": "סיט: שבת על הסיט (seat) – מצאת מושב!",
+    "sentence": "Please take a seat and wait.|אנא שב ותמתין."
+  },
+  "send": {
+    "assoc": "סֶנְד: סֶנְד מי – שלח לי הודעה!",
+    "sentence": "Send me an email when you arrive.|שלח לי אימייל כשתגיע."
+  },
+  "session": {
+    "assoc": "סֶשְׁן: סֶשְׁן של טיפול – ישיבה חשובה עם המטפל!",
+    "sentence": "The therapy session lasted one hour.|מפגש הטיפול נמשך שעה אחת."
+  },
+  "soft": {
+    "assoc": "סוֹפְט: סוֹפְטְוֵור – התוכנה הרכה של המחשב!",
+    "sentence": "The baby blanket is very soft.|השמיכה של התינוק רכה מאוד."
+  },
+  "softly": {
+    "assoc": "סוֹפְטְלִי: סוֹפְטְלִי – דבר ברכות, לא בצעקות!",
+    "sentence": "She softly sang the baby to sleep.|היא שרה ברכות את התינוק לשינה."
+  },
+  "source": {
+    "assoc": "סוֹרְס: סוֹרְס קוֹד – קוד המקור של התוכנה!",
+    "sentence": "What is your source for that information?|מה המקור שלך לאותו מידע?"
+  },
+  "stage": {
+    "assoc": "סְטֵיג': הכוכב עולה על הסְטֵיג' (stage) – הבמה מחכה!",
+    "sentence": "We are in the final stage of the project.|אנו בשלב האחרון של הפרויקט."
+  },
+  "tail": {
+    "assoc": "טֵיל: טֵיל – הזנב של הכלב מכשכש כשהבלש עוקב (tail) אחריו!",
+    "sentence": "The detective decided to tail the suspect.|הבלש החליט לעקוב אחרי החשוד."
+  },
+  "therapy": {
+    "assoc": "תֶרָפִּיה: תֶרָפִּיה – תֵּרָפֵּא! הטיפול יעזור לך!",
+    "sentence": "She attends therapy sessions every week.|היא משתתפת בסשני טיפול כל שבוע."
+  },
+  "turn": {
+    "assoc": "טֶרְן: טֶרְן – זה התור שלי לסובב את ההגה!",
+    "sentence": "It is your turn to wash the dishes.|זה התור שלך לשטוף כלים."
+  },
+  "type": {
+    "assoc": "טַייפ: טַייפ – הקלד (type) את הסוג הנכון!",
+    "sentence": "What type of music do you prefer?|איזה סוג מוזיקה אתה מעדיף?"
+  },
+  "unattractive": {
+    "assoc": "אַן-אַטְרֵקְטִיב: אין לו אַטְרֵקְצִיה – הוא פשוט לא מושך!",
+    "sentence": "The old building looked unattractive and run-down.|הבניין הישן נראה לא מושך ומוזנח."
+  },
+  "use": {
+    "assoc": "יוּז: יוּז מי – תשתמש בי! (Use me!)",
+    "sentence": "Use a dictionary to find new words.|השתמש במילון כדי למצוא מילים חדשות."
+  },
+  "private": {
+    "assoc": "פְּרַייוֶט: פְּרַייוֶט – אל תיכנס, זה פְּרַייוֶט! פרטי בלבד!",
+    "sentence": "This is a private conversation, please leave.|זוהי שיחה פרטית, אנא עזוב."
+  },
+  "profound": {
+    "assoc": "פְּרוֹפַאוּנְד: פְּרוֹ-פַאוּנְד – המקצוען (pro) מוצא (found) תובנות מעמיקות!",
+    "sentence": "He made a profound impact on modern art.|הוא השפיע השפעה עמוקה על האמנות המודרנית."
+  },
+  "profoundly": {
+    "assoc": "פְּרוֹפַאוּנְדְלִי: המקצוען מושפע עמוקות מכל מה שמסביב!",
+    "sentence": "She was profoundly moved by the music.|היא הושפעה עמוקות מהמוזיקה."
+  },
+  "populous": {
+    "assoc": "פּוֹפּיוּלַס: פּוֹפּ (pop music) + יוּלַס = כוכב פופ מאוכלס בצפיפות בין מעריצים!",
+    "sentence": "China is one of the most populous countries.|סין היא אחת המדינות המאוכלסות ביותר."
+  },
+  "predator": {
+    "assoc": "פְּרֶדֵיטוֹר: פְּרֶד אוכל (ate) את כולם – הוא הטורף!",
+    "sentence": "The lion is a fierce predator in the wild.|האריה הוא טורף אכזרי בטבע."
+  },
+  "innovate": {
+    "assoc": "אִינוֹבֵייט: אִינוֹ-בֵייט – הממציא אוכל (bait) רעיונות חדשים לחדש!",
+    "sentence": "Companies must innovate to survive in the market.|חברות חייבות לחדש כדי לשרוד בשוק."
+  },
+  "inspiration": {
+    "assoc": "אִינְסְפִּירֵיישן: אין ספיר – יהלום יקר נותן השראה!",
+    "sentence": "Nature was his greatest source of inspiration.|הטבע היה מקור ההשראה הגדול ביותר שלו."
+  },
+  "inspire": {
+    "assoc": "אִינְסְפַּייר: אין ספייר – אין חניתות כאן, רק השראה!",
+    "sentence": "Great leaders inspire others to act.|מנהיגים גדולים מעוררים השראה באחרים לפעול."
+  },
+  "invent": {
+    "assoc": "אִינְוֶנְט: אין וֶנְט – אין אוורור, אז המציאו מאוורר חדש!",
+    "sentence": "Edison invented the light bulb.|אדיסון המציא את הנורה."
+  },
+  "acquisition": {
+    "assoc": "אַקְוִיזִישן: אַקְ-וִיזִי – תאקח-וִיזִיה (vision) של הרכישה החדשה!",
+    "sentence": "The company announced the acquisition of a rival firm.|החברה הודיעה על רכישת חברה מתחרה."
+  },
+  "adore": {
+    "assoc": "אַדוֹר: אַ-דוֹר דוֹר – מדור לדור מעריצים ומחבבים!",
+    "sentence": "She absolutely adores her little sister.|היא פשוט מעריצה את אחותה הקטנה."
+  },
+  "alternate between": {
+    "assoc": "אוֹלְטֶרְנֵיט בִּיטְוִין: אוֹלְטֶר (alter) – לשנות בין אפשרות לאפשרות!",
+    "sentence": "He alternates between coffee and tea each morning.|הוא מחליף בין קפה לתה כל בוקר."
+  },
+  "amaze": {
+    "assoc": "אַמֵייז: אַמֵייז-ינג! – אמא זה (amaze) ממש מדהים!",
+    "sentence": "Her performance never fails to amaze the crowd.|ההופעה שלה תמיד מדהימה את הקהל."
+  },
+  "amazing": {
+    "assoc": "אַמֵייזִינג: אמא זינג'ר – שרה בקול מדהים!",
+    "sentence": "The view from the mountain was absolutely amazing.|הנוף מהר היה פשוט מדהים."
+  },
+  "animate": {
+    "assoc": "אַנִימֵיט: אַנִי-מֵיט – אני מטייט את הדמות ומחייה אותה!",
+    "sentence": "She used software to animate the characters.|היא השתמשה בתוכנה כדי להחיות את הדמויות."
+  },
+  "animation": {
+    "assoc": "אַנִימֵיישן: אַנִי-מֵיישן – אני משחק במשחק אנימציה מונפש!",
+    "sentence": "Pixar is famous for its stunning animation.|פיקסאר מפורסמת באנימציה המרהיבה שלה."
+  },
+  "aspiration": {
+    "assoc": "אַסְפִּירֵיישן: אַסְפִּירִין + שאיפה – שאפת אספירין? לא! שאפת לגדולה!",
+    "sentence": "Her aspiration is to become a doctor.|השאיפה שלה היא להפוך לרופאה."
+  },
+  "attire": {
+    "assoc": "אַטַייר: אַ-טַייר – את הטייר (tyre) של הלבוש לבשת היום!",
+    "sentence": "The guests arrived in formal attire.|האורחים הגיעו בלבוש רשמי."
+  },
+  "authentically": {
+    "assoc": "אוֹתֶנְטִיקְלִי: אוֹתֶנְטִי – אותנטי, באמת, כמו שאתה!",
+    "sentence": "She spoke authentically about her struggles.|היא דיברה באמת על המאבקים שלה."
+  },
+  "authenticate": {
+    "assoc": "אוֹתֶנְטִיקֵייט: אוֹתֶנְטִי-קֵייט – קייט מאמתת את הזהות שלה!",
+    "sentence": "You must authenticate your identity to log in.|עליך לאמת את זהותך כדי להתחבר."
+  },
+  "become": {
+    "assoc": "בִּיקַם: בִּי-קַם – הוא קם והפך (become) למשהו אחר!",
+    "sentence": "She wants to become a famous singer.|היא רוצה להפוך לזמרת מפורסמת."
+  },
+  "branch": {
+    "assoc": "בְּרָנְץ': בְּרַנְץ' – ארוחת בוקר-צהריים בסניף הראשי תחת ענף עץ!",
+    "sentence": "The bank opened a new branch in our city.|הבנק פתח סניף חדש בעירנו."
+  },
+  "campaign": {
+    "assoc": "קַמְפֵּיין: קַמְפֵּיין – קמפיין, מסע פרסום שמשגע את כולם!",
+    "sentence": "The campaign raised awareness about climate change.|הקמפיין העלה מודעות לשינויי האקלים."
+  },
+  "climate": {
+    "assoc": "קְלַיְמֵיט: קְלַיְ-מֵיט – לחיות (live) עם מֵיט (חבר) באקלים חם!",
+    "sentence": "The climate in Israel is warm and sunny.|האקלים בישראל חם ושמשי."
+  },
+  "contain": {
+    "assoc": "קוֹנְטֵיין: קוֹן-טֵין – הקוּן (cone) מכיל (contain) גלידה!",
+    "sentence": "This box contains all my old photos.|הקופסה הזו מכילה את כל התמונות הישנות שלי."
+  },
+  "exaggeration": {
+    "assoc": "אֶקְסַג'ֵרֵיישן: אקס + ג'ֵרָה + ציון – ציון הגזמה של האקס שלי הגיע לירח!",
+    "sentence": "Saying it was the worst day ever is an exaggeration.|לומר שזה היה היום הגרוע ביותר זו הגזמה."
+  },
+  "expand": {
+    "assoc": "אֶקְסְפֵּנְד: אקס-פנד – האקס שלי התפשט (expand) על כל הדירה!",
+    "sentence": "The company plans to expand into new markets.|החברה מתכננת להתרחב לשווקים חדשים."
+  },
+  "fatal": {
+    "assoc": "פֵּיטַל: פֵּי-טַל – פיי לטל! הטעות הזו קטלנית!",
+    "sentence": "The crash proved fatal for the driver.|ההתנגשות הייתה קטלנית לנהג."
+  },
+  "fate": {
+    "assoc": "פֵּיט: פֵּיט-ר – פיטר פן לא ברח מגורלו!",
+    "sentence": "He believed that fate brought them together.|הוא האמין שהגורל הביא אותם יחד."
+  },
+  "festivity": {
+    "assoc": "פֶסְטִיבִיטִי: פֶסְטִי-בִיטִי – פסטיבל עם ביטלס = חגיגיות ברמה הכי גבוהה!",
+    "sentence": "The festivity of the holiday filled the streets.|חגיגיות החג מילאה את הרחובות."
+  }
+}

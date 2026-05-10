@@ -1,0 +1,396 @@
+separation | הפרדה
+shroud | עטיפה, תכריך
+sin | חטא
+sincerity | כנות
+situation | סיטואציה, מצב
+slaughterhouse | בית מטבחיים
+sperm | זרע
+spewing | להזרים
+spice | לתבל, תבלין
+spicy | פיקנטי
+spray | לפזר, לרסס
+stain | כתם
+stamp | חותמת, בול
+storm | סערה
+straighten | ליישר
+study | מחקר, חדר עבודה
+suggest | להציע
+suicide | התאבדות
+summits | פסגות
+surrender | להיכנע
+survival | הישרדות
+swallow | לבלוע
+sweep | לטאטא
+tainted | מזוהם, מוכתם
+talent | כשרון
+tame | לבית, לאלף
+tentative | טנטטיבי, ניסיוני
+thief | גנב
+thriller | מותחן
+tone | טון
+transcript | פרוטוקול, תמליל
+trip | למעוד, טיול
+unorganized | לא מאורגן
+unpardonable | בלתי נסלח
+unrealistic | לא מציאותי
+unrest | חוסר שקט
+unwilling | ממאן, לא מוכן
+uproar | מהומה, רעש
+urine | שתן
+utter | להגות, לבטא
+vagueness | ערפול, עמימות
+valley | עמק
+valve | שסתום
+vanish | להיעלם
+vegetable | ירק
+vegetarian | צמחוני
+vehicle | כלי רכב
+veracity | הגינות, יושר
+verbal | מילולי, ורבלי
+verdict | פסיקה, פסק דין
+voyage | מסע
+want | לרצות
+wanted | מבוקש
+warmth | חום
+West | מערב
+wonder | פלא, להטיל ספק, לתהות
+wonderful | נפלא
+woods | יער
+wound | פצע, נמתח, מתוח
+wrought | מחושל, מעוצב
+abacus | חשבונייה
+academic | אקדמי
+actress | שחקנית (בהצגה או סרט)
+agenda | סדר יום
+air conditioner | מזגן
+algae | אצות
+antler | קרן
+automobile | אוטו, כלי רכב
+bass | בס (במוזיקה)
+bead | חרוז
+beak | מקור
+bee | דבורה
+bell | פעמון
+berry | גרגרי יער
+blade | להב
+blanket | שמיכה
+bleak | עגום
+blew | פוצץ, ניפח, נשב (רוח)
+brick | לבנה
+bully | בריון
+butterfly | פרפר
+cadaver | גופה
+camel | גמל
+candy | ממתק
+canvass | לסקור, לבדוק
+carpet | שטיח
+cash | מזומן, לפדות
+cashier | קופאי
+casino | קזינו
+caterpillar | זחל
+caviar | קוויאר
+cereal | דגני בוקר
+cigarette | סיגריה
+citrus | פרי הדר
+clay | חימר
+cloud | ענן
+club | מועדון
+cockroach | ג'וק, מקק
+coffin | ארון מתים
+cologne | בושם (של גבר), קולון
+compost | זבל אורגני
+conductor | מנצח (תזמורת)
+conquistador | כובש
+consonant | עיצור (לשון)
+coop | לכלוא, לול
+copper | נחושת
+cotton | כותנה
+cougar | סוג של טורף, פומה
+coupon | קופון
+cucumber | מלפפון
+culminate | הגיע לשיא
+czar | צאר (שליט רוסי)
+dart | חץ
+date | תאריך, תמר, דייט, פגישה, יציאה
+Dead Sea | ים המלח
+denominator | מכנה (של שבר)
+dental | שקשור בשיניים
+dentist | רופא שיניים
+diary | יומן
+dictator | דיקטטור, עריץ
+dilemma | בעיה, דילמה
+diurnal | יומי
+divorce | גירושין
+doorstep | מפתן הדלת
+dovecote | שובך
+dust | לאבק, אבק
+Dutch | הולנדי
+dwarf | גמד, לגמד
+dwindle | התמעט, הידלדל
+eagle | נשר
+echo | הד
+eel | צלופח
+elephant | פיל
+exotic | מארץ זרה, אקזוטי
+fairy | פיה
+fairytale | אגדה
+fan | לאוורר, מאוורר, אוהד, מעריץ
+fancy | מגונדר, מחבב
+fashion | אופנה, לעצב
+filmmaker | יוצר סרטים
+filter | מסנן, פילטר
+fisherman | דייג
+fishing | דיג
+flimsy | שביר, עדין
+folk | עממי
+folklore | פולקלור
+footage | קטע צילום
+forest | יער
+fork | מזלג
+formula | פורמולה, נוסחה
+formulate | לנסח
+fraternal | של אחים, אחוותי
+frog | צפרדע
+furnish | לרהט
+garden | גן
+garlic | שום
+gate | שער
+glacier | קרחון
+gland | בלוטה
+glass | כוס, זכוכית
+glaze | זיגוג
+glove | כפפה
+golden | מוזהב
+grammatical | דקדוקי
+grapes | ענבים
+grit | לכלוך, גרגרים
+grocery | מכולת
+groom | לטפל, לטפח, חתן
+guillotine | גיליוטינה
+Gulf War | מלחמת המפרץ
+gym | אולם ספורט
+gymnasium | אולם ספורט
+handicap | נכה
+harmony | הרמוניה
+heart | לב
+heartbeat | פעימות לב, דופק
+heroine | גיבורה
+hilarious | מצחיק
+hill | גבעה
+horn | קרן (של בע"ח), צופר
+housemaid | מנקה, עוזרת בית
+howl | לילל, יללה
+index | תוכן עניינים, אינדקס
+inexpensive | זול, לא יקר
+inn | פונדק
+intense | אינטנסיבי, עז
+intoxicate | לשכר, להרעיל, להלהיב
+intuition | אינטואיציה
+invertebrate | חסר-חוליות
+ivory | שנהב
+janitor | שרת
+jog | לרוץ, ג'וגינג, ריצה
+joke | בדיחה
+jug | קנקן, כד
+juice | מיץ
+jungle | ג'ונגל
+junkyard | מגרש גרוטאות
+kettle | קומקום
+kite | עפיפון
+lake | אגם
+launder | לכבס
+leaf (leaves) | עלה (עלים)
+league | ליגה, מידת אורך קדומה
+leniency | רחמים, חמלה
+leopard | נמר
+lifestyle | אורח חיים
+lip | שפה
+liver | כבד
+loan | הלוואה
+loyalty | נאמנות
+luck | מזל
+lunch | ארוחת צהריים
+made | עשה
+magnificent | מדהים
+make sure | לוודא, להבטיח
+makeup | איפור
+marble | גוּלָה, שיש
+marsupial | חיית כיס
+mathematician | מתמטיקאי
+miracle | פלא, נס
+monk | נזיר
+monkey | קוף
+monster | מפלצת
+mood | מצב רוח
+mosquito | יתוש
+mouse (mice) | עכבר (עכברים)
+mouth | פה
+nausea | בחילה
+nickname | כינוי חיבה
+no longer | לא עוד
+numerator | מונה (של שבר)
+numeric | מספרי
+nut | אגוז
+octopus | תמנון
+ode | שיר הלל
+olive | זית
+onion | בצל
+orchestra | תזמורת
+orchestrate | לתזמר, לתאם
+oven | תנור בישול
+overhaul | אוברול, שיפוץ
+pad | לרפד
+paddle | מחבט, דוושה, משוט
+pan | מחבת
+paradox | פרדוקס, סתירה
+pathology | ענף ברפואה, פתולוגיה
+peach | אפרסק
+pepper | פלפל
+perch | ענף, ישב על ענף, נח
+pharmacy | בית מרקחת
+philosophy | פילוסופיה
+photograph | לצלם, צילום
+physical | גופני, פיזי
+physicist | פיזיקאי
+pigeon | יונה
+plaster | טיח
+pothole | בור, מהמורה
+poultry | עוף
+prank | מתיחה
+pregnancy | הריון
+pregnant | הרה (בהריון)
+prehistoric | פרה-היסטורי, קדמון
+preparation for | הכנות לקראת
+presentation | מצגת
+prick | לדקור
+printer | דַּפָּס, מדפסת
+propaganda | תעמולה
+prowess | יכולת, מיומנות
+purse | ארנק
+quarrelsome | וכחני
+rain | גשם
+rainbow | קשת
+rainfall | ירידת גשמים
+rainstorm | סערת גשמים
+rat | עכברוש
+redhead | ג'ינג'י (סלנג)
+rehearse | לתרגל, לחזור
+reincarnation | גלגול נשמות
+restaurant | מסעדה
+resurgence | תחייה
+retroactive | למפרע, רטרואקטיבי
+rhyme | חרוז
+rice | אורז
+ride | לרכוב, רכיבה
+ring | זירה, טבעת
+ring, rang | לצלצל, צלצל
+roast | צלי, לקלות
+robbery | שוד
+robe | חלוק
+roof | גג
+rubbish | זבל, שטויות
+run, ran | לרוץ, רץ
+saga | סאגה, סיפור
+salt | מלח
+sarcophagus | ארון קבורה קדום
+savanna | סוואנה, ערבה
+script | תסריט
+seafood | פירות ים
+secret | סוד
+sentiments | רגשות
+shadow | להאפיל, צל
+shave | לגלח, גילוח
+shelf (shelves) | מדף (מדפים)
+shepherd | רועה צאן
+shingles | רעף
+shop | חנות, לקנות
+shoulder | כתף
+silk | משי
+silkworm | תולעת משי
+singer | זמר
+sir | תואר אצולה אנגלי, אדון
+sky | רקיע, שמיים
+smog | ערפיח
+smoke | לעשן, עשן
+snake | נחש
+snap | במהירות (סלנג), להישבר
+snarl | לנחור, לרטון
+sneeze | להתעטש
+snow | שלג
+soccer | כדורגל
+sold | מכר
+spinach | תרד
+sponsor | נותן חסות
+spontaneous | ללא מחשבה
+spy | לרגל, מרגל
+staircase | גרם מדרגות
+stalk | להטריד, לעקוב
+star | לככב, כוכב
+steal | לגנוב
+stereotype | סטריאוטיפ
+sticky | דביק
+stove | כיריים, תנור
+stroke | מכה, ליטוף, אירוע מוחי/שבץ
+studio | סטודיו
+stuff | דברים, לפחלץ, למלא
+stunt | פעלול
+stupid | טיפש
+subtraction | חיסור (חשבון)
+sugar | סוכר
+sweet | מתוק
+swept away | נסחף
+swindler | רמאי, נוכל
+sword | חרב
+syrup | סירופ
+tale | עלילה, סיפור
+teeth, tooth | שיניים, שן
+tent | אוהל
+thank | להודות, תודה
+theater | תיאטרון, בית קולנוע
+theoretically | לכאורה, תיאורטית
+theory | תיאוריה
+thimble | אצבעון (לתפירה)
+through | מבעד, דרך
+throw | זריקה, לזרוק
+ticket | כרטיס
+timeline | ציר זמן
+tin | עשוי מפח, בדיל
+toes | בהונות
+tongue | לשון
+treasure | לנצור, אוצר
+treaty | חוזה, הסכם, אמנה
+triggered | הוביל ל-, עורר, גרם
+trim | לגזום
+triple | פי 3
+truck | קרון משא, משאית
+twig | זרד, ענף קטן
+twins | תאומים
+ugly | מכוער
+uncle | דוד
+unconcerned | לא מודאג
+uncritical | לא ביקורתי
+unearth | לחפור, לחשוף
+unholy | לא מוסרי, לא קדוש
+unwanted | לא רצוי
+upbringing | חינוך, גידול
+upholstery | ריפוד
+usher | סדרן
+using up | מְכַלֶּה (מנצל עד תום)
+vacation | חופשה
+verb | פועל
+veterinarian | וטרינר
+vinegar | חומץ
+vowel | אות ניקוד
+wallet | ארנק
+weapon | נשק
+wedding | חתונה
+weekend | סוף שבוע
+wheat | חיטה
+whistle | לשרוק, שריקה
+wholesale | סיטונאי
+wife | אישה, רעיה
+willow | ערבה (עץ)
+worm | תולעת
+writer | סופר, כותב
+yawn | לפהק, פיהוק
+zealot | קנאי

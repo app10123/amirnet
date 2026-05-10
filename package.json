@@ -1,0 +1,24 @@
+{
+  "name": "amirnet-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/app10123/amirnet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/app10123/amirnet/issues"
+  },
+  "homepage": "https://github.com/app10123/amirnet#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.92.0"
+  }
+}

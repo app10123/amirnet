@@ -1,0 +1,402 @@
+easily | בקלות
+emblem | סמל
+engrave | לחרוט
+enzyme | אנזים
+equality | שוויון, במידה שווה
+equates | להשוות, להתאים
+evolutionary | התפתחותי
+evolved | התפתח
+excessively | בצורה מוגזמת
+exclusive | בלעדי
+explore | לחקור, ללמוד
+exquisite | מצוין, חד, מעודן, אנין
+factor | גורם
+favored | מועדף
+fight, fought | לריב, רב
+flat | שטוח, דירה
+flew | עף
+foil | לסכל
+forerunner | אות, סימן מבשר באות, שליח, חלוץ, מבשר
+fossil | מאובן
+genius | גאון
+gentle | עדין
+genuine | אמיתי, מקורי
+guard | שומר, לשמור
+handle | להתמודד
+harder | קשה יותר
+hazardous | מסוכן
+heredity | תורשה
+hospital | בית חולים
+hospitalize | לאשפז
+hunger | רעב
+ideal | אידיאל, אידיאלי
+immense | כביר, עצום
+immigrate | להגר
+impulse | דחף
+impulsively | ללא שיקול דעת, באימפולסיביות
+in favor of | לטובת
+indifference | אדישות
+innate | מולד
+inner | פנימי
+inquire | לתשאל, לברר
+inspiring | נותן השראה
+Jew | יהודי
+kind | סוג / טוב לב, אדיב, נעים
+landmark | אבן דרך
+lens | עדשה
+license | רישיון / לאשר, להתיר
+lifetime | תקופת החיים, במשך החיים
+literary | ספרותי
+losing | מפסיד
+mail | דואר
+mailman | דוור
+mate | בן זוג, חבר / להזדווג
+mayor | ראש עיר
+mediocre | בינוני (במובן שלילי)
+miserable | אומלל
+moist | לחות
+moral | מוסר
+morale | מורל
+nocturnal | לילי
+noon | 12:00 (צהריים)
+notable | נכבד
+notify | להודיע, ליידע
+offshore | חו"ל
+orbit | לחוג, להסתובב
+orient | להתמצא
+oriented | מכוון, מונחה
+outer | חיצוני
+overlooked | העלים עין
+party | מפלגה / מסיבה
+pattern | דוגמה, תבנית
+penned | כָּתַב
+piece | יצירה / חתיכה, חלק
+poacher | מסיג גבול, צייד לא מורשה
+practical | מעשי
+prescription | מרשם
+preserve | לשמר
+pretext | אמתלה, תואנה
+prevention | מניעה
+project | לתכנן / פרויקט, מיזם / להשליך, להקרין
+prompted | הביא לידי
+proponent | תומך
+pump | משאבה, לשאוב
+pursuit | מרדף
+radically | באופן קיצוני
+rank | דרגה
+ray | קרן, אלומת אור
+razor | סכין גילוח
+reconcile | להתפייס
+reinvigorate | לרענן, להמריץ מחדש
+religious | דתי
+remainder | שארית
+renovate | לחדש, לשפץ
+respective | שייך בהתאמה
+respectively | בהתאמה
+revoke | לבטל, לשלול
+reward | פרס, לתגמל
+rough | קשה, מחוספס
+rudimentary | יסודי, בסיסי
+sacrifice | להקריב, קורבן
+sake | תועלת, עניין
+screen | לסרוק / מסך, צג, וילון / לסנן
+seek, sought | לחפש, חיפש
+seismic | ססמי (קשור לרעידות אדמה)
+series | סדרה
+shift | משמרת / להזיז
+shiny | בוהק, נוצץ
+side effect | תופעת לוואי
+sketch | סקיצה, איור, שרטוט
+skyrocket | להאמיר
+skyscraper | גורד שחקים
+sorrow | צער, עצב
+spark | ניצוץ, גיץ
+spectacular | מדהים
+spirit | רוח הדברים, כוונה / נפש, רוח רפאים
+spiritual | רוחני
+steam | לאדות, אד
+steamship | אוניית קיטור
+straightforward | ישיר
+stream | זרם, נחל, לזרום
+stricken | מוכה
+strife | עימות, מאבק
+stripes | פסים
+stumble | למעוד
+suspicious | חשוד (משהו)
+terrain | שטח
+theme | נושא
+tight | צמוד, לחוץ, הדוק
+ultimate | סופי, מוחלט
+unbearable | בלתי נסבל
+uncountable | אינספור
+unforgettable | בלתי נשכח
+unsafe | לא בטוח
+vain | לשווא / שחצן
+versions | גרסאות
+vessel | כלי שיט
+village | כפר
+virtual | וירטואלי, מדומה
+virtually | בעצם, למעשה
+visual | חזותי
+visualize | לדמיין
+weigh | לשקול
+wisdom | בינה, חכמה
+abstain | להימנע ממשהו, להתנזר
+accentuate | להדגיש, להבליט
+acknowledge | לדעת, להכיר
+advertise | פרסום
+advertisement | פרסום, מודעה
+affinity | קירבה, זיקה, משיכה
+agitate | לעצבן, לזעזע, להסעיר
+agonize | לייסר, לענות
+agony | ייסורים
+aisle | מעבר
+anchor | עוגן
+annihilate | להשמיד
+auction | מכירה פומבית
+autograph | חתימה
+beg | להתחנן
+burn | להישרף, לשרוף
+cater | לספק
+cathedral | קתדרלה
+cattle | בקר
+chariot | מרכבה
+charity | צדקה
+chase | מרדף, לרדוף
+cheerful | שמח, עליז
+chemical | כימי, כימיקל
+combat | לתקוף, קרב
+components | מרכיבים, חלקים
+compulsory | מהווה חובה
+concise | תכליתי, תמציתי
+concrete | בטון / מוחשי, קונקרטי
+congregate | לאסוף, לאסוף קהל
+conspicuous | בולט
+conspiracy | מזימה, קשר
+contagious | מדבק
+correlate | לקשר, לתאם
+corrupt | מושחת, להשחית
+council | מועצה
+counsel | להדריך, לייעץ / יועץ, פרקליט
+couple | לצמד, זוג
+court | מגרש (ספורט) / בית משפט
+craft | מלאכה, אומנות / כלי שייט, כלי טייס
+craftsmen | בעל מלאכה, אומן
+critique | ביקורת
+crossroad | צומת
+cult | כת
+dawn | שחר
+dealt | חולק (ניירת, קלפים), עסק ב-
+decay | ריקבון
+decipher | לפענח
+delinquent | נשכח, נזנח, עבריין
+depression | דיכאון
+described | מתואר
+desirable | נחשק
+desire | לחפוץ, חשק, תשוקה
+despair | להתייאש
+desperate | נואש
+desperation | ייאוש
+dimension | מימד
+disagreement | חוסר הסכמה
+disapproving | לא מרוצה, לא מסכים, לא מאשר
+disciples | תלמידים
+disciplined | העניש, חינך, ממושמע
+discontent | חוסר שביעות רצון
+discrepancy | פער, סתירה
+disease | מחלה
+disinfection | חיטוי
+dislocate | לנקוע, לפרוק
+disparage | להמעיט בערך, לזלזל
+distinctive | מיוחד
+distinguish | להבחין, להבדיל
+disturb | להפריע
+disturbance | הפרעה
+dozen | תריסר
+drought | בצורת
+duel | דו-קרב
+dynasty | שושלת
+eliminate | לפסול, לחסל
+embrace | לאמץ לקרבו, לחבק
+emission | פליטה
+employer | מעביד, מעסיק
+enclosure | שטח מגודר, כיתור, סגירה
+encounter | מפגש
+endangered | בסכנת הכחדה
+equip | לצייד
+equipment | ציוד
+estate | אחוזה, נכס
+expense | הוצאות
+expensive | יקר
+fabric | בד
+fabricate | לבדות
+family | משפחה
+fellow | עמית, חבר
+fiction | לא אמיתי, בדיון
+file | קובץ, תיק
+fingerprint | טביעת אצבע
+flatter | שטוח יותר / להחמיא
+flattery | חנופה
+flock | המון, עדר, לנהור
+gauge | מידה, להעריך, למדוד
+genes | גנים
+given | נתון
+graduate | לסיים לימודים
+grand | מרשים, כולל, גדול
+granddaughter | נכדה
+grandfather | סבא
+grandmother | סבתא
+grandson | נכד
+gunpowder | אבק שריפה
+hall | מסדרון, היכל
+harness | לרתום
+herb | עשב
+heritage | מורשת
+husband | בעל
+illustrator | מאייר
+immersion | שקיעה
+immoral | לא מוסרי
+implement | להוציא לפועל, ליישם
+implementation | ביצוע, יישום, מימוש
+incident | תקרית
+incompetence | חוסר יכולת
+incorporate | לאגד, לשתף, לכלול
+indefinitely | ללא הגבלה
+independence | עצמאות
+infectious | מדבק
+inferior | נחות
+insurmountable | שאין להתגבר עליו
+interview | ראיון, לראיין
+invaders | פולשים
+invoke | לזמן, לעורר
+irresistible | שלא ניתן לעמוד בפניו
+knife (knives) | סכין (סכינים)
+label | תגית, לתייג
+laboratory | מעבדה
+laborer | פועל
+lead, led | הוביל, להוביל
+leader | מנהיג
+leadership | מנהיגות
+lie, lay | שכב, לשכב
+listen | להקשיב
+loosely | באופן רפוי
+loudspeaker | רמקול
+luxury | מותרות
+machine | מכונה
+march | לצעוד
+martial | קרבי, צבאי
+mastery | מומחיות
+mind | שכל / אכפת / לשמור, לשים לב
+missile | טיל
+mobilize | להניע, לנייד
+mole | חפרפרת / שומה
+myriad | הרבה, רב
+nervous | מתוח, לחוץ, עצבני
+noble | אצילי, אציל
+observation | אבחנה
+offender | פוגע, פושע
+oppressive | אכזרי / מעיק, מדכא
+outdated | מיושן
+outspoken | ישיר, מדבר גלויות
+overtake | להשיג, לעקוף
+pain | להכאיב, כאב
+passive | סביל
+pervasive | מחלחל, מתפשט
+picture | לצלם, תמונה / לדמיין
+play | לשחק, משחק / מחזה
+playwright | מחזאי
+potent | בעל כוח השפעה, חזק
+potential | פוטנציאלי, אפשרי
+prevalent | רווח, שכיח, נפוץ
+prison | כלא
+province | אזור, מחוז
+punctuate | הדגשה
+punctuation | פיסוק, ניקוד
+query | חקירה, שאלה
+reader | קורא
+rebuttal | סתירה, הפרכה
+recollection | זיכרון
+recordings | הקלטות
+recur | קרה שוב
+recurring | נשנה, חוזר
+refined | מלוטש, מעודן
+reinforce | לחזק, לתגבר
+relapse | הישנות, הדרדרות
+relating | מתייחס
+abroad | לחו"ל
+accomplices | שותף לדבר עבירה
+acquitted | זוכה מאשמה
+adhere | לדגול ב-, לדבוק ב-
+align | להסתדר בשורה
+ample | גדול, שופע, מספיק
+amputation | קטיעה
+anesthesia | הרדמה
+appraise | לאמוד, להעריך (שווי)
+ark | תיבה
+arrogant | שחצן, יהיר
+artifact | פריט אומנות, חפץ
+atrocity | זוועה
+baffled | מבולבל
+baggage | מזוודה, מטען
+bandage | תחבושת
+blend | לערבב
+blur | לטשטש, טשטוש
+boil | להרתיח
+bolster | לתמוך
+boot | מגף
+cabin | בקתה
+coal | פחם
+command | לפקוד, פקודה
+commute | לנסוע בקביעות לעבודה / להמתיק עונש / להמיר, להחליף
+composed | הלחין
+congenial | ידידותי, נעים
+congenital | מולד
+consolidate | לגבש, לאחד
+convict | להרשיע / אסיר
+cope | להתמודד
+cord | מיתר
+cornerstone | אבן פינה
+crash | התנגשות, להתנגש
+credibility | מהימנות, אמינות
+crown | להכתיר, כתר
+curiosity | סקרנות
+curious | סקרן
+curve | פניה, עקומה
+dampen | לדכא
+dare | תעוזה, להעיז / אתגר
+daydream | לחלום בהקיץ
+deaf | חרש
+deflate | להוציא אוויר מ-
+deform | לעוות
+deformity | עיוות, מום
+delicate | עדין
+demean | להשפיל, להנמיך
+department | מחלקה
+department store | חנות כלבו
+deposit | פיקדון, להפקיד
+depreciate | להפחית
+despise | לתעב
+dessert | קינוח
+devoid | נטול, חסר
+disdain | בוז, זלזול
+disgrace | בושה
+disloyal | לא נאמן
+disparagement | זלזול
+dispatch | לשגר
+disseminate | להפיץ
+donate | לתרום
+draw (drew) | שלף, לשלוף
+drawback | עיכוב, חסרון
+eager | נלהב, נחוש
+embryo | עוּבָּר
+engage | ליצור מגע, להעסיק
+enlist | להתגייס
+entertain | לבדר, לשעשע
+envision | לצפות, לחזות
+esteemed | מכובד
+examination | בדיקה, בחינה
+excitement | התרגשות
+exhaust | צינור מפלט, פליטה
+expedite | לזרז
+expend | לפזר, לבזבז, לגמור
+expendable | שניתן לוותר עליו

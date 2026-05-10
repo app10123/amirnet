@@ -1,0 +1,322 @@
+{
+  "spend": {
+    "assoc": "ספנד? ס'פנד את הזמן בבילוי! (spend ≈ ס'פנד = שפוך את הזמן)",
+    "sentence": "We spend weekends hiking in the mountains.|אנחנו מבלים סופי שבוע בטיולים בהרים."
+  },
+  "staff": {
+    "assoc": "הצוות שלנו עובד כמו סטאף מקצועי! (staff ≈ סטאף = צוות)",
+    "sentence": "The hospital staff worked tirelessly through the night.|צוות בית החולים עבד ללא לאות לאורך כל הלילה."
+  },
+  "station": {
+    "assoc": "תחנת ס'טיישן – עמוד קם והצב את עצמך! (station ≈ תחנה, להציב)",
+    "sentence": "The soldier was stationed at the border for six months.|החייל הוצב בגבול למשך שישה חודשים."
+  },
+  "supply": {
+    "assoc": "ס'פלאי? סַפֵּק לי! (supply ≈ לספק)",
+    "sentence": "The government will supply food and water to the disaster zone.|הממשלה תספק מזון ומים לאזור האסון."
+  },
+  "survive": {
+    "assoc": "סרבייב – שרד וחי! (survive ≈ לשרוד)",
+    "sentence": "Only a few animals can survive in the extreme cold of Antarctica.|רק מעט בעלי חיים יכולים לשרוד בקור הקיצוני של אנטארקטיקה."
+  },
+  "system": {
+    "assoc": "ס'יסטם = השיטה של המערכת! (system ≈ שיטה, מערכת)",
+    "sentence": "The education system needs to be reformed to meet modern needs.|מערכת החינוך צריכה להתחדש כדי לענות על צרכים מודרניים."
+  },
+  "systematic": {
+    "assoc": "סיסטמטי = שיטתי כמו רובוט! (systematic ≈ שיטתי)",
+    "sentence": "The scientist conducted a systematic investigation of all the evidence.|המדענית ערכה חקירה שיטתית של כל הראיות."
+  },
+  "team": {
+    "assoc": "טים? זה הצוות שלי! תי-ים יחד! (team ≈ צוות)",
+    "sentence": "Our team won the championship after months of hard training.|הצוות שלנו זכה באליפות לאחר חודשים של אימונים קשים."
+  },
+  "train": {
+    "assoc": "טריין – רכבת שמאמנת את הנוסעים לשבת בשקט! (train ≈ רכבת, לאמן)",
+    "sentence": "The coach trains the athletes every morning before school.|המאמן מאמן את הספורטאים כל בוקר לפני בית הספר."
+  },
+  "training": {
+    "assoc": "טריינינג = אימון שמכניס אותך לטריין! (training ≈ אימון)",
+    "sentence": "Regular training is essential for maintaining physical fitness.|אימון סדיר חיוני לשמירה על כושר גופני."
+  },
+  "translate": {
+    "assoc": "טרנס-לייט? תרגם לי את האור הזה! (translate ≈ לתרגם)",
+    "sentence": "Can you translate this document from French to Hebrew?|האם תוכל לתרגם את המסמך הזה מצרפתית לעברית?"
+  },
+  "vote": {
+    "assoc": "בוט! מי שלא מצביע – בוט אחד ברגל! (vote ≈ להצביע)",
+    "sentence": "Every citizen has the right to vote in democratic elections.|לכל אזרח יש זכות להצביע בבחירות דמוקרטיות."
+  },
+  "wave": {
+    "assoc": "וייב? תנפנף גל של ויבס! (wave ≈ גל, לנפנף)",
+    "sentence": "She waved goodbye as the train pulled away from the station.|היא ניפנפה לשלום כשהרכבת עזבה את התחנה."
+  },
+  "wind": {
+    "assoc": "ווינד – הרוח עוקלת את הענפים! (wind ≈ רוח, לעקל)",
+    "sentence": "The strong wind knocked down several trees in the park.|הרוח החזקה הפילה מספר עצים בפארק."
+  },
+  "windmill": {
+    "assoc": "ווינד-מיל = תחנת רוח שטוחנת מיל אחד ביום! (windmill ≈ תחנת רוח)",
+    "sentence": "The old windmill on the hill has been turning for over two centuries.|תחנת הרוח הישנה על הגבעה מסתובבת כבר למעלה משני מאות שנה."
+  },
+  "wine": {
+    "assoc": "ווּיין? יין! כשאתה שותה יין אתה מיין! (wine ≈ יין)",
+    "sentence": "France is famous for producing some of the world's finest wines.|צרפת מפורסמת בייצור מהיינות הטובים ביותר בעולם."
+  },
+  "wood": {
+    "assoc": "וּוד – עצים ביער, וּד-וּד חוטבים! (wood ≈ יער, עץ)",
+    "sentence": "The cabin was built entirely from wood found in the nearby forest.|הצריף נבנה כולו מעץ שנמצא ביער הקרוב."
+  },
+  "work": {
+    "assoc": "וורק = עבודה? וּו, רק תעבוד! (work ≈ עבודה)",
+    "sentence": "Hard work and dedication are the keys to success.|עבודה קשה ומסירות הם המפתח להצלחה."
+  },
+  "acid": {
+    "assoc": "אסיד – חומצה חריפה שעושה לך אסיד לראש! (acid ≈ חומצה)",
+    "sentence": "Acid rain damages forests and pollutes rivers across Europe.|גשם חומצי פוגע ביערות ומזהם נהרות ברחבי אירופה."
+  },
+  "approach": {
+    "assoc": "אפרוץ! כשאתה מתקרב לאפרוח תשתמש בגישה עדינה! (approach ≈ להתקרב, גישה)",
+    "sentence": "The teacher's approach to teaching math made it fun and easy.|גישתה של המורה להוראת מתמטיקה הפכה אותה לכיפית וקלה."
+  },
+  "assemble": {
+    "assoc": "אַסֶמבּל? אסוף את כולם לאסֶמבּלי! (assemble ≈ לכנס, לאסוף)",
+    "sentence": "The students were asked to assemble in the main hall.|התלמידים התבקשו להתכנס באולם הראשי."
+  },
+  "assembly": {
+    "assoc": "אסמבלי – אסיפה שבה כולם מרכיבים רעיונות! (assembly ≈ אסופה, התקהלות)",
+    "sentence": "The school assembly was held every Monday morning.|אסיפת בית הספר התקיימה כל יום שני בבוקר."
+  },
+  "asset": {
+    "assoc": "אֶסֶט – יש לי אֶסֶט בחשבון, נכס ממשי! (asset ≈ נכס)",
+    "sentence": "Her fluency in three languages is her greatest asset.|שליטתה בשלוש שפות היא הנכס הגדול ביותר שלה."
+  },
+  "attend": {
+    "assoc": "אטֶנד? אתה נוכח? תהיה אטֶנטיבי! (attend ≈ להיות נוכח)",
+    "sentence": "All students must attend at least 80% of the classes.|כל התלמידים חייבים להיות נוכחים בלפחות 80% מהשיעורים."
+  },
+  "attendant": {
+    "assoc": "אטֶנדנט – המלווה שתמיד נוכח לידך! (attendant ≈ מלווה, סדרן)",
+    "sentence": "The flight attendant explained the safety procedures before takeoff.|הדיילת הסבירה את נהלי הבטיחות לפני ההמראה."
+  },
+  "attribute": {
+    "assoc": "אַטריביוט – תייחס לו את התכונה הזו! (attribute ≈ לייחס, תכונה)",
+    "sentence": "Scientists attribute the rise in temperature to greenhouse gases.|מדענים מייחסים את עליית הטמפרטורה לגזי חממה."
+  },
+  "avert": {
+    "assoc": "אַבֶרט – תסיט! תמנע את האסון לפני ש'יאוורת'! (avert ≈ למנוע, להסיט)",
+    "sentence": "Quick action by the firefighters averted a major disaster.|פעולה מהירה של הכבאים מנעה אסון גדול."
+  },
+  "capacity": {
+    "assoc": "קפסיטי – כמה קפסולות נכנסות? זו הקיבולת! (capacity ≈ קיבולת, יכולת)",
+    "sentence": "The stadium has a capacity of 60,000 spectators.|לאצטדיון יש קיבולת של 60,000 צופים."
+  },
+  "condensation": {
+    "assoc": "קונדנסציה – כן, דנס המים! הם מתעבים על הזכוכית! (condensation ≈ עיבוי מים)",
+    "sentence": "Condensation forms on cold windows when warm air hits them.|עיבוי נוצר על חלונות קרים כאשר אוויר חם פוגע בהם."
+  },
+  "condense": {
+    "assoc": "קונדֶנס – דחוס את הידע! קון-דֶנס קצר וממוקד! (condense ≈ לדחוס, לרכז)",
+    "sentence": "Please condense your report into a single paragraph.|אנא דחוס את הדוח שלך לפסקה אחת."
+  },
+  "continent": {
+    "assoc": "קונטיננט – קונטיינר ענק של יבשה! (continent ≈ יבשת)",
+    "sentence": "Africa is the second largest continent in the world.|אפריקה היא היבשת השנייה בגודלה בעולם."
+  },
+  "core": {
+    "assoc": "קור – הקור של כדור הארץ הוא הליבה! (core ≈ ליבה)",
+    "sentence": "The core of the problem lies in poor communication.|ליבת הבעיה נעוצה בתקשורת לקויה."
+  },
+  "counterpart": {
+    "assoc": "קאונטרפארט – עמית שעומד ממול הקאונטר שלך! (counterpart ≈ עמית, מקביל)",
+    "sentence": "The Israeli minister met with her British counterpart to discuss trade.|השרה הישראלית נפגשה עם עמיתתה הבריטית לדיון בסחר."
+  },
+  "describe": {
+    "assoc": "דיסקרייב – תסקרייב את מה שאתה רואה, תתאר! (describe ≈ לתאר)",
+    "sentence": "Can you describe what the suspect looked like?|האם תוכל לתאר כיצד נראה החשוד?"
+  },
+  "description": {
+    "assoc": "דסקריפשן – תיאור? תסקרייב את זה! (description ≈ תיאור)",
+    "sentence": "The job description listed ten different responsibilities.|תיאור התפקיד כלל עשר אחריויות שונות."
+  },
+  "desert": {
+    "assoc": "דֶזֶרט – עזב את המדבר! דֶזֶרט חם ושמם! (desert ≈ מדבר, לעזוב)",
+    "sentence": "The soldier was arrested for deserting his post during the mission.|החייל נעצר בגין נטישת עמדתו במהלך המשימה."
+  },
+  "dispose": {
+    "assoc": "דיסְפּוּז – תיפטר! תשים בדיספּוזר ותשכח! (dispose ≈ להיפטר)",
+    "sentence": "You must dispose of chemicals safely and not pour them down the drain.|עליך להיפטר מחומרים כימיים בצורה בטוחה ולא לשפוך אותם לביוב."
+  },
+  "distinction": {
+    "assoc": "דיסטינקשן – הבחנה דיסטינקטיבית! יש הבדל ברור בין השניים! (distinction ≈ הבחנה, הבדל)",
+    "sentence": "She graduated with distinction after four years of hard study.|היא סיימה בהצטיינות לאחר ארבע שנות לימוד קשות."
+  },
+  "dump": {
+    "assoc": "דמפ – תשליך לדמפ! זה המזבלה! (dump ≈ להשליך, מזבלה)",
+    "sentence": "It is illegal to dump industrial waste in rivers.|אסור על פי חוק להשליך פסולת תעשייתית לנהרות."
+  },
+  "elect": {
+    "assoc": "אֶלֶקט – תבחר! תלחץ על אֶלֶק ותצביע! (elect ≈ לבחור, להצביע)",
+    "sentence": "The people elected a new president in a historic vote.|העם בחר נשיא חדש בהצבעה היסטורית."
+  },
+  "election": {
+    "assoc": "אֶלֶקשן – בחירות! הכל אֶלֶקטרי בבחירות! (election ≈ בחירות)",
+    "sentence": "The election results shocked the entire country.|תוצאות הבחירות הדהימו את כל המדינה."
+  },
+  "eloquent": {
+    "assoc": "אֶלוֹקוֶנט – אלוהי הדיבור! כל כך רהוט! (eloquent ≈ רהוט)",
+    "sentence": "The eloquent speech moved everyone in the auditorium to tears.|הנאום הרהוט הביא את כולם באודיטוריום לדמעות."
+  },
+  "essence": {
+    "assoc": "אֶסֶנס – תמצית הדברים, כמו ריח אֶסֶנס! (essence ≈ תמצית, מהות)",
+    "sentence": "The essence of democracy is that every voice counts.|מהות הדמוקרטיה היא שלכל קול יש משקל."
+  },
+  "essential": {
+    "assoc": "אֶסֶנשיאל – אֶסֶנס חיוני! בלעדיו לא הולך! (essential ≈ חיוני, הכרחי)",
+    "sentence": "Water is essential for all forms of life on Earth.|מים הם חיוניים לכל צורות החיים על כדור הארץ."
+  },
+  "excavate": {
+    "assoc": "אֶקְסְקֵוֶויט – אֶקְסְקֵיב-ייט! חפור את הקיר! (excavate ≈ לחפור)",
+    "sentence": "Archaeologists excavated the ancient city and found many artifacts.|ארכיאולוגים חפרו את העיר העתיקה ומצאו חפצים רבים."
+  },
+  "exile": {
+    "assoc": "אֶקְסַיְל – גולה לחו'ל! גורש לאֶקְסַיְל! (exile ≈ גלות, לגרש)",
+    "sentence": "The political activist was sent into exile for twenty years.|הפעיל הפוליטי נשלח לגלות למשך עשרים שנה."
+  },
+  "fascinate": {
+    "assoc": "פַסִינֵיט – פה סינייה? לא, זה פשוט מרתק! (fascinate ≈ לרתק, לסקרן)",
+    "sentence": "Ancient Egyptian civilization continues to fascinate historians worldwide.|הציוויליזציה המצרית העתיקה ממשיכה לרתק היסטוריונים ברחבי העולם."
+  },
+  "fascinating": {
+    "assoc": "פַסִינֵיטִינג – כל כך מרתק שפשוט לא יכול לעצור! (fascinating ≈ מרתק)",
+    "sentence": "The documentary about deep sea creatures is absolutely fascinating.|הסרט התיעודי על יצורי הים העמוק הוא מרתק לחלוטין."
+  },
+  "fascination": {
+    "assoc": "פַסִינֵישן – הקסם הזה שמושך אותך כמו מגנט! (fascination ≈ קסם, משיכה)",
+    "sentence": "Her fascination with astronomy led her to become a scientist.|הקסם שלה מהאסטרונומיה הוביל אותה להיות מדענית."
+  },
+  "feature": {
+    "assoc": "פיצ'ר – איזה פיצ'ר מגניב! זו התכונה הכי חשובה! (feature ≈ תכונה, מאפיין)",
+    "sentence": "The main feature of this phone is its incredibly long battery life.|המאפיין העיקרי של הטלפון הזה הוא חיי הסוללה הארוכים להפליא."
+  },
+  "fee": {
+    "assoc": "פי – תשלם פי! שכר הכניסה דרוש! (fee ≈ שכר, אגרה)",
+    "sentence": "There is a small entrance fee to visit the museum.|יש אגרת כניסה קטנה לביקור במוזיאון."
+  },
+  "feud": {
+    "assoc": "פיוד – פה אוד? לא! זה סכסוך משפחתי! (feud ≈ סכסוך, שנאה)",
+    "sentence": "The two families had a bitter feud that lasted for generations.|לשתי המשפחות היה סכסוך מר שנמשך דורות."
+  },
+  "figure": {
+    "assoc": "פיגר – תחשב! תסיק! פיגר את הדמות! (figure ≈ לחשב, להסיק, דמות)",
+    "sentence": "She is a key figure in the modern environmental movement.|היא דמות מפתח בתנועה הסביבתית המודרנית."
+  },
+  "figure out": {
+    "assoc": "פיגר אאוט – תפגיר את הבעיה! תבין אותה! (figure out ≈ להבין)",
+    "sentence": "It took me an hour to figure out how to use the new software.|לקח לי שעה להבין כיצד להשתמש בתוכנה החדשה."
+  },
+  "flow": {
+    "assoc": "פלואו – פלוי! המים זורמים בשטף! (flow ≈ לזרום, זרם, שטף)",
+    "sentence": "The river flows slowly through the valley toward the sea.|הנהר זורם לאט דרך העמק לכיוון הים."
+  },
+  "fund": {
+    "assoc": "פאנד – מצא פאנד! קרן לממן! (fund ≈ לממן, קרן)",
+    "sentence": "The government agreed to fund the new cancer research project.|הממשלה הסכימה לממן את פרויקט מחקר הסרטן החדש."
+  },
+  "fundamentally": {
+    "assoc": "פנדמנטלי – ביסוד הפונדמנט! ביסודו של דבר! (fundamentally ≈ ביסודו, בעיקרו)",
+    "sentence": "The two theories are fundamentally different in their approach.|שתי התיאוריות שונות ביסודן בגישתן."
+  },
+  "grime": {
+    "assoc": "גריים – לכלוך אפרורי, גריי+מ = זוהמה! (grime ≈ זוהמה, לזהם)",
+    "sentence": "Layers of grime covered the old factory windows.|שכבות של זוהמה כיסו את חלונות המפעל הישן."
+  },
+  "halt": {
+    "assoc": "הולט! עצור שם! הולט ואל תזוז! (halt ≈ לעצור, עצירה)",
+    "sentence": "The referee called a halt to the match due to heavy rain.|השופט הורה על עצירת המשחק בגלל גשם כבד."
+  },
+  "immune": {
+    "assoc": "אימיון – אני מיון! מחוסן ועומד חזק! (immune ≈ מחוסן)",
+    "sentence": "After recovering from the illness, she was immune to further infection.|לאחר שהחלימה מהמחלה היא הייתה מחוסנת מפני הדבקה נוספת."
+  },
+  "immunity": {
+    "assoc": "אימיוניטי – חסינות! אני מוגן ב-אימיוניטי! (immunity ≈ חסינות)",
+    "sentence": "Vaccination helps build immunity against dangerous diseases.|חיסון עוזר לבנות חסינות מפני מחלות מסוכנות."
+  },
+  "ingredient": {
+    "assoc": "אינגרידיינט – אינגר? דיינט! מרכיב בדיינט! (ingredient ≈ מרכיב)",
+    "sentence": "The secret ingredient in her cake is a spoonful of cinnamon.|המרכיב הסודי בעוגה שלה הוא כף קינמון."
+  },
+  "invest": {
+    "assoc": "אינווסט – תשקיע! אינווסט בעתיד שלך! (invest ≈ להשקיע)",
+    "sentence": "It is wise to invest in education at a young age.|חכם להשקיע בחינוך בגיל צעיר."
+  },
+  "investment": {
+    "assoc": "אינווסטמנט – ה-אינווסטמנט שלי, ההשקעה הגדולה! (investment ≈ השקעה)",
+    "sentence": "Buying a house in that neighborhood was an excellent investment.|קניית בית בשכונה ההיא הייתה השקעה מצוינת."
+  },
+  "loom": {
+    "assoc": "לום – נול? הענן מופיע במעורפל מעל הנול! (loom ≈ להופיע במעורפל, לארוג)",
+    "sentence": "Dark clouds loomed over the city, threatening a powerful storm.|עננים כהים התנשאו מעל העיר ואיימו בסערה עזה."
+  },
+  "motif": {
+    "assoc": "מוטיב – המוטיב החוזר, הרעיון המרכזי! (motif ≈ מוטיב, רעיון מרכזי)",
+    "sentence": "The motif of loss and longing runs throughout the entire novel.|המוטיב של אובדן וגעגוע עובר לאורך כל הרומן."
+  },
+  "obstinate": {
+    "assoc": "אובסטינֵיט – עקשן! עם אובסטקל בראש, לא נזוז! (obstinate ≈ עקשן, נוקשה)",
+    "sentence": "The obstinate child refused to eat anything other than pasta.|הילד העקשן סירב לאכול כל דבר מלבד פסטה."
+  },
+  "oppress": {
+    "assoc": "אופרֶס – אל תדכא! אל תאו-פרס על הכולם! (oppress ≈ לדכא, לייסר)",
+    "sentence": "Throughout history, powerful rulers have oppressed those with less power.|לאורך ההיסטוריה שליטים חזקים דיכאו את בעלי הכוח הפחות."
+  },
+  "oppression": {
+    "assoc": "אופרֶשן – מבצע דיכוי! (oppression ≈ דיכוי)",
+    "sentence": "The people finally rose up against decades of oppression.|העם סוף סוף קם נגד עשורים של דיכוי."
+  },
+  "orientation": {
+    "assoc": "אורינטציה – אוריינט עצמך! מגמה אחת, כיוון אחד! (orientation ≈ מגמה, אוריינטציה)",
+    "sentence": "The new students attended an orientation session on their first day.|הסטודנטים החדשים השתתפו במפגש אוריינטציה ביום הראשון שלהם."
+  },
+  "pace": {
+    "assoc": "פֵּייס – תקבע פֵּייס! קצב בריצה! (pace ≈ קצב, לקבוע קצב)",
+    "sentence": "She ran at a steady pace and finished the race in first place.|היא רצה בקצב קבוע וסיימה את המרוץ במקום הראשון."
+  },
+  "peak": {
+    "assoc": "פיק – הגעת לפיק! לשיא הפסגה! (peak ≈ פסגה, להגיע לשיא)",
+    "sentence": "Traffic reaches its peak during the morning rush hour.|התנועה מגיעה לשיאה בשעת העומס הבוקרית."
+  },
+  "phase": {
+    "assoc": "פייז – שלב? פייז אחד בכל פעם! (phase ≈ שלב)",
+    "sentence": "The construction project will be completed in three separate phases.|פרויקט הבנייה יושלם בשלושה שלבים נפרדים."
+  },
+  "prescribe": {
+    "assoc": "פרֶסקרייב – פה סקרייב! הרופא כתב מרשם! (prescribe ≈ לרשום מרשם)",
+    "sentence": "The doctor prescribed antibiotics for the bacterial infection.|הרופא רשם אנטיביוטיקה לזיהום החיידקי."
+  },
+  "proscribe": {
+    "assoc": "פרוסקרייב – פרוסה אסורה! גינו ואסרו! (proscribe ≈ לגנות, לאסור)",
+    "sentence": "The organization proscribed the use of all violent tactics.|הארגון אסר על שימוש בכל טקטיקה אלימה."
+  },
+  "reef": {
+    "assoc": "ריף – ריפים חיים מתחת למים, שונית! (reef ≈ שונית, ריף)",
+    "sentence": "The Great Barrier Reef is the largest coral reef system in the world.|שונית המחסום הגדולה היא מערכת שוניות האלמוגים הגדולה בעולם."
+  },
+  "refund": {
+    "assoc": "ריפאנד – ריפוד? לא! החזר כספי! רי-פאנד! (refund ≈ החזר כספי)",
+    "sentence": "She requested a full refund after the concert was cancelled.|היא ביקשה החזר כספי מלא לאחר שהקונצרט בוטל."
+  },
+  "root": {
+    "assoc": "רוט – שורש! תעקור את הרוט מהאדמה! (root ≈ שורש, לעקור מהשורש)",
+    "sentence": "The roots of the ancient tree spread deep beneath the ground.|שורשי העץ העתיק מתפשטים עמוק מתחת לאדמה."
+  },
+  "routine": {
+    "assoc": "רוטין – רוטינה, שגרה יומית שחוזרת על עצמה! (routine ≈ שגרה, שגרתי)",
+    "sentence": "Her morning routine includes jogging, showering, and reading the news.|השגרה הבוקרית שלה כוללת ריצה, מקלחת וקריאת חדשות."
+  },
+  "sail": {
+    "assoc": "סֵייל – שייט? הפלג בסֵייל! (sail ≈ להפליג, מפרש)",
+    "sentence": "They sailed across the Atlantic Ocean in just thirty days.|הם הפליגו דרך האוקיינוס האטלנטי בתוך שלושים ימים בלבד."
+  }
+}

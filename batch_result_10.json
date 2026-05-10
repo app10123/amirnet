@@ -1,0 +1,322 @@
+{
+  "faithful to": {
+    "assoc": "פֵּייְת'פוּל - נאמן כמו 'פה תפול' - לא נופל, נשאר נאמן!",
+    "sentence": "He remained faithful to his principles throughout his life.|הוא נשאר נאמן לעקרונותיו לאורך כל חייו."
+  },
+  "fictional": {
+    "assoc": "פִיקְשְׁנָל - פיקציה = בדיה, אז בדיוני!",
+    "sentence": "The story is fictional, but it feels very real.|הסיפור הוא בדיוני, אך הוא מרגיש אמיתי מאוד."
+  },
+  "flood": {
+    "assoc": "פְלוּד - 'פלד' מים! המים פלדו על הכל - שיטפון!",
+    "sentence": "The flood destroyed many homes in the village.|השיטפון הרס בתים רבים בכפר."
+  },
+  "foreign": {
+    "assoc": "פוֹרִין - 'פה רין' - הזר הזה פה רץ ורין, לא מכאן!",
+    "sentence": "She struggled to adapt to a foreign culture.|היא התקשתה להסתגל לתרבות זרה."
+  },
+  "foresight": {
+    "assoc": "פוֹרְסַייט - 'פור' = קדימה, 'סייט' = ראייה - ראיית הנולד!",
+    "sentence": "His foresight saved the company from bankruptcy.|ראיית הנולד שלו הצילה את החברה מפשיטת רגל."
+  },
+  "gather": {
+    "assoc": "גֶּדֶ'ר - 'גדר' - גודרים את כולם יחד כדי לאסוף אותם!",
+    "sentence": "We gathered all the documents before the meeting.|אספנו את כל המסמכים לפני הפגישה."
+  },
+  "gathering": {
+    "assoc": "גֶּדֶ'רִינְג - 'גדר אינג' - גדרו את כולם פנימה, זו אסיפה!",
+    "sentence": "The family gathering was warm and joyful.|אסיפת המשפחה הייתה חמה ושמחה."
+  },
+  "grace": {
+    "assoc": "גְרֵייס - 'גרייס' כמו שם - גרייס קלי - אשה מלאת חן!",
+    "sentence": "She danced with grace and elegance.|היא רקדה בחן ובאלגנטיות."
+  },
+  "gracious": {
+    "assoc": "גְרֵייְשֶׁס - גרייס + יש = יש לה חן, היא חיננית ואדיבה!",
+    "sentence": "The gracious host welcomed every guest warmly.|המארח החינני קיבל כל אורח בחום."
+  },
+  "graciously": {
+    "assoc": "גְרֵייְשֶׁסְלִי - גרייס + לי - עשה לי טובה באדיבות!",
+    "sentence": "She graciously accepted the award on behalf of the team.|היא קיבלה את הפרס באדיבות בשם הצוות."
+  },
+  "greet": {
+    "assoc": "גְרִיט - 'גריט' כמו 'גרית' - גרית את תשומת הלב שלו כשברכת אותו לשלום!",
+    "sentence": "He greeted his old friend with a big smile.|הוא בירך את חברו הוותיק בחיוך גדול."
+  },
+  "gross": {
+    "assoc": "גְרוֹס - גרוס! זה דוחה! הסכום ברוטו לפני הניכויים הוא גרוס!",
+    "sentence": "His gross behavior at the table was embarrassing.|התנהגותו הדוחה ליד השולחן הייתה מביכה."
+  },
+  "growl": {
+    "assoc": "גְרָאוּל - 'גראול' - הכלב 'גראל' עליי בנהימה מפחידה!",
+    "sentence": "The dog began to growl at the stranger.|הכלב החל לנהום על הזר."
+  },
+  "harvest": {
+    "assoc": "הַארְוֶסְט - 'הר וסט' - בהר בסוף הקיץ יוצאים לקצור!",
+    "sentence": "The farmers worked hard during the harvest season.|החקלאים עבדו קשה בעונת הקציר."
+  },
+  "haze": {
+    "assoc": "הֵייז - 'הייז' כמו 'חזה' - חזית הרים עם ערפל כחלחל!",
+    "sentence": "A thick haze covered the city in the morning.|ערפל סמיך כיסה את העיר בבוקר."
+  },
+  "hive": {
+    "assoc": "הַייְו - 'חייב' - הדבורה חייבת לחזור לכוורת!",
+    "sentence": "The bees returned to their hive at sunset.|הדבורים חזרו לכוורת שלהן בשקיעה."
+  },
+  "illiteracy": {
+    "assoc": "אִילִיטֶרֶסִי - 'אי-ליטרה-סי' - אי-יכולת לקרוא אפילו ליטרה!",
+    "sentence": "Illiteracy remains a serious problem in many regions.|חוסר יכולת לקרוא נשאר בעיה רצינית באזורים רבים."
+  },
+  "illiterate": {
+    "assoc": "אִילִיטֶרֶט - 'אי-ליטרת' - לא ליטרת שורה אחת, בור גמור!",
+    "sentence": "Many adults in the area were illiterate.|מבוגרים רבים באזור היו אנאלפביתיים."
+  },
+  "imprisonment": {
+    "assoc": "אִימְפְּרִיזוֹנְמֶנְט - 'אים-פריזון-מנט' - אים נכנס לפריזון = כליאה!",
+    "sentence": "His imprisonment lasted five long years.|כליאתו נמשכה חמש שנים ארוכות."
+  },
+  "infiltrate": {
+    "assoc": "אִינְפִילְטְרֵייט - 'אינפיל-טרייט' - הסתנן פנימה ל'טרייט' (מסלול)!",
+    "sentence": "The spy managed to infiltrate the enemy base.|המרגל הצליח להסתנן לבסיס האויב."
+  },
+  "inflammation": {
+    "assoc": "אִינְפְלֶמֵיְשֶׁן - 'אין-פלאם' - אש בפנים = דלקת!",
+    "sentence": "The inflammation in his knee made walking painful.|הדלקת בברכו הפכה את ההליכה לכואבת."
+  },
+  "injection": {
+    "assoc": "אִינְג'ֶקְשֶׁן - 'אין-ג'קשן' - ג'ק דחף מחט פנימה = זריקה!",
+    "sentence": "The nurse gave him an injection to reduce the pain.|האחות נתנה לו זריקה להפחתת הכאב."
+  },
+  "insight": {
+    "assoc": "אִינְסַייט - 'אין-סייט' - הסתכל בפנים ומצא תובנה!",
+    "sentence": "His insight into the problem helped find a solution.|תובנתו לגבי הבעיה סייעה למצוא פתרון."
+  },
+  "instrument": {
+    "assoc": "אִינְסְטְרוּמֶנְט - 'אינסטרו-מנט' - המנטור מנגן על הכלי!",
+    "sentence": "She plays every musical instrument with passion.|היא מנגנת על כל כלי נגינה בתשוקה."
+  },
+  "interaction": {
+    "assoc": "אִינְטֶרֶאַקְשֶׁן - 'אינטר-אקשן' - אקשן בין אנשים = אינטראקציה!",
+    "sentence": "Positive interaction between students improves learning.|אינטראקציה חיובית בין תלמידים משפרת את הלמידה."
+  },
+  "intervene": {
+    "assoc": "אִינְטֶרְוִין - 'אינטר-ווין' - בין ('אינטר') הוויין שלהם - נכנס להתערב!",
+    "sentence": "The teacher had to intervene to stop the argument.|המורה נאלץ להתערב כדי לעצור את הויכוח."
+  },
+  "intervention": {
+    "assoc": "אִינְטֶרְוֶנְשֶׁן - 'אינטר-וונשן' - רצו (וונשן) לבוא בין = התערבות!",
+    "sentence": "Medical intervention saved his life.|התערבות רפואית הצילה את חייו."
+  },
+  "investigate": {
+    "assoc": "אִינְוֶסְטִיגֵייט - 'אינוסטי-גייט' - שוטר בשער (גייט) חוקר!",
+    "sentence": "The police were called to investigate the incident.|המשטרה הוזמנה לחקור את האירוע."
+  },
+  "investigation": {
+    "assoc": "אִינְוֶסְטִיגֵיְשֶׁן - 'אינוסטי-גיישן' - גישה לחקירה מעמיקה!",
+    "sentence": "The investigation revealed the truth about the crime.|החקירה חשפה את האמת על הפשע."
+  },
+  "labor": {
+    "assoc": "לֵייְבֶּר - 'לייבר' כמו 'לייבל' - שים תווית על העבודה הקשה!",
+    "sentence": "The labor of building the house took months.|עבודת בניית הבית לקחה חודשים."
+  },
+  "limber": {
+    "assoc": "לִימְבֶּר - 'לימבר' - לימברגר גמיש כמו גבינה רכה!",
+    "sentence": "Yoga helps keep your body limber and flexible.|יוגה עוזרת לשמור על הגוף גמיש וזריז."
+  },
+  "literate": {
+    "assoc": "לִיטֶרֶט - 'ליטרת' - קרא ליטרה אחת = משכיל, יודע לקרוא!",
+    "sentence": "A literate population is essential for a strong democracy.|אוכלוסייה משכילת קריאה חיונית לדמוקרטיה חזקה."
+  },
+  "literature": {
+    "assoc": "לִיטֶרֶצ'ֶר - 'ליטרה-צ'ר' - צ'רצ'יל אהב ספרות ואכל ליטרה של מילים!",
+    "sentence": "She devoted her life to studying classic literature.|היא הקדישה את חייה ללימוד ספרות קלאסית."
+  },
+  "mechanism": {
+    "assoc": "מֶקֶנִיזְם - 'מכניזם' - מכניזם = מנגנון, כמו מכונה!",
+    "sentence": "The mechanism of the clock was very complex.|מנגנון השעון היה מורכב מאוד."
+  },
+  "merge": {
+    "assoc": "מֶרְג' - 'מרג'' כמו 'מרק' - ערבבו הכל יחד כמו מרק = מיזגו!",
+    "sentence": "The two companies decided to merge into one.|שתי החברות החליטו להתמזג לאחת."
+  },
+  "meticulous": {
+    "assoc": "מֶטִיקְיוּלֶס - 'מטיקולוס' - מטיקולוס-מקולוס: קפדן שבודק כל פיקסל!",
+    "sentence": "She was meticulous about every detail in her work.|היא הייתה קפדנית לגבי כל פרט בעבודתה."
+  },
+  "migration": {
+    "assoc": "מַיְגְרֵיְשֶׁן - 'מייגריישן' - מיגרנה מהנדידה הארוכה!",
+    "sentence": "Bird migration is one of nature's great wonders.|נדידת הציפורים היא אחד מפלאי הטבע הגדולים."
+  },
+  "moderate": {
+    "assoc": "מוֹדֶרֶט - 'מודרט' - מוד רגיל, לא קיצוני = מתון!",
+    "sentence": "He exercises at a moderate pace every morning.|הוא מתאמן בקצב מתון כל בוקר."
+  },
+  "moderation": {
+    "assoc": "מוֹדֶרֵיְשֶׁן - 'מודריישן' - המוד רגוע, ריישן (שכל) = מתינות!",
+    "sentence": "Eating sweets in moderation is perfectly fine.|אכילת ממתקים במתינות היא בסדר גמור."
+  },
+  "motion": {
+    "assoc": "מוֹשֶׁן - 'מושן' - המושן (תנועה) של הסרט הוא מהיר!",
+    "sentence": "The motion of the waves was calming.|תנועת הגלים הייתה מרגיעה."
+  },
+  "odor": {
+    "assoc": "אוֹדֶר - 'אודר' - אודר = ריח, כמו דאודורנט נגד ריחות!",
+    "sentence": "A strange odor filled the room when she opened the box.|ריח מוזר מילא את החדר כשפתחה את הקופסה."
+  },
+  "omission": {
+    "assoc": "אוֹמִישֶׁן - 'או-מישן' - או! שכחתי את המישן (המשימה) = השמטה!",
+    "sentence": "The omission of key information caused confusion.|השמטת מידע מרכזי גרמה לבלבול."
+  },
+  "omit": {
+    "assoc": "אוֹמִיט - 'אומיט' - אומיט = א' מיט (פגש) ואז נעלם, השמיט!",
+    "sentence": "Please do not omit any important details from the report.|אנא אל תשמיט פרטים חשובים מהדוח."
+  },
+  "overdo": {
+    "assoc": "אוֹוֶרְדוּ - 'אובר-דו' - עשה אובר! עשה יתר על המידה!",
+    "sentence": "Don't overdo it at the gym on your first day.|אל תעשה יתר על המידה בחדר הכושר ביום הראשון."
+  },
+  "pass": {
+    "assoc": "פַּס - 'פס' - פסים על הכביש - עובר בהם!",
+    "sentence": "She managed to pass the difficult exam on her first try.|היא הצליחה לעבור את הבחינה הקשה בניסיון הראשון."
+  },
+  "passage": {
+    "assoc": "פַּסֶג' - 'פסאג'' - פס אג' (קצה) - מעבר בקצה המסדרון!",
+    "sentence": "The hidden passage led to a secret room.|המעבר הסמוי הוביל לחדר סודי."
+  },
+  "perceive": {
+    "assoc": "פֶּרְסִיו - 'פר-סיו' - הפר ראה (סיו = ראה) = לתפוס ולהבחין!",
+    "sentence": "How we perceive the world affects our behavior.|האופן שבו אנו תופסים את העולם משפיע על התנהגותנו."
+  },
+  "period": {
+    "assoc": "פִּיְרִיֶד - 'פיריד' - פירוד לתקופות שונות בהיסטוריה!",
+    "sentence": "The Renaissance was a remarkable period in history.|הרנסנס היה תקופה יוצאת דופן בהיסטוריה."
+  },
+  "pit": {
+    "assoc": "פִּיט - 'פיט' - פיט פל בבור! (pit = בור)",
+    "sentence": "The workers dug a deep pit for the foundation.|הפועלים חפרו בור עמוק לבסיס."
+  },
+  "portion": {
+    "assoc": "פּוֹרְשֶׁן - 'פורשן' - פורשן (פורש + ן) = חלק גדול בצלחת!",
+    "sentence": "He ate only a small portion of his meal.|הוא אכל רק חלק קטן מארוחתו."
+  },
+  "pour": {
+    "assoc": "פּוֹר - 'פור' - פור-אים! שפך את המים בפורים!",
+    "sentence": "She poured the tea into the cup slowly.|היא מזגה את התה לכוס לאט לאט."
+  },
+  "pride": {
+    "assoc": "פְּרַייד - 'פריד' - פריד גאה מאוד, מלא גאווה!",
+    "sentence": "He took great pride in his children's achievements.|הוא גאה מאוד בהישגי ילדיו."
+  },
+  "radiant": {
+    "assoc": "רֵיְדִיֶנְט - 'ריידיאנט' - ריידיו = אור גל, קורן וזוהר!",
+    "sentence": "The bride looked radiant on her wedding day.|הכלה נראתה קורנת ביום חתונתה."
+  },
+  "recipe": {
+    "assoc": "רֶסִיפִּי - 'רסיפי' - רסיפי = מרשם של שף מדהים!",
+    "sentence": "She followed her grandmother's recipe for apple pie.|היא פעלה לפי המתכון של סבתה לפשטידת תפוחים."
+  },
+  "reflect": {
+    "assoc": "רִיפְלֶקְט - 'ריפלקט' - ריפלקס שמשקף את המחשבות!",
+    "sentence": "The lake reflects the mountains perfectly.|האגם משקף את ההרים בצורה מושלמת."
+  },
+  "reflection": {
+    "assoc": "רִיפְלֶקְשֶׁן - 'ריפלקשן' - ריפלקס + שן (ישן) - ישב ישן והרהר!",
+    "sentence": "The reflection in the mirror surprised her.|ההשתקפות במראה הפתיעה אותה."
+  },
+  "refuge": {
+    "assoc": "רֶפְיוּג' - 'רפיוג'' - רפו (נחו) בגו' (מקום) = מקלט ומפלט!",
+    "sentence": "They found refuge in a small cave during the storm.|הם מצאו מקלט במערה קטנה במהלך הסערה."
+  },
+  "refugee": {
+    "assoc": "רֶפְיוּגִ'י - 'רפיוג'י' - ג'י הפליט מצא מקלט!",
+    "sentence": "The refugee family was welcomed by the local community.|משפחת הפליטים התקבלה בברכה על ידי הקהילה המקומית."
+  },
+  "remedy": {
+    "assoc": "רֶמֶדִי - 'רמדי' - רמדי = תרופת רמדי, תרופה לכל מחלה!",
+    "sentence": "Honey and lemon is an old remedy for a sore throat.|דבש ולימון הם תרופה ישנה לכאב גרון."
+  },
+  "report": {
+    "assoc": "רִיפּוֹרְט - 'ריפורט' - ריפורטר מדווח לחדשות!",
+    "sentence": "She submitted her report before the deadline.|היא הגישה את הדוח שלה לפני המועד האחרון."
+  },
+  "repression": {
+    "assoc": "רִיפְרֶשֶׁן - 'ריפרשן' - ריפרש = רענן כוח לדכא הדחקה!",
+    "sentence": "Political repression silenced many voices in the country.|הדיכוי הפוליטי השתיק קולות רבים במדינה."
+  },
+  "repressive": {
+    "assoc": "רִיפְרֶסִיו - 'ריפרסיו' - ריפרס (לחץ שוב) = מדכא!",
+    "sentence": "The repressive government banned all opposition parties.|הממשלה המדכאת אסרה על כל מפלגות האופוזיציה."
+  },
+  "resolution": {
+    "assoc": "רֶזוֹלוּשֶׁן - 'רזולושן' - רזולוציה = החלטה חדה וברורה!",
+    "sentence": "Her New Year resolution was to exercise every day.|ההחלטה שלה לשנה החדשה הייתה להתאמן כל יום."
+  },
+  "restore": {
+    "assoc": "רִיסְטוֹר - 'ריסטור' - ריסטור = רסטור (מסעדה) שהוחזרה לתפארתה!",
+    "sentence": "They worked to restore the ancient painting.|הם עבדו לשחזר את הציור העתיק."
+  },
+  "salary": {
+    "assoc": "סֶלֶרִי - 'סלרי' כמו סלרי (גבעול) - סלרי הוא הירק שקונים עם המשכורת!",
+    "sentence": "His salary was not enough to cover his expenses.|משכורתו לא הספיקה לכיסוי הוצאותיו."
+  },
+  "scorch": {
+    "assoc": "סְקוֹרְץ' - 'סקורץ'' - ס'קורץ' (ס'קרוץ') - קרץ לשמש וצרב!",
+    "sentence": "The sun scorched the dry grass in the field.|השמש צרבה את הדשא היבש בשדה."
+  },
+  "settle": {
+    "assoc": "סֶטֶל - 'סטל' - סטל את הסכסוך ויישב אותו!",
+    "sentence": "They finally managed to settle their dispute peacefully.|הם הצליחו לבסוף ליישב את הסכסוך שלהם בשלום."
+  },
+  "split": {
+    "assoc": "סְפְּלִיט - 'ספליט' - ספגטי ספליט! חצינו את הספגטי = פיצלנו!",
+    "sentence": "They decided to split the cost of the trip equally.|הם החליטו לפצל את עלות הטיול בשווה."
+  },
+  "stack": {
+    "assoc": "סְטֶק - 'סטק' - ערמת סטייקים = ערימה!",
+    "sentence": "There was a huge stack of papers on his desk.|הייתה ערימה ענקית של נייר על שולחנו."
+  },
+  "stem from": {
+    "assoc": "סְטֶם פְרוֹם - 'סטם פרום' - סתם לא! נובע מסיבה אמיתית!",
+    "sentence": "His fear stems from a childhood experience.|הפחד שלו נובע מחוויית ילדות."
+  },
+  "submerge": {
+    "assoc": "סַבְמֶרְג' - 'סב-מרג'' - הסב צלל ומרג' (מוזג) מתחת למים!",
+    "sentence": "The submarine slowly submerged beneath the surface.|הצוללת שקעה לאט מתחת לפני המים."
+  },
+  "surpass": {
+    "assoc": "סֶרְפַּס - 'סר-פס' - הסר פס מעל כולם = התעלה מעל!",
+    "sentence": "She surpassed all expectations with her performance.|היא התעלתה על כל הציפיות בביצועה."
+  },
+  "survey": {
+    "assoc": "סֶרְוֵי - 'סרווי' - סרבי (שרת) סקר את כולם!",
+    "sentence": "The company conducted a survey to understand customer needs.|החברה ערכה סקר כדי להבין את צרכי הלקוחות."
+  },
+  "symmetry": {
+    "assoc": "סִימֶטְרִי - 'סימטרי' - סימטריה = כמו מראה, שני צדדים שווים!",
+    "sentence": "The building's symmetry made it visually stunning.|הסימטריה של הבניין הפכה אותו למרהיב חזותית."
+  },
+  "taste": {
+    "assoc": "טֵייסְט - 'טייסט' - הטייס טעם את האוכל לפני הנחיתה!",
+    "sentence": "She tasted the soup and added more salt.|היא טעמה את המרק והוסיפה עוד מלח."
+  },
+  "temporary": {
+    "assoc": "טֶמְפּוֹרֶרִי - 'טמפו-ררי' - הטמפו זמני, עוצר ומתחיל!",
+    "sentence": "The solution was only temporary and needed improvement.|הפתרון היה זמני בלבד והזדקק לשיפור."
+  },
+  "tender": {
+    "assoc": "טֶנְדֶר - 'טנדר' - הטנדר של הבשר עדין וטרי!",
+    "sentence": "The meat was so tender it melted in her mouth.|הבשר היה כל כך עדין שנמס בפיה."
+  },
+  "unlock": {
+    "assoc": "אַנְלוֹק - 'אן-לוק' - אן לא נעול = שחרר ופתח!",
+    "sentence": "She used a spare key to unlock the door.|היא השתמשה במפתח חילופי כדי לפתוח את הדלת."
+  },
+  "withdraw": {
+    "assoc": "וִידְרוֹ - 'ויד-רו' - ויד (יד) נסוגה לאחור = נסיגה!",
+    "sentence": "The army decided to withdraw from the region.|הצבא החליט לסגת מהאזור."
+  },
+  "withdrawal": {
+    "assoc": "וִידְרוֹאַל - 'ויד-רו-אל' - אל תמשוך יד, זו נסיגה מוחלטת!",
+    "sentence": "The withdrawal of troops was completed within a week.|נסיגת הכוחות הושלמה תוך שבוע."
+  }
+}

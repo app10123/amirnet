@@ -1,0 +1,322 @@
+{
+  "liability": {
+    "assoc": "לַי-אַ-בִּילִיטִי: 'לַי' – כמו 'לאי-שם' נפלת, וזו כבר מעמסה עלייך!",
+    "sentence": "The company's liability was enormous after the accident.|האחריות של החברה הייתה עצומה לאחר התאונה."
+  },
+  "minute": {
+    "assoc": "מִינְיוּט – 'מיני' וזעיר, כאילו לקחת דקה אחת זעירה מהיום.",
+    "sentence": "Wait just a minute before you leave.|המתן רק דקה לפני שתצא."
+  },
+  "nasal": {
+    "assoc": "נֵייזָל – נייזל = 'אף' בגרמנית, ובעברית גם 'חוטמי' – הנחת את האצבע על האף!",
+    "sentence": "The nasal spray helped with his congestion.|תרסיס האף עזר לו עם הגודש."
+  },
+  "penitence": {
+    "assoc": "פֶּנִיטֶנְס – 'פנה תנס' – פנה לאלוהים ותנסה לחזור בתשובה!",
+    "sentence": "He showed true penitence for his wrongdoings.|הוא הראה חרטה אמיתית על מעשיו הרעים."
+  },
+  "potter": {
+    "assoc": "פּוֹטֶר – הארי פוטר לא קדר, אבל שמו מזכיר לנו שהוא עיצב קסמים כמו קדר!",
+    "sentence": "The potter shaped the clay with great skill.|הקדר עיצב את החימר במיומנות רבה."
+  },
+  "pottery": {
+    "assoc": "פּוֹטֶרִי – 'פוטר'+'י' – הקדר פוטר מעבודתו אך ממשיך בקדרות!",
+    "sentence": "She learned pottery at a local workshop.|היא למדה קדרות בסדנה מקומית."
+  },
+  "precipitate": {
+    "assoc": "פְּרֶסִיפִּיטֵייט – 'פרצה' + 'טייס' – הטייס האיץ בפרצה והשיל משקע!",
+    "sentence": "The crisis will precipitate major changes in policy.|המשבר יאיץ שינויים גדולים במדיניות."
+  },
+  "promote": {
+    "assoc": "פְּרוֹמוֹט – 'פרו-מוט' – פרו זה קידום, מוט זה מוט – קדמו אותו לפני שנפל!",
+    "sentence": "The manager decided to promote her to team leader.|המנהל החליט לקדם אותה למנהיגת צוות."
+  },
+  "promotion": {
+    "assoc": "פְּרוֹמוֹשֶׁן – 'פרומו' = מבצע קידום! שמעת פרומו? זה קידום מכירות!",
+    "sentence": "He celebrated his promotion with his colleagues.|הוא חגג את הקידום שלו עם עמיתיו."
+  },
+  "rival": {
+    "assoc": "רַייוָל – 'ריב-אל' – עם היריב תמיד יש ריב, אל תשכח!",
+    "sentence": "His rival won the championship this year.|יריבו זכה באליפות השנה."
+  },
+  "rivalry": {
+    "assoc": "רַייוָלְרִי – 'ריב' + 'לרי' – לרי ולמרי יש יריבות נצחית!",
+    "sentence": "The rivalry between the two teams is legendary.|היריבות בין שתי הקבוצות היא אגדתית."
+  },
+  "slant": {
+    "assoc": "סְלַנְט – 'סלנט' נשמע כמו 'שלנט' – שלנטינג בצד, נוטה לדעה קדומה!",
+    "sentence": "The report had a clear political slant.|לדו\"ח הייתה נטייה פוליטית ברורה."
+  },
+  "sting": {
+    "assoc": "סְטִינְג – 'סטינג' כמו הזמר סטינג – דקר את לבנו בשירים שלו!",
+    "sentence": "The bee sting caused his hand to swell.|עקיצת הדבורה גרמה לידו להתנפח."
+  },
+  "syllable": {
+    "assoc": "סִילַבְּל – 'סי-לב-ל' – כל סי לב ל' הוא הברה בפני עצמה!",
+    "sentence": "The word 'beautiful' has three syllables.|המילה 'beautiful' מכילה שלוש הברות."
+  },
+  "thaw": {
+    "assoc": "ת'וֹ – 'ת'ו' קצר כמו הקרח שנמס – הפשרה מהירה!",
+    "sentence": "The warm sun helped thaw the frozen ground.|השמש החמה עזרה להפשיר את האדמה הקפואה."
+  },
+  "transaction": {
+    "assoc": "טְרַנְזַקְשֶׁן – 'טרנזיט' + 'אקשן' – עסקה זה אקשן של העברת כסף בטרנזיט!",
+    "sentence": "The bank flagged the transaction as suspicious.|הבנק סימן את העסקה כחשודה."
+  },
+  "trigger": {
+    "assoc": "טְרִיגֶר – 'טרי-גר' – גר טרי משך בהדק וגרם לכל ההפעלה!",
+    "sentence": "Stress can trigger a migraine attack.|לחץ יכול להפעיל התקף מיגרנה."
+  },
+  "upheaval": {
+    "assoc": "אַפְהִיוָל – 'אפ-היוול' – הכל הלך למעלה ב'אפ' – מהפך גדול!",
+    "sentence": "The revolution caused a great social upheaval.|המהפכה גרמה למהפך חברתי גדול."
+  },
+  "coast": {
+    "assoc": "קוֹסְט – 'קוסט' כמו 'קוסם' – החוף הוא קוסם של יופי!",
+    "sentence": "We drove along the coast to enjoy the view.|נסענו לאורך החוף כדי ליהנות מהנוף."
+  },
+  "deep": {
+    "assoc": "דִּיפּ – 'דיפ' = דיפ בבריכה עמוקה – צלל עמוק!",
+    "sentence": "The lake is very deep in the center.|האגם עמוק מאוד במרכזו."
+  },
+  "demand": {
+    "assoc": "דִּימַנְד – 'די-מנד' – די! מנד לא נעצר לדרוש עוד ועוד!",
+    "sentence": "The workers demand higher wages.|הפועלים דורשים שכר גבוה יותר."
+  },
+  "depth": {
+    "assoc": "דֶּפּת' – 'דפת'' – דפק את העומק, כמה עמוק זה דפת'?",
+    "sentence": "The depth of the ocean is breathtaking.|עומק האוקיינוס מדהים."
+  },
+  "design": {
+    "assoc": "דִּיזַיְן – 'די-זיין' – די זיין את העיצוב, יצא מושלם!",
+    "sentence": "She designed the logo for the new company.|היא עיצבה את הלוגו לחברה החדשה."
+  },
+  "display": {
+    "assoc": "דִּיסְפְּלֵי – 'דיס-פליי' – עשה לו דיס בפליי, הציג אותו לכולם!",
+    "sentence": "The museum displayed rare artifacts.|המוזיאון הציג חפצים נדירים."
+  },
+  "door": {
+    "assoc": "דּוֹר – 'דור' בעברית – כל דור פותח דלת חדשה!",
+    "sentence": "Please close the door behind you.|אנא סגור את הדלת אחריך."
+  },
+  "doorsteps": {
+    "assoc": "דּוֹרְסְטֶפְּס – 'דור-סטפס' – הדור עלה על המפתן בצעדים (סטפס)!",
+    "sentence": "She found a package on her doorsteps.|היא מצאה חבילה על מפתן דלתה."
+  },
+  "draw": {
+    "assoc": "דְּרוֹ – 'דרו' כמו דרו שרשם, משך ויצא תיקו!",
+    "sentence": "The match ended in a draw.|המשחק הסתיים בתיקו."
+  },
+  "draw upon": {
+    "assoc": "דְּרוֹ אַפּוֹן – 'דרו על' – דרו על הניסיון שלו כמשאב!",
+    "sentence": "She drew upon her years of experience to solve the problem.|היא הסתמכה על שנות ניסיונה כדי לפתור את הבעיה."
+  },
+  "drink": {
+    "assoc": "דְּרִינְק – 'דרינק' – תדרינק! – בוא תשתה משקה!",
+    "sentence": "Would you like a drink of water?|האם תרצה לשתות מים?"
+  },
+  "eat": {
+    "assoc": "אִיט – 'איט' = אכל באנגלית, ובעברית נשמע כמו 'אית' – יש אוכל!",
+    "sentence": "Let's eat together at noon.|בואו נאכל יחד בצהריים."
+  },
+  "edible": {
+    "assoc": "אֶדִיבְּל – 'אד-יבל' – 'אכיל' ו'יבל' – יבל לאכול אם זה אכיל!",
+    "sentence": "Are these wild berries edible?|האם הפירות הבר האלה אכילים?"
+  },
+  "factory": {
+    "assoc": "פַּקְטוֹרִי – 'פקטורי' = עובדה! המפעל הוא עובדה של ייצור!",
+    "sentence": "The factory produces thousands of cars each year.|המפעל מייצר אלפי מכוניות כל שנה."
+  },
+  "final": {
+    "assoc": "פַּיְנַל – 'פיינל' = סופי! הגיע הפיינל – הגמר האחרון!",
+    "sentence": "This is the final chapter of the book.|זהו הפרק האחרון של הספר."
+  },
+  "floor": {
+    "assoc": "פְּלוֹר – 'פלור' נשמע כמו 'פלירט' – פלרטת עם הרצפה בקומה השלישית!",
+    "sentence": "The office is on the fifth floor.|המשרד נמצא בקומה החמישית."
+  },
+  "fly": {
+    "assoc": "פְּלַי – 'פלאי' – פלאי שהציפור יכולה לעוף כל כך גבוה!",
+    "sentence": "Birds fly south for the winter.|ציפורים טסות דרומה לחורף."
+  },
+  "fruit": {
+    "assoc": "פְּרוּט – 'פרוט' – פרוט לי מה הפרי הכי טעים!",
+    "sentence": "She eats fresh fruit every morning.|היא אוכלת פרי טרי כל בוקר."
+  },
+  "fruitless": {
+    "assoc": "פְּרוּטְלֶס – 'פרוט-לס' – פחות פרי = עקר וחסר תוצאה!",
+    "sentence": "Their search proved fruitless in the end.|חיפושם התברר כעקר בסופו של דבר."
+  },
+  "fuel": {
+    "assoc": "פְיוּאֶל – 'פיואל' – 'פיו' נאמר כשנגמר הדלק!",
+    "sentence": "The car needs fuel before the long trip.|המכונית צריכה דלק לפני הנסיעה הארוכה."
+  },
+  "job": {
+    "assoc": "גּ'וֹב – 'ג'וב' – ג'וב = עבודה, פשוט וישיר!",
+    "sentence": "She found a new job in the city.|היא מצאה עבודה חדשה בעיר."
+  },
+  "knot": {
+    "assoc": "נוֹט – 'נוט' – 'לא' (not) קשרת אותו? עכשיו יש קשר!",
+    "sentence": "He tied a tight knot in the rope.|הוא קשר קשר הדוק בחבל."
+  },
+  "landscape": {
+    "assoc": "לֶנְדְסְקֵייפּ – 'לנד-סקייפ' – 'ארץ+סקייפ' – דרך סקייפ אתה רואה את הנוף!",
+    "sentence": "The mountain landscape was breathtaking.|נוף ההרים היה מרהיב."
+  },
+  "lean": {
+    "assoc": "לִין – 'לין' – לין רזה נשענת על הקיר!",
+    "sentence": "He leaned against the wall while waiting.|הוא נשען על הקיר בזמן שהמתין."
+  },
+  "load": {
+    "assoc": "לוֹד – 'לוד' – משא כבד עבר דרך נמל לוד!",
+    "sentence": "The truck carried a heavy load of bricks.|המשאית נשאה משא כבד של לבנים."
+  },
+  "match": {
+    "assoc": "מֶץ' – 'מץ'' – מץ' = התאמה מושלמת, כמו גפרור שמדליק תחרות!",
+    "sentence": "The colors of the shirt and pants don't match.|הצבעים של החולצה והמכנסיים לא מתאימים."
+  },
+  "meet": {
+    "assoc": "מִיט – 'מיט' = בשר? לא! להיפגש על בשר צלוי!",
+    "sentence": "Let's meet at the café at noon.|בואו ניפגש בבית הקפה בצהריים."
+  },
+  "meeting": {
+    "assoc": "מִיטִינְג – 'מיטינג' – 'מיט-אינג' – פוגשים ונפגשים בפגישה!",
+    "sentence": "The morning meeting lasted two hours.|הפגישה הבוקר ארכה שעתיים."
+  },
+  "name": {
+    "assoc": "נֵיים – 'ניים' – 'ניים' נשמע כמו 'ני-ם' – נמנם ושכח את השם שלו!",
+    "sentence": "What is your name?|מה שמך?"
+  },
+  "namely": {
+    "assoc": "נֵיימְלִי – 'ניים-לי' – 'תן לי שם, כלומר פרט!'",
+    "sentence": "Only one person passed, namely the oldest student.|רק אדם אחד עבר, כלומר הסטודנט המבוגר ביותר."
+  },
+  "note": {
+    "assoc": "נוֹט – 'נוט' – 'לא'? לא, כתוב פתק (note) עם הערה!",
+    "sentence": "She left a note on the kitchen table.|היא השאירה פתק על שולחן המטבח."
+  },
+  "notebook": {
+    "assoc": "נוֹטְבּוּק – 'נוט-בוק' – ספר הפתקים = מחברת!",
+    "sentence": "He wrote all his ideas in a notebook.|הוא רשם את כל הרעיונות שלו במחברת."
+  },
+  "pause": {
+    "assoc": "פּוֹז – 'פוז' – לחצת פוז ועכשיו יש הפסקה!",
+    "sentence": "She paused before answering the question.|היא עצרה לפני שענתה על השאלה."
+  },
+  "pet": {
+    "assoc": "פֶּט – 'פט' – 'פטפוט' של חיית המחמד!",
+    "sentence": "My pet rabbit is very friendly.|הארנב שלי כחיית מחמד ידידותי מאוד."
+  },
+  "pick": {
+    "assoc": "פִּיק – 'פיק' – פיק פיק – בחר ולקטוף מהיר!",
+    "sentence": "Pick the ripe tomatoes from the garden.|קטוף את העגבניות הבשלות מהגינה."
+  },
+  "poem": {
+    "assoc": "פּוֹאֶם – 'פואם' – 'פו-אם' – 'פו!' אמר אם כשקרא שיר נפלא!",
+    "sentence": "She wrote a beautiful poem about love.|היא כתבה שיר יפה על אהבה."
+  },
+  "poet": {
+    "assoc": "פּוֹאֶט – 'פואט' – 'פו-אט' – 'פו' אט אט – המשורר כותב לאט!",
+    "sentence": "The poet won a national prize for his work.|המשורר זכה בפרס לאומי על יצירתו."
+  },
+  "poetry": {
+    "assoc": "פּוֹאֶטְרִי – 'פואטרי' – 'פואטי' + 'RI' – שירה זה פואטי בכל לשון!",
+    "sentence": "She has always been passionate about poetry.|היא תמיד נלהבת לגבי שירה."
+  },
+  "practice": {
+    "assoc": "פְּרַקְטִיס – 'פרקטיס' – 'פרקטי' = מעשי! אימון מעשי זה פרקטיס!",
+    "sentence": "Practice makes perfect.|אימון עושה את המושלם."
+  },
+  "purchase": {
+    "assoc": "פֶּרְצ'ֶס – 'פרצ'ס' – 'פרצה' + 'ס' – פרצה לחנות ורכשה הכל!",
+    "sentence": "He made a large purchase at the electronics store.|הוא ביצע רכישה גדולה בחנות האלקטרוניקה."
+  },
+  "push": {
+    "assoc": "פּוּשׁ – 'פוש' – 'פוש' – דחף חזק קדימה!",
+    "sentence": "Push the door to open it.|דחוף את הדלת כדי לפתוח אותה."
+  },
+  "race": {
+    "assoc": "רֵייס – 'רייס' – 'ריצה + רייס' – במרוץ הגזעים כולם רצים!",
+    "sentence": "He won the race by a wide margin.|הוא זכה במרוץ בפער גדול."
+  },
+  "racial": {
+    "assoc": "רֵיישֶׁל – 'רייש-ל' – 'ראש גזעני' – גזענות מתחילה בראש!",
+    "sentence": "Racial discrimination is illegal in many countries.|אפליה גזעית אסורה בחוק במדינות רבות."
+  },
+  "racing": {
+    "assoc": "רֵיסִינְג – 'רייסינג' – מרוץ + אינג' – מתחרה בריצה!",
+    "sentence": "Racing cars is his biggest passion.|מרוצי מכוניות הם התשוקה הגדולה שלו."
+  },
+  "racism": {
+    "assoc": "רֵיסִיזְם – 'רייס-איזם' – איזם של גזע = גזענות!",
+    "sentence": "Racism has no place in a just society.|לגזענות אין מקום בחברה צודקת."
+  },
+  "rate": {
+    "assoc": "רֵייט – 'רייט' = נכון? לא! קצב ודירוג – תדרג בקצב הנכון!",
+    "sentence": "The heart rate increases during exercise.|קצב הלב עולה בזמן פעילות גופנית."
+  },
+  "reach": {
+    "assoc": "רִיץ' – 'ריץ'' – 'ריץ'!' – רץ והושיט יד כדי להגיע!",
+    "sentence": "She reached for the book on the top shelf.|היא הושיטה יד לספר על המדף העליון."
+  },
+  "rehearsal": {
+    "assoc": "רִיהֶרְסֶל – 'ריהרסל' – 'ריהיר-סל' – 'שמע שוב' = חזרה על התפקיד!",
+    "sentence": "The rehearsal for the play was held yesterday.|החזרה למחזה נערכה אתמול."
+  },
+  "abduct": {
+    "assoc": "אַבְּדַקְט – 'אב-דקט' – 'אב' ברח ו'דאקט' נסגר – חטפו את האב!",
+    "sentence": "The criminal attempted to abduct the child.|הפושע ניסה לחטוף את הילד."
+  },
+  "abduction": {
+    "assoc": "אַבְּדַקְשֶׁן – 'אב-דקשן' – 'אב' + 'דקשן' – אקשן של חטיפת אב!",
+    "sentence": "The abduction was caught on security cameras.|החטיפה נקלטה במצלמות אבטחה."
+  },
+  "age": {
+    "assoc": "אֵייג' – 'אייג'' – 'אי, ג'!' – אי ג'! כבר הגעת לגיל הזה?",
+    "sentence": "With age comes wisdom.|עם הגיל מגיעה חכמה."
+  },
+  "aging": {
+    "assoc": "אֵייגִ'ינְג – 'אייג'ינג' – 'אי ג'ינג'' – כמו חי ג'ינג', הזדקנות טבעית!",
+    "sentence": "Aging is a natural part of life.|הזדקנות היא חלק טבעי מהחיים."
+  },
+  "atmosphere": {
+    "assoc": "אַטְמוֹסְפִיר – 'אטמוספיר' – 'אטמו' + 'ספיר' – אבן ספיר כחולה כמו האווירה!",
+    "sentence": "The restaurant has a wonderful atmosphere.|למסעדה יש אווירה נפלאה."
+  },
+  "continuity": {
+    "assoc": "קוֹנְטִינְיוּאִיטִי – 'קונטיניו' – 'המשך' = המשכיות! קונטיניו זה המשך ב-הדרכה!",
+    "sentence": "The continuity of the story kept readers engaged.|ההמשכיות של הסיפור שמרה על הקוראים מעורבים."
+  },
+  "continuous": {
+    "assoc": "קוֹנְטִינְיוּאוּס – 'קונטיניו-אס' – 'קונטיניו' = ממשיך ללא הפסקה!",
+    "sentence": "The continuous noise made it hard to sleep.|הרעש המתמשך הקשה על השינה."
+  },
+  "declaration": {
+    "assoc": "דֶּקְלָרֵיישֶׁן – 'דקלר-יישן' – 'דקלם' בהצהרה – דקלם הצהרה בקול!",
+    "sentence": "The declaration of independence changed history.|הצהרת העצמאות שינתה את ההיסטוריה."
+  },
+  "declare": {
+    "assoc": "דִּיקְלֵר – 'דיקלר' – 'דיקלם לר' – הצהיר בקול רם!",
+    "sentence": "He declared his love for her in front of everyone.|הוא הצהיר על אהבתו אליה בפני כולם."
+  },
+  "durable": {
+    "assoc": "דְיוּרַבְּל – 'דיורבל' – 'דיור' + 'בל' – דיור יציב לאורך זמן!",
+    "sentence": "This material is very durable and long-lasting.|החומר הזה יציב ועמיד מאוד לאורך זמן."
+  },
+  "duration": {
+    "assoc": "דְיוּרֵיישֶׁן – 'דיוריישן' – 'דיור' + 'יישן' – ישן בדיור לכל משך הזמן!",
+    "sentence": "The duration of the film is three hours.|משך הזמן של הסרט הוא שלוש שעות."
+  },
+  "emerge": {
+    "assoc": "אִימֶרְג' – 'אי-מרג'' – 'אי!' + מרג' = מתמזג ויוצא לאור!",
+    "sentence": "A new leader emerged from the crisis.|מנהיג חדש התגלה מתוך המשבר."
+  },
+  "exhausting": {
+    "assoc": "אִיגְזוֹסְטִינְג – 'אגזוסט-אינג' – כמו אגזוז שמוציא אדים – מתיש!",
+    "sentence": "The long hike was absolutely exhausting.|הטיול הארוך היה מתיש לחלוטין."
+  },
+  "exhaustion": {
+    "assoc": "אִיגְזוֹסְטְשֶׁן – 'אגזוסט-שן' – 'שן' עפה מתשישות כמו אגזוז!",
+    "sentence": "She collapsed from exhaustion after the marathon.|היא קרסה מתשישות לאחר המרתון."
+  }
+}

@@ -8,7 +8,31 @@
       "Bash(git push *)",
       "Bash(git pull *)",
       "Bash(awk 'NR>40')",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(git merge *)",
+      "Bash(git stash *)",
+      "Bash(node -e ' *)",
+      "Bash(node *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(git fetch *)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(git show *)",
+      "Bash(rm design_ai_temp.json)",
+      "Bash(rm design_index_temp.html)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "WebFetch(domain:app10123.github.io)",
+      "Bash(start python *)",
+      "Bash(start python3 *)",
+      "WebFetch(domain:localhost)",
+      "Bash(awk '/const sentenceQuestions/,/^[[:space:]]*\\\\];/ {print}' \"C:\\\\Users\\\\user\\\\Downloads\\\\amirnet-main\\\\amirnet-main\\\\index.html\")",
+      "Bash(awk '/const restatementQuestions/,/^[[:space:]]*\\\\];/ {print}' \"C:\\\\Users\\\\user\\\\Downloads\\\\amirnet-main\\\\amirnet-main\\\\index.html\")",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(npx serve *)",
+      "PowerShell(Copy-Item *)",
+      "Bash(n\\\\\"\" | head -c 500)",
+      "Bash(powershell -Command \"\\(Get-Content 'index.old.html'\\)[1459..1747] -join \\\\\"`n\\\\\"\" | head -c 500)"
     ]
   }
 }

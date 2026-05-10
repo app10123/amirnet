@@ -1,0 +1,628 @@
+﻿		const sentenceQuestions = [
+            { 
+                q: "1. The new manager's ___ approach to problem-solving significantly improved the team's efficiency.", 
+                options: ["innovative", "obsolete", "detrimental", "superficial"], 
+                correct: 0, 
+                explanation: "התשובה היא innovative (חדשני). הגישה של המנהל שיפרה את היעילות, לכן נדרשת מילה חיובית. obsolete = מיושן, detrimental = מזיק, superficial = שטחי." 
+            },
+            { 
+                q: "2. Despite the heavy rain, the football match proceeded as ___.", 
+                options: ["postponed", "scheduled", "canceled", "abandoned"], 
+                correct: 1, 
+                explanation: "התשובה היא scheduled (מתוכנן). המילה Despite (למרות) מצביעה על ניגוד - למרות הגשם, המשחק המשיך כמתוכנן. postponed = נדחה, abandoned = ננטש." 
+            },
+            { 
+                q: "3. In order to ___ the spread of the virus, the government imposed a strict lockdown.", 
+                options: ["encourage", "proliferate", "mitigate", "exaggerate"], 
+                correct: 2, 
+                explanation: "התשובה היא mitigate (למתן / להפחית). הממשלה הטילה סגר כדי לעצור את התפשטות הוירוס. proliferate = להתרבות, exaggerate = להגזים." 
+            },
+            { 
+                q: "4. The artist's early works are quite ordinary, but his later masterpieces are truly ___.", 
+                options: ["mundane", "mediocre", "splendid", "inadequate"], 
+                correct: 2, 
+                explanation: "התשובה היא splendid (נהדר / מופלא). מילת הקישור but מראה ניגוד למילה ordinary (רגיל/שגרתי), ולכן צריך מילה חיובית מאוד. mundane = יומיומי, mediocre = בינוני." 
+            },
+            { 
+                q: "5. Many ancient civilizations relied on agriculture, making water a highly ___ resource.", 
+                options: ["abundant", "superfluous", "irrelevant", "vital"], 
+                correct: 3, 
+                explanation: "התשובה היא vital (חיוני). תרבויות שהסתמכו על חקלאות היו חייבות מים. superfluous = מיותר, irrelevant = לא רלוונטי." 
+            },
+            { 
+                q: "6. The suspect refused to answer the detective's questions, choosing to remain ___ throughout the interrogation.", 
+                options: ["silent", "eloquent", "vocal", "transparent"], 
+                correct: 0, 
+                explanation: "התשובה היא silent (שותק). החשוד סירב לענות, ולכן בחר להישאר בשתיקה. eloquent = רהוט, vocal = קולני." 
+            },
+            { 
+                q: "7. The company decided to ___ its operations overseas due to the high costs of local manufacturing.", 
+                options: ["abolish", "endorse", "relocate", "forbid"], 
+                correct: 2, 
+                explanation: "התשובה היא relocate (למקם מחדש / להעביר). החברה העבירה פעילות לחו\"ל בגלל העלויות. abolish = לבטל, endorse = לאשר." 
+            },
+            { 
+                q: "8. Although the initial evidence seemed promising, further investigation proved it to be completely ___.", 
+                options: ["accurate", "erroneous", "definitive", "substantial"], 
+                correct: 1, 
+                explanation: "התשובה היא erroneous (שגוי). Although מצביע על ניגוד: הראיות נראו מבטיחות, אך התבררו כשגויות. accurate = מדויק." 
+            },
+            { 
+                q: "9. The sudden ___ in temperature ruined the crops that were just beginning to grow.", 
+                options: ["elevation", "sequence", "transition", "drop"], 
+                correct: 3, 
+                explanation: "התשובה היא drop (צניחה / ירידה). הירידה הפתאומית בטמפרטורה הרסה את היבולים. elevation = עלייה/הגבהה." 
+            },
+            { 
+                q: "10. Children often ___ the behavior of their parents without even realizing it.", 
+                options: ["despise", "condemn", "imitate", "conceal"], 
+                correct: 2, 
+                explanation: "התשובה היא imitate (לחקות). ילדים לעיתים קרובות מחקים את התנהגות הוריהם. despise = לתעב, condemn = לגנות." 
+            },
+            { 
+                q: "11. Since the evidence was purely ___, the judge dismissed the case immediately.", 
+                options: ["conclusive", "circumstantial", "concrete", "empirical"], 
+                correct: 1, 
+                explanation: "התשובה היא circumstantial (נסיבתי). הראיות היו נסיבתיות בלבד ולכן התיק בוטל. conclusive = החלטי/חותך, empirical = אמפירי/ניסויי." 
+            },
+            { 
+                q: "12. Despite his immense wealth, the billionaire lived a surprisingly ___ lifestyle.", 
+                options: ["lavish", "arrogant", "prosperous", "frugal"], 
+                correct: 3, 
+                explanation: "התשובה היא frugal (חסכני). המילה Despite דורשת ניגוד לעושר האדיר - כלומר חיים חסכניים. lavish = פזרני, פואר." 
+            },
+            { 
+                q: "13. The detective noticed a glaring ___ in the suspect's testimony, which led to his arrest.", 
+                options: ["alignment", "consensus", "discrepancy", "justification"], 
+                correct: 2, 
+                explanation: "התשובה היא discrepancy (סתירה / אי-התאמה). הבלש הבחין בסתירה בולטת שהובילה למעצר. consensus = הסכמה/קונצנזוס." 
+            },
+            { 
+                q: "14. In an attempt to ___ the angry customer, the store manager offered a full refund.", 
+                options: ["appease", "aggravate", "provoke", "deceive"], 
+                correct: 0, 
+                explanation: "התשובה היא appease (לפייס / להרגיע). המנהל הציע החזר כספי כדי לפייס את הלקוח. aggravate = להחמיר, provoke = להתגרות." 
+            },
+            { 
+                q: "15. The new regulations are intended to ___ the amount of pollution emitted by local factories.", 
+                options: ["expand", "prolong", "curtail", "initiate"], 
+                correct: 2, 
+                explanation: "התשובה היא curtail (להפחית / לקצץ). התקנות נועדו להפחית את הזיהום. prolong = להאריך, initiate = ליזום." 
+            },
+            { 
+                q: "16. The professor's lecture was so ___ that many students found it difficult to stay awake.", 
+                options: ["captivating", "monotonous", "profound", "exhilarating"], 
+                correct: 1, 
+                explanation: "התשובה היא monotonous (מונוטוני / משעמם). הסטודנטים התקשו להישאר ערים. captivating = מרתק, exhilarating = מלהיב." 
+            },
+            { 
+                q: "17. The factory was forced to ___ operations due to a massive power outage.", 
+                options: ["accelerate", "commence", "expand", "suspend"], 
+                correct: 3, 
+                explanation: "התשובה היא suspend (להשעות / להפסיק זמנית). המפעל נאלץ לעצור בגלל הפסקת החשמל. commence = להתחיל." 
+            },
+            { 
+                q: "18. A good manager should always ___ tasks to their team members efficiently.", 
+                options: ["withhold", "delegate", "reject", "conceal"], 
+                correct: 1, 
+                explanation: "התשובה היא delegate (להאציל סמכויות). מנהל טוב צריך להאציל משימות לצוות שלו ביעילות. withhold = לעכב/למנוע." 
+            },
+            { 
+                q: "19. The witnesses provided ___ accounts of the accident, making it hard for the police to understand what happened.", 
+                options: ["identical", "equivalent", "contradictory", "coherent"], 
+                correct: 2, 
+                explanation: "התשובה היא contradictory (סותרים). העדויות הסותרות הקשו על המשטרה להבין מה קרה. coherent = עקבי/הגיוני." 
+            },
+            { 
+                q: "20. Due to the severe drought, the region's water supply has significantly ___.", 
+                options: ["surged", "multiplied", "expanded", "dwindled"], 
+                correct: 3, 
+                explanation: "התשובה היא dwindled (התמעט / הידלדל). בגלל הבצורת, אספקת המים התמעטה משמעותית. surged = פרץ/עלה בחדות." 
+            },
+            { 
+                q: "21. It is a common ___ that bats are blind; in fact, they can see quite well.", 
+                options: ["certainty", "misconception", "revelation", "phenomenon"], 
+                correct: 1, 
+                explanation: "התשובה היא misconception (דעה מוטעית / תפיסה שגויה). זוהי דעה מוטעית נפוצה שעטלפים הם עיוורים. revelation = התגלות." 
+            },
+            { 
+                q: "22. The diplomat's ___ speech managed to inspire everyone in the room.", 
+                options: ["hostile", "ignorant", "eloquent", "mundane"], 
+                correct: 2, 
+                explanation: "התשובה היא eloquent (רהוט). הנאום הרהוט של הדיפלומט הצליח לעורר השראה בכולם. mundane = שגרתי/משעמם." 
+            },
+            { 
+                q: "23. The company was heavily fined for its ___ violation of safety regulations.", 
+                options: ["subtle", "flagrant", "cautious", "trivial"], 
+                correct: 1, 
+                explanation: "התשובה היא flagrant (בוטה / זועק). החברה נקנסה על הפרה בוטה של תקנות הבטיחות. trivial = שולי/זניח, subtle = מעודן." 
+            },
+            { 
+                q: "24. She showed great ___ in dealing with the difficult and rude customers.", 
+                options: ["arrogance", "hostility", "patience", "ignorance"], 
+                correct: 2, 
+                explanation: "התשובה היא patience (סבלנות). היא הפגינה סבלנות רבה בהתמודדות עם הלקוחות הקשים. arrogance = יהירות, hostility = עוינות." 
+            },
+            { 
+                q: "25. The ancient manuscript was so fragile that it had to be handled with extreme ___.", 
+                options: ["neglect", "force", "care", "haste"], 
+                correct: 2, 
+                explanation: "התשובה היא care (זהירות / אכפתיות). כתב היד היה שביר והיה צריך לטפל בו בזהירות. haste = חיפזון, neglect = הזנחה." 
+            },
+            { 
+                q: "26. The ancient ruins were ___ by archaeologists after years of excavation.", 
+                options: ["concealed", "dismissed", "uncovered", "fabricated"], 
+                correct: 2, 
+                explanation: "התשובה היא uncovered (נחשפו / התגלו). הארכיאולוגים חשפו את ההריסות העתיקות. concealed = הוסתרו, fabricated = זויפו/הומצאו." 
+            },
+            { 
+                q: "27. To ___ the problem of traffic congestion, the city is building a new subway line.", 
+                options: ["stimulate", "prolong", "aggravate", "alleviate"], 
+                correct: 3, 
+                explanation: "התשובה היא alleviate (להקל / לשכך). העירייה בונה רכבת תחתית כדי להקל על עומסי התנועה. aggravate = להחמיר, prolong = להאריך." 
+            },
+            { 
+                q: "28. Animals that live in the desert have adapted to survive in a ___ environment.", 
+                options: ["lucrative", "harsh", "fertile", "mild"], 
+                correct: 1, 
+                explanation: "התשובה היא harsh (קשה / אכזרי). חיות המדבר הסתגלו לסביבה קשה. lucrative = רווחי, fertile = פורה, mild = מתון/עדין." 
+            },
+            { 
+                q: "29. The politician's speech was so ___ that the audience didn't know what he actually meant.", 
+                options: ["articulate", "explicit", "ambiguous", "profound"], 
+                correct: 2, 
+                explanation: "התשובה היא ambiguous (דו-משמעי / עמום). הקהל לא הבין למה הוא התכוון כי הנאום היה עמום. articulate = רהוט, explicit = מפורש." 
+            },
+            { 
+                q: "30. Scientists are trying to ___ the exact cause of the rare disease.", 
+                options: ["determine", "confuse", "distort", "obscure"], 
+                correct: 0, 
+                explanation: "התשובה היא determine (לקבוע / להחליט). מדענים מנסים לקבוע מה הגורם למחלה. distort = לעוות, obscure = להסתיר/לטשטש." 
+            },
+            { 
+                q: "31. Due to the economic crisis, many businesses were forced to ___ their employees.", 
+                options: ["recruit", "promote", "commend", "dismiss"], 
+                correct: 3, 
+                explanation: "התשובה היא dismiss (לפטר / לשחרר). בגלל המשבר הכלכלי, עסקים נאלצו לפטר עובדים. recruit = לגייס, commend = לשבח." 
+            },
+            { 
+                q: "32. The museum's new exhibition will ___ paintings from the 19th century.", 
+                options: ["feature", "conceal", "prohibit", "omit"], 
+                correct: 0, 
+                explanation: "התשובה היא feature (להציג / לכלול). התערוכה תציג ציורים מהמאה ה-19. conceal = להסתיר, omit = להשמיט." 
+            },
+            { 
+                q: "33. It is ___ to wear a helmet when riding a motorcycle to prevent head injuries.", 
+                options: ["optional", "superfluous", "compulsory", "trivial"], 
+                correct: 2, 
+                explanation: "התשובה היא compulsory (חובה). חובה לחבוש קסדה כדי למנוע פציעות ראש. optional = בגדר רשות, superfluous = מיותר." 
+            },
+            { 
+                q: "34. The medicine is designed to ___ the pain within twenty minutes.", 
+                options: ["intensify", "sustain", "relieve", "provoke"], 
+                correct: 2, 
+                explanation: "התשובה היא relieve (להקל). התרופה נועדה להקל על הכאב תוך עשרים דקות. intensify = להעצים, provoke = לעורר/להתגרות." 
+            },
+            { 
+                q: "35. Her ___ to detail makes her an excellent editor for the publishing company.", 
+                options: ["indifference", "attention", "negligence", "resistance"], 
+                correct: 1, 
+                explanation: "התשובה היא attention (תשומת לב). תשומת הלב שלה לפרטים הופכת אותה לעורכת מצוינת. indifference = אדישות, negligence = רשלנות." 
+            },
+            { 
+                q: "36. The rebels tried to ___ the government by organizing a massive strike.", 
+                options: ["reinforce", "endorse", "uphold", "overthrow"], 
+                correct: 3, 
+                explanation: "התשובה היא overthrow (להפיל / להפוך). המורדים ניסו להפיל את הממשלה בעזרת שביתה. reinforce = לחזק, uphold = לתמוך/לקיים." 
+            },
+            { 
+                q: "37. He made a ___ decision to change his career path after ten years in banking.", 
+                options: ["accidental", "deliberate", "hasty", "random"], 
+                correct: 1, 
+                explanation: "התשובה היא deliberate (מכוון / שקול). הוא עשה החלטה מחושבת ומכוונת לשנות קריירה. hasty = פזיז, accidental = מקרי." 
+            },
+            { 
+                q: "38. The bridge collapsed because its foundation was not strong enough to ___ the weight of the trucks.", 
+                options: ["sustain", "alleviate", "demolish", "betray"], 
+                correct: 0, 
+                explanation: "התשובה היא sustain (לשאת / להחזיק מעמד). הגשר קרס כי היסודות לא יכלו לשאת את המשקל. demolish = להרוס, alleviate = להקל." 
+            },
+            { 
+                q: "39. Despite numerous warnings, the hiker ventured into the ___ territory alone.", 
+                options: ["secure", "domestic", "hazardous", "tame"], 
+                correct: 2, 
+                explanation: "התשובה היא hazardous (מסוכן). למרות האזהרות, המטייל נכנס לשטח מסוכן. secure = בטוח, domestic = ביתי/מקומי, tame = מאולף." 
+            },
+            { 
+                q: "40. The sudden ___ of the disease took the local health authorities by surprise.", 
+                options: ["decline", "remedy", "outbreak", "suppression"], 
+                correct: 2, 
+                explanation: "התשובה היא outbreak (התפרצות). ההתפרצות הפתאומית של המחלה הפתיעה את הרשויות. decline = ירידה, suppression = דיכוי." 
+            },
+            { 
+                q: "41. If you want to lose weight, you must ___ your intake of sugar and fats.", 
+                options: ["expand", "reduce", "maximize", "retain"], 
+                correct: 1, 
+                explanation: "התשובה היא reduce (להפחית). כדי לרדת במשקל, עליך להפחית צריכת סוכר. expand = להרחיב, retain = לשמור/להחזיק." 
+            },
+            { 
+                q: "42. The witness was asked to ___ the suspect from a lineup of five men.", 
+                options: ["disguise", "emulate", "liberate", "identify"], 
+                correct: 3, 
+                explanation: "התשובה היא identify (לזהות). העד התבקש לזהות את החשוד מתוך מסדר הזיהוי. disguise = להסוות, emulate = לחקות." 
+            },
+            { 
+                q: "43. Water is ___ for the survival of all known forms of life on Earth.", 
+                options: ["obsolete", "essential", "detrimental", "negligible"], 
+                correct: 1, 
+                explanation: "התשובה היא essential (חיוני). מים הם חיוניים להישרדות כל צורות החיים. obsolete = מיושן, negligible = זניח." 
+            },
+            { 
+                q: "44. After a long period of drought, the recent rain was highly ___ for the crops.", 
+                options: ["beneficial", "destructive", "irrelevant", "scarce"], 
+                correct: 0, 
+                explanation: "התשובה היא beneficial (מועיל / מטיב). אחרי בצורת, הגשם היה מועיל מאוד ליבולים. destructive = הרסני, scarce = נדיר/מועט." 
+            },
+            { 
+                q: "45. The author's ___ style of writing makes his novels very easy and enjoyable to read.", 
+                options: ["awkward", "tedious", "fluent", "rigid"], 
+                correct: 2, 
+                explanation: "התשובה היא fluent (רהוט / שוטף). סגנון הכתיבה השוטף הופך את ספריו לקלים לקריאה. tedious = מעייף/מייגע, rigid = נוקשה." 
+            },
+            { 
+                q: "46. Because the document was highly confidential, its contents were not ___ to the public.", 
+                options: ["concealed", "retained", "suppressed", "disclosed"], 
+                correct: 3, 
+                explanation: "התשובה היא disclosed (נחשפו / התגלו). כיוון שהמסמך היה סודי, תוכנו לא נחשף לציבור. concealed = הוסתרו, suppressed = דוכאו." 
+            },
+            { 
+                q: "47. Some animals ___ during the winter to conserve energy when food is scarce.", 
+                options: ["hibernate", "migrate", "evolve", "flourish"], 
+                correct: 0, 
+                explanation: "התשובה היא hibernate (לשנת חורף). חיות מסוימות נכנסות לשנת חורף כדי לחסוך באנרגיה. migrate = להגר/לנדוד, flourish = לשגשג." 
+            },
+            { 
+                q: "48. The two companies decided to ___ in order to dominate the global market.", 
+                options: ["divide", "compete", "merge", "collapse"], 
+                correct: 2, 
+                explanation: "התשובה היא merge (למזג / להתאחד). החברות החליטו להתמזג כדי לשלוט בשוק. divide = לחלק, compete = להתחרות." 
+            },
+            { 
+                q: "49. Eating a balanced diet and exercising regularly can help ___ many chronic diseases.", 
+                options: ["induce", "prevent", "spread", "contract"], 
+                correct: 1, 
+                explanation: "התשובה היא prevent (למנוע). תזונה ופעילות גופנית יכולות למנוע מחלות כרוניות. induce = לגרום/לייצר, contract = ללקות במחלה." 
+            },
+            { 
+                q: "50. The detective found a ___ piece of evidence that completely changed the direction of the investigation.", 
+                options: ["trivial", "crucial", "redundant", "vague"], 
+                correct: 1, 
+                explanation: "התשובה היא crucial (מכריע / קריטי). הבלש מצא ראיה קריטית ששינתה את החקירה. trivial = שולי, redundant = מיותר/עודף, vague = מעורפל." 
+            },
+            { 
+                q: "51. The factory has implemented new measures to ___ the amount of waste it produces.", 
+                options: ["generate", "minimize", "exaggerate", "distribute"], 
+                correct: 1, 
+                explanation: "התשובה היא minimize (למזער). המפעל יישם אמצעים חדשים למזער את הפסולת. generate = לייצר, distribute = לחלק/להפיץ." 
+            },
+            { 
+                q: "52. In some cultures, it is considered ___ to point directly at someone.", 
+                options: ["courteous", "mandatory", "heroic", "impolite"], 
+                correct: 3, 
+                explanation: "התשובה היא impolite (לא מנומס). בתרבויות מסוימות זה נחשב לא מנומס להצביע על מישהו. courteous = אדיב, mandatory = חובה." 
+            },
+            { 
+                q: "53. The committee will ___ next week to discuss the proposed changes to the law.", 
+                options: ["disperse", "convene", "resign", "surrender"], 
+                correct: 1, 
+                explanation: "התשובה היא convene (להתכנס). הוועדה תתכנס בשבוע הבא כדי לדון בשינויים. disperse = להתפזר, resign = להתפטר." 
+            },
+            { 
+                q: "54. Unfortunately, the peace negotiations proved ___ and the war continued.", 
+                options: ["productive", "lucrative", "futile", "permanent"], 
+                correct: 2, 
+                explanation: "התשובה היא futile (חסר תועלת / עקר). המשא ומתן היה חסר תועלת והמלחמה נמשכה. lucrative = רווחי, productive = פורה/יצרני." 
+            },
+            { 
+                q: "55. She has a strong ___ to avoid eating anything that contains gluten.", 
+                options: ["tendency", "reluctance", "indifference", "empathy"], 
+                correct: 0, 
+                explanation: "התשובה היא tendency (נטייה). יש לה נטייה חזקה להימנע מגלוטן. reluctance = חוסר רצון, indifference = אדישות." 
+            },
+            { 
+                q: "56. The invention of the internet has completely ___ the way people communicate.", 
+                options: ["preserved", "hindered", "transformed", "isolated"], 
+                correct: 2, 
+                explanation: "התשובה היא transformed (שינה צורה / הפך). האינטרנט שינה לחלוטין את הדרך בה אנו מתקשרים. hindered = עיכב/מנע, preserved = שימר." 
+            },
+            { 
+                q: "57. Heavy smoking is known to severely ___ lung function over time.", 
+                options: ["enhance", "stimulate", "impair", "restore"], 
+                correct: 2, 
+                explanation: "התשובה היא impair (לפגום / להחליש). עישון כבד פוגם בתפקודי הריאות. enhance = לשפר/להעצים, restore = לשקם." 
+            },
+            { 
+                q: "58. In order to finish the project on time, we need to ___ our efforts.", 
+                options: ["abandon", "accelerate", "delay", "halt"], 
+                correct: 1, 
+                explanation: "התשובה היא accelerate (להאיץ). כדי לסיים בזמן עלינו להאיץ את המאמצים שלנו. halt = לעצור, abandon = לנטוש." 
+            },
+            { 
+                q: "59. The athlete's ___ performance earned him a gold medal at the Olympics.", 
+                options: ["outstanding", "mediocre", "sluggish", "pathetic"], 
+                correct: 0, 
+                explanation: "התשובה היא outstanding (יוצא מן הכלל). הביצועים המצוינים שלו זיכו אותו במדליית זהב. sluggish = איטי/עצל, mediocre = בינוני." 
+            },
+            { 
+                q: "60. Reading books is a great way to ___ your vocabulary and general knowledge.", 
+                options: ["deplete", "restrict", "enrich", "forfeit"], 
+                correct: 2, 
+                explanation: "התשובה היא enrich (להעשיר). קריאה היא דרך מעולה להעשיר את אוצר המילים. deplete = לרוקן, forfeit = לוותר/להפסיד." 
+            },
+            { 
+                q: "61. The instructions were so ___ that everyone managed to assemble the furniture without any help.", 
+                options: ["ambiguous", "confusing", "explicit", "complicated"], 
+                correct: 2, 
+                explanation: "התשובה היא explicit (מפורש / ברור). ההוראות היו כל כך ברורות שכולם הצליחו להרכיב את הרהיט. ambiguous = דו-משמעי." 
+            },
+            { 
+                q: "62. The volcano is currently ___, but scientists warn it could erupt at any moment.", 
+                options: ["active", "extinct", "dormant", "volatile"], 
+                correct: 2, 
+                explanation: "התשובה היא dormant (רדום). הר הגעש כרגע רדום, אך עלול להתפרץ. extinct = נכחד/כבוי, volatile = נדיף/הפכפך." 
+            },
+            { 
+                q: "63. Many birds ___ south for the winter to find warmer climates and food.", 
+                options: ["hibernate", "migrate", "adapt", "perish"], 
+                correct: 1, 
+                explanation: "התשובה היא migrate (להגר / לנדוד). ציפורים רבות נודדות דרומה בחורף. perish = להיהרג/למות, hibernate = שנת חורף." 
+            },
+            { 
+                q: "64. The manager tried to ___ the conflict between the two employees before it escalated.", 
+                options: ["provoke", "resolve", "ignore", "intensify"], 
+                correct: 1, 
+                explanation: "התשובה היא resolve (לפתור / ליישב). המנהל ניסה לפתור את הסכסוך לפני שיחמיר. provoke = להתגרות, intensify = להעצים." 
+            },
+            { 
+                q: "65. The jury found the defendant ___ due to a lack of concrete evidence.", 
+                options: ["guilty", "responsible", "innocent", "liable"], 
+                correct: 2, 
+                explanation: "התשובה היא innocent (חף מפשע). חבר המושבעים מצא את הנאשם זכאי בגלל חוסר ראיות. guilty = אשם, liable = אחראי (משפטית)." 
+            },
+            { 
+                q: "66. He was so ___ in his book that he didn't hear the doorbell ring.", 
+                options: ["distracted", "detached", "absorbed", "annoyed"], 
+                correct: 2, 
+                explanation: "התשובה היא absorbed (שאוב / שקוע). הוא היה כל כך שקוע בספר שלא שמע את הפעמון. detached = מנותק, distracted = מוסח דעת." 
+            },
+            { 
+                q: "67. The government plans to ___ a new tax on luxury goods next year.", 
+                options: ["abolish", "evade", "repeal", "impose"], 
+                correct: 3, 
+                explanation: "התשובה היא impose (לכפות / להטיל). הממשלה מתכננת להטיל מס חדש על מוצרי יוקרה. abolish = לבטל, evade = להתחמק." 
+            },
+            { 
+                q: "68. Her sudden resignation caused a lot of ___ among her colleagues.", 
+                options: ["certainty", "speculation", "indifference", "consensus"], 
+                correct: 1, 
+                explanation: "התשובה היא speculation (השערה / ספקולציה). ההתפטרות שלה גרמה להרבה השערות. consensus = הסכמה רחבה, certainty = ודאות." 
+            },
+            { 
+                q: "69. The old castle is a popular tourist ___ that draws thousands of visitors annually.", 
+                options: ["obstacle", "illusion", "attraction", "deterrent"], 
+                correct: 2, 
+                explanation: "התשובה היא attraction (אטרקציה / מוקד משיכה). הטירה היא אטרקציה תיירותית פופולרית. deterrent = גורם מרתיע, obstacle = מכשול." 
+            },
+            { 
+                q: "70. Regular maintenance is required to ensure the ___ of the machinery.", 
+                options: ["failure", "breakdown", "durability", "obsolescence"], 
+                correct: 2, 
+                explanation: "התשובה היא durability (עמידות). תחזוקה שוטפת נדרשת כדי להבטיח את עמידות המכונות. obsolescence = התיישנות, breakdown = קריסה." 
+            }
+        ];
+		
+        let currentSentenceIndex = 0;
+
+        function renderSCList() {
+            let listView = document.getElementById('sc-list-view');
+            if (!listView) return;
+            let total = sentenceQuestions.length;
+            let correctCount = Object.values(sentenceProgress).filter(p => p.correct).length;
+            let wrongCount = Object.values(sentenceProgress).filter(p => p.answered && !p.correct).length;
+            let unseenCount = total - correctCount - wrongCount;
+            let pct = Math.round((correctCount / total) * 100);
+
+            let gridHtml = sentenceQuestions.map((q, i) => {
+                let prog = sentenceProgress[i];
+                let cls = 'sc-cell';
+                let label = i + 1;
+                if (prog && prog.answered) {
+                    cls += prog.correct ? ' sc-correct' : ' sc-wrong';
+                    label = prog.correct
+                        ? `<svg class="sc-check-svg" viewBox="0 0 16 16"><polyline class="sc-check-path" points="2,9 6,13 14,4"/></svg>`
+                        : `<svg class="sc-check-svg" viewBox="0 0 16 16"><line class="sc-x-path" x1="3" y1="3" x2="13" y2="13"/><line class="sc-x-path" x1="13" y1="3" x2="3" y2="13"/></svg>`;
+                }
+                return `<button class="${cls}" onclick="showSCQuestion(${i})">${label}</button>`;
+            }).join('');
+
+            listView.innerHTML = `
+                <div class="sc-progress-box">
+                    <div class="progress-bar-bg" style="margin-bottom:10px;"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+                    <div class="stats-text">
+                        <span class="stat-known"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><polyline points="2,8 5,11 12,3" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> נכון: ${correctCount}</span>
+                        <span class="stat-learning"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><line x1="3" y1="3" x2="11" y2="11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="11" y1="3" x2="3" y2="11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> שגוי: ${wrongCount}</span>
+                        <span class="stat-unseen"><svg viewBox="0 0 14 14" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-left:2px;"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/></svg> טרם: ${unseenCount}</span>
+                    </div>
+                </div>
+                <div class="sc-grid">${gridHtml}</div>
+                <button class="sc-reset-btn" onclick="resetSentenceProgress()">איפוס התקדמות</button>
+            `;
+        }
+
+        function showSCQuestion(index) {
+            currentSentenceIndex = index;
+            document.getElementById('sc-list-view').style.display = 'none';
+            document.getElementById('sc-question-view').style.display = 'block';
+            renderSentenceQuestion();
+            startSCTimer('sc');
+        }
+
+        function showSCList() {
+            stopSCTimer(); ttsStop();
+            document.getElementById('sc-list-view').style.display = 'block';
+            document.getElementById('sc-question-view').style.display = 'none';
+            renderSCList();
+        }
+
+        // ===== Text-to-Speech =====
+        function getTTSRate() { return parseFloat(localStorage.getItem('ttsRate') || '0.7'); }
+        function setTTSRate(rate) {
+            localStorage.setItem('ttsRate', rate);
+            document.querySelectorAll('#tts-rate-btns .timer-preset-btn').forEach(btn => {
+                btn.classList.toggle('active', parseFloat(btn.getAttribute('data-rate')) === rate);
+            });
+        }
+
+        const _TTS_ICON = `<svg viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;pointer-events:none;flex-shrink:0;"><path d="M3 6H1v6h2l4 3V3L3 6z" fill="currentColor" stroke="none"/><path d="M13 3c2 1.7 3.2 4.2 3.2 6s-1.2 4.3-3.2 6"/><path d="M10.5 6c1 0.9 1.6 2.2 1.6 3s-0.6 2.1-1.6 3"/></svg>`;
+        const _TTS_WAVES = `<span style="display:inline-flex;align-items:center;gap:2px;height:18px;pointer-events:none;"><span class="tts-wave-bar" style="height:8px;"></span><span class="tts-wave-bar" style="height:14px;"></span><span class="tts-wave-bar" style="height:10px;"></span><span class="tts-wave-bar" style="height:14px;"></span></span>`;
+        function _ttsSetIcon(btn, speaking, withLabel) {
+            if (!btn) return;
+            if (withLabel) {
+                btn.innerHTML = speaking ? (_TTS_WAVES + ' ' + withLabel) : (_TTS_ICON + ' ' + withLabel);
+            } else {
+                btn.innerHTML = speaking ? _TTS_WAVES : _TTS_ICON;
+            }
+        }
+        let _ttsBtn = null;
+        let _ttsBtnLabel = null;
+        function ttsStop() {
+            if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
+            if (_ttsBtn) { _ttsSetIcon(_ttsBtn, false, _ttsBtnLabel); _ttsBtn.classList.remove('speaking'); _ttsBtn = null; _ttsBtnLabel = null; }
+        }
+        function ttsSpeak(texts, btnEl, rowLabel) {
+            if (window.speechSynthesis.speaking) {
+                let prevBtn = _ttsBtn;
+                ttsStop();
+                if (prevBtn === btnEl) return;
+            }
+            _ttsBtn = btnEl;
+            _ttsBtnLabel = rowLabel || null;
+            if (btnEl) { _ttsSetIcon(btnEl, true, rowLabel); btnEl.classList.add('speaking'); }
+            const run = (idx) => {
+                if (idx >= texts.length) { _ttsSetIcon(btnEl, false, rowLabel); if (btnEl) btnEl.classList.remove('speaking'); _ttsBtn = null; _ttsBtnLabel = null; return; }
+                let utt = new SpeechSynthesisUtterance(texts[idx]);
+                utt.lang = 'en-US';
+                utt.rate = getTTSRate();
+                utt.onend = () => run(idx + 1);
+                utt.onerror = () => { _ttsSetIcon(btnEl, false, rowLabel); if (btnEl) btnEl.classList.remove('speaking'); _ttsBtn = null; _ttsBtnLabel = null; };
+                window.speechSynthesis.speak(utt);
+            };
+            run(0);
+        }
+        function ttsSC(btnEl)      { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak([q.q.replace(/_+/g, 'blank')], btnEl); }
+        function ttsSCOpts(btnEl)  { let q = sentenceQuestions[currentSentenceIndex];    ttsSpeak(q.options, btnEl, 'הקרא תשובות'); }
+        function ttsRS(btnEl)      { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak([q.q], btnEl); }
+        function ttsRSOpts(btnEl)  { let q = restatementQuestions[currentRestatementIndex]; ttsSpeak(q.options, btnEl, 'הקרא תשובות'); }
+        function ttsPassage(btnEl) {
+            let el = document.getElementById('rc-content');
+            let raw = el.innerText.trim();
+            let sentences = raw.split(/(?<=[.?!])\s+/).map(s => s.trim()).filter(s => s.length > 0);
+            if (sentences.length === 0) sentences = [raw];
+            ttsSpeak(sentences, btnEl, 'הקרא את הקטע');
+        }
+        function ttsRCQ(idx, btnEl){ let t = allTexts.find(x => x.id === currentTextId); ttsSpeak([t.questions[idx].q], btnEl); }
+
+        function renderSentenceQuestion() {
+            let container = document.getElementById('sc-container');
+            let i = currentSentenceIndex;
+            let q = sentenceQuestions[i];
+            let total = sentenceQuestions.length;
+            let prog = sentenceProgress[i];
+            let isAnswered = prog && prog.answered;
+
+            let optionsHtml = q.options.map((opt, optIndex) => {
+                let cls = 'q-opt-btn';
+                let disabled = '';
+                if (isAnswered) {
+                    disabled = 'disabled';
+                    if (optIndex === q.correct) cls += ' correct';
+                    else if (prog.selectedOpt === optIndex) cls += ' wrong';
+                }
+                let click = isAnswered ? '' : `onclick="answerSC(${i}, ${optIndex}, ${q.correct})"`;
+                return `<button class="${cls}" ${disabled} ${click}>${opt}</button>`;
+            }).join('');
+
+            let expStyle = isAnswered ? 'display:block' : 'display:none';
+            let nextLabel = i < total - 1 ? 'השאלה הבאה ›' : '← סיום — חזור לרשימה';
+
+            container.innerHTML = `
+                <div class="sc-nav-row">
+                    <button class="sc-nav-btn" onclick="showSCQuestion(${i - 1})" ${i === 0 ? 'disabled' : ''}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <span style="font-weight:800; color:#64748b; font-size:15px; direction:rtl;">שאלה ${i + 1} / ${total}</span>
+                    <button class="sc-nav-btn" onclick="showSCQuestion(${i + 1})" ${i === total - 1 ? 'disabled' : ''}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+                ${timerHTML('sc')}
+                <div class="sentence-q-card">
+                    <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;">
+                        <div class="sentence-text-q" style="margin-top:0;flex:1;">${q.q}</div>
+                        <button class="tts-btn" onclick="ttsSC(this)" title="הקרא משפט" style="display:flex;align-items:center;justify-content:center;">${_TTS_ICON}</button>
+                    </div>
+                    <button class="tts-btn tts-row-btn" onclick="ttsSCOpts(this)" style="display:flex;align-items:center;gap:8px;">${_TTS_ICON} הקרא תשובות</button>
+                    <div class="q-options" id="sc-opts-${i}">${optionsHtml}</div>
+                    <div class="q-explanation" id="sc-exp-${i}" style="${expStyle}">
+                        <h4><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:currentColor;fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> הסבר לתשובה:</h4>
+                        <p>${q.explanation}</p>
+                        <button class="action-btn-top" style="margin-top:20px;width:100%;height:50px;font-size:17px;" onclick="nextSentence()">${nextLabel}</button>
+                    </div>
+                </div>`;
+        }
+
+        function answerSC(qIndex, selectedOpt, correctOpt) {
+            stopSCTimer();
+            let isCorrect = selectedOpt === correctOpt;
+            if (!sentenceProgress[qIndex]) {
+                let ds = JSON.parse(localStorage.getItem('dailyStats')) || {};
+                let today = new Date().toISOString().split('T')[0];
+                ds[today] = (ds[today] || 0) + 1;
+                localStorage.setItem('dailyStats', JSON.stringify(ds));
+                renderChart();
+            }
+            sentenceProgress[qIndex] = { answered: true, correct: isCorrect, selectedOpt: selectedOpt };
+            localStorage.setItem('sentenceProgress', JSON.stringify(sentenceProgress));
+
+            let btns = document.getElementById(`sc-opts-${qIndex}`).querySelectorAll('.q-opt-btn');
+            btns.forEach(b => b.disabled = true);
+            if (isCorrect) {
+                btns[selectedOpt].classList.add('correct');
+                fireConfetti();
+            } else {
+                btns[selectedOpt].classList.add('wrong');
+                btns[correctOpt].classList.add('correct');
+            }
+            document.getElementById(`sc-exp-${qIndex}`).style.display = 'block';
+        }
+
+        function nextSentence() {
+            if (currentSentenceIndex < sentenceQuestions.length - 1) {
+                showSCQuestion(currentSentenceIndex + 1);
+            } else {
+                showSCList();
+            }
+        }
+
+        function resetSentenceProgress() {
+            if (confirm('לאפס את כל ההתקדמות בהשלמת משפטים?')) {
+                sentenceProgress = {};
+                localStorage.removeItem('sentenceProgress');
+                renderSCList();
+            }
+        }
+
+        // נשמר לתאימות לאחור עם קריאות קיימות
+        function renderSentenceQuestions() { renderSCList(); }
+
+        // ===== ניסוח מחדש (Restatements) =====

@@ -1,0 +1,402 @@
+defeated | הובס
+defend | להגן
+defense | הגנה
+demographic | דמוגרפי
+diagnose | לאבחן
+director | מנהל, במאי
+discriminate | להפלות
+disposable | חד-פעמי
+distribute | להפיץ
+distribution | הפצה
+document | לתעד, מסמך
+duty | תפקיד, חובה
+earn | להרוויח
+edge | קצה, חספוס
+elaborate | לפרט, להרחיב
+emigrate | להגר
+enlarge | להגדיל
+epidemic | מגיפה, אפידמיה
+eraser | מחק
+ethical | אתי, מוסרי
+evade | התחמק
+evidence | ראיה
+exception | יוצא מהכלל
+facility | מתקן
+fail | להיכשל
+faith | אמון
+flourish | לשגשג, לפרוח
+follow | לעקוב, לציית
+for the sake of | למען
+forsake | לזנוח
+future | עתיד
+global | עולמי, גלובאלי
+goal | מטרה
+group | קבוצה, לקבץ
+hold back | לעכב, למנוע
+homeland | מולדת
+honest | הגון
+honor | לכבד, כבוד
+huge | עצום, ענק
+idea | רעיון
+identify | לזהות
+imagination | דמיון
+impart | להעביר, להקנות
+impossible | בלתי אפשר
+imprisoned | כלוא
+in order | תקין, מסודר
+incredible | מדהים
+inferred | נגזר, משתמע
+intentional | מכוון
+interact | לתקשר, להשפיע
+know, knew | לדעת, ידע
+laid | מונח
+lane | מסלול
+limitation | מגבלה
+lobby | לובי, מבואה, לשדל
+mammal | יונק
+modernize | להפוך למודרני
+mold | עובש, לעצב
+motivate | לדרבן
+negate | לשלול
+neutral | ניטרלי
+operation | מבצע, פעולה, ניתוח
+ordinary | רגיל
+organ | אורגן (כלי נגינה), איבר
+overdue | שעבר זמן ההגשה שלו
+pair | זוג
+parent | הורה
+parenting | הורות
+participate | השתתף
+particulars | פריטים
+person | אדם
+pioneer | חלוץ
+poverty-stricken | מוכה עוני
+precedent | תקדים
+predecessors | קודמים
+predestined | נקבע מראש
+predictive | נבואי
+product | מוצר
+professional | מקצועי
+railroad | מסילת רכבת
+random | מקרי, אקראי
+randomly | באקראיות
+reaction | תגובה
+reconstruct | לשחזר
+relevant | רלוונטי, קשור
+relocate | למקם מחדש
+rely | להסתמך
+reporter | עיתונאי
+require | לדרוש, דרישה
+resume | להמשיך
+resumption | חידוש
+rule | כלל, חוק, שלטון, לשלוט, לפסוק, להחליט
+ruler | סרגל, מושל, שליט
+season | לחבל, עונה
+secure | להבטיח, לשמור, להגן
+selective | סלקטיבי
+service | שירות
+ship | אוניה, לשלוח
+shipment | משלוח
+simulate | לדמות, לחקות
+size | גודל
+soar | להמריא
+solicit | לבקש, לחפש בתחינה, לשדל, להדיח
+solitude | בדידות
+solution | פתרון
+sort | למיין
+span | להימתח, להקיף, מרווח
+splendid | נהדר, מהולל
+spring | מעיין, אביב
+spring, sprang | קפיץ; לקפוץ, קפץ
+stability | יציבות
+stamina | כושר עמידה, סיבולת
+standard | רמה, תקן, מקובל
+state | מצב, מדינה
+statement | הצהרה
+steady | קבוע, יציב
+stock | מלאי, לאחסן, מניה
+strange | מוזר
+summer | קיץ
+supervise | לפקח
+support | תמיכה, לתמוך
+supportive | תומך
+swift | מהיר
+thick | סמיך, עבה
+thrive | לשגשג
+traffic | תנועה
+traffic jam | פקק תנועה
+unaware | לא מודע
+uncertain | לא בטוח
+uncover | לחשוף, לגלות
+unfold | לפתוח קיפול, נפרש, נפתח, התגלה
+unstable | לא יציב
+update | עדכון, לעדכן
+validate | אימת, נתן תוקף
+violent | אלים
+widen | להרחיב
+winter | חורף
+adverse | שלילי
+analog | אנלוגי (ההיפך מדיגיטלי)
+analogy | אנלוגיה, הקבלה
+ancestor | אב קדמון
+ancestry | מוצא
+assist | לעזור, לסייע
+astonishment | תדהמה, השתאות
+at your disposal | לרשותך
+background | רקע
+benefactors | נדבנים, תורמים
+beneficial | מועיל, רווחי
+bold | אמיץ, חצוף, מודגש
+botanist | בוטנאי
+broaden | להרחיב
+canal | תעלה
+cast | להשליך, לגרש, צוות שחקנים
+caste | מעמד חברתי
+castle | טירה
+chief | ראשי, בכיר, מנהיג, צ'יף
+coastline | קו, רצועת חוף
+coat | מעיל, שכבה (של צבע, בטון וכו')
+coexistence | דו-קיום
+collaborate | לשתף פעולה
+collapse | להתמוטט
+commit | ביצוע, לבצע, להתחייב
+committee | ועדה
+comply | להסכים, לציית
+conduct | לנהל, לקיים
+confrontation | עימות
+considering | מתחשב
+constant | קבוע, רצוף
+consult | להתייעץ
+context | הקשר
+contradiction | סתירה
+convoy | שיירה
+criteria | אמת מידה, אבן בחן
+dedicate | להקדיש
+dedicated | מוקדש ל-, מסור
+degenerate | להתנוון
+degree | דרגה, מעלה
+designer | מעצב
+detect | לאתר, לגלות
+dialect | ניב
+differences | חילוקי דעות
+differentiate | להבדיל, להבחין
+disobey | להפר, לא לציית
+electricity | חשמל
+emotion | רגש
+episode | פרק
+ethnic | אתני
+experiment | ניסוי, להתנסות
+facilitate | לסייע, לעזור, להקל
+fall apart | להתפרק
+fasten | להדק
+feminine | נשי
+fine | קנס, קטן, עדין, דקיק, משביע רצון, משובח, מצוין
+flight | בריחה, מנוסה, טיסה
+forecast | תחזית
+forfeit | לוותר, להפסיד
+frame | מסגרת, למסגר
+fundamental | בסיסי (פונדמנטלי)
+fundraiser | מגייס כספים
+funds | כסף, הון, מקור מימון
+generated | יצר
+govern | למשול
+ground | בסיס, אדמה
+grow up | להתבגר, לגדול
+guilty | אשם
+hollow | חלול
+hundred | מאה
+hunt | לצוד, ציד
+hunter | צייד
+impatient | חסר סבלנות
+impress | להרשים
+impressive | מרשים
+inactivity | חוסר פעילות
+inclusive | כולל
+infected | הודבק
+infection | זיהום
+innocent | תמים, חף מפשע
+instruction | הוראה, הדרכה
+insurance | ביטוח
+insure | להבטיח
+investing | להשקיע
+investor | משקיע
+lapse | מעידה, פליטת פה, פרק זמן, פקיעה, סיום
+leather | עור
+lecture | הרצאה
+lung | ריאה
+maintain | לשמר
+management | ניהול
+manuscript | כתב יד
+marine | ימי
+maritime | ימי
+marketing | שיווק, לשווק
+mass | המון, המוני, מסה
+merger | מיזוג
+odd | מוזר, אי זוגי
+opportunity | הזדמנות
+organic | אורגני
+overlaps | חופף
+own | משלו, בעלות על משהו
+owner | בעלים
+paramount | בעל חשיבות עליונה
+pedestrian | הולך רגל
+perhaps | אולי
+planet | כוכב לכת
+poll | סקר, הצבעה
+post | לפרסם; פרסום, לשלוח בדואר ; דואר, להציב, למנות, עמדה, משרה, תפקיד, עמוד
+postage | דבר דואר
+presume | להניח
+priest | כומר
+publication | הוצאה לאור
+publicized | פורסם
+publisher | מוציא לאור
+qualify | להיות מוסמך
+quarter | רבע
+raw | חי, נא (בשר), גולמי, גס
+recognition | הכרה
+record | להקליט, שיא, רשומה, לתעד
+recreate | לשחזר, ליצור מחדש
+relax | להירגע
+remains | שרידים, נשאר, עדיין
+remove | להסיר
+renew | לחדש
+renown | ידוע
+repair | לתקן
+replace | להחליף
+replacement | מחליף
+rescue | להציל
+resident | תושב קבע
+resource | משאב
+resourceful | בעל תושייה
+restrain | לרסן
+retain | להחזיק, לשמור
+retrieve | להשיב
+revenue | הכנסה, רווח
+route | מסלול, דרך
+satisfaction | שביעות רצון
+sensitivity | רגישות
+sentence | משפט, גזר דין
+servant | משרת
+serve | להגיש, לשרת, לְרַצוֹת (עונש)
+sharp | חד
+sheer | מוחלט, לחלוטין, שקוף, משופע, תלול
+skepticism | ספקנות
+spare | מיותר, עודף
+specify | לפרט
+spectator | צופה, משקיף
+speech | דיבור
+spoil | לבזוז, שלל, להרוס, לפנק, לקלקל
+staple | להדק
+stomach | בטן, קיבה
+strategy | אסטרטגיה
+subdue | להכניע
+suitable | ראוי, מתאים, יאה
+superb | מעולה (איכותי)
+suppression | דיכוי
+symbol | סמל
+symbolize | לסמל
+take place | התרחש
+temple | מקדש
+terms | תנאים, מונחים
+thousand | אלף
+tormented | לייסר, לענות
+tour | סיור
+tourist | תייר
+trust | אמון, לבטוח
+typically | אופייני
+underlies | מונח ביסוד, נמצא מתחת ל-
+unemployed | מובטל
+unexplored | לא נחקר, לא נבדק
+unfamiliar | לא מוכר
+unfortunately | למרבה הצער
+unimaginable | בלתי נתפס
+unique | מיוחד
+unite | לאחד
+uprising | התקוממות, מרד
+urban | עירוני
+vaccine | חיסון
+variation | שינוי, וריאציה
+vertical | מאונך
+vigorously | במרץ
+violation | עבירה, הפרה
+ward | מחלקה
+willing | מוכן
+wise | חכם, פיקח
+wish | משאלה, לבקש
+worldwide | כלל עולמי, בכל העולם
+worse | גרוע יותר
+worthy | ראוי
+yield | להיכנע, לוותר, לסגת, להניב, להפיק
+absurd | מגוחך, לא סביר
+accelerate | להאיץ
+accommodate | לאכסן, לשכן
+accompany | ללוות
+accustomed | מורגל
+aggressive | תוקפני, אלים
+agriculture | חקלאות
+allergic | אלרגי
+amass | לצבור, לערום
+applicant | מועמד
+arousing | מעורר
+as many as | רבים כמו (מספר גדול)
+ascertain | לוודא
+audit | ביקורת
+award | פרס, להעניק פרס
+bank | לערום, בנק, גדה
+betray | לבגוד
+blank | ריק, רווח
+broadcast | לשדר
+cage | כלוב, לכלוא
+cancer | סרטן (מחלה)
+capture | ללכוד
+cargo | מטען
+carve | לחרוט
+cemetery | בית קברות
+church | כנסיה
+circulate | לנוע במחזוריות, להפיץ
+colleague | עמית, קולגה
+commendably | באופן ראוי לשבח
+commends | לציין לשבח
+commentary | פרשנות
+compel | לאלץ, לחייב
+compile | לאסוף, לקבץ
+conceal | להסתיר
+conceive | להרהר, לעבר
+concerted | מתואם
+concurrence | להתרחש בו זמנית
+condemned | לגנות, נידון ל-
+confess | להודות
+confession | וידוי
+confinement | מאסר, ריתוק
+conform | להתאים, להסתגל
+confuse | לבלבל
+conquer | לכבוש
+conquest | כיבוש
+conservation | שימור
+conservative | שמרני
+conserve | לשמר
+contrast | להוות ניגוד, ניגוד
+conversation | שיחה
+coordination | קואורדינציה, תיאום
+coordinator | מתאם
+crack | סדק, לסדוק
+crave | להשתוקק
+crude | וולגרי, גס, גולמי
+cuisine | מטבח, בישול
+darkness | חשיכה
+delusions | אשליות, הזיות
+depend on | תלוי ב-
+desolate | הרוס, שומם, נטוש
+destructive | הרסני
+detract | להפחית, לגרוע
+deviant | סוטה
+device | מכשיר
+devise | לתכנן, להמציא
+dictate | להכתיב, לפקד
+disorder | הפרעה
+disregard | להתעלם
+dissolve | להתמוסס
+district | מחוז
+divine | אלוהי
+divinity | אלוהות
+downhill | מדרון, מורד

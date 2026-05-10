@@ -1,0 +1,5060 @@
+{
+  "b1": [
+    {
+      "en": "excessive",
+      "he": "מוגזם, מופרז",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "general",
+      "he": "כללי",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "generalize",
+      "he": "להכליל",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "image",
+      "he": "תמונה, תדמית",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "imaginary",
+      "he": "דמיוני, מדומה",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "imaginative",
+      "he": "בעל דמיון",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "imagine",
+      "he": "לדמיין",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "inaccessible",
+      "he": "לא נגיש",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "interest",
+      "he": "עניין, אינטרס",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "interesting",
+      "he": "מעניין",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "joy",
+      "he": "שמחה",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "lame",
+      "he": "נכה, חלש, עלוב",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "link",
+      "he": "קישור, לחבר",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "linked with",
+      "he": "קשור ל-",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "lose",
+      "he": "לאבד, להפסיד",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "lost",
+      "he": "אבוד, מבוזבז",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "mean",
+      "he": "להתכוון, אכזרי",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "meaning",
+      "he": "משמעות",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "means",
+      "he": "אמצעים, משאבים",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "medication",
+      "he": "טיפול תרופתי",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "medicine",
+      "he": "תרופה, רפואה",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "mild",
+      "he": "מתון, עדין",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "mobile",
+      "he": "נייד",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "move",
+      "he": "להזיז, לרגש",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "need",
+      "he": "צורך, להזדקק",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "pardon",
+      "he": "חנינה, לסלוח",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "progress",
+      "he": "התקדמות, להתקדם",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "progressive",
+      "he": "מתקדם",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "research",
+      "he": "מחקר, לחקור",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "rise",
+      "he": "עלייה, להתרומם",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "rude",
+      "he": "חצוף",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "rudely",
+      "he": "בחוצפה",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "scale",
+      "he": "סולם, קנה מידה",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "science",
+      "he": "מדע",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "scientific",
+      "he": "מדעי",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "scientist",
+      "he": "מדען",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "search",
+      "he": "חיפוש, לחפש",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "seat",
+      "he": "מושב, להושיב",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "send",
+      "he": "לשלוח",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "session",
+      "he": "מפגש, ישיבה",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "soft",
+      "he": "רך",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "softly",
+      "he": "ברכות",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "source",
+      "he": "מקור, מוצא",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "stage",
+      "he": "שלב, במה",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "tail",
+      "he": "זנב, לעקוב",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "therapy",
+      "he": "טיפול, תרפיה",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "turn",
+      "he": "תור, לסובב",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "type",
+      "he": "סוג",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "unattractive",
+      "he": "לא מושך",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "use",
+      "he": "שימוש, להשתמש",
+      "level": "Basic",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "private",
+      "he": "פרטי",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "profound",
+      "he": "מעמיק, עמוק",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "profoundly",
+      "he": "עמוקות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "populous",
+      "he": "מאוכלס בצפיפות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "predator",
+      "he": "טורף",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "innovate",
+      "he": "לחדש, להמציא",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "inspiration",
+      "he": "השראה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "inspire",
+      "he": "לעורר השראה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "invent",
+      "he": "להמציא",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "acquisition",
+      "he": "רכישה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "adore",
+      "he": "להעריץ, לחבב",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "alternate between",
+      "he": "להחליף בין אפשרויות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "amaze",
+      "he": "להדהים",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "amazing",
+      "he": "מדהים",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "animate",
+      "he": "להחיות, ערני",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "animation",
+      "he": "אנימציה, הנפשה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "aspiration",
+      "he": "שאיפה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "attire",
+      "he": "לבוש",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "authentically",
+      "he": "באמת",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "authenticate",
+      "he": "לאמת, לאשר",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "become",
+      "he": "להפוך ל-",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "branch",
+      "he": "סניף, ענף",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "campaign",
+      "he": "קמפיין, מסע פרסום",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "climate",
+      "he": "אקלים",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "contain",
+      "he": "להכיל",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "exaggeration",
+      "he": "הגזמה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "expand",
+      "he": "להרחיב, להתפשט",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "fatal",
+      "he": "קטלני",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "fate",
+      "he": "גורל",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "festivity",
+      "he": "חגיגיות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    }
+  ],
+  "b2": [
+    {
+      "en": "fortunate",
+      "he": "בר מזל",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "fortune",
+      "he": "הון, מזל",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "gesture",
+      "he": "מחווה, תנועה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "gravitation",
+      "he": "כוח המשיכה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "ill",
+      "he": "חולה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "illness",
+      "he": "מחלה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "inanimate",
+      "he": "דומם",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "inaudible",
+      "he": "שלא ניתן לשמוע",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "individual",
+      "he": "פרט, יחיד",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "inventor",
+      "he": "ממציא",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "inventory",
+      "he": "רשימת מלאי",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "isolate",
+      "he": "לבודד",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "magical",
+      "he": "קסום",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "market",
+      "he": "שוק, לשווק",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "nomination",
+      "he": "מינוי, מועמדות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "nominee",
+      "he": "מועמד",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "ordain",
+      "he": "להסמיך, למנות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "overestimated",
+      "he": "העריך יתר על המידה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "overlook",
+      "he": "להתעלם, להעלים עין",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "peer",
+      "he": "עמית, שווה מעמד",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "plant",
+      "he": "לשתול, צמח, מפעל",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "plantation",
+      "he": "מטע",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "population",
+      "he": "אוכלוסייה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "pure",
+      "he": "טהור",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "purification",
+      "he": "טיהור",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "range",
+      "he": "טווח",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "recruit",
+      "he": "לגייס",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "recruitment",
+      "he": "גיוס",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "rehabilitation",
+      "he": "שיקום",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "relate",
+      "he": "לספר, לייחס",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "relations",
+      "he": "יחסים",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "relationship",
+      "he": "מערכת יחסים, קשר",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "relative",
+      "he": "קרוב משפחה, יחסי",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "relatively",
+      "he": "באופן יחסי",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "release",
+      "he": "לשחרר, לפרסם",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "request",
+      "he": "לבקש, בקשה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "ruin",
+      "he": "להרוס",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "ruins",
+      "he": "הריסות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "sacred",
+      "he": "קדוש, מקודש",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "shelter",
+      "he": "מחסה, לגונן",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "slavery",
+      "he": "עבדות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "strike",
+      "he": "להכות, לתקוף, לשבות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "target",
+      "he": "מטרה, להפוך למטרה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "tempt",
+      "he": "לפתות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "tense",
+      "he": "מתוח, לחוץ",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "tension",
+      "he": "מתח",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "tradition",
+      "he": "מסורת",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "transplant",
+      "he": "השתלה, להשתיל",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "underestimated",
+      "he": "העריך נמוך מדי",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "unfortunate",
+      "he": "אומלל, חסר מזל",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "urge",
+      "he": "דחף, לדחוק ב-",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "urgency",
+      "he": "דחיפות",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "urgent",
+      "he": "דחוף",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "vast",
+      "he": "רחב, עצום",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "version",
+      "he": "גרסה",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "withhold",
+      "he": "למנוע מ-",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "witness",
+      "he": "עד, להיות עד ל-",
+      "level": "Medium",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "stress",
+      "he": "לחץ, דגש, להלחיץ",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "substitute",
+      "he": "תחליף, להחליף",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "superficial",
+      "he": "שטחי",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "distressingly",
+      "he": "באופן מרגיז",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "encompass",
+      "he": "להקיף, להכיל",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "fall",
+      "he": "ליפול, נפילה, סתיו",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "hectic",
+      "he": "עמוס, קדחתני",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "achieve",
+      "he": "להשיג",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "act",
+      "he": "לפעול, מעשה, לשחק",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "allure",
+      "he": "פיתוי, לפתות",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "condone",
+      "he": "למחול, לסלוח",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "constitute",
+      "he": "להוות, להרכיב",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "distress",
+      "he": "מצוקה",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "incite",
+      "he": "להסית, לשלהב",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "industrialization",
+      "he": "תיעוש",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "industrious",
+      "he": "חרוץ, שקדן",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "industriously",
+      "he": "בשקדנות",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "industry",
+      "he": "תעשייה",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "limit",
+      "he": "גבול, להגביל",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "lure",
+      "he": "פיתיון, לפתות",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "luring",
+      "he": "מפתה",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "mediate",
+      "he": "לתווך",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "mediator",
+      "he": "מתווך",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    }
+  ],
+  "b3": [
+    {
+      "en": "mourn",
+      "he": "להתאבל",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "onset",
+      "he": "התחלה, התקפה",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "parallel",
+      "he": "מקביל, להקביל",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "pledge",
+      "he": "הבטחה, להתחייב",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "projection",
+      "he": "השלכה, הקרנה",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "seduction",
+      "he": "פיתוי",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "sophisticated",
+      "he": "מתוחכם",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "sophistication",
+      "he": "מורכבות, תחכום",
+      "level": "Extreme",
+      "unit": "Unit 5",
+      "source": "Kidum"
+    },
+    {
+      "en": "active",
+      "he": "פעיל",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "addition",
+      "he": "תוספת",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "additional",
+      "he": "נוסף",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "advise",
+      "he": "לייעץ, להמליץ/להודיע",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "appeal",
+      "he": "לערער/פנייה/ערעור/משיכה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "appealed to",
+      "he": "משך/פנה אל",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "assign",
+      "he": "להקצות",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "aware",
+      "he": "להיות מודע",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "besides",
+      "he": "כמו כן, חוץ מזה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "bleed",
+      "he": "לדמם",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "blind",
+      "he": "לעוור/עיוור",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "blindly",
+      "he": "באופן עיוור",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "blood",
+      "he": "דם",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "blunt",
+      "he": "קהה/בוטה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "broad",
+      "he": "רחב",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "broadly",
+      "he": "בדרך כלל/באופן רחב",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "bury",
+      "he": "לקבור",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "carefully",
+      "he": "בזהירות",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "century",
+      "he": "מאה (תקופה)",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "certificate",
+      "he": "תעודה, אישור",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "certify",
+      "he": "לאשר/להסמיך",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "clean",
+      "he": "לנקות/נקי",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "column",
+      "he": "עמוד/טור",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "confusing",
+      "he": "מבלבל",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "confusion",
+      "he": "מהומה/בלבול",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "consume",
+      "he": "לצרוך/לעכל",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "consumer",
+      "he": "צרכן",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "deal",
+      "he": "להתמודד/עסקה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "deliberate",
+      "he": "לדון/מכוון",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "deliberation",
+      "he": "דיון/שקילה/תשומת לב",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "destination",
+      "he": "יעד",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "destined for",
+      "he": "מיועד ל",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "develop",
+      "he": "לפתח",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "developed",
+      "he": "מפותח מתועש",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "development",
+      "he": "פיתוח/התפתחות",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "doubt",
+      "he": "להטיל ספק/ספק",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "drop out",
+      "he": "לנשור (למשל מהלימודים)",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "empire",
+      "he": "אימפריה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "enjoy",
+      "he": "ליהנות",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "envelope",
+      "he": "מעטפה, מעטפת עטיפה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "face",
+      "he": "לפנות/לעמוד פנים אל פנים/פנים",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "facial",
+      "he": "שקשור לפנים",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "globe",
+      "he": "גלובוס/כדור הארץ",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "good",
+      "he": "טוב",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "goods",
+      "he": "סחורה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "hint",
+      "he": "לרמוז/רמז",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "hope",
+      "he": "לקוות/תקווה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "in addition",
+      "he": "בנוסף",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "language",
+      "he": "שפה",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "learn",
+      "he": "ללמוד",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "lesson",
+      "he": "שיעור",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "once",
+      "he": "פעם, פעם אחת",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "safe",
+      "he": "בטוח/כספת",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "sudden",
+      "he": "פתאומי",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "surface",
+      "he": "לעלות, להגיח/משטח",
+      "level": "Basic",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "misunderstood",
+      "he": "שהבינו אותו לא נכון",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "neither",
+      "he": "אף לא אחד מהשניים",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "notice",
+      "he": "לשים לב, להבחין/הודעה, תזכורת",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "occupation",
+      "he": "עיסוק, מקצוע/כיבוש",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "assignment",
+      "he": "משימה",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "assure",
+      "he": "להבטיח",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "budget",
+      "he": "תקציב",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "chronology",
+      "he": "רצף אירועים/כרונולוגיה",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "clarify",
+      "he": "להבהיר, להסביר/לסנן (נוזל למשל)",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "collide",
+      "he": "להתנגש",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "collision",
+      "he": "התנגשות",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "compatible",
+      "he": "מתאים",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "contact",
+      "he": "ליצור קשר/מגע",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "contract",
+      "he": "להתכווץ, לצמצם/הסכם, חוזה",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "convert",
+      "he": "להמיר",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "demonstrate",
+      "he": "להדגים/להפגין",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "economic",
+      "he": "כלכלי, פיננסי, חסכוני",
+      "level": "Medium",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    }
+  ],
+  "b5": [
+    {
+      "en": "penal",
+      "he": "פלילי, של עונש",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "penalize",
+      "he": "להעניש",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "penalty",
+      "he": "עונש, קנס",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "polar",
+      "he": "קוטבי",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "polarize",
+      "he": "לקטב/להתנגד",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "prominence",
+      "he": "חשיבות/התבלטות",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "prominent",
+      "he": "בולט/חשוב",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "slander",
+      "he": "להשמיץ, להכפיש/הכפשה",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "stiff",
+      "he": "נוקשה/קשיח",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "supplant",
+      "he": "להחליף/לתפוס מקומו בכח",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "surmount",
+      "he": "להתגבר על",
+      "level": "Extreme",
+      "unit": "Unit 6",
+      "source": "Kidum"
+    },
+    {
+      "en": "area",
+      "he": "אזור",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "behave",
+      "he": "להתנהג",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "behavior",
+      "he": "התנהגות, התנהלות",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "buy",
+      "he": "לקנות, לרכוש",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "ceremony",
+      "he": "טקס",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "condition",
+      "he": "תנאי/מצב",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "conditional",
+      "he": "מותנה, בהתניה מסוימת",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "correspondence",
+      "he": "התכתבות/התאמה/הסכמה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "creative",
+      "he": "יצירתי",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "creature",
+      "he": "יצור/יציר",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "debate",
+      "he": "להתדיין/להתלבט/דיון",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "debt",
+      "he": "חוב",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "deliver",
+      "he": "לשלוח, להעביר/לשחרר/לשאת דברים",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "delivery",
+      "he": "משלוח/לידה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "element",
+      "he": "יסוד, אלמנט/רכיב",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "employ",
+      "he": "להעסיק/להפעיל",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "employment",
+      "he": "תעסוקה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "endurable",
+      "he": "נסבל",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "endurance",
+      "he": "כוח סבל",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "endure",
+      "he": "לסבול, לשאת/להחזיק מעמד",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "engage in",
+      "he": "להתעסק ב",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "engagement",
+      "he": "התחייבות/אירוסין",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "enough",
+      "he": "מספיק, די",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "enrich",
+      "he": "להעשיר",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "erase",
+      "he": "למחוק",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "evaluate",
+      "he": "להעריך",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "examine",
+      "he": "לבחון",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "experience",
+      "he": "ניסיון",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "explanation",
+      "he": "הסבר",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "fit",
+      "he": "להתאים/מתאים/כשיר",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "garbage",
+      "he": "אשפה, זבל",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "gift",
+      "he": "מתנה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "guess",
+      "he": "לנחש/ניחוש",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "headache",
+      "he": "כאב ראש",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "hear",
+      "he": "לשמוע",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "installation",
+      "he": "התקנה/התקן",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "involve",
+      "he": "לערב",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "join",
+      "he": "להצטרף",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "loud",
+      "he": "קולני, רועם",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "loudly",
+      "he": "בקול רם",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "molecule",
+      "he": "מולקולה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "more",
+      "he": "יותר",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "narrow",
+      "he": "לצמצם/צר",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "option",
+      "he": "אפשרות, אופציה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "other",
+      "he": "אחר, שונה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "proper",
+      "he": "הולם, מתאים/תקין",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "properly",
+      "he": "כיאות, היטב",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "question",
+      "he": "לשאול/לפקפק/שאלה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "questioned",
+      "he": "מוטל בספק/נשאל",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "respond",
+      "he": "להגיב",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "response",
+      "he": "תגובה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "serious",
+      "he": "רציני, חמור",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "tall",
+      "he": "גבוה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "teach",
+      "he": "ללמד",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "test",
+      "he": "לבחון/מבחן",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "unit",
+      "he": "יחידה",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "valuable",
+      "he": "בעל ערך, יקר ערך",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "value",
+      "he": "להעריך/להוקיר/ערך",
+      "level": "Basic",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "answer",
+      "he": "לפתור/להשיב/תשובה, פתרון",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "apparent",
+      "he": "גלוי, נראה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "appear",
+      "he": "להיראות, להופיע",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "approximately",
+      "he": "בקירוב",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "aspect",
+      "he": "אופי, הבט, פן/מראה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "attach",
+      "he": "לחבר",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "attain",
+      "he": "להשיג/לקבל",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "bright",
+      "he": "בהיר, זוהר/מבריק, פיקח",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "charge",
+      "he": "לטעון/לחייב/להאשים/להסתער",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "cheer",
+      "he": "לעודד/עידוד, שמחה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "classification",
+      "he": "סיווג, מיון",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    }
+  ],
+  "b6": [
+    {
+      "en": "classify",
+      "he": "לסווג, למיין",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "companion",
+      "he": "בן לוויה, חבר",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "compromise",
+      "he": "להתפשר/להעמיד בסיכון/פשרה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "confer",
+      "he": "להתייעץ/להעניק במתנה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "conference",
+      "he": "ועידה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "consistency",
+      "he": "סמיכות/עקביות/הרכב",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "detach",
+      "he": "להפריד, לנתק/להקצות",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "disappear",
+      "he": "להיעלם/להיכחד",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "distort",
+      "he": "לעוות, לסלף",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "distorted",
+      "he": "מעוות/שהושחת",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "distract",
+      "he": "להסיח",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "distraction",
+      "he": "הסחה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "event",
+      "he": "אירוע, מקרה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "exploit",
+      "he": "לנצל/למצות/להפיק תועלת",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "familiar with",
+      "he": "מכיר את, בקיא ב",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "feelings",
+      "he": "תחושות, רגשות",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "fertile",
+      "he": "פורה, שופע",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "fertility",
+      "he": "פוריות",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "fertilize",
+      "he": "להפרות",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "generate",
+      "he": "לייצר, לחולל",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "generators",
+      "he": "מחוללים/גנרטורים",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "hibernate",
+      "he": "להיות בתרדמת חורף",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "immodest",
+      "he": "חסר בושה, חצוף",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "inflict",
+      "he": "לגרום, להסב/להטיל (עונש)",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "inspection",
+      "he": "בדיקה, פיקוח",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "institute",
+      "he": "להקים, לייסד/מוסד, ארגון",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "intrude",
+      "he": "להפריע/להתפרץ",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "invade",
+      "he": "לפלוש",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "lethargic",
+      "he": "עייף, לאה, רדום",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "logic",
+      "he": "היגיון",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "medium",
+      "he": "בינוני, אמצעי/מדיום",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "mention",
+      "he": "לציין, להזכיר/אזכור",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "modest",
+      "he": "צנוע/מועט",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "motivation",
+      "he": "מוטיבציה, הנעה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "mundane",
+      "he": "יומיומי, שגרתי/ארצי",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "novelty",
+      "he": "חידוש/קישוט קטן",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "observe",
+      "he": "להתבונן/להבחין/לציין",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "obtain",
+      "he": "להשיג/לקבל",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "ornament",
+      "he": "עיטור, קישוט",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "outline",
+      "he": "לתאר בכלליות/קו מתאר",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "outstanding",
+      "he": "יוצא מהכלל, יוצא דופן",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "petition",
+      "he": "עצומה/עתירה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "polite",
+      "he": "מנומס",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "politely",
+      "he": "בנימוס",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "pool",
+      "he": "בריכת שחייה/מאגר",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "postpone",
+      "he": "לדחות למועד אחר",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "predict",
+      "he": "לחזות, לנבא",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "predictable",
+      "he": "צפוי",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "prediction",
+      "he": "תחזית/נבואה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "prize",
+      "he": "להוקיר, להעריך/פרס",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "prophecy",
+      "he": "נבואה, חזון",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "prophet",
+      "he": "נביא",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "provincial",
+      "he": "פרובינציאלי/מחוזי, אזורי",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "radiation",
+      "he": "קרינה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "regardless",
+      "he": "ללא התחשבות/למרות",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "reply",
+      "he": "להשיב",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "resemble",
+      "he": "להידמות",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "ritual",
+      "he": "פולחן",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "scene",
+      "he": "סצנה, מערכה/זירה/נוף",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "scenery",
+      "he": "נוף/תפאורה",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "smooth",
+      "he": "להחליק/להרגיע/חלק/עדין",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "strict",
+      "he": "קפדן, נוקשה/מוחלט",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "strictly",
+      "he": "בקפידה/בדיוק/בפירוש",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "submit",
+      "he": "להגיש/להיכנע",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "sympathetic",
+      "he": "אוהד, סימפתי",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "unpredictable",
+      "he": "בלתי צפוי",
+      "level": "Medium",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "adequate",
+      "he": "הולם/מספיק",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "ascend",
+      "he": "להתרומם, לנסוק, לעלות",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "boundary",
+      "he": "גבול, תחום",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "coarse",
+      "he": "גס, חסר עידון/בוטה",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "defer",
+      "he": "לעכב, לדחות/להיענות",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "descend",
+      "he": "לרדת, להנמיך",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "detain",
+      "he": "לעצור, לעכב, לכלוא",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "diverse",
+      "he": "מגוון/מובחן/שונה",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "diversity",
+      "he": "גיוון/נקודת מחלוקת",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "enroll in",
+      "he": "לקחת חלק ב",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "extent",
+      "he": "תחום, גבול/שיעור, מידה",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "hereditary",
+      "he": "תורשתי",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "inadequate",
+      "he": "בלתי מתאים/לקוי",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "inert",
+      "he": "אדיש",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    }
+  ],
+  "b7": [
+    {
+      "en": "inherit",
+      "he": "לקבל בירושה",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "leisure",
+      "he": "פנאי",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "mimic",
+      "he": "לחקות/חקין",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "narration",
+      "he": "סיפור, נרטיב/קריינות",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "porous",
+      "he": "מנוקב, מחורר",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "prerequisite",
+      "he": "שנדרש מראש",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "reliable",
+      "he": "אמין, מהימן",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "reliance",
+      "he": "ביטחון/תלות",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "seize",
+      "he": "לתפוס, ללכוד/לאחוז",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "sincerely",
+      "he": "בכנות",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "suppress",
+      "he": "להפסיק/למנוע/להדחיק",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "surveillance",
+      "he": "מעקב, פיקוח",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "sustain",
+      "he": "לתמוך/לסבול/להמשיך",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "sustainability",
+      "he": "קיימות",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "sustainable",
+      "he": "בר קיימא",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "synonym",
+      "he": "מילה נרדפת",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "unreliable",
+      "he": "לא אמין, לא יציב",
+      "level": "Extreme",
+      "unit": "Unit 7",
+      "source": "Kidum"
+    },
+    {
+      "en": "alert",
+      "he": "להזהיר, להודיע/אזהרה/דרוך",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "angle",
+      "he": "להטות/זווית/פן",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "arrive",
+      "he": "להגיע",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "availability",
+      "he": "זמינות",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "begin",
+      "he": "להתחיל",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "beginning",
+      "he": "התחלה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "bend",
+      "he": "לכופף, לעקם/עיקול, סיבוב",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "bend over",
+      "he": "להתכופף",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "bent",
+      "he": "מושחת/עקום/נחוש",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "between",
+      "he": "בין/בשותפות",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "borrow",
+      "he": "ללוות, לשאול/להעתיק",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "chapter",
+      "he": "פרק/תקופה/סניף",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "circuit",
+      "he": "להקיף/מעגל/מעגל חשמלי",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "circular",
+      "he": "מעגלי/מחזורי",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "custom",
+      "he": "מכס/מנהג",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "exchange",
+      "he": "להמיר, להחליף",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "explorer",
+      "he": "חוקר/מגלה ארצות",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "exploring",
+      "he": "עיסוק בחקר",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "express",
+      "he": "לבטא, להביע/להפגין/מהיר",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "expression",
+      "he": "הבעה/ביטוי",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "fast",
+      "he": "לצום/צום/מהיר",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "find",
+      "he": "למצוא",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "findings",
+      "he": "ממצאים",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "forget",
+      "he": "לשכוח",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "forgive",
+      "he": "לסלוח",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "front",
+      "he": "קדמי, פרונטאלי/חזית",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "function",
+      "he": "לתפקד/לשמש/פונקציה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "gap",
+      "he": "להרווח/רווח, פער",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "hobby",
+      "he": "תחביב",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "hold",
+      "he": "להחזיק/להכיל/להאמין/אחיזה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "insert",
+      "he": "להחדיר/לשבץ",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "light",
+      "he": "להדליק/קל/בהיר/אור",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "light bulb",
+      "he": "נורה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "lightly",
+      "he": "בקלות",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "location",
+      "he": "מיקום",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "malfunction",
+      "he": "תפקוד לקוי, כשל",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "natural",
+      "he": "טבעי",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "order",
+      "he": "לתת פקודה/להזמין/סדר/פקודה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "patient",
+      "he": "סבלני/מטופל",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "pipe",
+      "he": "צינור/מקטרת",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "pretend",
+      "he": "להעמיד פנים",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "profession",
+      "he": "מקצוע/הצהרה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "public",
+      "he": "ציבורי",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "publish",
+      "he": "לפרסם",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "quick",
+      "he": "מהיר, זריז/חפוז",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "quickly",
+      "he": "בזריזות",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "reproduce",
+      "he": "להתרבות/לשכפל",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "respect",
+      "he": "לכבד/יחס/כבוד",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "restrict",
+      "he": "להגביל, לאסור על",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "restriction",
+      "he": "מגבלה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "show",
+      "he": "להראות, להציג/הצגה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "sign",
+      "he": "לחתום/סימן/שלט",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "signal",
+      "he": "לסמן, לאותת/סימן",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "space",
+      "he": "להרווח/החלל החיצון/מרחב",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "spacecraft",
+      "he": "חללית",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "structure",
+      "he": "מבנה",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "topic",
+      "he": "נושא, תחום",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "voice",
+      "he": "להביע, לבטא/קול",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "volunteer",
+      "he": "להתנדב/מתנדב",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "weight",
+      "he": "משקל/משקולת",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "weightless",
+      "he": "חסר משקל",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "zone",
+      "he": "אזור",
+      "level": "Basic",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "ambition",
+      "he": "שאיפה, אמביציה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    }
+  ],
+  "b8": [
+    {
+      "en": "announce",
+      "he": "להודיע, להכריז",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "announcement",
+      "he": "הכרזה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "attitude",
+      "he": "גישה, עמדה/מצב רוח",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "bond",
+      "he": "להיקשר/קשר/איגוד/אגרת חוב",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "case",
+      "he": "לארוז/תיבה/תיק/משפט/מקרה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "cave",
+      "he": "לחפור/מערה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "citizen",
+      "he": "אזרח, תושב",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "coexist",
+      "he": "להתקיים יחד",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "commission",
+      "he": "עמלה/הוראה/מינוי/ועדה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "commissioner",
+      "he": "נציב, ממונה, מפקח",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "confiscate",
+      "he": "להחרים",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "conformity",
+      "he": "שמרנות/צייתנות",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "cost",
+      "he": "עלות, מחיר",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "costly",
+      "he": "יקר",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "counteract",
+      "he": "לבטל, לנטרל",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "data",
+      "he": "מידע",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "denounce",
+      "he": "להוקיע, לגנות/להאשים",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "dismiss",
+      "he": "לפטר, להדיח/לסלק",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "disposition",
+      "he": "מזג, אופי/נטייה/היערכות",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "entitled",
+      "he": "זכאי, ראוי",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "eventual",
+      "he": "סופי",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "exist",
+      "he": "להתקיים",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "existence",
+      "he": "קיום",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "extract",
+      "he": "לתמצת/להפיק/לחלץ",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "finance",
+      "he": "לממן/מימון, כספים",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "financial",
+      "he": "כספי, פיננסי",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "fragile",
+      "he": "שביר",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "garment",
+      "he": "להלביש/לבוש, בגד/כיסוי",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "illustrate",
+      "he": "לאייר, לעטר/להמחיש",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "illustration",
+      "he": "איור",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "impair",
+      "he": "לפגום, להחליש",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "in case of",
+      "he": "במקרה של",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "incentive",
+      "he": "תמריץ",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "introduce",
+      "he": "להציג",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "introduction",
+      "he": "מבוא/הצגה, היכרות",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "mark",
+      "he": "לסמן/סימן, אות/חותם",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "negotiation",
+      "he": "משא ומתן",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "novel",
+      "he": "רומן, נובלה/חדש",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "organization",
+      "he": "ארגון",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "organize",
+      "he": "לסדר, לארגן",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "passion",
+      "he": "תאווה, התלהבות/תשוקה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "passionate",
+      "he": "נלהב/מלא תשוקה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "persecute",
+      "he": "לרדוף, להציק",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "persecution",
+      "he": "רדיפה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "policy",
+      "he": "מדיניות",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "position",
+      "he": "עמדה/תפקיד",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "possess",
+      "he": "לכבוש/להיות בעלים של",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "possession",
+      "he": "בעלות, חזקה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "process",
+      "he": "לעבד/תהליך",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "quote",
+      "he": "לצטט/ציטוט",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "rail",
+      "he": "מסילה/מעקה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "rein",
+      "he": "לרסן, לבלום/מושכות",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "remark",
+      "he": "להבחין/להעיר/הערה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "remarkable",
+      "he": "ראוי לציון, יוצא דופן",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "repetition",
+      "he": "חזרה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "revise",
+      "he": "לתקן, לשפר",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "revision",
+      "he": "בדיקה מחדש",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "rumor",
+      "he": "שמועה",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "seed",
+      "he": "לזרוע/גרעין",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "site",
+      "he": "לאתר, למקם/אתר",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "soil",
+      "he": "ללכלך/אדמה, קרקע/לכלוך",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "strive",
+      "he": "לשאוף, לחתור",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "substance",
+      "he": "חומר",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "tangible",
+      "he": "מוחשי, ברור",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "terminate",
+      "he": "לסיים",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "twist",
+      "he": "לפתל/לעוות/תסבוכת/תפנית",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "verify",
+      "he": "לאמת, לוודא",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "waste",
+      "he": "לבזבז/פסולת",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "wasteful",
+      "he": "בזבזני",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "wrap",
+      "he": "לעטוף, לארוז",
+      "level": "Medium",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "adorn",
+      "he": "לקשט, לעטר",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "advocate",
+      "he": "לסנגר/לתמוך/חסיד",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "allusion",
+      "he": "אזכור/אלוזיה, הרמז",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "burden",
+      "he": "להעמיס, להכביד/נטל, משא",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "contend",
+      "he": "להתחרות, להתמודד/לטעון",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "deter",
+      "he": "להרתיע",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "docile",
+      "he": "צייתן, כנוע",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "enthusiast",
+      "he": "נלהב/מעריץ, חסיד",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "grant",
+      "he": "להעניק/מענק",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "indignant",
+      "he": "אינו מרוצה כתוצאה מחוסר צדק",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    }
+  ],
+  "b9": [
+    {
+      "en": "liability",
+      "he": "התחייבות/מעמסה/אפשרות",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "minute",
+      "he": "דקה/מיניאטורי, זעיר",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "nasal",
+      "he": "חוטמי, שקשור לאף",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "penitence",
+      "he": "חרטה/תשובה",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "potter",
+      "he": "קדר",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "pottery",
+      "he": "קדרות",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "precipitate",
+      "he": "להאיץ/להטיל/לעבות/משקע",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "promote",
+      "he": "לקדם/להעלות",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "promotion",
+      "he": "קידום",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "rival",
+      "he": "יריב, מתחרה",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "rivalry",
+      "he": "יריבות",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "slant",
+      "he": "לנטות/מדרון, שיפוע/דעה קדומה",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "sting",
+      "he": "לדקור, לעקוץ/עקיצה",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "syllable",
+      "he": "הברה",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "thaw",
+      "he": "להפשיר",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "transaction",
+      "he": "עסקה/העברה (לרוב כספית)",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "trigger",
+      "he": "להפעיל, להתניע/הדק",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "upheaval",
+      "he": "מהפך, תהפוכות",
+      "level": "Extreme",
+      "unit": "Unit 8",
+      "source": "Kidum"
+    },
+    {
+      "en": "coast",
+      "he": "חוף",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "deep",
+      "he": "עמוק",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "demand",
+      "he": "לדרוש/דרישה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "depth",
+      "he": "עומק",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "design",
+      "he": "לעצב/עיצוב",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "display",
+      "he": "להציג/תצוגה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "door",
+      "he": "דלת",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "doorsteps",
+      "he": "מפתן, סף",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "draw",
+      "he": "לרשום/למשוך/תיקו",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "draw upon",
+      "he": "להסתמך על",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "drink",
+      "he": "לשתות/משקה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "eat",
+      "he": "לאכול",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "edible",
+      "he": "אכיל",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "factory",
+      "he": "מפעל",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "final",
+      "he": "סופי, אחרון",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "floor",
+      "he": "קומה/רצפה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "fly",
+      "he": "לעוף, לטוס",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "fruit",
+      "he": "פרי",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "fruitless",
+      "he": "חסר פרי, עקר",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "fuel",
+      "he": "לתדלק/דלק",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "job",
+      "he": "עבודה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "knot",
+      "he": "לקשור/קשר",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "landscape",
+      "he": "נוף",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "lean",
+      "he": "להישען/רזה, כחוש",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "load",
+      "he": "להטעין/להעמיס/משא",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "match",
+      "he": "להתאים/גפרור/תחרות",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "meet",
+      "he": "להיפגש",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "meeting",
+      "he": "פגישה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "name",
+      "he": "לכנות בשם/שם",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "namely",
+      "he": "כלומר",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "note",
+      "he": "פתק/הערה/להבחין",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "notebook",
+      "he": "מחברת",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "pause",
+      "he": "להפסיק/הפסקה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "pet",
+      "he": "ללטף/חיית מחמד",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "pick",
+      "he": "לבחור/לקטוף",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "poem",
+      "he": "שיר",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "poet",
+      "he": "משורר",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "poetry",
+      "he": "שירה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "practice",
+      "he": "לתרגל, להתאמן/אימון",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "purchase",
+      "he": "לרכוש/רכישה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "push",
+      "he": "לדחוף/דחיפה/תמריץ",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "race",
+      "he": "להתחרות/מרוץ/גזע, מין",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "racial",
+      "he": "גזעני",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "racing",
+      "he": "מתחרה",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "racism",
+      "he": "גזענות",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "rate",
+      "he": "להעריך/לדרג/קצב",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "reach",
+      "he": "להגיע/להושיט יד",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "rehearsal",
+      "he": "חזרה, תרגול",
+      "level": "Basic",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "abduct",
+      "he": "לחטוף",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "abduction",
+      "he": "חטיפה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "age",
+      "he": "גיל/תקופה, עידן",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "aging",
+      "he": "התבגרות, הזדקנות",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "atmosphere",
+      "he": "אווירה/אטמוספירה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "continuity",
+      "he": "המשכיות",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "continuous",
+      "he": "המשכי, מחזורי",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "declaration",
+      "he": "הצהרה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "declare",
+      "he": "להצהיר",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "durable",
+      "he": "יציב, מתמשך",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "duration",
+      "he": "משך (זמן)",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "emerge",
+      "he": "לצאת מתוך, להתגלות",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "exhausting",
+      "he": "מתיש",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "exhaustion",
+      "he": "תשישות/מיצוי",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    }
+  ],
+  "b10": [
+    {
+      "en": "faithful to",
+      "he": "נאמן ל",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "fictional",
+      "he": "בדיוני, בדוי",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "flood",
+      "he": "שיטפון, הצפה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "foreign",
+      "he": "חוץ/זר",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "foresight",
+      "he": "ראיית הנולד",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "gather",
+      "he": "לכנס, לאסוף",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "gathering",
+      "he": "אסיפה, מפגש",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "grace",
+      "he": "לעשות חסד/חן/ברכה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "gracious",
+      "he": "חינני/אדיב",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "graciously",
+      "he": "באדיבות",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "greet",
+      "he": "לברך לשלום",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "gross",
+      "he": "ברוטו/דוחה, מגעיל",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "growl",
+      "he": "לנהום, לרטון",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "harvest",
+      "he": "לקצור/קציר",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "haze",
+      "he": "להציק/ערפל, אובך",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "hive",
+      "he": "כוורת",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "illiteracy",
+      "he": "חוסר יכולת לקרוא",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "illiterate",
+      "he": "אנאלפביתי, בור",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "imprisonment",
+      "he": "כליאה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "infiltrate",
+      "he": "להסתנן, לחדור",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "inflammation",
+      "he": "התלקחות/דלקת",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "injection",
+      "he": "זריקה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "insight",
+      "he": "תובנה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "instrument",
+      "he": "כלי (למשל: נגינה)",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "interaction",
+      "he": "אינטראקציה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "intervene",
+      "he": "להתערב, להפריע",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "intervention",
+      "he": "התערבות",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "investigate",
+      "he": "לחקור",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "investigation",
+      "he": "חקירה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "labor",
+      "he": "לעבוד/לידה/עבודה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "limber",
+      "he": "גמיש/זריז",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "literate",
+      "he": "משכיל, קורא וכותב",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "literature",
+      "he": "ספרות",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "mechanism",
+      "he": "מנגנון/מערכת מכונות",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "merge",
+      "he": "למזג/להתמזג",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "meticulous",
+      "he": "קפדני, מדויק",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "migration",
+      "he": "נדידה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "moderate",
+      "he": "מתון",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "moderation",
+      "he": "מתינות, איפוק",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "motion",
+      "he": "תנועה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "odor",
+      "he": "ריח",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "omission",
+      "he": "השמטה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "omit",
+      "he": "להשמיט",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "overdo",
+      "he": "לעשות יתר על המידה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "pass",
+      "he": "לעבור, לחלוף/מעבר",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "passage",
+      "he": "מעבר/קטע קריאה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "perceive",
+      "he": "לתפוס, להבחין",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "period",
+      "he": "תקופה, עונה/וסת",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "pit",
+      "he": "בור",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "portion",
+      "he": "חלק, מנה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "pour",
+      "he": "לשפוך, למזוג",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "pride",
+      "he": "גאווה, יהירות",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "radiant",
+      "he": "קורן, זוהר",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "recipe",
+      "he": "מרשם/מתכון",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "reflect",
+      "he": "לשקף/להרהר",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "reflection",
+      "he": "השתקפות/הרהור",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "refuge",
+      "he": "מקלט, מפלט",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "refugee",
+      "he": "פליט",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "remedy",
+      "he": "לרפא/תרופה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "report",
+      "he": "לדווח/דיווח",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "repression",
+      "he": "הדחקה/דיכוי",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "repressive",
+      "he": "מדכא",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "resolution",
+      "he": "החלטה/רזולוציה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "restore",
+      "he": "לשחזר, להשיב",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "salary",
+      "he": "משכורת",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "scorch",
+      "he": "לצרוב/צריבה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "settle",
+      "he": "ליישב",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "split",
+      "he": "לפצל, להתפצל/פיצול",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "stack",
+      "he": "לאסוף לערימה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "stem from",
+      "he": "לנבוע מ",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "submerge",
+      "he": "להטביע/לכסות/להחביא",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "surpass",
+      "he": "להתעלות מעל",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "survey",
+      "he": "לסקור/סקר",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "symmetry",
+      "he": "סימטריה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "taste",
+      "he": "לטעום/טעם",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "temporary",
+      "he": "זמני",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "tender",
+      "he": "עדין",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "unlock",
+      "he": "לשחרר/לפתוח",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "withdraw",
+      "he": "לסגת",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    },
+    {
+      "en": "withdrawal",
+      "he": "נסיגה",
+      "level": "Medium",
+      "unit": "Unit 9",
+      "source": "Kidum"
+    }
+  ]
+}

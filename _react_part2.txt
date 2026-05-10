@@ -1,0 +1,319 @@
+
+function StatRow({ t, color, label, value, faint }) {
+  return <div style={{ display:'flex', alignItems:'center', gap:10 }}>
+    <StatusDot color={color}/>
+    <div style={{ fontSize:13.5, color: faint ? t.c.muted : t.c.ink2, fontWeight:500 }}>{label}</div>
+    <div style={{ flex:1 }}/>
+    <div style={{ fontFamily:t.fontEn, fontWeight:700, fontSize:15, color:t.c.ink }}>{value}</div>
+  </div>;
+}
+function QuickAction({ t, icon, label, sub, onClick }) {
+  return <div onClick={onClick} style={{ background:t.c.surface, borderRadius:t.rCard, padding:14, display:'flex', flexDirection:'column', gap:10, height:92, cursor:'pointer', border: t.dark ? `0.5px solid ${t.c.line}` : 'none', boxShadow: t.dark ? 'none' : '0 1px 0 rgba(20,20,40,0.025), 0 6px 22px -12px rgba(20,20,40,0.08)' }}>
+    <Icon name={icon} size={20} color={t.accent} stroke={1.8}/>
+    <div style={{ marginTop:'auto' }}>
+      <div style={{ fontSize:14, fontWeight:700, color:t.c.ink, lineHeight:1.1 }}>{label}</div>
+      <div style={{ fontSize:11.5, color:t.c.muted, marginTop:2 }}>{sub}</div>
+    </div>
+  </div>;
+}
+function StatBlock({ label, value, color }) {
+  return <div style={{ textAlign:'center' }}>
+    <div style={{ fontSize:28, fontWeight:800, color, lineHeight:1 }}>{value}</div>
+    <div style={{ fontSize:12, color:'#94a3b8', marginTop:4 }}>{label}</div>
+  </div>;
+}
+
+function HomeScreen({ t, allWords, progress, stats, streak, onStartFlash, onNavigate }) {
+  const now = new Date();
+  const hour = now.getHours();
+  const greeting = hour < 5 ? 'לילה טוב' : hour < 12 ? 'בוקר טוב' : hour < 17 ? 'צהריים טובים' : 'ערב טוב';
+  const pct = stats.total > 0 ? Math.round((stats.known / stats.total) * 100) : 0;
+
+  const dueForReview = useMemo(() => {
+    const n = Date.now();
+    return allWords.filter(w => { const p = progress[w.en]; return p && p.status === 'known' && (p.nextReview || 0) <= n; });
+  }, [allWords, progress]);
+
+  const learningWords = useMemo(() => allWords.filter(w => progress[w.en]?.status === 'learning'), [allWords, progress]);
+  const unseenWords = useMemo(() => allWords.filter(w => !progress[w.en] || progress[w.en].status === 'unseen'), [allWords, progress]);
+
+  const nextWord = useMemo(() => {
+    const candidates = [...learningWords, ...dueForReview, ...unseenWords];
+    return candidates[0] || null;
+  }, [learningWords, dueForReview, unseenWords]);
+
+  const startStudy = () => {
+    const list = [...shuffle(learningWords), ...shuffle(dueForReview), ...shuffle(unseenWords)].slice(0, 40);
+    onStartFlash(list.length > 0 ? list : shuffle(allWords).slice(0, 20));
+  };
+
+  return <div className="screen-in" style={{ padding:`16px ${t.pad}px 0`, fontFamily:t.fontHe }}>
+    <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'6px 4px 16px' }}>
+      <div>
+        <div style={{ fontSize:13, color:t.c.muted, marginBottom:4 }}>
+          {greeting} · {now.toLocaleDateString('he-IL', { weekday:'long', day:'numeric', month:'long' })}
+        </div>
+        <div style={{ fontSize:24, fontWeight:700, letterSpacing:'-0.01em', color:t.c.ink, lineHeight:1.2 }}>
+          שלום, אמיר.<br/>
+          <span style={{ color:t.c.ink2, fontWeight:600, fontSize:20 }}>בוא נמשיך ללמוד.</span>
+        </div>
+      </div>
+      <div style={{ display:'flex', alignItems:'center', gap:6 }}>
+        <Icon name="flame" size={16} color={t.c.statusAmber} stroke={1.8}/>
+        <span style={{ fontSize:15, fontWeight:700, color:t.c.ink2, fontFamily:t.fontEn }}>{streak}</span>
+      </div>
+    </div>
+
+    <Card t={t} pad={18} style={{ marginBottom:18 }}>
+      <div style={{ display:'flex', alignItems:'center', gap:18 }}>
+        <Ring t={t} value={pct} size={118} stroke={9} label={`${pct}%`} sub="התקדמות"/>
+        <div style={{ flex:1, display:'flex', flexDirection:'column', gap:14 }}>
+          <StatRow t={t} color={t.c.statusGreen} label="יודע" value={stats.known}/>
+          <StatRow t={t} color={t.accent} label="ללמידה" value={stats.learning}/>
+          <StatRow t={t} color={t.c.muted} label="טרם מוין" value={stats.unseen} faint/>
+        </div>
+      </div>
+      <div style={{ height:0.5, background:t.c.line, margin:'16px -4px 12px', opacity:0.7 }}/>
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+        <span style={{ fontSize:13, color:t.c.muted }}>סה״כ {stats.total.toLocaleString()} מילים · Kidum</span>
+        {learningWords.length > 0 && <span style={{ fontSize:12, color:t.accent, fontWeight:600 }}>{learningWords.length} ללמידה</span>}
+      </div>
+    </Card>
+
+    {nextWord && <div style={{ marginBottom:18 }}>
+      <SectionHead t={t} title="המשך ללמוד" action="כל המילים" onAction={() => onNavigate('vocab')}/>
+      <Card t={t} pad={0} style={{ overflow:'hidden' }}>
+        <div onClick={startStudy} style={{ padding:'16px 18px', display:'flex', alignItems:'center', gap:14, cursor:'pointer' }}>
+          <div style={{ flex:1 }}>
+            <div style={{ display:'flex', gap:8, alignItems:'center', marginBottom:6 }}>
+              <span style={{ fontSize:11.5, fontWeight:700, color:t.accent, letterSpacing:'0.06em' }}>{nextWord.unit}</span>
+              <span style={{ fontSize:11, color:t.c.muted }}>· {nextWord.level}</span>
+            </div>
+            <div style={{ fontFamily:t.fontSerif, fontSize:22, fontWeight:500, color:t.c.ink, letterSpacing:'-0.005em', direction:'ltr', textAlign:'right' }}>{nextWord.en}</div>
+            <div style={{ fontSize:13, color:t.c.ink2, marginTop:2 }}>{nextWord.he}</div>
+          </div>
+          <div style={{ width:42, height:42, borderRadius:21, background:t.accentSoft, display:'flex', alignItems:'center', justifyContent:'center' }}>
+            <Icon name="chevron-left" size={18} color={t.accent} stroke={2.2}/>
+          </div>
+        </div>
+        {dueForReview.length > 0 && <>
+          <Divider t={t}/>
+          <div onClick={() => onStartFlash(shuffle(dueForReview))} style={{ padding:'14px 18px', display:'flex', alignItems:'center', gap:14, cursor:'pointer' }}>
+            <div style={{ flex:1 }}>
+              <div style={{ fontSize:12, color:t.c.muted, marginBottom:2 }}>חזרה מתוזמנת</div>
+              <div style={{ fontSize:15, fontWeight:600, color:t.c.ink }}>{dueForReview.length} מילים מחכות לחזרה</div>
+            </div>
+            <Icon name="refresh" size={18} color={t.accent} stroke={1.8}/>
+          </div>
+        </>}
+      </Card>
+    </div>}
+
+    <div style={{ marginBottom:18 }}>
+      <Card t={t} onAccent pad={0} style={{ overflow:'hidden', position:'relative' }}>
+        <div style={{ position:'absolute', top:-30, left:-30, opacity:0.12 }}>
+          <AmirnetMark size={140} color="#fff" stroke={1}/>
+        </div>
+        <div style={{ position:'relative', zIndex:1, padding:18 }}>
+          <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.14em', opacity:0.85, marginBottom:8 }}>סימולציה אדפטיבית · MST</div>
+          <div style={{ fontSize:20, fontWeight:700, lineHeight:1.25, marginBottom:4 }}>מבחן פסיכומטרי אנגלית</div>
+          <div style={{ fontSize:13, opacity:0.8, marginBottom:18 }}>23 שאלות · 39 דקות · 6 חלקים</div>
+          <div onClick={() => onNavigate('test-overview')} style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:8, height:50, borderRadius:9999, background:'#fff', color:t.accentInk, fontWeight:700, fontSize:16, cursor:'pointer', userSelect:'none' }}>
+            התחל מבחן חדש
+            <Icon name="chevron-left" size={16} color={t.accentInk} stroke={2.2}/>
+          </div>
+        </div>
+      </Card>
+    </div>
+
+    <div style={{ marginBottom:24 }}>
+      <SectionHead t={t} title="פעולות מהירות"/>
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
+        <QuickAction t={t} icon="cards" label="כרטיסיות" sub={`${Math.min(20,unseenWords.length)} מילים חדשות`} onClick={() => onStartFlash(shuffle(unseenWords).slice(0, 20))}/>
+        <QuickAction t={t} icon="refresh" label="חזרה" sub={dueForReview.length > 0 ? `${dueForReview.length} מחכות` : 'אין כרגע'} onClick={() => dueForReview.length && onStartFlash(shuffle(dueForReview))}/>
+        <QuickAction t={t} icon="quote" label="השלמת משפטים" sub="תרגול שאלות" onClick={() => onNavigate('exam-sc')}/>
+        <QuickAction t={t} icon="book" label="הבנת הנקרא" sub="ספריית טקסטים" onClick={() => onNavigate('texts-list')}/>
+      </div>
+    </div>
+  </div>;
+}
+
+function FlashcardScreen({ t, list, progress, streak: initStreak, aiData, saveProgress, onBack }) {
+  const [index, setIndex] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const [localStreak, setLocalStreak] = useState(initStreak);
+  const [sessionStats, setSessionStats] = useState({ reviewed:0, known:0, learning:0 });
+  const [done, setDone] = useState(false);
+  const touchRef = useRef(null);
+
+  const word = list[index];
+  const wordProgress = word ? (progress[word.en] || { status:'unseen', fails:0, reviewLevel:0, nextReview:0 }) : null;
+  const ai = word ? (aiData[word.en] || aiData[word.en?.toLowerCase()] || aiData[word.en ? word.en.charAt(0).toUpperCase()+word.en.slice(1) : ''] || {}) : {};
+
+  const mark = useCallback((status) => {
+    if (!word) return;
+    const newProgress = { ...progress };
+    if (!newProgress[word.en]) newProgress[word.en] = { status:'unseen', fails:0, reviewLevel:0, nextReview:0 };
+    const now = Date.now(); const dayMs = 86400000;
+    let newStreak = localStreak;
+    if (status === 'known') {
+      newStreak++;
+      if (newStreak > 0 && newStreak % 10 === 0) fireConfetti();
+      const todayStr = new Date().toISOString().split('T')[0];
+      if (!newProgress[word.en].learnedDate) newProgress[word.en].learnedDate = todayStr;
+      const level = newProgress[word.en].reviewLevel || 0;
+      const daysMap = [1, 3, 7, 14];
+      newProgress[word.en].nextReview = now + (daysMap[Math.min(level,3)] * dayMs);
+      newProgress[word.en].reviewLevel = level + 1;
+      newProgress[word.en].inStack = false;
+      try { const ds = JSON.parse(localStorage.getItem('dailyStats') || '{}'); ds[todayStr] = (ds[todayStr] || 0) + 1; localStorage.setItem('dailyStats', JSON.stringify(ds)); } catch {}
+    } else if (status === 'learning') {
+      newStreak = 0;
+      newProgress[word.en].fails = (newProgress[word.en].fails || 0) + 1;
+      newProgress[word.en].reviewLevel = 0;
+      newProgress[word.en].nextReview = 0;
+    }
+    newProgress[word.en].status = status;
+    try {
+      const today = new Date().toDateString();
+      const raw = JSON.parse(localStorage.getItem('lastSession') || '{}');
+      const sess = raw.date && new Date(raw.date).toDateString() === today ? raw : { date:new Date().toISOString(), reviewed:0, markedKnown:0 };
+      sess.reviewed = (sess.reviewed||0) + 1;
+      if (status === 'known') sess.markedKnown = (sess.markedKnown||0) + 1;
+      localStorage.setItem('lastSession', JSON.stringify(sess));
+    } catch {}
+    setLocalStreak(newStreak);
+    saveProgress(newProgress, newStreak);
+    setSessionStats(s => ({ reviewed:s.reviewed+1, known: s.known+(status==='known'?1:0), learning: s.learning+(status==='learning'?1:0) }));
+    setFlipped(false);
+    if (index < list.length - 1) setIndex(index + 1);
+    else setDone(true);
+  }, [word, index, list.length, localStreak, progress, saveProgress]);
+
+  const skip = useCallback(() => {
+    setFlipped(false);
+    if (index < list.length - 1) setIndex(index + 1);
+    else setDone(true);
+  }, [index, list.length]);
+
+  const onTouchStart = (e) => { touchRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }; };
+  const onTouchEnd = (e) => {
+    if (!touchRef.current || !flipped) return;
+    const dx = e.changedTouches[0].clientX - touchRef.current.x;
+    const dy = Math.abs(e.changedTouches[0].clientY - touchRef.current.y);
+    if (Math.abs(dx) > 55 && dy < 60) { mark(dx > 0 ? 'known' : 'learning'); }
+    touchRef.current = null;
+  };
+
+  if (done || list.length === 0) {
+    return <SessionDone t={t} stats={sessionStats} streak={localStreak} onBack={onBack} onRestart={() => { setIndex(0); setDone(false); setSessionStats({reviewed:0,known:0,learning:0}); setFlipped(false); }}/>;
+  }
+
+  const statusColor = { known: t.c.statusGreen, learning: t.c.statusRose, unseen: t.c.muted };
+  const statusLabel = { known: 'יודע', learning: 'ללמידה', unseen: 'חדשה' };
+  const wStatus = wordProgress?.status || 'unseen';
+
+  return <div className="screen-in" style={{ height:'100%', display:'flex', flexDirection:'column', fontFamily:t.fontHe }}>
+    <div style={{ padding:`12px ${t.pad}px 8px`, display:'flex', alignItems:'center', gap:10, flexShrink:0 }}>
+      <NavPill t={t} onClick={onBack}><Icon name="chevron-right" size={18} color={t.c.ink2} stroke={2}/></NavPill>
+      <div style={{ flex:1 }}><ProgressBar t={t} value={(index/list.length)*100} height={4}/></div>
+      <div style={{ fontSize:13, fontWeight:600, color:t.c.muted, fontFamily:t.fontEn, minWidth:38, textAlign:'left' }}>{index+1}/{list.length}</div>
+    </div>
+    {localStreak > 0 && <div style={{ display:'flex', alignItems:'center', gap:5, padding:'0 18px 6px', flexShrink:0 }}>
+      <Icon name="flame" size={13} color={t.c.statusAmber} stroke={1.8}/>
+      <span style={{ fontSize:12, fontWeight:700, color:t.c.statusAmber, fontFamily:t.fontEn }}>{localStreak}</span>
+    </div>}
+    <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} style={{ flex:1, display:'flex', alignItems:'center', justifyContent:'center', padding:`4px ${t.pad}px`, minHeight:0 }}>
+      <div onClick={() => !flipped && setFlipped(true)} className="card-scene swipe-card" style={{ width:'100%', maxWidth:480, height:'100%', maxHeight:420, cursor: flipped ? 'default' : 'pointer', position:'relative' }}>
+        <div className={`card-body${flipped ? ' flipped' : ''}`} style={{ width:'100%', height:'100%' }}>
+          <div className="card-face" style={{ background:t.c.surface, borderRadius:22, border:`1px solid ${t.c.line}`, boxShadow: t.dark ? 'none' : '0 2px 0 rgba(20,20,40,0.04), 0 12px 40px -10px rgba(20,20,40,0.14)', display:'flex', flexDirection:'column' }}>
+            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', padding:'18px 18px 0' }}>
+              <div style={{ display:'flex', gap:6 }}>
+                {word.unit && <span style={{ fontSize:10, fontWeight:700, letterSpacing:'0.12em', color:t.accent, padding:'4px 8px', borderRadius:999, background:t.accentSoft }}>{word.unit?.toUpperCase()}</span>}
+                {word.level && <span style={{ fontSize:10, fontWeight:700, letterSpacing:'0.12em', color:t.c.muted, padding:'4px 8px', borderRadius:999, background: t.dark ? 'rgba(255,255,255,0.07)' : 'rgba(20,20,30,0.05)' }}>{word.level?.toUpperCase()}</span>}
+              </div>
+              <div style={{ display:'flex', alignItems:'center', gap:4 }}>
+                <StatusDot color={statusColor[wStatus]} size={7}/>
+                <span style={{ fontSize:11, color:t.c.muted, fontWeight:600 }}>{statusLabel[wStatus]}</span>
+              </div>
+            </div>
+            <div style={{ flex:1, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', padding:'20px 24px 20px', gap:10 }}>
+              <div style={{ fontFamily:t.fontDisplay, fontSize: word.en?.length > 16 ? 38 : word.en?.length > 12 ? 46 : 56, fontWeight:400, color:t.c.ink, letterSpacing:'-0.015em', lineHeight:1.05, direction:'ltr', textAlign:'center' }}>{word.en}</div>
+            </div>
+            <div style={{ display:'flex', borderTop:`0.5px solid ${t.c.line}` }}>
+              <div style={{ flex:1, display:'flex', alignItems:'center', justifyContent:'center', gap:8, padding:'12px 10px', fontSize:13, fontWeight:600, color:t.c.ink2 }}>
+                <Icon name="sparkle" size={15} color={t.c.muted} stroke={1.8}/>
+                <span>אסוציאציה</span>
+              </div>
+              <div style={{ width:0.5, background:t.c.line, marginBlock:4 }}/>
+              <div style={{ flex:1, display:'flex', alignItems:'center', justifyContent:'center', gap:8, padding:'12px 10px', fontSize:13, fontWeight:600, color:t.c.ink2 }}>
+                <Icon name="book" size={15} color={t.c.muted} stroke={1.8}/>
+                <span>משפט לדוגמה</span>
+              </div>
+            </div>
+          </div>
+          <div className="card-face card-back" style={{ background:t.c.surface2 || t.c.surface, borderRadius:22, border:`1px solid ${t.c.line}`, boxShadow: t.dark ? 'none' : '0 2px 0 rgba(20,20,40,0.04), 0 12px 40px -10px rgba(20,20,40,0.14)', display:'flex', flexDirection:'column', overflow:'hidden' }}>
+            <div style={{ flex:1, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', padding:'20px 20px 10px', gap:8, textAlign:'center', overflowY:'auto' }}>
+              <div style={{ fontSize:11, fontWeight:700, color:t.accent, letterSpacing:'0.1em', direction:'ltr' }}>{word.en}</div>
+              <div style={{ fontFamily:t.fontSerif, fontSize:28, fontWeight:500, color:t.c.ink, lineHeight:1.3, letterSpacing:'-0.005em' }}>{word.he}</div>
+              {ai.assoc && <div style={{ marginTop:8, padding:'10px 14px', borderRadius:14, background: t.dark ? 'rgba(255,255,255,0.05)' : 'rgba(20,20,30,0.04)', border:`0.5px solid ${t.c.line}`, fontSize:13, color:t.c.ink2, lineHeight:1.55, direction:'rtl', textAlign:'right', maxWidth:'100%' }}>
+                <div style={{ fontSize:10.5, fontWeight:700, color:t.c.muted, letterSpacing:'0.1em', marginBottom:5 }}>אסוציאציה</div>
+                {ai.assoc}
+              </div>}
+              {ai.sentence && (() => {
+                const parts = ai.sentence.split('|');
+                return <div style={{ padding:'10px 14px', borderRadius:14, background: t.dark ? 'rgba(255,255,255,0.04)' : 'rgba(20,20,30,0.03)', border:`0.5px solid ${t.c.line}`, width:'100%', direction:'ltr', textAlign:'left' }}>
+                  <div style={{ fontSize:10.5, fontWeight:700, color:t.c.muted, letterSpacing:'0.1em', marginBottom:5, direction:'rtl', textAlign:'right' }}>משפט לדוגמה</div>
+                  <div style={{ fontFamily:t.fontSerif, fontSize:15, fontWeight:400, color:t.c.ink, lineHeight:1.55 }}>{parts[0]}</div>
+                  {parts[1] && <div style={{ fontSize:13, color:t.c.muted, marginTop:5, direction:'rtl', textAlign:'right' }}>{parts[1]}</div>}
+                </div>;
+              })()}
+            </div>
+            {index < 3 && <div style={{ padding:'6px 0 8px', textAlign:'center', fontSize:11.5, color:t.c.muted }}>← ← ללא יודע · יודע → →</div>}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style={{ padding:`8px ${t.pad}px 12px`, flexShrink:0 }}>
+      {!flipped ? (
+        <PrimaryButton t={t} onClick={() => setFlipped(true)} style={{ width:'100%' }}>לחץ לגלות תרגום</PrimaryButton>
+      ) : (
+        <div style={{ display:'flex', gap:10 }}>
+          <div onClick={() => mark('learning')} style={{ flex:1, height:56, borderRadius:20, background: t.dark ? 'rgba(255,140,140,0.12)' : 'oklch(0.96 0.04 20)', color:t.c.statusRose, display:'flex', alignItems:'center', justifyContent:'center', gap:8, fontWeight:700, fontSize:15, cursor:'pointer', userSelect:'none' }}>
+            <Icon name="x" size={16} color={t.c.statusRose} stroke={2.2}/> לא יודע
+          </div>
+          <div onClick={skip} style={{ width:56, height:56, borderRadius:20, background: t.dark ? 'rgba(255,255,255,0.07)' : 'rgba(20,20,30,0.05)', color:t.c.ink2, display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', flexShrink:0 }}>
+            <Icon name="skip" size={18} color={t.c.muted} stroke={1.7}/>
+          </div>
+          <div onClick={() => mark('known')} style={{ flex:2, height:56, borderRadius:20, background:t.accent, color:'#fff', display:'flex', alignItems:'center', justifyContent:'center', gap:8, fontWeight:700, fontSize:15, cursor:'pointer', userSelect:'none', boxShadow:`0 6px 18px -6px ${t.accent}` }}>
+            <Icon name="check" size={16} color="#fff" stroke={2.2}/> יודע
+          </div>
+        </div>
+      )}
+    </div>
+  </div>;
+}
+
+function SessionDone({ t, stats, streak, onBack, onRestart }) {
+  return <div className="screen-in" style={{ height:'100%', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', padding:t.pad, fontFamily:t.fontHe, gap:20 }}>
+    <div style={{ fontSize:52 }}>🎉</div>
+    <div style={{ textAlign:'center' }}>
+      <div style={{ fontSize:24, fontWeight:700, color:t.c.ink, marginBottom:8 }}>סיימת!</div>
+      <div style={{ fontSize:15, color:t.c.muted }}>מעולה, כל הכבוד.</div>
+    </div>
+    <Card t={t} style={{ width:'100%', maxWidth:320 }}>
+      <div style={{ display:'flex', justifyContent:'space-around' }}>
+        <StatBlock label="עברת" value={stats.reviewed} color={t.c.ink}/>
+        <StatBlock label="יודע" value={stats.known} color={t.c.statusGreen}/>
+        <StatBlock label="ללמידה" value={stats.learning} color={t.c.statusRose}/>
+      </div>
+      {streak > 0 && <div style={{ textAlign:'center', marginTop:14, fontSize:13, color:t.c.statusAmber, fontWeight:700 }}>
+        <Icon name="flame" size={13} color={t.c.statusAmber} stroke={1.8}/> רצף: {streak} ימים
+      </div>}
+    </Card>
+    <div style={{ display:'flex', gap:10, width:'100%', maxWidth:320 }}>
+      <GhostButton t={t} onClick={onBack} style={{ flex:1 }}>בית</GhostButton>
+      <PrimaryButton t={t} onClick={onRestart} style={{ flex:2 }}>תרגל שוב</PrimaryButton>
+    </div>
+  </div>;
+}

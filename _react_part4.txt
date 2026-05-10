@@ -1,0 +1,330 @@
+
+function ExamScreen({ t, mode, onBack, onFinish }) {
+  const questions = useMemo(() => {
+    if (mode === 'sc') return shuffle(sentenceQuestions).slice(0, 12);
+    if (mode === 'rs') return shuffle(restatementQuestions).slice(0, 10);
+    return [...shuffle(sentenceQuestions).slice(0, 13), ...shuffle(restatementQuestions).slice(0, 6), ...shuffle(sentenceQuestions).slice(13, 17)];
+  }, [mode]);
+
+  const [qIndex, setQIndex] = useState(0);
+  const [answered, setAnswered] = useState(null);
+  const [results, setResults] = useState([]);
+
+  const q = questions[qIndex];
+  const isRS = mode === 'rs' || (mode === 'mixed' && qIndex >= 13 && qIndex < 19);
+  const modeLabel = isRS ? 'ניסוח מחדש' : 'השלמת משפטים';
+  const typeSuffix = isRS ? 'RESTATEMENT' : 'SENTENCE COMPLETION';
+
+  const answer = (chosen) => {
+    if (answered) return;
+    const isRight = chosen === q.correct;
+    setAnswered({ chosen, correct: q.correct, explanation: q.explanation });
+    setResults(r => [...r, { correct: isRight, type: isRS ? 'rs' : 'sc' }]);
+  };
+
+  const next = () => {
+    setAnswered(null);
+    if (qIndex < questions.length - 1) {
+      setQIndex(qIndex + 1);
+    } else {
+      const r = [...results];
+      onFinish({ results: r, scResults: r.filter(x => x.type==='sc'), rsResults: r.filter(x => x.type==='rs') });
+    }
+  };
+
+  return <div className="screen-in" style={{ height:'100%', display:'flex', flexDirection:'column', fontFamily:t.fontHe }}>
+    <div style={{ padding:`12px ${t.pad}px 8px`, display:'flex', alignItems:'center', gap:10, flexShrink:0 }}>
+      <NavPill t={t} onClick={onBack}><Icon name="x" size={17} color={t.c.ink2} stroke={2}/></NavPill>
+      <div style={{ flex:1 }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6 }}>
+          <span style={{ fontSize:11, fontWeight:700, letterSpacing:'0.14em', color:t.c.muted, fontFamily:t.fontEn }}>{typeSuffix} · {qIndex+1} / {questions.length}</span>
+          <span style={{ display:'inline-flex', alignItems:'center', gap:5, padding:'3px 9px', borderRadius:999, background: t.dark ? 'rgba(255,255,255,0.06)' : 'rgba(20,20,30,0.05)' }}>
+            <Icon name="clock" size={12} color={t.c.ink2} stroke={1.8}/>
+            <span style={{ fontFamily:t.fontEn, fontSize:12, fontWeight:700, color:t.c.ink, fontVariantNumeric:'tabular-nums' }}>{results.filter(r=>r.correct).length} נכון</span>
+          </span>
+        </div>
+        <ProgressBar t={t} value={(qIndex/questions.length)*100} height={3}/>
+      </div>
+    </div>
+
+    <div style={{ flex:1, overflow:'auto', padding:`8px ${t.pad}px 120px` }}>
+      <div style={{ display:'inline-flex', alignItems:'center', gap:6, padding:'5px 11px', borderRadius:999, background:t.accentSoft, marginBottom:16 }}>
+        <Icon name="dot" size={10} color={t.accent}/>
+        <span style={{ fontSize:11.5, fontWeight:700, letterSpacing:'0.06em', color:t.accentInk }}>{modeLabel}</span>
+      </div>
+
+      {isRS ? (
+        <div style={{ padding:'16px 18px', borderRadius:18, background: t.dark ? 'rgba(255,255,255,0.04)' : 'rgba(20,20,30,0.035)', border:`1px solid ${t.c.line}`, marginBottom:18 }}>
+          <div style={{ fontSize:10.5, fontWeight:700, letterSpacing:'0.16em', color:t.c.muted, fontFamily:t.fontEn, marginBottom:8 }}>ORIGINAL</div>
+          <div style={{ fontFamily:t.fontSerif, fontSize:18, lineHeight:1.6, color:t.c.ink, direction:'ltr', textAlign:'left' }}>{q.q}</div>
+        </div>
+      ) : (
+        <div style={{ fontFamily:t.fontSerif, fontSize:21, fontWeight:400, color:t.c.ink, lineHeight:1.55, direction:'ltr', textAlign:'left', marginBottom:24 }}>{q.q}</div>
+      )}
+
+      {isRS && <div style={{ fontSize:13, color:t.c.muted, fontWeight:500, marginBottom:14 }}>בחר את הניסוח שמשמר הכי טוב את משמעות המשפט המקורי</div>}
+
+      <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+        {q.options.map((opt, i) => {
+          let bg = t.c.surface, border = `1.5px solid ${t.c.line}`, color = t.c.ink;
+          if (answered) {
+            if (i === answered.correct) { bg = 'oklch(0.55 0.13 150)'; border = 'none'; color = '#fff'; }
+            else if (i === answered.chosen && i !== answered.correct) { bg = 'oklch(0.58 0.16 20)'; border = 'none'; color = '#fff'; }
+          }
+          const lBg = answered && (i===answered.correct||i===answered.chosen) ? 'rgba(255,255,255,0.25)' : (t.dark ? 'rgba(255,255,255,0.06)' : 'rgba(20,20,30,0.05)');
+          const lColor = answered && (i===answered.correct||i===answered.chosen) ? '#fff' : t.c.ink2;
+          return <div key={i} onClick={() => answer(i)} style={{ display:'flex', alignItems: isRS ? 'flex-start' : 'center', gap:14, padding:'14px 16px', borderRadius: isRS ? 16 : 18, background:bg, border, color, direction:'ltr', cursor: answered ? 'default' : 'pointer', transition:'0.15s' }}>
+            <div style={{ width:28, height:28, borderRadius:14, background:lBg, color:lColor, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:t.fontEn, fontWeight:700, fontSize:12.5, flexShrink:0, marginTop: isRS ? 1 : 0 }}>
+              {['A','B','C','D'][i]}
+            </div>
+            <div style={{ flex:1, minWidth:0 }}>
+              {isRS
+                ? <div style={{ fontFamily:t.fontSerif, fontSize:14.5, lineHeight:1.5, color }}>{opt}</div>
+                : <div style={{ fontFamily:t.fontSerif, fontSize:19, fontWeight:500, color, letterSpacing:'-0.005em' }}>{opt}</div>
+              }
+            </div>
+          </div>;
+        })}
+      </div>
+
+      {answered && <div style={{ marginTop:14, padding:'14px 16px', borderRadius:16, background: t.dark ? 'rgba(255,255,255,0.05)' : 'rgba(20,20,30,0.04)', border:`0.5px solid ${t.c.line}` }}>
+        <div style={{ fontSize:13, color:t.c.ink2, lineHeight:1.6, direction:'rtl', textAlign:'right' }}>{answered.explanation}</div>
+      </div>}
+    </div>
+
+    {answered && <div style={{ position:'absolute', left:0, right:0, bottom:0, padding:`14px ${t.pad}px 36px` }}>
+      <PrimaryButton t={t} large onClick={next}>
+        {qIndex < questions.length - 1 ? 'הבא' : 'סיים מבחן'}
+        <Icon name="chevron-left" size={16} color="#fff" stroke={2.2}/>
+      </PrimaryButton>
+    </div>}
+  </div>;
+}
+
+function ResultsScreen({ t, results, scResults, rsResults, onBack, onRestart }) {
+  const total = results.length;
+  const correct = results.filter(r => r.correct).length;
+  const pct = total > 0 ? Math.round(correct/total*100) : 0;
+  const scPct = scResults.length > 0 ? Math.round(scResults.filter(r=>r.correct).length/scResults.length*100) : 0;
+  const rsPct = rsResults.length > 0 ? Math.round(rsResults.filter(r=>r.correct).length/rsResults.length*100) : 0;
+
+  useEffect(() => { if (pct >= 80) fireConfetti(); }, []);
+
+  return <div className="screen-in" style={{ fontFamily:t.fontHe }}>
+    <div style={{ padding:`16px ${t.pad}px 130px`, overflow:'auto' }}>
+      <div style={{ display:'flex', justifyContent:'space-between', marginBottom:16 }}>
+        <NavPill t={t} onClick={onBack}><Icon name="x" size={17} color={t.c.ink2} stroke={2}/></NavPill>
+      </div>
+      <div style={{ marginBottom:22 }}>
+        <div style={{ fontSize:11.5, fontWeight:700, letterSpacing:'0.16em', color:t.accent, marginBottom:10 }}>תוצאה · מבחן</div>
+        <div style={{ fontSize:26, fontWeight:700, color:t.c.ink, letterSpacing:'-0.01em', lineHeight:1.15 }}>
+          מבחן הסתיים.<br/>
+          <span style={{ color:t.c.ink2, fontWeight:600 }}>הנה הניקוד שלך.</span>
+        </div>
+      </div>
+
+      <Card t={t} pad={26} style={{ marginBottom:14, textAlign:'center' }}>
+        <div style={{ display:'flex', alignItems:'baseline', justifyContent:'center', gap:6 }}>
+          <div style={{ fontFamily:t.fontEn, fontSize:88, fontWeight:700, letterSpacing:'-0.04em', color:t.c.ink, lineHeight:1, fontVariantNumeric:'tabular-nums' }}>{pct}</div>
+          <div style={{ fontSize:18, color:t.c.muted }}>%</div>
+        </div>
+        <div style={{ fontSize:14, color:t.c.ink2, marginTop:6, fontWeight:500 }}>{correct} מתוך {total} נכונות</div>
+        <div style={{ marginTop:18 }}><ProgressBar t={t} value={pct} height={6}/></div>
+      </Card>
+
+      {(scResults.length > 0 || rsResults.length > 0) && <>
+        <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.14em', color:t.c.muted, fontFamily:t.fontEn, padding:'0 2px 10px', marginTop:8 }}>פירוט לפי חלק</div>
+        <Card t={t} pad={0} style={{ overflow:'hidden', marginBottom:14 }}>
+          {scResults.length > 0 && <ResultRow t={t} title="השלמת משפטים" sub="Sentence Completion" correct={scResults.filter(r=>r.correct).length} total={scResults.length} pct={scPct}/>}
+          {scResults.length > 0 && rsResults.length > 0 && <Divider t={t}/>}
+          {rsResults.length > 0 && <ResultRow t={t} title="ניסוח מחדש" sub="Restatement" correct={rsResults.filter(r=>r.correct).length} total={rsResults.length} pct={rsPct}/>}
+        </Card>
+        {scResults.length > 0 && rsResults.length > 0 && <div style={{ display:'flex', gap:10 }}>
+          <InsightCard t={t} kind={scPct>=rsPct?'best':'focus'} label={scPct>=rsPct?'חזק ביותר':'לחזרה'} value="השלמת משפטים" sub={`${scPct}%`}/>
+          <InsightCard t={t} kind={rsPct>=scPct?'best':'focus'} label={rsPct>=scPct?'חזק ביותר':'לחזרה'} value="ניסוח מחדש" sub={`${rsPct}%`}/>
+        </div>}
+      </>}
+    </div>
+    <div style={{ position:'fixed', bottom:0, left:0, right:0, padding:`14px ${t.pad}px 36px`, background: t.dark ? 'linear-gradient(180deg, transparent, oklch(0.16 0.006 250) 30%)' : 'linear-gradient(180deg, transparent, oklch(0.975 0.006 85) 30%)' }}>
+      <div style={{ display:'flex', gap:10 }}>
+        <GhostButton t={t} onClick={onBack} style={{ flex:1 }}>בית</GhostButton>
+        <PrimaryButton t={t} onClick={onRestart} style={{ flex:1.5 }}>
+          מבחן חדש <Icon name="chevron-left" size={15} color="#fff" stroke={2.2}/>
+        </PrimaryButton>
+      </div>
+    </div>
+  </div>;
+}
+
+function ResultRow({ t, title, sub, correct, total, pct }) {
+  const color = pct >= 80 ? t.c.statusGreen : pct >= 60 ? t.c.statusAmber : t.c.statusRose;
+  return <div style={{ padding:'14px 16px', display:'flex', alignItems:'center', gap:12 }}>
+    <div style={{ flex:1, minWidth:0 }}>
+      <div style={{ fontSize:14.5, fontWeight:600, color:t.c.ink }}>{title}</div>
+      <div style={{ fontSize:11.5, color:t.c.muted, fontFamily:t.fontEn, marginTop:2, letterSpacing:'0.02em' }}>{sub}</div>
+      <div style={{ marginTop:8, display:'flex', alignItems:'center', gap:8 }}>
+        <div style={{ flex:1, maxWidth:120 }}><ProgressBar t={t} value={pct} height={4}/></div>
+        <span style={{ fontSize:11.5, fontFamily:t.fontEn, color:t.c.muted, fontVariantNumeric:'tabular-nums', fontWeight:600 }}>{correct}/{total}</span>
+      </div>
+    </div>
+    <div style={{ fontFamily:t.fontEn, fontSize:22, fontWeight:700, color, lineHeight:1, letterSpacing:'-0.02em', fontVariantNumeric:'tabular-nums' }}>
+      {pct}<span style={{ fontSize:13, opacity:0.7 }}>%</span>
+    </div>
+  </div>;
+}
+
+function InsightCard({ t, kind, label, value, sub }) {
+  const color = kind === 'best' ? t.c.statusGreen : t.c.statusAmber;
+  return <Card t={t} pad={14} style={{ flex:1 }}>
+    <div style={{ display:'flex', alignItems:'center', gap:6, marginBottom:10 }}>
+      <StatusDot color={color}/>
+      <span style={{ fontSize:11, fontWeight:700, color:t.c.ink2, letterSpacing:'0.06em' }}>{label}</span>
+    </div>
+    <div style={{ fontSize:15, fontWeight:700, color:t.c.ink, lineHeight:1.2 }}>{value}</div>
+    <div style={{ fontSize:12, color:t.c.muted, marginTop:4, fontFamily:t.fontEn, fontVariantNumeric:'tabular-nums' }}>{sub}</div>
+  </Card>;
+}
+
+const readingPassages = [
+  {
+    id:1, tag:'SCIENCE', title:"Darwin's Finches Revisited", words:312, mins:6,
+    text:`In the late nineteenth century, naturalists in the Galápagos began documenting subtle variations in finch beaks across neighboring islands. What appeared, at first, to be a trivial taxonomic curiosity revealed itself, over decades, as evidence of one of biology's most consequential principles: that selection can operate with remarkable speed when environmental pressures are sufficiently acute.\n\nRecent fieldwork has refined this picture in surprising ways. Beak depth, once thought to drift slowly, can shift measurably across a single dry season—suggesting that selection operates on a timescale far shorter than Darwin himself imagined.`,
+    questions:[
+      { q:'מה נראה תחילה כסקרנות טקסונומית זניחה?', options:['גודל הפרושים','מיגרציית הפרושים','הבדלים עדינים במקורי הפרושים','פיזורם הגאוגרפי'], correct:2, explanation:'הקטע מציין כי ההבדלים במקורי הפרושים נראו תחילה כ"סקרנות טקסונומית זניחה".' },
+      { q:'מה גילו מחקרי שדה אחרונים לגבי עומק המקור?', options:['משתנה לאט מאוד','יכול להשתנות בעונת יובש אחת','זהה בכל האיים','אינו קשור לאקלים'], correct:1, explanation:'המחקרים האחרונים הראו כי עומק המקור יכול להשתנות בצורה מדידה תוך עונת יובש אחת.' },
+      { q:'מה מרמז הקטע לגבי קצב הברירה הטבעית?', options:['איטית יותר ממה שדרווין חשב','מהירה יותר ממה שדרווין חשב','זהה לתאוריה של דרווין','לא רלוונטית בגלפגוס'], correct:1, explanation:'הקטע מציין כי הברירה פועלת "בסולם זמן קצר בהרבה ממה שדרווין עצמו דמיין".' },
+    ]
+  },
+  {
+    id:2, tag:'PSYCHOLOGY', title:"The Memory of Forgetting", words:280, mins:5,
+    text:`Far from being a defect of cognition, recent research suggests that forgetting may be the very mechanism by which we learn at all. The hippocampus, long understood as a storage site for declarative memory, appears equally involved in a process of selective pruning—discarding information that fails to integrate with existing knowledge structures.\n\nThis view challenges the intuition that a perfect memory would be an asset. Individuals with hyperthymesia, the rare condition of near-total autobiographical recall, frequently report difficulty abstracting general principles from specific episodes.`,
+    questions:[
+      { q:'לפי הקטע, מה תפקיד השכחה בלמידה?', options:['מונעת גישה לזיכרונות','היא מנגנון המאפשר למידה','גורמת לבלבול','אינה קשורה ללמידה'], correct:1, explanation:'הקטע טוען כי השכחה היא המנגנון שמאפשר למידה, לא פגם בה.' },
+      { q:'מה מתקשים לעשות אנשים עם hyperthymesia?', options:['לזכור אירועים ספציפיים','לתאר חוויות','להפשיט עקרונות כלליים מאירועים','לדבר על עצמם'], correct:2, explanation:'למרות זיכרון מושלם, הם מתקשים להפשיט עקרונות כלליים מאירועים ספציפיים.' },
+    ]
+  },
+  {
+    id:3, tag:'ECONOMICS', title:"Why Cities Don't Behave Like Markets", words:350, mins:7,
+    text:`Standard supply-and-demand models predict outcomes that empirical urban data rarely confirm. Density, it turns out, distorts the basic assumptions on which market equilibrium depends. When housing supply doubles in a dense neighborhood, prices often rise rather than fall—a phenomenon that contradicts elementary microeconomic theory but that urban economists have documented repeatedly.\n\nThe explanation lies in what economists call agglomeration effects: the productivity gains that accrue when workers and firms cluster together. A neighborhood that attracts new residents becomes more attractive still, driving further demand that outpaces supply.`,
+    questions:[
+      { q:'מה מתרחש כאשר היצע הדיור מוכפל בשכונה צפופה?', options:['המחירים יורדים','המחירים עולים','המחירים יציבים','התושבים עוזבים'], correct:1, explanation:'הקטע מציין כי כאשר ההיצע מוכפל, המחירים לעיתים קרובות עולים — בניגוד לתיאוריה הכלכלית.' },
+      { q:'מה הם "אפקטי אגלומרציה"?', options:['ירידה בפריון','רווחי פריון ממרכוז עובדים','דפוסי הגירה','תוצאות מדיניות דיור'], correct:1, explanation:'הקטע מגדיר אפקטי אגלומרציה כ"רווחי פריון הנצברים כשעובדים ועסקים מתקבצים יחד".' },
+      { q:'מה לומד הקטע על התערבויות מדיניות?', options:['יעילות תמיד','מייצרות לעיתים תוצאות הפוכות','לא רלוונטיות','פותרות בעיות דיור'], correct:1, explanation:'הקטע טוען כי מדיניות שאינה מתחשבת בדינמיקות אלה "מניבה תוצאות הפוכות".' },
+    ]
+  },
+];
+
+function TextsListScreen({ t, onBack, onRead }) {
+  return <div className="screen-in" style={{ fontFamily:t.fontHe }}>
+    <div style={{ padding:`16px ${t.pad}px 6px` }}>
+      <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:14 }}>
+        <NavPill t={t} onClick={onBack}><Icon name="chevron-right" size={17} color={t.c.ink2} stroke={2}/></NavPill>
+        <div style={{ flex:1 }}>
+          <div style={{ fontSize:11, fontWeight:700, letterSpacing:'0.14em', color:t.c.muted, fontFamily:t.fontEn }}>READING LIBRARY</div>
+          <div style={{ fontSize:22, fontWeight:700, color:t.c.ink, letterSpacing:'-0.01em', marginTop:2 }}>טקסטים</div>
+        </div>
+        <NavPill t={t}><Icon name="search" size={16} color={t.c.ink2} stroke={1.9}/></NavPill>
+      </div>
+    </div>
+    <div style={{ padding:`6px ${t.pad}px 110px`, overflow:'auto', display:'flex', flexDirection:'column', gap:12 }}>
+      {readingPassages.map((p, i) => (
+        <div key={p.id} onClick={() => onRead(p)} style={{ padding:'14px 16px', borderRadius:18, background:t.c.surface, border:`1px solid ${t.c.line}`, cursor:'pointer' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:8 }}>
+            <span style={{ fontSize:10, fontWeight:700, letterSpacing:'0.16em', color:t.accent, fontFamily:t.fontEn, padding:'3px 8px', borderRadius:4, background:t.accentSoft }}>{p.tag}</span>
+            <span style={{ fontSize:11, color:t.c.muted, fontFamily:t.fontEn }}>{p.words} words · {p.mins} min · {p.questions.length} Q</span>
+            <div style={{ flex:1 }}/>
+            {i === 0 && <span style={{ fontSize:10.5, fontWeight:700, letterSpacing:'0.12em', color:t.accent, fontFamily:t.fontEn }}>NEW</span>}
+          </div>
+          <div style={{ fontFamily:t.fontSerif, fontSize:18, fontWeight:500, color:t.c.ink, letterSpacing:'-0.005em', direction:'ltr', textAlign:'left', marginBottom:6 }}>{p.title}</div>
+          <div style={{ fontFamily:t.fontSerif, fontSize:13.5, lineHeight:1.5, color:t.c.muted, direction:'ltr', textAlign:'left', display:'-webkit-box', WebkitLineClamp:2, WebkitBoxOrient:'vertical', overflow:'hidden' }}>{p.text.substring(0,200)}…</div>
+        </div>
+      ))}
+    </div>
+  </div>;
+}
+
+function ReadingScreen({ t, passage, onBack }) {
+  const [qIndex, setQIndex] = useState(0);
+  const [answered, setAnswered] = useState(null);
+  const [results, setResults] = useState([]);
+  const [done, setDone] = useState(false);
+
+  const q = passage.questions[qIndex];
+
+  const answer = (i) => {
+    if (answered) return;
+    setAnswered({ chosen:i, correct:q.correct, explanation:q.explanation });
+    setResults(r => [...r, { correct: i===q.correct }]);
+  };
+
+  const next = () => {
+    setAnswered(null);
+    if (qIndex < passage.questions.length - 1) setQIndex(qIndex + 1);
+    else setDone(true);
+  };
+
+  if (done) {
+    const c = results.filter(r => r.correct).length;
+    return <div className="screen-in" style={{ height:'100%', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', padding:t.pad, fontFamily:t.fontHe, gap:20 }}>
+      <div style={{ fontSize:22, fontWeight:700, color:t.c.ink }}>סיימת את הקטע!</div>
+      <Card t={t} style={{ width:'100%', maxWidth:300, textAlign:'center' }}>
+        <div style={{ fontFamily:t.fontEn, fontSize:48, fontWeight:700, color:t.accent, lineHeight:1 }}>{c}/{passage.questions.length}</div>
+        <div style={{ color:t.c.muted, fontSize:14, marginTop:8 }}>תשובות נכונות</div>
+      </Card>
+      <GhostButton t={t} onClick={onBack} style={{ width:'100%', maxWidth:300 }}>חזרה לספרייה</GhostButton>
+    </div>;
+  }
+
+  return <div className="screen-in" style={{ height:'100%', display:'flex', flexDirection:'column', fontFamily:t.fontHe }}>
+    <div style={{ display:'flex', alignItems:'center', gap:12, padding:`12px ${t.pad}px 10px`, flexShrink:0 }}>
+      <NavPill t={t} onClick={onBack}><Icon name="x" size={17} color={t.c.ink2} stroke={2}/></NavPill>
+      <div style={{ flex:1 }}>
+        <div style={{ display:'flex', justifyContent:'space-between', marginBottom:6 }}>
+          <span style={{ fontSize:11, fontWeight:700, letterSpacing:'0.14em', color:t.c.muted, fontFamily:t.fontEn }}>READING · {qIndex+1} / {passage.questions.length}</span>
+        </div>
+        <ProgressBar t={t} value={(qIndex/passage.questions.length)*100} height={3}/>
+      </div>
+    </div>
+    <div style={{ flex:1, overflow:'auto', padding:`6px 0 120px` }}>
+      <div style={{ padding:`0 ${t.pad}px 14px` }}>
+        <Card t={t} pad={20} style={{ direction:'ltr' }}>
+          <div style={{ fontSize:10.5, fontWeight:700, letterSpacing:'0.18em', color:t.accent, fontFamily:t.fontEn, marginBottom:10 }}>PASSAGE · {passage.words} WORDS</div>
+          <div style={{ fontFamily:t.fontSerif, fontSize:15.5, lineHeight:1.7, color:t.c.ink }}>
+            {passage.text.split('\n\n').map((para, i, arr) => (
+              <p key={i} style={{ margin: i < arr.length-1 ? '0 0 12px' : 0, opacity: i===1 ? 0.65 : 1 }}>{para}</p>
+            ))}
+          </div>
+        </Card>
+      </div>
+      <div style={{ padding:`6px ${t.pad}px 0` }}>
+        <div style={{ display:'inline-flex', alignItems:'center', gap:6, padding:'5px 11px', borderRadius:999, background:t.accentSoft, marginBottom:12 }}>
+          <Icon name="dot" size={10} color={t.accent}/>
+          <span style={{ fontSize:11.5, fontWeight:700, letterSpacing:'0.06em', color:t.accentInk }}>שאלה {qIndex+1}</span>
+        </div>
+        <div style={{ fontSize:16, color:t.c.ink, fontWeight:600, lineHeight:1.45, marginBottom:14 }}>{q.q}</div>
+        <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
+          {q.options.map((opt, i) => {
+            let bg = t.c.surface, border = `1px solid ${t.c.line}`, color = t.c.ink;
+            if (answered) {
+              if (i === answered.correct) { bg = t.accentSoft; border = `1.5px solid ${t.accent}`; color = t.accentInk; }
+              else if (i === answered.chosen) { bg = 'oklch(0.95 0.04 20)'; border = `1.5px solid ${t.c.statusRose}`; color = t.c.statusRose; }
+            }
+            return <div key={i} onClick={() => answer(i)} style={{ display:'flex', alignItems:'center', gap:12, padding:'11px 14px', borderRadius:14, background:bg, border, cursor: answered ? 'default' : 'pointer' }}>
+              <div style={{ width:24, height:24, borderRadius:12, background: answered&&i===answered.correct ? t.accent : (t.dark ? 'rgba(255,255,255,0.06)' : 'rgba(20,20,30,0.05)'), color: answered&&i===answered.correct ? '#fff' : t.c.ink2, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:t.fontEn, fontWeight:700, fontSize:11, flexShrink:0 }}>{['A','B','C','D'][i]}</div>
+              <div style={{ fontSize:14.5, fontWeight:500, color }}>{opt}</div>
+            </div>;
+          })}
+        </div>
+        {answered && <div style={{ marginTop:10, padding:'12px 14px', borderRadius:14, background: t.dark ? 'rgba(255,255,255,0.05)' : 'rgba(20,20,30,0.04)', border:`0.5px solid ${t.c.line}` }}>
+          <div style={{ fontSize:13, color:t.c.ink2, lineHeight:1.6, direction:'rtl', textAlign:'right' }}>{answered.explanation}</div>
+        </div>}
+      </div>
+    </div>
+    {answered && <div style={{ position:'absolute', left:0, right:0, bottom:0, padding:`14px ${t.pad}px 36px` }}>
+      <PrimaryButton t={t} onClick={next} style={{ width:'100%' }}>
+        {qIndex < passage.questions.length-1 ? 'הבא' : 'סיים'}
+        <Icon name="chevron-left" size={15} color="#fff" stroke={2.2}/>
+      </PrimaryButton>
+    </div>}
+  </div>;
+}

@@ -1,0 +1,402 @@
+associate | לקשר
+association | אסוציאציה, איגוד
+at least | לפחות
+athlete | ספורטאי, אתלט
+audience | קהל
+authentic | מקורי, אותנטי
+available | זמין
+awake | ער, להתעורר
+bacteria | חיידקים
+badly | נואשות, קשות
+baker | אופה
+band | להקה, לחבוש, תחבושת, רצועה
+bat | עטלף, מחבט
+bath | אמבטיה, להתרחץ
+battle | מאבק, להיאבק
+beach | חוף ים
+bear | דוב, לסבול, לשאת
+beauty | יופי
+bedroom | חדר שינה
+begin/an/un | להתחיל, התחיל
+belong | שייך
+best-seller | רב-מכר
+better | יותר טוב
+bicycle | אופניים
+birth | לידה
+bite | לנשוך, נשיכה
+bizarre | מוזר
+block | לבנה, גוש, חלק, חסימה
+blood vessel | כלי דם
+blow, blew | לנשוף, נשף, לפוצץ, פוצץ
+boat | סירה
+body | גוויה, גוף
+bottle | בקבוק
+bottom | תחתית, ישבן
+bought | קנה
+brain | מוח, שכל
+brainwash | לשטוף את המח
+bread | לחם
+breathe | לנשום
+bridge | גשר, לגשר
+build | לבנות
+building | מבנה, בניין
+built | לבנות
+bullet | קליע
+call | לקרוא, להתקשר
+camera | מצלמה
+care | לחבב, לדאוג, לטפל
+careless | לא זהיר, רשלני
+carry | לסחוב
+catalogue | קטלוג, רשימת פריטים
+catch, caught | לתפוס, תפס
+cell | תא
+center | מרכז
+central | מרכזי
+chance | סיכוי
+cheap | זול
+check | לבדוק
+child | ילד
+childhood | ילדות
+children | ילדים
+circle | להקיף בעיגול, מעגל
+climb | לטפס
+clock | שעון
+cloth | בגד, בד
+coach | מאמן, לאמן, להדריך, קרון נוסעים, כרכרה
+code | קוד
+coin | מטבע
+cold | קר, התקררות
+colonial | קולוניאלי
+color | לצבוע, צבע
+consist | מורכב מ-
+cool | לצנן, צונן
+copies | עותקים
+copy | להעתיק
+corner | פינה, לדחוק לפינה
+count | לספור, רוזן
+country | ארץ, כפר, אזור
+cover | כיסוי, מכסה
+cow | פרה
+dance | לרקוד
+daughter | בת
+death | מוות
+deeply | מאוד, במידה רבה
+definite | מוחלט
+die (dice) | קובייה (קוביות)
+dirty | מלוכלך
+done | גמור, עשוי
+dream | חלום, לחלום
+drug | סם, תרופה, לסמם
+due | צריך להיעשות, זמנו הגיע, בשל
+earth | אדמה
+earthquake | רעידת אדמה
+educate | לחנך
+enemy | אויב
+energy | אנרגיה, כוח
+enjoyable | מהנה
+error | שגיאה
+evening | ערב
+exact | מדויק
+exactly | בדיוק
+example | דוגמה
+false | שקר
+farm | חווה
+farmer | חוואי
+father | אבא
+fear | פחד, לפחד
+feeling | הרגשה
+field | תחום, שדה
+finger | אצבע
+fire | לפטר, אש, להצית, לירות
+fix | לתקן
+flower | פרח
+friend | חבר
+friendship | חברות
+full | מלא, למלא
+glad | שמח
+great | גדול, מעולה
+half | חצי
+hand | יד, למסור
+hearsay | שמועה
+heat | חום, לחמם
+hero | גיבור
+horse | סוס
+hot | חם, חריף
+house | לשכן, בית
+inconsistent | לא עקבי
+jump | לקפוץ
+kill | להרוג, לחסל, הרג
+king | מלך
+kingdom | ממלכה
+kitchen | מטבח
+list | רשימה, להכין רשימה
+lock | מנעול, לנעול
+map | מפה, למפות
+member | חבר (בקבוצה מסוימת)
+milk | חלב, לחלוב
+money | כסף
+movement | תנועה
+must | חייב, חובה, הכרח
+number | מספר
+paragraph | פסקה
+pay | לשלם
+peace | שלום
+peaceful | שָׁלֵו, שקט
+pilot | טייס
+plane | מטוס, מישור
+president | נשיא
+price | מחיר
+problem | בעיה
+program | תכנית, תכניה, לתכנת
+queen | מלכה
+rates | שיעור, היקף, תעריף
+react | להגיב
+register | להירשם
+registration | הרשמה
+rest | מנוחה, יתר, שאר
+rich | עשיר
+risk | סיכון, לסכן
+river | נהר
+road | דרך
+safety | בטיחות
+save | לשמור
+scare | פחד, להפחיד
+school | בית-ספר
+select | לבחור
+sell | למכור
+short | קצר
+side | צד, לצודד, לתמוך
+sleep | שינה, לישון
+slow down | להאט
+speed | מהירות
+start | להתחיל
+strong | חזק
+stronghold | מאחז
+teach, taught | ללמד, לימד
+think, thought | לחשוב, חשב
+time | זמן
+town | עיר, עיירה
+useful | שימושי
+useless | חסר תועלת
+viewer | צופה
+visit | לבקר
+visitor | אורח, מבקר
+wait | להמתין, המתנה
+way | דרך
+absolute | מוחלט
+accessible | נגיש, זמין
+accomplishment | הישג
+account | להתחשב ב-, להתייחס ל-, חשבון
+accuracy | דיוק
+activist | פעיל, אקטיביסט
+administer | לנהל, לפקח, לתת, לחלק
+administration | מנהל
+adulthood | בגרות
+advancement | התקדמות, מקדמה
+advice | עצה
+advisor | יועץ
+aesthetic | אסתטיקה
+allocate | להקצות
+annually | שנתי
+appoint | למנות
+astronomy | אסטרונומיה
+attention | תשומת לב
+beware | היזהר
+briefly | בקצרה
+by now | עד עתה
+capital punishment | עונש מוות
+choice | בחירה
+choose | לבחור
+circumstance | מצב, תנאי, נסיבות
+civil | אזרחי, אדיב
+class | כיתה, מעמד, סוג
+colony | מושבה
+combine | לצרף, לשלב
+communicate | לתקשר
+community | קהילה
+company | חברה
+comparable | בר-השוואה
+comparison | השוואה
+comprehension | הבנה
+concentrate | להתרכז
+conclude | לסיים, להסיק
+conclusion | מסקנה
+confirm | לאשר, לאמת
+continuation | המשך
+cooperation | שיתוף פעולה
+deduce | להסיק
+depart | לעזוב
+descendent | צאצא
+deserve | מגיע (לו)
+destiny | גורל
+direct | לכוון, לביים, ישיר, כנה
+direction | כיוון
+disclose | לגלות, לחשוף
+discover | לגלות
+discoveries | תגליות
+disprove | להפריך
+diverge | לסטות
+divide | לחלק
+editor | עורך
+emperor | שליט, קיסר
+enable | לאפשר
+era | עידן
+evaluation | הערכה
+evenly | באופן שווה
+except for | למעט
+exercise | תרגיל, להתאמן, לממש, ליישם
+expectations | ציפיות
+formal | רשמי
+forth | הלאה, קדימה
+generally | באופן כללי
+habit | הרגל
+heavily | מאוד, במידה רבה
+heavy | כבד
+human | אנושי
+human being | בן-אדם, אנוש
+identical | זהה
+implicate | לסבך, לערב
+implications | השלכות, משמעות
+income | הכנסה
+incomprehensible | לא מובן
+indicate | להצביע על
+initiated | יזם, התחיל, אִתְחֵל
+international | בינלאומי
+island | אי
+isle | אי
+jewel | תכשיט
+joint | משותף, מפרק, חיבור
+largest | הגדול ביותר
+lawyer | עורך-דין
+legalize | להפוך חוקי, לאשר
+lethal | קטלני
+level | רמה, דרגה, מפלס, לאזן, להשוות
+likely | סביר
+local | מקומי
+locate | לאתר
+massacre | טבח
+merchandise | מוצרים, סחורה
+mere | רק, לא יותר מ-
+middle | אמצע
+mutually | באופן שווה/הדדי
+nation | אומה
+nationality | לאום
+nationalize | להלאים
+nature | טבע
+network | רשת
+new | חדש
+newscaster | מגיש חדשות
+newspaper | עיתון
+noted | ידוע, מפורסם
+occasions | הזדמנויות, מקרים
+officiate | לכהן, לערוך
+oil | נפט, שמן, לשמן
+ongoing | מתמשך
+orderly | מסודר
+outcome | תוצאה
+per | לכל
+percent | אחוז
+presence | נוכחות
+prime | ראשוני, עיקרי, מובחר
+primitive | קדום, חסר תרבות
+purposely | בכוונה
+quiet | שקט
+quite | למדי
+rational | הגיוני, רציונאלי
+rationalize | להצדיק, להסביר
+reality | מציאות
+recession | מיתון
+recycle | למחזר
+recycling | מחזור
+regime | שלטון, משטר
+regulation | תקנה
+reign | שלטון
+reigned | משל, שלט
+religion | דת
+repeat | לחזור, שידור/מאורע חוזר
+resist | להתנגד
+resistance | התנגדות, מחתרת
+reveal | לחשוף
+rigid | נוקשה, מחמיר
+rising | זריחה, עולה
+rocket | טיל
+section | יחידה, חלק
+shuttle | מעבורת
+simply | בפשטות
+social | חברתי
+spacious | מרווח
+square | כיכר, ריבוע
+stand | לעמוד
+standardize | לתקנן
+suburban | פרברי
+succeed | הצליח
+success | הצלחה
+sum | סכום, סך, לסכם
+sum up | לסכם
+task | משימה
+territory | תחום, שטח
+thereby | ולכן, גרם ל-
+title | כותרת
+touch | מגע, לגעת
+trial | נסיון, משפט
+uncharted | לא מתועד
+unify | לאחד
+universe | יקום
+uphold | להחזיק, לתמוך, לדגול
+volume | כרך, עוצמת קול, נפח
+warfare | לוחמה
+warrior | לוחם
+watch | להסתכל, להשגיח, שעון
+widespread | נפוץ
+wild | פראי, טבע
+abandon | לנטוש, לזנוח
+absorb | לספוג
+abundance | שפע
+acquire | לרכוש, להשיג
+adventure | הרפתקה
+affection | חיבה
+airborne | נישא באוויר
+airline | חברת תעופה
+airplane | אווירון, מטוס
+alike | דומה
+ally (allies) | בן-ברית (בנות-ברית)
+alterations | שינויים
+alternately | לסירוגין
+amateur | חובבן
+amend | תיקון, שינוי לטובה
+apparently | כנראה
+apply | לפנות
+appreciation | הערכה
+appropriately | בהתאם
+arise | להופיע, לעלות
+arise, arose | לקום, קם
+aside | במאמר מוסגר, מלבד, הצידה
+assess | להעריך, לאמוד
+autumn | סתיו
+await | להמתין
+awareness | מודעות
+bounce | לקפץ, ניתור
+brilliant | מבריק
+bush | שיח, ערבה
+cable | כבל
+calculator | מחשבון
+categorize | לקטלג, למיין, לסווג
+cautious | זהיר
+chart | גיליון, תרשים
+coincide | להקביל, לחפוף
+colossal | עצום
+commence | להתחיל
+compress | לדחוס
+concept | רעיון, מושג
+conception | תפיסה
+confident | בטוח בעצמו
+conflict | עימות, סכסוך
+conjecture | סברה, לשער
+connect | לחבר
+consequence | תוצאה
+consumers | צרכנים
+conveniently | באופן נח
+creator | יוצר
+customer | לקוח, צרכן
+customize | להתאים באופן אישי
+decade | עשור

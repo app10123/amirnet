@@ -1,0 +1,322 @@
+{
+  "announce": {
+    "assoc": "אה-נאנס? מי צריך לנאנס? פשוט תכריז בקול!",
+    "sentence": "The principal will announce the results tomorrow.|המנהל יכריז על התוצאות מחר."
+  },
+  "announcement": {
+    "assoc": "אה-נאונס-מנט – האנס מנט הכרזה בעיתון.",
+    "sentence": "The announcement surprised everyone in school.|ההכרזה הפתיעה את כולם בבית הספר."
+  },
+  "attitude": {
+    "assoc": "אטי-טיוד – אטי, טוד לה! איזו גישה יש לה!",
+    "sentence": "Her positive attitude helped her succeed.|הגישה החיובית שלה עזרה לה להצליח."
+  },
+  "bond": {
+    "assoc": "בונד – ג'יימס בונד תמיד בונה קשרים חזקים… ואז שובר אותם.",
+    "sentence": "The bond between them grew stronger over time.|הקשר ביניהם התחזק עם הזמן."
+  },
+  "case": {
+    "assoc": "קייס – קי-ס, הנח את התיק! זה תיק משפט חשוב!",
+    "sentence": "He carried all his documents in a leather case.|הוא נשא את כל המסמכים שלו בתיק עור."
+  },
+  "cave": {
+    "assoc": "קייב – קיי, ב'! נכנסנו למערה וראינו עטלפים!",
+    "sentence": "The explorers discovered a hidden cave in the mountain.|החוקרים גילו מערה נסתרת בהר."
+  },
+  "citizen": {
+    "assoc": "סיטי-זן – הסיטי-זן הוא תושב הסיטי, אזרח העיר הגדולה.",
+    "sentence": "Every citizen has rights and responsibilities.|לכל אזרח יש זכויות וחובות."
+  },
+  "coexist": {
+    "assoc": "קו-אג-זיסט – קו אחד, אך שניים מתקיימים יחד לצד אחד.",
+    "sentence": "Different religions can coexist peacefully.|דתות שונות יכולות להתקיים יחד בשלום."
+  },
+  "commission": {
+    "assoc": "קומי-שן – הקומי (הצחקן) של הוועדה מקבל עמלה על כל בדיחה.",
+    "sentence": "The agent received a commission for every sale.|הסוכן קיבל עמלה על כל מכירה."
+  },
+  "commissioner": {
+    "assoc": "קומישיונר – הקומישיונר הוא הנציב הגדול של הוועדה, כמו בליגת NBA!",
+    "sentence": "The commissioner investigated the complaint.|הנציב חקר את התלונה."
+  },
+  "confiscate": {
+    "assoc": "קון-פיסקייט – קון? פיסק! תחרים לו את הדג בקייט (מכה)!",
+    "sentence": "The teacher confiscated his phone during the exam.|המורה החרימה את הטלפון שלו במהלך הבחינה."
+  },
+  "conformity": {
+    "assoc": "קון-פורמיטי – כולם בקון-פור אחד, צייתנות מלאה, אף אחד לא בולט.",
+    "sentence": "Conformity is expected in strict societies.|בחברות נוקשות מצפים לצייתנות."
+  },
+  "cost": {
+    "assoc": "קוסט – קוסט לי ביוקר! מה המחיר של הקוסט-קו הזה?!",
+    "sentence": "The cost of living has increased significantly.|עלות המחיה עלתה משמעותית."
+  },
+  "costly": {
+    "assoc": "קוסטלי – קוסטלי מאוד! אפילו קוסטלו לא היה מאמין כמה זה יקר.",
+    "sentence": "Fixing the car turned out to be very costly.|תיקון המכונית התברר כיקר מאוד."
+  },
+  "counteract": {
+    "assoc": "קאונטר-אקט – על הקאונטר (דלפק) שם הם מנסים לבטל את האקט של המתחרה.",
+    "sentence": "The medicine helps counteract the effects of the poison.|התרופה עוזרת לנטרל את השפעות הרעל."
+  },
+  "data": {
+    "assoc": "דאטה – דאטה מסטאר טרק מלא במידע, אבל חסר לו רגשות.",
+    "sentence": "Scientists collect data to support their theories.|מדענים אוספים מידע לתמיכה בתיאוריות שלהם."
+  },
+  "denounce": {
+    "assoc": "דה-נאונס – די, נאנס! אני מוקיע את ההתנהגות הזאת בפומבי!",
+    "sentence": "The president denounced the act of terrorism.|הנשיא הוקיע את מעשה הטרור."
+  },
+  "dismiss": {
+    "assoc": "דיס-מיס – דיס מיס (הגברת הזאת)? לפטר אותה?! אבל היא הכי טובה!",
+    "sentence": "The manager decided to dismiss the lazy employee.|המנהל החליט לפטר את העובד העצלן."
+  },
+  "disposition": {
+    "assoc": "דיספוזיציה – דיספו-זיציה: אם יש לך 'פוזה' טובה, כנראה שיש לך מזג טוב.",
+    "sentence": "She has a cheerful disposition that makes everyone smile.|יש לה אופי עליז שגורם לכולם לחייך."
+  },
+  "entitled": {
+    "assoc": "אן-טייטלד – אן קיבלה טייטל (תואר)! עכשיו היא זכאית לכל ההטבות.",
+    "sentence": "Every student is entitled to a fair education.|כל תלמיד זכאי לחינוך הוגן."
+  },
+  "eventual": {
+    "assoc": "אוונטואל – 'בסוף, אוון תואל (ינצח)' – הסוף הוא תמיד אוונטואלי.",
+    "sentence": "Their eventual victory came after years of hard work.|הניצחון הסופי שלהם הגיע לאחר שנים של עבודה קשה."
+  },
+  "exist": {
+    "assoc": "אגזיסט – אקס-איסט? האקס שלי עדיין מתקיים באינסטגרם שלי!",
+    "sentence": "Do ghosts really exist?|האם רוחות רפאים באמת מתקיימות?"
+  },
+  "existence": {
+    "assoc": "אגזיסטנס – האקס-זיסטנס: קיום האקס שלי הוא כאב ראש.",
+    "sentence": "The existence of life on other planets is still unknown.|קיום החיים בכוכבי לכת אחרים עדיין לא ידוע."
+  },
+  "extract": {
+    "assoc": "אקסטראקט – אקס-טראקט: המשחק הוא להפיק את המיץ מהאקס (שרידי הקשר).",
+    "sentence": "The dentist had to extract the damaged tooth.|רופא השיניים נאלץ לחלץ את השן הפגועה."
+  },
+  "finance": {
+    "assoc": "פייננס – פיין-אנס: הגיע הפיין (קנס)? תמצא מימון לשלם!",
+    "sentence": "The government will finance the new highway project.|הממשלה תממן את פרויקט הכביש המהיר החדש."
+  },
+  "financial": {
+    "assoc": "פיננשיאל – פיננס-יאל: יאל תמיד עסוקה בעניינים כספיים.",
+    "sentence": "They faced serious financial difficulties last year.|הם התמודדו עם קשיים כספיים חמורים בשנה שעברה."
+  },
+  "fragile": {
+    "assoc": "פראג'יל – פרא-ג'יל: ג'יל הוא פרא, אבל שביר מאוד בנפשו.",
+    "sentence": "Please handle the fragile vase with care.|בבקשה טפל באגרטל השביר בזהירות."
+  },
+  "garment": {
+    "assoc": "גארמנט – גאר-מנט: גאר (שמור) על המנט (המנטה)! זהו הבגד הכי ריחני.",
+    "sentence": "She bought a beautiful garment for the ceremony.|היא קנתה לבוש יפה לטקס."
+  },
+  "illustrate": {
+    "assoc": "אילוסטרייט – אילו-סטריט: ברחוב האילו (המוזר) כולם מאיירים את הקירות.",
+    "sentence": "He used diagrams to illustrate his point.|הוא השתמש בתרשימים כדי להמחיש את הנקודה שלו."
+  },
+  "illustration": {
+    "assoc": "אילוסטריישן – אילו-סטריי-שן: שן אחת מאוירת בצבעים – זה האיור הכי מוזר.",
+    "sentence": "The book was full of colorful illustrations.|הספר היה מלא באיורים צבעוניים."
+  },
+  "impair": {
+    "assoc": "אימ-פייר – אמא פייר (יריד): השוק הגדול פגם בשמיעה שלה מרוב רעש.",
+    "sentence": "Loud music can impair your hearing over time.|מוזיקה חזקה עלולה לפגום בשמיעה שלך עם הזמן."
+  },
+  "in case of": {
+    "assoc": "אין קייס אוף – אין קייס? אוף! אם אין תיק – במקרה של חירום, מה עושים?",
+    "sentence": "In case of fire, use the emergency exit.|במקרה של שריפה, השתמש ביציאת החירום."
+  },
+  "incentive": {
+    "assoc": "אינסנטיב – אין-סנט-יב: אין סנט? יב (עוד כסף)! זה התמריץ הכי טוב.",
+    "sentence": "The bonus served as an incentive to work harder.|הבונוס שימש כתמריץ לעבוד קשה יותר."
+  },
+  "introduce": {
+    "assoc": "אינטרו-דיוס – אינטרו ודיוס: כשמתחיל האינטרו, מציגים את דיוס (האל)!",
+    "sentence": "Allow me to introduce my new colleague.|אפשר לי להציג את עמיתי החדש."
+  },
+  "introduction": {
+    "assoc": "אינטרודקשן – אינטרו-דקשן: המבוא תמיד מתחיל עם הצגה דרמטית.",
+    "sentence": "The introduction of the book explains the main themes.|המבוא של הספר מסביר את הנושאים המרכזיים."
+  },
+  "mark": {
+    "assoc": "מארק – מארק? זה השם שלי! תסמן אותו על כל דף!",
+    "sentence": "The teacher marked the mistakes in red.|המורה סימנה את הטעויות באדום."
+  },
+  "negotiation": {
+    "assoc": "ניגושיאיישן – ני-גושי-יישן: ני גושה אותי, אז ישבנו למשא ומתן.",
+    "sentence": "The negotiation between the two countries lasted for weeks.|המשא ומתן בין שתי המדינות נמשך שבועות."
+  },
+  "novel": {
+    "assoc": "נובל – פרס נובל לרומן החדשני ביותר של השנה!",
+    "sentence": "She wrote a novel about life during the war.|היא כתבה רומן על חיים בזמן המלחמה."
+  },
+  "organization": {
+    "assoc": "אורגניזיישן – אורגני-זיישן: הארגון הזה מוכר רק מוצרים אורגניים.",
+    "sentence": "He volunteers for a human rights organization.|הוא מתנדב בארגון זכויות אדם."
+  },
+  "organize": {
+    "assoc": "אורגנייז – אורגן-יז: נגן האורגן סידר את כל התווים לפני ההופעה.",
+    "sentence": "We need to organize the event carefully.|אנחנו צריכים לארגן את האירוע בקפידה."
+  },
+  "passion": {
+    "assoc": "פאשן – פאשן? זו לא רק אופנה, זו תשוקה אמיתית!",
+    "sentence": "He has a great passion for music.|יש לו תשוקה גדולה למוזיקה."
+  },
+  "passionate": {
+    "assoc": "פאשניט – פאשן-ניט: הנלהב הזה סורג (ניט) בתשוקה כל יום.",
+    "sentence": "She is passionate about protecting the environment.|היא נלהבת להגנה על הסביבה."
+  },
+  "persecute": {
+    "assoc": "פרסקיוט – פרסה-קיוט: הם רדפו אחרי הקיוט (קויוט) כל הלילה.",
+    "sentence": "Throughout history, minorities were often persecuted.|לאורך ההיסטוריה, מיעוטים נרדפו לעתים קרובות."
+  },
+  "persecution": {
+    "assoc": "פרסקיושן – פרס-קיו-שן: בתור פרס, קיו (תור) לרדיפה? לא הגיוני!",
+    "sentence": "The refugees fled from persecution in their homeland.|הפליטים ברחו מרדיפות במולדתם."
+  },
+  "policy": {
+    "assoc": "פוליסי – פולי-סי: פולי, ראית? זו המדיניות החדשה של הים!",
+    "sentence": "The school has a strict policy against bullying.|לבית הספר יש מדיניות נוקשה נגד בריונות."
+  },
+  "position": {
+    "assoc": "פוזישן – פוזי-שן: תפוס פוזה (עמדה) טובה, שן! זה תפקידך.",
+    "sentence": "She applied for a position at the new company.|היא הגישה מועמדות לתפקיד בחברה החדשה."
+  },
+  "possess": {
+    "assoc": "פוזס – פו-זס: פו! זס (זהב)? הוא בעלים של כל הזהב!",
+    "sentence": "He possesses great knowledge of history.|הוא בעל ידע רב בהיסטוריה."
+  },
+  "possession": {
+    "assoc": "פוזשן – פו-זשן: פו זשן! לקחת את כל הבעלות ממנו!",
+    "sentence": "The police found stolen goods in his possession.|המשטרה מצאה סחורה גנובה ברשותו."
+  },
+  "process": {
+    "assoc": "פרוסס – פרוס-ס: פרוס לי את הלחם? לא, זה תהליך ארוך!",
+    "sentence": "Learning a new language is a long process.|לימוד שפה חדשה הוא תהליך ארוך."
+  },
+  "quote": {
+    "assoc": "קווֹוט – קוו-ט: קוו (תור) לצטט את הנביא הגדול.",
+    "sentence": "He loves to quote famous philosophers in his essays.|הוא אוהב לצטט פילוסופים מפורסמים בחיבוריו."
+  },
+  "rail": {
+    "assoc": "ריֵיל – ריי-ל: ריי לא יכול בלי מסילה, הוא רק נוסע ברכבת.",
+    "sentence": "He held onto the rail as the ship rocked.|הוא אחז במעקה כשהספינה התנדנדה."
+  },
+  "rein": {
+    "assoc": "ריין – ריין כמו גשם: כשיורד גשם, תרסן את הסוס לפני שהוא בורח!",
+    "sentence": "The rider pulled the reins to stop the horse.|הרוכב משך במושכות כדי לעצור את הסוס."
+  },
+  "remark": {
+    "assoc": "רימארק – רי-מארק: מארק אמר שוב ושוב את אותה הערה.",
+    "sentence": "He made a remark about the weather during the meeting.|הוא עשה הערה על מזג האוויר במהלך הפגישה."
+  },
+  "remarkable": {
+    "assoc": "רימארקבל – רי-מארק-בל: מארק מצלצל (בל) שוב? זה יוצא דופן!",
+    "sentence": "She made a remarkable recovery after the accident.|היא עשתה התאוששות יוצאת דופן לאחר התאונה."
+  },
+  "repetition": {
+    "assoc": "רפטישן – רפ-טישן: הרפאר חוזר על אותה שורה – זו חזרה!",
+    "sentence": "Repetition is key to memorizing vocabulary.|חזרה היא המפתח לשינון אוצר מילים."
+  },
+  "revise": {
+    "assoc": "ריוויז – רי-ויז: ראית (ויז) שוב? תתקן את מה שראית לא בסדר.",
+    "sentence": "You should revise your essay before submitting it.|כדאי לתקן את החיבור שלך לפני הגשתו."
+  },
+  "revision": {
+    "assoc": "ריוויז'ן – רי-ויז'ן: הראייה (ויז'ן) השתנתה – זמן לבדיקה מחדש!",
+    "sentence": "After revision, her essay became much better.|לאחר בדיקה מחדש, החיבור שלה הפך הרבה יותר טוב."
+  },
+  "rumor": {
+    "assoc": "רוּמוֹר – רו-מור: 'רו, מור!' – אמרה הפרה, ועכשיו יש שמועה שפרות מדברות.",
+    "sentence": "A rumor spread quickly throughout the school.|שמועה התפשטה במהירות בכל בית הספר."
+  },
+  "seed": {
+    "assoc": "סיד – סיד, תזרע! גרעין אחד הופך ליער שלם.",
+    "sentence": "The farmer planted seeds in the field.|החקלאי זרע גרעינים בשדה."
+  },
+  "site": {
+    "assoc": "סייט – סייט-סייט: ראית את האתר החדש? שם תמיד יש סייט חדש.",
+    "sentence": "The construction site was busy all day.|אתר הבנייה היה עמוס כל היום."
+  },
+  "soil": {
+    "assoc": "סוֹיל – סוי-ל: סויה גדלה מהאדמה, אל תלכלך את הקרקע!",
+    "sentence": "The soil in this region is very fertile.|האדמה באזור הזה פורייה מאוד."
+  },
+  "strive": {
+    "assoc": "סטרייב – סטריי-ב: הסטריי (חתול תועה) שואף כל יום למצוא אוכל.",
+    "sentence": "She always strives to do her best.|היא תמיד שואפת לעשות את המיטב שלה."
+  },
+  "substance": {
+    "assoc": "סבסטנס – סב-סטנס: הסב עומד (סטנס) בנחישות מול כל חומר מסוכן.",
+    "sentence": "Water is a substance found everywhere on Earth.|מים הם חומר המצוי בכל מקום על פני כדור הארץ."
+  },
+  "tangible": {
+    "assoc": "טנג'יבל – טנג-ג'יבל: תן ג'יבה (לשון)! רק אז תרגיש משהו מוחשי.",
+    "sentence": "We need tangible evidence to prove the theory.|אנחנו צריכים עדות מוחשית להוכחת התיאוריה."
+  },
+  "terminate": {
+    "assoc": "טרמינייט – הטרמינטור תמיד מסיים את המשימה. לסיים – טרמינייט!",
+    "sentence": "The company decided to terminate his contract.|החברה החליטה לסיים את החוזה שלו."
+  },
+  "twist": {
+    "assoc": "טוויסט – ריקוד הטוויסט: כשמפתלים את הגוף, זה תפנית לא צפויה!",
+    "sentence": "The story had an unexpected twist at the end.|לסיפור הייתה תפנית בלתי צפויה בסוף."
+  },
+  "verify": {
+    "assoc": "וריפיי – וֶרי-פיי: 'וֶרי' (מאוד) חשוב לשלם (פיי) אחרי שאומתת הזהות.",
+    "sentence": "Please verify your email address to complete registration.|בבקשה אמת את כתובת האימייל שלך להשלמת ההרשמה."
+  },
+  "waste": {
+    "assoc": "ווייסט – ווייסט כמו מותניים: לבזבז אנרגיה על המותניים זה פסולת של מאמץ.",
+    "sentence": "Don't waste water – it is a precious resource.|אל תבזבז מים – זהו משאב יקר."
+  },
+  "wasteful": {
+    "assoc": "ווייסטפול – ווייסט-פול: פול (מלא) בבזבוז, הוא הכי בזבזני בכיתה.",
+    "sentence": "Leaving the lights on all night is very wasteful.|להשאיר את האורות דלוקים כל הלילה הוא מאוד בזבזני."
+  },
+  "wrap": {
+    "assoc": "ראפ – ראפ (מוזיקה): הראפר עוטף את השורות שלו בחרוזים ואז ארוז הכל.",
+    "sentence": "She wrapped the gift in colorful paper.|היא עטפה את המתנה בנייר צבעוני."
+  },
+  "adorn": {
+    "assoc": "אדורן – א-דורן: דורן, תקשט את הסלון לפני שהאורחים מגיעים!",
+    "sentence": "They adorned the hall with flowers and ribbons.|הם קישטו את האולם בפרחים וסרטים."
+  },
+  "advocate": {
+    "assoc": "אדווקט – אד-וו-קט: אד (עוד) ווקט (קלט)? הסנגור תמיד תומך בלקוח שלו.",
+    "sentence": "She is a strong advocate for children's rights.|היא חסידה נלהבת לזכויות ילדים."
+  },
+  "allusion": {
+    "assoc": "אלוז'ן – אל-לוז'ן: 'אל תאבד (לוז)' – זה אזכור נסתר לאגדה ישנה.",
+    "sentence": "The poem contains an allusion to Greek mythology.|השיר מכיל אזכור למיתולוגיה יוונית."
+  },
+  "burden": {
+    "assoc": "בּרדן – ברד-ן: הברד נפל על הגב – איזה נטל כבד!",
+    "sentence": "The heavy backpack was a burden on his shoulders.|התיק הכבד היה נטל על כתפיו."
+  },
+  "contend": {
+    "assoc": "קונטנד – קון-טנד: קון-טנד? הגבר הזה מתחרה וטוען שהוא הכי חזק בטנדר.",
+    "sentence": "Several teams contend for the championship title.|כמה קבוצות מתחרות על תואר האליפות."
+  },
+  "deter": {
+    "assoc": "דיטר – דיטר? כן, הוא מרתיע כולם בעצם שמו הגרמני.",
+    "sentence": "Higher prices can deter people from smoking.|מחירים גבוהים יכולים להרתיע אנשים מעישון."
+  },
+  "docile": {
+    "assoc": "דוסייל – דוסי-ל: הדוסי (הדתי) הכי צייתן ורגוע – דוסייל!",
+    "sentence": "The docile dog obeyed every command.|הכלב הצייתן ציית לכל פקודה."
+  },
+  "enthusiast": {
+    "assoc": "אנתוזיאסט – אן-תוז-יאסט: אן תוזז? יאסט (שמרים)! הנלהב הזה תוסס כמו לחם!",
+    "sentence": "He is a football enthusiast who never misses a game.|הוא מעריץ כדורגל שאף פעם לא מחמיץ משחק."
+  },
+  "grant": {
+    "assoc": "גראנט – גראנט? כמו יוליסס גראנט! הנשיא הזה העניק מענקים לכולם.",
+    "sentence": "The university granted him a scholarship.|האוניברסיטה העניקה לו מלגה."
+  },
+  "indignant": {
+    "assoc": "אינדיגנט – אינדי-גנט: אינדי (אינדיאנה ג'ונס) גנב?! הוא כועס על חוסר הצדק!",
+    "sentence": "She was indignant when she was accused unfairly.|היא כעסה כשהואשמה בצורה לא הוגנת."
+  }
+}

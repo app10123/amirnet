@@ -1,0 +1,402 @@
+excessive | מוגזם, מופרז
+general | כללי
+generalize | להכליל
+image | תמונה, תדמית
+imaginary | דמיוני, מדומה
+imaginative | בעל דמיון
+imagine | לדמיין
+inaccessible | לא נגיש
+interest | עניין, אינטרס
+interesting | מעניין
+joy | שמחה
+lame | נכה, חלש, עלוב
+link | קישור, לחבר
+linked with | קשור ל-
+lose | לאבד, להפסיד
+lost | אבוד, מבוזבז
+mean | להתכוון, אכזרי
+meaning | משמעות
+means | אמצעים, משאבים
+medication | טיפול תרופתי
+medicine | תרופה, רפואה
+mild | מתון, עדין
+mobile | נייד
+move | להזיז, לרגש
+need | צורך, להזדקק
+pardon | חנינה, לסלוח
+progress | התקדמות, להתקדם
+progressive | מתקדם
+research | מחקר, לחקור
+rise | עלייה, להתרומם
+rude | חצוף
+rudely | בחוצפה
+scale | סולם, קנה מידה
+science | מדע
+scientific | מדעי
+scientist | מדען
+search | חיפוש, לחפש
+seat | מושב, להושיב
+send | לשלוח
+session | מפגש, ישיבה
+soft | רך
+softly | ברכות
+source | מקור, מוצא
+stage | שלב, במה
+tail | זנב, לעקוב
+therapy | טיפול, תרפיה
+turn | תור, לסובב
+type | סוג
+unattractive | לא מושך
+use | שימוש, להשתמש
+private | פרטי
+profound | מעמיק, עמוק
+profoundly | עמוקות
+populous | מאוכלס בצפיפות
+predator | טורף
+innovate | לחדש, להמציא
+inspiration | השראה
+inspire | לעורר השראה
+invent | להמציא
+acquisition | רכישה
+adore | להעריץ, לחבב
+alternate between | להחליף בין אפשרויות
+amaze | להדהים
+amazing | מדהים
+animate | להחיות, ערני
+animation | אנימציה, הנפשה
+aspiration | שאיפה
+attire | לבוש
+authentically | באמת
+authenticate | לאמת, לאשר
+become | להפוך ל-
+branch | סניף, ענף
+campaign | קמפיין, מסע פרסום
+climate | אקלים
+contain | להכיל
+exaggeration | הגזמה
+expand | להרחיב, להתפשט
+fatal | קטלני
+fate | גורל
+festivity | חגיגיות
+fortunate | בר מזל
+fortune | הון, מזל
+gesture | מחווה, תנועה
+gravitation | כוח המשיכה
+ill | חולה
+illness | מחלה
+inanimate | דומם
+inaudible | שלא ניתן לשמוע
+individual | פרט, יחיד
+inventor | ממציא
+inventory | רשימת מלאי
+isolate | לבודד
+magical | קסום
+market | שוק, לשווק
+nomination | מינוי, מועמדות
+nominee | מועמד
+ordain | להסמיך, למנות
+overestimated | העריך יתר על המידה
+overlook | להתעלם, להעלים עין
+peer | עמית, שווה מעמד
+plant | לשתול, צמח, מפעל
+plantation | מטע
+population | אוכלוסייה
+pure | טהור
+purification | טיהור
+range | טווח
+recruit | לגייס
+recruitment | גיוס
+rehabilitation | שיקום
+relate | לספר, לייחס
+relations | יחסים
+relationship | מערכת יחסים, קשר
+relative | קרוב משפחה, יחסי
+relatively | באופן יחסי
+release | לשחרר, לפרסם
+request | לבקש, בקשה
+ruin | להרוס
+ruins | הריסות
+sacred | קדוש, מקודש
+shelter | מחסה, לגונן
+slavery | עבדות
+strike | להכות, לתקוף, לשבות
+target | מטרה, להפוך למטרה
+tempt | לפתות
+tense | מתוח, לחוץ
+tension | מתח
+tradition | מסורת
+transplant | השתלה, להשתיל
+underestimated | העריך נמוך מדי
+unfortunate | אומלל, חסר מזל
+urge | דחף, לדחוק ב-
+urgency | דחיפות
+urgent | דחוף
+vast | רחב, עצום
+version | גרסה
+withhold | למנוע מ-
+witness | עד, להיות עד ל-
+stress | לחץ, דגש, להלחיץ
+substitute | תחליף, להחליף
+superficial | שטחי
+distressingly | באופן מרגיז
+encompass | להקיף, להכיל
+fall | ליפול, נפילה, סתיו
+hectic | עמוס, קדחתני
+achieve | להשיג
+act | לפעול, מעשה, לשחק
+allure | פיתוי, לפתות
+condone | למחול, לסלוח
+constitute | להוות, להרכיב
+distress | מצוקה
+incite | להסית, לשלהב
+industrialization | תיעוש
+industrious | חרוץ, שקדן
+industriously | בשקדנות
+industry | תעשייה
+limit | גבול, להגביל
+lure | פיתיון, לפתות
+luring | מפתה
+mediate | לתווך
+mediator | מתווך
+mourn | להתאבל
+onset | התחלה, התקפה
+parallel | מקביל, להקביל
+pledge | הבטחה, להתחייב
+projection | השלכה, הקרנה
+seduction | פיתוי
+sophisticated | מתוחכם
+sophistication | מורכבות, תחכום
+active | פעיל
+addition | תוספת
+additional | נוסף
+advise | לייעץ, להמליץ/להודיע
+appeal | לערער/פנייה/ערעור/משיכה
+appealed to | משך/פנה אל
+assign | להקצות
+aware | להיות מודע
+besides | כמו כן, חוץ מזה
+bleed | לדמם
+blind | לעוור/עיוור
+blindly | באופן עיוור
+blood | דם
+blunt | קהה/בוטה
+broad | רחב
+broadly | בדרך כלל/באופן רחב
+bury | לקבור
+carefully | בזהירות
+century | מאה (תקופה)
+certificate | תעודה, אישור
+certify | לאשר/להסמיך
+clean | לנקות/נקי
+column | עמוד/טור
+confusing | מבלבל
+confusion | מהומה/בלבול
+consume | לצרוך/לעכל
+consumer | צרכן
+deal | להתמודד/עסקה
+deliberate | לדון/מכוון
+deliberation | דיון/שקילה/תשומת לב
+destination | יעד
+destined for | מיועד ל
+develop | לפתח
+developed | מפותח מתועש
+development | פיתוח/התפתחות
+doubt | להטיל ספק/ספק
+drop out | לנשור (למשל מהלימודים)
+empire | אימפריה
+enjoy | ליהנות
+envelope | מעטפה, מעטפת עטיפה
+face | לפנות/לעמוד פנים אל פנים/פנים
+facial | שקשור לפנים
+globe | גלובוס/כדור הארץ
+good | טוב
+goods | סחורה
+hint | לרמוז/רמז
+hope | לקוות/תקווה
+in addition | בנוסף
+language | שפה
+learn | ללמוד
+lesson | שיעור
+once | פעם, פעם אחת
+safe | בטוח/כספת
+sudden | פתאומי
+surface | לעלות, להגיח/משטח
+misunderstood | שהבינו אותו לא נכון
+neither | אף לא אחד מהשניים
+notice | לשים לב, להבחין/הודעה, תזכורת
+occupation | עיסוק, מקצוע/כיבוש
+assignment | משימה
+assure | להבטיח
+budget | תקציב
+chronology | רצף אירועים/כרונולוגיה
+clarify | להבהיר, להסביר/לסנן (נוזל למשל)
+collide | להתנגש
+collision | התנגשות
+compatible | מתאים
+contact | ליצור קשר/מגע
+contract | להתכווץ, לצמצם/הסכם, חוזה
+convert | להמיר
+demonstrate | להדגים/להפגין
+economic | כלכלי, פיננסי, חסכוני
+economize | לחסוך
+economy | כלכלה
+emphasize | להדגיש
+enroll | לרשום/להתעדכן/לגולל
+ensure | להבטיח
+expel | לגרש
+expert | מומחה
+export | לייצא
+failure | כישלון
+fragrance | ריחניות/ניחוח
+fragrant | מפיץ ריח טוב/נעים, מענג
+frustrated | מיואש, מתוסכל
+frustration | תסכול
+glare | מבט חודר, תוקף/ברק
+government | ממשלה
+governor | מושל
+grasp | לתפוס/להבין
+harsh | נוקשה
+hide from | להסתיר מ/להסתתר מ
+import | לייבא
+impression | רושם, חוות דעת/חיקוי
+imprint | הטבעה, חותם
+infinite | אינסופי
+initial | התחלתי, ראשוני
+initials | ראשי תיבות
+inquiry | חקירה
+insensitive | לא מתחשב, לא רגיש
+interject | להכניס בין דברים (להפריע)
+interpret | לפרש
+interpretation | פרשנות
+material | חומר
+materialize | להתגשם, להפוך לגשמי
+maze | מבוך
+measure | למדוד/מידה/אמת מידה
+measurement | מדידה
+misinterpreted | שלא פורש נכונה
+operate | לפעול/לנתח
+operative | ביצועי/ניתוחי
+permission | רשות
+permit | להרשות, להתיר/היתר
+preferable | מועדף
+prey | טרף
+print | להדפיס/טקסט כתוב, דפוס
+reassurance | הרגעה, עידוד
+recognize | להכיר, לזהות
+renowned | ידוע, מפורסם
+review | לסקור/לכתוב ביקורת
+schedule | לקבוע/לוח זמנים
+sense | להרגיש/חוש, תחושה/היגיון
+sensible | הגיוני
+sensitive | רגיש
+shield | להגן/מגן
+species | מינים, זנים
+summarize | לסכם
+summary | תקציר, סיכום
+tax | מס
+term | להגדיר/מונח/תנאי/סמסטר
+tolerance | סובלנות
+tolerate | להיות סובלני
+transition | מעבר/ שינוי
+transport | להעביר
+transportation | אמצעי תחבורה
+understand | להבין
+understandable | מובן
+undertake | ליטול על עצמו/להבטיח
+union | איחוד, איגוד
+unsatisfied | שאינו מסופק
+violate | להפר
+violence | אלימות
+volcano | הר געש
+taint | לפגום/להכתים/לזהם
+tremble | לרעוד, לשקשק/לפחד
+viscera | מעיים
+eminent | בולט, מכובד, בכיר
+heir | יורש
+implore | להפציר, להתחנן
+memorization | שינון
+memorize | לשנן
+mural | ציור קיר
+mutiny | מרד
+penal | פלילי, של עונש
+penalize | להעניש
+penalty | עונש, קנס
+polar | קוטבי
+polarize | לקטב/להתנגד
+prominence | חשיבות/התבלטות
+prominent | בולט/חשוב
+slander | להשמיץ, להכפיש/הכפשה
+stiff | נוקשה/קשיח
+supplant | להחליף/לתפוס מקומו בכח
+surmount | להתגבר על
+area | אזור
+behave | להתנהג
+behavior | התנהגות, התנהלות
+buy | לקנות, לרכוש
+ceremony | טקס
+condition | תנאי/מצב
+conditional | מותנה, בהתניה מסוימת
+correspondence | התכתבות/התאמה/הסכמה
+creative | יצירתי
+creature | יצור/יציר
+debate | להתדיין/להתלבט/דיון
+debt | חוב
+deliver | לשלוח, להעביר/לשחרר/לשאת דברים
+delivery | משלוח/לידה
+element | יסוד, אלמנט/רכיב
+employ | להעסיק/להפעיל
+employment | תעסוקה
+endurable | נסבל
+endurance | כוח סבל
+endure | לסבול, לשאת/להחזיק מעמד
+engage in | להתעסק ב
+engagement | התחייבות/אירוסין
+enough | מספיק, די
+enrich | להעשיר
+erase | למחוק
+evaluate | להעריך
+examine | לבחון
+experience | ניסיון
+explanation | הסבר
+fit | להתאים/מתאים/כשיר
+garbage | אשפה, זבל
+gift | מתנה
+guess | לנחש/ניחוש
+headache | כאב ראש
+hear | לשמוע
+installation | התקנה/התקן
+involve | לערב
+join | להצטרף
+loud | קולני, רועם
+loudly | בקול רם
+molecule | מולקולה
+more | יותר
+narrow | לצמצם/צר
+option | אפשרות, אופציה
+other | אחר, שונה
+proper | הולם, מתאים/תקין
+properly | כיאות, היטב
+question | לשאול/לפקפק/שאלה
+questioned | מוטל בספק/נשאל
+respond | להגיב
+response | תגובה
+serious | רציני, חמור
+tall | גבוה
+teach | ללמד
+test | לבחון/מבחן
+unit | יחידה
+valuable | בעל ערך, יקר ערך
+value | להעריך/להוקיר/ערך
+answer | לפתור/להשיב/תשובה, פתרון
+apparent | גלוי, נראה
+appear | להיראות, להופיע
+approximately | בקירוב
+aspect | אופי, הבט, פן/מראה
+attach | לחבר
+attain | להשיג/לקבל
+bright | בהיר, זוהר/מבריק, פיקח
+charge | לטעון/לחייב/להאשים/להסתער
+cheer | לעודד/עידוד, שמחה
+classification | סיווג, מיון
+classify | לסווג, למיין
+companion | בן לוויה, חבר

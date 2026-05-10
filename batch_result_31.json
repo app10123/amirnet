@@ -1,0 +1,322 @@
+{
+  "embryo": {
+    "assoc": "אֶמְבְּרִיוֹ – 'עם בריו' – העובר נמצא עם כוחותיו בפנים.",
+    "sentence": "The embryo develops rapidly in the first weeks.|העובר מתפתח במהירות בשבועות הראשונים."
+  },
+  "engage": {
+    "assoc": "אִינְגֵ'יג' – 'אן גייג' – אם אין גייג', אין מגע עם המציאות.",
+    "sentence": "She tried to engage the students in the discussion.|היא ניסתה לערב את התלמידים בדיון."
+  },
+  "enlist": {
+    "assoc": "אִינְלִיסְט – 'אן ליסט' – נרשמת לרשימה? התגייסת!",
+    "sentence": "He decided to enlist in the army at age eighteen.|הוא החליט להתגייס לצבא בגיל שמונה עשרה."
+  },
+  "entertain": {
+    "assoc": "אֶנְטֶרְטֵיין – 'אנטר טיין' – נכנסת לטיין? תבדר את עצמך!",
+    "sentence": "The clown was hired to entertain the children.|הליצן נשכר כדי לבדר את הילדים."
+  },
+  "envision": {
+    "assoc": "אֶנְוִיזְ'ן – 'אן ויז'ן' – אם יש לך ויז'ן, אתה יכול לחזות את העתיד.",
+    "sentence": "She could envision a better future for her community.|היא יכלה לצפות עתיד טוב יותר לקהילתה."
+  },
+  "esteemed": {
+    "assoc": "אִיסְטִימְד – 'איס טים' – הצוות שלו הוא ה-איס טים, כולם מכבדים אותו.",
+    "sentence": "He is an esteemed professor at the university.|הוא פרופסור מכובד באוניברסיטה."
+  },
+  "examination": {
+    "assoc": "אֶגְזַמִינֵיישן – 'אגזם' – אגזמת? יש לך בחינה על זה!",
+    "sentence": "The doctor ordered a full medical examination.|הרופא ביקש בדיקה רפואית מלאה."
+  },
+  "excitement": {
+    "assoc": "אֶקְסַיְטְמֶנְט – 'אקסייט' – אקסייט! ההתרגשות מציתה אותך!",
+    "sentence": "The children could not hide their excitement before the trip.|הילדים לא יכלו להסתיר את התרגשותם לפני הטיול."
+  },
+  "exhaust": {
+    "assoc": "אֶגְזוֹסְט – ממש 'אגזוז'! צינור הפליטה של המכונית.",
+    "sentence": "The car's exhaust was releasing thick black smoke.|אגזוז המכונית פלט עשן שחור וסמיך."
+  },
+  "expedite": {
+    "assoc": "אֶקְסְפֶּדַיְט – 'אקספד' – אקספד מהר, תזרז את המשלוח!",
+    "sentence": "We need to expedite the delivery before the deadline.|אנחנו צריכים לזרז את המשלוח לפני הדדליין."
+  },
+  "expend": {
+    "assoc": "אֶקְסְפֶּנְד – 'אקס פנד' – האקס שלך מצא פנד חדש ובזבז הכל.",
+    "sentence": "They had to expend a lot of energy to finish the project.|הם נאלצו לבזבז הרבה אנרגיה כדי לסיים את הפרויקט."
+  },
+  "expendable": {
+    "assoc": "אֶקְסְפֶּנְדָּבְּל – 'אקספנד + בל' – מה שניתן לבלות, אפשר לוותר עליו.",
+    "sentence": "In that mission, no soldier was considered expendable.|במשימה ההיא, אף חייל לא נחשב לכזה שניתן לוותר עליו."
+  },
+  "eyesight": {
+    "assoc": "אַיְסַיְט – 'עיי סייט' – עיי סייט! העיניים הן אתר הראייה שלך.",
+    "sentence": "His eyesight has been getting worse every year.|הראייה שלו מתדרדרת כל שנה."
+  },
+  "familiar": {
+    "assoc": "פָמִילְיָר – 'פמיליה' – פמיליה, משפחה, תמיד מוכרת לך.",
+    "sentence": "This street looks familiar to me.|הרחוב הזה נראה לי מוכר."
+  },
+  "familiarize": {
+    "assoc": "פָמִילְיָרַיְז – 'פמיליה' – תהיה פמיליה עם המקום, תתוודע אליו.",
+    "sentence": "Please familiarize yourself with the company's policies.|אנא התוודע לנהלי החברה."
+  },
+  "fetus": {
+    "assoc": "פִּיטוּס – 'פיטוס' – פיטוס ברחם, עובר מחכה לצאת.",
+    "sentence": "The fetus was healthy according to the ultrasound.|העובר היה בריא לפי האולטרסאונד."
+  },
+  "fiber": {
+    "assoc": "פַּיְבֶּר – 'פייבר' – פייבר אופטי? זה סיב של אור!",
+    "sentence": "Eating more fiber is good for your digestion.|אכילת יותר סיבים טובה לעיכול שלך."
+  },
+  "figurative": {
+    "assoc": "פִיגְ'יוּרָטִיב – 'פיגורה' – פיגורה של דיבור, סמלית ולא מילולית.",
+    "sentence": "The phrase 'break a leg' is figurative, not literal.|הביטוי 'שבור רגל' הוא סמלי, לא מילולי."
+  },
+  "finalize": {
+    "assoc": "פַיְנָלַיְז – 'פינאל' – בפינאל מגבשים ומסכמים הכל.",
+    "sentence": "We need to finalize the contract by Friday.|אנחנו צריכים לגבש את החוזה עד יום שישי."
+  },
+  "flagrant": {
+    "assoc": "פְּלֵיגְרַנְט – 'פלא גרנד' – פלא גרנד? לא! זה פשוט בוטה וחצוף.",
+    "sentence": "It was a flagrant violation of the rules.|זה היה הפרה בוטה של הכללים."
+  },
+  "fluctuation": {
+    "assoc": "פְלַקְטוּאֵיישן – 'פלוק' – פלוק אחר פלוק, חוסר יציבות מתמיד.",
+    "sentence": "There is a constant fluctuation in the stock market prices.|יש חוסר יציבות מתמיד במחירי הבורסה."
+  },
+  "fluency": {
+    "assoc": "פְלוּאֶנְסִי – 'פלואנס' – פלואנס שפתי = שטף דיבור.",
+    "sentence": "Her fluency in Spanish impressed everyone.|השטף שלה בספרדית הרשים את כולם."
+  },
+  "fluid": {
+    "assoc": "פְלוּאִיד – 'פלו איד' – פלו! הנוזל זורם בחופשיות.",
+    "sentence": "The doctor told him to drink plenty of fluids.|הרופא אמר לו לשתות הרבה נוזלים."
+  },
+  "footprints": {
+    "assoc": "פוּטְפְּרִינְטְס – 'פוט פרינט' – הדפסת את הרגל, טביעת רגל בחול.",
+    "sentence": "We saw footprints in the snow near the cabin.|ראינו טביעות רגל בשלג ליד הצריף."
+  },
+  "foresee": {
+    "assoc": "פוֹרְסִי – 'פור סי' – לפני שתסי, תראה מראש מה יקרה.",
+    "sentence": "No one could foresee such a dramatic change.|אף אחד לא יכול היה לצפות שינוי כה דרמטי מראש."
+  },
+  "fort": {
+    "assoc": "פוֹרְט – 'פורט' – מבצר פורט, חזק ובצור.",
+    "sentence": "The soldiers defended the fort against the enemy.|החיילים הגנו על המבצר מפני האויב."
+  },
+  "fortify": {
+    "assoc": "פוֹרְטִיפַי – 'פורטי פאי' – ארבעים חומות לבצר את המקום!",
+    "sentence": "They worked hard to fortify the city walls.|הם עמלו קשה כדי לבצר את חומות העיר."
+  },
+  "freeze, froze": {
+    "assoc": "פְרִיז, פְרוֹז – 'פריז' – בפריז הקרה כולם הקפיאו מהקור.",
+    "sentence": "She froze the leftover soup for later.|היא הקפיאה את מרק השאריות לאחר כך."
+  },
+  "fulfill": {
+    "assoc": "פוּלְפִיל – 'פול פיל' – פול פיל? מלא הגשמה!",
+    "sentence": "He worked hard to fulfill his dream of becoming a doctor.|הוא עמל קשה כדי להגשים את חלומו להיות רופא."
+  },
+  "gasoline": {
+    "assoc": "גֶּסוֹלִין – 'גז + לין' – הגז לן במכונית, זה בנזין!",
+    "sentence": "The car ran out of gasoline in the middle of the highway.|המכונית נגמר לה הבנזין באמצע הכביש הראשי."
+  },
+  "genre": {
+    "assoc": "ז'ַנְר – 'ז'אנר' – ממש ז'אנר! סוגה ספרותית או מוזיקלית.",
+    "sentence": "Horror is her favorite movie genre.|אימה היא הז'אנר הקולנועי האהוב עליה."
+  },
+  "genus": {
+    "assoc": "ג'ִינוּס – 'גינוס' – גינוס? זה המין הכללי בביולוגיה.",
+    "sentence": "The lion belongs to the genus Panthera.|האריה שייך למין פנתרה."
+  },
+  "giant": {
+    "assoc": "ג'ַיְאֶנְט – 'ג'יי אנט' – ג'יי הנמלה? לא! ג'יי הענק!",
+    "sentence": "The giant statue stood in the center of the city.|פסל הענק עמד במרכז העיר."
+  },
+  "goblet": {
+    "assoc": "גוֹבְּלֶט – 'גוב לט' – גוב לט? זה גביע זהב בגוב הגיבורים!",
+    "sentence": "He raised the golden goblet to make a toast.|הוא הרים את הגביע הזהב לטוסט."
+  },
+  "grief": {
+    "assoc": "גְרִיף – 'גריף' – גריף כבד על הלב, צער ויגון.",
+    "sentence": "She was overwhelmed with grief after losing her dog.|היא הוצפה בצער לאחר שאיבדה את כלבה."
+  },
+  "grievance": {
+    "assoc": "גְרִיוֹנְס – 'גריב' – גריב על כולם, התמרמרות מתמשכת.",
+    "sentence": "The workers filed a formal grievance against the manager.|העובדים הגישו תלונה רשמית נגד המנהל."
+  },
+  "growled": {
+    "assoc": "גְרַאוּלְד – 'גראול' – גראול! הכלב נהם בקול מפחיד.",
+    "sentence": "The dog growled at the stranger by the gate.|הכלב נהם על הזר ליד השער."
+  },
+  "halve": {
+    "assoc": "הַאְלְב – 'האף' – האף שלך בדיוק חצי מהפרצוף, לחצות!",
+    "sentence": "She decided to halve the recipe to make less food.|היא החליטה לחצות את המתכון כדי לבשל פחות אוכל."
+  },
+  "harass": {
+    "assoc": "הָרַס – ממש 'הרס'! מי שמציק לך הורס לך את היום.",
+    "sentence": "It is illegal to harass someone in the workplace.|זה לא חוקי להציק למישהו במקום העבודה."
+  },
+  "hasten": {
+    "assoc": "הֵיסְן – 'הייסן' – הייסן! מהר, למהר!",
+    "sentence": "We must hasten our preparations before the storm.|עלינו להחפז בהכנות לפני הסערה."
+  },
+  "hasty": {
+    "assoc": "הֵיסְטִי – 'הייסט' – שוד הייסט? מהיר ובהול, בלי לחשוב.",
+    "sentence": "He made a hasty decision that he later regretted.|הוא קיבל החלטה בהולה שלאחר מכן חרט עליה."
+  },
+  "hatch": {
+    "assoc": "הַאטְש – 'האטש' – האטש! הביצה התעטשה ובקע ממנה האפרוח.",
+    "sentence": "The eggs began to hatch early in the morning.|הביצים החלו לבקוע בבוקר המוקדם."
+  },
+  "heed": {
+    "assoc": "הִיד – 'הידד' – הידד! שים לב להידד לפני שתתחרט.",
+    "sentence": "You should heed the doctor's advice.|כדאי לך לשים לב לעצת הרופא."
+  },
+  "hegemony": {
+    "assoc": "הֶגֶמוֹנִיָה – ממש 'הגמוניה'! שליטה ועליונות כמו שאנחנו מכירים.",
+    "sentence": "The empire maintained its hegemony over the region for centuries.|האימפריה שמרה על הגמוניתה באזור במשך מאות שנים."
+  },
+  "height": {
+    "assoc": "הַיְט – 'הַייט' – הייט? זה גובה, לא שנאה!",
+    "sentence": "The height of the mountain made everyone dizzy.|גובה ההר גרם לכולם לסחרחורת."
+  },
+  "heresy": {
+    "assoc": "הֶרֶסִי – 'הרס' – כפירה? זה הרס לאמונה!",
+    "sentence": "Speaking against the church was considered heresy.|דיבור נגד הכנסייה נחשב לכפירה."
+  },
+  "hid from": {
+    "assoc": "הִיד פְרוֹם – 'הִיד' – הידד? לא! הוא התחבא מהידד.",
+    "sentence": "The child hid from his parents during the game.|הילד התחבא מהוריו במהלך המשחק."
+  },
+  "hidden": {
+    "assoc": "הִידֶן – 'היידן' – המלחין היידן? מוזיקתו נסתרת בין התווים.",
+    "sentence": "The treasure was hidden beneath the old oak tree.|האוצר היה חבוי מתחת לעץ האלון הישן."
+  },
+  "highway": {
+    "assoc": "הַיְוֵוי – 'האי ווי' – האי ווי? כביש ראשי גדול!",
+    "sentence": "The highway was blocked due to an accident.|הכביש הראשי היה חסום בגלל תאונה."
+  },
+  "historian": {
+    "assoc": "הִיסְטוֹרִיָאן – ממש 'היסטוריון'! מי שחוקר היסטוריה.",
+    "sentence": "The historian wrote a book about ancient Egypt.|ההיסטוריון כתב ספר על מצרים העתיקה."
+  },
+  "horrific": {
+    "assoc": "הוֹרִיפִיק – 'הוריפי' – הוריפי! איום ומפחיד.",
+    "sentence": "The accident left a horrific scene on the road.|התאונה השאירה תמונה איומה על הכביש."
+  },
+  "hospitality": {
+    "assoc": "הוֹסְפִּיטַלִיטִי – 'הוספיטל' – בבית החולים מכניסים אורחים בהכנסת אורחים.",
+    "sentence": "The village was known for its warm hospitality.|הכפר היה ידוע בהכנסת האורחים החמה שלו."
+  },
+  "host": {
+    "assoc": "הוֹסְט – 'הוסט' – הוסט! המארח מגיש לך אוכל.",
+    "sentence": "She was an amazing host at the dinner party.|היא הייתה מארחת מדהימה במסיבת הערב."
+  },
+  "idolize": {
+    "assoc": "אַיְדוֹלַיְז – 'אידול' – האידול שלך? אתה מעריץ אותו!",
+    "sentence": "Many teenagers idolize their favorite pop stars.|נוער רב מעריץ את כוכבי הפופ האהובים עליהם."
+  },
+  "illuminate": {
+    "assoc": "אִילוּמִינֵיט – 'אילומי' – אילומינטי מאיר את הסודות הנסתרים.",
+    "sentence": "The candles were used to illuminate the dark room.|הנרות שימשו להאיר את החדר החשוך."
+  },
+  "inadvertently": {
+    "assoc": "אִינַאדְבֶּרְטֶנְטְלִי – 'אין אדוורט' – בלי פרסומת, בלי כוונה, סתם קרה.",
+    "sentence": "She inadvertently deleted the important file.|היא מחקה בלי כוונה את הקובץ החשוב."
+  },
+  "indebted": {
+    "assoc": "אִינְדֶּבְּטֶד – 'אין דבט' – יש לי חוב, אני אסיר תודה.",
+    "sentence": "He felt deeply indebted to his mentor.|הוא הרגיש אסיר תודה עמוקה למנטור שלו."
+  },
+  "infancy": {
+    "assoc": "אִינְפֶנְסִי – 'אינפנט' – תינוק אינפנט, ינקות רכה.",
+    "sentence": "She lost her mother during infancy.|היא איבדה את אמה בינקות."
+  },
+  "inject": {
+    "assoc": "אִינְג'ֶקְט – 'אינג'קשן' – אינג'קשן! להזריק ישר לווריד.",
+    "sentence": "The nurse had to inject the medicine into his arm.|האחות הייתה צריכה להזריק את התרופה לזרועו."
+  },
+  "insanity": {
+    "assoc": "אִינְסַנִיטִי – 'אין סניטי' – אין שפיות! זו אי שפיות!",
+    "sentence": "The defense lawyer argued his client acted out of insanity.|עורך הדין טען שמרשו פעל מתוך אי שפיות."
+  },
+  "inspect": {
+    "assoc": "אִינְסְפֶּקְט – 'אינספקטור' – האינספקטור בא לבדוק הכל.",
+    "sentence": "The officer came to inspect the building for safety violations.|הקצין בא לבדוק את הבניין לגבי הפרות בטיחות."
+  },
+  "integrate": {
+    "assoc": "אִינְטֶגְרֵיט – 'אינטגרל' – אינטגרל משלב הכל לחישוב אחד.",
+    "sentence": "The school worked hard to integrate students from all backgrounds.|בית הספר עמל לשלב תלמידים מכל הרקעים."
+  },
+  "intelligence": {
+    "assoc": "אִינְטֶלִיגֶנְס – ממש 'אינטליגנציה'! גם חכמה וגם מודיעין.",
+    "sentence": "The intelligence report revealed new information about the threat.|דוח המודיעין חשף מידע חדש על האיום."
+  },
+  "interface": {
+    "assoc": "אִינְטֶרְפֵיס – ממש 'ממשק'! הפנים שבין המשתמש למחשב.",
+    "sentence": "The new interface is much easier to use.|הממשק החדש הרבה יותר קל לשימוש."
+  },
+  "interjection": {
+    "assoc": "אִינְטֶרְג'ֶקְשן – 'אינטר' + 'ג'קסון' – מייקל ג'קסון הפריע לשיחה!",
+    "sentence": "His sudden interjection interrupted the entire meeting.|ההפרעה הפתאומית שלו עצרה את כל הישיבה."
+  },
+  "keystone": {
+    "assoc": "קִיסְטוֹן – 'קי סטון' – האבן המפתח שסוגרת את הקשת.",
+    "sentence": "Trust is the keystone of any successful relationship.|אמון הוא אבן המפתח של כל מערכת יחסים מוצלחת."
+  },
+  "lackluster": {
+    "assoc": "לַאקְלַסְטֶר – 'לאק לוסטר' – חסר לוסטר, חסר ברק ועניין.",
+    "sentence": "The performance was lackluster and disappointed the audience.|ההופעה הייתה חסרת ברק ואכזבה את הקהל."
+  },
+  "leisurely": {
+    "assoc": "לֶז'ֶרְלִי – 'לז'ר' – לז'ר = פנאי רגוע ונינוח.",
+    "sentence": "They took a leisurely walk along the beach at sunset.|הם יצאו לטיול רגוע לאורך החוף בשקיעה."
+  },
+  "luggage": {
+    "assoc": "לַגִּיג' – 'לגיג'' – לגיג' כבד עם כל המזוודות.",
+    "sentence": "She struggled to carry all her luggage up the stairs.|היא התקשתה לשאת את כל מזוודותיה במעלה המדרגות."
+  },
+  "lurking": {
+    "assoc": "לֶרְקִינְג – 'לארק' – לארק מסתתר בחושך, אורב לך.",
+    "sentence": "A danger was lurking in the shadows of the alley.|סכנה אורבת בצללי הסמטה."
+  },
+  "magnitude": {
+    "assoc": "מַגְנִיטוּד – 'מגנט' – המגנט הגדול, גודל וחשיבות אדירה.",
+    "sentence": "The magnitude of the disaster shocked the entire world.|גודל האסון הדהים את העולם כולו."
+  },
+  "malformation": {
+    "assoc": "מַאלְפוֹרְמֵיישן – 'מאל פורמציה' – פורמציה רעה = פגם ועיוות.",
+    "sentence": "The baby was born with a heart malformation.|התינוק נולד עם עיוות בלב."
+  },
+  "manner": {
+    "assoc": "מַאנֶר – 'מנר' – מנורה? לא! אופן הדלקתה חשוב.",
+    "sentence": "He spoke in a calm and friendly manner.|הוא דיבר באופן רגוע וידידותי."
+  },
+  "manners": {
+    "assoc": "מַאנֶרְז – 'מאנרז' – מאנרז? נימוסים שצריך ללמוד מהמאן שלך.",
+    "sentence": "Good manners are important in every culture.|נימוסים טובים חשובים בכל תרבות."
+  },
+  "marriage": {
+    "assoc": "מַארִיג' – 'מאריג'' – מאריג שני אנשים יחד, זה נישואין!",
+    "sentence": "Their marriage lasted over forty years.|הנישואין שלהם נמשכו למעלה מארבעים שנה."
+  },
+  "masculine": {
+    "assoc": "מַאסְקְיוּלִין – 'מסקולי' – מסקולי? זה גברי וחזק!",
+    "sentence": "He had a deep and masculine voice.|הייתה לו קול עמוק וגברי."
+  },
+  "merit": {
+    "assoc": "מֶרִיט – 'מריט' – מי שמרית מקבל את ההישג על זה.",
+    "sentence": "She received the award purely on merit.|היא קיבלה את הפרס על בסיס הישגיה בלבד."
+  },
+  "metal": {
+    "assoc": "מֶטָל – ממש 'מתכת'! מטאל הוא גם מוזיקה קשה כמו מתכת.",
+    "sentence": "The bridge was built from reinforced metal.|הגשר נבנה ממתכת מחוזקת."
+  },
+  "migrate": {
+    "assoc": "מַיְגְרֵיט – 'מיגרנה' – מיגרנה גורמת לציפורים להגר לאקלים טוב יותר.",
+    "sentence": "Many birds migrate south during the winter months.|ציפורים רבות מהגרות דרומה בחודשי החורף."
+  },
+  "minister": {
+    "assoc": "מִינִיסְטֶר – 'מיניסטר' – מיניסטר = שר בממשלה, ממש אותו מילה!",
+    "sentence": "The minister announced new education reforms.|השר הכריז על רפורמות חינוך חדשות."
+  }
+}

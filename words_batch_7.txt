@@ -1,0 +1,80 @@
+inherit | לקבל בירושה
+leisure | פנאי
+mimic | לחקות/חקין
+narration | סיפור, נרטיב/קריינות
+porous | מנוקב, מחורר
+prerequisite | שנדרש מראש
+reliable | אמין, מהימן
+reliance | ביטחון/תלות
+seize | לתפוס, ללכוד/לאחוז
+sincerely | בכנות
+suppress | להפסיק/למנוע/להדחיק
+surveillance | מעקב, פיקוח
+sustain | לתמוך/לסבול/להמשיך
+sustainability | קיימות
+sustainable | בר קיימא
+synonym | מילה נרדפת
+unreliable | לא אמין, לא יציב
+alert | להזהיר, להודיע/אזהרה/דרוך
+angle | להטות/זווית/פן
+arrive | להגיע
+availability | זמינות
+begin | להתחיל
+beginning | התחלה
+bend | לכופף, לעקם/עיקול, סיבוב
+bend over | להתכופף
+bent | מושחת/עקום/נחוש
+between | בין/בשותפות
+borrow | ללוות, לשאול/להעתיק
+chapter | פרק/תקופה/סניף
+circuit | להקיף/מעגל/מעגל חשמלי
+circular | מעגלי/מחזורי
+custom | מכס/מנהג
+exchange | להמיר, להחליף
+explorer | חוקר/מגלה ארצות
+exploring | עיסוק בחקר
+express | לבטא, להביע/להפגין/מהיר
+expression | הבעה/ביטוי
+fast | לצום/צום/מהיר
+find | למצוא
+findings | ממצאים
+forget | לשכוח
+forgive | לסלוח
+front | קדמי, פרונטאלי/חזית
+function | לתפקד/לשמש/פונקציה
+gap | להרווח/רווח, פער
+hobby | תחביב
+hold | להחזיק/להכיל/להאמין/אחיזה
+insert | להחדיר/לשבץ
+light | להדליק/קל/בהיר/אור
+light bulb | נורה
+lightly | בקלות
+location | מיקום
+malfunction | תפקוד לקוי, כשל
+natural | טבעי
+order | לתת פקודה/להזמין/סדר/פקודה
+patient | סבלני/מטופל
+pipe | צינור/מקטרת
+pretend | להעמיד פנים
+profession | מקצוע/הצהרה
+public | ציבורי
+publish | לפרסם
+quick | מהיר, זריז/חפוז
+quickly | בזריזות
+reproduce | להתרבות/לשכפל
+respect | לכבד/יחס/כבוד
+restrict | להגביל, לאסור על
+restriction | מגבלה
+show | להראות, להציג/הצגה
+sign | לחתום/סימן/שלט
+signal | לסמן, לאותת/סימן
+space | להרווח/החלל החיצון/מרחב
+spacecraft | חללית
+structure | מבנה
+topic | נושא, תחום
+voice | להביע, לבטא/קול
+volunteer | להתנדב/מתנדב
+weight | משקל/משקולת
+weightless | חסר משקל
+zone | אזור
+ambition | שאיפה, אמביציה
