@@ -1453,20 +1453,7 @@
         <input type="file" id="fileInput" style="display:none" onchange="importProgress(event)" accept=".json">
     </div>
 
-    <button class="home-nav-btn" id="homeNavBtn" onclick="goToDashboard()" title="מסך הבית">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="homeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#1d60b3"/>
-                    <stop offset="100%" stop-color="#2563eb"/>
-                </linearGradient>
-            </defs>
-            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z" stroke="url(#homeGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 21V12h6v9" stroke="url(#homeGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
-
-    <div id="vocab-screen" class="app-screen">
+<div id="vocab-screen" class="app-screen">
 
         <div class="app-logo-header">
             <svg class="app-logo-svg" viewBox="0 0 44 44" fill="none">
@@ -1625,8 +1612,7 @@
     </div>
 
     <div class="bottom-nav">
-        <button class="nav-item" id="nav-home" onclick="goToDashboard()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg><span>בית</span></button>
-        <button class="nav-item active" id="nav-vocab" onclick="switchAppScreen('vocab')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>מילים</span></button>
+<button class="nav-item active" id="nav-vocab" onclick="switchAppScreen('vocab')"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>מילים</span></button>
         <button class="nav-item" id="nav-practice" onclick="togglePracticeSheet()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg><span>תרגול</span></button>
         <button class="nav-item" id="nav-exam" onclick="openAdaptiveTest()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><span>מבחן</span></button>
         <button class="nav-item" id="nav-more" onclick="toggleMoreSheet()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>עוד</span></button>
@@ -1645,6 +1631,8 @@
     <div id="more-sheet-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1099;" onclick="toggleMoreSheet()"></div>
     <div id="more-sheet" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:var(--panel-bg);border-radius:16px 16px 0 0;padding:20px;z-index:1100;flex-direction:column;gap:4px;box-sizing:border-box;max-height:80vh;overflow-y:auto;padding-bottom:calc(20px + env(safe-area-inset-bottom));">
         <div style="width:36px;height:4px;background:var(--border-color);border-radius:2px;margin:0 auto 16px;"></div>
+        <button class="dropdown-item" onclick="goToDashboard();toggleMoreSheet()">🏠 דשבורד</button>
+        <div class="dropdown-divider"></div>
         <button class="dropdown-item" onclick="openAdaptiveTest();toggleMoreSheet()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> מבחן אמירנט מלא</button>
         <div class="dropdown-divider"></div>
         <button class="dropdown-item" onclick="reviewYesterday();toggleMoreSheet()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> חזרה — מילים מאתמול</button>
@@ -2130,13 +2118,11 @@ let aiPreloadedData = {};
             document.getElementById('dashboard-screen').style.display = 'flex';
             document.querySelector('.bottom-nav').style.display = 'none';
             document.querySelector('.top-nav-container').style.display = 'none';
-            document.getElementById('homeNavBtn').style.display = 'none';
         }
         function enterAppFromDash(skipTour) {
             document.getElementById('dashboard-screen').style.display = 'none';
             document.querySelector('.bottom-nav').style.display = '';
             document.querySelector('.top-nav-container').style.display = '';
-            document.getElementById('homeNavBtn').style.display = '';
             if (!skipTour && window.startTourIfNeeded) window.startTourIfNeeded();
         }
         function goToDashboard() {
@@ -2459,7 +2445,6 @@ let aiPreloadedData = {};
             document.getElementById('nav-vocab').classList.toggle('active', screen === 'vocab');
             document.getElementById('nav-practice').classList.toggle('active', practiceScreens.includes(screen));
             document.getElementById('nav-more').classList.toggle('active', false);
-            document.getElementById('nav-home').classList.toggle('active', screen === 'dashboard');
         }
 
         function _globalKeydown(e) {
