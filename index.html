@@ -1774,7 +1774,8 @@
         })();
 
         function fireConfetti() { const colors = ['#34c759', '#007aff', '#ff3b30', '#ffcc00', '#1d60b3']; for(let i=0; i<40; i++) { let conf = document.createElement('div'); conf.className = 'confetti-particle'; conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; conf.style.left = Math.random() * 100 + 'vw'; conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; document.body.appendChild(conf); setTimeout(() => conf.remove(), 3500); } }
-        function toggleTopMenu() { document.getElementById('topMenu').classList.toggle('show'); }
+        function closeTopMenu() { const m = document.getElementById('topMenu'); if (m) m.classList.remove('show'); }
+        function toggleTopMenu() { const m = document.getElementById('topMenu'); if (m) m.classList.toggle('show'); }
         document.addEventListener('click', function(e) { if(!e.target.closest('.top-nav-container')) { let menu = document.getElementById('topMenu'); if(menu && menu.classList.contains('show')) menu.classList.remove('show'); } });
 
         const rawData = [
@@ -2358,7 +2359,7 @@ let aiPreloadedData = {};
                 localStorage.removeItem('textProgress');
                 updateStatsUI();
                 if(currentMode === 'list') renderList();
-                document.getElementById('topMenu').classList.remove('show');
+                closeTopMenu();
                 alert("נתוני ההתקדמות אופסו בהצלחה!");
                 location.reload();
             }
@@ -2520,7 +2521,7 @@ let aiPreloadedData = {};
             document.querySelectorAll('.dropdown-category').forEach(b => b.classList.remove('open'));
             if (!isOpen) { grp.classList.add('open'); btn.classList.add('open'); }
         }
-        function toggleAdminMode() { isAdminMode = !isAdminMode; document.getElementById('adminBtnMenu').classList.toggle('admin-active', isAdminMode); if(currentMode === 'list') renderList(); document.getElementById('topMenu').classList.remove('show');}
+        function toggleAdminMode() { isAdminMode = !isAdminMode; document.getElementById('adminBtnMenu').classList.toggle('admin-active', isAdminMode); if(currentMode === 'list') renderList(); closeTopMenu();}
         const _REVERSE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>`;
         function toggleReverse() { isReverse = !isReverse; let btn = document.getElementById('reverseBtn'); btn.innerHTML = isReverse ? `${_REVERSE_SVG}<span>ENG←HEB</span>` : `${_REVERSE_SVG}<span>HEB←ENG</span>`; btn.classList.toggle('active', isReverse); updateCard(); if(currentMode === 'quiz') startQuiz(); }
         function switchMode(mode) {
@@ -2748,7 +2749,7 @@ function updateStatsUI() {
         }
 
         function reviewYesterday() {
-            document.getElementById('topMenu').classList.remove('show');
+            closeTopMenu();
             let reviewList = getYesterdayReviewList();
             if (reviewList.length === 0) {
                 alert('לא נמצאו מילים שנלמדו אתמול.\nנסה ללמוד מילים חדשות היום!');
@@ -4472,7 +4473,7 @@ function generateAIContent(word) {
         }
 
         function openTimerSettings() {
-            document.getElementById('topMenu').classList.remove('show');
+            closeTopMenu();
             let m = document.getElementById('timerSettingsModal');
             ['sc','rs','rc'].forEach(s => {
                 document.getElementById(`ts-${s}-en`).checked = timerSettings[s].enabled;
@@ -4732,10 +4733,10 @@ Keep it concise and educational. Use clear section headers for each part.`;
             renderList(); 
         }
 
-        function openPrintModal() { document.getElementById('printOptionsModal').style.display = 'flex'; document.getElementById('topMenu').classList.remove('show'); }
-        function executePrint(type) { document.getElementById('printOptionsModal').style.display = 'none'; document.getElementById('topMenu').classList.remove('show'); let html = `<h2>רשימת מילים (${currentList.length} מילים)</h2>`; if(type === 'list') { html += `<table class="print-table"><tr><th>עברית</th><th>English</th><th>רמה</th></tr>`; currentList.forEach(w => { html += `<tr><td>${editedTranslations[w.en] || w.he}</td><td class="print-en">${w.en}</td><td>${w.level}</td></tr>`; }); html += `</table>`; } else { html += `<div class="print-instructions">קפלו כל מלבן באמצע להכנת כרטיסיות:</div><div class="print-cards-grid">`; currentList.forEach(w => { html += `<div class="print-card-foldable"><div class="print-card-half he-side">${editedTranslations[w.en] || w.he}</div><div class="print-card-half en-side">${w.en}</div></div>`; }); html += `</div>`; } document.getElementById('printArea').innerHTML = html; window.print(); }
+        function openPrintModal() { document.getElementById('printOptionsModal').style.display = 'flex'; closeTopMenu(); }
+        function executePrint(type) { document.getElementById('printOptionsModal').style.display = 'none'; closeTopMenu(); let html = `<h2>רשימת מילים (${currentList.length} מילים)</h2>`; if(type === 'list') { html += `<table class="print-table"><tr><th>עברית</th><th>English</th><th>רמה</th></tr>`; currentList.forEach(w => { html += `<tr><td>${editedTranslations[w.en] || w.he}</td><td class="print-en">${w.en}</td><td>${w.level}</td></tr>`; }); html += `</table>`; } else { html += `<div class="print-instructions">קפלו כל מלבן באמצע להכנת כרטיסיות:</div><div class="print-cards-grid">`; currentList.forEach(w => { html += `<div class="print-card-foldable"><div class="print-card-half he-side">${editedTranslations[w.en] || w.he}</div><div class="print-card-half en-side">${w.en}</div></div>`; }); html += `</div>`; } document.getElementById('printArea').innerHTML = html; window.print(); }
 
-        function openAddModal() { document.getElementById('addModal').style.display = 'flex'; document.getElementById('topMenu').classList.remove('show'); }
+        function openAddModal() { document.getElementById('addModal').style.display = 'flex'; closeTopMenu(); }
         function closeAddModal() { document.getElementById('addModal').style.display = 'none'; }
         function addCustomWord() { 
             let en = document.getElementById('newEn').value.trim(); let he = document.getElementById('newHe').value.trim(); let unit = document.getElementById('newUnit').value; let level = document.getElementById('newLevel').value; let source = document.getElementById('newSource').value;
@@ -4749,7 +4750,7 @@ Keep it concise and educational. Use clear section headers for each part.`;
         }
 
         function exportProgress() { 
-            document.getElementById('topMenu').classList.remove('show');
+            closeTopMenu();
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
                 progress: userProgress,
                 custom: customWords,
@@ -4761,11 +4762,11 @@ Keep it concise and educational. Use clear section headers for each part.`;
                 customSentences: customSentences,
                 customAssocs: customAssocs
             })); 
-            const dl = document.createElement('a'); dl.setAttribute("href", dataStr); dl.setAttribute("download", "vocab_backup.json"); dl.click(); 
+            const dl = document.createElement('a'); dl.setAttribute("href", dataStr); dl.setAttribute("download", "vocab_backup.json"); document.body.appendChild(dl); dl.click(); document.body.removeChild(dl);
         }
         
         function importProgress(e) { 
-            document.getElementById('topMenu').classList.remove('show');
+            closeTopMenu();
             const file = e.target.files[0]; if (!file) return; 
             const reader = new FileReader(); 
             reader.onload = function(evt) { 
