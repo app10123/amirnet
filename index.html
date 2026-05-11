@@ -637,8 +637,8 @@
         #dashStatsView { flex-direction:column; align-items:center; width:100%; }
         .dash-source-header { display:flex; align-items:center; justify-content:space-between; width:100%; max-width:460px; margin-bottom:12px; }
         .dash-source-name-badge { font-size:18px; font-weight:800; background:linear-gradient(135deg,#1d60b3,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .dash-change-source-btn { font-size:12px; font-weight:700; color:#94a3b8; background:none; border:1.5px solid var(--border-color); border-radius:8px; padding:5px 11px; cursor:pointer; font-family:var(--font-he); transition:0.15s; }
-        .dash-change-source-btn:hover { border-color:var(--btn-primary); color:var(--btn-primary); }
+        .dash-change-source-btn { font-size:12px; font-weight:500; color:#007aff; background:none; border:none; padding:2px 0 10px; cursor:pointer; font-family:var(--font-he); display:block; margin:0 auto; }
+        .dash-change-source-btn:hover { text-decoration:underline; }
         /* Progress bar */
         .dash-progress-wrap { width:100%; max-width:460px; margin-bottom:16px; display:flex; align-items:center; gap:12px; }
         .dash-progress-bar-bg { flex:1; height:10px; background:var(--border-color); border-radius:6px; overflow:hidden; }
@@ -1265,8 +1265,8 @@
         .dash-collapse-body { width:100%; max-width:460px; background:var(--panel-bg); border:0.5px solid var(--border-color); border-top:none; border-radius:0 0 14px 14px; box-sizing:border-box; overflow:hidden; }
         .dash-collapse-closed { display:none !important; }
         body.dark-mode .dash-collapse-body { background:oklch(0.21 0.006 250) !important; border-color:oklch(0.32 0.006 250) !important; }
-        .dash-streak-row { display:flex; align-items:center; justify-content:center; gap:6px; background:#FFF8F0; border:1px solid #FFE0B2; border-radius:8px; padding:8px 16px; font-size:14px; font-weight:500; color:#BF360C; width:100%; max-width:460px; box-sizing:border-box; margin-bottom:8px; }
-        body.dark-mode .dash-streak-row { background:oklch(0.16 0.03 45); border-color:oklch(0.3 0.05 45); color:#ff8a65; }
+        .dash-streak-row { font-size:13px; color:#6C6C70; text-align:center; padding:2px 0 4px; width:100%; }
+        body.dark-mode .dash-streak-row { color:#8E8E93; }
         .dash-stat-cards-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin:8px 0 16px; }
         .dash-stat-card-v2 { border-radius:10px; padding:12px; text-align:center; }
         .dash-stat-card-v2.known { background:#E8F5E9; } .dash-stat-card-v2.learning { background:#FFF3E0; } .dash-stat-card-v2.total { background:#F2F2F7; }
@@ -1360,16 +1360,13 @@
         <!-- STATS VIEW -->
         <div id="dashStatsView">
 
-            <!-- TOP ROW: greeting + source + streak -->
+            <!-- TOP ROW: greeting -->
             <div class="dash-topbar">
                 <div id="dashGreeting" class="dash-greeting-small"></div>
-                <div class="dash-topbar-right">
-                    <span id="dashSourceName" class="dash-source-name-badge"></span>
-                    <button class="dash-change-source-btn" onclick="toggleSourceSheet()">שנה</button>
-                </div>
+                <span id="dashSourceName" style="display:none"></span>
             </div>
-            <div class="dash-streak-row"><svg viewBox="0 0 24 24" fill="none" stroke="#BF360C" stroke-width="2" width="18" height="18"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span id="dashStreakNum">0</span> ימי רצף</div>
-            <div id="dashSourceLabel" style="font-size:12px;color:#6C6C70;text-align:center;margin-top:-4px;margin-bottom:10px;"></div>
+            <div class="dash-streak-row"><span style="color:#BF360C;font-weight:600;">↑ <span id="dashStreakNum">0</span></span> ימי רצף · לומד מתוך: <span id="dashSourceLabel"></span></div>
+            <button class="dash-change-source-btn" onclick="toggleSourceSheet()">החלף מקור</button>
 
             <!-- HERO CARD: progress + mini stats + big CTA -->
             <div class="dash-hero-card">
@@ -2203,7 +2200,7 @@ let aiPreloadedData = {};
             let srcLabel = src === 'Kidum' ? 'קידום' : 'קמפוס IL';
             document.getElementById('dashSourceName').textContent = srcLabel;
             const _lbl = document.getElementById('dashSourceLabel');
-            if (_lbl) _lbl.textContent = 'לומד מתוך: ' + srcLabel;
+            if (_lbl) _lbl.textContent = srcLabel;
             const dsn = document.getElementById('dashStreakNum');
             if (dsn) dsn.textContent = streak;
             let sourceWords = allWords.filter(w => w.source === src);
