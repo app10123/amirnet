@@ -1348,7 +1348,7 @@
 
     <div id="dashboard-screen" style="display:none;">
         <div class="dash-logo">
-            <img src="icon.png" style="width:64px;height:64px;border-radius:16px;object-fit:cover;flex-shrink:0;">
+            <img src="icon.png" style="width:36px;height:36px;border-radius:10px;object-fit:cover;flex-shrink:0;">
             <div class="dash-logo-text">אמירנט</div>
             <span class="dash-logo-pro">PRO</span>
         </div>
@@ -1365,6 +1365,7 @@
                 </div>
             </div>
             <div class="dash-streak-row">🔥 רצף: <span id="dashStreakNum">0</span> ימים</div>
+            <div id="dashSourceLabel" style="font-size:12px;color:#6C6C70;text-align:center;margin-top:-4px;margin-bottom:10px;"></div>
 
             <!-- HERO CARD: progress + mini stats + big CTA -->
             <div class="dash-hero-card">
@@ -1374,9 +1375,9 @@
                 </div>
                 <span id="dashUnseen" style="display:none"></span>
                 <div class="dash-stat-cards-grid" id="dashStatsCards">
-                    <div class="dash-stat-card-v2 known"><div class="dash-stat-num-v2" id="dashKnown">—</div><div class="dash-stat-lbl-v2">יודע</div></div>
-                    <div class="dash-stat-card-v2 learning"><div class="dash-stat-num-v2" id="dashLearning">—</div><div class="dash-stat-lbl-v2">ללמידה</div></div>
                     <div class="dash-stat-card-v2 total"><div class="dash-stat-num-v2" id="dashTotal">—</div><div class="dash-stat-lbl-v2">סה"כ</div></div>
+                    <div class="dash-stat-card-v2 learning"><div class="dash-stat-num-v2" id="dashLearning">—</div><div class="dash-stat-lbl-v2">ללמידה</div></div>
+                    <div class="dash-stat-card-v2 known"><div class="dash-stat-num-v2" id="dashKnown">—</div><div class="dash-stat-lbl-v2">יודע</div></div>
                 </div>
                 <div class="dash-empty-state" id="dashEmptyState" style="display:none;">ברוך הבא! לחץ על מילים כדי להתחיל ללמוד ←</div>
                 <button class="btn-primary" onclick="enterAppFromDash()">המשך ללמוד ←</button>
@@ -2172,14 +2173,16 @@ let aiPreloadedData = {};
             let picker = document.getElementById('dashSourcePicker');
             let statsView = document.getElementById('dashStatsView');
             if (!src) {
-                picker.style.display = '';
-                statsView.style.display = 'none';
+                if (picker) picker.style.display = '';
+                if (statsView) statsView.style.display = 'none';
                 return;
             }
-            picker.style.display = 'none';
+            if (picker) picker.style.display = 'none';
             statsView.style.display = 'flex';
             let srcLabel = src === 'Kidum' ? 'קידום' : 'קמפוס IL';
             document.getElementById('dashSourceName').textContent = srcLabel;
+            const _lbl = document.getElementById('dashSourceLabel');
+            if (_lbl) _lbl.textContent = 'לומד מתוך: ' + srcLabel;
             const dsn = document.getElementById('dashStreakNum');
             if (dsn) dsn.textContent = streak;
             let sourceWords = allWords.filter(w => w.source === src);
