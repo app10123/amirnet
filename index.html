@@ -208,11 +208,12 @@
         .btn-know, .btn-dontknow { flex: 1; height: 52px; font-size: 16px; font-family: var(--font-he); border-radius: 10px; cursor: pointer; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 7px; transition: 0.18s; padding: 0; min-width: 0; }
         .btn-know { background: #E8F5E9; color: #1B5E20; border: 1px solid #A5D6A7; box-shadow: none; } .btn-know svg { stroke: #1B5E20; width: 17px; height: 17px; flex-shrink: 0; } .btn-know:active { transform: scale(0.96); }
         .btn-dontknow { background: #FFEBEE; color: #7F0000; border: 1px solid #EF9A9A; box-shadow: none; } .btn-dontknow svg { stroke: #7F0000; width: 17px; height: 17px; flex-shrink: 0; } .btn-dontknow:active { transform: scale(0.96); }
-        .btn-stack { background-color: rgba(29, 96, 179, 0.1); color: #1d60b3; width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: var(--font-he); border-radius: 22px; border: 2px solid rgba(29, 96, 179, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
-        .btn-stack:active { transform: scale(0.95); background-color: rgba(29, 96, 179, 0.2); border-color: #1d60b3; }
-        .btn-stack span.stack-count { font-size: 13px; font-weight: 800; background: #1d60b3; color: white; padding: 2px 8px; border-radius: 10px; margin-right: 5px; }
-        body.dark-mode .btn-stack { background-color: rgba(165, 165, 255, 0.1); color: #93bbf0; border-color: rgba(165, 165, 255, 0.4); }
-        body.dark-mode .btn-stack span.stack-count { background: #93bbf0; color: #1e293b; }
+        .btn-stack { background: #F2F2F7; color: #1C1C1E; width: fit-content; align-self: center; padding: 8px 16px; font-size: 13px; font-family: var(--font-he); border-radius: 20px; border: none; cursor: pointer; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px; }
+        .btn-stack:active { transform: scale(0.95); background: #E5E5EA; }
+        .btn-stack span.stack-count { font-size: 11px; font-weight: 600; background: #007aff; color: white; padding: 2px 8px; border-radius: 20px; }
+        .btn-stack span.stack-count.full { background: #34C759; }
+        body.dark-mode .btn-stack { background: oklch(0.25 0.006 250); color: #F2F2F7; border: none; }
+        body.dark-mode .btn-stack span.stack-count { background: #007aff; color: white; }
 
         .stack-mode-btn { width: 100%; padding: 15px 20px; margin-bottom: 20px; border-radius: 16px; border: 2px solid #1d60b3; background: rgba(29, 96, 179, 0.1); color: #1d60b3; font-size: 18px; font-weight: 800; font-family: var(--font-he); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow); box-sizing: border-box; }
         .stack-mode-btn.active { background: #1d60b3; color: white; animation: pulseStack 2s infinite; }
@@ -232,11 +233,12 @@
         .btn-know { background: #E8F5E9; color: #1B5E20; border: 1px solid #A5D6A7; box-shadow: none; } .btn-know svg { stroke: #1B5E20; } .btn-know:active { transform: scale(0.96); }
         .btn-dontknow { background: #FFEBEE; color: #7F0000; border: 1px solid #EF9A9A; box-shadow: none; } .btn-dontknow svg { stroke: #7F0000; } .btn-dontknow:active { transform: scale(0.96); }
         
-        .btn-stack { background-color: rgba(29, 96, 179, 0.1); color: #1d60b3; width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: var(--font-he); border-radius: 22px; border: 2px solid rgba(29, 96, 179, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
-        .btn-stack:active { transform: scale(0.95); background-color: rgba(29, 96, 179, 0.2); border-color: #1d60b3; }
-        .btn-stack span.stack-count { font-size: 13px; font-weight: 800; background: #1d60b3; color: white; padding: 2px 8px; border-radius: 10px; margin-right: 5px; }
-        body.dark-mode .btn-stack { background-color: rgba(165, 165, 255, 0.1); color: #93bbf0; border-color: rgba(165, 165, 255, 0.4); }
-        body.dark-mode .btn-stack span.stack-count { background: #93bbf0; color: #1e293b; }
+        .btn-stack { background: #F2F2F7; color: #1C1C1E; width: fit-content; align-self: center; padding: 8px 16px; font-size: 13px; font-family: var(--font-he); border-radius: 20px; border: none; cursor: pointer; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px; }
+        .btn-stack:active { transform: scale(0.95); background: #E5E5EA; }
+        .btn-stack span.stack-count { font-size: 11px; font-weight: 600; background: #007aff; color: white; padding: 2px 8px; border-radius: 20px; }
+        .btn-stack span.stack-count.full { background: #34C759; }
+        body.dark-mode .btn-stack { background: oklch(0.25 0.006 250); color: #F2F2F7; border: none; }
+        body.dark-mode .btn-stack span.stack-count { background: #007aff; color: white; }
 
         .stack-mode-btn { width: 100%; padding: 15px 20px; margin-bottom: 20px; border-radius: 16px; border: 2px solid #1d60b3; background: rgba(29, 96, 179, 0.1); color: #1d60b3; font-size: 18px; font-weight: 800; font-family: var(--font-he); cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow); box-sizing: border-box; }
         .stack-mode-btn.active { background: #1d60b3; color: white; animation: pulseStack 2s infinite; }
@@ -1519,8 +1521,8 @@
             <div class="action-btns-wrapper">
                 <div class="action-btns" style="direction: ltr;">
                     <button class="side-btn" onclick="prevCard()"><svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
-                    <button class="btn-know" onclick="markWord('known')">יודע <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></button>
-                    <button class="btn-dontknow" onclick="markWord('learning')">לא יודע <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+                    <button class="btn-know" onclick="markWord('known')">יודע</button>
+                    <button class="btn-dontknow" onclick="markWord('learning')">לא יודע</button>
                     <button class="side-btn" onclick="speakWord()"><svg viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button>
                 </div>
                 <button class="btn-stack" onclick="toggleStackWord()">
@@ -1530,7 +1532,7 @@
                 </button>
             </div>
             
-            <div style="color: #64748b; font-size: 16px; font-weight:800; margin-top:18px;" id="cardCounter" dir="ltr">1 / 100</div>
+            <div style="color:#6C6C70; font-size:13px; font-weight:400; margin-top:8px;" id="cardCounter" dir="ltr">1 / 100</div>
         </div>
 
         <div id="quiz-section">
