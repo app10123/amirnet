@@ -14,7 +14,7 @@
     <style>
         :root {
             --bg-color: oklch(0.975 0.006 85); --text-color: oklch(0.20 0.012 85);
-            --card-front-bg: #ffffff; --card-back-bg: oklch(0.97 0.005 85);
+            --card-front-bg: #ffffff; --card-back-bg: #ffffff;
             --btn-primary: oklch(0.46 0.14 248); --btn-text: #ffffff;
             --panel-bg: #ffffff; --border-color: oklch(0.90 0.006 85);
             --shadow: 0 1px 0 rgba(20,20,40,0.025), 0 6px 22px -12px rgba(20,20,40,0.10);
@@ -40,7 +40,7 @@
         }
         body.dark-mode {
             --bg-color: oklch(0.16 0.006 250); --text-color: oklch(0.97 0.004 90);
-            --card-front-bg: oklch(0.21 0.006 250); --card-back-bg: oklch(0.19 0.006 250);
+            --card-front-bg: oklch(0.21 0.006 250); --card-back-bg: oklch(0.21 0.006 250);
             --btn-primary: oklch(0.65 0.14 248); --panel-bg: oklch(0.21 0.006 250);
             --border-color: oklch(0.32 0.006 250);
             --shadow: 0 8px 32px rgba(0,0,0,0.5); --glow: oklch(0.65 0.14 248 / 0.4);
@@ -205,9 +205,9 @@
         .hint-edit { font-size: 13px; color: #64748b; text-decoration: none; font-weight: 600; cursor: pointer; background: none; border: none; opacity: 0.8; transition: 0.2s; font-family: var(--font-he); display: flex; align-items: center; gap: 4px;}
         .hint-edit svg { width: 14px; height: 14px; stroke: #64748b;}
         .hint-edit:hover, .hint-edit:hover svg { color: var(--btn-primary); stroke: var(--btn-primary); opacity: 1;}.action-btns { display: flex; gap: 6px; width: 100%; justify-content: space-between; align-items: center; direction: ltr; }
-        .btn-know, .btn-dontknow { flex: 1; height: 56px; font-size: 16px; font-family: var(--font-he); border-radius: 9999px; border: none; color: white; cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 7px; transition: 0.18s; padding: 0; min-width: 0; letter-spacing: 0.01em; }
-        .btn-know { background-color: oklch(0.55 0.13 150); box-shadow: 0 6px 20px -6px oklch(0.55 0.13 150 / 0.55); } .btn-know svg { stroke: white; width: 17px; height: 17px; flex-shrink: 0; } .btn-know:active { transform: scale(0.96); box-shadow: none; }
-        .btn-dontknow { background-color: oklch(0.58 0.16 20); box-shadow: 0 6px 20px -6px oklch(0.58 0.16 20 / 0.55); } .btn-dontknow svg { stroke: white; width: 17px; height: 17px; flex-shrink: 0; } .btn-dontknow:active { transform: scale(0.96); box-shadow: none; }
+        .btn-know, .btn-dontknow { flex: 1; height: 52px; font-size: 15px; font-family: var(--font-he); border-radius: 10px; cursor: pointer; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 7px; transition: 0.18s; padding: 0; min-width: 0; }
+        .btn-know { background: #E8F5E9; color: #1B5E20; border: 1px solid #A5D6A7; box-shadow: none; } .btn-know svg { stroke: #1B5E20; width: 17px; height: 17px; flex-shrink: 0; } .btn-know:active { transform: scale(0.96); }
+        .btn-dontknow { background: #FFEBEE; color: #7F0000; border: 1px solid #EF9A9A; box-shadow: none; } .btn-dontknow svg { stroke: #7F0000; width: 17px; height: 17px; flex-shrink: 0; } .btn-dontknow:active { transform: scale(0.96); }
         .btn-stack { background-color: rgba(29, 96, 179, 0.1); color: #1d60b3; width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: var(--font-he); border-radius: 22px; border: 2px solid rgba(29, 96, 179, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
         .btn-stack:active { transform: scale(0.95); background-color: rgba(29, 96, 179, 0.2); border-color: #1d60b3; }
         .btn-stack span.stack-count { font-size: 13px; font-weight: 800; background: #1d60b3; color: white; padding: 2px 8px; border-radius: 10px; margin-right: 5px; }
@@ -228,9 +228,9 @@
         body.dark-mode .side-btn svg { stroke: #94a3b8; }
         .side-btn:active { transform: scale(0.9); }.action-btns-wrapper { display: flex; flex-direction: column; gap: 12px; width: 100%; }
         .action-btns { display: flex; gap: 15px; width: 100%; justify-content: space-between; align-items: center; direction: ltr; }
-        .btn-know, .btn-dontknow { flex: 1; height: 60px; font-size: 18px; font-family: var(--font-he); border-radius: 9999px; border: none; color: white; cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.18s; letter-spacing: 0.01em; }
-        .btn-know { background-color: oklch(0.55 0.13 150); box-shadow: 0 6px 20px -6px oklch(0.55 0.13 150 / 0.55); } .btn-know svg { stroke: white; } .btn-know:active { transform: scale(0.96); box-shadow: none; }
-        .btn-dontknow { background-color: oklch(0.58 0.16 20); box-shadow: 0 6px 20px -6px oklch(0.58 0.16 20 / 0.55); } .btn-dontknow svg { stroke: white; } .btn-dontknow:active { transform: scale(0.96); box-shadow: none; }
+        .btn-know, .btn-dontknow { flex: 1; height: 52px; font-size: 15px; font-family: var(--font-he); border-radius: 10px; cursor: pointer; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.18s; }
+        .btn-know { background: #E8F5E9; color: #1B5E20; border: 1px solid #A5D6A7; box-shadow: none; } .btn-know svg { stroke: #1B5E20; } .btn-know:active { transform: scale(0.96); }
+        .btn-dontknow { background: #FFEBEE; color: #7F0000; border: 1px solid #EF9A9A; box-shadow: none; } .btn-dontknow svg { stroke: #7F0000; } .btn-dontknow:active { transform: scale(0.96); }
         
         .btn-stack { background-color: rgba(29, 96, 179, 0.1); color: #1d60b3; width: fit-content; align-self: center; height: 44px; padding: 0 24px; font-size: 15px; font-family: var(--font-he); border-radius: 22px; border: 2px solid rgba(29, 96, 179, 0.4); cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.2s; margin-top: 5px;}
         .btn-stack:active { transform: scale(0.95); background-color: rgba(29, 96, 179, 0.2); border-color: #1d60b3; }
@@ -402,8 +402,8 @@
         @keyframes neonPulse { 0%,100% { box-shadow: 0 0 20px rgba(29,96,179,0.5); } 50% { box-shadow: 0 0 40px rgba(29,96,179,0.9), 0 0 60px rgba(37,99,235,0.4); } }
 
         /* Light mode refinements */
-        .btn-know { background: linear-gradient(135deg, #34c759, #2db34f) !important; }
-        .btn-dontknow { background: linear-gradient(135deg, #ff3b30, #e6352b) !important; }
+        .btn-know { background: #E8F5E9 !important; color: #1B5E20 !important; border: 1px solid #A5D6A7 !important; box-shadow: none !important; }
+        .btn-dontknow { background: #FFEBEE !important; color: #7F0000 !important; border: 1px solid #EF9A9A !important; box-shadow: none !important; }
         .stats-panel { transition: box-shadow 0.3s; }
 
         /* Dark mode gradient background */
@@ -446,8 +446,8 @@
         body.dark-mode .action-btn-top:active { transform: scale(0.95); box-shadow: 0 0 40px rgba(29,96,179,0.7); }
 
         /* Know/Don't Know neon */
-        body.dark-mode .btn-know { background: linear-gradient(135deg, #00cc6a, #34c759) !important; box-shadow: 0 0 20px rgba(0,204,106,0.35) !important; }
-        body.dark-mode .btn-dontknow { background: linear-gradient(135deg, #ff3b30, #ff6b6b) !important; box-shadow: 0 0 20px rgba(255,59,48,0.35) !important; }
+        body.dark-mode .btn-know { background: #E8F5E9 !important; color: #1B5E20 !important; border: 1px solid #A5D6A7 !important; box-shadow: none !important; }
+        body.dark-mode .btn-dontknow { background: #FFEBEE !important; color: #7F0000 !important; border: 1px solid #EF9A9A !important; box-shadow: none !important; }
 
         /* Quiz / RC answer states */
         body.dark-mode .quiz-btn.correct, body.dark-mode .q-opt-btn.correct { background: linear-gradient(135deg, #00cc6a, #00ff88) !important; box-shadow: 0 0 20px rgba(0,255,136,0.45) !important; border-color: transparent !important; }
@@ -1020,7 +1020,7 @@
             --bg-color: oklch(0.975 0.006 85);
             --text-color: oklch(0.20 0.012 85);
             --card-front-bg: #ffffff;
-            --card-back-bg: oklch(0.96 0.005 85);
+            --card-back-bg: #ffffff;
             --btn-primary: oklch(0.46 0.14 248);
             --accent-soft: oklch(0.92 0.04 248);
             --accent-ink: oklch(0.30 0.12 248);
@@ -1037,7 +1037,7 @@
             --bg-color: oklch(0.16 0.006 250);
             --text-color: oklch(0.97 0.004 90);
             --card-front-bg: oklch(0.21 0.006 250);
-            --card-back-bg: oklch(0.25 0.006 250);
+            --card-back-bg: oklch(0.21 0.006 250);
             --btn-primary: oklch(0.65 0.14 248);
             --accent-soft: oklch(0.46 0.14 248 / 0.22);
             --accent-ink: oklch(0.65 0.14 248);
@@ -1107,10 +1107,10 @@
         body.dark-mode .sc-timer-card { border: 0.5px solid oklch(0.32 0.006 250); }
 
         /* --- Buttons --- */
-        .btn-know { background: oklch(0.55 0.13 150) !important; box-shadow: 0 6px 20px -6px oklch(0.55 0.13 150 / 0.5) !important; border-radius: 9999px; }
-        .btn-dontknow { background: oklch(0.58 0.16 20) !important; box-shadow: 0 6px 20px -6px oklch(0.58 0.16 20 / 0.5) !important; border-radius: 9999px; }
-        body.dark-mode .btn-know { box-shadow: none !important; }
-        body.dark-mode .btn-dontknow { box-shadow: none !important; }
+        .btn-know { background: #E8F5E9 !important; color: #1B5E20 !important; border: 1px solid #A5D6A7 !important; box-shadow: none !important; border-radius: 10px; }
+        .btn-dontknow { background: #FFEBEE !important; color: #7F0000 !important; border: 1px solid #EF9A9A !important; box-shadow: none !important; border-radius: 10px; }
+        body.dark-mode .btn-know { background: #E8F5E9 !important; color: #1B5E20 !important; box-shadow: none !important; }
+        body.dark-mode .btn-dontknow { background: #FFEBEE !important; color: #7F0000 !important; box-shadow: none !important; }
         .action-btn-top { background: oklch(0.46 0.14 248) !important; border-radius: 9999px; box-shadow: 0 4px 16px oklch(0.46 0.14 248 / 0.4); }
         body.dark-mode .action-btn-top { background: oklch(0.65 0.14 248) !important; box-shadow: none !important; }
         .back-to-texts { border: 1.5px solid oklch(0.90 0.006 85); border-radius: 12px; box-shadow: none; }
