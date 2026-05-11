@@ -32,7 +32,9 @@
       "Bash(npx serve *)",
       "PowerShell(Copy-Item *)",
       "Bash(n\\\\\"\" | head -c 500)",
-      "Bash(powershell -Command \"\\(Get-Content 'index.old.html'\\)[1459..1747] -join \\\\\"`n\\\\\"\" | head -c 500)"
+      "Bash(powershell -Command \"\\(Get-Content 'index.old.html'\\)[1459..1747] -join \\\\\"`n\\\\\"\" | head -c 500)",
+      "PowerShell(\\(Get-Content \"index.old.html\"\\).Count; \\(Get-Content \"index.html\"\\).Count)",
+      "Bash(Copy-Item *)"
     ]
   }
 }
