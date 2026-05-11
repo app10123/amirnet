@@ -81,6 +81,8 @@
         .dropdown-item.danger:hover { background: rgba(255, 59, 48, 0.1); }
         .dropdown-item.source-btn.active { background:#EEF4FF; color:var(--btn-primary); font-weight:800; }
         body.dark-mode .dropdown-item.source-btn.active { background:oklch(0.18 0.04 255); }
+        .source-sheet-btn { width:100%; padding:13px; border-radius:10px; border:1.5px solid var(--border-color); background:none; font-size:15px; font-weight:600; font-family:var(--font-he); color:var(--text-color); cursor:pointer; transition:0.15s; }
+        .source-sheet-btn.active { background:var(--btn-primary); color:#fff; border-color:var(--btn-primary); }
         .dropdown-divider { height: 1px; background: var(--border-color); margin: 4px 0; }
         .dropdown-category { display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:700; color:var(--text-color); padding:10px 12px 10px; cursor:pointer; border-radius:10px; transition:0.15s; user-select:none; width:100%; box-sizing:border-box; background:none; border:none; font-family:var(--font-he); }
         .dropdown-category:hover { background:var(--bg-color); }
@@ -1263,8 +1265,8 @@
         .dash-collapse-body { width:100%; max-width:460px; background:var(--panel-bg); border:0.5px solid var(--border-color); border-top:none; border-radius:0 0 14px 14px; box-sizing:border-box; overflow:hidden; }
         .dash-collapse-closed { display:none !important; }
         body.dark-mode .dash-collapse-body { background:oklch(0.21 0.006 250) !important; border-color:oklch(0.32 0.006 250) !important; }
-        .dash-streak-row { background:#FFF3E0; border-radius:12px; padding:10px 16px; font-size:16px; font-weight:600; color:#E65100; text-align:center; width:100%; max-width:460px; box-sizing:border-box; margin-bottom:10px; }
-        body.dark-mode .dash-streak-row { background:oklch(0.18 0.03 75); color:#fb923c; }
+        .dash-streak-row { font-size:13px; color:#E65100; text-align:center; padding:4px 0 8px; width:100%; }
+        body.dark-mode .dash-streak-row { color:#fb923c; }
         .dash-stat-cards-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin:8px 0 16px; }
         .dash-stat-card-v2 { border-radius:10px; padding:12px; text-align:center; }
         .dash-stat-card-v2.known { background:#E8F5E9; } .dash-stat-card-v2.learning { background:#FFF3E0; } .dash-stat-card-v2.total { background:#F2F2F7; }
@@ -1363,10 +1365,10 @@
                 <div id="dashGreeting" class="dash-greeting-small"></div>
                 <div class="dash-topbar-right">
                     <span id="dashSourceName" class="dash-source-name-badge"></span>
-                    <button class="dash-change-source-btn" onclick="toggleMoreSheet()">שנה</button>
+                    <button class="dash-change-source-btn" onclick="toggleSourceSheet()">שנה</button>
                 </div>
             </div>
-            <div class="dash-streak-row">🔥 רצף: <span id="dashStreakNum">0</span> ימים</div>
+            <div class="dash-streak-row"><span id="dashStreakNum">0</span> ימי רצף</div>
             <div id="dashSourceLabel" style="font-size:12px;color:#6C6C70;text-align:center;margin-top:-4px;margin-bottom:10px;"></div>
 
             <!-- HERO CARD: progress + mini stats + big CTA -->
@@ -1598,6 +1600,15 @@
         <button class="dropdown-item" onclick="switchAppScreen('sentences');togglePracticeSheet()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="3" y2="18"/></svg> השלמת משפטים</button>
         <button class="dropdown-item" onclick="switchAppScreen('restatements');togglePracticeSheet()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg> ניסוח מחדש</button>
         <button class="dropdown-item" onclick="switchAppScreen('reading');togglePracticeSheet()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> הבנת הנקרא</button>
+    </div>
+
+    <!-- Source sheet -->
+    <div id="source-sheet-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:1099;" onclick="toggleSourceSheet()"></div>
+    <div id="source-sheet" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:var(--panel-bg);border-radius:16px 16px 0 0;padding:20px;z-index:1100;flex-direction:column;gap:8px;box-sizing:border-box;padding-bottom:calc(20px + env(safe-area-inset-bottom));">
+        <div style="width:36px;height:4px;background:#C7C7CC;border-radius:2px;margin:0 auto 12px;"></div>
+        <div style="font-size:15px;font-weight:600;text-align:center;margin-bottom:4px;">מקור לימוד</div>
+        <button class="source-sheet-btn" id="ss-btn-kidum" onclick="setSource('kidum');toggleSourceSheet()">קידום</button>
+        <button class="source-sheet-btn" id="ss-btn-campus" onclick="setSource('campus');toggleSourceSheet()">Campus IL</button>
     </div>
 
     <!-- More sheet overlay -->
@@ -6155,6 +6166,20 @@ function playNextDrivingWord() {
             document.getElementById('nav-practice').classList.toggle('active', open);
         }
 
+        function toggleSourceSheet() {
+            const sheet = document.getElementById('source-sheet');
+            const overlay = document.getElementById('source-sheet-overlay');
+            const open = sheet.style.display === 'none';
+            if (open) {
+                const cur = localStorage.getItem('learningSource');
+                const kb = document.getElementById('ss-btn-kidum');
+                const cb = document.getElementById('ss-btn-campus');
+                if (kb) kb.classList.toggle('active', cur === 'Kidum');
+                if (cb) cb.classList.toggle('active', cur === 'Campus IL');
+            }
+            sheet.style.display = open ? 'flex' : 'none';
+            overlay.style.display = open ? 'block' : 'none';
+        }
         function toggleMoreSheet() {
             const sheet = document.getElementById('more-sheet');
             const overlay = document.getElementById('more-sheet-overlay');
