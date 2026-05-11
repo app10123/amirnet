@@ -659,13 +659,14 @@
             background: var(--bg-color);
             display: flex; flex-direction: column;
             font-family: var(--font-he);
-            overflow: hidden;
+            overflow: hidden; padding: 16px; box-sizing: border-box;
         }
 
         /* Header — 3-column grid: info (right) | timer (center) | X (left) */
         .at-header {
-            background: linear-gradient(135deg, #1d60b3 0%, #2563eb 100%);
-            color: #fff;
+            background: var(--panel-bg);
+            color: var(--text-color);
+            border-bottom: 1px solid #E5E5EA;
             padding: 12px 18px;
             display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
             flex-shrink: 0; gap: 8px;
@@ -674,19 +675,19 @@
         .at-header-title { font-size: 14px; font-weight: 800; letter-spacing: 0.2px; }
         .at-header-meta { font-size: 11px; opacity: 0.85; margin-top: 1px; }
         .at-header-timer-col { display: flex; justify-content: center; }
-        .at-header-close-col { display: flex; justify-content: flex-start; }
+        .at-header-close-col { display: flex; justify-content: flex-end; }
         .at-close-btn {
-            background: rgba(255,255,255,0.18); border: none; border-radius: 8px;
-            color: #fff; cursor: pointer; padding: 6px 10px; font-size: 18px; line-height: 1;
-            transition: background 0.15s;
+            background: none; border: none;
+            color: var(--text-color); cursor: pointer; padding: 6px 10px; font-size: 18px; line-height: 1;
+            transition: opacity 0.15s;
         }
-        .at-close-btn:hover { background: rgba(255,255,255,0.32); }
+        .at-close-btn:hover { opacity: 0.6; }
         .at-timer {
             font-size: 22px; font-weight: 800; letter-spacing: 1px;
             min-width: 60px; text-align: center;
             transition: color 0.3s;
         }
-        .at-timer.at-timer-red { color: #fca5a5; }
+        .at-timer.at-timer-red { color: #ef4444; }
 
         /* Content area */
         .at-body {
@@ -834,20 +835,21 @@
         .at-next-btn:not(:disabled):hover { opacity: 0.88; }
 
         /* Break screen */
+        #at-phase-break { display: flex; align-items: center; justify-content: center; flex: 1; width: 100%; }
         .at-break-card {
             background: var(--panel-bg); border: 1.5px solid var(--border-color);
-            border-radius: 18px; padding: 40px 28px; max-width: 380px; width: 100%;
-            margin: auto; text-align: center;
+            border-radius: 18px; padding: 40px 28px; max-width: 460px; width: 100%;
+            margin: 0 auto; text-align: center;
         }
         .at-break-check {
-            width: 68px; height: 68px; border-radius: 50%;
+            width: 72px; height: 72px; border-radius: 50%;
             background: linear-gradient(135deg,#1d60b3,#2563eb);
             color: #fff; font-size: 30px; font-weight: 700;
             display: flex; align-items: center; justify-content: center;
             margin: 0 auto 18px;
         }
         .at-break-done-title {
-            font-size: 20px; font-weight: 800; color: var(--text-color); margin-bottom: 20px;
+            font-size: 20px; font-weight: 600; color: var(--text-color); margin-bottom: 20px;
         }
         .at-break-dots {
             display: flex; gap: 8px; justify-content: center; margin-bottom: 20px;
