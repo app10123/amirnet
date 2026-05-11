@@ -79,6 +79,8 @@
         .dropdown-item.danger { color: #ff3b30; background: rgba(255, 59, 48, 0.05); }
         .dropdown-item.danger svg { stroke: #ff3b30; }
         .dropdown-item.danger:hover { background: rgba(255, 59, 48, 0.1); }
+        .dropdown-item.source-btn.active { background:#EEF4FF; color:var(--btn-primary); font-weight:800; }
+        body.dark-mode .dropdown-item.source-btn.active { background:oklch(0.18 0.04 255); }
         .dropdown-divider { height: 1px; background: var(--border-color); margin: 4px 0; }
         .dropdown-category { display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:700; color:var(--text-color); padding:10px 12px 10px; cursor:pointer; border-radius:10px; transition:0.15s; user-select:none; width:100%; box-sizing:border-box; background:none; border:none; font-family:var(--font-he); }
         .dropdown-category:hover { background:var(--bg-color); }
@@ -1361,7 +1363,7 @@
                 <div id="dashGreeting" class="dash-greeting-small"></div>
                 <div class="dash-topbar-right">
                     <span id="dashSourceName" class="dash-source-name-badge"></span>
-                    <button class="dash-change-source-btn" onclick="changeLearningSource()">שנה</button>
+                    <button class="dash-change-source-btn" onclick="toggleMoreSheet()">שנה</button>
                 </div>
             </div>
             <div class="dash-streak-row">🔥 רצף: <span id="dashStreakNum">0</span> ימים</div>
@@ -1603,6 +1605,9 @@
     <div id="more-sheet" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:var(--panel-bg);border-radius:16px 16px 0 0;padding:20px;z-index:1100;flex-direction:column;gap:4px;box-sizing:border-box;max-height:80vh;overflow-y:auto;padding-bottom:calc(20px + env(safe-area-inset-bottom));">
         <div style="width:36px;height:4px;background:#C7C7CC;border-radius:2px;margin:0 auto 16px;"></div>
         <button class="dropdown-item" onclick="goToDashboard();toggleMoreSheet()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg> מסך הבית</button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item source-btn" id="src-btn-kidum" onclick="setSource('kidum');toggleMoreSheet()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> קידום</button>
+        <button class="dropdown-item source-btn" id="src-btn-campus" onclick="setSource('campus');toggleMoreSheet()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Campus IL</button>
         <div class="dropdown-divider"></div>
         <button class="dropdown-item" onclick="openAdaptiveTest();toggleMoreSheet()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> מבחן אמירנט מלא</button>
         <div class="dropdown-divider"></div>
@@ -2164,6 +2169,9 @@ let aiPreloadedData = {};
             localStorage.setItem('learningSource', src);
             populateDashboard();
         }
+        function setSource(s) {
+            selectLearningSource(s === 'kidum' ? 'Kidum' : 'Campus IL');
+        }
         function changeLearningSource() {
             localStorage.removeItem('learningSource');
             populateDashboard();
@@ -2200,7 +2208,7 @@ let aiPreloadedData = {};
             document.getElementById('dashLearning').textContent = learning;
             document.getElementById('dashUnseen').textContent = unseen;
             document.getElementById('dashTotal').textContent = total;
-            const _isEmpty = known + learning === 0;
+            const _isEmpty = parseInt(known) + parseInt(learning) === 0;
             document.getElementById('dashStatsCards').style.display = _isEmpty ? 'none' : '';
             document.getElementById('dashEmptyState').style.display = _isEmpty ? '' : 'none';
             document.getElementById('dashProgressFill').style.width = pct + '%';
@@ -6151,6 +6159,13 @@ function playNextDrivingWord() {
             const sheet = document.getElementById('more-sheet');
             const overlay = document.getElementById('more-sheet-overlay');
             const open = sheet.style.display === 'none';
+            if (open) {
+                const cur = localStorage.getItem('learningSource');
+                const kb = document.getElementById('src-btn-kidum');
+                const cb = document.getElementById('src-btn-campus');
+                if (kb) kb.classList.toggle('active', cur === 'Kidum');
+                if (cb) cb.classList.toggle('active', cur === 'Campus IL');
+            }
             sheet.style.display = open ? 'flex' : 'none';
             overlay.style.display = open ? 'block' : 'none';
             document.getElementById('nav-more').classList.toggle('active', open);
