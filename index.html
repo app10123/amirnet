@@ -117,7 +117,7 @@
 		.toggle-chart-btn { background: none; border: none; color: var(--btn-primary); font-family: var(--font-he); font-size: 13px; font-weight: 700; cursor: pointer; margin-top: 15px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 6px; opacity: 0.8; transition: 0.2s; }
         .toggle-chart-btn:hover { opacity: 1; }
         .toggle-chart-btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 2.5; fill: none;}
-        .app-screen { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; }
+        .app-screen { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; box-sizing: border-box; }
 
         .controls-panel { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
         .filter-toggle-btn { display:flex; align-items:center; gap:6px; background:var(--panel-bg); border:2px solid var(--border-color); border-radius:10px; color:var(--text-color); font-family:var(--font-he); font-size:14px; font-weight:700; padding:9px 14px; cursor:pointer; width:100%; box-sizing:border-box; transition:0.2s; box-shadow:var(--shadow); }
@@ -141,7 +141,7 @@
         .search-bar:focus { border-color: var(--btn-primary); }
         
         .filters { display: flex; gap: 6px; }
-        .filters select { flex:1; border:1px solid #C7C7CC; border-radius:8px; padding:6px 8px; font-size:13px; font-family:var(--font-he); background:var(--panel-bg); color:var(--text-color); outline:none; }
+        .filters select { flex:1; max-width:33%; border:1px solid #C7C7CC; border-radius:8px; padding:4px 6px; font-size:11px; font-family:var(--font-he); background:var(--panel-bg); color:var(--text-color); outline:none; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
         select, .action-btn-top { flex: 1; padding: 12px 8px; font-size: 13px; font-family: var(--font-he); border: 2px solid var(--border-color); border-radius: 10px; background: var(--panel-bg); color: var(--text-color); cursor: pointer; font-weight: 600; outline: none; box-shadow: var(--shadow);}
         .action-btn-top { background: var(--btn-primary); color: var(--btn-text); border: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: 0.2s;}
         .action-btn-top svg { stroke: white; width: 18px; height: 18px; }
@@ -575,7 +575,7 @@
         @media print { body > *:not(#printArea) { display: none !important; } body { background: white; color: black; margin: 0; padding: 0;} #printArea { display: block !important; width: 100%; direction: rtl; } .print-table { width: 100%; border-collapse: collapse; margin-top: 20px;} .print-table th, .print-table td { border: 1px solid #000; padding: 8px; text-align: right; } .print-en { direction: ltr; font-weight: bold; text-align: left !important;} .print-instructions { text-align: center; margin-bottom: 20px; font-size: 14px; font-weight: bold; padding: 10px; border: 2px solid #000; display: inline-block; background: #eee;} .print-cards-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; } .print-card-foldable { width: 48%; border: 2px solid #000; display: flex; box-sizing: border-box; page-break-inside: avoid; height: 120px; margin-bottom: 15px; } .print-card-half { width: 50%; display: flex; align-items: center; justify-content: center; padding: 10px; text-align: center; box-sizing: border-box; } .he-side { font-size: 18px; font-weight: bold; } .en-side { font-size: 20px; font-weight: bold; direction: ltr; border-left: 2px dashed #999; } }
 
         /* ===== DASHBOARD ===== */
-        #dashboard-screen { position:fixed; inset:0; z-index:200; background:var(--bg-color); display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:40px 20px 40px; overflow-y:auto; }
+        #dashboard-screen { position:fixed; inset:0; z-index:200; background:var(--bg-color); display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:40px 20px 40px; overflow-y:auto; overflow-x:hidden; }
         .dash-logo { display:flex; align-items:center; gap:12px; margin-bottom:32px; }
         .dash-logo-text { font-size:32px; font-weight:800; background:linear-gradient(135deg,#1d60b3,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
         .dash-logo-pro { font-size:12px; font-weight:800; background:linear-gradient(135deg,#1d60b3,#2563eb); color:white; padding:3px 8px; border-radius:6px; align-self:flex-start; margin-top:6px; }
