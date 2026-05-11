@@ -660,7 +660,7 @@
             background: var(--bg-color);
             display: flex; flex-direction: column;
             font-family: var(--font-he);
-            overflow: hidden; padding: 16px; box-sizing: border-box;
+            overflow: hidden; overflow-x: hidden; padding: 16px; box-sizing: border-box;
         }
 
         /* Header — 3-column grid: info (right) | timer (center) | X (left) */
@@ -745,15 +745,17 @@
         .at-stat-pill .lbl { font-size: 11px; color: #6C6C70; margin-top: 2px; }
         .at-section-list { margin-bottom: 22px; }
         .at-section-row {
-            display: flex; align-items: center; justify-content: space-between;
+            display: flex; align-items: center; justify-content: space-between; gap: 8px;
             padding: 9px 0; border-bottom: 1px solid var(--border-color);
-            font-size: 13px; color: var(--text-color);
+            font-size: 13px; color: var(--text-color); overflow: hidden;
         }
         .at-section-row:last-child { border-bottom: none; }
+        .at-section-row > span:not(.at-section-badge) { flex: 1; min-width: 0; }
         .at-section-row span:first-child::before { content: '●'; color: #007aff; font-size: 8px; margin-left: 8px; }
         .at-section-badge {
             background: linear-gradient(135deg,#1d60b3,#2563eb);
             color: #fff; border-radius: 8px; padding: 2px 8px; font-size: 11px; font-weight: 700;
+            flex-shrink: 0;
         }
         .at-history-link { font-size: 13px; color: #1d60b3; cursor: pointer; text-align: center; margin-top: 8px; }
 
