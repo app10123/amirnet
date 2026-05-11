@@ -1265,8 +1265,8 @@
         .dash-collapse-body { width:100%; max-width:460px; background:var(--panel-bg); border:0.5px solid var(--border-color); border-top:none; border-radius:0 0 14px 14px; box-sizing:border-box; overflow:hidden; }
         .dash-collapse-closed { display:none !important; }
         body.dark-mode .dash-collapse-body { background:oklch(0.21 0.006 250) !important; border-color:oklch(0.32 0.006 250) !important; }
-        .dash-streak-row { font-size:13px; color:#E65100; text-align:center; padding:4px 0 8px; width:100%; }
-        body.dark-mode .dash-streak-row { color:#fb923c; }
+        .dash-streak-row { display:flex; align-items:center; justify-content:center; gap:6px; background:#FFF8F0; border:1px solid #FFE0B2; border-radius:8px; padding:8px 16px; font-size:14px; font-weight:500; color:#BF360C; width:100%; max-width:460px; box-sizing:border-box; margin-bottom:8px; }
+        body.dark-mode .dash-streak-row { background:oklch(0.16 0.03 45); border-color:oklch(0.3 0.05 45); color:#ff8a65; }
         .dash-stat-cards-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin:8px 0 16px; }
         .dash-stat-card-v2 { border-radius:10px; padding:12px; text-align:center; }
         .dash-stat-card-v2.known { background:#E8F5E9; } .dash-stat-card-v2.learning { background:#FFF3E0; } .dash-stat-card-v2.total { background:#F2F2F7; }
@@ -1368,7 +1368,7 @@
                     <button class="dash-change-source-btn" onclick="toggleSourceSheet()">שנה</button>
                 </div>
             </div>
-            <div class="dash-streak-row"><span id="dashStreakNum">0</span> ימי רצף</div>
+            <div class="dash-streak-row"><svg viewBox="0 0 24 24" fill="#BF360C" width="18" height="18"><path d="M12 2C9 7 6 8 6 13a6 6 0 0012 0c0-5-3-6-6-11z"/></svg><span id="dashStreakNum">0</span> ימי רצף</div>
             <div id="dashSourceLabel" style="font-size:12px;color:#6C6C70;text-align:center;margin-top:-4px;margin-bottom:10px;"></div>
 
             <!-- HERO CARD: progress + mini stats + big CTA -->
