@@ -2174,7 +2174,9 @@ let aiPreloadedData = {};
             let statsView = document.getElementById('dashStatsView');
             if (!src) {
                 if (picker) picker.style.display = '';
-                if (statsView) statsView.style.display = 'none';
+                statsView.style.display = 'flex';
+                document.getElementById('dashStatsCards').style.display = 'none';
+                document.getElementById('dashEmptyState').style.display = '';
                 return;
             }
             if (picker) picker.style.display = 'none';
