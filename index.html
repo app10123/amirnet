@@ -1508,8 +1508,8 @@
                             </div>
                             <div id="assocText" class="hint-text"></div><div id="sentenceText" class="hint-text sentence-text"></div>
                             <div class="edit-links" id="editLinksContainer">
-                                <button class="hint-edit" onclick="openAssocModal()"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg> ערוך</button>
-                                <button class="hint-edit" onclick="openSentenceModal()"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg> ערוך</button>
+                                <button id="assocEditBtn" class="hint-edit" style="display:none" onclick="openAssocModal()"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg> ערוך</button>
+                                <button id="sentenceEditBtn" class="hint-edit" style="display:none" onclick="openSentenceModal()"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg> ערוך</button>
                             </div>
                         </div>
                     </div>
@@ -2803,7 +2803,7 @@ function generateAIContent(word) {
             if(badgeUnit) { badgeUnit.innerText = srcUnit; badgeUnit.style.display = 'block'; }
             
             document.getElementById('cardCounter').innerText = (currentIndex + 1) + " / " + currentList.length;
-            document.getElementById('assocText').style.display = 'none'; document.getElementById('sentenceText').style.display = 'none';
+            document.getElementById('assocText').style.display = 'none'; document.getElementById('sentenceText').style.display = 'none'; document.getElementById('assocEditBtn').style.display = 'none'; document.getElementById('sentenceEditBtn').style.display = 'none';
             
             if(!isDrivingMode) {
                 document.getElementById('wordTranslationDrive').style.display = 'none';
@@ -2932,14 +2932,20 @@ function generateAIContent(word) {
             } 
         }
 
-        function toggleAssoc(event) { 
-            if(event) event.stopPropagation(); 
-            let textElem = document.getElementById('assocText'); 
-            if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
-            let w = currentList[currentIndex]; 
-            textElem.innerText = customAssocs[w.en] || generateAIContent(w.en).assoc; 
-            textElem.style.display = 'block'; 
-            document.getElementById('sentenceText').style.display = 'none'; 
+        function toggleAssoc(event) {
+            if(event) event.stopPropagation();
+            let textElem = document.getElementById('assocText');
+            if (textElem.style.display === 'block') {
+                textElem.style.display = 'none';
+                document.getElementById('assocEditBtn').style.display = 'none';
+                return;
+            }
+            let w = currentList[currentIndex];
+            textElem.innerText = customAssocs[w.en] || generateAIContent(w.en).assoc;
+            textElem.style.display = 'block';
+            document.getElementById('sentenceText').style.display = 'none';
+            document.getElementById('assocEditBtn').style.display = '';
+            document.getElementById('sentenceEditBtn').style.display = 'none';
         }
 
         function openAssocModal() { 
@@ -2951,28 +2957,36 @@ function generateAIContent(word) {
 
         function closeAssocModal() { document.getElementById('assocModal').style.display = 'none'; }
 
-        function saveCustomAssoc() { 
-            let w = currentList[currentIndex].en; 
-            let newAssoc = document.getElementById('assocInput').value.trim(); 
-            customAssocs[w] = newAssoc; 
-            saveProgress(); 
-            closeAssocModal(); 
-            document.getElementById('assocText').innerText = newAssoc; 
-            document.getElementById('assocText').style.display = 'block'; 
-            document.getElementById('sentenceText').style.display = 'none'; 
+        function saveCustomAssoc() {
+            let w = currentList[currentIndex].en;
+            let newAssoc = document.getElementById('assocInput').value.trim();
+            customAssocs[w] = newAssoc;
+            saveProgress();
+            closeAssocModal();
+            document.getElementById('assocText').innerText = newAssoc;
+            document.getElementById('assocText').style.display = 'block';
+            document.getElementById('sentenceText').style.display = 'none';
+            document.getElementById('assocEditBtn').style.display = '';
+            document.getElementById('sentenceEditBtn').style.display = 'none';
         }
 
-        function toggleSentence(event) { 
-            if(event) event.stopPropagation(); 
-            let textElem = document.getElementById('sentenceText'); 
-            if (textElem.style.display === 'block') { textElem.style.display = 'none'; return; } 
-            let w = currentList[currentIndex]; 
-            let parts = (customSentences[w.en] || generateAIContent(w.en).sentence).split('|'); 
-            let htmlContent = highlightWordInSentence(parts[0], w.en); 
-            if(parts.length > 1 && parts[1].trim() !== "") htmlContent += `<span class="sentence-he">${parts[1]}</span>`; 
-            textElem.innerHTML = htmlContent; 
-            textElem.style.display = 'block'; 
-            document.getElementById('assocText').style.display = 'none'; 
+        function toggleSentence(event) {
+            if(event) event.stopPropagation();
+            let textElem = document.getElementById('sentenceText');
+            if (textElem.style.display === 'block') {
+                textElem.style.display = 'none';
+                document.getElementById('sentenceEditBtn').style.display = 'none';
+                return;
+            }
+            let w = currentList[currentIndex];
+            let parts = (customSentences[w.en] || generateAIContent(w.en).sentence).split('|');
+            let htmlContent = highlightWordInSentence(parts[0], w.en);
+            if(parts.length > 1 && parts[1].trim() !== "") htmlContent += `<span class="sentence-he">${parts[1]}</span>`;
+            textElem.innerHTML = htmlContent;
+            textElem.style.display = 'block';
+            document.getElementById('assocText').style.display = 'none';
+            document.getElementById('sentenceEditBtn').style.display = '';
+            document.getElementById('assocEditBtn').style.display = 'none';
         }
 
         function openSentenceModal() { 
@@ -2986,18 +3000,27 @@ function generateAIContent(word) {
 
         function closeSentenceModal() { document.getElementById('sentenceModal').style.display = 'none'; }
 
-        function saveCustomSentence() { 
-            let w = currentList[currentIndex].en; 
-            let enPart = document.getElementById('sentenceInput').value.trim(); 
-            let hePart = document.getElementById('sentenceHeInput').value.trim(); 
-            if(enPart !== "") { 
-                customSentences[w] = hePart !== "" ? `${enPart}|${hePart}` : enPart; 
-                saveProgress(); 
-                closeSentenceModal(); 
-                toggleSentence(); 
-            } else { 
-                alert("חובה להכניס משפט באנגלית!"); 
-            } 
+        function saveCustomSentence() {
+            let w = currentList[currentIndex].en;
+            let enPart = document.getElementById('sentenceInput').value.trim();
+            let hePart = document.getElementById('sentenceHeInput').value.trim();
+            if(enPart !== "") {
+                customSentences[w] = hePart !== "" ? `${enPart}|${hePart}` : enPart;
+                saveProgress();
+                closeSentenceModal();
+                let wObj = currentList[currentIndex];
+                let parts = customSentences[wObj.en].split('|');
+                let htmlContent = highlightWordInSentence(parts[0], wObj.en);
+                if(parts.length > 1 && parts[1].trim() !== "") htmlContent += `<span class="sentence-he">${parts[1]}</span>`;
+                let textElem = document.getElementById('sentenceText');
+                textElem.innerHTML = htmlContent;
+                textElem.style.display = 'block';
+                document.getElementById('assocText').style.display = 'none';
+                document.getElementById('sentenceEditBtn').style.display = '';
+                document.getElementById('assocEditBtn').style.display = 'none';
+            } else {
+                alert("חובה להכניס משפט באנגלית!");
+            }
         }
 
         function speakWord() { 
