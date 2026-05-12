@@ -1449,7 +1449,20 @@
         </div>
         <div class="onboarding-step" id="obStep2" style="display:none;">
           <div class="onboarding-title">מתי המבחן שלך?</div>
-          <input class="onboarding-input" id="obDateInput" type="date">
+          <div style="display:flex;gap:8px;margin-bottom:8px;direction:ltr;">
+            <select id="obDay" style="flex:1;padding:10px;border-radius:10px;border:1.5px solid var(--border-color);background:var(--bg-color);color:var(--text-color);font-family:var(--font-he);font-size:15px;min-width:0;">
+              <option value="">יום</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+            </select>
+            <select id="obMonth" style="flex:1.5;padding:10px;border-radius:10px;border:1.5px solid var(--border-color);background:var(--bg-color);color:var(--text-color);font-family:var(--font-he);font-size:15px;min-width:0;">
+              <option value="">חודש</option>
+              <option value="1">ינואר</option><option value="2">פברואר</option><option value="3">מרץ</option><option value="4">אפריל</option><option value="5">מאי</option><option value="6">יוני</option><option value="7">יולי</option><option value="8">אוגוסט</option><option value="9">ספטמבר</option><option value="10">אוקטובר</option><option value="11">נובמבר</option><option value="12">דצמבר</option>
+            </select>
+            <select id="obYear" style="flex:1.5;padding:10px;border-radius:10px;border:1.5px solid var(--border-color);background:var(--bg-color);color:var(--text-color);font-family:var(--font-he);font-size:15px;min-width:0;">
+              <option value="">שנה</option>
+              <option>2025</option><option>2026</option><option>2027</option><option>2028</option>
+            </select>
+          </div>
           <div class="onboarding-hint">נשתמש בזה כדי לספור ימים עד המבחן</div>
           <button class="btn-primary" onclick="obNext(2)">הבא ›</button>
         </div>
@@ -2327,8 +2340,10 @@ let aiPreloadedData = {};
                 localStorage.setItem('userName', name);
                 obGoTo(2);
             } else if (step === 2) {
-                let date = document.getElementById('obDateInput').value;
-                if (date) localStorage.setItem('examDate', date);
+                let d = document.getElementById('obDay').value;
+                let m = document.getElementById('obMonth').value;
+                let y = document.getElementById('obYear').value;
+                if (d && m && y) localStorage.setItem('examDate', `${y}-${m.padStart(2,'0')}-${d.padStart(2,'0')}`);
                 obGoTo(3);
             }
         }
