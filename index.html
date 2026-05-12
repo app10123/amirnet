@@ -1350,6 +1350,19 @@
         .at-rv2-expl-body { font-size:13px; line-height:1.65; color:oklch(0.35 0.012 85); direction:ltr; text-align:left; }
         body.dark-mode .at-rv2-expl-body { color:oklch(0.82 0.006 90); }
         /* ================================================================ */
+        /* === Onboarding === */
+        #onboardingOverlay { position:fixed; inset:0; background:var(--bg-color); z-index:2000; display:flex; align-items:center; justify-content:center; padding:24px; }
+        .onboarding-card { background:var(--panel-bg); border-radius:24px; padding:32px 24px; max-width:340px; width:100%; text-align:center; box-shadow:0 8px 32px rgba(0,0,0,0.12); direction:rtl; }
+        .onboarding-dots { display:flex; justify-content:center; gap:8px; margin-bottom:28px; }
+        .onboarding-dot { width:8px; height:8px; border-radius:50%; background:var(--border-color); transition:background 0.3s; }
+        .onboarding-dot.active { background:var(--btn-primary); }
+        .onboarding-title { font-size:22px; font-weight:700; color:var(--text-color); margin-bottom:20px; line-height:1.3; }
+        .onboarding-input { width:100%; padding:12px 14px; border-radius:12px; border:1.5px solid var(--border-color); background:var(--bg-color); color:var(--text-color); font-family:var(--font-he); font-size:16px; text-align:center; margin-bottom:20px; box-sizing:border-box; outline:none; }
+        .onboarding-input:focus { border-color:var(--btn-primary); }
+        .onboarding-hint { font-size:12px; color:#6C6C70; margin:-12px 0 16px; }
+        .onboarding-source-btns { display:flex; gap:12px; margin-bottom:24px; }
+        .onboarding-source-btn { flex:1; padding:18px 8px; border-radius:14px; border:2px solid var(--border-color); background:var(--panel-bg); color:var(--text-color); font-family:var(--font-he); font-size:16px; font-weight:700; cursor:pointer; transition:0.2s; }
+        .onboarding-source-btn.active { border-color:var(--btn-primary); background:#E6F1FB; color:var(--btn-primary); }
     </style>
 </head>
 <body>
@@ -1371,6 +1384,7 @@
                 <span id="dashSourceName" style="display:none"></span>
             </div>
             <div class="dash-streak-row"><span style="color:#BF360C;font-weight:600;"><span id="dashStreakNum">0</span> ↑</span> ימי רצף · לומד מתוך: <span id="dashSourceLabel"></span></div>
+            <div id="dashExamDays" style="display:none; font-size:13px; color:#6C6C70; text-align:center; margin:-6px 0 8px;"></div>
             <button class="dash-change-source-btn" onclick="toggleSourceSheet()">החלף מקור</button>
 
             <!-- HERO CARD: progress + mini stats + big CTA -->
@@ -1419,6 +1433,35 @@
             <img class="splash-logo-icon" src="icon.png" alt="אמירנט" style="border-radius:24px;">
         </div>
         <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+    </div>
+
+    <div id="onboardingOverlay" style="display:none;">
+      <div class="onboarding-card">
+        <div class="onboarding-dots">
+          <div class="onboarding-dot active" id="obDot0"></div>
+          <div class="onboarding-dot" id="obDot1"></div>
+          <div class="onboarding-dot" id="obDot2"></div>
+        </div>
+        <div class="onboarding-step" id="obStep1">
+          <div class="onboarding-title">ברוך הבא לאמירנט! 👋</div>
+          <input class="onboarding-input" id="obNameInput" type="text" placeholder="הכנס שם..." maxlength="30">
+          <button class="btn-primary" onclick="obNext(1)">הבא ›</button>
+        </div>
+        <div class="onboarding-step" id="obStep2" style="display:none;">
+          <div class="onboarding-title">מתי המבחן שלך?</div>
+          <input class="onboarding-input" id="obDateInput" type="date">
+          <div class="onboarding-hint">נשתמש בזה כדי לספור ימים עד המבחן</div>
+          <button class="btn-primary" onclick="obNext(2)">הבא ›</button>
+        </div>
+        <div class="onboarding-step" id="obStep3" style="display:none;">
+          <div class="onboarding-title">מאיזה מקור אתה לומד?</div>
+          <div class="onboarding-source-btns">
+            <button class="onboarding-source-btn" id="obSrcKidum" onclick="obSelectSource('Kidum')">קידום</button>
+            <button class="onboarding-source-btn" id="obSrcCampus" onclick="obSelectSource('Campus IL')">Campus IL</button>
+          </div>
+          <button class="btn-primary" id="onboardingFinishBtn" style="display:none;" onclick="obFinish()">סיום ✓</button>
+        </div>
+      </div>
     </div>
 
     <div id="update-banner">
@@ -2253,8 +2296,59 @@ let aiPreloadedData = {};
                 sessEl.innerHTML = '<div style="text-align:center;color:#94a3b8;font-size:14px;padding:8px 0;">עדיין לא למדת — בוא נתחיל!</div>';
             }
             let hour = new Date().getHours();
-            let greeting = hour < 12 ? 'בוקר טוב!' : hour < 17 ? 'צהריים טובים!' : 'ערב טוב!';
-            document.getElementById('dashGreeting').textContent = `${greeting} כאן סיכום הלמידה שלך`;
+            let userName = localStorage.getItem('userName');
+            let greetName = userName ? `, ${userName}` : '';
+            let greeting = hour < 12 ? 'בוקר טוב' : hour < 17 ? 'צהריים טובים' : 'ערב טוב';
+            document.getElementById('dashGreeting').textContent = `${greeting}${greetName}! כאן סיכום הלמידה שלך`;
+            let examEl = document.getElementById('dashExamDays');
+            if (examEl) {
+                let examDate = localStorage.getItem('examDate');
+                if (examDate) {
+                    let today = new Date(); today.setHours(0,0,0,0);
+                    let exam = new Date(examDate); exam.setHours(0,0,0,0);
+                    let days = Math.round((exam - today) / 86400000);
+                    examEl.textContent = days > 0 ? `נותרו ${days} ימים למבחן` : days === 0 ? 'המבחן היום! 💪' : 'המבחן עבר';
+                    examEl.style.display = '';
+                } else { examEl.style.display = 'none'; }
+            }
+        }
+
+        // === Onboarding ===
+        let _obSelectedSource = '';
+        function checkOnboarding() {
+            if (!localStorage.getItem('onboardingDone')) {
+                document.getElementById('onboardingOverlay').style.display = 'flex';
+            }
+        }
+        function obNext(step) {
+            if (step === 1) {
+                let name = document.getElementById('obNameInput').value.trim();
+                if (!name) { document.getElementById('obNameInput').focus(); return; }
+                localStorage.setItem('userName', name);
+                obGoTo(2);
+            } else if (step === 2) {
+                let date = document.getElementById('obDateInput').value;
+                if (date) localStorage.setItem('examDate', date);
+                obGoTo(3);
+            }
+        }
+        function obGoTo(step) {
+            [1,2,3].forEach(s => {
+                document.getElementById(`obStep${s}`).style.display = s === step ? '' : 'none';
+                document.getElementById(`obDot${s-1}`).classList.toggle('active', s === step);
+            });
+        }
+        function obSelectSource(src) {
+            _obSelectedSource = src;
+            document.getElementById('obSrcKidum').classList.toggle('active', src === 'Kidum');
+            document.getElementById('obSrcCampus').classList.toggle('active', src === 'Campus IL');
+            document.getElementById('onboardingFinishBtn').style.display = '';
+        }
+        function obFinish() {
+            if (_obSelectedSource) selectLearningSource(_obSelectedSource);
+            localStorage.setItem('onboardingDone', 'true');
+            document.getElementById('onboardingOverlay').style.display = 'none';
+            populateDashboard();
         }
 
       async function initApp() {
@@ -2334,6 +2428,7 @@ let aiPreloadedData = {};
             populateFilters(); applyFilters(); renderReadingTexts(); renderSentenceQuestions(); renderRSList();
             showDashboard();
             populateDashboard();
+            checkOnboarding();
         }
 
         function resetAllData() {
