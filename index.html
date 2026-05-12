@@ -4355,7 +4355,7 @@ function generateAIContent(word) {
             } else if (cls === 'warn') {
                 arc.setAttribute('stroke', '#f59e0b');
             } else {
-                arc.setAttribute('stroke', 'url(#timer-arc-grad)');
+                arc.setAttribute('stroke', `url(#timer-arc-grad-${_activeTimerScreen})`);
             }
             count.textContent = formatTimerSec(scTimeLeft);
 
@@ -4431,7 +4431,7 @@ function generateAIContent(word) {
               <div class="sc-timer-compact">
                 <svg class="sc-timer-svg" width="60" height="60" viewBox="0 0 60 60">
                   <defs>
-                    <linearGradient id="timer-arc-grad" x1="0" y1="0" x2="1" y2="1">
+                    <linearGradient id="timer-arc-grad-${screen}" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stop-color="#1d60b3"/>
                       <stop offset="100%" stop-color="#2563eb"/>
                     </linearGradient>
@@ -4439,7 +4439,7 @@ function generateAIContent(word) {
                   <circle class="sc-timer-track" cx="30" cy="30" r="${SC_ARC_R}"/>
                   <circle id="${screen}-arc" class="sc-timer-arc" cx="30" cy="30" r="${SC_ARC_R}"
                       stroke-dasharray="${SC_ARC_C}" stroke-dashoffset="0"
-                      stroke="url(#timer-arc-grad)"/>
+                      stroke="url(#timer-arc-grad-${screen})"/>
                 </svg>
                 <div id="${screen}-count" class="sc-timer-count">${formatTimerSec(dur)}</div>
                 <button id="${screen}-pause-btn" class="sc-timer-pause-mini" onclick="toggleSCTimerPause(); updateSCPauseBtn();" title="השהה">
