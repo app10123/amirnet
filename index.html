@@ -1357,7 +1357,7 @@
         .onboarding-dot { width:8px; height:8px; border-radius:50%; background:var(--border-color); transition:background 0.3s; }
         .onboarding-dot.active { background:var(--btn-primary); }
         .onboarding-title { font-size:22px; font-weight:700; color:var(--text-color); margin-bottom:20px; line-height:1.3; }
-        .onboarding-input { width:100%; padding:12px 14px; border-radius:12px; border:1.5px solid var(--border-color); background:var(--bg-color); color:var(--text-color); font-family:var(--font-he); font-size:16px; text-align:center; margin-bottom:20px; box-sizing:border-box; outline:none; }
+        .onboarding-input { width:100% !important; max-width:100% !important; padding:12px 14px; border-radius:12px; border:1.5px solid var(--border-color); background:var(--bg-color); color:var(--text-color); font-family:var(--font-he); font-size:16px; text-align:center; margin-bottom:20px; box-sizing:border-box !important; outline:none; }
         .onboarding-input:focus { border-color:var(--btn-primary); }
         .onboarding-hint { font-size:12px; color:#6C6C70; margin:-12px 0 16px; }
         .onboarding-source-btns { display:flex; gap:12px; margin-bottom:24px; }
@@ -1409,7 +1409,7 @@
                 <span>התקדמות לפי יחידות</span>
                 <svg class="dash-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div id="dashUnitsBody" class="dash-collapse-body dash-collapse-closed">
+            <div id="dashUnitsBody" class="dash-collapse-body dash-collapse-closed" style="overflow:hidden;box-sizing:border-box;">
                 <div id="dashUnitsContainer" class="dash-source-block" style="padding:4px 4px 8px;"></div>
             </div>
 
@@ -1443,7 +1443,7 @@
           <div class="onboarding-dot" id="obDot2"></div>
         </div>
         <div class="onboarding-step" id="obStep1">
-          <div class="onboarding-title">ברוך הבא לאמירנט! 👋</div>
+          <div class="onboarding-title">ברוך הבא לאמירנט!</div>
           <input class="onboarding-input" id="obNameInput" type="text" placeholder="הכנס שם..." maxlength="30">
           <button class="btn-primary" onclick="obNext(1)">הבא ›</button>
         </div>
