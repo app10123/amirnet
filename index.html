@@ -616,11 +616,11 @@
         .dash-source-toggle .src-summary { font-size:12px; font-weight:600; color:#94a3b8; margin-right:6px; }
         .dash-source-toggle svg.src-arrow { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5; flex-shrink:0; transition:transform 0.2s; }
         .dash-source-toggle.open svg.src-arrow { transform:rotate(180deg); }
-        .dash-units-list { display:none; flex-direction:column; gap:5px; padding:8px 0 4px; }
+        .dash-units-list { display:none; flex-direction:column; gap:5px; padding:8px 2px 4px; overflow:hidden; box-sizing:border-box; }
         .dash-units-list.open { display:flex; }
-        .dash-unit-row { display:flex; align-items:center; gap:10px; padding:7px 14px; background:var(--panel-bg); border:1.5px solid var(--border-color); border-radius:10px; box-shadow:var(--shadow); }
+        .dash-unit-row { display:flex; align-items:center; gap:10px; padding:7px 14px; background:var(--panel-bg); border:1.5px solid var(--border-color); border-radius:10px; box-shadow:var(--shadow); overflow:hidden; box-sizing:border-box; }
         .dash-unit-name { font-size:13px; font-weight:700; color:var(--text-color); min-width:64px; flex-shrink:0; }
-        .dash-unit-bar-wrap { flex:1; height:7px; background:var(--border-color); border-radius:4px; overflow:hidden; }
+        .dash-unit-bar-wrap { flex:1; min-width:0; height:7px; background:var(--border-color); border-radius:4px; overflow:hidden; }
         .dash-unit-bar { height:100%; background:linear-gradient(90deg,#1d60b3,#2563eb); border-radius:4px; transition:width 0.5s ease; min-width:3px; }
         .dash-unit-bar.done { background:linear-gradient(90deg,#34c759,#2db34f); }
         .dash-unit-remain { font-size:12px; font-weight:700; color:#94a3b8; min-width:52px; text-align:left; flex-shrink:0; }
@@ -3233,6 +3233,7 @@ function generateAIContent(word) {
                         <button class="tts-btn" onclick="ttsRCQ(${qIndex},this)" title="הקרא שאלה" style="display:flex;align-items:center;justify-content:center;">${_TTS_ICON}</button>
                     </div>
                     <div class="q-options" id="q-opts-${qIndex}">${optHtml}</div>
+                    <button class="tts-btn tts-row-btn" onclick="ttsRCOpts(${qIndex},this)" style="display:flex;align-items:center;gap:8px;margin:4px 0 6px;">${_TTS_ICON} הקרא תשובות</button>
                     <div class="q-explanation" id="q-exp-${qIndex}" style="${expStyle}">
                         <h4><svg viewBox="0 0 24 24" style="width:20px; height:20px; stroke:currentColor; fill:none;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> אסטרטגיית אמירנט:</h4>
                         <p>${q.explanation}</p>
@@ -3805,6 +3806,9 @@ function generateAIContent(word) {
             ttsSpeak(sentences, btnEl, 'הקרא את הקטע');
         }
         function ttsRCQ(idx, btnEl){ let t = allTexts.find(x => x.id === currentTextId); ttsSpeak([t.questions[idx].q], btnEl); }
+        function ttsRCOpts(idx, btnEl){ let t = allTexts.find(x => x.id === currentTextId); ttsSpeak(t.questions[idx].options, btnEl, 'הקרא תשובות'); }
+        function ttsATQuestion(btnEl){ let text = document.getElementById('at-q-text').textContent.trim(); if (text) ttsSpeak([text], btnEl); }
+        function ttsATOptions(btnEl){ let opts = Array.from(document.querySelectorAll('.at-option .at-opt-text')).map(el => el.textContent.trim()).filter(Boolean); if (opts.length) ttsSpeak(opts, btnEl, 'הקרא תשובות'); }
 
         function renderSentenceQuestion() {
             let container = document.getElementById('sc-container');
@@ -6384,7 +6388,11 @@ function playNextDrivingWord() {
                     <div id="at-passage-container" style="display:none;">
                         <div class="at-passage-box" id="at-passage-text"></div>
                     </div>
-                    <div class="at-q-text" id="at-q-text"></div>
+                    <div style="display:flex;align-items:flex-start;gap:8px;">
+                        <div class="at-q-text" id="at-q-text" style="flex:1;margin:0;"></div>
+                        <button class="tts-btn" onclick="ttsATQuestion(this)" title="הקרא שאלה" style="display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:4px;"><svg viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;pointer-events:none;flex-shrink:0;"><path d="M3 6H1v6h2l4 3V3L3 6z" fill="currentColor" stroke="none"/><path d="M13 3c2 1.7 3.2 4.2 3.2 6s-1.2 4.3-3.2 6"/><path d="M10.5 6c1 0.9 1.6 2.2 1.6 3s-0.6 2.1-1.6 3"/></svg></button>
+                    </div>
+                    <button class="tts-btn tts-row-btn" onclick="ttsATOptions(this)" style="display:flex;align-items:center;gap:8px;margin:6px 0 4px;"><svg viewBox="0 0 20 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;pointer-events:none;flex-shrink:0;"><path d="M3 6H1v6h2l4 3V3L3 6z" fill="currentColor" stroke="none"/><path d="M13 3c2 1.7 3.2 4.2 3.2 6s-1.2 4.3-3.2 6"/><path d="M10.5 6c1 0.9 1.6 2.2 1.6 3s-0.6 2.1-1.6 3"/></svg> הקרא תשובות</button>
                     <div class="at-options-list" id="at-options-list"></div>
                 </div>
             </div>
