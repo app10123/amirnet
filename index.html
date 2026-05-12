@@ -4339,9 +4339,9 @@ function generateAIContent(word) {
         }
 
         function updateSCTimerUI() {
-            let arc   = document.getElementById('sc-arc');
-            let count = document.getElementById('sc-count');
-            let msg   = document.getElementById('sc-expired-msg');
+            let arc   = document.getElementById(`${_activeTimerScreen}-arc`);
+            let count = document.getElementById(`${_activeTimerScreen}-count`);
+            let msg   = document.getElementById(`${_activeTimerScreen}-expired-msg`);
             if (!arc || !count) return;
 
             let pct = scTimeLeft / scTimerTotal;
@@ -4408,7 +4408,7 @@ function generateAIContent(word) {
         }
 
         function updateSCPauseBtn() {
-            let btn = document.getElementById('sc-pause-btn');
+            let btn = document.getElementById(`${_activeTimerScreen}-pause-btn`);
             if (!btn) return;
             if (scTimerExpired) {
                 btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:10px;height:10px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg>';
@@ -4437,16 +4437,16 @@ function generateAIContent(word) {
                     </linearGradient>
                   </defs>
                   <circle class="sc-timer-track" cx="30" cy="30" r="${SC_ARC_R}"/>
-                  <circle id="sc-arc" class="sc-timer-arc" cx="30" cy="30" r="${SC_ARC_R}"
+                  <circle id="${screen}-arc" class="sc-timer-arc" cx="30" cy="30" r="${SC_ARC_R}"
                       stroke-dasharray="${SC_ARC_C}" stroke-dashoffset="0"
                       stroke="url(#timer-arc-grad)"/>
                 </svg>
-                <div id="sc-count" class="sc-timer-count">${formatTimerSec(dur)}</div>
-                <button id="sc-pause-btn" class="sc-timer-pause-mini" onclick="toggleSCTimerPause(); updateSCPauseBtn();" title="השהה">
+                <div id="${screen}-count" class="sc-timer-count">${formatTimerSec(dur)}</div>
+                <button id="${screen}-pause-btn" class="sc-timer-pause-mini" onclick="toggleSCTimerPause(); updateSCPauseBtn();" title="השהה">
                   <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" style="width:10px;height:10px;stroke:currentColor;"><line x1="10" y1="15" x2="10" y2="9"></line><line x1="14" y1="15" x2="14" y2="9"></line></svg>
                 </button>
               </div>
-              <div id="sc-expired-msg" class="sc-timer-expired-msg">פג הזמן!</div>
+              <div id="${screen}-expired-msg" class="sc-timer-expired-msg">פג הזמן!</div>
             </div>`;
         }
 
