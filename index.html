@@ -85,6 +85,13 @@
         .source-sheet-btn { width:100%; padding:13px; border-radius:10px; border:1.5px solid var(--border-color); background:none; font-size:15px; font-weight:600; font-family:var(--font-he); color:var(--text-color); cursor:pointer; transition:0.15s; }
         .source-sheet-btn.active { background:var(--btn-primary); color:#fff; border-color:var(--btn-primary); }
         .dropdown-divider { height: 1px; background: var(--border-color); margin: 4px 0; }
+        #history-sheet-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:1099; }
+        #history-sheet { display:none; position:fixed; bottom:0; left:0; width:100%; background:var(--panel-bg); border-radius:16px 16px 0 0; padding:20px; z-index:1100; flex-direction:column; box-sizing:border-box; max-height:80vh; overflow-y:auto; padding-bottom:calc(20px + env(safe-area-inset-bottom)); }
+        .history-title { font-size:15px; font-weight:600; text-align:center; margin-bottom:12px; color:var(--text-color); }
+        .history-day-row { display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #E5E5EA; cursor:pointer; }
+        .history-day-row:hover { opacity:0.7; }
+        .history-day-date { font-size:14px; font-weight:500; color:var(--text-color); }
+        .history-day-count { font-size:13px; color:#6C6C70; }
         .dropdown-category { display:flex; align-items:center; justify-content:space-between; font-size:13px; font-weight:700; color:var(--text-color); padding:10px 12px 10px; cursor:pointer; border-radius:10px; transition:0.15s; user-select:none; width:100%; box-sizing:border-box; background:none; border:none; font-family:var(--font-he); }
         .dropdown-category:hover { background:var(--bg-color); }
         .dropdown-category .cat-arrow { width:14px; height:14px; stroke:currentColor; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; transition:transform 0.2s; flex-shrink:0; }
@@ -1673,6 +1680,8 @@
         <div class="dropdown-divider"></div>
         <button class="dropdown-item" onclick="toggleMoreSheet();openAdaptiveTest()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> מבחן אמירנט מלא</button>
         <div class="dropdown-divider"></div>
+        <button class="dropdown-item" onclick="openLearningHistory();toggleMoreSheet()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="14" y2="18"/></svg> היסטוריית למידה</button>
+        <div class="dropdown-divider"></div>
         <button class="dropdown-item" onclick="openAddModal();toggleMoreSheet()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> הוסף מילה חדשה</button>
         <div class="dropdown-divider"></div>
         <button class="dropdown-item" onclick="toggleDarkMode()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> מצב לילה / יום</button>
@@ -1685,6 +1694,14 @@
         <button class="dropdown-item danger" onclick="toggleAdminMode()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> מצב מחיקת מילים</button>
         <button class="dropdown-item danger" onclick="resetProgressOnly()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><path d="M2 12a10 10 0 1 0 10-10 1 1 0 0 0-1 1v3"/><path d="M2 12h3"/></svg> איפוס מילים שלמדתי</button>
         <button class="dropdown-item danger" onclick="resetAllData()"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> איפוס מלא</button>
+    </div>
+
+    <!-- Learning history sheet -->
+    <div id="history-sheet-overlay" onclick="closeLearningHistory()"></div>
+    <div id="history-sheet">
+        <div style="width:36px;height:4px;background:#C7C7CC;border-radius:2px;margin:0 auto 16px;flex-shrink:0;"></div>
+        <div class="history-title">היסטוריית למידה</div>
+        <div id="history-list"></div>
     </div>
 
     <div id="addModal" class="modal">
@@ -6309,6 +6326,39 @@ function playNextDrivingWord() {
             sheet.style.display = open ? 'flex' : 'none';
             overlay.style.display = open ? 'block' : 'none';
         }
+        function openLearningHistory() {
+            let byDate = {};
+            for (let en in userProgress) {
+                let p = userProgress[en];
+                if (p.learnedDate) byDate[p.learnedDate] = (byDate[p.learnedDate] || 0) + 1;
+            }
+            let dailyStats = JSON.parse(localStorage.getItem('dailyStats') || '{}');
+            let dates = Object.keys(byDate).sort().reverse().slice(0, 30);
+            let listEl = document.getElementById('history-list');
+            if (dates.length === 0) {
+                listEl.innerHTML = '<div style="text-align:center;color:#94a3b8;font-size:14px;padding:20px 0;">עדיין לא למדת מילים</div>';
+            } else {
+                listEl.innerHTML = dates.map(dateStr => {
+                    let d = new Date(dateStr + 'T12:00:00');
+                    let dayName = d.toLocaleDateString('he-IL', { weekday: 'long' });
+                    let dateLabel = d.toLocaleDateString('he-IL', { day: 'numeric', month: 'long' });
+                    let wordCount = byDate[dateStr];
+                    let actCount = dailyStats[dateStr] || 0;
+                    let countText = wordCount + ' מילים' + (actCount > wordCount ? ' · ' + actCount + ' פעילויות' : '');
+                    return `<div class="history-day-row" onclick="closeLearningHistory();openDayModal('${dateStr}','${dayName}')">
+                        <span class="history-day-date">${dayName}, ${dateLabel}</span>
+                        <span class="history-day-count">${countText}</span>
+                    </div>`;
+                }).join('');
+            }
+            document.getElementById('history-sheet-overlay').style.display = 'block';
+            document.getElementById('history-sheet').style.display = 'flex';
+        }
+        function closeLearningHistory() {
+            document.getElementById('history-sheet-overlay').style.display = 'none';
+            document.getElementById('history-sheet').style.display = 'none';
+        }
+
         function toggleMoreSheet() {
             const sheet = document.getElementById('more-sheet');
             const overlay = document.getElementById('more-sheet-overlay');
