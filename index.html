@@ -2452,7 +2452,7 @@ let aiPreloadedData = {};
             // initialize passage TTS button
             let pb = document.getElementById('rc-tts-passage');
             if (pb && !pb.innerHTML.trim()) _ttsSetIcon(pb, false, 'הקרא את הקטע');
-            populateFilters(); applyFilters(); renderReadingTexts(); renderSentenceQuestions(); renderRSList();
+            populateFilters(); restoreLastFilters(); applyFilters(); renderReadingTexts(); renderSentenceQuestions(); renderRSList();
             showDashboard();
             populateDashboard();
             checkOnboarding();
@@ -2484,6 +2484,19 @@ let aiPreloadedData = {};
 
         function getActiveSource() {
             return localStorage.getItem('learningSource') || 'All';
+        }
+
+        function restoreLastFilters() {
+            let unit = localStorage.getItem('lastUnit');
+            let level = localStorage.getItem('lastLevel');
+            if (unit) {
+                let sel = document.getElementById('unitFilter');
+                if (Array.from(sel.options).some(o => o.value === unit)) sel.value = unit;
+            }
+            if (level) {
+                let sel = document.getElementById('levelFilter');
+                if (Array.from(sel.options).some(o => o.value === level)) sel.value = level;
+            }
         }
 
         function populateFilters() {
@@ -5089,6 +5102,8 @@ Keep it concise and educational. Use clear section headers for each part.`;
         // דריסת הפילטר המקורי שיתמוך בשינון ממוקד
         function applyFilters() {
             let sourceVal = getActiveSource(); let unitVal = document.getElementById('unitFilter').value; let levelVal = document.getElementById('levelFilter').value; let statusVal = document.getElementById('statusFilter').value; let searchVal = document.getElementById('searchInput').value.toLowerCase();
+            localStorage.setItem('lastUnit', unitVal);
+            localStorage.setItem('lastLevel', levelVal);
             let now = Date.now();
 
             currentList = allWords.filter(w => {
